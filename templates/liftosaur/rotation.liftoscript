@@ -1,81 +1,131 @@
-// WorkoutTrainer rotation for Liftosaur: L1 -> U1 -> L2 -> U2 -> L3 -> U3 -> L1 ...
-// Rendered 2026-10-21 from templates/6-day-week.md and templates/progression-tracks.md.
-//
-// BEST EFFORT. Every line tagged UNVERIFIED uses grammar that
-// research/mobile-workout-trackers.md could not confirm against the official docs
-// (liftosaur.com was unreachable). Check them at https://www.liftosaur.com/docs
-// before importing. The comment marker itself ("//") is also assumed.
-//
-// Syntax the research note did cite: "Exercise / sets x reps weight @RPE",
-// set groups separated by commas, "@8+" (log the actual RPE), "%" (of 1RM, not of
-// the top set), "kg"/"lb" number types, "progress: lp(5lb)", and the existence of
-// dp(), sum() and custom() { ... } rules.
-//
-// Units: kg. Starting loads are the worked example in guide/03-flexible-scheduling.md,
-// section 6 (squat 120, bench 85, deadlift 150, press 55, row 70, pull-up +10).
-// Replace them with yours: templates/progression-tracks.md, section 2.
-//
-// H exposure = 1 x 4 top set @ RPE 8, then back-offs at -7% (3 in a split session).
-// V exposure = sets at 90% of the lift's current top-set load, no top set.
-// Accessories = double progression: fixed load, reps up to the top of the range at
-// RPE 9 or less, then +2.5 kg (or one dumbbell step) and back to the bottom.
-// Warm-up: configure in the app on the first compound of each day as 40% x 8,
-// 60% x 5, 80% x 2-3. Liftosaur's warm-up percentages are of the FIRST set's
-// weight (research note, KQ2), which here is the top set, so the ramp matches.
-// Rest: 3-4 min after a top set (deadlift 3-5), 2-3 min between compound sets,
-// 60-90 s on isolation. Rest syntax was not cited; set it in the app.
+/// WorkoutTrainer rotation for Liftosaur: L1 -> U1 -> L2 -> U2 -> L3 -> U3 -> L1 ...
+/// Rendered 2026-10-21 from templates/6-day-week.md, templates/rotation.json and
+/// templates/progression-tracks.md. Revised 2026-10-21 against the official Liftoscript
+/// doc (https://www.liftosaur.com/doc/liftoscript), the grammar file and the built-in
+/// exercise list on GitHub (research/mobile-workout-trackers.md, addendum
+/// "official-source verification").
+///
+/// Comment rules used here (from the doc and the grammar): "///" lines are hidden notes.
+/// "//" lines are descriptions SHOWN to the lifter: above an exercise they describe the
+/// exercise, above a "## Day" header they describe the day. Comments are whole lines only;
+/// nothing may follow an exercise on its line.
+///
+/// Units: kg. Starting loads are the worked example in guide/03-flexible-scheduling.md,
+/// section 6 (squat 120, bench 85, deadlift 150, press 55, row 70, pull-up +10).
+/// Replace them with yours: templates/progression-tracks.md, section 2.
+///
+/// H exposure = 1 x 4 top set @ RPE 8, then back-offs at -7% (3 in a split session;
+/// deadlift 2). V exposure = sets at 90% of the lift's current top-set load, no top set.
+/// Accessories = double progression: fixed load, reps up to the top of the range at
+/// RPE 9 or less, then +2.5 kg (or one dumbbell step) and back to the bottom.
+///
+/// Rep ranges: every double-progression line is written at the BOTTOM of its range with
+/// the range in dp(step, min, max), as in the doc's examples ("3x8 / progress: dp(5lb, 8, 12)").
+/// The app adds one rep to every set after each exposure where all prescribed reps are
+/// completed, and at the top of the range adds the step and returns to the bottom. So
+/// "3x8 ... dp(2.5kg, 8, 10)" is the template's 3 x 8-10. Do not write "3x8-10" with
+/// dp(): in a local run of Liftosaur's own code the range collapsed (8-10 became 10-10).
+///
+/// Progressions: one rule per exercise for the whole program (the doc: different
+/// progressions for the same exercise are an error), and a step applies to every day
+/// the exercise appears. A repeated accessory carries its rule on its first appearance
+/// only and moves together on all its days. V exposures use the label "v:" so they are
+/// separate exercises: the H track's lp()/dp() never moves them, and finishing a V day
+/// never moves the track. "progress: none" is not enough for that: in the same local
+/// run, an lp() step on Day 1 still raised an unlabelled copy marked "progress: none".
+/// The Day 5 calf raise uses the label "hirep:" because its range differs.
+///
+/// Warm-ups: "ramp" = bar x 10, 40% x 8, 60% x 5, 80% x 2; "feeder" = 1 x 3 at 65%
+/// (templates/rotation.json). Liftosaur warm-up percentages are of the FIRST working
+/// set's weight, which on an H line is the top set. Accessories keep the app's default
+/// warm-ups. Rest timers are the per-exercise values in templates/rotation.json.
+/// Supersets follow the superset groups in templates/rotation.json.
 
-# Week 1                                                     // UNVERIFIED: week/day block grammar
+# Week 1
 
+// **Squat heavy.** Top set 4 @ RPE 8, back-offs at -7%; stop the back-offs if a set hits RPE 9.
+// Accessories: double progression at RPE 9 or less. The app adds a rep after each session in which you complete the prescribed reps; at the top of the range it adds the smallest load step and goes back to the bottom. Log the reps you actually did.
+// Swaps: leg press -> Bulgarian split squat; cable crunch -> hanging leg raise.
 ## Day 1: L1 Lower A (squat heavy)
-Squat / 1x4 120kg @8+, 3x4 112.5kg @7+ / progress: lp(2.5kg)              // UNVERIFIED: lp() advances on completed reps, not on RPE (README section 5)
-Romanian Deadlift / 3x8-10 @8+ / progress: dp(2.5kg, 8, 10)              // UNVERIFIED: dp(weight, minReps, maxReps) signature; no starting weight given (README section 4)
-Leg Press / 3x10-12 @8+ / progress: dp(2.5kg, 10, 12)                    // UNVERIFIED dp; or Bulgarian Split Squat
-Seated Leg Curl / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)              // UNVERIFIED dp
-Standing Calf Raise / 4x8-12 @9+ / progress: dp(2.5kg, 8, 12)            // UNVERIFIED dp
-Cable Crunch / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)                 // UNVERIFIED dp; or Hanging Leg Raise
+/// Track: squat. lp() advances on completed reps only, not on the logged RPE (README, known gaps).
+Squat / 1x4 120kg @8+, 3x4 112.5kg @7+ / 180s / warmup: 1x10 20kg, 1x8 40%, 1x5 60%, 1x2 80% / progress: lp(2.5kg)
+Romanian Deadlift, Barbell / 3x8 @8+ / 150s / progress: dp(2.5kg, 8, 10)
+Leg Press / 3x10 @8+ / 120s / progress: dp(2.5kg, 10, 12)
+Seated Leg Curl / 3x10 @9+ / 75s / superset: A / progress: dp(2.5kg, 10, 15)
+Standing Calf Raise, Leverage Machine / 4x8 @9+ / 75s / superset: A / progress: dp(2.5kg, 8, 12)
+Cable Crunch / 3x10 @9+ / 60s / progress: dp(2.5kg, 10, 15)
 
+// **Bench heavy, row heavy.** Bench: top set 4 @ RPE 8, back-offs at -7%. Row: 4 x 6-8 at RPE 8; add 2.5 kg when every set reaches 8.
+// Superset the lateral raise with the triceps extension.
 ## Day 2: U1 Upper A (bench heavy, row heavy)
-Bench Press / 1x4 85kg @8+, 3x4 79kg @7+ / progress: lp(1kg)              // UNVERIFIED lp-vs-RPE; 1 kg steps need 0.5 kg plates, else lp(2.5kg) every second success by hand
-Bent Over Row / 4x6-8 70kg @8+ / progress: dp(2.5kg, 6, 8)               // UNVERIFIED dp; this IS the row track (double progression)
-Incline Dumbbell Press / 3x8-12 @8+ / progress: dp(2kg, 8, 12)           // UNVERIFIED dp; 2 kg = one dumbbell step, adjust to your rack
-Dumbbell Lateral Raise / 4x12-20 @9+ / progress: dp(2kg, 12, 20)         // UNVERIFIED dp
-Overhead Cable Triceps Extension / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)  // UNVERIFIED dp
-Face Pull / 3x15-20 @9+ / progress: dp(2.5kg, 15, 20)                    // UNVERIFIED dp
+/// Track: bench. 1 kg steps need 0.5 kg plates. Without them use lp(2.5kg, 2) (2.5 kg after
+/// every second success, progression-tracks.md section 9) instead of lp(1kg).
+Bench Press / 1x4 85kg @8+, 3x4 79kg @7+ / 180s / warmup: 1x10 20kg, 1x8 40%, 1x5 60%, 1x2 80% / progress: lp(1kg)
+/// Track: row (double progression, 6-8 reps).
+Bent Over Row / 4x6 70kg @8+ / 150s / warmup: 1x3 65% / progress: dp(2.5kg, 6, 8)
+/// 2 kg = one dumbbell step; adjust to your rack.
+Incline Bench Press, Dumbbell / 3x8 @8+ / 120s / progress: dp(2kg, 8, 12)
+Lateral Raise, Dumbbell / 4x12 @9+ / 60s / superset: A / progress: dp(2kg, 12, 20)
+Triceps Extension, Cable / 3x10 @9+ / 60s / superset: A / progress: dp(2.5kg, 10, 15)
+Face Pull / 3x15 @9+ / 60s / progress: dp(2.5kg, 15, 20)
 
+// **Deadlift heavy.** Top set 4 @ RPE 8, 2 back-offs at -7%, 3-5 min rest after the top set. Crisp reps; no grinding.
+// Lunge reps are per leg. Swaps: front squat -> hack squat; lunge -> Bulgarian split squat; back extension -> Pallof press.
 ## Day 3: L2 Lower B (deadlift heavy)
-Deadlift / 1x4 150kg @8+, 2x4 140kg @7+ / progress: lp(2.5kg)             // UNVERIFIED lp-vs-RPE; deadlift runs 2 back-offs in every week type
-Front Squat / 3x6-10 @8+ / progress: dp(2.5kg, 6, 10)                    // UNVERIFIED dp; or Hack Squat
-Walking Lunge / 3x8-12 @8+ / progress: dp(2kg, 8, 12)                    // UNVERIFIED dp; reps per leg; or Bulgarian Split Squat
-Seated Leg Curl / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)              // UNVERIFIED dp; UNVERIFIED whether state is shared with Day 1's leg curl
-Standing Calf Raise / 4x8-12 @9+ / progress: dp(2.5kg, 8, 12)            // UNVERIFIED dp
-Back Extension / 3x10-15 @8+ / progress: dp(2.5kg, 10, 15)               // UNVERIFIED dp; or Pallof Press
+/// Track: deadlift. Two back-offs in every week type.
+Deadlift / 1x4 150kg @8+, 2x4 140kg @7+ / 240s / warmup: 1x10 20kg, 1x8 40%, 1x5 60%, 1x2 80% / progress: lp(2.5kg)
+Front Squat / 3x6 @8+ / 150s / progress: dp(2.5kg, 6, 10)
+/// templates/6-day-week.md names a walking lunge; templates/rotation.json lists a reverse lunge first.
+Lunge, Dumbbell / 3x8 @8+ / 120s / progress: dp(2kg, 8, 12)
+/// Same exercise and same rule as Day 1, so the progression is not repeated here.
+Seated Leg Curl / 3x10 @9+ / 75s / superset: A
+Standing Calf Raise, Leverage Machine / 4x8 @9+ / 75s / superset: A
+/// 45-degree back extension; any added load is the number on the line.
+Back Extension, Bodyweight / 3x10 @8+ / 60s / progress: dp(2.5kg, 10, 15)
 
+// **Press heavy, pull-up heavy.** Press: top set 4 @ RPE 8, back-offs at -7%. Pull-up: 4 x 5-8 at RPE 8; add 2.5 kg when every set reaches 8.
+// The pull-up weight is the ADDED load (turn on "Bodyweight for Bar" in Me -> Equipment). Under 5 clean reps: use the lat pulldown until a set at about bodyweight reaches 8.
+// Swaps: dumbbell bench -> dips.
 ## Day 4: U2 Upper B (press heavy, pull-up heavy)
-Overhead Press / 1x4 55kg @8+, 3x4 51kg @7+ / progress: lp(1kg)           // UNVERIFIED lp-vs-RPE
-Pull Up / 4x5-8 10kg @8+ / progress: dp(2.5kg, 5, 8)                     // UNVERIFIED dp; UNVERIFIED how added load on a bodyweight lift is written; use Lat Pulldown if under 5 clean reps
-Dumbbell Bench Press / 3x8-12 @8+ / progress: dp(2kg, 8, 12)             // UNVERIFIED dp; or Dips
-Reverse Pec Deck / 3x15-20 @9+ / progress: dp(2.5kg, 15, 20)             // UNVERIFIED dp
-Cable Lateral Raise / 3x12-20 @9+ / progress: dp(2.5kg, 12, 20)          // UNVERIFIED dp
-Incline Dumbbell Curl / 3x10-12 @9+ / progress: dp(2kg, 10, 12)          // UNVERIFIED dp
+/// Track: press. Same 1 kg note as the bench (lp(2.5kg, 2) without 0.5 kg plates).
+Overhead Press / 1x4 55kg @8+, 3x4 51kg @7+ / 180s / warmup: 1x10 20kg, 1x8 40%, 1x5 60%, 1x2 80% / progress: lp(1kg)
+/// Track: pull-up (double progression, 5-8 reps, added load).
+Pull Up / 4x5 10kg @8+ / 150s / warmup: 1x3 65% / progress: dp(2.5kg, 5, 8)
+Bench Press, Dumbbell / 3x8 @8+ / 120s / progress: dp(2kg, 8, 12)
+/// Reverse pec deck.
+Reverse Fly, Leverage Machine / 3x15 @9+ / 60s / superset: A / progress: dp(2.5kg, 15, 20)
+Lateral Raise, Cable / 3x12 @9+ / 60s / superset: A / progress: dp(2.5kg, 12, 20)
+Incline Curl / 3x10 @9+ / 75s / progress: dp(2kg, 10, 12)
 
+// **Squat and deadlift volume** at 90% of each track load. No top set; no set past RPE 9. Deadlift sets crisp and fast (RPE 6-7).
+// Swaps: hanging leg raise -> cable crunch or Pallof press.
 ## Day 5: L3 Lower C (squat volume, deadlift volume)
-Squat / 4x6 107.5kg @8+                                                   // V: 90% of the squat track (120 x 0.9 = 108 -> 107.5). No progress rule on purpose: UNVERIFIED whether Liftosaur shares an exercise's weight across days; edit to 90% of the track when the Day 1 top set moves (README section 5)
-Deadlift / 3x4 135kg @7+                                                  // V: 90% of the deadlift track (150 x 0.9). Same note as above
-Seated Leg Curl / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)              // UNVERIFIED dp
-Leg Extension / 3x12-15 @9+ / progress: dp(2.5kg, 12, 15)                // UNVERIFIED dp; template allows 2-3 sets
-Standing Calf Raise / 4x10-15 @9+ / progress: dp(2.5kg, 10, 15)          // UNVERIFIED dp
-Hanging Leg Raise / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)            // UNVERIFIED dp; or Cable Crunch or Pallof Press
+/// V: 90% of the squat track (120 x 0.9 = 108 -> 107.5). The "v:" label keeps it off the
+/// track. Edit it to 90% of the new track when the Day 1 top set moves (README).
+v: Squat / 4x6 107.5kg @8+ / 150s / warmup: 1x10 20kg, 1x8 40%, 1x5 60%, 1x2 80%
+/// V: 90% of the deadlift track (150 x 0.9).
+v: Deadlift / 3x4 135kg @7+ / 150s / warmup: 1x3 65%
+Seated Leg Curl / 3x10 @9+ / 75s / superset: A
+Leg Extension / 3x12 @9+ / 75s / superset: A / progress: dp(2.5kg, 12, 15)
+/// Different range from Days 1 and 3, so a separate exercise via the label.
+hirep: Standing Calf Raise, Leverage Machine / 4x10 @9+ / 60s / superset: B / progress: dp(2.5kg, 10, 15)
+Hanging Leg Raise / 3x10 @9+ / 60s / superset: B / progress: dp(2.5kg, 10, 15)
 
+// **All four upper lifts at volume**, 90% of each track load. Bench 4 x 6 (RPE 7-8), press 3 x 5 (RPE 6-7), row 3 x 8-10, pull-up 3 x 6-8 at RPE 7.
+// Run the last three as a circuit. Swaps: pushdown -> skullcrusher; machine preacher curl -> EZ-bar curl.
 ## Day 6: U3 Upper C (all four upper main lifts at volume)
-Bench Press / 4x6 76.5kg @8+                                              // V: 90% of the bench track (85 x 0.9). No progress rule; see Day 5 note
-Overhead Press / 3x5 49.5kg @7+                                           // V: 90% of the press track (55 x 0.9)
-Bent Over Row / 3x8-10 62.5kg @8+                                         // V: 90% of the row track (70 x 0.9 = 63 -> 62.5)
-Pull Up / 3x6-8 5kg @7+                                                   // V: added load reduced so the sets land at RPE 7 (or bodyweight: 0kg)
-Dumbbell Lateral Raise / 3x12-20 @9+ / progress: dp(2kg, 12, 20)         // UNVERIFIED dp
-Triceps Pushdown / 3x10-15 @9+ / progress: dp(2.5kg, 10, 15)             // UNVERIFIED dp; or Skullcrusher
-Preacher Curl / 3x10-12 @9+ / progress: dp(2.5kg, 10, 12)                // UNVERIFIED dp; or EZ Bar Curl
+/// V: 90% of the bench track (85 x 0.9).
+v: Bench Press / 4x6 76.5kg @8+ / 150s / warmup: 1x10 20kg, 1x8 40%, 1x5 60%, 1x2 80%
+/// V: 90% of the press track (55 x 0.9).
+v: Overhead Press / 3x5 49.5kg @7+ / 120s / warmup: 1x3 65%
+/// V: 90% of the row track (70 x 0.9 = 63 -> 62.5).
+v: Bent Over Row / 3x8-10 62.5kg @8+ / 120s
+/// V: added load reduced so the sets land at RPE 7 (0kg = bodyweight).
+v: Pull Up / 3x6-8 5kg @7+ / 120s
+Lateral Raise, Dumbbell / 3x12 @9+ / 60s / superset: A
+Triceps Pushdown / 3x10 @9+ / 60s / superset: A / progress: dp(2.5kg, 10, 15)
+Preacher Curl, Leverage Machine / 3x10 @9+ / 60s / superset: A / progress: dp(2.5kg, 10, 12)
 
-// End of the pass. Liftosaur advances to the next program day when a workout is
-// finished (research note, KQ3), so after Day 6 the program returns to Day 1
-// whatever the calendar says. That is the rotation pointer.
+/// End of the pass. Finishing a workout runs the progressions and advances to the next
+/// program day whatever the calendar says (REST API doc: workout/finish "advance the day"),
+/// so after Day 6 the program returns to Day 1. That is the rotation pointer.
