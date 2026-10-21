@@ -29,7 +29,7 @@ Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter).
 | 2 | Bench press (track: bench H) | 1 x 4 top set, then 2 x 4 at -7% | Top set 8 (judge by RPE: a 4 @ 9.5 here is a "hold," not a miss); back-offs 7-8 | 3-4 min; 2-3 min | DB bench or machine press (hypertrophy only) |
 | 3 | Barbell row (track: row H)[^lats] | 3 x 6-8 | 8 on every set | 2-3 min | Chest-supported DB row; machine row |
 | 4 | Seated leg curl[^curl] | 3 x 10-15 | 8-9; last set may reach 10 | 60-90 s | Lying leg curl (less growth); Nordic curl |
-| 5a | DB lateral raise, slight external rotation[^lat] | 4 x 12-20 | 8-9 | 60 s, then 5b | Cable or machine lateral raise |
+| 5a | DB lateral raise, neutral rotation (thumbs level, not up)[^lat] | 4 x 12-20 | 8-9 | 60 s, then 5b | Cable or machine lateral raise |
 | 5b | Overhead cable triceps extension[^tri] | 3 x 10-15 | 8-9 | 2 min after the pair | DB overhead extension; skull crusher with the arms angled back |
 | 6 | Standing calf raise, full stretch, 1 s pause[^calf] | 3 x 8-12 | 8-9 | 60-90 s | Leg-press calf raise; single-leg DB calf raise |
 
@@ -75,7 +75,7 @@ Superset 4 with 5, or 5 with 6. 20 sets.
 | 8 | Incline DB press, 30 degrees[^incline] | 3 x 8-12 | 7-8 | 90 s to 2 min | Incline machine press; low-to-high cable fly |
 | 9 (optional, include in 4- and 5-day weeks when under 70 min) | Standing calf raise[^calf] 2 x 10-15, **or** DB lateral raise[^lat] 2 x 12-20 | | 8-9 | 60 s | |
 
-21 sets (+2). Alternate squat and bench (and deadlift and press) as paired sets with 90 s between when two stations are free. Full C carries the incline press because Full A has no room for it.
+21 sets (+2). Alternate squat and bench (and deadlift and press) as paired sets with 90 s between when two stations are free. Paired sets are for volume sets only; never pair a heavy top set (compound supersets cost some pulldown strength in one trial, Iversen 2024; same-muscle pairs lose volume, Zhang et al. 2025). Full C carries the incline press because Full A has no room for it.
 
 ---
 
@@ -125,15 +125,15 @@ Per-session maximum for any muscle: 6 sets (quads in L2, chest in Full C). Total
 
 Confidence ratings follow `research/exercise-selection-and-session-design.md`, KQ2.
 
-[^deep]: Full-depth squat: more glute and adductor growth than a half squat in 17 men (Kubo 2019); better transfer to all depths in 53 trained men (Pallares 2019). Moderate.
+[^deep]: Full-depth squat: more glute and adductor growth than a half squat in 17 men (Kubo 2019); better transfer to all depths in 53 trained men (Pallares 2020). Moderate.
 [^ht]: Hip thrust matched the squat for glute growth in untrained adults but not for quads or adductors; authors declared competing interests (Plotkin 2023). Moderate.
 [^curl]: Seated over lying leg curl: one within-subject MRI trial, n = 20 (Maeo 2021). Moderate.
 [^calf]: Standing over seated calf raise: 14 untrained adults (Kinoshita 2023); long-length emphasis from 42 young women (Kassiano 2023). Moderate, small samples.
-[^incline]: Incline for upper chest: a single trial in untrained men (Chaves, via Stronger By Science). Moderate, single trial.
-[^lat]: Lateral raise for the side delt: EMG and consensus only (Coratella 2020; PMC7706677). Low.
-[^tri]: Overhead triceps extension: one 12-week trial (Maeo 2022); overhead versus pushdown directly was not significant (Stasinaki 2018, secondary). Moderate.
+[^incline]: Incline for upper chest: one trial, 47 untrained men training once a week for 8 weeks (Chaves et al. 2020, Int J Exerc Sci): incline-only grew upper-pec thickness more than flat-only and more than a flat + incline combination. Moderate, single trial.
+[^lat]: Lateral raise for the side delt: EMG only, so Low. Coratella 2020 (IJERPH; 10 bodybuilders) found medial-delt activation highest with neutral humeral rotation on the way up (neutral > external) and internal rotation on the way down; its abstract's external-rotation conclusion conflicts with its own results, hence the neutral, thumbs-level cue. The overhead press activated the side delt almost as much as the raise (27.9% vs 30.3% MVIC; bench 5%; Campos 2020, J Hum Kinet), so the raise is here to add side-delt volume at low fatigue cost, not because pressing misses the muscle. Low.
+[^tri]: Overhead triceps extension: one 12-week within-subject MRI trial, n = 21 (Maeo et al. 2023, Eur J Sport Sci; online 2022): overhead grew the long head more and the lateral and medial heads more too (+14.6% vs +10.5%). A direct overhead-versus-pushdown comparison in 9 novice women was not significant (Stasinaki 2018, J Funct Morphol Kinesiol). Moderate.
 [^rear]: Reverse pec deck and face pull for the rear delt: EMG only (Barbell Medicine synthesis; Sweeney thesis). Low.
-[^bi]: Incline DB curl: women-only trials (n = 63; n = 31 trained, not significant). Moderate.
+[^bi]: Incline DB curl: women-only trials (n = 63 untrained, Kassiano 2025; n = 38 recreationally trained, no between-group differences, Zabaleta-Korta 2023). Moderate.
 [^lats]: Pull-up, pulldown and row variants are interchangeable for the lats on EMG (Lehman 2004); no hypertrophy head-to-head yet. Low. Rows are kept for the mid-traps.
 
 ---
@@ -144,6 +144,6 @@ Confidence ratings follow `research/exercise-selection-and-session-design.md`, K
 - `research/frequency-volume-intensity-evidence.md`: Q1 (frequency at equal volume), Q2 (10-14 weekly sets inside the dose-response; per-session ceiling), Q7 (redistribution).
 - `research/flexible-frequency-programming.md`: KQ1 (upper/lower as a strict rotation to avoid lopsided weeks), KQ4 (consecutive training days on 4-day templates; readiness gate), KQ5 (merge rules).
 - `research/splits-and-named-programs.md`: KQ1 (upper/lower frequency and 45-60 min session length), KQ3 (4-day programs as rotations: 5/3/1, GZCLP).
-- `research/exercise-selection-and-session-design.md`: KQ1, KQ2 (exercise confidence ratings), KQ3 (order), KQ6 (time budget), KQ7 (substitutions).
+- `research/exercise-selection-and-session-design.md`: KQ1, KQ2 (exercise confidence ratings), KQ3 (order), KQ6 (time budget and supersets: Zhang et al. 2025; Iversen 2024), KQ7 (substitutions).
 - `research/recovery-nutrition-cardio.md`: KQ1 (recovery between same-muscle sessions), KQ5 (cardio placement).
-- Key primary citations: Schoenfeld, Grgic & Krieger 2019 (J Sports Sci 37:1286); Pelland et al. 2025/26 ([SportRxiv 460](https://sportrxiv.org/index.php/server/preprint/view/460)); Maeo et al. 2021 ([PubMed 33009197](https://pubmed.ncbi.nlm.nih.gov/33009197/)); Maeo et al. 2022 (via [sci-sport](https://sci-sport.com/en/triceps-hypertrophy-impact-of-arm-position/)); Kinoshita et al. 2023 ([Frontiers](https://www.frontiersin.org/articles/10.3389/fphys.2023.1272106/full)); Kassiano et al. 2023 ([PubMed 37015016](https://pubmed.ncbi.nlm.nih.gov/37015016/)); Plotkin et al. 2023 ([Frontiers](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2023.1279170/full)); Kubo 2019 and Pallares 2019 via [Stronger By Science](https://www.strongerbyscience.com/squat-depth/); Lehman et al. 2004 ([Dynamic Medicine](https://link.springer.com/article/10.1186/1476-5918-3-4)); Chaves et al. via [Stronger By Science](https://www.strongerbyscience.com/?p=57858); Weakley et al. 2024/25 ([PMC12011898](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12011898/)); Barbell Medicine forum, [scheduling the press template](https://forum.barbellmedicine.com/t/scheduling-the-press-template/1237).
+- Key primary citations: Schoenfeld, Grgic & Krieger 2019 (J Sports Sci 37:1286); Pelland et al. 2026 (Sports Med 56(2):481-505, [doi:10.1007/s40279-025-02344-w](https://doi.org/10.1007/s40279-025-02344-w)); Maeo et al. 2021 ([PubMed 33009197](https://pubmed.ncbi.nlm.nih.gov/33009197/)); Maeo et al. 2023 (Eur J Sport Sci 23(7):1240-1250, [PubMed 35819335](https://pubmed.ncbi.nlm.nih.gov/35819335/)); Kinoshita et al. 2023 ([Frontiers](https://www.frontiersin.org/articles/10.3389/fphys.2023.1272106/full)); Kassiano et al. 2023 ([PubMed 37015016](https://pubmed.ncbi.nlm.nih.gov/37015016/)); Plotkin et al. 2023 ([Frontiers](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2023.1279170/full)); Kubo et al. 2019 ([PubMed 31230110](https://pubmed.ncbi.nlm.nih.gov/31230110/)); Pallares et al. 2020 (Eur J Sport Sci, [PubMed 31092132](https://pubmed.ncbi.nlm.nih.gov/31092132/)); Lehman et al. 2004 ([Dynamic Medicine](https://link.springer.com/article/10.1186/1476-5918-3-4)); Chaves et al. 2020 (Int J Exerc Sci 13(6):859-872, [PubMed 32922646](https://pubmed.ncbi.nlm.nih.gov/32922646/)); Coratella et al. 2020 ([PMC7503819](https://pmc.ncbi.nlm.nih.gov/articles/PMC7503819/)); Campos et al. 2020 ([PubMed 33312291](https://pubmed.ncbi.nlm.nih.gov/33312291/)); Zabaleta-Korta et al. 2023 ([PubMed 37559762](https://pubmed.ncbi.nlm.nih.gov/37559762/)); Zhang et al. 2025 (Sports Med 55:953-975, [PMC12011898](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12011898/)); Iversen et al. 2024 (JSCR 38(8):1372-1378, [PubMed 39072654](https://pubmed.ncbi.nlm.nih.gov/39072654/)); Barbell Medicine forum, [scheduling the press template](https://forum.barbellmedicine.com/t/scheduling-the-press-template/1237).
