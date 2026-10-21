@@ -125,6 +125,34 @@ class RenderRoutines(unittest.TestCase):
         self.assertTrue(all(s["weight_kg"] is None for s in dl["sets"]))
         self.assertIn("40 x 4", dl["notes"])
 
+    def test_every_exercise_has_a_timer_and_rest_note(self):
+        for slot in ROTATION["sessions"]:
+            for deload in (False, True):
+                payload, _ = push.build_routine(slot, ROTATION, TRACKS, EXMAP, TODAY, deload=deload)
+                self.assertRegex(payload["notes"], r"Target about \d+ min")
+                self.assertRegex(payload["exercises"][0]["notes"], r"^Session: target about \d+ min")
+                for ex in payload["exercises"]:
+                    self.assertGreater(ex["rest_seconds"] or 0, 0, slot)
+                    self.assertIn(push.mmss(ex["rest_seconds"]), ex["notes"], slot)
+
+    def test_rest_notes_and_superset_timers(self):
+        payload, _ = push.build_routine("L1", ROTATION, TRACKS, EXMAP, TODAY)
+        squat, _, _, curl, calf, _ = payload["exercises"]
+        self.assertIn("Rest 3:30 after the top set (timer + 0:30), 3:00 between back-offs.", squat["notes"])
+        self.assertEqual((curl["rest_seconds"], calf["rest_seconds"]), (60, 120))
+        self.assertIn("rest 1:00, then standing calf raise", curl["notes"])
+        self.assertIn("rest 2:00 after the round", calf["notes"])
+
+    def test_session_length_estimate(self):
+        for slot, lo, hi in (("L1", 55, 65), ("U2", 55, 65), ("Full A", 62, 75), ("Full C", 62, 75)):
+            payload, _ = push.build_routine(slot, ROTATION, TRACKS, EXMAP, TODAY)
+            minutes = int(payload["notes"].split("Target about ")[1].split()[0])
+            self.assertTrue(lo <= minutes <= hi, (slot, minutes))
+        normal, _ = push.build_routine("U1", ROTATION, TRACKS, EXMAP, TODAY)
+        deload, _ = push.build_routine("U1", ROTATION, TRACKS, EXMAP, TODAY, deload=True)
+        self.assertLess(push.estimate_minutes(ROTATION["sessions"]["U1"]["exercises"], deload["exercises"])[0],
+                        push.estimate_minutes(ROTATION["sessions"]["U1"]["exercises"], normal["exercises"])[0])
+
     def test_deload(self):
         payload, _ = push.build_routine("U1", ROTATION, TRACKS, EXMAP, TODAY, deload=True)
         bench, row = payload["exercises"][:2]

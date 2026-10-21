@@ -20,7 +20,13 @@ What each routine contains:
       back-offs at backoff_pct. Row and pull-up: fixed load with the rep range.
     - V exposure: sets at volume_pct of the track load.
     - Accessories: rep range and the load from tracks.json (blank if unknown).
-    - Exercise notes carry the RPE targets, since routine sets have no RPE field.
+    - Exercise notes carry the RPE targets, since routine sets have no RPE field,
+      and the rest for that exercise; rest_seconds sets Hevy's timer. A top set's
+      longer rest (rest_top) goes in the note, since Hevy has one timer per exercise.
+    - The routine note and the first exercise note open with the target session
+      length at those rests (estimate_minutes, using the time budget in guide/05
+      section 6.2). The first exercise carries it because the API never returns
+      routine notes, so they cannot be confirmed to show in the app.
     - Gap modifiers (templates/progression-tracks.md section 8) are applied as a
       view from each lift's last exposure date to --as-of (default today) and
       never written back to tracks.json.
@@ -50,6 +56,13 @@ STATE = os.path.join(ROOT, "data", "hevy-state.json")
 RAMP = [(0.0, 10), (0.40, 8), (0.60, 5), (0.80, 2)]  # fraction of the top set, reps
 FEEDER = [(0.65, 3)]
 BAR_KG = 20
+
+# Session-length estimate (guide/05-exercise-selection.md, section 6.2), seconds.
+GENERAL_WARMUP_S = 300   # light cardio and mobility before the first ramp set
+WARMUP_SET_S = 90        # one ramp or feeder set plus loading the bar
+WORK_SET_S = 45          # one working set with setup
+PER_LEG_SET_S = 90       # both sides of a per-leg set
+TRANSITION_S = 90        # moving to and setting up the next exercise
 
 
 def load_json(path, default=None):
@@ -119,6 +132,83 @@ def sentence(s):
     """First letter upper-cased, rest untouched (so 'DB' stays 'DB')."""
     s = (s or "").strip()
     return (s[0].upper() + s[1:] + ("" if s.endswith(".") else ".")) if s else ""
+
+
+def mmss(seconds):
+    return f"{seconds // 60}:{seconds % 60:02d}"
+
+
+def lower_name(name):
+    """'Incline DB curl' -> 'incline DB curl'; leaves acronyms alone."""
+    return name if name[:2].isupper() else name[:1].lower() + name[1:]
+
+
+def rest_note(ex, session_exercises, has_warmups):
+    """The rest instruction for one exercise, matching the Hevy timer (rest_seconds)."""
+    rest = ex.get("rest")
+    if not rest:
+        return ""
+    if ex.get("superset"):
+        group = [e for e in session_exercises if e.get("superset") == ex["superset"]]
+        pos = next(i for i, e in enumerate(group) if e["name"] == ex["name"])
+        if pos < len(group) - 1:
+            note = f"Superset: rest {mmss(rest)}, then {lower_name(group[pos + 1]['name'])}."
+        else:
+            note = f"Superset: rest {mmss(rest)} after the round, then back to {lower_name(group[0]['name'])}."
+    elif ex.get("rest_top") and ex["rest_top"] != rest:
+        extra = ex["rest_top"] - rest
+        note = (f"Rest {mmss(ex['rest_top'])} after the top set (timer + {mmss(extra)}), "
+                f"{mmss(rest)} between back-offs.")
+    elif ex.get("rest_top"):
+        note = f"Rest {mmss(rest)} after the top set and between back-offs."
+    else:
+        note = f"Rest {mmss(rest)} between sets."
+    if has_warmups:
+        note += " Warm-ups: about 1:00 apart, as long as loading the bar takes."
+    return note
+
+
+def estimate_minutes(session_exercises, rendered):
+    """Start-to-finish minutes at the timer rests, and the minute the main lifts finish.
+    Works from the rendered sets, so deloads and gap modifiers are reflected.
+    Optional exercises are left out."""
+    keep = [k for k, e in enumerate(session_exercises) if not e.get("optional")]
+    session_exercises = [session_exercises[k] for k in keep]
+    rendered = [rendered[k] for k in keep]
+    t = GENERAL_WARMUP_S
+    main_done = None
+    i = 0
+    while i < len(session_exercises):
+        ex = session_exercises[i]
+        if i:
+            t += TRANSITION_S
+        if ex.get("superset"):
+            idx = [j for j in range(i, len(session_exercises)) if session_exercises[j].get("superset") == ex["superset"]]
+            counts = [sum(1 for s in rendered[j]["sets"] if s["type"] == "normal") for j in idx]
+            rounds = max(counts)
+            for r in range(rounds):
+                live = [j for j, n in zip(idx, counts) if n > r]
+                for k, j in enumerate(live):
+                    t += PER_LEG_SET_S if session_exercises[j].get("per_leg") else WORK_SET_S
+                    if k < len(live) - 1 or r < rounds - 1:
+                        t += session_exercises[j].get("rest") or 0
+            i = idx[-1] + 1
+            continue
+        sets = rendered[i]["sets"]
+        n_warm = sum(1 for s in sets if s["type"] == "warmup")
+        if ex.get("warmup") and not n_warm:  # load not set yet: the lifter works up anyway
+            n_warm = len(RAMP if ex["warmup"] == "ramp" else FEEDER)
+        t += WARMUP_SET_S * n_warm
+        n = sum(1 for s in sets if s["type"] == "normal")
+        rest = ex.get("rest") or 0
+        for k in range(n):
+            t += PER_LEG_SET_S if ex.get("per_leg") else WORK_SET_S
+            if k < n - 1:
+                t += ex.get("rest_top", rest) if k == 0 else rest
+        if ex["role"] in ("H", "V"):
+            main_done = t
+        i += 1
+    return round(t / 60), (round(main_done / 60) if main_done is not None else None)
 
 
 def warmup_sets(kind, top_kg):
@@ -218,6 +308,8 @@ def build_routine(slot, rotation, tracks, exmap, as_of, deload=False, folder_id=
         if not tid:
             unresolved.append(ex["name"])
         sets, notes = render_exercise(ex, tracks, as_of, deload=deload, merged=merged)
+        rest = rest_note(ex, session["exercises"], bool(ex.get("warmup")))
+        notes = " ".join(n for n in (notes, rest) if n)
         exercises.append({
             "exercise_template_id": tid,
             "superset_id": ex.get("superset"),
@@ -227,6 +319,16 @@ def build_routine(slot, rotation, tracks, exmap, as_of, deload=False, folder_id=
         })
     title = session["title"] + (" (deload)" if deload else "")
     notes = session.get("notes", "")
+    minutes, main_done = estimate_minutes(session["exercises"], exercises)
+    timing = f"Target about {minutes} min start to finish at the timer rests, warm-up included"
+    if main_done:
+        timing += f"; main lifts done at about {main_done} min"
+    timing += ". Finishing much sooner means rest was cut."
+    # The API accepts routine notes but never returns them, so the first exercise
+    # note, which the app does show, carries the target too.
+    if exercises:
+        exercises[0]["notes"] = f"Session: {timing[0].lower()}{timing[1:]} {exercises[0]['notes']}"
+    notes = timing + " " + notes
     if deload:
         notes = "DELOAD WEEK. " + notes
     notes += f" Rendered {as_of.isoformat()} from data/tracks.json (updated {tracks.get('updated')})."

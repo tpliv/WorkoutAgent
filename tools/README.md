@@ -79,6 +79,17 @@ kg, the rest timer, superset grouping, and a note with the RPE target and the
 rule for that exercise. Routine sets have no RPE field in Hevy, so the note is
 where the target lives; you log the actual RPE on each set when you train.
 
+Every exercise note ends with its rest, matching the timer. Hevy has one timer
+per exercise, so a top set's longer rest is in the note ("Rest 3:30 after the
+top set (timer + 0:30)"). Supersets use 1:00 on each exercise but the last and
+2:00 on the last, so the timer gives 60 s to the partner and 2 min after the
+round. The routine note, and the note on the first exercise (the API never
+returns routine notes, so the first exercise is the place the app is known to
+show), open with the target session length at those rests,
+warm-up included, and when the main lifts should be done; it is estimated from
+the rendered sets with the time budget in `guide/05-exercise-selection.md`,
+section 6.2, so deloads come out shorter.
+
 Main lifts: the H exposure gets the ramp (bar x 10, 40% x 8, 60% x 5, 80% x 2),
 the top set at the track load, and back-offs at 93%. The V exposure gets sets
 at 90% of the track load. Row and pull-up get fixed-load sets with the rep
