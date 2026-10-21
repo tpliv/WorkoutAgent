@@ -10,6 +10,7 @@ The training log and the live state of the program. Everything here except
 | `tracks.json` | The six progression tracks: planned next heavy load, last lifted load, rep target, miss counter, last exposure, e1RM history, plus the pointer, block week and accessory loads. Rewritten by `tools/update_tracks.py`; read by `tools/hevy_push_routines.py`. |
 | `track-state.md` | Narrative companion to `tracks.json` with the same table (regenerated between the markers) and notes on each lift. |
 | `track-log.md` | Append-only record of every decision `update_tracks.py` made and why. |
+| `body-composition.md` | Body-composition baseline, population comparison, calorie and macro plan, adjustment rules, and the scan log. Updated by hand after each scan. |
 | `hevy-exercise-map.json` | Program exercise name to Hevy exercise template id, filled by `hevy_push_routines.py --resolve`. Edit by hand when a match is wrong. |
 | `hevy-state.json` | Hevy folder id, routine ids per slot, and the timestamp of the last pull. |
 | `raw/` | Raw API JSON and app exports. Gitignored. |

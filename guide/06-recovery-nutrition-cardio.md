@@ -146,6 +146,20 @@ Supporting detail: a 105-article analysis (5,411 subjects) found lean body mass 
 
 Flags and gaps: protein needs in a deficit for lean, trained lifters (Helms et al. 2014, 2.3-3.1 g/kg of fat-free mass) could not be searched and should be verified before relying on them; carbohydrate targets were not retrieved; caffeine timing and strength effect sizes (Grgic et al. 2018) were not searched.
 
+### 4.3 Estimating maintenance and running a recomposition
+
+Added 2026-10-21. Source: `research/body-recomposition.md` (KQ1, KQ2).
+
+| Step | Rule | Confidence |
+|---|---|---|
+| Estimate maintenance | Resting rate (Mifflin-St Jeor, or Katch-McArdle if you have a lean-mass scan) times an activity factor of about 1.375-1.725; or 30-35 kcal/kg | Practitioner formulas; a starting point only |
+| Correct it | Track intake for 2-3 weeks and adjust by the weekly-average bodyweight trend | Practitioner convention |
+| Recomposition setting | A deficit of about 300-400 kcal/day averaged over the week, protein about 2.2 g/kg | Inference from Longland 2016 (2.4 g/kg protein kept lean mass rising in a deficit) and Murphy & Koehler (about 500 kcal/day held lean mass flat) |
+| Who it suits | Returning lifters and people with recent fat gain respond fastest; lean, continuously trained lifters slowest | Barakat 2020 review (abstract); Halonen 2024 (faster regain in the first 5 weeks of retraining) |
+| How long | Fastest in the first 2-3 months of retraining; after about 6 months switch to a deliberate surplus or deficit | Inference; no month-by-month trial found |
+
+With the week types: put the larger deficit in 3-day weeks and keep 5-6-day weeks near maintenance, as in 4.2. The user's own numbers live in `data/body-composition.md`.
+
 ---
 
 ## 5. Concurrent training: adding cardio without losing lifting gains
@@ -238,6 +252,7 @@ This guide gives general training guidance only. See a physician, sports-medicin
 
 Research notes:
 
+- `research/body-recomposition.md`: KQ1, KQ2 (section 4.3).
 - `research/recovery-nutrition-cardio.md`: KQ1 (section 1), KQ2 (section 2), KQ3 (section 3), KQ4 (section 4), KQ5 (section 5), KQ6 (section 6), KQ7 (section 7).
 - `research/exercise-selection-and-session-design.md`: KQ5 (acute stretching data in section 6).
 - Program defaults (RIR, per-session set ranges, volume-cut and deload rules, cardio rule): design spine and `research/frequency-volume-intensity-evidence.md` via chapter 03.
