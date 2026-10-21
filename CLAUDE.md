@@ -46,9 +46,13 @@ The user logs in Hevy (Pro) and the repo talks to it over the Hevy API.
 - `python3 tools/hevy_sync.py --dry-run` shows what a sync would do; without
   the flag it pulls new workouts, applies `templates/progression-tracks.md` to
   them, rewrites `data/tracks.json`, `data/track-state.md` and
-  `data/track-log.md`, and updates the nine routines in the app. Run it when
-  the user asks for their loads, their next session, or an update after
-  training. Commit the changed data files afterwards.
+  `data/track-log.md`, rebuilds `dashboard/index.html`, and updates the nine
+  routines in the app. Run it when the user asks for their loads, their next
+  session, or an update after training. Commit the changed data and dashboard
+  files afterwards, then republish `dashboard/index.html` to the existing
+  dashboard page (URL in `tools/README.md`, "Progress dashboard"); never
+  create a second page.
+- `python3 tools/build_dashboard.py` rebuilds the dashboard alone (offline).
 - Read `data/tracks.json` for the current loads and the pointer (the next
   half-session owed); `data/track-log.md` for what changed and why.
 - `templates/rotation.json` is the machine-readable rotation. When a markdown

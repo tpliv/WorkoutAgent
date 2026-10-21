@@ -11,6 +11,7 @@ The training log and the live state of the program. Everything here except
 | `track-state.md` | Narrative companion to `tracks.json` with the same table (regenerated between the markers) and notes on each lift. |
 | `track-log.md` | Append-only record of every decision `update_tracks.py` made and why. |
 | `hevy-exercise-map.json` | Program exercise name to Hevy exercise template id, filled by `hevy_push_routines.py --resolve`. Edit by hand when a match is wrong. |
+| `exercise-muscles.json` | Hevy exercise title to primary and secondary muscle groups and exercise type, from Hevy's exercise templates (`tools/build_dashboard.py --refresh-muscles`). Used for sets per muscle and tonnage on the dashboard. |
 | `hevy-state.json` | Hevy folder id, routine ids per slot, and the timestamp of the last pull. |
 | `raw/` | Raw API JSON and app exports. Gitignored. |
 

@@ -12,7 +12,7 @@ python3 tools/hevy_sync.py            # pull new workouts, apply the rules, push
 python3 tools/hevy_sync.py --dry-run  # same, but only show what would change
 ```
 
-That runs the three steps below in order. Run it after each pass of the
+That runs the steps below in order and rebuilds the progress dashboard. Run it after each pass of the
 rotation (once a week for any 3- to 6-day week), or whenever you want the
 routines in the app to reflect the latest logged sessions.
 
@@ -52,7 +52,8 @@ routines in the app to reflect the latest logged sessions.
 | `hevy_pull.py` | Workouts into `data/history.csv`. Incremental by default (events since `last_pull` in `data/hevy-state.json`); `--full` re-pulls everything; `--inspect` prints one raw workout. |
 | `update_tracks.py` | Applies `templates/progression-tracks.md` to the sessions logged since the last run and rewrites `data/tracks.json`: increment, hold, miss, stall, double progression, gap clock, pointer, e1RM history. `--write-md` refreshes the table in `data/track-state.md`; `--reset-on-stall` applies the 7.5% reset instead of flagging it; `--dry-run` shows the decisions. Appends to `data/track-log.md`. |
 | `hevy_push_routines.py` | Renders `templates/rotation.json` with the loads in `data/tracks.json` into Hevy routines and creates or updates them. `--dry-run` prints the payloads without network; `--deload` renders the deload week; `--only L1 U1` limits the slots; `--as-of` sets the date for the gap modifiers. |
-| `hevy_sync.py` | Runs pull, update, push. `--no-push`, `--no-pull`, `--deload`, `--reset-on-stall`, `--full` pass through. |
+| `hevy_sync.py` | Runs pull, update, dashboard build, push. `--no-push`, `--no-pull`, `--deload`, `--reset-on-stall`, `--full` pass through; `--dry-run` skips the dashboard. |
+| `build_dashboard.py` | Builds `dashboard/index.html` (one self-contained page) and `dashboard/data.json` from the history, the tracks and the track log: weekly tonnage and working sets, sets per muscle against the guide's targets, week-over-week e1RM per main lift, gap clock, track state, streaks. Offline; `--refresh-muscles` first refreshes `data/exercise-muscles.json` from Hevy's exercise templates; `--today` fixes the date. See "Progress dashboard" below. |
 | `hevy_csv_import.py` | Fallback without Pro or network: converts the app's CSV export into `data/history.csv`. |
 | `analyze_history.py` | Summarizes `data/history.csv` (per-exercise e1RM history, proposed starting loads) into `data/history-summary.md`. Used once to seed the tracks. |
 | `lift_aliases.json` | Maps the six main lifts to exercise names in the log; `update_tracks.py` and `analyze_history.py` both use it. |
@@ -69,7 +70,39 @@ routines in the app to reflect the latest logged sessions.
 | `data/history.csv` | `hevy_pull.py`, `hevy_csv_import.py` | update, analyze | yes |
 | `data/hevy-exercise-map.json` | `hevy_push_routines.py --resolve` | push | yes |
 | `data/hevy-state.json` | pull and push (folder id, routine ids, `last_pull`) | pull, push | yes |
+| `data/exercise-muscles.json` | `build_dashboard.py --refresh-muscles` (and hand edits) | dashboard | yes |
+| `dashboard/template.html` | hand | dashboard | yes |
+| `dashboard/index.html`, `dashboard/data.json` | `build_dashboard.py` | people and agents | yes |
 | `data/raw/` | pull (raw JSON) | nobody | no (gitignored) |
+
+## Progress dashboard
+
+```bash
+python3 tools/build_dashboard.py                    # rebuild from the committed data
+python3 tools/build_dashboard.py --refresh-muscles  # also refresh muscle groups from Hevy (after new exercises appear)
+```
+
+`dashboard/index.html` opens in any browser. It is also published as a
+private claude.ai page; after each sync, republish the same file to the same
+page rather than creating a new one. Published page:
+https://claude.ai/artifact/ThkGMNsr2pwdMd8AoStU6Q (private to the account owner).
+
+What it shows, by ISO week (Monday to Sunday), for the last 12, 26 or 52
+weeks or all history:
+
+| Panel | Rule | Source |
+|---|---|---|
+| This week | Tonnage, working sets, days trained against last week and the 4-week average; main lifts that went up | history |
+| Volume | Tonnage (load x reps, warm-ups, bodyweight and assisted sets excluded) and working sets per week | history |
+| Sets per muscle | 1 per set for the primary muscle group, 0.5 for each secondary; target band by days trained (`guide/03-flexible-scheduling.md` section 3) | history, `data/exercise-muscles.json` |
+| Overload | Best e1RM per week per main lift (Epley, RPE-adjusted when logged, 1-12 reps), change against the previous week trained; up or down at 1% or more; a gap over four weeks reads "restart" | history, `tools/lift_aliases.json` |
+| Gap clock | Days since the last exposure, banded per `templates/progression-tracks.md` section 8 | history, tracks |
+| Tracks | Next heavy load, last heavy load, misses, stalls, last exposure, e1RM history; the latest track-log lines | `data/tracks.json`, `data/track-log.md` |
+| Consistency | Days trained per week against the 3- and 5-day plans, weekly streaks | history |
+
+Working sets are an upper bound on hard sets: most logged sets have no RPE.
+Exercises missing from `data/exercise-muscles.json` get a muscle group from a
+keyword table and are listed at the bottom of the page.
 
 ## What a routine looks like in the app
 

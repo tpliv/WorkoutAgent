@@ -1,0 +1,3534 @@
+{
+ "generated": "2026-10-21",
+ "units": "kg",
+ "groups": [
+  {
+   "key": "chest",
+   "label": "Chest"
+  },
+  {
+   "key": "back",
+   "label": "Back"
+  },
+  {
+   "key": "shoulders",
+   "label": "Shoulders"
+  },
+  {
+   "key": "biceps",
+   "label": "Biceps"
+  },
+  {
+   "key": "triceps",
+   "label": "Triceps"
+  },
+  {
+   "key": "quads",
+   "label": "Quads"
+  },
+  {
+   "key": "hams_glutes",
+   "label": "Hamstrings and glutes"
+  },
+  {
+   "key": "calves",
+   "label": "Calves"
+  },
+  {
+   "key": "abs",
+   "label": "Abs"
+  }
+ ],
+ "weeks": [
+  {
+   "week": "2024-03-04",
+   "sessions": 2,
+   "days": 2,
+   "sets": 32,
+   "reps": 512,
+   "tonnage": 8428,
+   "muscles": {
+    "chest": 6.0,
+    "back": 7.5,
+    "shoulders": 7.5,
+    "biceps": 6.0,
+    "triceps": 6.5,
+    "quads": 3,
+    "hams_glutes": 4.5,
+    "abs": 8.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "pullup": {
+     "e1rm": 63.2,
+     "load": 49.9,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-03-05",
+     "exercise": "Lat Pulldown (Cable)",
+     "top_load": 49.9,
+     "top_reps": 8,
+     "sets": 3,
+     "trend": "first"
+    },
+    "squat": {
+     "e1rm": 129.3,
+     "load": 102.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-03-05",
+     "exercise": "Squat (Barbell)",
+     "top_load": 102.1,
+     "top_reps": 8,
+     "sets": 3,
+     "trend": "first"
+    },
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-03-06",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 3,
+     "trend": "first"
+    }
+   }
+  },
+  {
+   "week": "2024-03-11",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-03-18",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-03-25",
+   "sessions": 1,
+   "days": 1,
+   "sets": 17,
+   "reps": 160,
+   "tonnage": 4413,
+   "muscles": {
+    "chest": 7.5,
+    "back": 6,
+    "shoulders": 4.0,
+    "biceps": 3.0,
+    "triceps": 4.5,
+    "quads": 1,
+    "hams_glutes": 0.5,
+    "abs": 2
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 57.2,
+     "load": 47.6,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-03-25",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 6,
+     "sets": 1,
+     "trend": "first"
+    },
+    "row": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-03-25",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "trend": "first"
+    },
+    "pullup": {
+     "e1rm": 68.9,
+     "load": 54.4,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-03-25",
+     "exercise": "Lat Pulldown (Cable)",
+     "top_load": 54.4,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 5.7,
+     "delta_pct": 9.0,
+     "prev_week": "2024-03-04",
+     "trend": "up"
+    },
+    "squat": {
+     "e1rm": 106.3,
+     "load": 83.9,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-03-25",
+     "exercise": "Squat (Barbell)",
+     "top_load": 83.9,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": -23.0,
+     "delta_pct": -17.8,
+     "prev_week": "2024-03-04",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2024-04-01",
+   "sessions": 3,
+   "days": 3,
+   "sets": 45,
+   "reps": 521,
+   "tonnage": 10501,
+   "muscles": {
+    "chest": 9,
+    "back": 14.5,
+    "shoulders": 10.5,
+    "biceps": 9.5,
+    "triceps": 6.0,
+    "quads": 4,
+    "hams_glutes": 5.0,
+    "abs": 7
+   },
+   "target": [
+    8,
+    12
+   ],
+   "lifts": {
+    "pullup": {
+     "e1rm": 63.5,
+     "load": 54.4,
+     "reps": 5,
+     "rpe": null,
+     "date": "2024-04-01",
+     "exercise": "Lat Pulldown (Cable)",
+     "top_load": 54.4,
+     "top_reps": 5,
+     "sets": 4,
+     "delta": -5.4,
+     "delta_pct": -7.8,
+     "prev_week": "2024-03-25",
+     "trend": "down"
+    },
+    "row": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-04-03",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 2,
+     "delta": 5.7,
+     "delta_pct": 10.4,
+     "prev_week": "2024-03-25",
+     "trend": "up"
+    },
+    "squat": {
+     "e1rm": 129.3,
+     "load": 102.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-04-05",
+     "exercise": "Squat (Barbell)",
+     "top_load": 102.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 23.0,
+     "delta_pct": 21.6,
+     "prev_week": "2024-03-25",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2024-04-08",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-04-15",
+   "sessions": 3,
+   "days": 3,
+   "sets": 45,
+   "reps": 506,
+   "tonnage": 10448,
+   "muscles": {
+    "chest": 5.5,
+    "back": 11.5,
+    "shoulders": 9.5,
+    "biceps": 8.0,
+    "triceps": 6.5,
+    "quads": 10,
+    "hams_glutes": 8.0,
+    "abs": 7.5
+   },
+   "target": [
+    8,
+    12
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 55.6,
+     "load": 52.2,
+     "reps": 2,
+     "rpe": null,
+     "date": "2024-04-15",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 52.2,
+     "top_reps": 2,
+     "sets": 2,
+     "delta": -1.6,
+     "delta_pct": -2.8,
+     "prev_week": "2024-03-25",
+     "trend": "down"
+    },
+    "row": {
+     "e1rm": 64.3,
+     "load": 52.2,
+     "reps": 7,
+     "rpe": null,
+     "date": "2024-04-15",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 52.2,
+     "top_reps": 7,
+     "sets": 1,
+     "delta": 4.0,
+     "delta_pct": 6.6,
+     "prev_week": "2024-04-01",
+     "trend": "up"
+    },
+    "squat": {
+     "e1rm": 132.3,
+     "load": 113.4,
+     "reps": 5,
+     "rpe": null,
+     "date": "2024-04-15",
+     "exercise": "Squat (Barbell)",
+     "top_load": 113.4,
+     "top_reps": 5,
+     "sets": 3,
+     "delta": 3.0,
+     "delta_pct": 2.3,
+     "prev_week": "2024-04-01",
+     "trend": "up"
+    },
+    "pullup": {
+     "e1rm": 57.5,
+     "load": 45.4,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-04-17",
+     "exercise": "Lat Pulldown (Cable)",
+     "top_load": 45.4,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -6.0,
+     "delta_pct": -9.4,
+     "prev_week": "2024-04-01",
+     "trend": "down"
+    },
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-04-17",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 2,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-03-04",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2024-04-22",
+   "sessions": 1,
+   "days": 1,
+   "sets": 12,
+   "reps": 69,
+   "tonnage": 4436,
+   "muscles": {
+    "back": 3,
+    "shoulders": 3,
+    "biceps": 1.5,
+    "triceps": 1.5,
+    "quads": 4,
+    "hams_glutes": 2.0,
+    "abs": 3.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "row": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-04-22",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -4.0,
+     "delta_pct": -6.2,
+     "prev_week": "2024-04-15",
+     "trend": "down"
+    },
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-04-22",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-04-15",
+     "trend": "flat"
+    },
+    "squat": {
+     "e1rm": 129.3,
+     "load": 102.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-04-22",
+     "exercise": "Squat (Barbell)",
+     "top_load": 102.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -3.0,
+     "delta_pct": -2.3,
+     "prev_week": "2024-04-15",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2024-04-29",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-05-06",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-05-13",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-05-20",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-05-27",
+   "sessions": 2,
+   "days": 2,
+   "sets": 22,
+   "reps": 141,
+   "tonnage": 6251,
+   "muscles": {
+    "chest": 4.0,
+    "back": 6.5,
+    "shoulders": 5.5,
+    "biceps": 2.5,
+    "triceps": 5.0,
+    "quads": 7.5,
+    "hams_glutes": 6.0,
+    "abs": 1.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 55.9,
+     "load": 45.4,
+     "reps": 7,
+     "rpe": null,
+     "date": "2024-05-27",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 5,
+     "sets": 2,
+     "delta": 0.3,
+     "delta_pct": 0.5,
+     "prev_week": "2024-04-15",
+     "trend": "restart"
+    },
+    "row": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-05-27",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -5.7,
+     "delta_pct": -9.5,
+     "prev_week": "2024-04-22",
+     "trend": "restart"
+    },
+    "squat": {
+     "e1rm": 111.6,
+     "load": 93.0,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-05-27",
+     "exercise": "Squat (Barbell)",
+     "top_load": 93.0,
+     "top_reps": 6,
+     "sets": 2,
+     "delta": -17.7,
+     "delta_pct": -13.7,
+     "prev_week": "2024-04-22",
+     "trend": "restart"
+    },
+    "deadlift": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-05-29",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 3,
+     "trend": "first"
+    },
+    "press": {
+     "e1rm": 37.3,
+     "load": 29.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-05-29",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -0.8,
+     "delta_pct": -2.1,
+     "prev_week": "2024-04-22",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2024-06-03",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-06-10",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-06-17",
+   "sessions": 3,
+   "days": 3,
+   "sets": 44,
+   "reps": 322,
+   "tonnage": 10857,
+   "muscles": {
+    "chest": 7.5,
+    "back": 10.5,
+    "shoulders": 11.5,
+    "biceps": 7.5,
+    "triceps": 8.0,
+    "quads": 11.5,
+    "hams_glutes": 8.0,
+    "abs": 5.0
+   },
+   "target": [
+    8,
+    12
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-17",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": -1.3,
+     "delta_pct": -2.3,
+     "prev_week": "2024-05-27",
+     "trend": "down"
+    },
+    "row": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-17",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-05-27",
+     "trend": "flat"
+    },
+    "squat": {
+     "e1rm": 117.8,
+     "load": 93.0,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-17",
+     "exercise": "Squat (Barbell)",
+     "top_load": 93.0,
+     "top_reps": 8,
+     "sets": 6,
+     "delta": 6.2,
+     "delta_pct": 5.6,
+     "prev_week": "2024-05-27",
+     "trend": "up"
+    },
+    "deadlift": {
+     "e1rm": 80.4,
+     "load": 63.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-19",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 63.5,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 2.8,
+     "delta_pct": 3.6,
+     "prev_week": "2024-05-27",
+     "trend": "up"
+    },
+    "press": {
+     "e1rm": 35.4,
+     "load": 29.5,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-06-19",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": -1.9,
+     "delta_pct": -5.1,
+     "prev_week": "2024-05-27",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2024-06-24",
+   "sessions": 4,
+   "days": 4,
+   "sets": 41,
+   "reps": 323,
+   "tonnage": 11206,
+   "muscles": {
+    "chest": 4,
+    "back": 9.5,
+    "shoulders": 14.0,
+    "biceps": 10.5,
+    "triceps": 6.5,
+    "quads": 10.5,
+    "hams_glutes": 8.5,
+    "abs": 3.0
+   },
+   "target": [
+    10,
+    14
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-24",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-06-17",
+     "trend": "flat"
+    },
+    "squat": {
+     "e1rm": 106.3,
+     "load": 83.9,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-24",
+     "exercise": "Squat (Barbell)",
+     "top_load": 83.9,
+     "top_reps": 8,
+     "sets": 6,
+     "delta": -11.5,
+     "delta_pct": -9.8,
+     "prev_week": "2024-06-17",
+     "trend": "down"
+    },
+    "row": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-25",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 5.7,
+     "delta_pct": 10.4,
+     "prev_week": "2024-06-17",
+     "trend": "up"
+    },
+    "deadlift": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-06-25",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 2,
+     "delta": -2.8,
+     "delta_pct": -3.5,
+     "prev_week": "2024-06-17",
+     "trend": "down"
+    },
+    "press": {
+     "e1rm": 37.0,
+     "load": 31.8,
+     "reps": 5,
+     "rpe": null,
+     "date": "2024-06-26",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 5,
+     "sets": 5,
+     "delta": 1.6,
+     "delta_pct": 4.5,
+     "prev_week": "2024-06-17",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2024-07-01",
+   "sessions": 1,
+   "days": 1,
+   "sets": 13,
+   "reps": 103,
+   "tonnage": 2087,
+   "muscles": {
+    "chest": 8.5,
+    "shoulders": 5.0,
+    "triceps": 9.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-07",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 45.4,
+     "top_reps": 5,
+     "sets": 2,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-06-24",
+     "trend": "flat"
+    }
+   }
+  },
+  {
+   "week": "2024-07-08",
+   "sessions": 2,
+   "days": 2,
+   "sets": 27,
+   "reps": 238,
+   "tonnage": 5566,
+   "muscles": {
+    "back": 9.5,
+    "shoulders": 11,
+    "biceps": 7.5,
+    "triceps": 4.0,
+    "quads": 2.0,
+    "hams_glutes": 4,
+    "abs": 5.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "row": {
+     "e1rm": 53.1,
+     "load": 43.1,
+     "reps": 7,
+     "rpe": null,
+     "date": "2024-07-08",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 7,
+     "sets": 2,
+     "delta": -7.2,
+     "delta_pct": -11.9,
+     "prev_week": "2024-06-24",
+     "trend": "down"
+    },
+    "deadlift": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-08",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 4,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-06-24",
+     "trend": "flat"
+    },
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-07-12",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 1,
+     "delta": 1.1,
+     "delta_pct": 3.0,
+     "prev_week": "2024-06-24",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2024-07-15",
+   "sessions": 1,
+   "days": 1,
+   "sets": 13,
+   "reps": 122,
+   "tonnage": 4014,
+   "muscles": {
+    "back": 3,
+    "shoulders": 4,
+    "biceps": 1.5,
+    "triceps": 2.0,
+    "quads": 4,
+    "hams_glutes": 2.0,
+    "abs": 4.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "row": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-17",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 1.5,
+     "delta_pct": 2.8,
+     "prev_week": "2024-07-08",
+     "trend": "up"
+    },
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-07-17",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 1,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-07-08",
+     "trend": "flat"
+    },
+    "squat": {
+     "e1rm": 106.3,
+     "load": 83.9,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-17",
+     "exercise": "Squat (Barbell)",
+     "top_load": 83.9,
+     "top_reps": 8,
+     "sets": 2,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-06-24",
+     "trend": "flat"
+    }
+   }
+  },
+  {
+   "week": "2024-07-22",
+   "sessions": 3,
+   "days": 3,
+   "sets": 38,
+   "reps": 309,
+   "tonnage": 10405,
+   "muscles": {
+    "chest": 4,
+    "back": 8.0,
+    "shoulders": 15.0,
+    "biceps": 7.0,
+    "triceps": 6.5,
+    "quads": 9.0,
+    "hams_glutes": 7.5,
+    "abs": 2.5
+   },
+   "target": [
+    8,
+    12
+   ],
+   "lifts": {
+    "row": {
+     "e1rm": 57.5,
+     "load": 45.4,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-22",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 45.4,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 2.9,
+     "delta_pct": 5.3,
+     "prev_week": "2024-07-15",
+     "trend": "up"
+    },
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-07-22",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-07-15",
+     "trend": "flat"
+    },
+    "bench": {
+     "e1rm": 53.1,
+     "load": 43.1,
+     "reps": 7,
+     "rpe": null,
+     "date": "2024-07-24",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 7,
+     "sets": 1,
+     "delta": -1.5,
+     "delta_pct": -2.7,
+     "prev_week": "2024-07-01",
+     "trend": "down"
+    },
+    "deadlift": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-24",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 4,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-07-08",
+     "trend": "flat"
+    },
+    "squat": {
+     "e1rm": 112.0,
+     "load": 88.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-26",
+     "exercise": "Squat (Barbell)",
+     "top_load": 88.5,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 5.7,
+     "delta_pct": 5.4,
+     "prev_week": "2024-07-15",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2024-07-29",
+   "sessions": 3,
+   "days": 3,
+   "sets": 36,
+   "reps": 298,
+   "tonnage": 11624,
+   "muscles": {
+    "chest": 5.0,
+    "back": 5.0,
+    "shoulders": 14.0,
+    "biceps": 5.5,
+    "triceps": 7.5,
+    "quads": 10.0,
+    "hams_glutes": 8.0,
+    "abs": 2.0
+   },
+   "target": [
+    8,
+    12
+   ],
+   "lifts": {
+    "row": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-30",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 2.8,
+     "delta_pct": 4.9,
+     "prev_week": "2024-07-22",
+     "trend": "up"
+    },
+    "press": {
+     "e1rm": 37.3,
+     "load": 29.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-30",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -0.8,
+     "delta_pct": -2.1,
+     "prev_week": "2024-07-22",
+     "trend": "down"
+    },
+    "bench": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-31",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 1.5,
+     "delta_pct": 2.8,
+     "prev_week": "2024-07-22",
+     "trend": "up"
+    },
+    "deadlift": {
+     "e1rm": 83.3,
+     "load": 65.8,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-07-31",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 65.8,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 5.7,
+     "delta_pct": 7.3,
+     "prev_week": "2024-07-22",
+     "trend": "up"
+    },
+    "squat": {
+     "e1rm": 129.3,
+     "load": 102.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-02",
+     "exercise": "Squat (Barbell)",
+     "top_load": 102.1,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 17.3,
+     "delta_pct": 15.4,
+     "prev_week": "2024-07-22",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2024-08-05",
+   "sessions": 2,
+   "days": 2,
+   "sets": 24,
+   "reps": 199,
+   "tonnage": 7648,
+   "muscles": {
+    "chest": 4,
+    "back": 5.0,
+    "shoulders": 9.0,
+    "biceps": 4.5,
+    "triceps": 5.5,
+    "quads": 5.0,
+    "hams_glutes": 5.5,
+    "abs": 2.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "row": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-06",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-07-29",
+     "trend": "flat"
+    },
+    "press": {
+     "e1rm": 37.3,
+     "load": 29.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-06",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-07-29",
+     "trend": "flat"
+    },
+    "bench": {
+     "e1rm": 57.5,
+     "load": 45.4,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-08",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 45.4,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 2.9,
+     "delta_pct": 5.3,
+     "prev_week": "2024-07-29",
+     "trend": "up"
+    },
+    "deadlift": {
+     "e1rm": 83.3,
+     "load": 65.8,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-08",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 65.8,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-07-29",
+     "trend": "flat"
+    }
+   }
+  },
+  {
+   "week": "2024-08-12",
+   "sessions": 2,
+   "days": 2,
+   "sets": 18,
+   "reps": 159,
+   "tonnage": 4663,
+   "muscles": {
+    "back": 3,
+    "shoulders": 8,
+    "biceps": 4.5,
+    "triceps": 4.0,
+    "quads": 4,
+    "hams_glutes": 2.0,
+    "abs": 4.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 40.2,
+     "load": 31.8,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-12",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 8,
+     "sets": 6,
+     "delta": 2.9,
+     "delta_pct": 7.8,
+     "prev_week": "2024-08-05",
+     "trend": "up"
+    },
+    "row": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-17",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-08-05",
+     "trend": "flat"
+    }
+   }
+  },
+  {
+   "week": "2024-08-19",
+   "sessions": 2,
+   "days": 2,
+   "sets": 31,
+   "reps": 259,
+   "tonnage": 6459,
+   "muscles": {
+    "chest": 5.5,
+    "back": 4.5,
+    "shoulders": 10.5,
+    "biceps": 1.5,
+    "triceps": 6.5,
+    "quads": 5.5,
+    "hams_glutes": 5.0,
+    "abs": 7
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-19",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 2.8,
+     "delta_pct": 4.9,
+     "prev_week": "2024-08-05",
+     "trend": "up"
+    },
+    "deadlift": {
+     "e1rm": 81.6,
+     "load": 68.0,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-08-19",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 68.0,
+     "top_reps": 6,
+     "sets": 2,
+     "delta": -1.7,
+     "delta_pct": -2.0,
+     "prev_week": "2024-08-05",
+     "trend": "down"
+    },
+    "squat": {
+     "e1rm": 106.3,
+     "load": 83.9,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-08-21",
+     "exercise": "Squat (Barbell)",
+     "top_load": 83.9,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -23.0,
+     "delta_pct": -17.8,
+     "prev_week": "2024-07-29",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2024-08-26",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-09-02",
+   "sessions": 2,
+   "days": 2,
+   "sets": 26,
+   "reps": 233,
+   "tonnage": 5480,
+   "muscles": {
+    "chest": 4,
+    "back": 7.5,
+    "shoulders": 6.0,
+    "biceps": 6.0,
+    "triceps": 4.0,
+    "quads": 4.5,
+    "hams_glutes": 4.5,
+    "abs": 5.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-09-02",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": -2.1,
+     "delta_pct": -5.2,
+     "prev_week": "2024-08-12",
+     "trend": "down"
+    },
+    "bench": {
+     "e1rm": 60.3,
+     "load": 47.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-09-04",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 47.6,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2024-08-19",
+     "trend": "flat"
+    },
+    "deadlift": {
+     "e1rm": 84.4,
+     "load": 70.3,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-09-04",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 70.3,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": 2.8,
+     "delta_pct": 3.4,
+     "prev_week": "2024-08-19",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2024-09-09",
+   "sessions": 2,
+   "days": 2,
+   "sets": 26,
+   "reps": 198,
+   "tonnage": 5122,
+   "muscles": {
+    "chest": 4,
+    "back": 6,
+    "shoulders": 9.0,
+    "biceps": 6.0,
+    "triceps": 5.5,
+    "quads": 6,
+    "hams_glutes": 3.0,
+    "abs": 2.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 40.2,
+     "load": 31.8,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-09-09",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 2.1,
+     "delta_pct": 5.5,
+     "prev_week": "2024-09-02",
+     "trend": "up"
+    },
+    "bench": {
+     "e1rm": 59.9,
+     "load": 49.9,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-09-11",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 49.9,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": -0.4,
+     "delta_pct": -0.7,
+     "prev_week": "2024-09-02",
+     "trend": "flat"
+    }
+   }
+  },
+  {
+   "week": "2024-09-16",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-09-23",
+   "sessions": 1,
+   "days": 1,
+   "sets": 14,
+   "reps": 118,
+   "tonnage": 2930,
+   "muscles": {
+    "back": 3,
+    "shoulders": 5,
+    "biceps": 4.5,
+    "triceps": 2.5,
+    "quads": 3,
+    "hams_glutes": 1.5,
+    "abs": 2.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 38.1,
+     "load": 31.8,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-09-25",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 31.8,
+     "top_reps": 6,
+     "sets": 1,
+     "delta": -2.1,
+     "delta_pct": -5.2,
+     "prev_week": "2024-09-09",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2024-09-30",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-10-07",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-10-14",
+   "sessions": 1,
+   "days": 1,
+   "sets": 14,
+   "reps": 84,
+   "tonnage": 1343,
+   "muscles": {
+    "chest": 1.5,
+    "back": 4,
+    "shoulders": 5.5,
+    "biceps": 5.0,
+    "triceps": 5.0,
+    "abs": 2.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 37.3,
+     "load": 29.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-10-15",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -0.8,
+     "delta_pct": -2.1,
+     "prev_week": "2024-09-23",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2024-10-21",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-10-28",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-11-04",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-11-11",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-11-18",
+   "sessions": 1,
+   "days": 1,
+   "sets": 11,
+   "reps": 46,
+   "tonnage": 816,
+   "muscles": {
+    "back": 7,
+    "shoulders": 4,
+    "biceps": 2.0,
+    "triceps": 2.0,
+    "abs": 2.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 35.4,
+     "load": 29.5,
+     "reps": 6,
+     "rpe": null,
+     "date": "2024-11-20",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": -1.9,
+     "delta_pct": -5.1,
+     "prev_week": "2024-10-14",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2024-11-25",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-12-02",
+   "sessions": 1,
+   "days": 1,
+   "sets": 11,
+   "reps": 81,
+   "tonnage": 2223,
+   "muscles": {
+    "back": 4,
+    "shoulders": 4,
+    "biceps": 2.0,
+    "triceps": 2.0,
+    "quads": 3,
+    "hams_glutes": 1.5,
+    "abs": 2.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "press": {
+     "e1rm": 37.3,
+     "load": 29.5,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-12-04",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": 1.9,
+     "delta_pct": 5.4,
+     "prev_week": "2024-11-18",
+     "trend": "up"
+    },
+    "squat": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2024-12-04",
+     "exercise": "Squat (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": -28.7,
+     "delta_pct": -27.0,
+     "prev_week": "2024-08-19",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2024-12-09",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-12-16",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-12-23",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2024-12-30",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-01-06",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-01-13",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-01-20",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-01-27",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-02-03",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-02-10",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-02-17",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-02-24",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-03-03",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-03-10",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-03-17",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-03-24",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-03-31",
+   "sessions": 1,
+   "days": 1,
+   "sets": 14,
+   "reps": 112,
+   "tonnage": 2969,
+   "muscles": {
+    "chest": 4.5,
+    "back": 3,
+    "shoulders": 2.5,
+    "biceps": 1.5,
+    "triceps": 3.0,
+    "quads": 4,
+    "hams_glutes": 2.0,
+    "abs": 2
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 48.8,
+     "load": 38.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2025-04-06",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 38.6,
+     "top_reps": 8,
+     "sets": 1,
+     "delta": -11.1,
+     "delta_pct": -18.5,
+     "prev_week": "2024-09-09",
+     "trend": "restart"
+    },
+    "row": {
+     "e1rm": 48.8,
+     "load": 38.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2025-04-06",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 38.6,
+     "top_reps": 8,
+     "sets": 2,
+     "delta": -11.5,
+     "delta_pct": -19.1,
+     "prev_week": "2024-08-12",
+     "trend": "restart"
+    },
+    "squat": {
+     "e1rm": 71.4,
+     "load": 61.2,
+     "reps": 5,
+     "rpe": null,
+     "date": "2025-04-06",
+     "exercise": "Squat (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 5,
+     "sets": 4,
+     "delta": -6.2,
+     "delta_pct": -8.0,
+     "prev_week": "2024-12-02",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2025-04-07",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-04-14",
+   "sessions": 2,
+   "days": 2,
+   "sets": 27,
+   "reps": 225,
+   "tonnage": 5423,
+   "muscles": {
+    "chest": 0.5,
+    "back": 7.0,
+    "shoulders": 8.5,
+    "biceps": 5.5,
+    "triceps": 5.0,
+    "quads": 8.0,
+    "hams_glutes": 7.0,
+    "abs": 4.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "deadlift": {
+     "e1rm": 62.6,
+     "load": 52.2,
+     "reps": 6,
+     "rpe": null,
+     "date": "2025-04-14",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 52.2,
+     "top_reps": 6,
+     "sets": 2,
+     "delta": -21.8,
+     "delta_pct": -25.8,
+     "prev_week": "2024-09-02",
+     "trend": "restart"
+    },
+    "press": {
+     "e1rm": 31.6,
+     "load": 24.9,
+     "reps": 8,
+     "rpe": null,
+     "date": "2025-04-14",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 24.9,
+     "top_reps": 8,
+     "sets": 7,
+     "delta": -5.7,
+     "delta_pct": -15.3,
+     "prev_week": "2024-12-02",
+     "trend": "restart"
+    },
+    "row": {
+     "e1rm": 48.8,
+     "load": 38.6,
+     "reps": 8,
+     "rpe": null,
+     "date": "2025-04-20",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 38.6,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2025-03-31",
+     "trend": "flat"
+    }
+   }
+  },
+  {
+   "week": "2025-04-21",
+   "sessions": 1,
+   "days": 1,
+   "sets": 14,
+   "reps": 120,
+   "tonnage": 2463,
+   "muscles": {
+    "chest": 4,
+    "back": 4,
+    "shoulders": 2.0,
+    "biceps": 5.0,
+    "triceps": 2.0,
+    "quads": 3,
+    "hams_glutes": 1.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 51.7,
+     "load": 43.1,
+     "reps": 6,
+     "rpe": null,
+     "date": "2025-04-21",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 6,
+     "sets": 2,
+     "delta": 2.9,
+     "delta_pct": 5.9,
+     "prev_week": "2025-03-31",
+     "trend": "up"
+    }
+   }
+  },
+  {
+   "week": "2025-04-28",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-05-05",
+   "sessions": 1,
+   "days": 1,
+   "sets": 13,
+   "reps": 101,
+   "tonnage": 3849,
+   "muscles": {
+    "chest": 4,
+    "back": 3,
+    "shoulders": 2.0,
+    "biceps": 4.5,
+    "triceps": 2.0,
+    "quads": 3,
+    "hams_glutes": 1.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 53.1,
+     "load": 43.1,
+     "reps": 7,
+     "rpe": null,
+     "date": "2025-05-07",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 7,
+     "sets": 3,
+     "delta": 1.4,
+     "delta_pct": 2.7,
+     "prev_week": "2025-04-21",
+     "trend": "up"
+    },
+    "row": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2025-05-07",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 2,
+     "delta": 5.8,
+     "delta_pct": 11.9,
+     "prev_week": "2025-04-14",
+     "trend": "up"
+    },
+    "squat": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2025-05-07",
+     "exercise": "Squat (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 6.2,
+     "delta_pct": 8.7,
+     "prev_week": "2025-03-31",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2025-05-12",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-05-19",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-05-26",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-06-02",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-06-09",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-06-16",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-06-23",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-06-30",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-07-07",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-07-14",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-07-21",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-07-28",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-08-04",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-08-11",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-08-18",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-08-25",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-09-01",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-09-08",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-09-15",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-09-22",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-09-29",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-10-06",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-10-13",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-10-20",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-10-27",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-11-03",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-11-10",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-11-17",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-11-24",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-12-01",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-12-08",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-12-15",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-12-22",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2025-12-29",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-01-05",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-01-12",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-01-19",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-01-26",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-02-02",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-02-09",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-02-16",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-02-23",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-03-02",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-03-09",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-03-16",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-03-23",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-03-30",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-04-06",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-04-13",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-04-20",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-04-27",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-05-04",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-05-11",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-05-18",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-05-25",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-06-01",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-06-08",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-06-15",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-06-22",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-06-29",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-07-06",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-07-13",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-07-20",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-07-27",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-08-03",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-08-10",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-08-17",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-08-24",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-08-31",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-09-07",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-09-14",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-09-21",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-09-28",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-10-05",
+   "sessions": 0,
+   "days": 0,
+   "sets": 0,
+   "reps": 0,
+   "tonnage": 0,
+   "muscles": {},
+   "target": null,
+   "lifts": {}
+  },
+  {
+   "week": "2026-10-12",
+   "sessions": 2,
+   "days": 2,
+   "sets": 30,
+   "reps": 267,
+   "tonnage": 8117,
+   "muscles": {
+    "chest": 4,
+    "back": 10.0,
+    "shoulders": 7.0,
+    "biceps": 7.0,
+    "triceps": 4.5,
+    "quads": 3,
+    "hams_glutes": 8.5,
+    "calves": 1.5,
+    "abs": 2.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "pullup": {
+     "e1rm": 73.5,
+     "load": 61.2,
+     "reps": 6,
+     "rpe": null,
+     "date": "2026-10-17",
+     "exercise": "Lat Pulldown (Cable)",
+     "top_load": 61.2,
+     "top_reps": 6,
+     "sets": 3,
+     "delta": 16.0,
+     "delta_pct": 27.8,
+     "prev_week": "2024-04-15",
+     "trend": "restart"
+    },
+    "press": {
+     "e1rm": 36.4,
+     "load": 29.5,
+     "reps": 7,
+     "rpe": null,
+     "date": "2026-10-17",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 7,
+     "sets": 4,
+     "delta": 4.8,
+     "delta_pct": 15.2,
+     "prev_week": "2025-04-14",
+     "trend": "restart"
+    },
+    "squat": {
+     "e1rm": 77.6,
+     "load": 61.2,
+     "reps": 8,
+     "rpe": null,
+     "date": "2026-10-17",
+     "exercise": "Squat (Barbell)",
+     "top_load": 61.2,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 0.0,
+     "delta_pct": 0.0,
+     "prev_week": "2025-05-05",
+     "trend": "restart"
+    },
+    "row": {
+     "e1rm": 41.3,
+     "load": 29.5,
+     "reps": 12,
+     "rpe": null,
+     "date": "2026-10-18",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 29.5,
+     "top_reps": 12,
+     "sets": 3,
+     "delta": -13.3,
+     "delta_pct": -24.4,
+     "prev_week": "2025-05-05",
+     "trend": "restart"
+    }
+   }
+  },
+  {
+   "week": "2026-10-19",
+   "sessions": 2,
+   "days": 2,
+   "sets": 27,
+   "reps": 251,
+   "tonnage": 4876,
+   "muscles": {
+    "chest": 4,
+    "shoulders": 12.0,
+    "triceps": 8.5,
+    "quads": 7,
+    "hams_glutes": 6.5,
+    "calves": 1.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 54.6,
+     "load": 43.1,
+     "reps": 8,
+     "rpe": null,
+     "date": "2026-10-20",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 43.1,
+     "top_reps": 8,
+     "sets": 3,
+     "delta": 1.5,
+     "delta_pct": 2.8,
+     "prev_week": "2025-05-05",
+     "trend": "restart"
+    }
+   }
+  }
+ ],
+ "lifts": [
+  {
+   "key": "squat",
+   "name": "Back squat",
+   "last_date": "2026-10-17",
+   "gap_days": 4,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "latest": {
+    "e1rm": 77.6,
+    "load": 61.2,
+    "reps": 8,
+    "rpe": null,
+    "date": "2026-10-17",
+    "exercise": "Squat (Barbell)",
+    "top_load": 61.2,
+    "top_reps": 8,
+    "sets": 3,
+    "delta": 0.0,
+    "delta_pct": 0.0,
+    "prev_week": "2025-05-05",
+    "trend": "restart"
+   },
+   "latest_week": "2026-10-12",
+   "best_e1rm": 132.3,
+   "block_change": -28.9
+  },
+  {
+   "key": "bench",
+   "name": "Bench press",
+   "last_date": "2026-10-20",
+   "gap_days": 1,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "latest": {
+    "e1rm": 54.6,
+    "load": 43.1,
+    "reps": 8,
+    "rpe": null,
+    "date": "2026-10-20",
+    "exercise": "Bench Press (Barbell)",
+    "top_load": 43.1,
+    "top_reps": 8,
+    "sets": 3,
+    "delta": 1.5,
+    "delta_pct": 2.8,
+    "prev_week": "2025-05-05",
+    "trend": "restart"
+   },
+   "latest_week": "2026-10-19",
+   "best_e1rm": 60.3,
+   "block_change": -3.2
+  },
+  {
+   "key": "deadlift",
+   "name": "Deadlift",
+   "last_date": "2025-04-14",
+   "gap_days": 555,
+   "gap": {
+    "key": "reduce10",
+    "label": "Reduce 10%"
+   },
+   "latest": {
+    "e1rm": 62.6,
+    "load": 52.2,
+    "reps": 6,
+    "rpe": null,
+    "date": "2025-04-14",
+    "exercise": "Deadlift (Barbell)",
+    "top_load": 52.2,
+    "top_reps": 6,
+    "sets": 2,
+    "delta": -21.8,
+    "delta_pct": -25.8,
+    "prev_week": "2024-09-02",
+    "trend": "restart"
+   },
+   "latest_week": "2025-04-14",
+   "best_e1rm": 84.4,
+   "block_change": -5.2
+  },
+  {
+   "key": "press",
+   "name": "Overhead press",
+   "last_date": "2026-10-17",
+   "gap_days": 4,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "latest": {
+    "e1rm": 36.4,
+    "load": 29.5,
+    "reps": 7,
+    "rpe": null,
+    "date": "2026-10-17",
+    "exercise": "Overhead Press (Barbell)",
+    "top_load": 29.5,
+    "top_reps": 7,
+    "sets": 4,
+    "delta": 4.8,
+    "delta_pct": 15.2,
+    "prev_week": "2025-04-14",
+    "trend": "restart"
+   },
+   "latest_week": "2026-10-12",
+   "best_e1rm": 40.2,
+   "block_change": -1.8
+  },
+  {
+   "key": "row",
+   "name": "Barbell row",
+   "last_date": "2026-10-18",
+   "gap_days": 3,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "latest": {
+    "e1rm": 41.3,
+    "load": 29.5,
+    "reps": 12,
+    "rpe": null,
+    "date": "2026-10-18",
+    "exercise": "Bent Over Row (Barbell)",
+    "top_load": 29.5,
+    "top_reps": 12,
+    "sets": 3,
+    "delta": -13.3,
+    "delta_pct": -24.4,
+    "prev_week": "2025-05-05",
+    "trend": "restart"
+   },
+   "latest_week": "2026-10-12",
+   "best_e1rm": 64.3,
+   "block_change": -8.2
+  },
+  {
+   "key": "pullup",
+   "name": "Pull-up or pulldown",
+   "last_date": "2026-10-17",
+   "gap_days": 4,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "latest": {
+    "e1rm": 73.5,
+    "load": 61.2,
+    "reps": 6,
+    "rpe": null,
+    "date": "2026-10-17",
+    "exercise": "Lat Pulldown (Cable)",
+    "top_load": 61.2,
+    "top_reps": 6,
+    "sets": 3,
+    "delta": 16.0,
+    "delta_pct": 27.8,
+    "prev_week": "2024-04-15",
+    "trend": "restart"
+   },
+   "latest_week": "2026-10-12",
+   "best_e1rm": 73.5,
+   "block_change": null
+  }
+ ],
+ "consistency": {
+  "current_streak": 2,
+  "longest_streak": 10,
+  "weeks_trained_last12": 2,
+  "sessions_last12": 4,
+  "avg_days_active_week": 1.9,
+  "total_sessions": 52,
+  "first_date": "2024-03-05",
+  "last_date": "2026-10-21"
+ },
+ "program": {
+  "pointer": "L1",
+  "block_start": null,
+  "block_week": 1,
+  "deload": false,
+  "processed_through": "2026-10-21"
+ },
+ "tracks": [
+  {
+   "key": "squat",
+   "name": "Back squat",
+   "scheme": "top_set",
+   "next_kg": 60,
+   "last_h_kg": null,
+   "rep_target": 4,
+   "rep_range": null,
+   "miss_counter": 0,
+   "stalls": 0,
+   "work_up": false,
+   "last_exposure": {
+    "date": "2026-10-17",
+    "type": "other"
+   },
+   "gap_days": 4,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "e1rm_history": [
+    {
+     "date": "2026-10-17",
+     "e1rm": 78,
+     "load": 61,
+     "reps": 8,
+     "rpe": null,
+     "note": "return-to-training block, estimate from 8s with no RPE"
+    }
+   ]
+  },
+  {
+   "key": "bench",
+   "name": "Bench press",
+   "scheme": "top_set",
+   "next_kg": 42.5,
+   "last_h_kg": null,
+   "rep_target": 4,
+   "rep_range": null,
+   "miss_counter": 0,
+   "stalls": 0,
+   "work_up": false,
+   "last_exposure": {
+    "date": "2026-10-20",
+    "type": "other"
+   },
+   "gap_days": 1,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "e1rm_history": [
+    {
+     "date": "2026-10-20",
+     "e1rm": 55,
+     "load": 43,
+     "reps": 8,
+     "rpe": null,
+     "note": "return-to-training block, estimate from 8s with no RPE"
+    }
+   ]
+  },
+  {
+   "key": "deadlift",
+   "name": "Deadlift",
+   "scheme": "top_set",
+   "next_kg": null,
+   "last_h_kg": null,
+   "rep_target": 4,
+   "rep_range": null,
+   "miss_counter": 0,
+   "stalls": 0,
+   "work_up": true,
+   "last_exposure": {
+    "date": "2025-04-14",
+    "type": "other"
+   },
+   "gap_days": 555,
+   "gap": {
+    "key": "reduce10",
+    "label": "Reduce 10%"
+   },
+   "e1rm_history": [
+    {
+     "date": "2024-09-04",
+     "e1rm": 84,
+     "load": 70.31,
+     "reps": 6,
+     "rpe": null,
+     "note": "2024 peak; untrained since April 2025"
+    }
+   ]
+  },
+  {
+   "key": "press",
+   "name": "Overhead press",
+   "scheme": "top_set",
+   "next_kg": 27.5,
+   "last_h_kg": null,
+   "rep_target": 4,
+   "rep_range": null,
+   "miss_counter": 0,
+   "stalls": 0,
+   "work_up": false,
+   "last_exposure": {
+    "date": "2026-10-17",
+    "type": "other"
+   },
+   "gap_days": 4,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "e1rm_history": [
+    {
+     "date": "2026-10-17",
+     "e1rm": 36,
+     "load": 29.5,
+     "reps": 7,
+     "rpe": null,
+     "note": "return-to-training block"
+    }
+   ]
+  },
+  {
+   "key": "row",
+   "name": "Barbell row",
+   "scheme": "double_progression",
+   "next_kg": 32.5,
+   "last_h_kg": null,
+   "rep_target": null,
+   "rep_range": [
+    6,
+    8
+   ],
+   "miss_counter": 0,
+   "stalls": 0,
+   "work_up": false,
+   "last_exposure": {
+    "date": "2026-10-18",
+    "type": "other"
+   },
+   "gap_days": 3,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "e1rm_history": [
+    {
+     "date": "2026-10-18",
+     "e1rm": 41,
+     "load": 29.5,
+     "reps": 12,
+     "rpe": null,
+     "note": "return-to-training block"
+    }
+   ]
+  },
+  {
+   "key": "pullup",
+   "name": "Pull-up or pulldown",
+   "scheme": "double_progression",
+   "next_kg": 57.5,
+   "last_h_kg": null,
+   "rep_target": null,
+   "rep_range": [
+    5,
+    8
+   ],
+   "miss_counter": 0,
+   "stalls": 0,
+   "work_up": false,
+   "last_exposure": {
+    "date": "2026-10-17",
+    "type": "other"
+   },
+   "gap_days": 4,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "e1rm_history": [
+    {
+     "date": "2026-10-17",
+     "e1rm": 73,
+     "load": 61,
+     "reps": 6,
+     "rpe": null,
+     "note": "pulldown; switch to the bar when a pulldown set at about bodyweight reaches 8"
+    }
+   ]
+  }
+ ],
+ "track_log": [],
+ "unmapped": [
+  "Bulgarian Split Squat"
+ ]
+}

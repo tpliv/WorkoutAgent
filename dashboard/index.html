@@ -1,0 +1,682 @@
+<title>Training Progress Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap">
+<style>
+/* Layout: one column of scan-first sections (summary tiles, then volume, muscles, lifts, tracks, consistency), each a labelled band on a cool plate. */
+:root {
+  --plate: #f3f5f7;
+  --surface: #fdfdfe;
+  --ink: #101720;
+  --ink-2: #48515e;
+  --muted: #7d8592;
+  --grid: #e3e7ec;
+  --axis: #c3c9d1;
+  --line: rgba(16, 23, 32, 0.10);
+  --band: #e6ebf1;
+  --series: #2a78d6;
+  --series-soft: rgba(42, 120, 214, 0.12);
+  --good: #0ca30c;
+  --good-ink: #006300;
+  --warn: #fab219;
+  --warn-ink: #8a5a00;
+  --bad: #d03b3b;
+  --bad-ink: #b42f2f;
+  --chip: #edf0f4;
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plate: #0d1015; --surface: #161a20; --ink: #eef1f4; --ink-2: #bfc6cf; --muted: #8b93a0;
+    --grid: #252b33; --axis: #3a424d; --line: rgba(255, 255, 255, 0.10); --band: #222a35;
+    --series: #3987e5; --series-soft: rgba(57, 135, 229, 0.16);
+    --good-ink: #2fbf2f; --warn-ink: #f4b638; --bad-ink: #ec7272; --chip: #20262e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --plate: #0d1015; --surface: #161a20; --ink: #eef1f4; --ink-2: #bfc6cf; --muted: #8b93a0;
+  --grid: #252b33; --axis: #3a424d; --line: rgba(255, 255, 255, 0.10); --band: #222a35;
+  --series: #3987e5; --series-soft: rgba(57, 135, 229, 0.16);
+  --good-ink: #2fbf2f; --warn-ink: #f4b638; --bad-ink: #ec7272; --chip: #20262e;
+  color-scheme: dark;
+}
+body { background: var(--plate); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.45; }
+.page {
+  max-width: 1180px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: grid; gap: 28px;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+h1 { font-size: 34px; line-height: 1.05; }
+h2 { font-size: 22px; }
+h3 { font-size: 16px; font-weight: 600; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-display); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.sub { color: var(--ink-2); max-width: 70ch; }
+.muted { color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+header.top { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: end; justify-content: space-between; }
+header.top .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--ink-2); margin-top: 8px; }
+.seg { display: inline-flex; background: var(--chip); border-radius: 8px; padding: 3px; gap: 2px; }
+.seg button {
+  font: 600 13px/1 var(--font-display); letter-spacing: 0.04em; color: var(--ink-2);
+  background: transparent; border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.seg button:focus-visible, .heat-col:focus-visible { outline: 2px solid var(--series); outline-offset: 2px; }
+
+section { display: grid; gap: 14px; min-width: 0; }
+.section-head { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; justify-content: space-between; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 14px; }
+.panel-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 10px; flex-wrap: wrap; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 4px; align-content: start; }
+.tile .label { color: var(--ink-2); font-size: 13px; }
+.tile .value { font: 700 32px/1.1 var(--font-display); }
+.tile .value small { font: 600 15px var(--font-display); color: var(--ink-2); margin-left: 3px; }
+.tile .deltas { display: grid; gap: 2px; font-size: 13px; color: var(--ink-2); }
+
+.d-up { color: var(--good-ink); }
+.d-down { color: var(--bad-ink); }
+.d-flat { color: var(--ink-2); }
+
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 999px; background: var(--chip); color: var(--ink-2); white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--muted); flex: none; }
+.pill.good::before { background: var(--good); }
+.pill.warn::before { background: var(--warn); }
+.pill.bad::before { background: var(--bad); }
+.pill.info::before { background: var(--series); }
+
+svg text { fill: var(--muted); font: 11px var(--font-body); font-variant-numeric: tabular-nums; }
+svg .grid { stroke: var(--grid); stroke-width: 1; }
+svg .axis { stroke: var(--axis); stroke-width: 1; }
+svg .bar { fill: var(--series); }
+svg .bar.focus { fill: var(--ink); }
+svg .hit { fill: transparent; cursor: pointer; }
+svg .hit:hover + .bar { opacity: 0.75; }
+svg .ref { stroke: var(--axis); stroke-width: 1; }
+svg .ref-label { fill: var(--muted); font-size: 10px; }
+svg .spark-line { fill: none; stroke: var(--series); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+svg .spark-area { fill: var(--series-soft); }
+svg .spark-dot { fill: var(--series); stroke: var(--surface); stroke-width: 2; }
+svg .spark-end { fill: var(--series); stroke: var(--surface); stroke-width: 2; }
+.chart { width: 100%; min-height: 40px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* Muscle bullets */
+.bullets { display: grid; gap: 9px; }
+.bullet { display: grid; grid-template-columns: 9.5em 1fr 5.5em; gap: 10px; align-items: center; }
+.bullet .name { color: var(--ink-2); font-size: 13px; }
+.bullet .track { position: relative; height: 18px; background: transparent; border-radius: 4px; }
+.bullet .track .base { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--grid); }
+.bullet .band { position: absolute; top: 0; bottom: 0; background: var(--band); border-radius: 3px; }
+.bullet .fill { position: absolute; left: 0; top: 4px; height: 10px; background: var(--series); border-radius: 0 4px 4px 0; }
+.bullet .val { position: absolute; top: 50%; transform: translateY(-50%); font-size: 12px; font-weight: 600; color: var(--ink); padding-left: 6px; white-space: nowrap; }
+.bullet .state { justify-self: start; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-2); align-items: center; }
+.legend .sw { display: inline-block; width: 18px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+
+/* Heatmap */
+.heat-wrap { overflow-x: auto; }
+.heat-col { cursor: pointer; }
+
+/* Lifts table */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { text-align: left; font: 600 12px var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 0 10px 8px; white-space: nowrap; }
+td { padding: 10px; border-top: 1px solid var(--grid); vertical-align: middle; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .big { font: 700 18px var(--font-display); }
+td .small { display: block; color: var(--muted); font-size: 12px; }
+tbody tr:first-child td { border-top: 0; }
+#lifts { min-width: 860px; }
+#lifts td:first-child { min-width: 9.5em; }
+#weeks-table { min-width: 980px; }
+
+/* Track cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 10px; align-content: start; }
+.card.flagged { box-shadow: inset 0 3px 0 var(--bad); }
+.card .next { font: 700 30px/1 var(--font-display); }
+.card .next small { font-size: 15px; color: var(--ink-2); margin-left: 3px; }
+.card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; font-size: 13px; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.card .hist { font-size: 12px; color: var(--ink-2); display: grid; gap: 2px; }
+.card .hist span { font-variant-numeric: tabular-nums; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 12px 18px; }
+.stat .v { font: 700 26px/1.1 var(--font-display); }
+.stat .l { color: var(--ink-2); font-size: 13px; }
+
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 13px; }
+.log li { display: grid; grid-template-columns: 6.5em 1fr; gap: 10px; }
+.log time { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+details summary { cursor: pointer; color: var(--ink-2); font-weight: 600; }
+details[open] summary { margin-bottom: 10px; }
+.notes { color: var(--ink-2); font-size: 13px; display: grid; gap: 6px; max-width: 80ch; }
+.notes code { font-size: 12px; }
+
+#tip {
+  position: fixed; z-index: 20; pointer-events: none; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 12px; line-height: 1.4;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14); max-width: 260px;
+}
+#tip b { font-weight: 600; }
+#tip .t { font-family: var(--font-display); font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+
+@media (max-width: 560px) {
+  h1 { font-size: 28px; }
+  .bullet { grid-template-columns: 6.2em 1fr auto; gap: 8px; }
+  .bullet .name { font-size: 12px; }
+  .bullet .state .pill { font-size: 11px; padding: 2px 6px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .seg button { transition: background 0.15s; }
+}
+</style>
+
+<div class="page">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Hevy log · progression tracks</div>
+      <h1>Training Progress Board</h1>
+      <div class="meta" id="meta"></div>
+    </div>
+    <div class="seg" role="group" aria-label="Time range" id="range">
+      <button type="button" id="range-12" data-weeks="12">12 wk</button>
+      <button type="button" id="range-26" data-weeks="26">26 wk</button>
+      <button type="button" id="range-52" data-weeks="52">52 wk</button>
+      <button type="button" id="range-all" data-weeks="0">All</button>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-week">
+    <div class="section-head">
+      <h2 id="h-week">This week</h2>
+      <p class="muted" id="week-sub"></p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section aria-labelledby="h-volume">
+    <div class="section-head">
+      <h2 id="h-volume">Volume</h2>
+      <p class="muted">Warm-ups excluded. Click a week to inspect its muscle split.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Tonnage per week</h3><span class="muted" id="ton-note">kg × reps</span></div>
+        <div class="chart" id="chart-tonnage"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Working sets per week</h3><span class="muted">all exercises</span></div>
+        <div class="chart" id="chart-sets"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-muscles">
+    <div class="section-head">
+      <h2 id="h-muscles">Sets per muscle</h2>
+      <p class="muted">Primary muscle 1 set, secondary 0.5. Target band from days trained that week.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3 id="focus-title">Week</h3><span class="muted" id="focus-target"></span></div>
+        <div class="bullets" id="bullets"></div>
+        <div class="legend" style="margin-top:12px">
+          <span><span class="sw" style="background:var(--series)"></span>Sets this week</span>
+          <span><span class="sw" style="background:var(--band)"></span>Target for the days trained</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Weekly sets by muscle</h3><span class="muted">darker = more sets</span></div>
+        <div class="heat-wrap"><div class="chart" id="heatmap"></div></div>
+        <div class="legend" id="heat-legend" style="margin-top:10px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-lifts">
+    <div class="section-head">
+      <h2 id="h-lifts">Overload on the main lifts</h2>
+      <p class="muted">Best e1RM each week, compared with the previous week the lift was trained.</p>
+    </div>
+    <div class="panel table-wrap">
+      <table id="lifts">
+        <thead><tr>
+          <th>Lift</th><th>e1RM by week</th><th class="num">Latest e1RM</th><th>Week over week</th>
+          <th class="num">Top set</th><th class="num">Best e1RM</th><th>Gap clock</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-tracks">
+    <div class="section-head">
+      <h2 id="h-tracks">Progression tracks</h2>
+      <p class="muted" id="program-line"></p>
+    </div>
+    <div class="cards" id="tracks"></div>
+    <div class="panel">
+      <div class="panel-head"><h3>Recent track decisions</h3><span class="muted">data/track-log.md</span></div>
+      <ul class="log" id="log"></ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-consistency">
+    <div class="section-head">
+      <h2 id="h-consistency">Consistency</h2>
+      <p class="muted">Days trained per week against the 3-day and 5-day plans.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Days trained per week</h3></div>
+        <div class="chart" id="chart-days"></div>
+      </div>
+      <div class="panel">
+        <div class="stats" id="stats"></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-table">
+    <details class="panel">
+      <summary id="h-table">Weekly numbers for the selected range</summary>
+      <div class="table-wrap"><table id="weeks-table"></table></div>
+    </details>
+  </section>
+
+  <section class="notes" aria-label="Method">
+    <div class="eyebrow">How the numbers are made</div>
+    <p>Built by <code>tools/build_dashboard.py</code> from <code>data/history.csv</code>, <code>data/tracks.json</code> and <code>data/track-log.md</code>. Weeks run Monday to Sunday.</p>
+    <p>Working sets count every set not typed warm-up. Most sets have no RPE, so this is an upper bound on hard sets (0-3 reps in reserve). Muscle credit uses Hevy's primary and secondary muscle groups (<code>data/exercise-muscles.json</code>). Targets per large muscle group follow <code>guide/03-flexible-scheduling.md</code> section 3: 2 days 4-6, 3 days 8-12, 4 days 10-14, 5 days 14-17, 6 days 15-20. Calves and arms run lower in a 3-day week.</p>
+    <p>e1RM is Epley on sets of 1-12 reps, reps extended by 10 − RPE when an RPE is logged. A change of 1% or more counts as up or down. A comparison across more than four weeks off is marked as a restart. Judge strength over 3-4 weeks, not one session (<code>guide/07-tracking-and-apps.md</code> section 1.2).</p>
+    <p>Tonnage is load × reps as logged: dumbbell loads are per dumbbell; bodyweight and assisted sets add none. Gap clock bands are from <code>templates/progression-tracks.md</code> section 8.</p>
+    <p id="unmapped"></p>
+  </section>
+</div>
+<div id="tip" hidden></div>
+
+<script>
+const D = {"generated":"2026-10-21","units":"kg","groups":[{"key":"chest","label":"Chest"},{"key":"back","label":"Back"},{"key":"shoulders","label":"Shoulders"},{"key":"biceps","label":"Biceps"},{"key":"triceps","label":"Triceps"},{"key":"quads","label":"Quads"},{"key":"hams_glutes","label":"Hamstrings and glutes"},{"key":"calves","label":"Calves"},{"key":"abs","label":"Abs"}],"weeks":[{"week":"2024-03-04","sessions":2,"days":2,"sets":32,"reps":512,"tonnage":8428,"muscles":{"chest":6.0,"back":7.5,"shoulders":7.5,"biceps":6.0,"triceps":6.5,"quads":3,"hams_glutes":4.5,"abs":8.0},"target":[4,6],"lifts":{"pullup":{"e1rm":63.2,"load":49.9,"reps":8,"rpe":null,"date":"2024-03-05","exercise":"Lat Pulldown (Cable)","top_load":49.9,"top_reps":8,"sets":3,"trend":"first"},"squat":{"e1rm":129.3,"load":102.1,"reps":8,"rpe":null,"date":"2024-03-05","exercise":"Squat (Barbell)","top_load":102.1,"top_reps":8,"sets":3,"trend":"first"},"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-03-06","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":3,"trend":"first"}}},{"week":"2024-03-11","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-03-18","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-03-25","sessions":1,"days":1,"sets":17,"reps":160,"tonnage":4413,"muscles":{"chest":7.5,"back":6,"shoulders":4.0,"biceps":3.0,"triceps":4.5,"quads":1,"hams_glutes":0.5,"abs":2},"target":[4,6],"lifts":{"bench":{"e1rm":57.2,"load":47.6,"reps":6,"rpe":null,"date":"2024-03-25","exercise":"Bench Press (Barbell)","top_load":47.6,"top_reps":6,"sets":1,"trend":"first"},"row":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-03-25","exercise":"Bent Over Row (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"trend":"first"},"pullup":{"e1rm":68.9,"load":54.4,"reps":8,"rpe":null,"date":"2024-03-25","exercise":"Lat Pulldown (Cable)","top_load":54.4,"top_reps":8,"sets":3,"delta":5.7,"delta_pct":9.0,"prev_week":"2024-03-04","trend":"up"},"squat":{"e1rm":106.3,"load":83.9,"reps":8,"rpe":null,"date":"2024-03-25","exercise":"Squat (Barbell)","top_load":83.9,"top_reps":8,"sets":1,"delta":-23.0,"delta_pct":-17.8,"prev_week":"2024-03-04","trend":"down"}}},{"week":"2024-04-01","sessions":3,"days":3,"sets":45,"reps":521,"tonnage":10501,"muscles":{"chest":9,"back":14.5,"shoulders":10.5,"biceps":9.5,"triceps":6.0,"quads":4,"hams_glutes":5.0,"abs":7},"target":[8,12],"lifts":{"pullup":{"e1rm":63.5,"load":54.4,"reps":5,"rpe":null,"date":"2024-04-01","exercise":"Lat Pulldown (Cable)","top_load":54.4,"top_reps":5,"sets":4,"delta":-5.4,"delta_pct":-7.8,"prev_week":"2024-03-25","trend":"down"},"row":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-04-03","exercise":"Bent Over Row (Barbell)","top_load":47.6,"top_reps":8,"sets":2,"delta":5.7,"delta_pct":10.4,"prev_week":"2024-03-25","trend":"up"},"squat":{"e1rm":129.3,"load":102.1,"reps":8,"rpe":null,"date":"2024-04-05","exercise":"Squat (Barbell)","top_load":102.1,"top_reps":8,"sets":3,"delta":23.0,"delta_pct":21.6,"prev_week":"2024-03-25","trend":"up"}}},{"week":"2024-04-08","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-04-15","sessions":3,"days":3,"sets":45,"reps":506,"tonnage":10448,"muscles":{"chest":5.5,"back":11.5,"shoulders":9.5,"biceps":8.0,"triceps":6.5,"quads":10,"hams_glutes":8.0,"abs":7.5},"target":[8,12],"lifts":{"bench":{"e1rm":55.6,"load":52.2,"reps":2,"rpe":null,"date":"2024-04-15","exercise":"Bench Press (Barbell)","top_load":52.2,"top_reps":2,"sets":2,"delta":-1.6,"delta_pct":-2.8,"prev_week":"2024-03-25","trend":"down"},"row":{"e1rm":64.3,"load":52.2,"reps":7,"rpe":null,"date":"2024-04-15","exercise":"Bent Over Row (Barbell)","top_load":52.2,"top_reps":7,"sets":1,"delta":4.0,"delta_pct":6.6,"prev_week":"2024-04-01","trend":"up"},"squat":{"e1rm":132.3,"load":113.4,"reps":5,"rpe":null,"date":"2024-04-15","exercise":"Squat (Barbell)","top_load":113.4,"top_reps":5,"sets":3,"delta":3.0,"delta_pct":2.3,"prev_week":"2024-04-01","trend":"up"},"pullup":{"e1rm":57.5,"load":45.4,"reps":8,"rpe":null,"date":"2024-04-17","exercise":"Lat Pulldown (Cable)","top_load":45.4,"top_reps":8,"sets":3,"delta":-6.0,"delta_pct":-9.4,"prev_week":"2024-04-01","trend":"down"},"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-04-17","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":2,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-03-04","trend":"restart"}}},{"week":"2024-04-22","sessions":1,"days":1,"sets":12,"reps":69,"tonnage":4436,"muscles":{"back":3,"shoulders":3,"biceps":1.5,"triceps":1.5,"quads":4,"hams_glutes":2.0,"abs":3.5},"target":[4,6],"lifts":{"row":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-04-22","exercise":"Bent Over Row (Barbell)","top_load":47.6,"top_reps":8,"sets":3,"delta":-4.0,"delta_pct":-6.2,"prev_week":"2024-04-15","trend":"down"},"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-04-22","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-04-15","trend":"flat"},"squat":{"e1rm":129.3,"load":102.1,"reps":8,"rpe":null,"date":"2024-04-22","exercise":"Squat (Barbell)","top_load":102.1,"top_reps":8,"sets":3,"delta":-3.0,"delta_pct":-2.3,"prev_week":"2024-04-15","trend":"down"}}},{"week":"2024-04-29","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-05-06","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-05-13","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-05-20","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-05-27","sessions":2,"days":2,"sets":22,"reps":141,"tonnage":6251,"muscles":{"chest":4.0,"back":6.5,"shoulders":5.5,"biceps":2.5,"triceps":5.0,"quads":7.5,"hams_glutes":6.0,"abs":1.5},"target":[4,6],"lifts":{"bench":{"e1rm":55.9,"load":45.4,"reps":7,"rpe":null,"date":"2024-05-27","exercise":"Bench Press (Barbell)","top_load":47.6,"top_reps":5,"sets":2,"delta":0.3,"delta_pct":0.5,"prev_week":"2024-04-15","trend":"restart"},"row":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-05-27","exercise":"Bent Over Row (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":-5.7,"delta_pct":-9.5,"prev_week":"2024-04-22","trend":"restart"},"squat":{"e1rm":111.6,"load":93.0,"reps":6,"rpe":null,"date":"2024-05-27","exercise":"Squat (Barbell)","top_load":93.0,"top_reps":6,"sets":2,"delta":-17.7,"delta_pct":-13.7,"prev_week":"2024-04-22","trend":"restart"},"deadlift":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2024-05-29","exercise":"Deadlift (Barbell)","top_load":61.2,"top_reps":8,"sets":3,"trend":"first"},"press":{"e1rm":37.3,"load":29.5,"reps":8,"rpe":null,"date":"2024-05-29","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":8,"sets":3,"delta":-0.8,"delta_pct":-2.1,"prev_week":"2024-04-22","trend":"restart"}}},{"week":"2024-06-03","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-06-10","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-06-17","sessions":3,"days":3,"sets":44,"reps":322,"tonnage":10857,"muscles":{"chest":7.5,"back":10.5,"shoulders":11.5,"biceps":7.5,"triceps":8.0,"quads":11.5,"hams_glutes":8.0,"abs":5.0},"target":[8,12],"lifts":{"bench":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-06-17","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":8,"sets":1,"delta":-1.3,"delta_pct":-2.3,"prev_week":"2024-05-27","trend":"down"},"row":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-06-17","exercise":"Bent Over Row (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-05-27","trend":"flat"},"squat":{"e1rm":117.8,"load":93.0,"reps":8,"rpe":null,"date":"2024-06-17","exercise":"Squat (Barbell)","top_load":93.0,"top_reps":8,"sets":6,"delta":6.2,"delta_pct":5.6,"prev_week":"2024-05-27","trend":"up"},"deadlift":{"e1rm":80.4,"load":63.5,"reps":8,"rpe":null,"date":"2024-06-19","exercise":"Deadlift (Barbell)","top_load":63.5,"top_reps":8,"sets":3,"delta":2.8,"delta_pct":3.6,"prev_week":"2024-05-27","trend":"up"},"press":{"e1rm":35.4,"load":29.5,"reps":6,"rpe":null,"date":"2024-06-19","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":6,"sets":3,"delta":-1.9,"delta_pct":-5.1,"prev_week":"2024-05-27","trend":"down"}}},{"week":"2024-06-24","sessions":4,"days":4,"sets":41,"reps":323,"tonnage":11206,"muscles":{"chest":4,"back":9.5,"shoulders":14.0,"biceps":10.5,"triceps":6.5,"quads":10.5,"hams_glutes":8.5,"abs":3.0},"target":[10,14],"lifts":{"bench":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-06-24","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-06-17","trend":"flat"},"squat":{"e1rm":106.3,"load":83.9,"reps":8,"rpe":null,"date":"2024-06-24","exercise":"Squat (Barbell)","top_load":83.9,"top_reps":8,"sets":6,"delta":-11.5,"delta_pct":-9.8,"prev_week":"2024-06-17","trend":"down"},"row":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-06-25","exercise":"Bent Over Row (Barbell)","top_load":47.6,"top_reps":8,"sets":1,"delta":5.7,"delta_pct":10.4,"prev_week":"2024-06-17","trend":"up"},"deadlift":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2024-06-25","exercise":"Deadlift (Barbell)","top_load":61.2,"top_reps":8,"sets":2,"delta":-2.8,"delta_pct":-3.5,"prev_week":"2024-06-17","trend":"down"},"press":{"e1rm":37.0,"load":31.8,"reps":5,"rpe":null,"date":"2024-06-26","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":5,"sets":5,"delta":1.6,"delta_pct":4.5,"prev_week":"2024-06-17","trend":"up"}}},{"week":"2024-07-01","sessions":1,"days":1,"sets":13,"reps":103,"tonnage":2087,"muscles":{"chest":8.5,"shoulders":5.0,"triceps":9.5},"target":[4,6],"lifts":{"bench":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-07-07","exercise":"Bench Press (Barbell)","top_load":45.4,"top_reps":5,"sets":2,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-06-24","trend":"flat"}}},{"week":"2024-07-08","sessions":2,"days":2,"sets":27,"reps":238,"tonnage":5566,"muscles":{"back":9.5,"shoulders":11,"biceps":7.5,"triceps":4.0,"quads":2.0,"hams_glutes":4,"abs":5.0},"target":[4,6],"lifts":{"row":{"e1rm":53.1,"load":43.1,"reps":7,"rpe":null,"date":"2024-07-08","exercise":"Bent Over Row (Barbell)","top_load":43.1,"top_reps":7,"sets":2,"delta":-7.2,"delta_pct":-11.9,"prev_week":"2024-06-24","trend":"down"},"deadlift":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2024-07-08","exercise":"Deadlift (Barbell)","top_load":61.2,"top_reps":8,"sets":4,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-06-24","trend":"flat"},"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-07-12","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":1,"delta":1.1,"delta_pct":3.0,"prev_week":"2024-06-24","trend":"up"}}},{"week":"2024-07-15","sessions":1,"days":1,"sets":13,"reps":122,"tonnage":4014,"muscles":{"back":3,"shoulders":4,"biceps":1.5,"triceps":2.0,"quads":4,"hams_glutes":2.0,"abs":4.0},"target":[4,6],"lifts":{"row":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-07-17","exercise":"Bent Over Row (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":1.5,"delta_pct":2.8,"prev_week":"2024-07-08","trend":"up"},"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-07-17","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":1,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-07-08","trend":"flat"},"squat":{"e1rm":106.3,"load":83.9,"reps":8,"rpe":null,"date":"2024-07-17","exercise":"Squat (Barbell)","top_load":83.9,"top_reps":8,"sets":2,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-06-24","trend":"flat"}}},{"week":"2024-07-22","sessions":3,"days":3,"sets":38,"reps":309,"tonnage":10405,"muscles":{"chest":4,"back":8.0,"shoulders":15.0,"biceps":7.0,"triceps":6.5,"quads":9.0,"hams_glutes":7.5,"abs":2.5},"target":[8,12],"lifts":{"row":{"e1rm":57.5,"load":45.4,"reps":8,"rpe":null,"date":"2024-07-22","exercise":"Bent Over Row (Barbell)","top_load":45.4,"top_reps":8,"sets":3,"delta":2.9,"delta_pct":5.3,"prev_week":"2024-07-15","trend":"up"},"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-07-22","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-07-15","trend":"flat"},"bench":{"e1rm":53.1,"load":43.1,"reps":7,"rpe":null,"date":"2024-07-24","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":7,"sets":1,"delta":-1.5,"delta_pct":-2.7,"prev_week":"2024-07-01","trend":"down"},"deadlift":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2024-07-24","exercise":"Deadlift (Barbell)","top_load":61.2,"top_reps":8,"sets":4,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-07-08","trend":"flat"},"squat":{"e1rm":112.0,"load":88.5,"reps":8,"rpe":null,"date":"2024-07-26","exercise":"Squat (Barbell)","top_load":88.5,"top_reps":8,"sets":1,"delta":5.7,"delta_pct":5.4,"prev_week":"2024-07-15","trend":"up"}}},{"week":"2024-07-29","sessions":3,"days":3,"sets":36,"reps":298,"tonnage":11624,"muscles":{"chest":5.0,"back":5.0,"shoulders":14.0,"biceps":5.5,"triceps":7.5,"quads":10.0,"hams_glutes":8.0,"abs":2.0},"target":[8,12],"lifts":{"row":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-07-30","exercise":"Bent Over Row (Barbell)","top_load":47.6,"top_reps":8,"sets":1,"delta":2.8,"delta_pct":4.9,"prev_week":"2024-07-22","trend":"up"},"press":{"e1rm":37.3,"load":29.5,"reps":8,"rpe":null,"date":"2024-07-30","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":8,"sets":3,"delta":-0.8,"delta_pct":-2.1,"prev_week":"2024-07-22","trend":"down"},"bench":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2024-07-31","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":1.5,"delta_pct":2.8,"prev_week":"2024-07-22","trend":"up"},"deadlift":{"e1rm":83.3,"load":65.8,"reps":8,"rpe":null,"date":"2024-07-31","exercise":"Deadlift (Barbell)","top_load":65.8,"top_reps":8,"sets":1,"delta":5.7,"delta_pct":7.3,"prev_week":"2024-07-22","trend":"up"},"squat":{"e1rm":129.3,"load":102.1,"reps":8,"rpe":null,"date":"2024-08-02","exercise":"Squat (Barbell)","top_load":102.1,"top_reps":8,"sets":1,"delta":17.3,"delta_pct":15.4,"prev_week":"2024-07-22","trend":"up"}}},{"week":"2024-08-05","sessions":2,"days":2,"sets":24,"reps":199,"tonnage":7648,"muscles":{"chest":4,"back":5.0,"shoulders":9.0,"biceps":4.5,"triceps":5.5,"quads":5.0,"hams_glutes":5.5,"abs":2.0},"target":[4,6],"lifts":{"row":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-08-06","exercise":"Bent Over Row (Barbell)","top_load":47.6,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-07-29","trend":"flat"},"press":{"e1rm":37.3,"load":29.5,"reps":8,"rpe":null,"date":"2024-08-06","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-07-29","trend":"flat"},"bench":{"e1rm":57.5,"load":45.4,"reps":8,"rpe":null,"date":"2024-08-08","exercise":"Bench Press (Barbell)","top_load":45.4,"top_reps":8,"sets":3,"delta":2.9,"delta_pct":5.3,"prev_week":"2024-07-29","trend":"up"},"deadlift":{"e1rm":83.3,"load":65.8,"reps":8,"rpe":null,"date":"2024-08-08","exercise":"Deadlift (Barbell)","top_load":65.8,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-07-29","trend":"flat"}}},{"week":"2024-08-12","sessions":2,"days":2,"sets":18,"reps":159,"tonnage":4663,"muscles":{"back":3,"shoulders":8,"biceps":4.5,"triceps":4.0,"quads":4,"hams_glutes":2.0,"abs":4.0},"target":[4,6],"lifts":{"press":{"e1rm":40.2,"load":31.8,"reps":8,"rpe":null,"date":"2024-08-12","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":8,"sets":6,"delta":2.9,"delta_pct":7.8,"prev_week":"2024-08-05","trend":"up"},"row":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-08-17","exercise":"Bent Over Row (Barbell)","top_load":47.6,"top_reps":8,"sets":1,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-08-05","trend":"flat"}}},{"week":"2024-08-19","sessions":2,"days":2,"sets":31,"reps":259,"tonnage":6459,"muscles":{"chest":5.5,"back":4.5,"shoulders":10.5,"biceps":1.5,"triceps":6.5,"quads":5.5,"hams_glutes":5.0,"abs":7},"target":[4,6],"lifts":{"bench":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-08-19","exercise":"Bench Press (Barbell)","top_load":47.6,"top_reps":8,"sets":3,"delta":2.8,"delta_pct":4.9,"prev_week":"2024-08-05","trend":"up"},"deadlift":{"e1rm":81.6,"load":68.0,"reps":6,"rpe":null,"date":"2024-08-19","exercise":"Deadlift (Barbell)","top_load":68.0,"top_reps":6,"sets":2,"delta":-1.7,"delta_pct":-2.0,"prev_week":"2024-08-05","trend":"down"},"squat":{"e1rm":106.3,"load":83.9,"reps":8,"rpe":null,"date":"2024-08-21","exercise":"Squat (Barbell)","top_load":83.9,"top_reps":8,"sets":3,"delta":-23.0,"delta_pct":-17.8,"prev_week":"2024-07-29","trend":"down"}}},{"week":"2024-08-26","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-09-02","sessions":2,"days":2,"sets":26,"reps":233,"tonnage":5480,"muscles":{"chest":4,"back":7.5,"shoulders":6.0,"biceps":6.0,"triceps":4.0,"quads":4.5,"hams_glutes":4.5,"abs":5.0},"target":[4,6],"lifts":{"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-09-02","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":3,"delta":-2.1,"delta_pct":-5.2,"prev_week":"2024-08-12","trend":"down"},"bench":{"e1rm":60.3,"load":47.6,"reps":8,"rpe":null,"date":"2024-09-04","exercise":"Bench Press (Barbell)","top_load":47.6,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2024-08-19","trend":"flat"},"deadlift":{"e1rm":84.4,"load":70.3,"reps":6,"rpe":null,"date":"2024-09-04","exercise":"Deadlift (Barbell)","top_load":70.3,"top_reps":6,"sets":3,"delta":2.8,"delta_pct":3.4,"prev_week":"2024-08-19","trend":"up"}}},{"week":"2024-09-09","sessions":2,"days":2,"sets":26,"reps":198,"tonnage":5122,"muscles":{"chest":4,"back":6,"shoulders":9.0,"biceps":6.0,"triceps":5.5,"quads":6,"hams_glutes":3.0,"abs":2.0},"target":[4,6],"lifts":{"press":{"e1rm":40.2,"load":31.8,"reps":8,"rpe":null,"date":"2024-09-09","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":8,"sets":3,"delta":2.1,"delta_pct":5.5,"prev_week":"2024-09-02","trend":"up"},"bench":{"e1rm":59.9,"load":49.9,"reps":6,"rpe":null,"date":"2024-09-11","exercise":"Bench Press (Barbell)","top_load":49.9,"top_reps":6,"sets":3,"delta":-0.4,"delta_pct":-0.7,"prev_week":"2024-09-02","trend":"flat"}}},{"week":"2024-09-16","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-09-23","sessions":1,"days":1,"sets":14,"reps":118,"tonnage":2930,"muscles":{"back":3,"shoulders":5,"biceps":4.5,"triceps":2.5,"quads":3,"hams_glutes":1.5,"abs":2.5},"target":[4,6],"lifts":{"press":{"e1rm":38.1,"load":31.8,"reps":6,"rpe":null,"date":"2024-09-25","exercise":"Overhead Press (Barbell)","top_load":31.8,"top_reps":6,"sets":1,"delta":-2.1,"delta_pct":-5.2,"prev_week":"2024-09-09","trend":"down"}}},{"week":"2024-09-30","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-10-07","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-10-14","sessions":1,"days":1,"sets":14,"reps":84,"tonnage":1343,"muscles":{"chest":1.5,"back":4,"shoulders":5.5,"biceps":5.0,"triceps":5.0,"abs":2.0},"target":[4,6],"lifts":{"press":{"e1rm":37.3,"load":29.5,"reps":8,"rpe":null,"date":"2024-10-15","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":8,"sets":3,"delta":-0.8,"delta_pct":-2.1,"prev_week":"2024-09-23","trend":"down"}}},{"week":"2024-10-21","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-10-28","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-11-04","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-11-11","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-11-18","sessions":1,"days":1,"sets":11,"reps":46,"tonnage":816,"muscles":{"back":7,"shoulders":4,"biceps":2.0,"triceps":2.0,"abs":2.0},"target":[4,6],"lifts":{"press":{"e1rm":35.4,"load":29.5,"reps":6,"rpe":null,"date":"2024-11-20","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":6,"sets":3,"delta":-1.9,"delta_pct":-5.1,"prev_week":"2024-10-14","trend":"restart"}}},{"week":"2024-11-25","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-12-02","sessions":1,"days":1,"sets":11,"reps":81,"tonnage":2223,"muscles":{"back":4,"shoulders":4,"biceps":2.0,"triceps":2.0,"quads":3,"hams_glutes":1.5,"abs":2.0},"target":[4,6],"lifts":{"press":{"e1rm":37.3,"load":29.5,"reps":8,"rpe":null,"date":"2024-12-04","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":8,"sets":1,"delta":1.9,"delta_pct":5.4,"prev_week":"2024-11-18","trend":"up"},"squat":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2024-12-04","exercise":"Squat (Barbell)","top_load":61.2,"top_reps":8,"sets":3,"delta":-28.7,"delta_pct":-27.0,"prev_week":"2024-08-19","trend":"restart"}}},{"week":"2024-12-09","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-12-16","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-12-23","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2024-12-30","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-01-06","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-01-13","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-01-20","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-01-27","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-02-03","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-02-10","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-02-17","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-02-24","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-03-03","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-03-10","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-03-17","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-03-24","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-03-31","sessions":1,"days":1,"sets":14,"reps":112,"tonnage":2969,"muscles":{"chest":4.5,"back":3,"shoulders":2.5,"biceps":1.5,"triceps":3.0,"quads":4,"hams_glutes":2.0,"abs":2},"target":[4,6],"lifts":{"bench":{"e1rm":48.8,"load":38.6,"reps":8,"rpe":null,"date":"2025-04-06","exercise":"Bench Press (Barbell)","top_load":38.6,"top_reps":8,"sets":1,"delta":-11.1,"delta_pct":-18.5,"prev_week":"2024-09-09","trend":"restart"},"row":{"e1rm":48.8,"load":38.6,"reps":8,"rpe":null,"date":"2025-04-06","exercise":"Bent Over Row (Barbell)","top_load":38.6,"top_reps":8,"sets":2,"delta":-11.5,"delta_pct":-19.1,"prev_week":"2024-08-12","trend":"restart"},"squat":{"e1rm":71.4,"load":61.2,"reps":5,"rpe":null,"date":"2025-04-06","exercise":"Squat (Barbell)","top_load":61.2,"top_reps":5,"sets":4,"delta":-6.2,"delta_pct":-8.0,"prev_week":"2024-12-02","trend":"restart"}}},{"week":"2025-04-07","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-04-14","sessions":2,"days":2,"sets":27,"reps":225,"tonnage":5423,"muscles":{"chest":0.5,"back":7.0,"shoulders":8.5,"biceps":5.5,"triceps":5.0,"quads":8.0,"hams_glutes":7.0,"abs":4.0},"target":[4,6],"lifts":{"deadlift":{"e1rm":62.6,"load":52.2,"reps":6,"rpe":null,"date":"2025-04-14","exercise":"Deadlift (Barbell)","top_load":52.2,"top_reps":6,"sets":2,"delta":-21.8,"delta_pct":-25.8,"prev_week":"2024-09-02","trend":"restart"},"press":{"e1rm":31.6,"load":24.9,"reps":8,"rpe":null,"date":"2025-04-14","exercise":"Overhead Press (Barbell)","top_load":24.9,"top_reps":8,"sets":7,"delta":-5.7,"delta_pct":-15.3,"prev_week":"2024-12-02","trend":"restart"},"row":{"e1rm":48.8,"load":38.6,"reps":8,"rpe":null,"date":"2025-04-20","exercise":"Bent Over Row (Barbell)","top_load":38.6,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2025-03-31","trend":"flat"}}},{"week":"2025-04-21","sessions":1,"days":1,"sets":14,"reps":120,"tonnage":2463,"muscles":{"chest":4,"back":4,"shoulders":2.0,"biceps":5.0,"triceps":2.0,"quads":3,"hams_glutes":1.5},"target":[4,6],"lifts":{"bench":{"e1rm":51.7,"load":43.1,"reps":6,"rpe":null,"date":"2025-04-21","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":6,"sets":2,"delta":2.9,"delta_pct":5.9,"prev_week":"2025-03-31","trend":"up"}}},{"week":"2025-04-28","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-05-05","sessions":1,"days":1,"sets":13,"reps":101,"tonnage":3849,"muscles":{"chest":4,"back":3,"shoulders":2.0,"biceps":4.5,"triceps":2.0,"quads":3,"hams_glutes":1.5},"target":[4,6],"lifts":{"bench":{"e1rm":53.1,"load":43.1,"reps":7,"rpe":null,"date":"2025-05-07","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":7,"sets":3,"delta":1.4,"delta_pct":2.7,"prev_week":"2025-04-21","trend":"up"},"row":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2025-05-07","exercise":"Bent Over Row (Barbell)","top_load":43.1,"top_reps":8,"sets":2,"delta":5.8,"delta_pct":11.9,"prev_week":"2025-04-14","trend":"up"},"squat":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2025-05-07","exercise":"Squat (Barbell)","top_load":61.2,"top_reps":8,"sets":3,"delta":6.2,"delta_pct":8.7,"prev_week":"2025-03-31","trend":"restart"}}},{"week":"2025-05-12","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-05-19","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-05-26","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-06-02","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-06-09","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-06-16","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-06-23","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-06-30","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-07-07","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-07-14","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-07-21","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-07-28","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-08-04","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-08-11","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-08-18","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-08-25","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-09-01","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-09-08","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-09-15","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-09-22","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-09-29","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-10-06","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-10-13","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-10-20","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-10-27","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-11-03","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-11-10","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-11-17","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-11-24","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-12-01","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-12-08","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-12-15","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-12-22","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2025-12-29","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-01-05","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-01-12","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-01-19","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-01-26","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-02-02","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-02-09","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-02-16","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-02-23","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-03-02","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-03-09","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-03-16","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-03-23","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-03-30","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-04-06","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-04-13","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-04-20","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-04-27","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-05-04","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-05-11","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-05-18","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-05-25","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-06-01","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-06-08","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-06-15","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-06-22","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-06-29","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-07-06","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-07-13","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-07-20","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-07-27","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-08-03","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-08-10","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-08-17","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-08-24","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-08-31","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-09-07","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-09-14","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-09-21","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-09-28","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-10-05","sessions":0,"days":0,"sets":0,"reps":0,"tonnage":0,"muscles":{},"target":null,"lifts":{}},{"week":"2026-10-12","sessions":2,"days":2,"sets":30,"reps":267,"tonnage":8117,"muscles":{"chest":4,"back":10.0,"shoulders":7.0,"biceps":7.0,"triceps":4.5,"quads":3,"hams_glutes":8.5,"calves":1.5,"abs":2.5},"target":[4,6],"lifts":{"pullup":{"e1rm":73.5,"load":61.2,"reps":6,"rpe":null,"date":"2026-10-17","exercise":"Lat Pulldown (Cable)","top_load":61.2,"top_reps":6,"sets":3,"delta":16.0,"delta_pct":27.8,"prev_week":"2024-04-15","trend":"restart"},"press":{"e1rm":36.4,"load":29.5,"reps":7,"rpe":null,"date":"2026-10-17","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":7,"sets":4,"delta":4.8,"delta_pct":15.2,"prev_week":"2025-04-14","trend":"restart"},"squat":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2026-10-17","exercise":"Squat (Barbell)","top_load":61.2,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2025-05-05","trend":"restart"},"row":{"e1rm":41.3,"load":29.5,"reps":12,"rpe":null,"date":"2026-10-18","exercise":"Bent Over Row (Barbell)","top_load":29.5,"top_reps":12,"sets":3,"delta":-13.3,"delta_pct":-24.4,"prev_week":"2025-05-05","trend":"restart"}}},{"week":"2026-10-19","sessions":2,"days":2,"sets":27,"reps":251,"tonnage":4876,"muscles":{"chest":4,"shoulders":12.0,"triceps":8.5,"quads":7,"hams_glutes":6.5,"calves":1.5},"target":[4,6],"lifts":{"bench":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2026-10-20","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":1.5,"delta_pct":2.8,"prev_week":"2025-05-05","trend":"restart"}}}],"lifts":[{"key":"squat","name":"Back squat","last_date":"2026-10-17","gap_days":4,"gap":{"key":"normal","label":"Normal"},"latest":{"e1rm":77.6,"load":61.2,"reps":8,"rpe":null,"date":"2026-10-17","exercise":"Squat (Barbell)","top_load":61.2,"top_reps":8,"sets":3,"delta":0.0,"delta_pct":0.0,"prev_week":"2025-05-05","trend":"restart"},"latest_week":"2026-10-12","best_e1rm":132.3,"block_change":-28.9},{"key":"bench","name":"Bench press","last_date":"2026-10-20","gap_days":1,"gap":{"key":"normal","label":"Normal"},"latest":{"e1rm":54.6,"load":43.1,"reps":8,"rpe":null,"date":"2026-10-20","exercise":"Bench Press (Barbell)","top_load":43.1,"top_reps":8,"sets":3,"delta":1.5,"delta_pct":2.8,"prev_week":"2025-05-05","trend":"restart"},"latest_week":"2026-10-19","best_e1rm":60.3,"block_change":-3.2},{"key":"deadlift","name":"Deadlift","last_date":"2025-04-14","gap_days":555,"gap":{"key":"reduce10","label":"Reduce 10%"},"latest":{"e1rm":62.6,"load":52.2,"reps":6,"rpe":null,"date":"2025-04-14","exercise":"Deadlift (Barbell)","top_load":52.2,"top_reps":6,"sets":2,"delta":-21.8,"delta_pct":-25.8,"prev_week":"2024-09-02","trend":"restart"},"latest_week":"2025-04-14","best_e1rm":84.4,"block_change":-5.2},{"key":"press","name":"Overhead press","last_date":"2026-10-17","gap_days":4,"gap":{"key":"normal","label":"Normal"},"latest":{"e1rm":36.4,"load":29.5,"reps":7,"rpe":null,"date":"2026-10-17","exercise":"Overhead Press (Barbell)","top_load":29.5,"top_reps":7,"sets":4,"delta":4.8,"delta_pct":15.2,"prev_week":"2025-04-14","trend":"restart"},"latest_week":"2026-10-12","best_e1rm":40.2,"block_change":-1.8},{"key":"row","name":"Barbell row","last_date":"2026-10-18","gap_days":3,"gap":{"key":"normal","label":"Normal"},"latest":{"e1rm":41.3,"load":29.5,"reps":12,"rpe":null,"date":"2026-10-18","exercise":"Bent Over Row (Barbell)","top_load":29.5,"top_reps":12,"sets":3,"delta":-13.3,"delta_pct":-24.4,"prev_week":"2025-05-05","trend":"restart"},"latest_week":"2026-10-12","best_e1rm":64.3,"block_change":-8.2},{"key":"pullup","name":"Pull-up or pulldown","last_date":"2026-10-17","gap_days":4,"gap":{"key":"normal","label":"Normal"},"latest":{"e1rm":73.5,"load":61.2,"reps":6,"rpe":null,"date":"2026-10-17","exercise":"Lat Pulldown (Cable)","top_load":61.2,"top_reps":6,"sets":3,"delta":16.0,"delta_pct":27.8,"prev_week":"2024-04-15","trend":"restart"},"latest_week":"2026-10-12","best_e1rm":73.5,"block_change":null}],"consistency":{"current_streak":2,"longest_streak":10,"weeks_trained_last12":2,"sessions_last12":4,"avg_days_active_week":1.9,"total_sessions":52,"first_date":"2024-03-05","last_date":"2026-10-21"},"program":{"pointer":"L1","block_start":null,"block_week":1,"deload":false,"processed_through":"2026-10-21"},"tracks":[{"key":"squat","name":"Back squat","scheme":"top_set","next_kg":60,"last_h_kg":null,"rep_target":4,"rep_range":null,"miss_counter":0,"stalls":0,"work_up":false,"last_exposure":{"date":"2026-10-17","type":"other"},"gap_days":4,"gap":{"key":"normal","label":"Normal"},"e1rm_history":[{"date":"2026-10-17","e1rm":78,"load":61,"reps":8,"rpe":null,"note":"return-to-training block, estimate from 8s with no RPE"}]},{"key":"bench","name":"Bench press","scheme":"top_set","next_kg":42.5,"last_h_kg":null,"rep_target":4,"rep_range":null,"miss_counter":0,"stalls":0,"work_up":false,"last_exposure":{"date":"2026-10-20","type":"other"},"gap_days":1,"gap":{"key":"normal","label":"Normal"},"e1rm_history":[{"date":"2026-10-20","e1rm":55,"load":43,"reps":8,"rpe":null,"note":"return-to-training block, estimate from 8s with no RPE"}]},{"key":"deadlift","name":"Deadlift","scheme":"top_set","next_kg":null,"last_h_kg":null,"rep_target":4,"rep_range":null,"miss_counter":0,"stalls":0,"work_up":true,"last_exposure":{"date":"2025-04-14","type":"other"},"gap_days":555,"gap":{"key":"reduce10","label":"Reduce 10%"},"e1rm_history":[{"date":"2024-09-04","e1rm":84,"load":70.31,"reps":6,"rpe":null,"note":"2024 peak; untrained since April 2025"}]},{"key":"press","name":"Overhead press","scheme":"top_set","next_kg":27.5,"last_h_kg":null,"rep_target":4,"rep_range":null,"miss_counter":0,"stalls":0,"work_up":false,"last_exposure":{"date":"2026-10-17","type":"other"},"gap_days":4,"gap":{"key":"normal","label":"Normal"},"e1rm_history":[{"date":"2026-10-17","e1rm":36,"load":29.5,"reps":7,"rpe":null,"note":"return-to-training block"}]},{"key":"row","name":"Barbell row","scheme":"double_progression","next_kg":32.5,"last_h_kg":null,"rep_target":null,"rep_range":[6,8],"miss_counter":0,"stalls":0,"work_up":false,"last_exposure":{"date":"2026-10-18","type":"other"},"gap_days":3,"gap":{"key":"normal","label":"Normal"},"e1rm_history":[{"date":"2026-10-18","e1rm":41,"load":29.5,"reps":12,"rpe":null,"note":"return-to-training block"}]},{"key":"pullup","name":"Pull-up or pulldown","scheme":"double_progression","next_kg":57.5,"last_h_kg":null,"rep_target":null,"rep_range":[5,8],"miss_counter":0,"stalls":0,"work_up":false,"last_exposure":{"date":"2026-10-17","type":"other"},"gap_days":4,"gap":{"key":"normal","label":"Normal"},"e1rm_history":[{"date":"2026-10-17","e1rm":73,"load":61,"reps":6,"rpe":null,"note":"pulldown; switch to the bar when a pulldown set at about bodyweight reaches 8"}]}],"track_log":[],"unmapped":["Bulgarian Split Squat"]};
+(function () {
+  "use strict";
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const U = D.units || "kg";
+  const nf1 = new Intl.NumberFormat("en", { maximumFractionDigits: 1 });
+  const nf0 = new Intl.NumberFormat("en", { maximumFractionDigits: 0 });
+  const el = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const parse = (iso) => { const [y, m, d] = iso.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
+  const dLabel = (iso, year) => { const t = parse(iso); return `${MON[t.getUTCMonth()]} ${t.getUTCDate()}` + (year ? ` ${t.getUTCFullYear()}` : ""); };
+  const weekEnd = (iso) => { const t = parse(iso); t.setUTCDate(t.getUTCDate() + 6); return t.toISOString().slice(0, 10); };
+  const compact = (v) => v >= 10000 ? nf0.format(v / 1000) + "K" : v >= 1000 ? nf1.format(v / 1000) + "K" : nf1.format(v);
+  const weeksBetween = (a, b) => Math.round((parse(b) - parse(a)) / 6048e5);
+
+  const ALL = D.weeks;
+  const GROUPS = D.groups;
+  const LIFT_NAMES = Object.fromEntries(D.lifts.map((l) => [l.key, l.name]));
+  let range = 12;
+  try { const r = localStorage.getItem("tpb-range"); if (r !== null && ["0", "12", "26", "52"].includes(r)) range = Number(r); } catch (e) {}
+  const lastTrained = [...ALL].reverse().find((w) => w.sessions);
+  let focus = lastTrained ? lastTrained.week : (ALL.length ? ALL[ALL.length - 1].week : null);
+
+  const visible = () => (range ? ALL.slice(-range) : ALL);
+
+  // ---------- tooltip ----------
+  const tip = el("tip");
+  const tips = new Map();
+  let tipSeq = 0;
+  const addTip = (html) => { const id = "t" + tipSeq++; tips.set(id, html); return id; };
+  function showTip(target, x, y) {
+    const html = tips.get(target.dataset.tip);
+    if (!html) return;
+    tip.innerHTML = html;
+    tip.hidden = false;
+    const r = tip.getBoundingClientRect();
+    let left = x + 14, top = y + 14;
+    if (left + r.width > window.innerWidth - 8) left = x - r.width - 14;
+    if (top + r.height > window.innerHeight - 8) top = y - r.height - 14;
+    tip.style.left = Math.max(8, left) + "px";
+    tip.style.top = Math.max(8, top) + "px";
+  }
+  document.addEventListener("pointermove", (e) => {
+    const t = e.target.closest && e.target.closest("[data-tip]");
+    if (t) showTip(t, e.clientX, e.clientY); else tip.hidden = true;
+  });
+  document.addEventListener("focusin", (e) => {
+    const t = e.target.closest && e.target.closest("[data-tip]");
+    if (t) { const r = t.getBoundingClientRect(); showTip(t, r.right, r.top); }
+  });
+  document.addEventListener("focusout", () => { tip.hidden = true; });
+  window.addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });
+
+  // ---------- scales ----------
+  function niceMax(max, n = 4) {
+    if (max <= 0) return { top: n, step: 1 };
+    const raw = max / n, mag = Math.pow(10, Math.floor(Math.log10(raw))), norm = raw / mag;
+    const step = (norm <= 1 ? 1 : norm <= 2 ? 2 : norm <= 2.5 ? 2.5 : norm <= 5 ? 5 : 10) * mag;
+    return { top: Math.ceil(max / step) * step, step };
+  }
+  function xTicks(weeks, band) {
+    const k = Math.max(1, Math.ceil(64 / band));
+    const multiYear = weeks.length && weeks[0].week.slice(0, 4) !== weeks[weeks.length - 1].week.slice(0, 4);
+    const out = [];
+    let lastYear = null;
+    for (let i = weeks.length - 1; i >= 0; i -= k) out.unshift(i);
+    return out.map((i) => {
+      const y = weeks[i].week.slice(0, 4);
+      const withYear = multiYear && y !== lastYear;
+      lastYear = y;
+      return { i, label: dLabel(weeks[i].week, withYear) };
+    });
+  }
+  const roundTop = (x, y, w, h, r) => {
+    r = Math.min(r, w / 2, h);
+    return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
+  };
+
+  // ---------- column chart ----------
+  function columns(host, weeks, value, opt) {
+    const W = Math.max(280, host.clientWidth || 560), H = opt.height || 200;
+    const m = { t: 14, r: 10, b: 26, l: 42 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const vals = weeks.map(value);
+    const { top, step } = niceMax(Math.max(opt.minTop || 0, ...vals));
+    const y = (v) => m.t + ih - (v / top) * ih;
+    const band = iw / Math.max(1, weeks.length);
+    const bw = Math.max(1.5, Math.min(24, band - 2));
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opt.label)}">`;
+    for (let v = 0; v <= top + 1e-9; v += step) {
+      s += `<line class="${v === 0 ? "axis" : "grid"}" x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}"/>`;
+      s += `<text x="${m.l - 6}" y="${y(v) + 4}" text-anchor="end">${opt.fmt ? opt.fmt(v) : compact(v)}</text>`;
+    }
+    (opt.refs || []).forEach((r) => {
+      if (r.v > top) return;
+      s += `<line class="ref" x1="${m.l}" x2="${W - m.r}" y1="${y(r.v)}" y2="${y(r.v)}" stroke-dasharray="0"/>`;
+      s += `<text class="ref-label" x="${W - m.r}" y="${y(r.v) - 4}" text-anchor="end">${esc(r.label)}</text>`;
+    });
+    weeks.forEach((w, i) => {
+      const v = vals[i];
+      const x = m.l + i * band + (band - bw) / 2;
+      const id = addTip(opt.tip(w));
+      s += `<rect class="hit" data-tip="${id}" data-week="${w.week}" x="${m.l + i * band}" y="${m.t}" width="${band}" height="${ih}"/>`;
+      if (v > 0) {
+        const h = Math.max(1, ih - (y(v) - m.t));
+        s += `<path class="bar${w.week === focus && opt.focus ? " focus" : ""}" pointer-events="none" d="${roundTop(x, y(v), bw, h, bw >= 8 ? 4 : 1)}"/>`;
+      }
+    });
+    xTicks(weeks, band).forEach((t) => {
+      s += `<text x="${m.l + t.i * band + band / 2}" y="${H - 8}" text-anchor="middle">${t.label}</text>`;
+    });
+    host.innerHTML = s + "</svg>";
+    if (opt.focus) host.querySelectorAll(".hit").forEach((r) => r.addEventListener("click", () => setFocus(r.dataset.week)));
+  }
+
+  function weekTip(w) {
+    const lifts = Object.keys(w.lifts).map((k) => LIFT_NAMES[k] || k);
+    return `<div class="t">Week of ${dLabel(w.week, true)}</div>` +
+      (w.sessions ? `${w.sessions} session${w.sessions > 1 ? "s" : ""} on ${w.days} day${w.days > 1 ? "s" : ""}<br>` +
+        `<b>${nf0.format(w.tonnage)}</b> ${U} tonnage · <b>${w.sets}</b> working sets` +
+        (lifts.length ? `<br>Main lifts: ${esc(lifts.join(", "))}` : "")
+        : "No sessions logged");
+  }
+
+  // ---------- tiles ----------
+  function delta(cur, prev, label) {
+    if (prev === null || prev === undefined) return `<span class="d-flat">No ${label} to compare</span>`;
+    const d = cur - prev;
+    if (!prev) return `<span class="d-flat">${d > 0 ? "+" : ""}${nf1.format(d)} vs ${label}</span>`;
+    const pct = (d / prev) * 100;
+    const cls = pct >= 1 ? "d-up" : pct <= -1 ? "d-down" : "d-flat";
+    const arrow = pct >= 1 ? "▲" : pct <= -1 ? "▼" : "▬";
+    return `<span class="${cls}">${arrow} ${pct > 0 ? "+" : ""}${nf0.format(pct)}%</span> vs ${label}`;
+  }
+  function renderTiles() {
+    const n = ALL.length;
+    if (!n) return;
+    const cur = ALL[n - 1], prev = ALL[n - 2] || null;
+    const four = ALL.slice(Math.max(0, n - 5), n - 1);
+    const avg = (f) => (four.length ? four.reduce((a, w) => a + f(w), 0) / four.length : null);
+    const end = weekEnd(cur.week);
+    const today = D.generated;
+    el("week-sub").textContent = `${dLabel(cur.week)} – ${dLabel(end < today ? end : today, true)}${end > today ? " (in progress)" : ""}`;
+    const up = Object.values(cur.lifts).filter((l) => l.trend === "up").length;
+    const trained = Object.keys(cur.lifts).length;
+    const tiles = [
+      { label: "Tonnage", value: nf0.format(cur.tonnage), unit: U, f: (w) => w.tonnage },
+      { label: "Working sets", value: cur.sets, unit: "sets", f: (w) => w.sets },
+      { label: "Days trained", value: cur.days, unit: cur.days === 1 ? "day" : "days", f: (w) => w.days },
+    ];
+    let h = tiles.map((t) => `<div class="tile"><div class="label">${t.label}</div>` +
+      `<div class="value">${t.value}<small>${t.unit}</small></div><div class="deltas">` +
+      `<div>${delta(t.f(cur), prev ? t.f(prev) : null, "last week")}</div>` +
+      `<div>${delta(t.f(cur), avg(t.f), "4-week average")}</div></div></div>`).join("");
+    h += `<div class="tile"><div class="label">Main lifts progressed</div>` +
+      `<div class="value">${up}<small>of ${trained} trained</small></div><div class="deltas">` +
+      `<div>${trained ? esc(Object.entries(cur.lifts).map(([k, l]) => `${LIFT_NAMES[k] || k} ${trendWord(l)}`).join(" · ")) : "No main lift this week yet"}</div></div></div>`;
+    el("tiles").innerHTML = h;
+  }
+  const trendWord = (l) => ({ up: "up", down: "down", flat: "flat", restart: "restart", first: "first" }[l.trend] || "");
+
+  // ---------- muscles ----------
+  function setFocus(week) {
+    focus = week;
+    renderVolume();
+    renderMuscles();
+  }
+  function renderMuscles() {
+    const w = ALL.find((x) => x.week === focus) || ALL[ALL.length - 1];
+    if (!w) return;
+    el("focus-title").textContent = `Week of ${dLabel(w.week, true)}`;
+    const t = w.target;
+    el("focus-target").textContent = w.days ? `${w.days} day${w.days > 1 ? "s" : ""} trained · target ${t[0]}-${t[1]} sets` : "No sessions";
+    const maxV = Math.max(22, ...(t ? [t[1] + 3] : []), ...Object.values(w.muscles));
+    const pct = (v) => (v / maxV) * 100;
+    el("bullets").innerHTML = GROUPS.map((g) => {
+      const v = w.muscles[g.key] || 0;
+      let state = "";
+      if (t && w.days) {
+        state = v < t[0] ? `<span class="pill warn">Below</span>` : v > t[1] ? `<span class="pill info">Above</span>` : `<span class="pill good">In range</span>`;
+      }
+      const band = t && w.days ? `<div class="band" style="left:${pct(t[0])}%;width:${pct(t[1] - t[0])}%"></div>` : "";
+      const fill = v ? `<div class="fill" style="width:${pct(v)}%"></div>` : "";
+      const tipId = addTip(`<div class="t">${esc(g.label)}</div><b>${nf1.format(v)}</b> sets` + (t && w.days ? ` · target ${t[0]}-${t[1]}` : ""));
+      return `<div class="bullet"><div class="name">${esc(g.label)}</div>` +
+        `<div class="track" data-tip="${tipId}"><div class="base"></div>${band}${fill}<span class="val" style="left:${pct(v)}%">${nf1.format(v)}</span></div>` +
+        `<div class="state">${state}</div></div>`;
+    }).join("");
+  }
+  function renderHeatmap() {
+    const host = el("heatmap");
+    const weeks = visible();
+    const labelW = 132, cellH = 22, gap = 2;
+    const W = Math.max(320, host.clientWidth || 560);
+    const iw = W - labelW - 24;
+    const band = iw / Math.max(1, weeks.length);
+    const H = GROUPS.length * cellH + 24;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Weekly sets per muscle group">`;
+    GROUPS.forEach((g, r) => {
+      s += `<text x="0" y="${r * cellH + cellH / 2 + 4}">${esc(g.label)}</text>`;
+    });
+    weeks.forEach((w, i) => {
+      const x = labelW + i * band;
+      const id = addTip(weekTip(w) + (w.sessions ? "<br>" + GROUPS.filter((g) => w.muscles[g.key]).map((g) => `${esc(g.label)} ${nf1.format(w.muscles[g.key])}`).join(" · ") : ""));
+      s += `<g class="heat-col" data-tip="${id}" data-week="${w.week}" tabindex="0" role="button" aria-label="Week of ${dLabel(w.week, true)}">`;
+      s += `<rect x="${x}" y="0" width="${band}" height="${GROUPS.length * cellH}" fill="transparent"/>`;
+      GROUPS.forEach((g, r) => {
+        const v = w.muscles[g.key] || 0;
+        const op = v ? Math.min(1, 0.14 + (v / 20) * 0.86) : 0;
+        const cw = Math.max(1, band - (band > 4 ? gap : 0.5));
+        s += `<rect x="${x}" y="${r * cellH + 1}" width="${cw}" height="${cellH - gap}" rx="${band > 8 ? 2 : 0}" fill="${v ? "var(--series)" : "var(--grid)"}" fill-opacity="${v ? op.toFixed(2) : 0.6}"/>`;
+      });
+      if (w.week === focus) s += `<rect x="${x - 1}" y="0" width="${band + 1}" height="${GROUPS.length * cellH}" fill="none" stroke="var(--ink)" stroke-width="1.5" rx="2"/>`;
+      s += `</g>`;
+    });
+    xTicks(weeks, band).forEach((t) => {
+      s += `<text x="${labelW + t.i * band + band / 2}" y="${H - 6}" text-anchor="middle">${t.label}</text>`;
+    });
+    host.innerHTML = s + "</svg>";
+    host.querySelectorAll(".heat-col").forEach((g) => {
+      g.addEventListener("click", () => setFocus(g.dataset.week));
+      g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setFocus(g.dataset.week); } });
+    });
+    el("heat-legend").innerHTML = [0, 5, 10, 15, 20].map((v) =>
+      `<span><span class="sw" style="background:${v ? "var(--series)" : "var(--grid)"};opacity:${v ? Math.min(1, 0.14 + (v / 20) * 0.86).toFixed(2) : 0.6}"></span>${v === 20 ? "20+" : v} sets</span>`).join("");
+  }
+
+  // ---------- lifts ----------
+  function spark(liftKey, weeks) {
+    const W = 150, H = 40, p = 5;
+    const pts = weeks.map((w, i) => (w.lifts[liftKey] ? { i, w, l: w.lifts[liftKey] } : null)).filter(Boolean);
+    if (!pts.length) return `<span class="muted">Not trained in this range</span>`;
+    const vs = pts.map((d) => d.l.e1rm);
+    let lo = Math.min(...vs), hi = Math.max(...vs);
+    if (hi - lo < 4) { const mid = (hi + lo) / 2; lo = mid - 2; hi = mid + 2; }
+    const x = (i) => p + (weeks.length > 1 ? (i / (weeks.length - 1)) * (W - 2 * p) : (W - 2 * p) / 2);
+    const y = (v) => p + (1 - (v - lo) / (hi - lo)) * (H - 2 * p);
+    let s = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(LIFT_NAMES[liftKey])} e1RM by week">`;
+    s += `<line class="grid" x1="${p}" x2="${W - p}" y1="${H - p}" y2="${H - p}"/>`;
+    if (pts.length > 1) {
+      const d = pts.map((q, k) => `${k ? "L" : "M"}${x(q.i).toFixed(1)},${y(q.l.e1rm).toFixed(1)}`).join("");
+      s += `<path class="spark-area" d="${d}L${x(pts[pts.length - 1].i).toFixed(1)},${H - p}L${x(pts[0].i).toFixed(1)},${H - p}Z"/>`;
+      s += `<path class="spark-line" d="${d}"/>`;
+    }
+    pts.forEach((q, k) => {
+      const last = k === pts.length - 1;
+      const id = addTip(`<div class="t">${esc(LIFT_NAMES[liftKey])} · week of ${dLabel(q.w.week, true)}</div>` +
+        `e1RM <b>${nf1.format(q.l.e1rm)} ${U}</b><br>Best set ${nf1.format(q.l.load)} × ${q.l.reps}${q.l.rpe ? " @ " + q.l.rpe : ""} (${esc(q.l.exercise)})`);
+      s += `<circle class="${last ? "spark-end" : "spark-dot"}" cx="${x(q.i).toFixed(1)}" cy="${y(q.l.e1rm).toFixed(1)}" r="${last ? 4.5 : 3}"/>`;
+      s += `<circle data-tip="${id}" cx="${x(q.i).toFixed(1)}" cy="${y(q.l.e1rm).toFixed(1)}" r="9" fill="transparent"/>`;
+    });
+    return s + "</svg>";
+  }
+  function trendPill(l) {
+    if (!l) return `<span class="pill">No data</span>`;
+    const pct = l.delta_pct, sign = pct > 0 ? "+" : "";
+    switch (l.trend) {
+      case "up": return `<span class="pill good">Up ${sign}${nf1.format(pct)}%</span><span class="small">${sign}${nf1.format(l.delta)} ${U} vs ${dLabel(l.prev_week)}</span>`;
+      case "down": return `<span class="pill bad">Down ${nf1.format(pct)}%</span><span class="small">${nf1.format(l.delta)} ${U} vs ${dLabel(l.prev_week)}</span>`;
+      case "flat": return `<span class="pill">Flat ${sign}${nf1.format(pct)}%</span><span class="small">vs ${dLabel(l.prev_week)}</span>`;
+      case "restart": return `<span class="pill info">Restart</span><span class="small">${weeksBetween(l.prev_week, l.date)} weeks after ${dLabel(l.prev_week, true)}</span>`;
+      default: return `<span class="pill info">First logged</span>`;
+    }
+  }
+  const gapClass = (k) => ({ normal: "good", hold: "warn", "hold-": "warn", reduce5: "bad", reduce10: "bad" }[k] || "");
+  function renderLifts() {
+    const weeks = visible();
+    el("lifts").querySelector("tbody").innerHTML = D.lifts.map((l) => {
+      const L = l.latest;
+      return `<tr><td><div class="big">${esc(l.name)}</div><span class="small">${L ? esc(L.exercise) : ""}</span></td>` +
+        `<td>${spark(l.key, weeks)}</td>` +
+        `<td class="num">${L ? `<span class="big">${nf1.format(L.e1rm)}</span> ${U}<span class="small">week of ${dLabel(l.latest_week, true)}</span>` : "–"}</td>` +
+        `<td>${L ? trendPill(L) : "–"}</td>` +
+        `<td class="num">${L ? `${nf1.format(L.top_load)} × ${L.top_reps}<span class="small">${L.sets} set${L.sets > 1 ? "s" : ""} that week</span>` : "–"}</td>` +
+        `<td class="num">${l.best_e1rm ? nf1.format(l.best_e1rm) + " " + U : "–"}${l.block_change !== null && l.block_change !== undefined ? `<span class="small">last 3 vs prior 3: ${l.block_change > 0 ? "+" : ""}${nf1.format(l.block_change)}</span>` : ""}</td>` +
+        `<td><span class="pill ${gapClass(l.gap.key)}">${esc(l.gap.label)}</span><span class="small">${l.gap_days !== null ? `${l.gap_days} day${l.gap_days === 1 ? "" : "s"} since ${dLabel(l.last_date, true)}` : ""}</span></td></tr>`;
+    }).join("");
+  }
+
+  // ---------- tracks ----------
+  function renderTracks() {
+    const p = D.program || {};
+    el("program-line").textContent = `Next session owed: ${p.pointer || "–"} · block week ${p.block_week ?? "–"}${p.deload ? " · deload" : ""} · processed through ${p.processed_through ? dLabel(p.processed_through, true) : "–"}`;
+    el("tracks").innerHTML = D.tracks.map((t) => {
+      const flagged = t.miss_counter >= 1 || t.stalls > 0;
+      const scheme = t.scheme === "double_progression" ? `Double progression ${t.rep_range ? t.rep_range.join("-") : ""} reps` : `Top set of ${t.rep_target} reps`;
+      const next = t.work_up || t.next_kg === null ? `Work up` : `${nf1.format(t.next_kg)}<small>${U}</small>`;
+      const exp = t.last_exposure || {};
+      const hist = (t.e1rm_history || []).slice(-4).reverse().map((h) =>
+        `<span>${dLabel(h.date, true)} · e1RM ${nf1.format(h.e1rm)} (${nf1.format(h.load)} × ${h.reps}${h.rpe ? " @ " + h.rpe : ""})</span>`).join("");
+      return `<article class="card${flagged ? " flagged" : ""}">` +
+        `<div><h3>${esc(t.name)}</h3><div class="muted">${esc(scheme)}</div></div>` +
+        `<div><div class="eyebrow">Next heavy load</div><div class="next">${next}</div></div>` +
+        `<dl><dt>Last heavy load</dt><dd>${t.last_h_kg ? nf1.format(t.last_h_kg) + " " + U : "None yet"}</dd>` +
+        `<dt>Misses at this load</dt><dd>${t.miss_counter} of 2</dd>` +
+        `<dt>Stalls this cycle</dt><dd>${t.stalls}</dd>` +
+        `<dt>Last exposure</dt><dd>${exp.date ? `${dLabel(exp.date, true)} (${esc(exp.type)})` : "–"}</dd></dl>` +
+        `<div><span class="pill ${gapClass(t.gap.key)}">${esc(t.gap.label)}</span> <span class="muted">${t.gap_days !== null ? t.gap_days + " days" : ""}</span></div>` +
+        (hist ? `<div class="hist"><div class="eyebrow">e1RM history</div>${hist}</div>` : "") +
+        `</article>`;
+    }).join("");
+    const log = D.track_log || [];
+    el("log").innerHTML = log.length
+      ? log.slice().reverse().map((x) => `<li><time>${x.date ? dLabel(x.date, true) : ""}</time><span>${x.kind === "stall" ? '<span class="pill bad">Stall</span> ' : x.kind === "flag" ? '<span class="pill warn">Flag</span> ' : ""}${esc(x.text)}</span></li>`).join("")
+      : `<li><time></time><span class="muted">No decisions logged yet. Entries appear after a sync processes workouts titled with a slot (L1, U1, Full A and so on).</span></li>`;
+  }
+
+  // ---------- consistency ----------
+  function renderConsistency() {
+    const c = D.consistency;
+    const stats = [
+      [c.current_streak, `week${c.current_streak === 1 ? "" : "s"} in a row with a session`],
+      [c.longest_streak, "longest weekly streak"],
+      [`${c.weeks_trained_last12}/12`, "weeks trained in the last 12"],
+      [c.sessions_last12, "sessions in the last 12 weeks"],
+      [nf1.format(c.avg_days_active_week), "days per week when training"],
+      [c.total_sessions, `sessions since ${c.first_date ? dLabel(c.first_date, true) : "–"}`],
+    ];
+    el("stats").innerHTML = stats.map(([v, l]) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+    columns(el("chart-days"), visible(), (w) => w.days, {
+      label: "Days trained per week", height: 180, minTop: 6, fmt: (v) => nf0.format(v),
+      refs: [{ v: 3, label: "3-day plan" }, { v: 5, label: "5-day plan" }], tip: weekTip,
+    });
+  }
+
+  function renderVolume() {
+    const weeks = visible();
+    columns(el("chart-tonnage"), weeks, (w) => w.tonnage, { label: "Tonnage per week", tip: weekTip, focus: true });
+    columns(el("chart-sets"), weeks, (w) => w.sets, { label: "Working sets per week", tip: weekTip, focus: true, fmt: (v) => nf0.format(v) });
+    renderHeatmap();
+  }
+
+  function renderTable() {
+    const weeks = visible().slice().reverse();
+    el("weeks-table").innerHTML = `<thead><tr><th>Week of</th><th class="num">Days</th><th class="num">Sessions</th><th class="num">Sets</th><th class="num">Tonnage (${U})</th>` +
+      GROUPS.map((g) => `<th class="num">${esc(g.label)}</th>`).join("") + `<th>Main lifts (e1RM)</th></tr></thead><tbody>` +
+      weeks.map((w) => `<tr><td>${dLabel(w.week, true)}</td><td class="num">${w.days}</td><td class="num">${w.sessions}</td><td class="num">${w.sets}</td><td class="num">${nf0.format(w.tonnage)}</td>` +
+        GROUPS.map((g) => `<td class="num">${w.muscles[g.key] ? nf1.format(w.muscles[g.key]) : ""}</td>`).join("") +
+        `<td>${esc(Object.entries(w.lifts).map(([k, l]) => `${LIFT_NAMES[k] || k} ${nf1.format(l.e1rm)}`).join(", "))}</td></tr>`).join("") + "</tbody>";
+  }
+
+  function renderMeta() {
+    const c = D.consistency;
+    el("meta").innerHTML = [`Last session ${c.last_date ? dLabel(c.last_date, true) : "–"}`, `Built ${dLabel(D.generated, true)}`, `Loads in ${U}`]
+      .map((t) => `<span>${esc(t)}</span>`).join("");
+    el("unmapped").textContent = D.unmapped && D.unmapped.length
+      ? `Muscle groups guessed from the name (not in data/exercise-muscles.json): ${D.unmapped.join(", ")}.` : "";
+  }
+
+  function renderRange() {
+    document.querySelectorAll("#range button").forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.weeks) === range)));
+  }
+
+  function renderAll() {
+    tips.clear(); tipSeq = 0;
+    renderRange(); renderMeta(); renderTiles(); renderVolume(); renderMuscles(); renderLifts(); renderTracks(); renderConsistency(); renderTable();
+  }
+
+  document.querySelectorAll("#range button").forEach((b) => b.addEventListener("click", () => {
+    range = Number(b.dataset.weeks);
+    try { localStorage.setItem("tpb-range", String(range)); } catch (e) {}
+    const vis = visible();
+    if (!vis.some((w) => w.week === focus)) { const lt = [...vis].reverse().find((w) => w.sessions); if (lt) focus = lt.week; }
+    renderAll();
+  }));
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderAll, 120); });
+  renderAll();
+})();
+</script>

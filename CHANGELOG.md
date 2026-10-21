@@ -40,3 +40,10 @@
   (`data/hevy-exercise-map.json`), folder `Rotation 2026-10` and the nine
   routines created (`data/hevy-state.json`). Folder-create and routine-get
   responses are wrapped objects on the live API; client adjusted.
+- Progress dashboard: `tools/build_dashboard.py` builds `dashboard/index.html`
+  from `data/history.csv`, `data/tracks.json` and `data/track-log.md`, applying
+  the derived metrics of chapter 07 section 1.2 by week (tonnage, working sets,
+  sets per muscle against the chapter 03 targets, week-over-week e1RM per main
+  lift, gap clock, track state, streaks). Muscle groups come from Hevy's
+  exercise templates (`data/exercise-muscles.json`). `hevy_sync.py` rebuilds it
+  after each update so progress over time is visible in one page.

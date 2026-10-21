@@ -20,6 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
+import build_dashboard as dash  # noqa: E402
 import hevy_push_routines as push  # noqa: E402
 import update_tracks as upd  # noqa: E402
 from hevy_api import HISTORY_COLUMNS, workout_rows  # noqa: E402
@@ -292,6 +293,79 @@ class ApiShapes(unittest.TestCase):
         self.assertEqual(rows[0]["notes"], "felt; good ok")
         self.assertEqual(rows[0]["workout_id"], "abc")
         self.assertEqual(rows[0]["date"], "2026-10-27")
+
+
+class Dashboard(unittest.TestCase):
+    MUSCLES = {"Squat (Barbell)": {"primary": "quadriceps", "secondary": ["glutes", "hamstrings"], "type": "weight_reps"},
+               "Bench Press (Barbell)": {"primary": "chest", "secondary": ["triceps", "shoulders"], "type": "weight_reps"},
+               "Pull Up (Assisted)": {"primary": "lats", "secondary": ["biceps"], "type": "assisted_bodyweight"}}
+
+    def build(self, rows, today=TODAY):
+        path = history_csv(rows)
+        try:
+            return dash.build(path, fresh_tracks(), ALIASES, self.MUSCLES, today)
+        finally:
+            os.unlink(path)
+
+    def test_weekly_volume_and_muscle_credit(self):
+        data = self.build([
+            ("2026-10-19", "L1", "Squat (Barbell)", 0, "warmup", 40, 5, ""),
+            ("2026-10-19", "L1", "Squat (Barbell)", 1, "normal", 60, 4, 8),
+            ("2026-10-19", "L1", "Squat (Barbell)", 2, "normal", 55, 6, ""),
+            ("2026-10-21", "U1", "Bench Press (Barbell)", 0, "normal", 40, 5, ""),
+            ("2026-10-21", "U1", "Pull Up (Assisted)", 0, "normal", 20, 8, ""),
+        ])
+        w = data["weeks"][-1]
+        self.assertEqual(w["week"], "2026-10-19")
+        self.assertEqual((w["sessions"], w["days"], w["sets"]), (2, 2, 4))
+        self.assertEqual(w["tonnage"], 60 * 4 + 55 * 6 + 40 * 5)  # warm-up and assisted sets left out
+        self.assertEqual(w["muscles"]["quads"], 2)
+        self.assertEqual(w["muscles"]["hams_glutes"], 1)  # glutes and hamstrings credit the group once per set
+        self.assertEqual(w["muscles"]["triceps"], 0.5)
+        self.assertEqual(w["muscles"]["back"], 1)
+        self.assertEqual(w["target"], [4, 6])
+
+    def test_week_over_week_trend_and_restart(self):
+        rows = [("2026-08-03", "L1", "Squat (Barbell)", 0, "normal", 60, 4, 8),
+                ("2026-10-05", "L1", "Squat (Barbell)", 0, "normal", 60, 4, 8),
+                ("2026-10-12", "L1", "Squat (Barbell)", 0, "normal", 65, 4, 8),
+                ("2026-10-19", "L1", "Squat (Barbell)", 0, "normal", 65, 4, 8)]
+        weeks = {w["week"]: w for w in self.build(rows)["weeks"]}
+        self.assertEqual(weeks["2026-08-03"]["lifts"]["squat"]["trend"], "first")
+        self.assertEqual(weeks["2026-10-05"]["lifts"]["squat"]["trend"], "restart")
+        self.assertEqual(weeks["2026-10-12"]["lifts"]["squat"]["trend"], "up")
+        self.assertEqual(weeks["2026-10-19"]["lifts"]["squat"]["trend"], "flat")
+        self.assertEqual(weeks["2026-10-12"]["lifts"]["squat"]["prev_week"], "2026-10-05")
+
+    def test_empty_weeks_filled_and_streaks(self):
+        rows = [(d, "L1", "Squat (Barbell)", 0, "normal", 60, 4, 8)
+                for d in ("2026-09-14", "2026-09-21", "2026-10-05", "2026-10-12")]
+        data = self.build(rows, today=dt.date(2026, 10, 22))
+        self.assertEqual([w["week"] for w in data["weeks"]][-2:], ["2026-10-12", "2026-10-19"])
+        self.assertEqual(data["weeks"][-1]["sessions"], 0)
+        self.assertEqual(data["consistency"]["current_streak"], 2)  # the week in progress does not break it
+        self.assertEqual(data["consistency"]["longest_streak"], 2)
+        squat = next(l for l in data["lifts"] if l["key"] == "squat")
+        self.assertEqual((squat["gap_days"], squat["gap"]["key"]), (10, "hold"))
+
+    def test_render_inlines_data(self):
+        data = self.build([("2026-10-19", "L1", "Squat (Barbell)", 0, "normal", 60, 4, 8)])
+        data["unmapped"] = ["</script><b>x"]
+        html = dash.render(data)
+        self.assertNotIn(dash.PLACEHOLDER, html)
+        self.assertNotIn("</script><b>", html)
+        self.assertIn('"week":"2026-10-19"', html)
+
+    def test_track_log_parse(self):
+        with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False) as f:
+            f.write("# Track log\n\n## 2026-10-27\n\n- 2026-10-27 L1 Back squat: top 60 x 4 @ 8 -> +2.5\n"
+                    "- 2026-10-27 L1 Bench press: STALL on Bench press\n- Flag: pointer jumped\n")
+        try:
+            log = dash.parse_track_log(f.name)
+        finally:
+            os.unlink(f.name)
+        self.assertEqual([x["kind"] for x in log], ["decision", "stall", "flag"])
+        self.assertEqual(log[0]["date"], "2026-10-27")
 
 
 if __name__ == "__main__":
