@@ -13,8 +13,12 @@ session logged after each track's last processed exposure:
 
   Heavy (H) exposure, top-set lifts (templates/progression-tracks.md, section 5):
     the top set is the heaviest working set of the lift in an H-slot session.
-    4+ reps at RPE <= 7         -> +big increment (5 / 2 kg), miss counter 0
-    4+ reps at RPE 7.5-8        -> +increment (2.5 / 1 kg), miss counter 0
+    4+ reps at RPE <= 7         -> +big increment (10 lb squat and deadlift,
+                                   5 lb bench and press), miss counter 0
+    4+ reps at RPE 7.5-8        -> +increment (5 lb), miss counter 0. Bench and
+                                   press (increment_every = 2): +5 lb on every
+                                   second such result, counted in step_counter
+                                   (no fractional plates)
     4+ reps at RPE 8.5-9        -> hold
     4+ reps at RPE 9.5-10       -> hold, miss +1 (merged session, lift not first: hold only)
     fewer than 4 reps           -> hold, miss +1
@@ -22,7 +26,7 @@ session logged after each track's last processed exposure:
     The new planned load is computed from the load actually lifted, so a
     work-up or a heavier-than-planned set moves the track with it.
   Heavy exposure, row and pull-up (double progression):
-    every set reached the top of the range at RPE <= 8 -> +2.5 kg, counter 0
+    every set reached the top of the range at RPE <= 8 -> +5 lb, counter 0
     first set below the bottom of the range             -> hold, miss +1
     otherwise                                           -> hold
   Stall (section 6): two consecutive misses at the same load. Flagged; the load
@@ -37,6 +41,9 @@ session logged after each track's last processed exposure:
 Slots are read from the workout title: L1, U1, L2, U2, L3, U3, Full A, Full B,
 Full C (case-insensitive prefix, so Hevy routines titled 'L1 Lower A' work).
 Lifts are matched to exercise names through tools/lift_aliases.json.
+
+Units: tracks.json is in pounds. history.csv keeps weight_kg exactly as the
+Hevy API returns it; loads are converted to pounds (to 0.1 lb) on read.
 """
 import argparse
 import csv
@@ -57,6 +64,7 @@ TRACK_MD = os.path.join(ROOT, "data", "track-state.md")
 
 SLOT_RE = re.compile(r"^\s*(L[123]|U[123]|FULL\s*[ABC])\b", re.I)
 MD_BEGIN, MD_END = "<!-- tracks:begin -->", "<!-- tracks:end -->"
+LB_KG = 0.45359237
 
 
 # ----- helpers ----------------------------------------------------------------
@@ -91,6 +99,16 @@ def e1rm(load, reps, rpe):
     return round(load * (1 + (reps + rir) / 30), 1)
 
 
+def kg_to_lb(kg):
+    """Logged kg -> lb to 0.1 lb (the API's kg carry 2-6 decimals, so a 135-lb
+    set comes back as 135.0)."""
+    return None if kg is None else round(kg / LB_KG, 1)
+
+
+def fmt(x):
+    return f"{x:g}"
+
+
 def fnum(x):
     try:
         return float(x) if x not in (None, "") else None
@@ -120,7 +138,7 @@ def load_sessions(path, since=None):
             if not d or (since and d < since):
                 continue
             key = (d, r.get("workout_title") or "", r.get("workout_id") or "")
-            r["_w"] = fnum(r.get("weight_kg"))
+            r["_w"] = kg_to_lb(fnum(r.get("weight_kg")))
             r["_reps"] = fnum(r.get("reps"))
             r["_rpe"] = fnum(r.get("rpe"))
             r["_type"] = (r.get("set_type") or "normal").lower()
@@ -140,37 +158,48 @@ def apply_top_set_rule(track, top, merged_not_first, flags):
     """Section 5. `top` = the top set row. Mutates track; returns a decision string."""
     load, reps, rpe = top["_w"], int(top["_reps"]), top["_rpe"]
     target = track.get("rep_target", 4)
-    inc, big = track.get("increment_kg", 2.5), track.get("big_increment_kg", 5)
-    step = track.get("round_step_kg", 2.5)
+    inc, big = track.get("increment_lb", 5), track.get("big_increment_lb", 10)
+    step = track.get("round_step_lb", 5)
+    every = track.get("increment_every", 1)
     if rpe is None:
-        flags.append(f"no RPE logged on the {track['name']} top set ({load} x {reps}); treated as RPE 8")
+        flags.append(f"no RPE logged on the {track['name']} top set ({fmt(load)} x {reps}); treated as RPE 8")
         rpe_eff = 8.0
     else:
         rpe_eff = rpe
-    prev_load = track.get("last_h_load_kg")
-    track["last_h_load_kg"] = load
+    prev_load = track.get("last_h_load_lb")
+    track["last_h_load_lb"] = load
     if reps < target:
-        decision = f"miss ({reps} reps < {target}); hold {load}"
-        track["top_set_kg"] = load
+        decision = f"miss ({reps} reps < {target}); hold {fmt(load)}"
+        track["top_set_lb"] = load
         track["miss_counter"] = track.get("miss_counter", 0) + 1
     elif rpe_eff <= 7:
-        track["top_set_kg"] = round_to(load + big, step)
+        track["top_set_lb"] = round_to(load + big, step)
         track["miss_counter"] = 0
-        decision = f"4+ @ {rpe_eff:g}: big step to {track['top_set_kg']}"
+        if every > 1:
+            track["step_counter"] = 0
+        decision = f"4+ @ {rpe_eff:g}: big step to {fmt(track['top_set_lb'])}"
     elif rpe_eff <= 8:
-        track["top_set_kg"] = round_to(load + inc, step)
         track["miss_counter"] = 0
-        decision = f"{reps} @ {rpe_eff:g}: +{inc} to {track['top_set_kg']}"
+        n = track.get("step_counter", 0) + 1
+        if n >= every:
+            track["top_set_lb"] = round_to(load + inc, step)
+            if every > 1:
+                track["step_counter"] = 0
+            decision = f"{reps} @ {rpe_eff:g}: +{fmt(inc)} to {fmt(track['top_set_lb'])}"
+        else:
+            track["top_set_lb"] = load
+            track["step_counter"] = n
+            decision = f"{reps} @ {rpe_eff:g}: success {n} of {every}; hold {fmt(load)}, +{fmt(inc)} after the next one"
     elif rpe_eff <= 9:
-        track["top_set_kg"] = load
-        decision = f"{reps} @ {rpe_eff:g}: hold {load}"
+        track["top_set_lb"] = load
+        decision = f"{reps} @ {rpe_eff:g}: hold {fmt(load)}"
     else:
-        track["top_set_kg"] = load
+        track["top_set_lb"] = load
         if merged_not_first:
-            decision = f"{reps} @ {rpe_eff:g} in a merged session, not first lift: hold {load} (no miss)"
+            decision = f"{reps} @ {rpe_eff:g} in a merged session, not first lift: hold {fmt(load)} (no miss)"
         else:
             track["miss_counter"] = track.get("miss_counter", 0) + 1
-            decision = f"{reps} @ {rpe_eff:g}: hold {load}, miss {track['miss_counter']}"
+            decision = f"{reps} @ {rpe_eff:g}: hold {fmt(load)}, miss {track['miss_counter']}"
     # stall: two consecutive misses at the same load
     if track.get("miss_counter", 0) >= 2 and prev_load == load:
         track["_stall"] = True
@@ -180,28 +209,28 @@ def apply_top_set_rule(track, top, merged_not_first, flags):
 def apply_dp_rule(track, sets, flags):
     """Double progression for row and pull-up (section 5)."""
     lo, hi = track.get("rep_range", [6, 8])
-    inc, step = track.get("increment_kg", 2.5), track.get("round_step_kg", 2.5)
+    inc, step = track.get("increment_lb", 5), track.get("round_step_lb", 5)
     load = max(r["_w"] or 0 for r in sets)
     work = [r for r in sets if (r["_w"] or 0) >= load - 1e-6]
     reps = [int(r["_reps"]) for r in work]
     rpes = [r["_rpe"] for r in work]
     if any(r is None for r in rpes):
         flags.append(f"no RPE on some {track['name']} sets; assumed RPE 8")
-    prev_load = track.get("last_h_load_kg")
-    track["last_h_load_kg"] = load
+    prev_load = track.get("last_h_load_lb")
+    track["last_h_load_lb"] = load
     if all(n >= hi for n in reps) and all((r or 8) <= 8 for r in rpes):
-        track["top_set_kg"] = round_to(load + inc, step)
+        track["top_set_lb"] = round_to(load + inc, step)
         track["miss_counter"] = 0
-        decision = f"all {len(reps)} sets reached {hi}: +{inc} to {track['top_set_kg']}"
+        decision = f"all {len(reps)} sets reached {hi}: +{fmt(inc)} to {fmt(track['top_set_lb'])}"
     elif reps and reps[0] < lo:
-        track["top_set_kg"] = load
+        track["top_set_lb"] = load
         track["miss_counter"] = track.get("miss_counter", 0) + 1
-        decision = f"first set {reps[0]} < {lo}: hold {load}, miss {track['miss_counter']}"
+        decision = f"first set {reps[0]} < {lo}: hold {fmt(load)}, miss {track['miss_counter']}"
         if track["miss_counter"] >= 2 and prev_load == load:
             track["_stall"] = True
     else:
-        track["top_set_kg"] = load
-        decision = f"reps {reps} at {load}: hold, keep adding reps"
+        track["top_set_lb"] = load
+        decision = f"reps {reps} at {fmt(load)}: hold, keep adding reps"
     return decision
 
 
@@ -209,14 +238,16 @@ def apply_stall(track, reset):
     """Section 6. Returns a note."""
     track.pop("_stall", None)
     if not reset:
-        return (f"STALL on {track['name']} (two misses at {track['last_h_load_kg']}). Check sleep, calories and bodyweight for the last two weeks first; "
+        return (f"STALL on {track['name']} (two misses at {fmt(track['last_h_load_lb'])}). Check sleep, calories and bodyweight for the last two weeks first; "
                 f"if one is off, fix it and hold one more exposure. Otherwise re-run with --reset-on-stall.")
     pct = 0.925 if track.get("scheme") == "top_set" else 0.95
-    step = track.get("round_step_kg", 2.5)
-    new = floor_to(track["top_set_kg"] * pct, step)
-    note = f"STALL on {track['name']}: reset {track['top_set_kg']} -> {new} ({'7.5' if pct == 0.925 else '5'}%)"
-    track["top_set_kg"] = new
+    step = track.get("round_step_lb", 5)
+    new = floor_to(track["top_set_lb"] * pct, step)
+    note = f"STALL on {track['name']}: reset {fmt(track['top_set_lb'])} -> {fmt(new)} ({'7.5' if pct == 0.925 else '5'}%)"
+    track["top_set_lb"] = new
     track["miss_counter"] = 0
+    if "step_counter" in track:
+        track["step_counter"] = 0
     track["stalls"] = track.get("stalls", 0) + 1
     if track["stalls"] >= 2 and track.get("scheme") == "top_set":
         note += ". Second stall: switch this lift to a 6-rep top set for one block (section 6.2)"
@@ -277,7 +308,7 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
             hist.append({"date": date, "e1rm": e1rm(best["_w"] or 0, int(best["_reps"]), best["_rpe"]),
                          "load": best["_w"], "reps": int(best["_reps"]), "rpe": best["_rpe"], "slot": slot})
             del hist[:-6]
-            line = f"{date} {slot} {t['name']}: top {best['_w']} x {int(best['_reps'])}" + (f" @ {best['_rpe']:g}" if best["_rpe"] is not None else "") + f" -> {decision}"
+            line = f"{date} {slot} {t['name']}: top {fmt(best['_w'] or 0)} x {int(best['_reps'])}" + (f" @ {best['_rpe']:g}" if best["_rpe"] is not None else "") + f" -> {decision}"
             if t.pop("_stall", False):
                 line += ". " + apply_stall(t, reset_on_stall)
             log.append(line)
@@ -294,11 +325,11 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
 
 
 def md_table(tracks):
-    out = ["| Lift | Next H load (kg) | Back-offs | V load | Rep target | Misses | Last exposure | e1RM history (last 6 H) |",
+    out = ["| Lift | Next H load (lb) | Back-offs | V load | Rep target | Misses | Last exposure | e1RM history (last 6 H) |",
            "|---|---|---|---|---|---|---|---|"]
     for lift, t in tracks["tracks"].items():
-        step = t.get("round_step_kg", 2.5)
-        top = t.get("top_set_kg")
+        step = t.get("round_step_lb", 5)
+        top = t.get("top_set_lb")
         if top is None:
             topcell, bo, v = "work up", "93% of the load found", "90% of the load found"
         else:

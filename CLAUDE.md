@@ -49,6 +49,8 @@ The user logs in Hevy (Pro) and the repo talks to it over the Hevy API.
   `data/track-log.md`, and updates the nine routines in the app. Run it when
   the user asks for their loads, their next session, or an update after
   training. Commit the changed data files afterwards.
+- The program runs in pounds (`data/tracks.json`, the routines, `data/track-state.md`).
+  The Hevy API and `data/history.csv` carry kg; the tools convert.
 - Read `data/tracks.json` for the current loads and the pointer (the next
   half-session owed); `data/track-log.md` for what changed and why.
 - `templates/rotation.json` is the machine-readable rotation. When a markdown

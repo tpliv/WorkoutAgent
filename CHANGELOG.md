@@ -53,3 +53,19 @@
   addendum, chapter 05 section 5, templates, Liftosaur notes,
   `templates/rotation.json` and `tools/hevy_push_routines.py` (with tests)
   updated. The nine Hevy routines were changed in place (warm-up sets only).
+- Switched the program's tools and data from kilograms to pounds, to match the
+  Hevy app (set to lb) and the routines already in it. `data/tracks.json`,
+  `data/track-state.md`, `templates/progression-tracks.md` and the routine
+  renderer now work in pounds. Starting loads are squat 135, bench 95,
+  press 60, row 70 and pulldown 125. Every barbell load is a multiple of 5 lb,
+  since the smallest plate is 2.5 lb. Rule changes that follow from the unit:
+  squat and deadlift +5 lb per success (+10 lb big step); bench and press
+  +5 lb after every second success, tracked by a new `step_counter`, instead
+  of +1 kg each time (same weekly pace); row and pulldown +5 lb. Accessory
+  notes carry each exercise's own step (one pin, or 2.5 lb per dumbbell).
+  V-day warm-ups now key off the V load. `data/history.csv` stays in kg as the
+  Hevy API returns it; `update_tracks.py` converts on read, and
+  `hevy_api.py workouts` and `history` print `weight_lb` beside `weight_kg`.
+  Why: running a sync from the kg files would have overwritten the pound
+  routines (a 132.3-lb squat). Verified by rendering all nine routines
+  offline and diffing them against the live app: no differences.

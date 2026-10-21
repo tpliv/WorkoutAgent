@@ -1,5 +1,5 @@
 {
-  "_comment": "Machine-readable form of the rotation in templates/6-day-week.md (split sessions) and templates/3-day-week.md (merged sessions). tools/hevy_push_routines.py renders these into Hevy routines, filling loads from data/tracks.json. Edit the markdown first, then this file. 'hevy' lists Hevy exercise-library titles to try in order; the first one the account has is used and cached in data/hevy-exercise-map.json. Roles: H = heavy exposure (top set + back-offs, or double progression for row/pull-up), V = volume exposure at volume_pct of the track load, acc = accessory (double progression, load from tracks.json accessories). 'warmup': ramp = bar x 5, 80% x 2 before the top set (plus 60% x 3 between them once the top set is 102.5 kg / 225 lb or more); feeder = one set at 65%. 'superset' groups exercises that share a superset_id.",
+  "_comment": "Machine-readable form of the rotation in templates/6-day-week.md (split sessions) and templates/3-day-week.md (merged sessions). tools/hevy_push_routines.py renders these into Hevy routines, filling loads from data/tracks.json. Edit the markdown first, then this file. 'hevy' lists Hevy exercise-library titles to try in order; the first one the account has is used and cached in data/hevy-exercise-map.json. Roles: H = heavy exposure (top set + back-offs, or double progression for row/pull-up), V = volume exposure at volume_pct of the track load, acc = accessory (double progression, load from tracks.json accessories). 'warmup': ramp = bar x 5, 80% x 2 of the day's working load (plus 60% x 3 between them once it is 225 lb or more); feeder = one set at 65%. 'superset' groups exercises that share a superset_id.",
   "version": "2026-10",
   "folder_title": "Rotation 2026-10",
   "slots": ["L1", "U1", "L2", "U2", "L3", "U3"],
@@ -19,7 +19,7 @@
     },
     "U1": {
       "title": "U1 Upper A",
-      "notes": "Bench heavy, row heavy. Bench: top set 4 @ RPE 8, back-offs -7%. Row: 4 x 6-8 at RPE 8, add 2.5 kg when every set reaches 8. Superset lateral raise with triceps.",
+      "notes": "Bench heavy, row heavy. Bench: top set 4 @ RPE 8, back-offs -7%. Row: 4 x 6-8 at RPE 8, add 5 lb when every set reaches 8. Superset lateral raise with triceps.",
       "exercises": [
         {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "ramp", "backoffs": 3, "rest": 180},
         {"name": "Barbell row", "hevy": ["Bent Over Row (Barbell)"], "role": "H", "track": "row", "warmup": "feeder", "sets": 4, "rest": 150},
@@ -43,7 +43,7 @@
     },
     "U2": {
       "title": "U2 Upper B",
-      "notes": "Press heavy, pull-up heavy. Press: top set 4 @ RPE 8, back-offs -7%. Pull-up/pulldown: 4 x 5-8 at RPE 8, add 2.5 kg when every set reaches 8. Switch pulldown to the bar when a pulldown set at about bodyweight reaches 8.",
+      "notes": "Press heavy, pull-up heavy. Press: top set 4 @ RPE 8, back-offs -7%. Pull-up/pulldown: 4 x 5-8 at RPE 8, add 5 lb when every set reaches 8. Switch pulldown to the bar when a pulldown set at about bodyweight reaches 8.",
       "exercises": [
         {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "ramp", "backoffs": 3, "rest": 180},
         {"name": "Pull-up or pulldown", "hevy": ["Lat Pulldown (Cable)", "Pull Up (Weighted)", "Pull Up"], "role": "H", "track": "pullup", "warmup": "feeder", "sets": 4, "rest": 150},

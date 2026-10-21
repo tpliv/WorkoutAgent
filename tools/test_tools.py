@@ -45,14 +45,27 @@ def fresh_tracks(**over):
     return t
 
 
+LB = 0.45359237
+
+
+def lbs(sets):
+    """Payload sets -> loads in pounds (None stays None)."""
+    return [None if s["weight_kg"] is None else round(s["weight_kg"] / LB, 3) for s in sets]
+
+
+def normal(sets):
+    return [s for s in sets if s["type"] == "normal"]
+
+
 def history_csv(rows):
-    """rows: (date, title, exercise, set_index, type, weight, reps, rpe)."""
+    """rows: (date, title, exercise, set_index, type, weight_lb, reps, rpe).
+    Written as weight_kg rounded to 2 decimals, as hevy_pull stores the API's kg."""
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=HISTORY_COLUMNS)
     w.writeheader()
     for i, (date, title, ex, idx, typ, wt, reps, rpe) in enumerate(rows):
         w.writerow({"date": date, "workout_title": title, "exercise": ex, "set_index": idx, "set_type": typ,
-                    "weight_kg": wt, "reps": reps, "rpe": rpe, "notes": "", "source": "hevy-api", "workout_id": f"w-{date}-{title}"})
+                    "weight_kg": "" if wt in ("", None) else round(wt * LB, 2), "reps": reps, "rpe": rpe, "notes": "", "source": "hevy-api", "workout_id": f"w-{date}-{title}"})
     f = tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False)
     f.write(buf.getvalue())
     f.close()
@@ -93,68 +106,87 @@ class RenderRoutines(unittest.TestCase):
         self.assertEqual(squat["exercise_template_id"], EXMAP["Back squat"]["template_id"])
         types = [s["type"] for s in squat["sets"]]
         self.assertEqual(types, ["warmup"] * 2 + ["normal"] * 4)
-        self.assertEqual([s["weight_kg"] for s in squat["sets"] if s["type"] == "normal"], [60, 55, 55, 55])
-        self.assertEqual([(s["weight_kg"], s["reps"]) for s in squat["sets"][:2]], [(20, 5), (47.5, 2)])  # bar, 80%
+        self.assertEqual(lbs(normal(squat["sets"])), [135, 125, 125, 125])
+        self.assertEqual([(w, s["reps"]) for w, s in zip(lbs(squat["sets"][:2]), squat["sets"][:2])], [(45, 5), (110, 2)])  # bar, 80%
         self.assertIn("RPE 8", squat["notes"])
+        self.assertIn("+5 lb next time", squat["notes"])
         # superset ids pass through
         self.assertEqual(payload["exercises"][3]["superset_id"], 1)
         self.assertEqual(payload["exercises"][4]["superset_id"], 1)
 
     def test_ramp_adds_60_percent_step_from_225_lb(self):
-        self.assertEqual(len(push.warmup_sets("ramp", 100)), 2)
-        heavy = push.warmup_sets("ramp", 102.5)
-        self.assertEqual([(s["weight_kg"], s["reps"]) for s in heavy], [(20, 5), (62.5, 3), (82.5, 2)])
-        self.assertEqual(len(push.warmup_sets("feeder", 150)), 1)
+        self.assertEqual(len(push.warmup_sets("ramp", 220)), 2)
+        heavy = push.warmup_sets("ramp", 225)
+        self.assertEqual([(s["weight_lb"], s["reps"]) for s in heavy], [(45, 5), (135, 3), (180, 2)])
+        self.assertEqual(push.warmup_sets("feeder", 150), [{"type": "warmup", "weight_lb": 100, "reps": 3}])  # 97.5 rounds up
+        self.assertEqual(push.warmup_sets("feeder", 60)[0]["weight_lb"], 45)  # never below the bar
+
+    def test_payload_weights_are_exact_pounds(self):
+        title = {v["template_id"]: v["hevy_title"] for v in EXMAP.values()}
+        for slot in ROTATION["sessions"]:
+            payload, _ = push.build_routine(slot, ROTATION, TRACKS, EXMAP, TODAY)
+            for ex in payload["exercises"]:
+                for s in ex["sets"]:
+                    if s["weight_kg"] is None:
+                        continue
+                    lb = s["weight_kg"] / LB
+                    self.assertAlmostEqual(lb, round(lb * 2) / 2, places=9)  # whole or half pounds, full precision
+                    if "(Barbell)" in title[ex["exercise_template_id"]]:
+                        self.assertAlmostEqual(lb / 5, round(lb / 5), places=9, msg=f"{slot} {lb}")  # 2.5-lb plates
 
     def test_merged_full_a_has_two_backoffs_and_three_rows(self):
         payload, _ = push.build_routine("Full A", ROTATION, TRACKS, EXMAP, TODAY)
         squat, bench, row = payload["exercises"][:3]
-        self.assertEqual(sum(1 for s in squat["sets"] if s["type"] == "normal"), 3)
-        self.assertEqual(sum(1 for s in bench["sets"] if s["type"] == "normal"), 3)
-        self.assertEqual([s["weight_kg"] for s in bench["sets"] if s["type"] == "normal"], [42.5, 39.5, 39.5])
+        self.assertEqual(len(normal(squat["sets"])), 3)
+        self.assertEqual(lbs(normal(bench["sets"])), [95, 90, 90])
+        self.assertEqual(lbs([s for s in bench["sets"] if s["type"] == "warmup"]), [60])  # feeder at 65%
         self.assertIn("hold, not a miss", bench["notes"])
+        self.assertIn("every second top set", bench["notes"])
         self.assertEqual(len(row["sets"]), 3)
         self.assertEqual(row["sets"][0]["rep_range"], {"start": 6, "end": 8})
-        self.assertEqual(row["sets"][0]["weight_kg"], 32.5)
+        self.assertEqual(lbs(row["sets"][:1]), [70])
+        self.assertNotIn("reps", row["sets"][0])
 
-    def test_volume_sets_are_90_percent(self):
+    def test_volume_sets_are_90_percent_and_warm_up_off_the_v_load(self):
         payload, _ = push.build_routine("U3", ROTATION, TRACKS, EXMAP, TODAY)
         bench, press, row, pull = payload["exercises"][:4]
-        self.assertEqual([s for s in bench["sets"] if s["type"] == "normal"], [{"type": "normal", "weight_kg": 38.5, "reps": 6}] * 4)
-        self.assertEqual([s["weight_kg"] for s in press["sets"] if s["type"] == "normal"], [25.0] * 3)
-        self.assertEqual(row["sets"][0]["weight_kg"], 30.0)
-        self.assertEqual(pull["sets"][0]["weight_kg"], 52.5)
+        self.assertEqual(lbs(normal(bench["sets"])), [85] * 4)
+        self.assertEqual([s["reps"] for s in normal(bench["sets"])], [6] * 4)
+        self.assertEqual(lbs([s for s in bench["sets"] if s["type"] == "warmup"]), [45, 70])  # 80% of 85
+        self.assertEqual(lbs(normal(press["sets"])), [55] * 3)
+        self.assertEqual(lbs(row["sets"][:1]), [65])
+        self.assertEqual(lbs(pull["sets"][:1]), [115])
 
     def test_work_up_renders_blank_loads(self):
         payload, _ = push.build_routine("L2", ROTATION, TRACKS, EXMAP, TODAY)
         dl = payload["exercises"][0]
         self.assertTrue(all(s["weight_kg"] is None for s in dl["sets"]))
-        self.assertIn("40 x 4", dl["notes"])
+        self.assertIn("95 x 4", dl["notes"])
+        self.assertIn("rounded to the nearest 5 lb", dl["notes"])
 
     def test_deload(self):
         payload, _ = push.build_routine("U1", ROTATION, TRACKS, EXMAP, TODAY, deload=True)
         bench, row = payload["exercises"][:2]
-        normal = [s for s in bench["sets"] if s["type"] == "normal"]
-        self.assertEqual(len(normal), 2)  # top set + one back-off
-        self.assertEqual(normal[0]["weight_kg"], 38.5)  # 42.5 x 0.91 rounded to 0.5
-        self.assertEqual(sum(1 for s in row["sets"] if s["type"] == "normal"), 2)
+        self.assertEqual(lbs(normal(bench["sets"])), [85, 80])  # 95 x 0.91 = 86.45 -> 85; one back-off
+        self.assertNotIn("step counter", bench["notes"])
+        self.assertEqual(len(normal(row["sets"])), 2)
         self.assertTrue(payload["title"].endswith("(deload)"))
         acc = payload["exercises"][2]
         self.assertEqual(len(acc["sets"]), 2)
 
     def test_gap_modifiers(self):
-        t = fresh_tracks(squat={"top_set_kg": 62.5, "last_h_load_kg": 60, "last_exposure": {"date": "2026-10-01", "type": "H"}})["tracks"]["squat"]
-        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 8)), (62.5, 0, None))         # 7 days: normal
-        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 11))[:2], (60, 0))           # 10 days: hold
-        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 19))[:2], (60, -1))          # 18 days: hold, one fewer back-off
-        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 26))[:2], (57.5, 0))         # 25 days: -5%
-        self.assertEqual(push.gap_modifier(t, dt.date(2026, 11, 5))[:2], (55.0, 0))          # 35 days: -10%
+        t = fresh_tracks(squat={"top_set_lb": 140, "last_h_load_lb": 135, "last_exposure": {"date": "2026-10-01", "type": "H"}})["tracks"]["squat"]
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 8)), (140, 0, None))         # 7 days: normal
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 11))[:2], (135, 0))          # 10 days: hold
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 19))[:2], (135, -1))         # 18 days: hold, one fewer back-off
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 26))[:2], (130, 0))          # 25 days: -5% (128.25)
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 11, 5))[:2], (120, 0))           # 35 days: -10% (121.5)
 
     def test_gap_hold_changes_backoff_count_in_payload(self):
-        tr = fresh_tracks(squat={"top_set_kg": 62.5, "last_h_load_kg": 60, "last_exposure": {"date": "2026-10-01", "type": "H"}})
+        tr = fresh_tracks(squat={"top_set_lb": 140, "last_h_load_lb": 135, "last_exposure": {"date": "2026-10-01", "type": "H"}})
         payload, _ = push.build_routine("L1", ROTATION, tr, EXMAP, dt.date(2026, 10, 19))
         squat = payload["exercises"][0]
-        self.assertEqual([s["weight_kg"] for s in squat["sets"] if s["type"] == "normal"], [60, 55, 55])
+        self.assertEqual(lbs(normal(squat["sets"])), [135, 125, 125])
 
 
 class UpdateRules(unittest.TestCase):
@@ -165,105 +197,128 @@ class UpdateRules(unittest.TestCase):
         self.assertIsNone(upd.parse_slot("Evening workout"))
         self.assertIsNone(upd.parse_slot("L10 something"))
 
+    def test_logged_kg_reads_back_as_exact_pounds(self):
+        self.assertEqual(upd.kg_to_lb(61.24), 135.0)
+        self.assertEqual(upd.kg_to_lb(43.09), 95.0)
+        self.assertEqual(upd.kg_to_lb(20.41), 45.0)
+        self.assertIsNone(upd.kg_to_lb(None))
+
     def test_increment_on_rpe_8(self):
         tr = fresh_tracks()
         log, flags = run_update(tr, [
-            ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "warmup", 20, 10, ""),
-            ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 4, "normal", 60, 4, 8),
-            ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 5, "normal", 55, 4, 7),
+            ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "warmup", 45, 5, ""),
+            ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 2, "normal", 135, 4, 8),
+            ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 3, "normal", 125, 4, 7),
         ])
         sq = tr["tracks"]["squat"]
-        self.assertEqual(sq["top_set_kg"], 62.5)
-        self.assertEqual(sq["last_h_load_kg"], 60)
+        self.assertEqual(sq["top_set_lb"], 140)
+        self.assertEqual(sq["last_h_load_lb"], 135)
         self.assertEqual(sq["miss_counter"], 0)
         self.assertEqual(sq["last_exposure"], {"date": "2026-10-27", "type": "H"})
-        self.assertEqual(sq["e1rm_history"][-1]["e1rm"], 72.0)  # 60 x (1 + 6/30)
+        self.assertEqual(sq["e1rm_history"][-1]["e1rm"], 162.0)  # 135 x (1 + 6/30)
         self.assertEqual(tr["pointer"], "U1")
         self.assertEqual(flags, [])
 
     def test_big_step_on_rpe_7_and_actual_load_is_the_base(self):
         tr = fresh_tracks()
-        run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 65, 4, 7)])
-        self.assertEqual(tr["tracks"]["squat"]["top_set_kg"], 70)
+        run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 145, 4, 7)])
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 155)
+
+    def test_bench_adds_5_lb_every_second_success(self):
+        tr = fresh_tracks()
+        log, _ = run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 95, 4, 8)])
+        b = tr["tracks"]["bench"]
+        self.assertEqual((b["top_set_lb"], b["step_counter"], b["miss_counter"]), (95, 1, 0))
+        self.assertIn("success 1 of 2", log[0])
+        run_update(tr, [("2026-11-03", "U1", "Bench Press (Barbell)", 0, "normal", 95, 4, 7.5)])
+        self.assertEqual((b["top_set_lb"], b["step_counter"]), (100, 0))
+        # RPE 7 or lower: +5 lb at once, counter cleared
+        tr = fresh_tracks(bench={"step_counter": 1})
+        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 95, 4, 7)])
+        self.assertEqual((tr["tracks"]["bench"]["top_set_lb"], tr["tracks"]["bench"]["step_counter"]), (100, 0))
+        # a hold keeps the count
+        tr = fresh_tracks(bench={"step_counter": 1})
+        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 95, 4, 9)])
+        self.assertEqual((tr["tracks"]["bench"]["top_set_lb"], tr["tracks"]["bench"]["step_counter"]), (95, 1))
 
     def test_hold_and_miss(self):
         tr = fresh_tracks()
-        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 42.5, 4, 9)])
-        self.assertEqual(tr["tracks"]["bench"]["top_set_kg"], 42.5)
+        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 95, 4, 9)])
+        self.assertEqual(tr["tracks"]["bench"]["top_set_lb"], 95)
         self.assertEqual(tr["tracks"]["bench"]["miss_counter"], 0)
         tr = fresh_tracks()
-        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 42.5, 3, 10)])
+        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 95, 3, 10)])
         self.assertEqual(tr["tracks"]["bench"]["miss_counter"], 1)
 
     def test_merged_second_lift_at_rpe_9_5_is_a_hold_not_a_miss(self):
         tr = fresh_tracks()
         log, _ = run_update(tr, [
-            ("2026-10-27", "Full A", "Squat (Barbell)", 0, "normal", 60, 4, 8),
-            ("2026-10-27", "Full A", "Bench Press (Barbell)", 0, "normal", 42.5, 4, 9.5),
+            ("2026-10-27", "Full A", "Squat (Barbell)", 0, "normal", 135, 4, 8),
+            ("2026-10-27", "Full A", "Bench Press (Barbell)", 0, "normal", 95, 4, 9.5),
         ])
         self.assertEqual(tr["tracks"]["bench"]["miss_counter"], 0)
-        self.assertEqual(tr["tracks"]["bench"]["top_set_kg"], 42.5)
+        self.assertEqual(tr["tracks"]["bench"]["top_set_lb"], 95)
         self.assertEqual(tr["pointer"], "L2")
 
     def test_stall_flagged_then_reset(self):
-        tr = fresh_tracks(squat={"miss_counter": 1, "last_h_load_kg": 60, "top_set_kg": 60})
-        log, _ = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 60, 3, 10)])
+        tr = fresh_tracks(squat={"miss_counter": 1, "last_h_load_lb": 135, "top_set_lb": 135})
+        log, _ = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 135, 3, 10)])
         self.assertIn("STALL", log[0])
-        self.assertEqual(tr["tracks"]["squat"]["top_set_kg"], 60)  # held without --reset-on-stall
-        tr = fresh_tracks(squat={"miss_counter": 1, "last_h_load_kg": 60, "top_set_kg": 60})
-        run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 60, 3, 10)], reset_on_stall=True)
-        self.assertEqual(tr["tracks"]["squat"]["top_set_kg"], 55)  # floor(60 x 0.925 = 55.5) to 2.5
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 135)  # held without --reset-on-stall
+        tr = fresh_tracks(squat={"miss_counter": 1, "last_h_load_lb": 135, "top_set_lb": 135})
+        run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 135, 3, 10)], reset_on_stall=True)
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 120)  # floor(135 x 0.925 = 124.9) to 5 lb
         self.assertEqual(tr["tracks"]["squat"]["stalls"], 1)
         self.assertEqual(tr["tracks"]["squat"]["miss_counter"], 0)
 
     def test_double_progression_row(self):
         tr = fresh_tracks()
-        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 32.5, 8, 8) for i in range(4)])
-        self.assertEqual(tr["tracks"]["row"]["top_set_kg"], 35)
+        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 70, 8, 8) for i in range(4)])
+        self.assertEqual(tr["tracks"]["row"]["top_set_lb"], 75)
         tr = fresh_tracks()
-        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 32.5, r, 8) for i, r in enumerate([8, 7, 6, 6])])
-        self.assertEqual(tr["tracks"]["row"]["top_set_kg"], 32.5)
+        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 70, r, 8) for i, r in enumerate([8, 7, 6, 6])])
+        self.assertEqual(tr["tracks"]["row"]["top_set_lb"], 70)
         self.assertEqual(tr["tracks"]["row"]["miss_counter"], 0)
         tr = fresh_tracks()
-        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 32.5, r, 9) for i, r in enumerate([5, 5, 4])])
+        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 70, r, 9) for i, r in enumerate([5, 5, 4])])
         self.assertEqual(tr["tracks"]["row"]["miss_counter"], 1)
 
     def test_work_up_sets_the_deadlift_track(self):
         tr = fresh_tracks()
         run_update(tr, [
-            ("2026-10-29", "L2", "Deadlift (Barbell)", 0, "normal", 50, 4, 6),
-            ("2026-10-29", "L2", "Deadlift (Barbell)", 1, "normal", 60, 4, 7),
-            ("2026-10-29", "L2", "Deadlift (Barbell)", 2, "normal", 65, 4, 8),
-            ("2026-10-29", "L2", "Deadlift (Barbell)", 3, "normal", 60, 4, 7.5),
+            ("2026-10-29", "L2", "Deadlift (Barbell)", 0, "normal", 115, 4, 6),
+            ("2026-10-29", "L2", "Deadlift (Barbell)", 1, "normal", 135, 4, 7),
+            ("2026-10-29", "L2", "Deadlift (Barbell)", 2, "normal", 145, 4, 8),
+            ("2026-10-29", "L2", "Deadlift (Barbell)", 3, "normal", 135, 4, 7.5),
         ])
         dl = tr["tracks"]["deadlift"]
-        self.assertEqual(dl["top_set_kg"], 67.5)
+        self.assertEqual(dl["top_set_lb"], 150)
         self.assertNotIn("work_up", dl)
 
     def test_volume_and_untitled_sessions_only_touch_the_clock(self):
         tr = fresh_tracks()
         log, _ = run_update(tr, [
-            ("2026-10-31", "L3", "Squat (Barbell)", 0, "normal", 55, 6, 7),
-            ("2026-11-02", "Evening workout", "Bench Press (Barbell)", 0, "normal", 50, 5, 9),
+            ("2026-10-31", "L3", "Squat (Barbell)", 0, "normal", 120, 6, 7),
+            ("2026-11-02", "Evening workout", "Bench Press (Barbell)", 0, "normal", 110, 5, 9),
         ])
         self.assertEqual(log, [])
-        self.assertEqual(tr["tracks"]["squat"]["top_set_kg"], 60)
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 135)
         self.assertEqual(tr["tracks"]["squat"]["last_exposure"], {"date": "2026-10-31", "type": "V"})
         self.assertEqual(tr["tracks"]["bench"]["last_exposure"], {"date": "2026-11-02", "type": "other"})
         self.assertEqual(tr["pointer"], "U3")
 
     def test_no_rpe_is_flagged_and_treated_as_8(self):
         tr = fresh_tracks()
-        _, flags = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 60, 4, "")])
-        self.assertEqual(tr["tracks"]["squat"]["top_set_kg"], 62.5)
+        _, flags = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 135, 4, "")])
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 140)
         self.assertTrue(flags and "no RPE" in flags[0])
 
     def test_processed_through_prevents_double_counting(self):
         tr = fresh_tracks()
-        rows = [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 60, 4, 8)]
+        rows = [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 135, 4, 8)]
         run_update(tr, rows)
         run_update(tr, rows)
-        self.assertEqual(tr["tracks"]["squat"]["top_set_kg"], 62.5)
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 140)
         self.assertEqual(len(tr["tracks"]["squat"]["e1rm_history"]), 2)  # seed + one
 
     def test_committed_history_does_not_move_any_track(self):
@@ -272,11 +327,13 @@ class UpdateRules(unittest.TestCase):
         log, _ = upd.process(tr, sessions, ALIASES, ROTATION)
         self.assertEqual(log, [])
         for lift in TRACKS["tracks"]:
-            self.assertEqual(tr["tracks"][lift]["top_set_kg"], TRACKS["tracks"][lift]["top_set_kg"])
+            self.assertEqual(tr["tracks"][lift]["top_set_lb"], TRACKS["tracks"][lift]["top_set_lb"])
 
     def test_md_table_renders(self):
         table = upd.md_table(TRACKS)
-        self.assertIn("| Back squat | **60** | 55 | 55 |", table)
+        self.assertIn("Next H load (lb)", table)
+        self.assertIn("| Back squat | **135** | 125 | 120 |", table)
+        self.assertIn("| Bench press | **95** | 90 | 85 |", table)
         self.assertIn("work up", table)
 
 

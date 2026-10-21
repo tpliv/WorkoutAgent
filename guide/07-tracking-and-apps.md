@@ -1,6 +1,6 @@
 # 07. Tracking and apps
 
-Last updated: 2026-10-21 (Hevy section revised the same day after the API schema was verified)
+Last updated: 2026-10-21 (Hevy section revised the same day after the API schema was verified; units switched to pounds the same day)
 
 **The question this chapter answers:** "Which mobile tracker can run this rotation, and how do the agents in this repo read my training data back?"
 
@@ -18,7 +18,7 @@ How this changes with available days: it does not. Every week type logs the same
 
 | Level | Fields | Why |
 |---|---|---|
-| **Set** | exercise, load (kg), reps, RPE in 0.5 steps, short note (technique, pain, substitute) | Every metric below is derived from load, reps and RPE |
+| **Set** | exercise, load (lb, the program's unit), reps, RPE in 0.5 steps, short note (technique, pain, substitute) | Every metric below is derived from load, reps and RPE |
 | **Session** | date, session slot (L1, U1, L2, U2, L3, U3, Full A, Full B, Full C), bodyweight, sleep hours, readiness 1-5 | The slot places each set in the rotation; readiness drives the reactive deload (`guide/03-flexible-scheduling.md`, section 4.5) |
 | **Lift (track state)** | planned top-set load for the next H, rep target, miss counter, date of last exposure (H or V), e1RM history (last 6 H exposures) | The state an agent updates after every H exposure (`templates/progression-tracks.md`, section 10) |
 | **Week** | hard sets per muscle group, indirect work at half credit; the pointer after the last session | Checks the week against the template tally; the pointer is the only schedule state |
@@ -94,7 +94,7 @@ What the table says (the note's inferences, KQ1-KQ3):
 **Workflow (implemented in `tools/`, details in `tools/README.md`).**
 
 1. Buy Pro ($23.99/yr or $74.99 lifetime as reported). Generate an API key at hevy.com/settings?developer and store it as the `HEVY_API_KEY` environment secret; never commit it.
-2. `python3 tools/hevy_push_routines.py` creates a routine folder named for the program version (`Rotation 2026-10`, from `templates/rotation.json`) and **nine routines** in it: L1 Lower A, U1 Upper A, L2 Lower B, U2 Upper B, L3 Lower C, U3 Upper C, Full A, Full B, Full C. Each exercise carries its sets with the planned load from `data/tracks.json` (warm-up ramp, top set, back-offs at 93%, V sets at 90%, rep ranges for row, pull-up and accessories), the rest timer, and a note with the RPE target and the rule. The free tier's 4-routine cap blocks this, which is why Pro is required.
+2. `python3 tools/hevy_push_routines.py` creates a routine folder named for the program version (`Rotation 2026-10`, from `templates/rotation.json`) and **nine routines** in it: L1 Lower A, U1 Upper A, L2 Lower B, U2 Upper B, L3 Lower C, U3 Upper C, Full A, Full B, Full C. Each exercise carries its sets with the planned load in pounds from `data/tracks.json` (warm-up ramp, top set, back-offs at 93%, V sets at 90%, rep ranges for row, pull-up and accessories), the rest timer, and a note with the RPE target and the rule. The free tier's 4-routine cap blocks this, which is why Pro is required.
 3. You open the Workout tab, start the routine the pointer names (`data/tracks.json` or the top of `data/track-state.md`), and log load, reps and RPE per set. Hevy's set RPE field is what the API returns.
 4. After each pass (weekly), `python3 tools/hevy_sync.py` pulls new workouts (`GET /workouts/events?since=`), applies the track rules in `templates/progression-tracks.md` (section 4 below), rewrites `data/tracks.json`, `data/track-state.md` and `data/track-log.md`, and updates the nine routines in place with the new loads. `--dry-run` shows the decisions without writing. A deload week is pushed with `--deload`. There is no webhook, so the sync is run by hand or on a schedule.
 
@@ -153,7 +153,7 @@ A spreadsheet or a committed CSV is enough to run the program and is the common 
 | `session` | text | `L1`, `U1`, `L2`, `U2`, `L3`, `U3`, `Full A`, `Full B`, `Full C` | The rotation slot. This is what tells an agent whether a squat set is an H or a V exposure and whether the merged back-off count applies |
 | `exercise` | text | names as written in the templates (`Back squat`, `Bench press`, `Deadlift`, `Overhead press`, `Barbell row`, `Pull-up`, ...) | Use the template name even if the app spells it differently; write a substitute's real name and tag `sub` in notes |
 | `set` | integer | 1, 2, 3 ... | Set number within the exercise; warm-up ramp sets are not logged |
-| `load` | number | kg | Loaded weight, not the computed one. Pull-up and dip: **added** load in kg (bodyweight = 0, assisted = negative) |
+| `load` | number | lb | Loaded weight, not the computed one. Pull-up and dip: **added** load in lb (bodyweight = 0, assisted = negative) |
 | `reps` | integer | | Completed reps |
 | `rpe` | number | 6 to 10 in 0.5 steps | Rated immediately after the set |
 | `notes` | text | free, comma-free | Suggested tags: `H top`, `H back-off`, `V`, `acc`, `sub`, `deload`, `hold`, `miss`, `gap 10d`; technique or pain remarks |
@@ -164,9 +164,9 @@ Session-level fields (bodyweight, sleep hours, readiness 1-5, pointer after the 
 
 ```
 date,session,exercise,set,load,reps,rpe,notes
-2026-11-03,L1,Back squat,1,125,4,8,H top e1RM 150 next H 127.5
-2026-11-03,L1,Back squat,2,117.5,4,7,H back-off 1 of 3
-2026-11-07,Full C,Pull-up,1,5,8,7,V added load kg
+2026-11-03,L1,Back squat,1,135,4,8,H top e1RM 162 next H 140
+2026-11-03,L1,Back squat,2,125,4,7,H back-off 1 of 3
+2026-11-07,Full C,Pull-up,1,10,8,7,V added load lb
 ```
 
 ### 5.3 Google Sheets specifics
