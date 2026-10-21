@@ -92,13 +92,19 @@ class RenderRoutines(unittest.TestCase):
         squat = payload["exercises"][0]
         self.assertEqual(squat["exercise_template_id"], EXMAP["Back squat"]["template_id"])
         types = [s["type"] for s in squat["sets"]]
-        self.assertEqual(types, ["warmup"] * 4 + ["normal"] * 4)
+        self.assertEqual(types, ["warmup"] * 2 + ["normal"] * 4)
         self.assertEqual([s["weight_kg"] for s in squat["sets"] if s["type"] == "normal"], [60, 55, 55, 55])
-        self.assertEqual(squat["sets"][0]["weight_kg"], 20)  # empty bar
+        self.assertEqual([(s["weight_kg"], s["reps"]) for s in squat["sets"][:2]], [(20, 5), (47.5, 2)])  # bar, 80%
         self.assertIn("RPE 8", squat["notes"])
         # superset ids pass through
         self.assertEqual(payload["exercises"][3]["superset_id"], 1)
         self.assertEqual(payload["exercises"][4]["superset_id"], 1)
+
+    def test_ramp_adds_60_percent_step_from_225_lb(self):
+        self.assertEqual(len(push.warmup_sets("ramp", 100)), 2)
+        heavy = push.warmup_sets("ramp", 102.5)
+        self.assertEqual([(s["weight_kg"], s["reps"]) for s in heavy], [(20, 5), (62.5, 3), (82.5, 2)])
+        self.assertEqual(len(push.warmup_sets("feeder", 150)), 1)
 
     def test_merged_full_a_has_two_backoffs_and_three_rows(self):
         payload, _ = push.build_routine("Full A", ROTATION, TRACKS, EXMAP, TODAY)

@@ -16,7 +16,7 @@ Last updated: 2026-10-21
 
 **Why this is not a deload:** top sets stay at RPE 8 and the tracks advance. Volume is about half of the 6-day week, which is above the one-third dose that still built muscle in young adults (Bickel 2011) and far above the one-session, one-set maintenance floor (Spiering 2021). Age flag: lifters in their late 40s and 50s should keep the optional sets in Full C and avoid two 3-day weeks in a row.
 
-Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). In merged sessions H exposures run 2 back-offs instead of 3 and V exposures run one set fewer. RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set, 3-5 min for deadlift), 60-90 s on isolation; superset pairs: 60 s between exercises, 2 min after the pair. Warm-up ramp on the first compound only (bar x 10, 40% x 8, 60% x 5, 80% x 2-3); one feeder set at 60-70% for each later main lift.
+Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). In merged sessions H exposures run 2 back-offs instead of 3 and V exposures run one set fewer. RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set, 3-5 min for deadlift), 60-90 s on isolation; superset pairs: 60 s between exercises, 2 min after the pair. Warm-up ramp on the first compound only (bar x 5, 80% x 2-3, plus 60% x 3 between them once the top set is 225 lb (about 102 kg) or more, a coaching convention rather than evidence); one feeder set at 60-70% for each later main lift.
 
 ---
 

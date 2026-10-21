@@ -47,7 +47,9 @@ TRACKS = os.path.join(ROOT, "data", "tracks.json")
 EXMAP = os.path.join(ROOT, "data", "hevy-exercise-map.json")
 STATE = os.path.join(ROOT, "data", "hevy-state.json")
 
-RAMP = [(0.0, 10), (0.40, 8), (0.60, 5), (0.80, 2)]  # fraction of the top set, reps
+RAMP = [(0.0, 5), (0.80, 2)]  # fraction of the top set, reps
+RAMP_MID = (0.60, 3)  # added between bar and 80% from RAMP_MID_FROM_KG (coaching convention)
+RAMP_MID_FROM_KG = 225 * 0.45359237  # 225 lb
 FEEDER = [(0.65, 3)]
 BAR_KG = 20
 
@@ -125,6 +127,8 @@ def warmup_sets(kind, top_kg):
     if not kind or top_kg is None:
         return []
     plan = RAMP if kind == "ramp" else FEEDER
+    if kind == "ramp" and top_kg >= RAMP_MID_FROM_KG:
+        plan = [RAMP[0], RAMP_MID] + RAMP[1:]
     out = []
     for frac, reps in plan:
         w = BAR_KG if frac == 0 else max(BAR_KG, round_to(top_kg * frac, 2.5))

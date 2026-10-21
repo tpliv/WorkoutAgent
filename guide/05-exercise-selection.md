@@ -1,6 +1,6 @@
 # 05. Exercise selection and session design
 
-Last updated: 2026-10-21
+Last updated: 2026-10-21 (section 5 ramp shortened the same day)
 
 This chapter answers: which exercises to put in a session, in what order, with what rest, warm-up, and time budget, and what to swap in when the equipment or the week changes. It does not lay out the week. The workout rotation, the per-exercise progression tracks, and the weekly set targets live in [chapter 03](03-flexible-scheduling.md) and the `templates/` folder. Nothing here overrides those.
 
@@ -133,7 +133,7 @@ Evidence (research note KQ5):
 
 - Stretching systematic review: immediately after stretching, performance changed by about -3.7% (static), +1.3% (dynamic), -4.4% (PNF). Static holds of 60 s or more per muscle produced larger deficits (-4.6%) than shorter holds (-1.1%). Stretching inside a warm-up followed by dynamic activity has limited performance effects (Behm et al. 2016, Applied Physiology, Nutrition, and Metabolism, https://cir.nii.ac.jp/crid/1360011143567622912).
 - 5-s and 30-s static stretches inside a full sport-specific warm-up had no group-level performance effect in 20 athletes (Blazevich et al. 2016, ECSS abstract).
-- Specific warm-up, 40 trained men, 3 x 6 at 80% 1RM after each of three warm-ups: squat bar speed was higher after a 2-set 40%/80% warm-up than after six sets at 40%; prior work found about +3% upper-body power after specific bench warm-ups (Ribeiro et al. 2020, PubMed 32971729, https://pubmed.ncbi.nlm.nih.gov/32971729/).
+- Specific warm-up, 40 trained men, 3 x 6 at 80% 1RM after each of three warm-ups (2 x 6 at 40% and 80% of the training load; 6 at 80%; 6 at 40%): on bench, the 2-set 40%/80% warm-up gave a shorter time to peak velocity and more total work than the 40% warm-up; on squat, bar speed was higher after the 80% warm-up than the 40% one. The authors conclude that few reps at low loads are not enough (Ribeiro et al. 2020, PubMed 32971729, https://pubmed.ncbi.nlm.nih.gov/32971729/; abstract re-checked 2026-10-21, see the KQ5 addendum).
 - Review of 11 studies: maximal strength and reps can be positively affected when the specific warm-up uses loads close to maximum; some studies found no difference between a specific warm-up and none (Motricidade 2021 review).
 - Heavier warm-up sets can potentiate the following working sets in trained lifters (Biolayne REPS issue 29, secondary).
 - Time-efficient-training recommendations on warm-up and stretching exist (Iversen et al. 2021, Sports Medicine) but were read only through citing papers (secondary).
@@ -145,14 +145,18 @@ Evidence (research note KQ5):
 | General | 3-5 min light cardio or dynamic movement | 3-5 min | Optional for a well-trained lifter in a warm gym; no study isolates its effect from the specific warm-up |
 | Dynamic mobility | 4-6 movements for the day's patterns (leg swings, hip openers, band pull-aparts, arm circles, bodyweight squats) | 2-3 min | Dynamic stretching: +1.3% (Behm 2016) |
 | Optional static holds | Ankles or hips for squat depth, pecs or lats for pressing | Under 30 s per muscle | Follow with dynamic work. Never hold 60 s or more before lifting (Behm 2016; Blazevich 2016) |
-| Ramp-up sets, first compound only | Empty bar x 10, 40% x 8, 60% x 5, 80% x 2-3, then working sets | 4-6 min | Matches the 40%/80% two-set structure of Ribeiro 2020. Percentages are of the day's top working load, not 1RM |
+| Ramp-up sets, first compound only | Empty bar (45 lb / 20 kg) x 5, then 80% x 2-3, then working sets. Add 60% x 3 between them once the top set is 225 lb (about 102 kg) or more | 2-3 min | Follows the two-set structure of Ribeiro 2020 (one light set, one near the working load). Percentages are of the day's top working load (the V load on a volume day), not 1RM |
 | Later exercises | One feeder set at about 60-70% | 1 min each | Enough once the body is warm |
 
-Total: about 8 min before the first working set of the day, which is the figure used in the time budgets in section 6.
+The 225-lb rule: when the top set reaches 225 lb (about 102 kg), the jump from the bar to 80% is large (45 to 180 lb), so a 60% x 3 step goes between them. This step is coaching convention, not evidence; no retrieved study tests it (research note KQ5, addendum).
+
+Rounding: round each ramp load to the nearest loadable step (5 lb with 2.5-lb plates); an exact half-step rounds up, and no set goes below the empty bar. Example at a 135-lb squat: 45 x 5, 110 x 2 (80% = 108, rounds to 110).
+
+Total: about 5-6 min before the first working set of the day (general and mobility plus the short ramp), which is the figure used in the time budgets in section 6. The earlier four-step ramp made this about 8 min.
 
 Foam rolling, if used, belongs here rather than after training: pre-exercise rolling improved flexibility about 4% with negligible effects on strength (see chapter 06, section 6).
 
-How this changes with available days: the warm-up is identical in 3-day and 6-day weeks. In a 45-min session, cut the general cardio portion first, never the ramp-up sets.
+How this changes with available days: the warm-up is identical in 3-day and 6-day weeks. In a 45-min session, cut general cardio first, never the 80% set.
 
 ---
 
@@ -167,7 +171,7 @@ How this changes with available days: the warm-up is identical in 3-day and 6-da
 
 ### 6.2 Time budget
 
-Arithmetic from the research note (KQ6, Inferences; these per-exercise times are inferences, not measured): a working set with setup takes about 45 s; add rest from section 4; about 8 min warm-up; about 3 min transitions. A straight-set compound with 2.5-min rest costs about 3.2 min per set; an isolation set with 75-s rest about 2 min; an antagonist paired set (two exercises, 60 s between, 2 min after the pair) about 4.5 min per pair, i.e. about 2.25 min per set.
+Arithmetic from the research note (KQ6, Inferences; these per-exercise times are inferences, not measured): a working set with setup takes about 45 s; add rest from section 4; about 5-6 min warm-up (section 5.1; 8 min before the ramp was shortened); about 3 min transitions. A straight-set compound with 2.5-min rest costs about 3.2 min per set; an isolation set with 75-s rest about 2 min; an antagonist paired set (two exercises, 60 s between, 2 min after the pair) about 4.5 min per pair, i.e. about 2.25 min per set.
 
 | Session length | Straight sets only | With antagonist or unrelated-muscle supersets for accessories | Suggested structure |
 |---|---|---|---|

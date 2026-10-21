@@ -54,7 +54,7 @@ Importing appears to work in the free app; the note ties Premium to the API and 
 2. **kg or lb.** The file is in kg. For pounds, change every `kg` to `lb` and the increments: `lp(2.5kg)` -> `lp(5lb)`, `lp(1kg)` -> `lp(2.5lb)`, `dp(2.5kg, ...)` -> `dp(5lb, ...)`, dumbbell steps `2kg` -> `5lb`. Set the app's rounding to your plates (plate rounding is a cited feature).
 3. **Exercise names.** Match each name to the app's library or create a custom exercise. The "or" alternatives in the comments are the template's substitutions.
 4. **Accessory starting loads.** Either leave the weight off and let the app estimate from the RPE target, or write the load you can lift for the bottom of the range with 2-3 reps in reserve (`progression-tracks.md`, section 11). Dumbbell increments (`2kg`) should be one step on your rack.
-5. **Warm-ups and rest.** Configure in the app: on the first compound of each day 40% x 8, 60% x 5, 80% x 2-3 of the first set (the top set); later main lifts one feeder set at 60-70%. Rest 3-4 min after a top set (deadlift 3-5), 2-3 min between compound sets, 60-90 s on isolation.
+5. **Warm-ups and rest.** Configure in the app: on the first compound of each day the empty bar x 5, then 80% x 2-3 of the first set (the top set); once the top set is 102.5 kg (225 lb) or more, add 60% x 3 between them (coaching convention, not evidence). Later main lifts one feeder set at 60-70%. Rest 3-4 min after a top set (deadlift 3-5), 2-3 min between compound sets, 60-90 s on isolation.
 
 ## How the app runs the rotation
 

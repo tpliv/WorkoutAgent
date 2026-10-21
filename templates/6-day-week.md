@@ -17,7 +17,7 @@ Last updated: 2026-10-21
 
 **Pointer:** starts at L1 on the first training day of the week if last week completed its pass; otherwise start at the owed half-session and run six in order (`guide/03-flexible-scheduling.md`, section 1.4).
 
-Key: **H** = heavy exposure (1 x 4 top set at RPE 8, back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set, 3-5 min for deadlift), 60-90 s on isolation. Superset pairs: 60 s between the two exercises, 2 min after the pair. Warm-up ramp on the first compound: bar x 10, 40% x 8, 60% x 5, 80% x 2-3; one feeder set for later compounds.
+Key: **H** = heavy exposure (1 x 4 top set at RPE 8, back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set, 3-5 min for deadlift), 60-90 s on isolation. Superset pairs: 60 s between the two exercises, 2 min after the pair. Warm-up ramp on the first compound: bar x 5, 80% x 2-3, plus 60% x 3 between them once the top set is 225 lb (about 102 kg) or more, a coaching convention rather than evidence; one feeder set at 60-70% for later compounds.
 
 ---
 

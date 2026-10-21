@@ -40,3 +40,16 @@
   (`data/hevy-exercise-map.json`), folder `Rotation 2026-10` and the nine
   routines created (`data/hevy-state.json`). Folder-create and routine-get
   responses are wrapped objects on the live API; client adjusted.
+- Shortened the warm-up ramp on each session's first compound from bar x 10,
+  40% x 8, 60% x 5, 80% x 2-3 to bar x 5, 80% x 2-3, with 60% x 3 added between
+  them once the top set is 225 lb (about 102 kg) or more. That added step is
+  coaching convention, not evidence. Why: the old ramp took 4-6 min and the short
+  one takes 2-3 min (the warm-up total in the time budget drops from about 8 to
+  about 5-6 min). At current loads the 40% set was barely above the empty bar.
+  Ribeiro et al. 2020 supports a two-set warm-up with one set near the working
+  load: its 40%/80% two-set protocol beat six light sets on bench, and its 80%
+  warm-up beat the 40% one on squat. Re-reading the abstract corrected the
+  repo's earlier claim that the two-set result was on squat. Research note KQ5
+  addendum, chapter 05 section 5, templates, Liftosaur notes,
+  `templates/rotation.json` and `tools/hevy_push_routines.py` (with tests)
+  updated. The nine Hevy routines were changed in place (warm-up sets only).

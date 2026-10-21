@@ -17,7 +17,7 @@ Last updated: 2026-10-21
 
 **Pointer:** Full A advances it L1 to L2; L2 to U2; U2 to L3; Full C back to L1. If the pointer is not at L1, write out the next six half-sessions and merge two consecutive pairs, preferring L3+U3, then L1+U1, then L2+U2 (cross-block pairs allowed if the pointer sits mid-block).
 
-Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). Merged sessions run one back-off fewer and one V set fewer. RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set; 3-5 min for deadlift), 60-90 s on isolation; superset pairs: 60 s between exercises, 2 min after the pair. Warm-up ramp on the first compound (bar x 10, 40% x 8, 60% x 5, 80% x 2-3); one feeder set for later main lifts.
+Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). Merged sessions run one back-off fewer and one V set fewer. RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set; 3-5 min for deadlift), 60-90 s on isolation; superset pairs: 60 s between exercises, 2 min after the pair. Warm-up ramp on the first compound (bar x 5, 80% x 2-3, plus 60% x 3 between them once the top set is 225 lb (about 102 kg) or more, a coaching convention rather than evidence); one feeder set at 60-70% for later main lifts.
 
 ---
 

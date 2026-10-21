@@ -51,7 +51,7 @@ For comparison, not for copying: 5/3/1 starts from a training max of 85-90% of 1
 ## 3. The H exposure, step by step
 
 1. **General warm-up** (3-5 min easy movement, optional in a warm gym) and dynamic mobility for the day's patterns. Static holds, if any, under 30 s per muscle (`research/exercise-selection-and-session-design.md`, KQ5).
-2. **Ramp on the first compound only:** empty bar x 10; 40% of the top set x 8; 60% x 5; 80% x 2-3; then the top set. Later main lifts in the same session need one feeder set at 60-70% (the 40%/80% two-set protocol improved squat bar speed in 40 trained men, Ribeiro et al. 2020, KQ5).
+2. **Ramp on the first compound only:** empty bar x 5; 80% of the top set x 2-3; then the top set. Once the top set is 102.5 kg (225 lb) or more, add 60% x 3 between the bar and the 80% set; that step is coaching convention, not evidence. Round to the plate, never below the bar. Later main lifts in the same session need one feeder set at 60-70% (Ribeiro et al. 2020: a two-set 40%/80% warm-up beat six light sets on bench, and an 80% warm-up beat a 40% one on squat; few reps at low loads were not enough. KQ5 and its 2026-10-21 addendum).
 3. **Top set:** 4 reps at the planned load. Rate it immediately: RPE 8 means you could have done 2 more. Rest 3-4 min (deadlift 3-5 min).
 4. **Back-offs:** load x 0.93, rounded to the plate. 3 x 4 in a split session, 2 x 4 in a merged session (deadlift: 2 x 4 in both). Rest 2-3 min. If a back-off set reaches RPE 9, stop the back-offs there.
 5. **Log** load, reps, RPE for every set (section 10) and write the next planned top-set load from section 5 before you leave the rack.

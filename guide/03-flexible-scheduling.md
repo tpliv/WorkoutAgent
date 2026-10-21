@@ -116,7 +116,7 @@ Age flag (spine): the maintenance data come from 20-35-year-olds. A lifter in th
 | 5 | L1, U1, L2, U2, Full C | 3x | 14-17 | 2 per lift | Split 55-65 min; Full C 65-75 min |
 | 6 | L1, U1, L2, U2, L3, U3 | 3x | 15-20 | 2 per lift | 55-65 min |
 
-Notes. "Hard sets" counts direct sets plus half credit for indirect work (a pressing set counts 0.5 for triceps; a row 0.5 for biceps and rear delts), as in `guide/01-training-principles.md`, section 1. Session lengths use the time budget in `guide/05-exercise-selection.md` (a compound set with 2-3 min rest costs about 3 min; an isolation set about 2 min; paired accessories about 2.25 min per set; plus 8 min warm-up). Exact per-muscle tallies are at the bottom of each template.
+Notes. "Hard sets" counts direct sets plus half credit for indirect work (a pressing set counts 0.5 for triceps; a row 0.5 for biceps and rear delts), as in `guide/01-training-principles.md`, section 1. Session lengths use the time budget in `guide/05-exercise-selection.md` (a compound set with 2-3 min rest costs about 3 min; an isolation set about 2 min; paired accessories about 2.25 min per set; plus about 5-6 min warm-up; the ranges below were set with the earlier 8-min warm-up, so sessions may run 2-3 min shorter). Exact per-muscle tallies are at the bottom of each template.
 
 Why frequency reads "3x" everywhere: every block contains every muscle, and every 3- to 6-day week does all three blocks. The spine's minimum (2x in a 3-day week, 2-3x in a 5-6-day week) is met with margin. Small muscles get two direct exposures in a 3-day week plus indirect credit from the compounds.
 
