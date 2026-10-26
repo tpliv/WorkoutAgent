@@ -349,3 +349,13 @@ Method: Liftosaur's open-source code (GitHub master, 2026-10-21) was run locally
 - The rewritten `templates/liftosaur/rotation.liftoscript` parses and validates with no errors. Finishing each simulated day moved the expected weights and left the labelled V lines unchanged.
 - `dp()` on sets written as a rep range (`3x8-10`) collapsed the range to 10-10 after a run. The file writes the bottom of the range (`3x8 ... dp(2.5kg, 8, 10)`) instead.
 - `progress: none` on a copy of an exercise did not stop an `lp()` step elsewhere from rewriting that copy's weights. Labels (`v: Squat`) isolate the V copies; `progress: none` alone does not.
+## Addendum 2026-10-21: Hevy API spec checked
+
+The OpenAPI 3.0 spec behind `https://api.hevyapp.com/docs/` (served from `/docs/swagger-ui-init.js`, version 0.0.1) was reachable from a later session. It resolves two gaps above.
+
+- **Routine schema.** `POST /v1/routines` and `PUT /v1/routines/{routineId}` take `{"routine": {title, folder_id, notes, exercises[]}}`. Each exercise has `exercise_template_id`, `superset_id`, `rest_seconds`, `notes` and `sets[]`. Each set has `type` (warmup, normal, failure, dropset), `weight_kg`, `reps`, `rep_range {start, end}`, `distance_meters`, `duration_seconds` and `custom_metric`. **Routine sets have no RPE field**, so RPE targets must go in the exercise notes. `POST /v1/routines` returns 403 "Routine limit exceeded" on accounts over the routine cap. Folders: `POST /v1/routine_folders` takes `{"routine_folder": {title}}`; there is no folder update or delete endpoint.
+- **RPE in logged workouts.** The workout `Set` schema includes a nullable `rpe` number (example 9.5), so per-set RPE logged in the app comes back through the API.
+- **Pound storage.** Live data from the user's account shows pound entries stored as exact `lb x 0.45359237` kg (50 lb = 22.67964547178199 kg). A routine written with that factor shows round pound values in the app.
+- Still unverified: rate limits (the spec does not state them) and webhook payloads (the spec lists no webhook endpoints).
+
+Source: Hevy, Public API docs, https://api.hevyapp.com/docs/ (accessed 2026-10-21).

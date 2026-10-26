@@ -156,3 +156,7 @@
   the cloud environment spec, and a migration checklist. `tools/hevy_pull.py`
   now also runs when the Hevy key is injected by a network secret instead of
   the `HEVY_API_KEY` variable, so it works the same in either setup.
+- Added `tools/hevy_push.py` and `tools/hevy_program.json`: write the pound loads
+  in `data/track-state.md` into the nine Hevy routines (dry run by default), so the
+  app is ready before each session. The existing routines still held the kilogram
+  loads. Research note addendum records the Hevy API spec, checked live.
