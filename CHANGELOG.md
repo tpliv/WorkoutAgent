@@ -84,3 +84,10 @@
   lift, gap clock, track state, streaks). Muscle groups come from Hevy's
   exercise templates (`data/exercise-muscles.json`). `hevy_sync.py` rebuilds it
   after each update so progress over time is visible in one page.
+- Research note `research/body-recomposition.md` (maintenance estimation,
+  recomposition rates and muscle memory, US population body-composition
+  norms). Chapter 06 gains section 4.3 on estimating maintenance and running a
+  recomposition. `data/body-composition.md` records the user's baseline
+  (InBody 2026-10-21: 181 lb, SMM 88 lb, 16.5% body fat), population
+  comparison, calorie plan (2,500 / 2,700 kcal, 180 g protein) and a scan log,
+  so later scans can be compared against it.
