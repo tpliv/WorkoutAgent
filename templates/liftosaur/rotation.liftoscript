@@ -19,9 +19,11 @@
 // V exposure = sets at 90% of the lift's current top-set load, no top set.
 // Accessories = double progression: fixed load, reps up to the top of the range at
 // RPE 9 or less, then +2.5 kg (or one dumbbell step) and back to the bottom.
-// Warm-up: configure in the app on the first compound of each day as 40% x 8,
-// 60% x 5, 80% x 2-3. Liftosaur's warm-up percentages are of the FIRST set's
-// weight (research note, KQ2), which here is the top set, so the ramp matches.
+// Warm-up: configure in the app on the first compound of each day as empty bar
+// x 5, then 80% x 2-3; add 60% x 3 between them once the top set is 102.5 kg
+// (225 lb) or more (coaching convention, not evidence). Liftosaur's warm-up
+// percentages are of the FIRST set's weight (research note, KQ2), which here is
+// the top set, so the ramp matches.
 // Rest: 3-4 min after a top set (deadlift 3-5), 2-3 min between compound sets,
 // 60-90 s on isolation. Rest syntax was not cited; set it in the app.
 

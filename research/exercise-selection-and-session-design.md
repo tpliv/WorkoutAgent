@@ -1,5 +1,7 @@
 # Exercise Selection and Single-Session Design for Resistance Training
 
+Last updated: 2026-10-21 (KQ5 addendum: short warm-up ramp)
+
 Research notes compiled 2026-10-21. Scope: which exercises to include, how to cover every major muscle, how to order/structure a session, and how to substitute movements, so a program designer can fill 3- to 6-day templates. Note on evidence quality: many "best exercise" claims rest on single small trials (n = 14-63, often untrained or women-only samples) or on EMG, which repeatedly fails to predict hypertrophy (see Plotkin 2023 and the incline/flat pec data below). Treat exercise-specific effect sizes as low-to-moderate confidence unless stated otherwise. Access note: WebFetch and curl to strongerbyscience.com and pmc.ncbi.nlm.nih.gov were blocked in this environment (DNS/proxy 403), so a few primary texts were read only through abstracts, repository records, or reputable secondary reviews; this is flagged per item.
 
 ## Key Question 1: Movement-pattern taxonomy, muscle coverage, and commonly undertrained muscles
@@ -174,6 +176,31 @@ A brief general warm-up followed by exercise-specific ramp-up sets is best suppo
 ### Gaps
 - Iversen et al. 2021's exact warm-up/stretching recommendations were not read first-hand (full text inaccessible); they are known only through citing papers.
 - No study found that isolated the effect of general (cardio) warm-up on lifting performance independent of specific warm-up.
+
+### Addendum 2026-10-21: short ramp on the first compound
+
+Why this addendum exists: the program replaced the four-step ramp in the Inferences above (empty bar x 10, 40% x 8, 60% x 5, 80% x 2-3) with a two-step ramp. The earlier findings and inferences stand as written. This section records the evidence behind the change and one correction to how Ribeiro 2020 has been summarised elsewhere in the repo.
+
+Cited findings:
+- Ribeiro et al. 2020, Int J Environ Res Public Health 17(18):6882 (peer-reviewed). Abstract re-read on PubMed in this session. 40 resistance-trained men, 19-30 years, did 3 x 6 at 80% of maximal dynamic strength (the "training load") after each of three warm-ups, 48 h apart: (i) WU, 2 sets of 6 at 40% and 80% of the training load; (ii) WU80, 6 reps at 80% of the training load; (iii) WU40, 6 reps at 40% of the training load. Results:
+  - Squat: mean propulsive velocity was higher after **WU80** than WU40 (set 2: 0.69 vs 0.67 m/s, p = 0.02, ES = 0.80; set 3: 0.68 vs 0.66 m/s, p = 0.05, ES = 0.51). The abstract reports no squat difference for the two-set WU.
+  - Bench: time to peak velocity was shorter after the **two-set WU** than WU40 (set 1: 575 vs 695 ms, p < 0.01, ES = 0.69; set 2: 533 vs 662 ms, p = 0.04, ES = 0.43), and total work was higher (4750 vs 4632 J, p = 0.01, ES = 0.54).
+  - Authors' conclusion: force output was best after WU80 in the squat and after WU in the bench; "warming-up with few repetitions and low loads is not enough to optimize squat and bench press performances."
+  - Outcome type: acute bar speed and power in the same session (strength-performance proxies). No hypertrophy outcome, no injury outcome.
+  - Source: [PubMed 32971729](https://pubmed.ncbi.nlm.nih.gov/32971729/); DOI 10.3390/ijerph17186882; PMC7558980.
+  - Correction: the repo's earlier summaries (and the brief for this change) said the two-set warm-up beat six light sets on squat bar speed. The abstract says the squat difference was for the six-rep 80% warm-up; the two-set warm-up's advantage was on bench. Both readings support a near-working-load warm-up set over low-load volume.
+- Motricidade 2021 systematic review (11 studies; peer-reviewed). Strength and reps benefited when the specific warm-up used loads close to the working weight; some studies found no difference between a specific warm-up and none. Not re-verified in this session: the journal site was down for maintenance. [Motricidade 2021](https://revistas.rcaap.pt/motricidade/article/view/21143)
+- Heavier warm-up sets may potentiate the following working sets in trained lifters. Secondary source only: [Biolayne REPS issue 29](https://biolayne.com/reps/issue-29/can-heavier-warm-up-sets-boost-your-training-performance/).
+- Injury prevention: ramp sets are commonly said to prevent injury. No study testing that claim was found in this note or in `research/recovery-nutrition-cardio.md` (Fradkin et al. 2010 on warm-up and injury was not retrieved).
+
+Inferences (the program's new rule):
+- Short ramp on the first compound: empty bar (45 lb / 20 kg) x 5, then 80% of the day's working load x 2-3. The structure follows the two-set WU of Ribeiro 2020 (one light set, one at 80% of the training load) with fewer reps: the bar replaces the 40% set and 2-3 reps replace 6 at 80% to save time and fatigue. The rep reduction is not tested in the study.
+- When the top set is 225 lb (about 102 kg) or more, add 60% x 3 between the bar and the 80% set, because the jump from the bar to 80% gets large. **This step is coaching convention, not evidence.** No retrieved study tests it.
+- Percentages are of the day's top working load (the V load on a volume day), not 1RM. Round to the nearest loadable step (5 lb with 2.5-lb plates; an exact half-step rounds up), never below the bar.
+- Later main lifts keep one feeder set at 60-70%, unchanged.
+- General cardio and dynamic mobility remain optional (see Gaps above). In a short session, cut them before the 80% set.
+- Time: the four-step ramp took about 4-6 min; the short ramp takes about 2-3 min. The KQ6 time budget's "about 8 min warm-up" assumption becomes about 5-6 min.
+- Why the old ramp fit poorly at current loads: with a 135-lb squat top set, 40% is 55 lb, barely above the 45-lb bar, so the set added time without adding a meaningful step.
 
 ## Key Question 6: Session design: exercises and sets per 45/60/90 minutes; supersets and paired sets
 

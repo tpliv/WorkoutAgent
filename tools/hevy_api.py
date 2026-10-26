@@ -17,7 +17,8 @@ Library use:
     ids = h.exercise_template_index()  # {title: template_id}
     r = h.create_routine(title="L1 Lower A", folder_id=42, exercises=[...])
 
-Command line (each prints JSON or a short table):
+Command line (each prints JSON or a short table; workouts and history add
+weight_lb beside each weight_kg, since the program runs in pounds):
 
     python3 tools/hevy_api.py whoami
     python3 tools/hevy_api.py count
@@ -283,6 +284,21 @@ def _print(obj):
     print(json.dumps(obj, indent=2, ensure_ascii=False))
 
 
+def with_lb(obj):
+    """Add weight_lb (to 0.1 lb) beside every weight_kg, for reading output in
+    the program's units. The API itself only speaks kg."""
+    if isinstance(obj, list):
+        return [with_lb(x) for x in obj]
+    if isinstance(obj, dict):
+        out = {}
+        for k, v in obj.items():
+            out[k] = with_lb(v)
+            if k == "weight_kg":
+                out["weight_lb"] = None if v is None else round(v / 0.45359237, 1)
+        return out
+    return obj
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("-v", "--verbose", action="store_true")
@@ -305,7 +321,7 @@ def main(argv=None):
         elif args.cmd == "count":
             print(h.workout_count())
         elif args.cmd == "workouts":
-            _print(list(h.iter_workouts(max_pages=args.pages)))
+            _print(with_lb(list(h.iter_workouts(max_pages=args.pages))))
         elif args.cmd == "events":
             _print(list(h.iter_workout_events(args.since)))
         elif args.cmd == "routines":
@@ -320,7 +336,7 @@ def main(argv=None):
                 if q in (t.get("title") or "").lower():
                     print(f"{t.get('id'):>10}  {t.get('title')}  [{t.get('type')}, {t.get('equipment')}, {t.get('primary_muscle_group')}{', custom' if t.get('is_custom') else ''}]")
         elif args.cmd == "history":
-            _print(h.exercise_history(args.template_id, args.start, args.end))
+            _print(with_lb(h.exercise_history(args.template_id, args.start, args.end)))
         elif args.cmd == "measurements":
             _print(list(h.iter_measurements()))
     except HevyError as e:

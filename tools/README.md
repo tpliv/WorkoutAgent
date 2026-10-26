@@ -75,11 +75,13 @@ routines in the app to reflect the latest logged sessions.
 
 For each exercise the routine carries the sets Hevy can represent (warm-up
 ramp, top set, back-offs, or sets with a rep range) with the planned load in
-kg, the rest timer, superset grouping, and a note with the RPE target and the
+pounds (sent to the API as kg at full precision, so the app, set to lb, shows
+exact pounds), the rest timer, superset grouping, and a note with the RPE target and the
 rule for that exercise. Routine sets have no RPE field in Hevy, so the note is
 where the target lives; you log the actual RPE on each set when you train.
 
-Main lifts: the H exposure gets the ramp (bar x 10, 40% x 8, 60% x 5, 80% x 2),
+Main lifts: the H exposure gets the ramp (bar x 5, 80% x 2, plus 60% x 3
+between them once the top set is 225 lb or more),
 the top set at the track load, and back-offs at 93%. The V exposure gets sets
 at 90% of the track load. Row and pull-up get fixed-load sets with the rep
 range. Accessories get the rep range and the load from `tracks.json` (blank
@@ -120,7 +122,7 @@ set of the lift. The decision follows section 5 of
 | `exercise` | Hevy exercise title |
 | `set_index` | 0-based set order within the exercise |
 | `set_type` | normal, warmup, failure, dropset |
-| `weight_kg` | Load in kg (bodyweight exercises: added load, or empty) |
+| `weight_kg` | Load in kg as the Hevy API returns it (bodyweight exercises: added load, or empty). The program runs in pounds; `update_tracks.py` converts on read (to 0.1 lb) |
 | `reps` | Reps completed |
 | `rpe` | Logged RPE (6-10 in 0.5 steps), if any |
 | `notes` | Exercise notes |

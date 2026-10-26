@@ -40,3 +40,32 @@
   (`data/hevy-exercise-map.json`), folder `Rotation 2026-10` and the nine
   routines created (`data/hevy-state.json`). Folder-create and routine-get
   responses are wrapped objects on the live API; client adjusted.
+- Shortened the warm-up ramp on each session's first compound from bar x 10,
+  40% x 8, 60% x 5, 80% x 2-3 to bar x 5, 80% x 2-3, with 60% x 3 added between
+  them once the top set is 225 lb (about 102 kg) or more. That added step is
+  coaching convention, not evidence. Why: the old ramp took 4-6 min and the short
+  one takes 2-3 min (the warm-up total in the time budget drops from about 8 to
+  about 5-6 min). At current loads the 40% set was barely above the empty bar.
+  Ribeiro et al. 2020 supports a two-set warm-up with one set near the working
+  load: its 40%/80% two-set protocol beat six light sets on bench, and its 80%
+  warm-up beat the 40% one on squat. Re-reading the abstract corrected the
+  repo's earlier claim that the two-set result was on squat. Research note KQ5
+  addendum, chapter 05 section 5, templates, Liftosaur notes,
+  `templates/rotation.json` and `tools/hevy_push_routines.py` (with tests)
+  updated. The nine Hevy routines were changed in place (warm-up sets only).
+- Switched the program's tools and data from kilograms to pounds, to match the
+  Hevy app (set to lb) and the routines already in it. `data/tracks.json`,
+  `data/track-state.md`, `templates/progression-tracks.md` and the routine
+  renderer now work in pounds. Starting loads are squat 135, bench 95,
+  press 60, row 70 and pulldown 125. Every barbell load is a multiple of 5 lb,
+  since the smallest plate is 2.5 lb. Rule changes that follow from the unit:
+  squat and deadlift +5 lb per success (+10 lb big step); bench and press
+  +5 lb after every second success, tracked by a new `step_counter`, instead
+  of +1 kg each time (same weekly pace); row and pulldown +5 lb. Accessory
+  notes carry each exercise's own step (one pin, or 2.5 lb per dumbbell).
+  V-day warm-ups now key off the V load. `data/history.csv` stays in kg as the
+  Hevy API returns it; `update_tracks.py` converts on read, and
+  `hevy_api.py workouts` and `history` print `weight_lb` beside `weight_kg`.
+  Why: running a sync from the kg files would have overwritten the pound
+  routines (a 132.3-lb squat). Verified by rendering all nine routines
+  offline and diffing them against the live app: no differences.

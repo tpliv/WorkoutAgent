@@ -15,6 +15,10 @@ Inputs:
     data/hevy-exercise-map.json    program exercise -> Hevy template id (filled on first run)
     data/hevy-state.json           folder id and routine ids (filled on first run)
 
+Units: tracks.json is in pounds. Every load is rendered in pounds and converted
+to weight_kg (lb x 0.45359237, full precision) only in the payload, because the
+Hevy API speaks kg; the app, set to lb, then shows exact pounds.
+
 What each routine contains:
     - H exposure (top-set lifts): warm-up ramp, 1 top set at the track load,
       back-offs at backoff_pct. Row and pull-up: fixed load with the rep range.
@@ -47,9 +51,22 @@ TRACKS = os.path.join(ROOT, "data", "tracks.json")
 EXMAP = os.path.join(ROOT, "data", "hevy-exercise-map.json")
 STATE = os.path.join(ROOT, "data", "hevy-state.json")
 
-RAMP = [(0.0, 10), (0.40, 8), (0.60, 5), (0.80, 2)]  # fraction of the top set, reps
+RAMP = [(0.0, 5), (0.80, 2)]  # fraction of the day's working load, reps
+RAMP_MID = (0.60, 3)  # added between bar and 80% from RAMP_MID_FROM_LB (coaching convention)
+RAMP_MID_FROM_LB = 225
 FEEDER = [(0.65, 3)]
-BAR_KG = 20
+BAR_LB = 45
+WARMUP_STEP_LB = 5
+LB_KG = 0.45359237
+
+
+def to_kg(lb):
+    return None if lb is None else lb * LB_KG
+
+
+def fmt(x):
+    """125.0 -> '125', 62.5 -> '62.5'."""
+    return f"{x:g}"
 
 
 def load_json(path, default=None):
@@ -66,7 +83,7 @@ def save_json(path, obj):
 
 
 def round_to(x, step):
-    """Round to the nearest multiple of step, halves up (so 38.25 -> 38.5 at 0.5 kg)."""
+    """Round to the nearest multiple of step, halves up (so 122.5 -> 125 at 5 lb)."""
     if x is None:
         return None
     return round(math.floor(x / step + 0.5) * step, 2)
@@ -75,8 +92,8 @@ def round_to(x, step):
 def gap_modifier(track, as_of):
     """Section 8. Returns (load_for_next_H, backoff_delta, note) given the planned
     track load, the last lifted H load and the days since the last exposure."""
-    planned = track.get("top_set_kg")
-    last = track.get("last_h_load_kg")
+    planned = track.get("top_set_lb")
+    last = track.get("last_h_load_lb")
     exp = (track.get("last_exposure") or {}).get("date")
     if planned is None or not exp:
         return planned, 0, None
@@ -85,13 +102,13 @@ def gap_modifier(track, as_of):
     except ValueError:
         return planned, 0, None
     base = last if last is not None else planned
-    step = track.get("round_step_kg", 2.5)
+    step = track.get("round_step_lb", 5)
     if days <= 7:
         return planned, 0, None
     if days <= 14:
-        return base, 0, f"gap {days} d: holding {base} (take the increment next time if this comes in at RPE 7.5 or lower)"
+        return base, 0, f"gap {days} d: holding {fmt(base)} (take the increment next time if this comes in at RPE 7.5 or lower)"
     if days <= 21:
-        return base, -1, f"gap {days} d: holding {base}, one fewer back-off"
+        return base, -1, f"gap {days} d: holding {fmt(base)}, one fewer back-off"
     if days <= 28:
         return round_to(base * 0.95, step), 0, f"gap {days} d: reduced 5%, cap the top set at RPE 7"
     return round_to(base * 0.90, step), 0, f"gap {days} d: reduced 10%, first exposure RPE 6-7"
@@ -121,24 +138,39 @@ def sentence(s):
     return (s[0].upper() + s[1:] + ("" if s.endswith(".") else ".")) if s else ""
 
 
-def warmup_sets(kind, top_kg):
-    if not kind or top_kg is None:
+def warmup_sets(kind, work_lb):
+    """Ramp or feeder sets in pounds. work_lb is the day's working load: the top
+    set on an H day, the V load on a volume day."""
+    if not kind or work_lb is None:
         return []
     plan = RAMP if kind == "ramp" else FEEDER
+    if kind == "ramp" and work_lb >= RAMP_MID_FROM_LB:
+        plan = [RAMP[0], RAMP_MID] + RAMP[1:]
     out = []
     for frac, reps in plan:
-        w = BAR_KG if frac == 0 else max(BAR_KG, round_to(top_kg * frac, 2.5))
-        out.append({"type": "warmup", "weight_kg": w, "reps": reps})
+        w = BAR_LB if frac == 0 else max(BAR_LB, round_to(work_lb * frac, WARMUP_STEP_LB))
+        out.append({"type": "warmup", "weight_lb": w, "reps": reps})
     return out
 
 
+def increment_note(t):
+    """The track's increment rule, as it should read on the top-set exercise."""
+    inc, every = t.get("increment_lb", 5), t.get("increment_every", 1)
+    if every == 1:
+        return f"+{fmt(inc)} lb next time if the top set is {t.get('rep_target', 4)} @ RPE 7.5-8."
+    nth = {2: "second", 3: "third"}.get(every, f"{every}th")
+    return (f"+{fmt(inc)} lb after every {nth} top set at {t.get('rep_target', 4)} @ RPE 7.5-8 (step counter); "
+            f"+{fmt(t.get('big_increment_lb', inc))} lb at once if RPE 7 or lower.")
+
+
 def render_exercise(ex, tracks, as_of, deload=False, merged=False):
-    """Return (sets, notes, meta) for one rotation.json exercise."""
+    """Return (sets, notes) for one rotation.json exercise. Set loads are in
+    pounds under 'weight_lb'; build_routine converts them to weight_kg."""
     role = ex["role"]
     sets, notes = [], []
     if role in ("H", "V"):
         t = tracks["tracks"][ex["track"]]
-        step = t.get("round_step_kg", 2.5)
+        step = t.get("round_step_lb", 5)
         scheme = t.get("scheme", "top_set")
         if role == "H":
             load, bo_delta, gap_note = gap_modifier(t, as_of)
@@ -146,24 +178,27 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                 if load is None:
                     notes.append(t.get("work_up_note") or "Work up to 4 reps at RPE 8 and log that load.")
                     n_bo = ex.get("backoffs", 3)
-                    sets += [{"type": "normal", "weight_kg": None, "reps": t.get("rep_target", 4)}]
-                    sets += [{"type": "normal", "weight_kg": None, "reps": t.get("rep_target", 4)} for _ in range(n_bo)]
-                    notes.append(f"Then {n_bo} back-off(s) x {t.get('rep_target', 4)} at 93% of the load found.")
+                    sets += [{"type": "normal", "weight_lb": None, "reps": t.get("rep_target", 4)}]
+                    sets += [{"type": "normal", "weight_lb": None, "reps": t.get("rep_target", 4)} for _ in range(n_bo)]
+                    notes.append(f"Then {n_bo} back-off{'s' if n_bo != 1 else ''} x {t.get('rep_target', 4)} at "
+                                 f"{t.get('backoff_pct', 0.93):.0%} of the load found, rounded to the nearest {fmt(step)} lb.")
                 else:
                     if deload:
                         load = round_to(load * 0.91, step)
                         n_bo = 1
-                        notes.append(f"DELOAD: top set {load} x {t.get('rep_target', 4)} at RPE 6-7, one back-off. Track does not advance.")
+                        notes.append(f"DELOAD: top set {fmt(load)} x {t.get('rep_target', 4)} at RPE 6-7, one back-off. Track does not advance.")
                     else:
                         n_bo = max(1, ex.get("backoffs", 3) + bo_delta)
-                        notes.append(f"Top set {load} x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). Rate it immediately.")
+                        notes.append(f"Top set {fmt(load)} x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). Rate it immediately.")
                     bo = round_to(load * t.get("backoff_pct", 0.93), step)
-                    notes.append(f"Back-offs {n_bo} x {t.get('rep_target', 4)} at {bo} (RPE 7-8; stop if a set reaches 9).")
+                    notes.append(f"Back-offs {n_bo} x {t.get('rep_target', 4)} at {fmt(bo)} (RPE 7-8; stop if a set reaches 9).")
+                    if not deload:
+                        notes.append(increment_note(t))
                     if gap_note:
                         notes.append(sentence(gap_note))
                     sets += warmup_sets(ex.get("warmup"), load)
-                    sets.append({"type": "normal", "weight_kg": load, "reps": t.get("rep_target", 4)})
-                    sets += [{"type": "normal", "weight_kg": bo, "reps": t.get("rep_target", 4)} for _ in range(n_bo)]
+                    sets.append({"type": "normal", "weight_lb": load, "reps": t.get("rep_target", 4)})
+                    sets += [{"type": "normal", "weight_lb": bo, "reps": t.get("rep_target", 4)} for _ in range(n_bo)]
                 if merged and ex.get("warmup") != "ramp":
                     notes.append("Merged session: judge by RPE, a 4 @ 9.5 here is a hold, not a miss.")
             else:  # double progression
@@ -171,41 +206,52 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                 n = 2 if deload else ex.get("sets", 4)
                 if gap_note:
                     notes.append(sentence(gap_note))
-                notes.append(f"{n} x {lo}-{hi} at {load} kg, RPE 8 on every set. +{t.get('increment_kg', 2.5)} kg when every set reaches {hi}.")
+                step_note = f" ({t['increment_note']})" if t.get("increment_note") else ""
+                notes.append(f"{n} x {lo}-{hi} at {fmt(load)}, RPE 8 on every set. +{fmt(t.get('increment_lb', 5))} lb{step_note} when every set reaches {hi}.")
                 if ex["track"] == "pullup":
                     notes.append("Pulldown until a set at about bodyweight reaches 8, then weighted pull-ups.")
                 sets += warmup_sets(ex.get("warmup"), load)
-                sets += [{"type": "normal", "weight_kg": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
+                sets += [{"type": "normal", "weight_lb": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
         else:  # V
-            base = t.get("top_set_kg")
+            base = t.get("top_set_lb")
             load = round_to(base * t.get("volume_pct", 0.9), step) if base is not None else None
             n = 2 if deload else ex.get("sets", 3)
             if load is None:
-                notes.append("Track load not set yet: use 90% of the load found at the last heavy exposure.")
+                notes.append(f"Track load not set yet: use {t.get('volume_pct', 0.9):.0%} of the load found at the last heavy "
+                             f"{t['name'].lower()}, rounded to the nearest {fmt(step)} lb.")
             if scheme == "top_set":
-                notes.append(f"Volume: {n} x {ex.get('reps')} at {load if load is not None else '90% of track'} (90% of the track load). No set past RPE 9; do not chase the track.")
-                sets += warmup_sets(ex.get("warmup"), base)
-                sets += [{"type": "normal", "weight_kg": load, "reps": ex.get("reps")} for _ in range(n)]
+                at = f" at {fmt(load)} ({t.get('volume_pct', 0.9):.0%} of the track load)" if load is not None else ""
+                notes.append(f"Volume: {n} x {ex.get('reps')}{at}. No set past RPE 9; do not chase the track.")
+                sets += warmup_sets(ex.get("warmup"), load)
+                sets += [{"type": "normal", "weight_lb": load, "reps": ex.get("reps")} for _ in range(n)]
             else:
                 lo, hi = ex.get("rep_range", t.get("rep_range", [6, 8]))
-                notes.append(f"Volume: {n} x {lo}-{hi} at {load if load is not None else '90% of track'} (RPE 7). Never changes the track.")
-                sets += [{"type": "normal", "weight_kg": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
+                at = f" at {fmt(load)}" if load is not None else ""
+                notes.append(f"Volume: {n} x {lo}-{hi}{at} (RPE 7). Never changes the track.")
+                sets += [{"type": "normal", "weight_lb": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
             if deload:
                 notes.insert(0, "DELOAD: 2 sets.")
     else:  # accessory
         acc = (tracks.get("accessories") or {}).get(ex["name"]) or {}
-        load = acc.get("weight_kg")
+        load = acc.get("weight_lb")
         lo, hi = ex.get("rep_range", [8, 12])
         n = min(2, ex.get("sets", 3)) if deload else ex.get("sets", 3)
-        notes.append(f"{n} x {lo}-{hi} at RPE {ex.get('rpe', '8')}{' per leg' if ex.get('per_leg') else ''}. Double progression: add reps until every set reaches {hi}, then the smallest load step and back to {lo}.")
+        notes.append(f"{n} x {lo}-{hi} at RPE {ex.get('rpe', '8')}{' per leg' if ex.get('per_leg') else ''}. Double progression: add reps until every set reaches {hi}, then {acc.get('step') or 'the smallest load step'} and back to {lo}.")
         if acc.get("note"):
             notes.append(sentence(acc["note"]))
         if ex.get("optional"):
             notes.insert(0, "Optional (skip if over 70 min).")
         if deload:
             notes.insert(0, "DELOAD: light, 1-2 sets.")
-        sets += [{"type": "normal", "weight_kg": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
+        sets += [{"type": "normal", "weight_lb": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
     return sets, " ".join(notes)
+
+
+def payload_set(s):
+    """Rendered set (pounds) -> API set (weight_kg)."""
+    out = {k: v for k, v in s.items() if k != "weight_lb"}
+    out["weight_kg"] = to_kg(s.get("weight_lb"))
+    return out
 
 
 def build_routine(slot, rotation, tracks, exmap, as_of, deload=False, folder_id=None):
@@ -223,7 +269,7 @@ def build_routine(slot, rotation, tracks, exmap, as_of, deload=False, folder_id=
             "superset_id": ex.get("superset"),
             "rest_seconds": ex.get("rest"),
             "notes": notes,
-            "sets": sets,
+            "sets": [payload_set(s) for s in sets],
         })
     title = session["title"] + (" (deload)" if deload else "")
     notes = session.get("notes", "")
