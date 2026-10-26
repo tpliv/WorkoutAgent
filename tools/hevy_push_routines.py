@@ -119,9 +119,9 @@ def gap_modifier(track, as_of):
     if days <= 7:
         return planned, 0, None
     if days <= 14:
-        return base, 0, f"gap {days} d: holding {fmt(base)} (take the increment next time if this comes in at RPE 7.5 or lower)"
+        return base, 0, f"gap {days} d: holding {fmt(base)} lb (take the increment next time if this comes in at RPE 7.5 or lower)"
     if days <= 21:
-        return base, -1, f"gap {days} d: holding {fmt(base)}, one fewer back-off"
+        return base, -1, f"gap {days} d: holding {fmt(base)} lb, one fewer back-off"
     if days <= 28:
         return round_to(base * 0.95, step), 0, f"gap {days} d: reduced 5%, cap the top set at RPE 7"
     return round_to(base * 0.90, step), 0, f"gap {days} d: reduced 10%, first exposure RPE 6-7"
@@ -276,12 +276,12 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                     if deload:
                         load = round_to(load * 0.91, step)
                         n_bo = 1
-                        notes.append(f"DELOAD: top set {fmt(load)} x {t.get('rep_target', 4)} at RPE 6-7, one back-off. Track does not advance.")
+                        notes.append(f"DELOAD: top set {fmt(load)} lb x {t.get('rep_target', 4)} at RPE 6-7, one back-off. Track does not advance.")
                     else:
                         n_bo = max(1, ex.get("backoffs", 3) + bo_delta)
-                        notes.append(f"Top set {fmt(load)} x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). Rate it immediately.")
+                        notes.append(f"Top set {fmt(load)} lb x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). Rate it immediately.")
                     bo = round_to(load * t.get("backoff_pct", 0.93), step)
-                    notes.append(f"Back-offs {n_bo} x {t.get('rep_target', 4)} at {fmt(bo)} (RPE 7-8; stop if a set reaches 9).")
+                    notes.append(f"Back-offs {n_bo} x {t.get('rep_target', 4)} at {fmt(bo)} lb (RPE 7-8; stop if a set reaches 9).")
                     if not deload:
                         notes.append(increment_note(t))
                     if gap_note:
@@ -297,7 +297,7 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                 if gap_note:
                     notes.append(sentence(gap_note))
                 step_note = f" ({t['increment_note']})" if t.get("increment_note") else ""
-                notes.append(f"{n} x {lo}-{hi} at {fmt(load)}, RPE 8 on every set. +{fmt(t.get('increment_lb', 5))} lb{step_note} when every set reaches {hi}.")
+                notes.append(f"{n} x {lo}-{hi} at {fmt(load)} lb, RPE 8 on every set. +{fmt(t.get('increment_lb', 5))} lb{step_note} when every set reaches {hi}.")
                 if ex["track"] == "pullup":
                     notes.append("Pulldown until a set at about bodyweight reaches 8, then weighted pull-ups.")
                 sets += warmup_sets(ex.get("warmup"), load)
@@ -310,13 +310,13 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                 notes.append(f"Track load not set yet: use {t.get('volume_pct', 0.9):.0%} of the load found at the last heavy "
                              f"{t['name'].lower()}, rounded to the nearest {fmt(step)} lb.")
             if scheme == "top_set":
-                at = f" at {fmt(load)} ({t.get('volume_pct', 0.9):.0%} of the track load)" if load is not None else ""
+                at = f" at {fmt(load)} lb ({t.get('volume_pct', 0.9):.0%} of the track load)" if load is not None else ""
                 notes.append(f"Volume: {n} x {ex.get('reps')}{at}. No set past RPE 9; do not chase the track.")
                 sets += warmup_sets(ex.get("warmup"), load)
                 sets += [{"type": "normal", "weight_lb": load, "reps": ex.get("reps")} for _ in range(n)]
             else:
                 lo, hi = ex.get("rep_range", t.get("rep_range", [6, 8]))
-                at = f" at {fmt(load)}" if load is not None else ""
+                at = f" at {fmt(load)} lb" if load is not None else ""
                 notes.append(f"Volume: {n} x {lo}-{hi}{at} (RPE 7). Never changes the track.")
                 sets += [{"type": "normal", "weight_lb": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
             if deload:

@@ -1,6 +1,6 @@
 # Portability
 
-Last updated: 2026-10-21
+Last updated: 2026-10-26 (the repo now lives at `tpliv/WorkoutAgent`; default branch `main`)
 
 How to move this project off work accounts (Claude and GitHub) without losing
 anything. The rule that makes it possible: **the GitHub repository is the only
@@ -12,7 +12,7 @@ with its full history (see "Moving the GitHub repo").
 
 | Item | Lives in | Moves with the repo? | What to do on a move |
 | --- | --- | --- | --- |
-| Research, guide, templates, tools, `CLAUDE.md` | GitHub repo `tlee-ui/WorkoutTrainer` (work GitHub account) | Yes | Copy the repo to a personal GitHub account (below) |
+| Research, guide, templates, tools, `CLAUDE.md` | GitHub repo `tpliv/WorkoutAgent` (personal; moved from `tlee-ui/WorkoutTrainer`) | Yes | Copy the repo to a personal GitHub account (below) |
 | Training log and track state (`data/`) | GitHub repo | Yes | Same |
 | Link between Claude and GitHub | Claude account (GitHub connection and Claude GitHub App) | No | Connect GitHub from the new Claude account |
 | Cloud environment: network access, Hevy secret | Claude account (environment settings) | No | Recreate from the spec below |
@@ -27,7 +27,7 @@ menu in a session's title bar, then Edit).
 
 | Setting | Value |
 | --- | --- |
-| Repository | `tlee-ui/WorkoutTrainer` (change to the personal copy once it exists) |
+| Repository | `tpliv/WorkoutAgent` |
 | Network access | Allow `api.hevyapp.com`. Research sessions also need web search and fetch. |
 | Hevy credential | A network secret for `api.hevyapp.com` that sends the key in the `api-key` header. Alternative: an environment variable named `HEVY_API_KEY`. `tools/hevy_pull.py` works with either. |
 | Setup script | None. The tools are Python 3 standard library only. |

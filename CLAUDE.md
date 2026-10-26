@@ -13,6 +13,15 @@ research resistance-training topics and turn the findings into a training guide.
   sources (Stronger By Science, Renaissance Periodization, Barbell Medicine,
   MASS Research Review, program authors' own writing). Say which is which.
 
+## Branches
+
+- `main` is the source of truth. Start every session from it
+  (`git fetch origin main && git checkout main`, or merge `origin/main` into
+  the session branch before changing anything).
+- Finish by getting the work onto `main`: merge the session branch into `main`
+  and push, unless the user asked for a pull request instead. A branch left
+  unmerged is invisible to the next session and to the scheduled coaching runs.
+
 ## Where things go
 
 - `research/<topic>.md`: one topic per file. Dense notes with citations. Keep
