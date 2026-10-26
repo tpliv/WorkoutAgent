@@ -91,3 +91,27 @@
   (InBody 2026-10-21: 181 lb, SMM 88 lb, 16.5% body fat), population
   comparison, calorie plan (2,500 / 2,700 kcal, 180 g protein) and a scan log,
   so later scans can be compared against it.
+- Primary-source verification of the first research round (open internet;
+  the first round had journal pages and most sites blocked). Every research
+  note gained a dated addendum: a claim-by-claim table, corrections, items
+  still unverified, newer evidence, and guide implications. About 330
+  claims checked; about 75 corrected. Main corrections: Williams 2017 found
+  a larger periodization effect in untrained lifters, and Moesgaard 2022's
+  trained-lifter result is undulating vs linear; Pelland et al. is now
+  published (Sports Med 2026) with fractional counting best for both
+  outcomes; Barbalho 2019 is retracted; the "3-7% lost after a week off"
+  figure had no source (1-3 week gaps show no significant 1RM loss);
+  lateral raises cue neutral rotation, not external; overhead triceps work
+  grows all three heads; the superset meta-analysis is Zhang 2025; many
+  misattributed authors and years (Moran-Navarro, Saric, Goulart, Helms
+  2020, Lastella, Maia, Davies, Remmert). Named programs checked against the
+  authors' pages (Nippard Essentials is paid; Wendler's variable-schedule
+  material; RP's own landmark tables; BBB, GZCLP, StrongLifts, PHAT).
+- Guide chapters 00-07 and the templates corrected to match. Caffeine
+  guidance lowered to ~3 mg/kg within 200 mg per dose and 400 mg per day,
+  with a see-a-professional flag; cardio kept at least 3 h, 6 h where
+  possible, from lower-body lifting. No progression-rule number changed
+  (`tools/test_tools.py` passes), so `templates/rotation.json` and the
+  Hevy routines are unchanged. The Liftosaur export was rewritten to the
+  official Liftoscript grammar. Open questions for the user: the V-set RPE
+  targets and stale threshold, and a separate rule for multi-week breaks.
