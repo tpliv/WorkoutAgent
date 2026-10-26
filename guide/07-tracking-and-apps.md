@@ -191,7 +191,7 @@ date,session,exercise,set,load,reps,rpe,notes
 
 ## Repository tooling
 
-The scripts in `tools/` implement the whole Hevy loop above: `hevy_api.py` (client and inspector), `hevy_pull.py` (API to `data/history.csv`), `update_tracks.py` (the rules of `templates/progression-tracks.md` applied to the log, writing `data/tracks.json`), `hevy_push_routines.py` (`templates/rotation.json` plus the tracks rendered into the nine routines), and `hevy_sync.py` (all three). `hevy_csv_import.py` and `analyze_history.py` remain for the no-API path and for seeding starting loads. See `tools/README.md`.
+The scripts in `tools/` implement the whole Hevy loop above: `hevy_api.py` (client and inspector), `hevy_pull.py` (API to `data/history.csv`), `update_tracks.py` (the rules of `templates/progression-tracks.md` applied to the log, writing `data/tracks.json`), `hevy_push_routines.py` (`templates/rotation.json` plus the tracks rendered into the nine routines), and `hevy_sync.py` (all three). `hevy_csv_import.py` and `analyze_history.py` remain for the no-API path and for seeding starting loads. `build_dashboard.py` turns the log and the tracks into a progress dashboard (`dashboard/index.html`) that applies the derived metrics in section 1.2 week by week: tonnage, weekly sets per muscle against the targets, week-over-week e1RM per main lift, the gap clock and the track state. See `tools/README.md`.
 
 ## Sources
 

@@ -77,3 +77,10 @@
   Each routine note opens with a target session length and a main-lift
   checkpoint, estimated from guide 05 section 6.2. Why: the user's logged
   sessions ran about 2 min per set against the 3 min the program prescribes.
+- Progress dashboard: `tools/build_dashboard.py` builds `dashboard/index.html`
+  from `data/history.csv`, `data/tracks.json` and `data/track-log.md`, applying
+  the derived metrics of chapter 07 section 1.2 by week (tonnage, working sets,
+  sets per muscle against the chapter 03 targets, week-over-week e1RM per main
+  lift, gap clock, track state, streaks). Muscle groups come from Hevy's
+  exercise templates (`data/exercise-muscles.json`). `hevy_sync.py` rebuilds it
+  after each update so progress over time is visible in one page.

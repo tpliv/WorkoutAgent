@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """One command for the weekly loop: pull Hevy history, apply the progression
-rules, push the updated routines back to Hevy.
+rules, rebuild the progress dashboard, push the updated routines back to Hevy.
 
 Usage:
     python3 tools/hevy_sync.py                 # pull -> update tracks -> push routines
@@ -12,6 +12,7 @@ Usage:
 Equivalent to:
     python3 tools/hevy_pull.py
     python3 tools/update_tracks.py --write-md [--reset-on-stall]
+    python3 tools/build_dashboard.py             (skipped with --dry-run)
     python3 tools/hevy_push_routines.py [--deload]
 """
 import argparse
@@ -44,6 +45,8 @@ def main(argv=None):
     upd = ["--write-md"] + (["--reset-on-stall"] if args.reset_on_stall else []) + (["--dry-run"] if args.dry_run else [])
     if run("update_tracks.py", *upd):
         sys.exit("Track update failed; stopping.")
+    if not args.dry_run and run("build_dashboard.py"):
+        print("Dashboard build failed; continuing.")
     if args.no_push:
         return
     push = (["--deload"] if args.deload else []) + (["--dry-run"] if args.dry_run else [])
