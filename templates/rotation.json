@@ -1,5 +1,5 @@
 {
-  "_comment": "Machine-readable form of the rotation in templates/6-day-week.md (split sessions) and templates/3-day-week.md (merged sessions). tools/hevy_push_routines.py renders these into Hevy routines, filling loads from data/tracks.json. Edit the markdown first, then this file. 'hevy' lists Hevy exercise-library titles to try in order; the first one the account has is used and cached in data/hevy-exercise-map.json. Roles: H = heavy exposure (top set + back-offs, or double progression for row/pull-up), V = volume exposure at volume_pct of the track load, acc = accessory (double progression, load from tracks.json accessories). 'warmup': ramp = bar x 5, 80% x 2 of the day's working load (plus 60% x 3 between them once it is 225 lb or more); feeder = one set at 65%. 'superset' groups exercises that share a superset_id.",
+  "_comment": "Machine-readable form of the rotation in templates/6-day-week.md (split sessions) and templates/3-day-week.md (merged sessions). tools/hevy_push_routines.py renders these into Hevy routines, filling loads from data/tracks.json. Edit the markdown first, then this file. 'hevy' lists Hevy exercise-library titles to try in order; the first one the account has is used and cached in data/hevy-exercise-map.json. Roles: H = heavy exposure (top set + back-offs, or double progression for row/pull-up), V = volume exposure at volume_pct of the track load, acc = accessory (double progression, load from tracks.json accessories). 'warmup': ramp = bar x 5, 80% x 2 of the day's working load (plus 60% x 3 between them once it is 225 lb or more); feeder = one set at 65%. 'superset' groups exercises that share a superset_id. 'rest' is the Hevy rest timer in seconds: between back-offs and straight sets; in a superset, 60 on every member but the last and 120 on the last (60 s to the partner, 2 min after the round). 'rest_top' is the rest after a top set, written into the exercise note because Hevy has one timer per exercise.",
   "version": "2026-10",
   "folder_title": "Rotation 2026-10",
   "slots": ["L1", "U1", "L2", "U2", "L3", "U3"],
@@ -9,11 +9,11 @@
       "title": "L1 Lower A",
       "notes": "Squat heavy. Top set 4 @ RPE 8, back-offs at -7% (stop if a set hits RPE 9). Accessories: double progression, add reps until every set tops the range at RPE 9 or less, then the smallest load step and back to the bottom.",
       "exercises": [
-        {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "H", "track": "squat", "warmup": "ramp", "backoffs": 3, "rest": 180},
+        {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "H", "track": "squat", "warmup": "ramp", "backoffs": 3, "rest": 180, "rest_top": 210},
         {"name": "Romanian deadlift", "hevy": ["Romanian Deadlift (Barbell)"], "role": "acc", "sets": 3, "rep_range": [8, 10], "rpe": "7-8", "rest": 150},
         {"name": "Leg press or split squat", "hevy": ["Leg Press (Machine)", "Bulgarian Split Squat (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 12], "rpe": "8", "rest": 120},
-        {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 75, "superset": 1},
-        {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 4, "rep_range": [8, 12], "rpe": "8-9", "rest": 75, "superset": 1},
+        {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 4, "rep_range": [8, 12], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Core", "hevy": ["Cable Crunch", "Hanging Leg Raise", "Lying Leg Raise"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60}
       ]
     },
@@ -21,11 +21,11 @@
       "title": "U1 Upper A",
       "notes": "Bench heavy, row heavy. Bench: top set 4 @ RPE 8, back-offs -7%. Row: 4 x 6-8 at RPE 8, add 5 lb when every set reaches 8. Superset lateral raise with triceps.",
       "exercises": [
-        {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "ramp", "backoffs": 3, "rest": 180},
+        {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "ramp", "backoffs": 3, "rest": 180, "rest_top": 210},
         {"name": "Barbell row", "hevy": ["Bent Over Row (Barbell)"], "role": "H", "track": "row", "warmup": "feeder", "sets": 4, "rest": 150},
         {"name": "Incline DB press", "hevy": ["Incline Bench Press (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [8, 12], "rpe": "7-8", "rest": 120},
         {"name": "Lateral raise", "hevy": ["Lateral Raise (Dumbbell)"], "role": "acc", "sets": 4, "rep_range": [12, 20], "rpe": "8-9", "rest": 60, "superset": 1},
-        {"name": "Overhead triceps extension", "hevy": ["Overhead Triceps Extension (Cable)", "Triceps Extension (Cable)", "Triceps Extension (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Overhead triceps extension", "hevy": ["Overhead Triceps Extension (Cable)", "Triceps Extension (Cable)", "Triceps Extension (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Face pull", "hevy": ["Face Pull"], "role": "acc", "sets": 3, "rep_range": [15, 20], "rpe": "8-9", "rest": 60}
       ]
     },
@@ -33,11 +33,11 @@
       "title": "L2 Lower B",
       "notes": "Deadlift heavy. Top set 4 @ RPE 8, 2 back-offs at -7%, 3-5 min rest after the top set. Crisp reps; no grinding.",
       "exercises": [
-        {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "H", "track": "deadlift", "warmup": "ramp", "backoffs": 2, "rest": 240},
+        {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "H", "track": "deadlift", "warmup": "ramp", "backoffs": 2, "rest": 180, "rest_top": 240},
         {"name": "Front squat or hack squat", "hevy": ["Front Squat (Barbell)", "Front Squat", "Hack Squat (Machine)", "Hack Squat"], "role": "acc", "sets": 3, "rep_range": [6, 10], "rpe": "7-8", "rest": 150},
         {"name": "Reverse lunge or split squat", "hevy": ["Reverse Lunge (Dumbbell)", "Bulgarian Split Squat (Dumbbell)", "Lunge (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [8, 12], "rpe": "8", "rest": 120, "per_leg": true},
-        {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 75, "superset": 1},
-        {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 4, "rep_range": [8, 12], "rpe": "8-9", "rest": 75, "superset": 1},
+        {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 4, "rep_range": [8, 12], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Back extension or Pallof press", "hevy": ["Back Extension (Hyperextension)", "Hyperextension", "Back Extension (Machine)", "Cable Core Pallof Press"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8", "rest": 60}
       ]
     },
@@ -45,11 +45,11 @@
       "title": "U2 Upper B",
       "notes": "Press heavy, pull-up heavy. Press: top set 4 @ RPE 8, back-offs -7%. Pull-up/pulldown: 4 x 5-8 at RPE 8, add 5 lb when every set reaches 8. Switch pulldown to the bar when a pulldown set at about bodyweight reaches 8.",
       "exercises": [
-        {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "ramp", "backoffs": 3, "rest": 180},
+        {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "ramp", "backoffs": 3, "rest": 180, "rest_top": 180},
         {"name": "Pull-up or pulldown", "hevy": ["Lat Pulldown (Cable)", "Pull Up (Weighted)", "Pull Up"], "role": "H", "track": "pullup", "warmup": "feeder", "sets": 4, "rest": 150},
         {"name": "Flat DB press or dips", "hevy": ["Bench Press (Dumbbell)", "Chest Dip", "Triceps Dip"], "role": "acc", "sets": 3, "rep_range": [8, 12], "rpe": "7-8", "rest": 120},
         {"name": "Reverse pec deck", "hevy": ["Rear Delt Reverse Fly (Machine)", "Reverse Fly (Machine)", "Rear Delt Reverse Fly (Dumbbell)", "Face Pull"], "role": "acc", "sets": 3, "rep_range": [15, 20], "rpe": "8-9", "rest": 60, "superset": 1},
-        {"name": "Cable lateral raise", "hevy": ["Lateral Raise (Cable)", "Lateral Raise (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [12, 20], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Cable lateral raise", "hevy": ["Lateral Raise (Cable)", "Lateral Raise (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [12, 20], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Incline DB curl", "hevy": ["Seated Incline Curl (Dumbbell)", "Bicep Curl (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 12], "rpe": "8-9", "rest": 75}
       ]
     },
@@ -59,10 +59,10 @@
       "exercises": [
         {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "V", "track": "squat", "warmup": "ramp", "sets": 4, "reps": 6, "rest": 150},
         {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "V", "track": "deadlift", "warmup": "feeder", "sets": 3, "reps": 4, "rest": 150},
-        {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 75, "superset": 1},
-        {"name": "Leg extension", "hevy": ["Leg Extension (Machine)"], "role": "acc", "sets": 3, "rep_range": [12, 15], "rpe": "8-9", "rest": 75, "superset": 1},
+        {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Leg extension", "hevy": ["Leg Extension (Machine)"], "role": "acc", "sets": 3, "rep_range": [12, 15], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 4, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 2},
-        {"name": "Core", "hevy": ["Cable Crunch", "Hanging Leg Raise", "Lying Leg Raise"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 2}
+        {"name": "Core", "hevy": ["Cable Crunch", "Hanging Leg Raise", "Lying Leg Raise"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 120, "superset": 2}
       ]
     },
     "U3": {
@@ -75,7 +75,7 @@
         {"name": "Pull-up or pulldown", "hevy": ["Lat Pulldown (Cable)", "Pull Up (Weighted)", "Pull Up"], "role": "V", "track": "pullup", "sets": 3, "rep_range": [6, 8], "rest": 120},
         {"name": "Lateral raise", "hevy": ["Lateral Raise (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [12, 20], "rpe": "8-9", "rest": 60, "superset": 1},
         {"name": "Triceps pushdown", "hevy": ["Triceps Pushdown", "Triceps Pushdown (Cable)", "Skullcrusher (Barbell)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 1},
-        {"name": "Preacher or EZ-bar curl", "hevy": ["Preacher Curl (Machine)", "Preacher Curl (Barbell)", "EZ Bar Biceps Curl", "Bicep Curl (Barbell)"], "role": "acc", "sets": 3, "rep_range": [10, 12], "rpe": "8-9", "rest": 60, "superset": 1}
+        {"name": "Preacher or EZ-bar curl", "hevy": ["Preacher Curl (Machine)", "Preacher Curl (Barbell)", "EZ Bar Biceps Curl", "Bicep Curl (Barbell)"], "role": "acc", "sets": 3, "rep_range": [10, 12], "rpe": "8-9", "rest": 120, "superset": 1}
       ]
     },
     "Full A": {
@@ -83,12 +83,12 @@
       "merged": true,
       "notes": "L1 + U1 merged. Squat H, bench H (judge by RPE: a 4 @ 9.5 here is a hold, not a miss), row H. Two back-offs per lift, 3 row sets. If over 75 min: calves to 2, triceps to 2, lateral raise to 3.",
       "exercises": [
-        {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "H", "track": "squat", "warmup": "ramp", "backoffs": 2, "rest": 180},
-        {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "feeder", "backoffs": 2, "rest": 180},
+        {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "H", "track": "squat", "warmup": "ramp", "backoffs": 2, "rest": 180, "rest_top": 210},
+        {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "feeder", "backoffs": 2, "rest": 180, "rest_top": 210},
         {"name": "Barbell row", "hevy": ["Bent Over Row (Barbell)"], "role": "H", "track": "row", "sets": 3, "rest": 150},
         {"name": "Seated leg curl", "hevy": ["Seated Leg Curl (Machine)", "Lying Leg Curl (Machine)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 75},
         {"name": "Lateral raise", "hevy": ["Lateral Raise (Dumbbell)"], "role": "acc", "sets": 4, "rep_range": [12, 20], "rpe": "8-9", "rest": 60, "superset": 1},
-        {"name": "Overhead triceps extension", "hevy": ["Overhead Triceps Extension (Cable)", "Triceps Extension (Cable)", "Triceps Extension (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Overhead triceps extension", "hevy": ["Overhead Triceps Extension (Cable)", "Triceps Extension (Cable)", "Triceps Extension (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 15], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 3, "rep_range": [8, 12], "rpe": "8-9", "rest": 75}
       ]
     },
@@ -97,13 +97,13 @@
       "merged": true,
       "notes": "L2 + U2 merged. Deadlift H, press H, pull-up H (press and pull-up judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss). Two back-offs per lift, 3 pull-up sets. If over 75 min: drop calves, then the lateral raise.",
       "exercises": [
-        {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "H", "track": "deadlift", "warmup": "ramp", "backoffs": 2, "rest": 240},
-        {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "feeder", "backoffs": 2, "rest": 180},
+        {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "H", "track": "deadlift", "warmup": "ramp", "backoffs": 2, "rest": 180, "rest_top": 240},
+        {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "feeder", "backoffs": 2, "rest": 180, "rest_top": 180},
         {"name": "Pull-up or pulldown", "hevy": ["Lat Pulldown (Cable)", "Pull Up (Weighted)", "Pull Up"], "role": "H", "track": "pullup", "sets": 3, "rest": 150},
         {"name": "Leg press or split squat", "hevy": ["Leg Press (Machine)", "Bulgarian Split Squat (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [8, 12], "rpe": "8", "rest": 120},
         {"name": "Reverse pec deck", "hevy": ["Rear Delt Reverse Fly (Machine)", "Reverse Fly (Machine)", "Rear Delt Reverse Fly (Dumbbell)", "Face Pull"], "role": "acc", "sets": 3, "rep_range": [15, 20], "rpe": "8-9", "rest": 60, "superset": 1},
         {"name": "Cable lateral raise", "hevy": ["Lateral Raise (Cable)", "Lateral Raise (Dumbbell)"], "role": "acc", "sets": 2, "rep_range": [12, 20], "rpe": "8-9", "rest": 60, "superset": 1},
-        {"name": "Incline DB curl", "hevy": ["Seated Incline Curl (Dumbbell)", "Bicep Curl (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 12], "rpe": "8-9", "rest": 60, "superset": 1},
+        {"name": "Incline DB curl", "hevy": ["Seated Incline Curl (Dumbbell)", "Bicep Curl (Dumbbell)"], "role": "acc", "sets": 3, "rep_range": [10, 12], "rpe": "8-9", "rest": 120, "superset": 1},
         {"name": "Standing calf raise", "hevy": ["Standing Calf Raise (Machine)", "Standing Calf Raise (Dumbbell)", "Calf Press (Machine)"], "role": "acc", "sets": 2, "rep_range": [8, 12], "rpe": "8-9", "rest": 75}
       ]
     },

@@ -69,3 +69,11 @@
   Why: running a sync from the kg files would have overwritten the pound
   routines (a 132.3-lb squat). Verified by rendering all nine routines
   offline and diffing them against the live app: no differences.
+- Rest timers in the Hevy routines now match the templates, and every exercise
+  note states its rest. `templates/rotation.json`: superset members rest 60 s,
+  the last member of each superset 120 s (the key's "60 s between the two
+  exercises, 2 min after the pair"); top sets carry `rest_top` (3:30 squat and
+  bench, 3:00 press, 4:00 deadlift); deadlift back-off rest 3:00 (was 4:00).
+  Each routine note opens with a target session length and a main-lift
+  checkpoint, estimated from guide 05 section 6.2. Why: the user's logged
+  sessions ran about 2 min per set against the 3 min the program prescribes.
