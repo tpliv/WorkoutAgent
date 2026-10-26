@@ -7,7 +7,9 @@ Usage:
     python3 tools/hevy_pull.py --since 2024-01-01          # full pull, keep workouts on or after this date
     python3 tools/hevy_pull.py --inspect                   # print one raw workout and exit
 
-Reads the key from the HEVY_API_KEY environment variable only.
+Reads the key from the HEVY_API_KEY environment variable, or relies on a network-secret
+proxy that adds it to requests for api.hevyapp.com. Never pass the
+key on the command line or commit it.
 
 Outputs:
     data/history.csv                normalized set-level log (tools/README.md), merged
@@ -29,6 +31,7 @@ warmup, dropset, failure; RPE is per set and nullable.
 """
 import argparse
 import csv
+import datetime as dt
 import json
 import os
 import sys

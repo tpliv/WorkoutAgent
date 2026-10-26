@@ -43,15 +43,15 @@ First logged session 2024-03-04, last 2026-10-21 (0 days ago).
 
 ## Proposed starting loads for the progression tracks
 
-Rule source: `templates/progression-tracks.md`, section 2 (recent data) and section 8 (returning after a layoff). Loads in kg, rounded down to 2.5 kg.
+Rule source: `templates/progression-tracks.md`, section 2 (recent data) and section 8 (returning after a layoff). Proposed loads are rounded down to 5 lb; the kg column is that rounded load converted.
 
 Squat, bench, deadlift, press: the top set of 4 at RPE 8. Row and pull-up or pulldown: the load for the first set of 4 x 6-8 (row) or 4 x 5-8 (pull-up) at RPE 8, per `templates/progression-tracks.md` section 1. Pounds are rounded down to 5 lb.
 
-| Lift | Matched exercises | Last trained | Best e1RM (kg) | Recent e1RM (kg) | Proposed start (kg) | Proposed start (lb) | Basis |
+| Lift | Matched exercises | Last trained | Best e1RM (kg) | Recent e1RM (kg) | Proposed start (lb) | Proposed start (kg) | Basis |
 |---|---|---|---|---|---|---|---|
-| squat | Squat (Barbell) | 2026-10-17 | 132 | 78 | 60 | 130 | 80% of recent e1RM (section 2) |
-| bench | Bench Press (Barbell) | 2026-10-20 | 60 | 55 | 42.5 | 90 | 80% of recent e1RM (section 2) |
-| deadlift | Deadlift (Barbell) | 2025-04-14 | 84 | - | work up | work up | history is 18 months old: work up on the first H exposure; expect roughly 35-50 kg if strength is similar (reference only) |
-| press | Overhead Press (Barbell) | 2026-10-17 | 40 | 36 | 27.5 | 60 | 80% of recent e1RM (section 2) |
-| row | Bent Over Row (Barbell) | 2026-10-18 | 64 | 41 | 32.5 | 70 | 80% of recent e1RM (section 2) |
-| pullup | Lat Pulldown (Cable), Pull Up, Chin Up | 2026-10-17 | 73 | 73 | 57.5 | 125 | 80% of recent e1RM (section 2) |
+| squat | Squat (Barbell) | 2026-10-17 | 132 | 78 | 135 | 61.2 | 80% of recent e1RM (section 2) |
+| bench | Bench Press (Barbell) | 2026-10-20 | 60 | 55 | 95 | 43.1 | 80% of recent e1RM (section 2) |
+| deadlift | Deadlift (Barbell) | 2025-04-14 | 84 | - | work up | work up | history is 18 months old: work up on the first H exposure; expect roughly 80-110 lb (35-50 kg) if strength is similar (reference only) |
+| press | Overhead Press (Barbell) | 2026-10-17 | 40 | 36 | 60 | 27.2 | 80% of recent e1RM (section 2) |
+| row | Bent Over Row (Barbell) | 2026-10-18 | 64 | 41 | 70 | 31.8 | 80% of recent e1RM (section 2) |
+| pullup | Lat Pulldown (Cable), Pull Up, Chin Up | 2026-10-17 | 73 | 73 | 125 | 56.7 | 80% of recent e1RM (section 2) |

@@ -57,13 +57,13 @@ All three work on the free tier: "programs and the editor, Liftoscript, logging 
 
 ## What to adjust before the first session
 
-1. **Starting loads.** The file carries the worked example (squat 120, bench 85, deadlift 150, press 55, row 70, pull-up +10 kg). Replace them using `templates/progression-tracks.md`, section 2: 95% of a recent 5RM, or 80% of a recent 1RM, or work up on the first H exposure and type in what 4 reps at RPE 8 turned out to be. Then recompute the dependent numbers:
+1. **Starting loads.** The file carries the worked example, in pounds (squat 265, bench 185, deadlift 330, press 120, row 155, pull-up +25 lb). Replace them using `templates/progression-tracks.md`, section 2: 95% of a recent 5RM, or 80% of a recent 1RM, or work up on the first H exposure and type in what 4 reps at RPE 8 turned out to be. Then recompute the dependent numbers:
 
-   | Line | Formula | Example (squat 120) |
+   | Line | Formula | Example (squat 265) |
    |---|---|---|
-   | H back-off weight | top set x 0.93, rounded to the nearest loadable weight | 111.6 -> 112.5 |
-   | V weight (Days 5-6) | top set x 0.90, rounded | 108 -> 107.5 |
-   | Pull-up V added load | reduce until the sets land at RPE 7; 0 kg = bodyweight | +10 -> +5 |
+   | H back-off weight | top set x 0.93, rounded to the nearest loadable weight | 246.45 -> 245 |
+   | V weight (Days 5-6) | top set x 0.90, rounded | 238.5 -> 240 |
+   | Pull-up V added load | reduce until the sets land at RPE 7; 0 lb = bodyweight | +25 -> +10 |
 
 2. **kg or lb.** The file is in kg. For pounds, change every `kg` to `lb` and the increments: `lp(2.5kg)` -> `lp(5lb)`, `lp(1kg)` -> `lp(2.5lb)`, `dp(2.5kg, ...)` -> `dp(5lb, ...)`, dumbbell steps `2kg` -> `5lb`, the bar in the warm-up `20kg` -> `45lb`. Set the app's plates in Me → Equipment.
 3. **Fractional plates.** Bench and press use `lp(1kg)`, which needs 0.5 kg plates. Without them, change both to `lp(2.5kg, 2)`: +2.5 kg after every second successful exposure (`templates/progression-tracks.md`, section 9).

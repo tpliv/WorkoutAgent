@@ -41,6 +41,8 @@ Notes on each:
 
 ## Accessory starting loads (double progression, first set with 2-3 reps in reserve)
 
+One load each. If the first set is easier than 2-3 reps in reserve, move up 2.5 lb per dumbbell next time (one pin on a machine); if harder, down one step.
+
 From the recent log where one exists; otherwise choose on the day and record here.
 
 | Exercise (template slot) | Start | Source |

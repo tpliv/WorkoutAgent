@@ -11,7 +11,8 @@
 /// nothing may follow an exercise on its line.
 ///
 /// Units: kg. Starting loads are the worked example in guide/03-flexible-scheduling.md,
-/// section 6 (squat 120, bench 85, deadlift 150, press 55, row 70, pull-up +10).
+/// section 6, converted from its pounds (squat 120, bench 85, deadlift 150, press 55, row 70,
+/// pull-up +10; the guide has 265, 185, 330, 120, 155, +25 lb).
 /// Replace them with yours: templates/progression-tracks.md, section 2.
 ///
 /// H exposure = 1 x 4 top set @ RPE 8, then back-offs at -7% (3 in a split session;

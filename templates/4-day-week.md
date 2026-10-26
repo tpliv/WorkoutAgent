@@ -81,7 +81,7 @@ Superset 4 with 5, or 5 with 6. 20 sets.
 
 ## Progression rules in brief
 
-**Main lifts** (full rules: `templates/progression-tracks.md`): top set 4 reps at RPE 8. At RPE 8 or lower, the next H load rises 2.5 kg (squat, deadlift) or 1 kg (bench, press). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. The bench top set in Full A, taken after the squat, is judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss. V sets are 90% of the current top-set load and never move the track. Row and pull-up: double progression, +2.5 kg when every set reaches 8. Gaps: hold the load if a lift has gone 8-21 days untrained; reduce 5-10% beyond 21 days.
+**Main lifts** (full rules: `templates/progression-tracks.md`): top set 4 reps at RPE 8. At RPE 8 or lower, the next H load rises 5 lb (squat, deadlift); bench and press rise 5 lb after every second such top set (step counter, `progression-tracks.md` section 5). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. The bench top set in Full A, taken after the squat, is judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss. V sets are 90% of the current top-set load and never move the track. Row and pull-up: double progression, +5 lb when every set reaches 8. Gaps: hold the load if a lift has gone 8-21 days untrained; reduce 5-10% beyond 21 days.
 
 **Accessories:** double progression. Fixed load; add reps until every set reaches the top of the range at RPE 9 or less; then the smallest increment and back to the bottom. Short weeks skip sets, never reset loads.
 

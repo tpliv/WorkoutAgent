@@ -137,9 +137,9 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 
 ## 9. Rounding and equipment
 
-- All barbell lifts: 5-lb steps (2.5-lb plates are the smallest). Squat and deadlift add 5 lb per success; bench and press add 5 lb every second success. Pulldown: one 5-lb pin.
-- Rounding: to the nearest 5 lb, an exact half-step (2.5) rounds up; stall resets round down. No load goes below the 45-lb bar.
-- Back-off and V loads: compute, then round to the nearest loadable weight. Record the loaded weight, not the computed one.
+- **Plates.** The smallest plate is 2.5 lb, so every barbell load is a multiple of 5 lb. Squat and deadlift step 5 lb per success; bench and press step 5 lb every second success (section 5).
+- **Every computed load is rounded to the nearest 5 lb before it is written down.** That covers back-offs (x 0.93), V sets (x 0.90), warm-up ramps, deloads (x 0.90-0.92), gap reductions (5-10%) and stall resets (7.5%). An exact half-step (for example 112.5) rounds up; stall resets round down. No load goes below the 45-lb bar. Record the loaded weight, not the computed one. No plan, brief or log shows a load that is not a multiple of 5 lb.
+- **Dumbbells** come in 2.5 lb steps, so every dumbbell load is a multiple of 2.5 lb (per dumbbell). **Machines and cable stacks:** the nearest pin. A plan or brief names one load, never a range.
 - If a session must use a substitute for a main lift (travel, equipment), the substitute does **not** update the track and does not count as an exposure for the gap clock. Strength is modality- and range-specific (Haugen 2023; Pallares 2020; `research/exercise-selection-and-session-design.md`, KQ7); keep the barbell lift itself at least once a week.
 - Dumbbell bench runs at roughly 35-40% of the barbell load per hand; treat any substitute as a new baseline and progress it by double progression.
 
@@ -147,19 +147,19 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 
 ## 10. Logging
 
-**Per set:** exercise, load, reps, RPE, a note on technique or pain. Example line: `2026-11-03 L1 squat H 125x4 @8 | 117.5x4 @7, @7.5, @8`.
+**Per set:** exercise, load, reps, RPE, a note on technique or pain. Example line: `2026-11-03 L1 squat H 275x4 @8 | 255x4 @7, @7.5, @8`.
 
 **Per lift (the track state), updated at each H exposure:**
 
 | Field | Example |
 |---|---|
-| Top-set load (planned for next H) | 127.5 |
+| Top-set load (planned for next H) | 280 |
 | Rep target | 4 |
 | Miss counter | 0 |
 | Last exposure date (H or V) | 2026-11-07 (V) |
-| e1RM history (last 6 H exposures) | 142, 144, 147, 147, 150, 153 |
+| e1RM history (last 6 H exposures) | 306, 312, 318, 320, 324, 330 |
 
-**e1RM:** from the top set, `e1RM = load x (1 + (reps + RIR) / 30)`, where RIR = 10 - RPE. Example: 125 x 4 @ 8 gives 125 x (1 + 6/30) = 150. This is an Epley-style convention; any consistent formula serves, because the quantity that matters is the trend. Use heavy, low-rep, RPE 8+ sets only; RIR ratings from long sets are less accurate (Russo et al. 2025). Barbell Medicine recomputes e1RM each workout from the most accurate set and sets back-offs from it (`research/periodization-and-progression.md`, Q2, Q7; convention).
+**e1RM:** from the top set, `e1RM = load x (1 + (reps + RIR) / 30)`, where RIR = 10 - RPE. Example: 275 x 4 @ 8 gives 275 x (1 + 6/30) = 330. This is an Epley-style convention; any consistent formula serves, because the quantity that matters is the trend. Use heavy, low-rep, RPE 8+ sets only; RIR ratings from long sets are less accurate (Russo et al. 2025). Barbell Medicine recomputes e1RM each workout from the most accurate set and sets back-offs from it (`research/periodization-and-progression.md`, Q2, Q7; convention).
 
 **Per session:** bodyweight, sleep hours, a 1-5 readiness score. **Per week:** hard sets per muscle group (half credit for indirect work; tallies at the bottom of each template).
 
@@ -173,7 +173,7 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 - **Starting load:** one you can lift for the bottom of the range with 2-3 reps in reserve.
 - **Dynamic variant** for lifters who log set by set: increase load on a specific set only if that set exceeded the range last time (Helms' Muscle and Strength Pyramid description, `research/periodization-and-progression.md`, Q2).
 - **Short weeks** skip some sets of an accessory; they never reset its load.
-- **Stall:** two exposures without a rep gained at a load, drop 5% and rebuild, or swap to a same-length alternative (seated curl for lying curl, overhead for neutral triceps) at a block boundary. Rotate accessories every 4-8 weeks or when they stall, not session to session (`guide/05-exercise-selection.md`, section 8).
+- **Stall:** two exposures without a rep gained at a load, drop one step (5 lb on a barbell, one pin on a stack, 2.5 lb per dumbbell) and rebuild, or swap to a same-length alternative (seated curl for lying curl, overhead for neutral triceps) at a block boundary. Rotate accessories every 4-8 weeks or when they stall, not session to session (`guide/05-exercise-selection.md`, section 8).
 - Triple progression (reps, then sets, then load) is available for accessories you train in every week type, but the extra set is the first thing a short week removes, so it is not the default.
 
 ---

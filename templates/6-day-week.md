@@ -104,7 +104,7 @@ Run 5, 6 and 7 as a circuit (60 s between exercises). For exercise 6, a second o
 
 ## Progression rules in brief
 
-**Main lifts** (full rules: `templates/progression-tracks.md`): the top set is 4 reps at RPE 8. Make it at RPE 8 or lower and the next H load rises 2.5 kg (squat, deadlift) or 1 kg (bench, press). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. V sets are 90% of the current top-set load and never change the track. Row and pull-up: double progression, +2.5 kg when every set reaches 8. Gaps: hold the load if a lift has not been trained for 8-21 days; reduce 5-10% beyond 21.
+**Main lifts** (full rules: `templates/progression-tracks.md`): the top set is 4 reps at RPE 8. Make it at RPE 8 or lower and the next H load rises 5 lb (squat, deadlift); bench and press rise 5 lb after every second such top set (step counter, `progression-tracks.md` section 5). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. V sets are 90% of the current top-set load and never change the track. Row and pull-up: double progression, +5 lb when every set reaches 8. Gaps: hold the load if a lift has not been trained for 8-21 days; reduce 5-10% beyond 21.
 
 **Accessories:** double progression. Fixed load; add reps until every set reaches the top of the range at RPE 9 or less; then the smallest increment and back to the bottom. Start with a load you can do for the bottom of the range with 2-3 reps in reserve. Last set of an isolation may hit failure. Rotate an accessory only at a block boundary or after two stalls.
 

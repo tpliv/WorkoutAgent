@@ -75,6 +75,9 @@ The user logs in Hevy (Pro) and the repo talks to it over the Hevy API.
 ## Style
 
 - Markdown. Tables for comparisons. Short sentences.
-- Units: kilograms and pounds both acceptable; be consistent within a file.
+- Units: the user lifts in pounds. Templates, progression rules, worked examples,
+  and `data/track-state.md` are in pounds. `data/history.csv` stores kilograms
+  internally; research notes quote whatever the source used. Be consistent
+  within a file.
 - No medical advice beyond general training guidance; flag when a reader should
   consult a professional.

@@ -333,3 +333,12 @@ Suggested changes only. This addendum edits nothing outside this note.
 - **`guide/04` section 3 evidence table, Delphi row:** replace "two camps on proactive vs reactive" with "consensus that deloads can be pre-planned, autoregulated, or both." Replace the "8-week study in beginners" row with Pancar et al. 2026 (Sci Rep), and add a Rogerson 2024 row.
 - **`guide/04` section 7, last paragraph** (vendor "within 0.5 RPE" claim): a peer-reviewed figure now exists. Helms 2017: powerlifters' reported RPE deviated from target by 0.33 ± 0.28 on average (load-selection accuracy vs target, not vs true failure). For prediction vs true failure, cite Refalo 2024 (0.65 reps) and Halperin 2022 (0.95 reps).
 - **`templates/progression-tracks.md` Sources and section 1 ("Pelland et al. 2025/26"):** cite the published version, Sports Med 2026;56(2):481-505. The strength-frequency finding still holds.
+## Addendum 2026-10-21: progression without fractional plates
+
+Context: the lifter's smallest plate is 2.5 lb, so every barbell load is a multiple of 5 lb. The program's earlier +2.5 lb bench and press steps assumed 1.25 lb plates. This addendum records what the existing findings above say about that constraint. It adds no new search.
+
+- [Convention] The Texas Method raises squat and deadlift about 5 lb a week, and bench and press about every two weeks because those two alternate (KQ2, KQ6 above). A 5 lb step every second success on bench and press matches that pace.
+- [Convention] The beginner guide in KQ2 gives upper-body jumps of 1.25-2.5 kg (about 2.5-5 lb). A 5 lb jump is at the top of that range, so it is too big to take every week as the default.
+- Inference: the jump is large relative to a light lift (5 lb is about 8% of a 60 lb press). Taking it every second success keeps the average weekly step near 2.5 lb with only 5 lb plates on the bar. Double progression on reps (4, then 5, then 6 reps at a load before +5 lb) is the main alternative. It was not adopted because it would change the 4-rep top-set structure that the e1RM history and stall rules are built on.
+- Equipment update, same day: the lifter's dumbbells go up in 2.5 lb steps. Accessory double progression adds 2.5 lb per dumbbell, so no step counter is needed for dumbbell work.
+- Gap: no study comparing microloading with larger, less frequent jumps was searched for in this pass.

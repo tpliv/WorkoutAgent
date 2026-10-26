@@ -40,6 +40,13 @@ def load_history(path):
     rows = []
     with open(path, newline="") as f:
         for r in csv.DictReader(f):
+            # Accept the manual log template too: 'session' and 'load' or 'load_lb' (pounds)
+            # instead of 'workout_title' and 'weight_kg'.
+            if "workout_title" not in r and "session" in r:
+                r["workout_title"] = r["session"]
+            lb = r.get("load_lb", r.get("load"))
+            if "weight_kg" not in r and lb is not None:
+                r["weight_kg"] = str(float(lb) * 0.45359237) if lb != "" else ""
             try:
                 d = dt.date.fromisoformat(r["date"][:10])
             except ValueError:
@@ -123,9 +130,9 @@ def main():
     # 3. main-lift starting loads
     aliases = json.load(open(args.aliases))
     p("\n## Proposed starting loads for the progression tracks\n")
-    p("Rule source: `templates/progression-tracks.md`, section 2 (recent data) and section 8 (returning after a layoff). Loads in kg, rounded down to 2.5 kg.\n")
+    p("Rule source: `templates/progression-tracks.md`, section 2 (recent data) and section 8 (returning after a layoff). Proposed loads are rounded down to 5 lb; the kg column is that rounded load converted.\n")
     p("Squat, bench, deadlift, press: the top set of 4 at RPE 8. Row and pull-up or pulldown: the load for the first set of 4 x 6-8 (row) or 4 x 5-8 (pull-up) at RPE 8, per `templates/progression-tracks.md` section 1. Pounds are rounded down to 5 lb.\n")
-    p("| Lift | Matched exercises | Last trained | Best e1RM (kg) | Recent e1RM (kg) | Proposed start (kg) | Proposed start (lb) | Basis |\n|---|---|---|---|---|---|---|---|")
+    p("| Lift | Matched exercises | Last trained | Best e1RM (kg) | Recent e1RM (kg) | Proposed start (lb) | Proposed start (kg) | Basis |\n|---|---|---|---|---|---|---|---|")
     for lift, names in aliases.items():
         if lift.startswith("_"):
             continue
@@ -150,14 +157,20 @@ def main():
         # last block's heaviest top set (best e1RM in the final 28 days of logged data for this lift)
         tail = [r for r in sets if (last - r["date"]).days <= 28]
         tail_e = max(epley(r["w"], r["reps"], r["rpe"]) for r in tail)
+        KG = 0.45359237
+        def lbs(x):
+            return math.floor(x / KG / 5) * 5
         if age <= 56 and recent_e:
-            prop, basis = round_plate(0.80 * recent_e), "80% of recent e1RM (section 2)"
+            raw, basis = 0.80 * recent_e, "80% of recent e1RM (section 2)"
         elif age <= 365:
-            prop, basis = round_plate(0.85 * 0.83 * tail_e), "85% of the last block's estimated 4@8 load; first exposure at RPE 6-7 (section 8)"
+            raw, basis = 0.85 * 0.83 * tail_e, "85% of the last block's estimated 4@8 load; first exposure at RPE 6-7 (section 8)"
         else:
-            prop, basis = None, f"history is {age//30} months old: work up on the first H exposure; expect roughly {round_plate(0.70*0.83*tail_e):g}-{round_plate(0.83*tail_e):g} kg if strength is similar (reference only)"
-        lb = f"{math.floor(prop / 0.45359237 / 5) * 5:g}" if prop else "work up"
-        p(f"| {lift} | {', '.join(matched)} | {last} | {best_e:.0f} | {f'{recent_e:.0f}' if recent_e else '-'} | {f'{prop:g}' if prop else 'work up'} | {lb} | {basis} |")
+            raw, basis = None, f"history is {age//30} months old: work up on the first H exposure; expect roughly {lbs(0.70*0.83*tail_e):g}-{lbs(0.83*tail_e):g} lb ({round_plate(0.70*0.83*tail_e):g}-{round_plate(0.83*tail_e):g} kg) if strength is similar (reference only)"
+        # Round in pounds first (the user's plates), then show the kg equivalent of that rounded load.
+        prop_lb = lbs(raw) if raw else None
+        prop = round(prop_lb * KG, 1) if prop_lb else None
+        lb = f"{prop_lb:g}" if prop_lb else "work up"
+        p(f"| {lift} | {', '.join(matched)} | {last} | {best_e:.0f} | {f'{recent_e:.0f}' if recent_e else '-'} | {lb} | {f'{prop:g}' if prop else 'work up'} | {basis} |")
 
     text = "\n".join(out) + "\n"
     print(text)

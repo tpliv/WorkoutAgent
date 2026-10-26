@@ -115,3 +115,39 @@
   Hevy routines are unchanged. The Liftosaur export was rewritten to the
   official Liftoscript grammar. Open questions for the user: the V-set RPE
   targets and stale threshold, and a separate rule for multi-week breaks.
+- Converted templates, progression rules, the chapter 03 worked example, and the
+  Liftosaur file from kilograms to pounds (5 lb squat and deadlift steps, 2.5 lb
+  bench and press steps). Research notes and study citations stay in their
+  source units.
+- Weekly coaching cadence. New research note `research/coaching-check-ins.md`
+  covers readiness questionnaires (Saw 2016; Hooper & Mackinnon 1995), RIR
+  autoregulation, and supervision (Mazzetti 2000; Fisher 2022). New chapter
+  `guide/08-weekly-coaching-cadence.md` sets out a Sunday 6:47 pm ET check-in
+  (five questions, then the guide 03 section 4.1 procedure) and a night-before
+  brief Mon-Sat at 7:47 pm ET. New `coach/` runbooks for the scheduled sessions,
+  plus `data/weekly-plan.md`, `data/checkins/` and `data/manual-log.csv` for
+  state. Results come from the Hevy API when `HEVY_API_KEY` is set, otherwise
+  from the chat. Why: the user asked for a personal-trainer rhythm; the program
+  rules are unchanged.
+- Equipment: the lifter's smallest plate is 2.5 lb, so every barbell load is now a
+  multiple of 5 lb. Bench and press move 5 lb after every second successful heavy
+  top set (a step counter in `templates/progression-tracks.md` section 5 and
+  `data/track-state.md`), instead of the 2.5 lb steps that needed 1.25 lb plates.
+  All computed loads (back-offs, V sets, warm-ups, deloads, resets) round to the
+  nearest 5 lb. Accessory loads are a single weight, not a range. The guide 03
+  worked example, the guide 07 sample rows, the Liftosaur file, the coach runbooks
+  and the seeded week plan were recalculated. Rationale: addendum in
+  `research/periodization-and-progression.md`. Why: the user reported uneven
+  load sizes they could not build with their plates.
+- Dumbbells go up in 2.5 lb steps: dumbbell accessories progress and stall-drop by
+  2.5 lb per dumbbell (`templates/progression-tracks.md` sections 9 and 11, coach
+  runbooks, `data/track-state.md`, Liftosaur `dp(2.5lb, ...)` on dumbbell lines).
+  Why: the user confirmed their dumbbell rack.
+- Hevy routines rewritten in pounds. The nine "Rotation 2026-10" routines had been
+  built in kilograms (squat 60 kg showed as 132.3 lb, bench 42.5 kg as 93.7 lb). They
+  now carry the exact `data/track-state.md` loads (squat 135/125, bench 95/90, press
+  60/55, row 70, pulldown 125, V loads 120/85/55/65/115, accessories) with notes in
+  pounds. `tools/hevy_pull.py` now works when the key is a network secret the proxy
+  adds (no `HEVY_API_KEY` variable) and dates workouts in local time. The coach
+  runbooks check the API itself, not the variable. Why: the user reported odd load
+  sizes in Hevy.

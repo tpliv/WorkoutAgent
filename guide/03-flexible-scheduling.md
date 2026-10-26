@@ -10,7 +10,7 @@ Last updated: 2026-10-21
 
 This chapter owns the weekly layouts, the rotation pointer, the merge and cut rules, the resume-after-a-gap rules, and how the mesocycle is counted. The per-lift progression rules are in `templates/progression-tracks.md`; the full session tables are in `templates/`. Other chapters refer here and do not prescribe their own layouts (design spine).
 
-Units: kilograms throughout (2.5 kg is about 5 lb; 1 kg is about 2 lb).
+Units: pounds throughout (5 lb is about 2.3 kg; 2.5 lb is about 1.1 kg).
 
 ---
 
@@ -130,7 +130,7 @@ Why frequency reads "3x" everywhere: every block contains every muscle, and ever
 
 ### 4.1 Start-of-week decision procedure
 
-Do this once, before the first session of the week. It takes two minutes.
+Do this once, before the first session of the week. It takes two minutes. The Sunday check-in in `guide/08-weekly-coaching-cadence.md` runs these steps for you.
 
 1. **Count the days you can actually train this week.** If unsure between two numbers, plan the lower one; an extra day can be added at the end of the week as a split session without harm (see step 6).
 2. **Pick the template:** 3 days = `templates/3-day-week.md`; 4 = `4-day-week.md`; 5 = `5-day-week.md`; 6 = `6-day-week.md`. 2 days: section 4.6. 7 days: train 6, the seventh is cardio or rest.
@@ -222,7 +222,7 @@ Timing rule: a deload is planned to land on a 3-day week when the calendar allow
 
 Each main lift has one track (`templates/progression-tracks.md`): a current top-set load, a rep target, an exposure counter, a miss counter, and an e1RM history.
 
-- **The track updates at the H exposure.** If the top set hits 4 reps at RPE <= 8, the load rises for the next H exposure (+2.5 kg squat and deadlift; +1 kg bench and press, or +2.5 kg every second successful exposure without fractional plates). RPE 8.5-9: hold. Missed reps or RPE 10: hold and count a miss. Two misses in a row at one load: stall rule (reset 7.5% and rebuild, with a rep-zone change on a second stall).
+- **The track updates at the H exposure.** If the top set hits 4 reps at RPE <= 8, the load rises for the next H exposure (+5 lb squat and deadlift; bench and press +5 lb after every second success, because the smallest plate is 2.5 lb and every barbell load is a multiple of 5 lb; `templates/progression-tracks.md` section 5, step counter). RPE 8.5-9: hold. Missed reps or RPE 10: hold and count a miss. Two misses in a row at one load: stall rule (reset 7.5% and rebuild, with a rep-zone change on a second stall).
 - **The V exposure reads from the track.** Its sets are 90% of the current top-set load. It does not change the load, but it is an exposure for the gap clock and its sets are logged for the e1RM trend.
 - **Day count never touches the track.** A 3-day week and a 6-day week each contain exactly one H and one V exposure per lift, so loads advance at one step per week in both. The only main-lift variables that change with the day count are the number of back-off sets (3 in a split session, 2 in a merged one) and the number of V sets (4 versus 3).
 - **Exposure count, not calendar, is the unit** (`research/flexible-frequency-programming.md`, KQ6; GZCLP progresses per completed session; Wendler's 2023 variable-schedule post takes the next main lift in sequence whatever the day count; the "5/3/1 cycle stretches to 5+ weeks at 3 days per week" wording comes from a Muscle & Strength guide and is still **unverified** at source). If a pass spills across two calendar weeks because a session was missed, the lift's track simply advances when its H exposure happens.
@@ -235,38 +235,38 @@ How a missed rep target is handled (the question `guide/05-exercise-selection.md
 
 ## 6. Worked example: four weeks alternating 3-day and 6-day weeks
 
-Starting tracks (top-set loads for 4 reps at RPE 8, or the row and pull-up track loads): squat 120 kg, bench 85 kg, deadlift 150 kg, overhead press 55 kg, barbell row 70 kg (4 x 6-8), pull-up bodyweight + 10 kg (4 x 5-8). V loads are 90% of the lift's **current** track load (the load the next H will attempt), rounded to the nearest weight you can load (2.5 kg steps for squat and deadlift, 0.5 kg steps for bench and press with fractional plates). Week 3 is a planned 3-day week in which illness takes Wednesday and Friday, to show the pointer and the gap rule at work.
+Starting tracks (top-set loads for 4 reps at RPE 8, or the row and pull-up track loads): squat 265 lb, bench 185 lb, deadlift 330 lb, overhead press 120 lb, barbell row 155 lb (4 x 6-8), pull-up bodyweight + 25 lb (4 x 5-8). Bench and press step counters start at 0. V loads are 90% of the lift's **current** track load (the load the next H will attempt), rounded to the nearest 5 lb (the smallest plate is 2.5 lb, so every barbell load is a multiple of 5 lb; a half-step rounds up). Week 3 is a planned 3-day week in which illness takes Wednesday and Friday, to show the pointer and the gap rule at work.
 
 | Day | Week type | Session | Pointer after | Squat | Bench | Deadlift | Press | Row | Pull-up |
 |---|---|---|---|---|---|---|---|---|---|
-| W1 Mon | 3-day | Full A | L2 | H: 120 x 4 @8 -> track 122.5 | H: 85 x 4 @8 -> track 86 | | | H: 70 x 8, 8, 7 -> hold | |
-| W1 Wed | 3-day | Full B | L3 | | | H: 150 x 4 @8.5 -> hold 150 | H: 55 x 4 @8 -> track 56 | | H: +10 x 7, 6, 5 -> hold |
-| W1 Fri | 3-day | Full C | L1 | V: 3 x 6 @ 110 (90% of 122.5) | V: 3 x 6 @ 77.5 | V: 2 x 4 @ 135 | V: 2 x 5 @ 50.5 | V: 3 x 8-10 @ 62.5 | V: 2 x 6-8 @ +5 |
-| W2 Mon | 6-day | L1 | U1 | H: 122.5 x 4 @8 -> track 125 | | | | | |
-| W2 Tue | 6-day | U1 | L2 | | H: 86 x 4 @7.5 -> track 87 | | | H: 70 x 8, 8, 8, 8 -> track 72.5 | |
-| W2 Wed | 6-day | L2 | U2 | | | H: 150 x 4 @8 -> track 152.5 | | | |
-| W2 Thu | 6-day | U2 | L3 | | | | H: 56 x 4 @9 -> hold 56 | | H: +10 x 8, 7, 6, 6 -> hold |
-| W2 Fri | 6-day | L3 | U3 | V: 4 x 6 @ 112.5 | | V: 3 x 4 @ 137.5 | | | |
-| W2 Sat | 6-day | U3 | L1 | | V: 4 x 6 @ 78.5 | | V: 3 x 5 @ 50.5 | V: 3 x 8-10 @ 65 | V: 3 x 6-8 @ +5 |
-| W3 Mon | 3-day (planned) | Full A | L2 | H: 125 x 4 @8 -> track 127.5 | H: 87 x 4 @8.5 -> hold 87 | | | H: 72.5 x 8, 7, 7 -> hold | |
+| W1 Mon | 3-day | Full A | L2 | H: 265 x 4 @8 -> track 270 | H: 185 x 4 @8 -> step 1 of 2, hold 185 | | | H: 155 x 8, 8, 7 -> hold | |
+| W1 Wed | 3-day | Full B | L3 | | | H: 330 x 4 @8.5 -> hold 330 | H: 120 x 4 @8 -> step 1 of 2, hold 120 | | H: +25 x 7, 6, 5 -> hold |
+| W1 Fri | 3-day | Full C | L1 | V: 3 x 6 @ 245 (90% of 270) | V: 3 x 6 @ 165 (90% of 185) | V: 2 x 4 @ 295 | V: 2 x 5 @ 110 | V: 3 x 8-10 @ 140 | V: 2 x 6-8 @ +10 |
+| W2 Mon | 6-day | L1 | U1 | H: 270 x 4 @8 -> track 275 | | | | | |
+| W2 Tue | 6-day | U1 | L2 | | H: 185 x 4 @7.5 -> step 2 of 2, track 190 | | | H: 155 x 8, 8, 8, 8 -> track 160 | |
+| W2 Wed | 6-day | L2 | U2 | | | H: 330 x 4 @8 -> track 335 | | | |
+| W2 Thu | 6-day | U2 | L3 | | | | H: 120 x 4 @9 -> hold 120 (counter stays 1) | | H: +25 x 8, 7, 6, 6 -> hold |
+| W2 Fri | 6-day | L3 | U3 | V: 4 x 6 @ 250 | | V: 3 x 4 @ 300 | | | |
+| W2 Sat | 6-day | U3 | L1 | | V: 4 x 6 @ 170 | | V: 3 x 5 @ 110 | V: 3 x 8-10 @ 145 | V: 3 x 6-8 @ +10 |
+| W3 Mon | 3-day (planned) | Full A | L2 | H: 275 x 4 @8 -> track 280 | H: 190 x 4 @8.5 -> hold 190 | | | H: 160 x 8, 7, 7 -> hold | |
 | W3 Wed | **missed** (ill) | - | L2 | | | | | | |
 | W3 Fri | **missed** (ill) | - | **L2** (pass incomplete) | | | | | | |
-| W4 Mon | 6-day | **L2** (owed) | U2 | | | H: **held at 150** (10 days since the W2 Fri V exposure; rule 8-14 days). 150 x 4 @7.5 -> track 152.5 | | | |
-| W4 Tue | 6-day | U2 | L3 | | | | H: **held at 56** (10 days since W2 Sat). 56 x 4 @8 -> track 57 | | H: **held** (10 days). +10 x 8, 8, 7, 6 -> hold |
-| W4 Wed | 6-day | L3 | U3 | V: 4 x 6 @ 115 (9 days since W3 Mon: a V is done as written and resets the clock) | | V: 3 x 4 @ 137.5 | | | |
-| W4 Thu | 6-day | U3 | L1 | | V: 4 x 6 @ 78.5 (10 days: done as written, clock reset) | | V: 3 x 5 @ 51.5 | V: 3 x 8-10 @ 65 | V: 3 x 6-8 @ +5 |
-| W4 Fri | 6-day | L1 | U1 | H: 127.5 x 4 @8 -> track 130 (2 days since the V: normal rule) | | | | | |
-| W4 Sat | 6-day | U1 | **L2** | | H: 87 x 4 @8 -> track 88 | | | H: 72.5 x 8, 8, 8, 8 -> track 75 | |
+| W4 Mon | 6-day | **L2** (owed) | U2 | | | H: **held at 330** (10 days since the W2 Fri V exposure; rule 8-14 days). 330 x 4 @7.5 -> track 335 | | | |
+| W4 Tue | 6-day | U2 | L3 | | | | H: **held at 120** (10 days since W2 Sat). 120 x 4 @8 -> step 2 of 2, track 125 | | H: **held** (10 days). +25 x 8, 8, 7, 6 -> hold |
+| W4 Wed | 6-day | L3 | U3 | V: 4 x 6 @ 250 (90% of 280; 9 days since W3 Mon: a V is done as written and resets the clock) | | V: 3 x 4 @ 300 | | | |
+| W4 Thu | 6-day | U3 | L1 | | V: 4 x 6 @ 170 (10 days: done as written, clock reset) | | V: 3 x 5 @ 115 (90% of 125 = 112.5, rounds up) | V: 3 x 8-10 @ 145 | V: 3 x 6-8 @ +10 |
+| W4 Fri | 6-day | L1 | U1 | H: 280 x 4 @8 -> track 285 (2 days since the V: normal rule) | | | | | |
+| W4 Sat | 6-day | U1 | **L2** | | H: 190 x 4 @8 -> step 1 of 2, hold 190 | | | H: 160 x 8, 8, 8, 8 -> track 165 | |
 
 What the example shows:
 
-- **Loads advance at the same pace in both week types.** Squat top set: 120, 122.5, 125, 127.5, with 130 planned, one step per H exposure, whether the exposure sat inside a 3-day Full A or a 6-day L1. Bench: 85, 86, 87, 87 (held on an RPE 8.5), 88 planned. The day count never entered the arithmetic.
+- **Loads advance at the same pace in both week types.** Squat top set: 265, 270, 275, 280, with 285 planned, one step per H exposure, whether the exposure sat inside a 3-day Full A or a 6-day L1. Bench: 185, 185 (first success of two; the step counter holds the load), 190, 190 (held on an RPE 8.5), 190 (first of two again), with 195 after the next success. Every load is a multiple of 5 lb. The day count never entered the arithmetic.
 - **Both exposures per lift happened in every complete week** (one H, one V) in weeks 1, 2 and 4. Week 3 gave squat, bench and row their H exposure and nothing else; the pass stopped at L2.
 - **The pointer did the scheduling in week 4.** Week 4 started at L2, the half-session owed from week 3, and ran L2, U2, L3, U3, L1, U1: six half-sessions, one complete pass, shifted by two. Week 5 starts at L2 again; as a 3-day week it would be Full B, Full C, Full A. Nothing was skipped and nothing was done twice.
-- **The gap modifier fired three times** on the first two days of week 4: deadlift, press and pull-up had their last exposures (the V sets of W2 Fri and Sat) ten days earlier, so each held its load instead of taking the planned step. All three came in at RPE 8 or lower, so their increments resume at the next H. That one held step is the entire cost of the lost week for those lifts.
+- **The gap modifier fired three times** on the first two days of week 4: deadlift, press and pull-up had their last exposures (the V sets of W2 Fri and Sat) ten days earlier, so each held its load instead of taking the planned step (the press was already holding on its step counter, so the gap cost it nothing). All three came in at RPE 8 or lower, so their increments resume at the next H. That one held step is the entire cost of the lost week for those lifts.
 - **Squat, bench and row were trained in week 3**, so their next exposures (the W4 Wed and Thu V sets) fell 9-10 days after the last one. A V exposure is done as written (it is already at 90%) and resets the clock, so the H exposures on Friday and Saturday ran the normal rule and took their steps.
-- **V loads follow the track, not the last top set.** The W2 Fri squat V used 112.5 (90% of the 125 the track planned) even though the last top set performed was 122.5.
-- **Row progression is double progression:** 70 kg held until all four sets reached 8 in W2, moved to 72.5, held in the 3-set merged session (7, 7 on the last two sets), moved again in W4.
+- **V loads follow the track, not the last top set.** The W2 Fri squat V used 250 (90% of the 275 the track planned, 247.5 rounded up) even though the last top set performed was 270 (90% of which would have been 245).
+- **Row progression is double progression:** 155 lb held until all four sets reached 8 in W2, moved to 160, held in the 3-set merged session (7, 7 on the last two sets), moved again in W4.
 
 ---
 
