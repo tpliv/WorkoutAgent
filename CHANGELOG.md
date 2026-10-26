@@ -151,3 +151,8 @@
   adds (no `HEVY_API_KEY` variable) and dates workouts in local time. The coach
   runbooks check the API itself, not the variable. Why: the user reported odd load
   sizes in Hevy.
+- Added `PORTABILITY.md` and a portability section in `CLAUDE.md` so the project
+  can move off the current Claude account: inventory of what is account-bound,
+  the cloud environment spec, and a migration checklist. `tools/hevy_pull.py`
+  now also runs when the Hevy key is injected by a network secret instead of
+  the `HEVY_API_KEY` variable, so it works the same in either setup.

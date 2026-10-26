@@ -20,6 +20,7 @@ program can scale between 3 and 6 days without losing progress.
 | `tools/` | The Hevy integration: pull workouts over the API, apply the progression rules, push the nine routines with the new loads back to the app (`python3 tools/hevy_sync.py`). Also the CSV fallback and the history analyzer. |
 | `data/` | The normalized training log, its summary, `tracks.json` and `track-state.md` (the live state of the progression tracks), the track log, `weekly-plan.md` (this week's sessions and loads), `checkins/` (one record per Sunday check-in), and the Hevy ids the tools need. Raw exports are gitignored. |
 | `coach/` | Agent runbooks for the weekly coaching cadence: the Sunday check-in and the night-before workout brief. |
+| `PORTABILITY.md` | What lives in the repo versus the Claude account, the cloud environment spec, and the checklist for moving to another account. |
 | `templates/` | Weekly session templates for 3, 4, 5, and 6 training days, the per-lift progression rules, the rules for switching between week types, a Liftosaur export of the rotation, and a CSV log template. |
 
 ## Reading order
