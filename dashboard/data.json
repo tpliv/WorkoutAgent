@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-26",
+ "generated": "2026-10-27",
  "units": "lb",
  "groups": [
   {
@@ -3147,14 +3147,41 @@
   },
   {
    "week": "2026-10-26",
-   "sessions": 0,
-   "days": 0,
-   "sets": 0,
-   "reps": 0,
-   "tonnage": 0,
-   "muscles": {},
-   "target": null,
-   "lifts": {}
+   "sessions": 1,
+   "days": 1,
+   "sets": 14,
+   "reps": 123,
+   "tonnage": 9190,
+   "muscles": {
+    "chest": 4,
+    "back": 3,
+    "shoulders": 6.0,
+    "biceps": 1.5,
+    "triceps": 2.0,
+    "quads": 3,
+    "hams_glutes": 1.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 126.0,
+     "load": 105.0,
+     "reps": 6,
+     "rpe": null,
+     "date": "2026-10-27",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 105.0,
+     "top_reps": 6,
+     "sets": 1,
+     "delta": 5.7,
+     "delta_pct": 4.7,
+     "prev_week": "2026-10-19",
+     "trend": "up"
+    }
+   }
   }
  ],
  "lifts": [
@@ -3162,7 +3189,7 @@
    "key": "squat",
    "name": "Back squat",
    "last_date": "2026-10-17",
-   "gap_days": 9,
+   "gap_days": 10,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3189,36 +3216,36 @@
   {
    "key": "bench",
    "name": "Bench press",
-   "last_date": "2026-10-20",
-   "gap_days": 6,
+   "last_date": "2026-10-27",
+   "gap_days": 0,
    "gap": {
     "key": "normal",
     "label": "Normal"
    },
    "latest": {
-    "e1rm": 120.3,
-    "load": 95.0,
-    "reps": 8,
+    "e1rm": 126.0,
+    "load": 105.0,
+    "reps": 6,
     "rpe": null,
-    "date": "2026-10-20",
+    "date": "2026-10-27",
     "exercise": "Bench Press (Barbell)",
-    "top_load": 95.0,
-    "top_reps": 8,
-    "sets": 3,
-    "delta": 3.1,
-    "delta_pct": 2.6,
-    "prev_week": "2025-05-05",
-    "trend": "restart"
+    "top_load": 105.0,
+    "top_reps": 6,
+    "sets": 1,
+    "delta": 5.7,
+    "delta_pct": 4.7,
+    "prev_week": "2026-10-19",
+    "trend": "up"
    },
-   "latest_week": "2026-10-19",
+   "latest_week": "2026-10-26",
    "best_e1rm": 133.0,
-   "block_change": -7.1
+   "block_change": 3.3
   },
   {
    "key": "deadlift",
    "name": "Deadlift",
    "last_date": "2025-04-14",
-   "gap_days": 560,
+   "gap_days": 561,
    "gap": {
     "key": "reduce10",
     "label": "Reduce 10%"
@@ -3246,7 +3273,7 @@
    "key": "press",
    "name": "Overhead press",
    "last_date": "2026-10-17",
-   "gap_days": 9,
+   "gap_days": 10,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3274,7 +3301,7 @@
    "key": "row",
    "name": "Barbell row",
    "last_date": "2026-10-18",
-   "gap_days": 8,
+   "gap_days": 9,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3302,7 +3329,7 @@
    "key": "pullup",
    "name": "Pull-up or pulldown",
    "last_date": "2026-10-17",
-   "gap_days": 9,
+   "gap_days": 10,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3328,21 +3355,21 @@
   }
  ],
  "consistency": {
-  "current_streak": 2,
+  "current_streak": 3,
   "longest_streak": 10,
-  "weeks_trained_last12": 2,
-  "sessions_last12": 4,
-  "avg_days_active_week": 1.9,
-  "total_sessions": 52,
+  "weeks_trained_last12": 3,
+  "sessions_last12": 5,
+  "avg_days_active_week": 1.8,
+  "total_sessions": 53,
   "first_date": "2024-03-05",
-  "last_date": "2026-10-21"
+  "last_date": "2026-10-27"
  },
  "program": {
-  "pointer": "L1",
-  "block_start": null,
+  "pointer": "L2",
+  "block_start": "2026-10-27",
   "block_week": 1,
   "deload": false,
-  "processed_through": "2026-10-21"
+  "processed_through": "2026-10-27"
  },
  "tracks": [
   {
@@ -3360,7 +3387,7 @@
     "date": "2026-10-17",
     "type": "other"
    },
-   "gap_days": 9,
+   "gap_days": 10,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3380,18 +3407,18 @@
    "key": "bench",
    "name": "Bench press",
    "scheme": "top_set",
-   "next_load": 95,
-   "last_h_load": null,
+   "next_load": 105.0,
+   "last_h_load": 105.0,
    "rep_target": 4,
    "rep_range": null,
    "miss_counter": 0,
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-10-20",
-    "type": "other"
+    "date": "2026-10-27",
+    "type": "H"
    },
-   "gap_days": 6,
+   "gap_days": 0,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3404,6 +3431,14 @@
      "reps": 8,
      "rpe": null,
      "note": "return-to-training block, estimate from 8s with no RPE"
+    },
+    {
+     "date": "2026-10-27",
+     "e1rm": 133.0,
+     "load": 105.0,
+     "reps": 6,
+     "rpe": null,
+     "slot": "Full A"
     }
    ]
   },
@@ -3422,7 +3457,7 @@
     "date": "2025-04-14",
     "type": "other"
    },
-   "gap_days": 560,
+   "gap_days": 561,
    "gap": {
     "key": "reduce10",
     "label": "Reduce 10%"
@@ -3453,7 +3488,7 @@
     "date": "2026-10-17",
     "type": "other"
    },
-   "gap_days": 9,
+   "gap_days": 10,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3487,7 +3522,7 @@
     "date": "2026-10-18",
     "type": "other"
    },
-   "gap_days": 8,
+   "gap_days": 9,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3521,7 +3556,7 @@
     "date": "2026-10-17",
     "type": "other"
    },
-   "gap_days": 9,
+   "gap_days": 10,
    "gap": {
     "key": "hold",
     "label": "Hold the top-set load"
@@ -3538,8 +3573,20 @@
    ]
   }
  ],
- "track_log": [],
+ "track_log": [
+  {
+   "date": "2026-10-27",
+   "text": "2026-10-27 Full A Bench press: top 105 x 6 -> 6 @ 8: success 1 of 2; hold 105, +5 after the next one",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-10-27",
+   "text": "Flag: no RPE logged on the Bench press top set (105 x 6); treated as RPE 8",
+   "kind": "flag"
+  }
+ ],
  "unmapped": [
-  "Bulgarian Split Squat"
+  "Bulgarian Split Squat",
+  "Leg Press Horizontal (Machine)"
  ]
 }

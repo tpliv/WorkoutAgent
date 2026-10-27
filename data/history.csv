@@ -684,3 +684,18 @@ date,workout_title,exercise,set_index,set_type,weight_kg,reps,rpe,notes,source,w
 2026-10-21,Afternoon workout 💪,Squat (Dumbbell),1,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
 2026-10-21,Afternoon workout 💪,Squat (Dumbbell),2,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
 2026-10-21,Afternoon workout 💪,Squat (Dumbbell),3,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
+2026-10-27,Full A,Bench Press (Barbell),0,warmup,20.41,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bench Press (Barbell),1,normal,29.48,5,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bench Press (Barbell),2,normal,43.09,6,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bench Press (Barbell),3,normal,47.63,5,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bench Press (Barbell),4,normal,47.63,6,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bent Over Row (Dumbbell),0,normal,27.22,10,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bent Over Row (Dumbbell),1,normal,27.22,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Bent Over Row (Dumbbell),2,normal,27.22,10,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Lateral Raise (Dumbbell),0,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Lateral Raise (Dumbbell),1,normal,9.07,14,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Lateral Raise (Dumbbell),2,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Lateral Raise (Dumbbell),3,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Leg Press Horizontal (Machine),0,normal,81.65,7,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Leg Press Horizontal (Machine),1,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-27,Full A,Leg Press Horizontal (Machine),2,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
