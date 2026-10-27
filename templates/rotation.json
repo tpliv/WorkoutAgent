@@ -7,7 +7,7 @@
   "sessions": {
     "L1": {
       "title": "L1 Lower A",
-      "notes": "Squat heavy. Top set 4 @ RPE 8, back-offs at -7% (stop if a set hits RPE 9). Accessories: double progression, add reps until every set tops the range at RPE 9 or less, then the smallest load step and back to the bottom.",
+      "notes": "Squat heavy. Top set 4 @ RPE 8, back-offs at -7% (stop if a set hits RPE 9). Accessories: double progression, add reps until every set tops the range at RPE 9 or less, then the smallest load step and back to the bottom. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "H", "track": "squat", "warmup": "ramp", "backoffs": 3, "rest": 180, "rest_top": 210},
         {"name": "Romanian deadlift", "hevy": ["Romanian Deadlift (Barbell)"], "role": "acc", "sets": 3, "rep_range": [8, 10], "rpe": "7-8", "rest": 150},
@@ -19,7 +19,7 @@
     },
     "U1": {
       "title": "U1 Upper A",
-      "notes": "Bench heavy, row heavy. Bench: top set 4 @ RPE 8, back-offs -7%. Row: 4 x 6-8 at RPE 8, add 5 lb when every set reaches 8. Superset lateral raise with triceps.",
+      "notes": "Bench heavy, row heavy. Bench: top set 4 @ RPE 8, back-offs -7%. Row: 4 x 6-8 at RPE 8, add 5 lb when every set reaches 8. Superset lateral raise with triceps. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "ramp", "backoffs": 3, "rest": 180, "rest_top": 210},
         {"name": "Barbell row", "hevy": ["Bent Over Row (Barbell)"], "role": "H", "track": "row", "warmup": "feeder", "sets": 4, "rest": 150},
@@ -31,7 +31,7 @@
     },
     "L2": {
       "title": "L2 Lower B",
-      "notes": "Deadlift heavy. Top set 4 @ RPE 8, 2 back-offs at -7%, 3-5 min rest after the top set. Crisp reps; no grinding.",
+      "notes": "Deadlift heavy. Top set 4 @ RPE 8, 2 back-offs at -7%, 3-5 min rest after the top set. Crisp reps; no grinding. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "H", "track": "deadlift", "warmup": "ramp", "backoffs": 2, "rest": 180, "rest_top": 240},
         {"name": "Front squat or hack squat", "hevy": ["Front Squat (Barbell)", "Front Squat", "Hack Squat (Machine)", "Hack Squat"], "role": "acc", "sets": 3, "rep_range": [6, 10], "rpe": "7-8", "rest": 150},
@@ -43,7 +43,7 @@
     },
     "U2": {
       "title": "U2 Upper B",
-      "notes": "Press heavy, pull-up heavy. Press: top set 4 @ RPE 8, back-offs -7%. Pull-up/pulldown: 4 x 5-8 at RPE 8, add 5 lb when every set reaches 8. Switch pulldown to the bar when a pulldown set at about bodyweight reaches 8.",
+      "notes": "Press heavy, pull-up heavy. Press: top set 4 @ RPE 8, back-offs -7%. Pull-up/pulldown: 4 x 5-8 at RPE 8, add 5 lb when every set reaches 8. Switch pulldown to the bar when a pulldown set at about bodyweight reaches 8. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "ramp", "backoffs": 3, "rest": 180, "rest_top": 180},
         {"name": "Pull-up or pulldown", "hevy": ["Lat Pulldown (Cable)", "Pull Up (Weighted)", "Pull Up"], "role": "H", "track": "pullup", "warmup": "feeder", "sets": 4, "rest": 150},
@@ -55,7 +55,7 @@
     },
     "L3": {
       "title": "L3 Lower C",
-      "notes": "Squat and deadlift volume at 90% of each track load. No top set; no set past RPE 9. Deadlift sets crisp and fast (RPE 6-7).",
+      "notes": "Squat and deadlift volume at 90% of each track load. No top set; no set past RPE 9. Deadlift sets crisp and fast (RPE 6-7). Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "V", "track": "squat", "warmup": "ramp", "sets": 4, "reps": 6, "rest": 150},
         {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "V", "track": "deadlift", "warmup": "feeder", "sets": 3, "reps": 4, "rest": 150},
@@ -67,7 +67,7 @@
     },
     "U3": {
       "title": "U3 Upper C",
-      "notes": "All four upper lifts at volume, 90% of each track load. Bench 4 x 6 (RPE 7-8), press 3 x 5 (RPE 6-7), row 3 x 8-10, pull-up 3 x 6-8 at RPE 7. Run the last three as a circuit.",
+      "notes": "All four upper lifts at volume, 90% of each track load. Bench 4 x 6 (RPE 7-8), press 3 x 5 (RPE 6-7), row 3 x 8-10, pull-up 3 x 6-8 at RPE 7. Run the last three as a circuit. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "V", "track": "bench", "warmup": "ramp", "sets": 4, "reps": 6, "rest": 150},
         {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "V", "track": "press", "warmup": "feeder", "sets": 3, "reps": 5, "rest": 120},
@@ -81,7 +81,7 @@
     "Full A": {
       "title": "Full A",
       "merged": true,
-      "notes": "L1 + U1 merged. Squat H, bench H (judge by RPE: a 4 @ 9.5 here is a hold, not a miss), row H. Two back-offs per lift, 3 row sets. If over 75 min: calves to 2, triceps to 2, lateral raise to 3.",
+      "notes": "L1 + U1 merged. Squat H, bench H (judge by RPE: a 4 @ 9.5 here is a hold, not a miss), row H. Two back-offs per lift, 3 row sets. If over 75 min: calves to 2, triceps to 2, lateral raise to 3. Rack taken: bench and row first, squat when it frees; leg press does not replace the squat top set.",
       "exercises": [
         {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "H", "track": "squat", "warmup": "ramp", "backoffs": 2, "rest": 180, "rest_top": 210},
         {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "H", "track": "bench", "warmup": "feeder", "backoffs": 2, "rest": 180, "rest_top": 210},
@@ -95,7 +95,7 @@
     "Full B": {
       "title": "Full B",
       "merged": true,
-      "notes": "L2 + U2 merged. Deadlift H, press H, pull-up H (press and pull-up judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss). Two back-offs per lift, 3 pull-up sets. If over 75 min: drop calves, then the lateral raise.",
+      "notes": "L2 + U2 merged. Deadlift H, press H, pull-up H (press and pull-up judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss). Two back-offs per lift, 3 pull-up sets. If over 75 min: drop calves, then the lateral raise. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Deadlift", "hevy": ["Deadlift (Barbell)"], "role": "H", "track": "deadlift", "warmup": "ramp", "backoffs": 2, "rest": 180, "rest_top": 240},
         {"name": "Overhead press", "hevy": ["Overhead Press (Barbell)"], "role": "H", "track": "press", "warmup": "feeder", "backoffs": 2, "rest": 180, "rest_top": 180},
@@ -110,7 +110,7 @@
     "Full C": {
       "title": "Full C",
       "merged": true,
-      "notes": "L3 + U3 merged. Every main lift at volume (90% of the track load), one set fewer than the split form. Alternate squat/bench and deadlift/press as paired sets when two stations are free. Optional at the end: calf raise 2 x 10-15 or lateral raise 2 x 12-20.",
+      "notes": "L3 + U3 merged. Every main lift at volume (90% of the track load), one set fewer than the split form. Alternate squat/bench and deadlift/press as paired sets when two stations are free. Optional at the end: calf raise 2 x 10-15 or lateral raise 2 x 12-20. Station taken: do the next main lift first and come back; a substitute never replaces a top set.",
       "exercises": [
         {"name": "Back squat", "hevy": ["Squat (Barbell)"], "role": "V", "track": "squat", "warmup": "ramp", "sets": 3, "reps": 6, "rest": 150},
         {"name": "Bench press", "hevy": ["Bench Press (Barbell)"], "role": "V", "track": "bench", "warmup": "feeder", "sets": 3, "reps": 6, "rest": 150},

@@ -37,7 +37,8 @@ Protocol: `guide/08-weekly-coaching-cadence.md` section 3. General rules: `coach
    Add:
    - the warm-up ramp on the first compound: bar x 5, then 80% x 2-3 of the top set (add 60% x 3 between them once the top set is 225 lb or more), each rounded to the nearest 5 lb (never below the 45 lb bar);
    - one feeder set at 60-70% for each later main lift, rounded to the nearest 5 lb (the empty 45 lb bar if that is lower);
-   - the template's cut order as the "Short on time" line.
+   - the template's cut order as the "Short on time" line;
+   - a "Rack taken" line: the session's other main lifts first, the delayed lift when its station frees, and no substitute for its top set (`guide/03` §4.3, "Station taken").
    Use the layout in `guide/08` §3.1.
 6. **Write and push.** Update `data/weekly-plan.md` with the tomorrow row, the brief sent, and the time. Commit with the message `Brief <tomorrow>: <slot>`, then push.
 7. **Send the brief** as the final message.

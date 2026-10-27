@@ -69,6 +69,7 @@ Why anything changed: nothing; all tracks normal.
 5a/5b Lateral raise 4 x 12-20 @ 15 / OH triceps ext 3 x 10-15 @ 25
 6. Standing calf raise     3 x 8-12
 Short on time: cut calves to 2, triceps to 2, lateral raise to 3.
+Rack taken: bench and row first, squat when it frees. Leg press does not replace the squat top set.
 After: log in Hevy as "Full A", or reply with the top sets and RPE.
 ```
 
@@ -79,6 +80,7 @@ Rules for the brief:
 - The warm-up ramp is for the first compound only (bar x 5, 80% x 2-3; add 60% x 3 between them once the top set is 225 lb or more; `guide/05` §5.1). Each later main lift gets one feeder set at 60-70%.
 - One line, "why anything changed", names any rule that fired: gap hold, miss, stall reset, deload, or substitution.
 - One line, "short on time", gives the template's own cut order (`guide/03` §4.3).
+- One line, "rack taken", names the order to fall back to when the first main lift's station is busy (`guide/03` §4.3, "Station taken").
 
 ### 3.2 When the week changes
 
