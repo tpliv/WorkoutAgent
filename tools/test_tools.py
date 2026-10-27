@@ -3,8 +3,12 @@
 
     python3 tools/test_tools.py
 
-No network: the API client is not exercised beyond payload shapes. Fixtures
-are built in memory from the committed rotation.json and tracks.json.
+No network: the API client is not exercised beyond payload shapes. Rule and
+rendering cases start from a frozen copy of the track state
+(tools/fixtures/tracks.json, data/tracks.json as of 85b16d9), so a Hevy sync
+that rewrites data/tracks.json does not change their expected numbers.
+templates/rotation.json is read live. Only the consistency checks
+(RotationFile, the committed-history replay) read the live data/tracks.json.
 """
 import copy
 import csv
@@ -32,7 +36,8 @@ def load(path):
 
 
 ROTATION = load("templates/rotation.json")
-TRACKS = load("data/tracks.json")
+TRACKS = load("tools/fixtures/tracks.json")  # frozen; tests depend on its loads and counters
+LIVE_TRACKS = load("data/tracks.json")  # rewritten by every sync; consistency checks only
 ALIASES = load("tools/lift_aliases.json")
 EXMAP = {ex["name"]: {"hevy_title": ex["hevy"][0], "template_id": "T-" + ex["name"][:6].upper()}
          for s in ROTATION["sessions"].values() for ex in s["exercises"]}
@@ -86,7 +91,7 @@ def run_update(tracks, rows, **kw):
 class RotationFile(unittest.TestCase):
     def test_nine_sessions_and_all_tracks_have_one_h_and_one_v(self):
         self.assertEqual(set(ROTATION["sessions"]), {"L1", "U1", "L2", "U2", "L3", "U3", "Full A", "Full B", "Full C"})
-        for lift, t in TRACKS["tracks"].items():
+        for lift, t in LIVE_TRACKS["tracks"].items():
             for slot_list, role in ((t["h_slots"], "H"), (t["v_slots"], "V")):
                 for slot in slot_list:
                     roles = [ex["role"] for ex in ROTATION["sessions"][slot]["exercises"] if ex.get("track") == lift]
@@ -96,7 +101,14 @@ class RotationFile(unittest.TestCase):
         for s in ROTATION["sessions"].values():
             for ex in s["exercises"]:
                 if ex["role"] == "acc":
-                    self.assertIn(ex["name"], TRACKS["accessories"], ex["name"])
+                    self.assertIn(ex["name"], LIVE_TRACKS["accessories"], ex["name"])
+
+    def test_fixture_has_the_same_shape_as_the_live_tracks(self):
+        # A structural change to data/tracks.json (new track, accessory, or field) needs the fixture refreshed.
+        self.assertEqual(set(TRACKS["tracks"]), set(LIVE_TRACKS["tracks"]))
+        self.assertEqual(set(TRACKS["accessories"]), set(LIVE_TRACKS["accessories"]))
+        for lift, t in LIVE_TRACKS["tracks"].items():
+            self.assertEqual(set(TRACKS["tracks"][lift]), set(t), lift)
 
 
 class RenderRoutines(unittest.TestCase):
@@ -351,12 +363,13 @@ class UpdateRules(unittest.TestCase):
         self.assertEqual(len(tr["tracks"]["squat"]["e1rm_history"]), 2)  # seed + one
 
     def test_committed_history_does_not_move_any_track(self):
-        tr = fresh_tracks()
+        # Live invariant: a sync processes every session in history.csv, so replaying it moves nothing.
+        tr = copy.deepcopy(LIVE_TRACKS)
         sessions = upd.load_sessions(os.path.join(ROOT, "data", "history.csv"))
         log, _ = upd.process(tr, sessions, ALIASES, ROTATION)
         self.assertEqual(log, [])
-        for lift in TRACKS["tracks"]:
-            self.assertEqual(tr["tracks"][lift]["top_set_lb"], TRACKS["tracks"][lift]["top_set_lb"])
+        for lift in LIVE_TRACKS["tracks"]:
+            self.assertEqual(tr["tracks"][lift]["top_set_lb"], LIVE_TRACKS["tracks"][lift]["top_set_lb"])
 
     def test_md_table_renders(self):
         table = upd.md_table(TRACKS)

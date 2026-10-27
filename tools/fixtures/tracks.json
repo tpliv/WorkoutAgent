@@ -1,0 +1,337 @@
+{
+  "_comment": "Machine-readable state of the six progression tracks (templates/progression-tracks.md). tools/update_tracks.py rewrites it from data/history.csv; tools/hevy_push_routines.py reads it to fill routine loads. data/track-state.md is the narrative companion; its table is regenerated from this file with `update_tracks.py --write-md`. Units: lb (the Hevy app is set to lb; the API and data/history.csv carry kg, and the tools convert). top_set_lb is the planned load for the NEXT heavy exposure (section 5 rule already applied); last_h_load_lb is what was actually lifted at the last heavy exposure (the gap table in section 8 holds or reduces from that). A null top_set_lb with work_up=true means: work up on the first heavy exposure and log the load found. Bench and press have no fractional plates: increment_every = 2 means +5 lb after every second successful top set; step_counter counts the successes so far.",
+  "updated": "2026-10-21",
+  "units": "lb",
+  "pointer": "L1",
+  "block_start": null,
+  "block_week": 1,
+  "deload": false,
+  "fractional_plates": false,
+  "tracks": {
+    "squat": {
+      "name": "Back squat",
+      "scheme": "top_set",
+      "top_set_lb": 135,
+      "last_h_load_lb": null,
+      "rep_target": 4,
+      "increment_lb": 5,
+      "big_increment_lb": 10,
+      "round_step_lb": 5,
+      "backoff_pct": 0.93,
+      "volume_pct": 0.9,
+      "miss_counter": 0,
+      "stalls": 0,
+      "last_exposure": {
+        "date": "2026-10-17",
+        "type": "other"
+      },
+      "e1rm_history": [
+        {
+          "date": "2026-10-17",
+          "e1rm": 172,
+          "load": 135,
+          "reps": 8,
+          "rpe": null,
+          "note": "return-to-training block, estimate from 8s with no RPE"
+        }
+      ],
+      "h_slots": [
+        "L1",
+        "Full A"
+      ],
+      "v_slots": [
+        "L3",
+        "Full C"
+      ]
+    },
+    "bench": {
+      "name": "Bench press",
+      "scheme": "top_set",
+      "top_set_lb": 95,
+      "last_h_load_lb": null,
+      "rep_target": 4,
+      "increment_lb": 5,
+      "increment_every": 2,
+      "step_counter": 0,
+      "big_increment_lb": 5,
+      "round_step_lb": 5,
+      "backoff_pct": 0.93,
+      "volume_pct": 0.9,
+      "miss_counter": 0,
+      "stalls": 0,
+      "last_exposure": {
+        "date": "2026-10-20",
+        "type": "other"
+      },
+      "e1rm_history": [
+        {
+          "date": "2026-10-20",
+          "e1rm": 121,
+          "load": 95,
+          "reps": 8,
+          "rpe": null,
+          "note": "return-to-training block, estimate from 8s with no RPE"
+        }
+      ],
+      "h_slots": [
+        "U1",
+        "Full A"
+      ],
+      "v_slots": [
+        "U3",
+        "Full C"
+      ]
+    },
+    "deadlift": {
+      "name": "Deadlift",
+      "scheme": "top_set",
+      "top_set_lb": null,
+      "work_up": true,
+      "work_up_note": "Warm up, then 95 x 4, 115 x 4, 135 x 4, 145 x 4, +10 lb per set until 4 reps feel like RPE 8. Stop there; that load is the track load.",
+      "last_h_load_lb": null,
+      "rep_target": 4,
+      "increment_lb": 5,
+      "big_increment_lb": 10,
+      "round_step_lb": 5,
+      "backoff_pct": 0.93,
+      "volume_pct": 0.9,
+      "miss_counter": 0,
+      "stalls": 0,
+      "last_exposure": {
+        "date": "2025-04-14",
+        "type": "other"
+      },
+      "e1rm_history": [
+        {
+          "date": "2024-09-04",
+          "e1rm": 185,
+          "load": 155,
+          "reps": 6,
+          "rpe": null,
+          "note": "2024 peak; untrained since April 2025"
+        }
+      ],
+      "h_slots": [
+        "L2",
+        "Full B"
+      ],
+      "v_slots": [
+        "L3",
+        "Full C"
+      ]
+    },
+    "press": {
+      "name": "Overhead press",
+      "scheme": "top_set",
+      "top_set_lb": 60,
+      "last_h_load_lb": null,
+      "rep_target": 4,
+      "increment_lb": 5,
+      "increment_every": 2,
+      "step_counter": 0,
+      "big_increment_lb": 5,
+      "round_step_lb": 5,
+      "backoff_pct": 0.93,
+      "volume_pct": 0.9,
+      "miss_counter": 0,
+      "stalls": 0,
+      "last_exposure": {
+        "date": "2026-10-17",
+        "type": "other"
+      },
+      "e1rm_history": [
+        {
+          "date": "2026-10-17",
+          "e1rm": 79,
+          "load": 65,
+          "reps": 7,
+          "rpe": null,
+          "note": "return-to-training block"
+        }
+      ],
+      "h_slots": [
+        "U2",
+        "Full B"
+      ],
+      "v_slots": [
+        "U3",
+        "Full C"
+      ]
+    },
+    "row": {
+      "name": "Barbell row",
+      "scheme": "double_progression",
+      "top_set_lb": 70,
+      "last_h_load_lb": null,
+      "rep_range": [
+        6,
+        8
+      ],
+      "increment_lb": 5,
+      "round_step_lb": 5,
+      "volume_pct": 0.9,
+      "miss_counter": 0,
+      "stalls": 0,
+      "last_exposure": {
+        "date": "2026-10-18",
+        "type": "other"
+      },
+      "e1rm_history": [
+        {
+          "date": "2026-10-18",
+          "e1rm": 90,
+          "load": 65,
+          "reps": 12,
+          "rpe": null,
+          "note": "return-to-training block"
+        }
+      ],
+      "h_slots": [
+        "U1",
+        "Full A"
+      ],
+      "v_slots": [
+        "U3",
+        "Full C"
+      ]
+    },
+    "pullup": {
+      "name": "Pull-up or pulldown",
+      "scheme": "double_progression",
+      "hevy_exercise": "Lat Pulldown (Cable)",
+      "top_set_lb": 125,
+      "last_h_load_lb": null,
+      "rep_range": [
+        5,
+        8
+      ],
+      "increment_lb": 5,
+      "round_step_lb": 5,
+      "volume_pct": 0.9,
+      "miss_counter": 0,
+      "stalls": 0,
+      "last_exposure": {
+        "date": "2026-10-17",
+        "type": "other"
+      },
+      "e1rm_history": [
+        {
+          "date": "2026-10-17",
+          "e1rm": 161,
+          "load": 135,
+          "reps": 6,
+          "rpe": null,
+          "note": "pulldown; switch to the bar when a pulldown set at about bodyweight reaches 8"
+        }
+      ],
+      "h_slots": [
+        "U2",
+        "Full B"
+      ],
+      "v_slots": [
+        "U3",
+        "Full C"
+      ],
+      "increment_note": "one pin"
+    }
+  },
+  "accessories": {
+    "_comment": "Keyed by the exercise 'name' in templates/rotation.json. weight_lb is per dumbbell for dumbbell exercises; null means choose on the day and record it here afterwards. step is the load step written into the routine note.",
+    "Incline DB press": {
+      "weight_lb": 35,
+      "step": "+2.5 lb per dumbbell",
+      "note": "per dumbbell; 2024 incline DB 75 x 8"
+    },
+    "Lateral raise": {
+      "weight_lb": 15,
+      "step": "+2.5 lb per dumbbell",
+      "note": "per dumbbell"
+    },
+    "Cable lateral raise": {
+      "weight_lb": 15,
+      "step": "+5 lb (one pin)",
+      "note": "or DB lateral raise at the same load"
+    },
+    "Incline DB curl": {
+      "weight_lb": 25,
+      "step": "+2.5 lb per dumbbell",
+      "note": "per dumbbell"
+    },
+    "Preacher or EZ-bar curl": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "choose on the day"
+    },
+    "Overhead triceps extension": {
+      "weight_lb": 25,
+      "step": "+5 lb (one pin), or +2.5 lb on a dumbbell",
+      "note": "DB; cable stack if available"
+    },
+    "Triceps pushdown": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "choose on the day"
+    },
+    "Seated leg curl": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "choose on the day"
+    },
+    "Leg extension": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "choose on the day"
+    },
+    "Romanian deadlift": {
+      "weight_lb": 110,
+      "step": "+5 lb",
+      "note": "one barbell RDL logged 18 Oct 2026"
+    },
+    "Leg press or split squat": {
+      "weight_lb": null,
+      "step": "+5 lb",
+      "note": "choose on the day"
+    },
+    "Front squat or hack squat": {
+      "weight_lb": null,
+      "step": "+5 lb",
+      "note": "choose on the day"
+    },
+    "Reverse lunge or split squat": {
+      "weight_lb": 30,
+      "step": "+2.5 lb per dumbbell",
+      "note": "per dumbbell"
+    },
+    "Standing calf raise": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "choose on the day"
+    },
+    "Core": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": ""
+    },
+    "Face pull": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": ""
+    },
+    "Reverse pec deck": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": ""
+    },
+    "Flat DB press or dips": {
+      "weight_lb": null,
+      "step": "+2.5 lb per dumbbell",
+      "note": ""
+    },
+    "Back extension or Pallof press": {
+      "weight_lb": null,
+      "step": "+2.5 lb held (dumbbell or plate)",
+      "note": ""
+    }
+  },
+  "processed_through": "2026-10-21"
+}

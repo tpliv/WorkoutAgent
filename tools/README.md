@@ -57,7 +57,7 @@ routines in the app to reflect the latest logged sessions.
 | `hevy_csv_import.py` | Fallback without Pro or network: converts the app's CSV export into `data/history.csv`. |
 | `analyze_history.py` | Summarizes `data/history.csv` (per-exercise e1RM history, proposed starting loads) into `data/history-summary.md`. Used once to seed the tracks. |
 | `lift_aliases.json` | Maps the six main lifts to exercise names in the log; `update_tracks.py` and `analyze_history.py` both use it. |
-| `test_tools.py` | Offline tests of the rule engine and the routine rendering: `python3 tools/test_tools.py`. |
+| `test_tools.py` | Offline tests of the rule engine and the routine rendering: `python3 tools/test_tools.py`. Rule and rendering cases start from the frozen `tools/fixtures/tracks.json` (the track state of 21 Oct 2026), so a sync does not break them; only the consistency checks read the live `data/tracks.json`. Refresh the fixture only when the shape of `tracks.json` changes (a test flags it), and update the expected numbers with it. |
 
 ## Files the tools read and write
 

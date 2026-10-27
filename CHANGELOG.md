@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-10-27
+
+- `tools/test_tools.py` no longer reads its fixtures from the live
+  `data/tracks.json`. The 27 Oct sync moved the pointer, bench load and
+  counters, and 12 tests failed plus 1 error, though the rule engine was
+  unchanged. Rule and rendering cases now start from a frozen copy,
+  `tools/fixtures/tracks.json` (the state at commit 85b16d9). The live file
+  still feeds the rotation consistency checks and the committed-history replay,
+  which hold after every sync. A new test flags when the fixture's shape drifts
+  from the live file. `templates/rotation.json` stays live.
+
 ## 2026-10-26
 
 - Consolidated the repository onto a new `main` branch. Twelve session branches
