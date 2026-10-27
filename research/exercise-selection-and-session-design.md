@@ -1,6 +1,6 @@
 # Exercise Selection and Single-Session Design for Resistance Training
 
-Last updated: 2026-10-21 (KQ5 addendum: short warm-up ramp; primary-source verification addendum appended at the end)
+Last updated: 2026-10-27 (addendum: station taken, reorder vs substitute; earlier 2026-10-21: KQ5 addendum: short warm-up ramp; primary-source verification addendum appended at the end)
 
 Research notes compiled 2026-10-21. Scope: which exercises to include, how to cover every major muscle, how to order/structure a session, and how to substitute movements, so a program designer can fill 3- to 6-day templates. Note on evidence quality: many "best exercise" claims rest on single small trials (n = 14-63, often untrained or women-only samples) or on EMG, which repeatedly fails to predict hypertrophy (see Plotkin 2023 and the incline/flat pec data below). Treat exercise-specific effect sizes as low-to-moderate confidence unless stated otherwise. Access note: WebFetch and curl to strongerbyscience.com and pmc.ncbi.nlm.nih.gov were blocked in this environment (DNS/proxy 403), so a few primary texts were read only through abstracts, repository records, or reputable secondary reviews; this is flagged per item.
 
@@ -440,3 +440,24 @@ These are recommendations only; no guide or template file was edited.
 13. **Add unilateral vs bilateral.** `guide/05` section 7.2: add a rule from Kassiano 2025. Unilateral substitutes (split squat, single-arm row, single-leg RDL) are fine for hypertrophy. Strength is specific, so a bilateral main lift on a progression track should not be swapped for a unilateral one; this matches rule 4. It also supports the bodyweight/travel column in section 7.3.
 14. **Squat-depth strength wording.** `guide/05` section 7.1: Pallares is 2020 and primary now; drop "secondary" for Kubo and Pallares. Do not claim half squats best for half-squat strength.
 15. **Other citation upgrades in `guide/05` section 3.** Quadriceps row: "Baz-Valle et al. (SportRxiv 407, preprint)" should be Larsen et al. 2025, J Sports Sci (22 untrained men; RF only). Hamstrings row: "Physio Network review, secondary" should be Crawford et al. 2025, MSSE. Biceps row: "2023 trial in 31 trained women ... (BarBend, secondary)" should be Zabaleta-Korta 2023, J Hum Kinet, n = 38, preacher distal growth only, no group differences. Pectoralis row: Chaves et al. 2020, Int J Exerc Sci, primary; note that training was once a week and that the flat + incline combination group also gained less upper-pec thickness than incline-only.
+
+## Addendum 2026-10-27: the station for a main lift is taken
+
+Question: on the day, the rack (or bench) is busy. Is it better to do the main lift later in the session, or to swap it for a machine and move on?
+
+### Cited findings
+
+- Simão R, de Salles BF, Figueiredo T, Dias I, Willardson JM. Exercise order in resistance training. Sports Medicine 2012;42(3):251-265 (narrative review, **older**, peer reviewed). Acute: an exercise placed earlier in a session gets more repetitions over multiple sets, whatever its muscle mass. Chronic: few training studies, mostly arm hypertrophy. The authors conclude that the athlete's movement-pattern needs should set the order. Abstract and record read, full text not retrieved — [PubMed 22292516](https://pubmed.ncbi.nlm.nih.gov/22292516/)
+- Nunes et al. 2021 (KQ3, verified in the 2026-10-21 addendum): over a training program, the exercise done first gains the most strength (multi-joint ES 0.32); no pooled order effect and no hypertrophy effect. This is a chronic, every-session effect, not a one-session one.
+- Strength is exercise- and range-specific (KQ7; Haugen 2023; Pallares 2020), so a leg press or dumbbell row does not train the barbell lift's skill and does not belong on its track (`templates/progression-tracks.md` §9).
+- "What you do in a single session has little impact on your trajectory" (Barbell Medicine coaching reply, forum source; `research/flexible-frequency-programming.md`, KQ4).
+
+### Inferences
+
+- Doing a main lift second or third in one session costs a few reps or a little RPE on that day (Simão 2012, acute) and nothing measurable over a block, because the order effect in Nunes 2021 accrues from always going first. Skipping the lift's heavy exposure loses the week's only top set for that lift. So reorder before substituting.
+- The program already judges a later lift in a merged session by RPE (`guide/03` §4.2, §5). The same treatment fits a main lift pushed later by a busy station.
+- Muscles fatigued just before the delayed lift will cost it more than unrelated work will. Do lifts or accessories for other muscles while waiting (for a delayed squat: bench, row, lateral raise, triceps; not leg press, lunges or leg curls).
+
+### Gaps
+
+- No study tests a one-off reorder against a substitute for a lift on a progression scheme. The rule is a convention built on the order and specificity evidence above.

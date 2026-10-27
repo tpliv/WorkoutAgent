@@ -2,6 +2,17 @@
 
 ## 2026-10-27
 
+- New rule for a busy rack or bench: reorder, do not substitute
+  (`guide/03-flexible-scheduling.md` §4.3, "Station taken"; research addendum
+  2026-10-27 in `research/exercise-selection-and-session-design.md`, Simão 2012
+  and Nunes 2021). Mirrored in `templates/progression-tracks.md` §9,
+  `templates/README.md`, the nightly brief ("Rack taken" line) and every
+  routine note in `templates/rotation.json`, pushed to Hevy. Why: on 27 Oct the
+  squat rack was taken and the squat top set, the one thing the program never
+  cuts, was replaced by leg press.
+- Bench track 105 -> 110 by hand: the lifter reported RPE 8 on 105 x 6, which is
+  the §5 big-step row (4 reps would have been about RPE 6). The sync had held
+  105 because it assumed RPE 8 at 4 reps and ignores extra reps.
 - `tools/test_tools.py` no longer reads its fixtures from the live
   `data/tracks.json`. The 27 Oct sync moved the pointer, bench load and
   counters, and 12 tests failed plus 1 error, though the rule engine was

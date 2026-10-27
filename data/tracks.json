@@ -47,12 +47,12 @@
     "bench": {
       "name": "Bench press",
       "scheme": "top_set",
-      "top_set_lb": 105.0,
+      "top_set_lb": 110,
       "last_h_load_lb": 105.0,
       "rep_target": 4,
       "increment_lb": 5,
       "increment_every": 2,
-      "step_counter": 1,
+      "step_counter": 0,
       "big_increment_lb": 5,
       "round_step_lb": 5,
       "backoff_pct": 0.93,
@@ -77,8 +77,9 @@
           "e1rm": 133.0,
           "load": 105.0,
           "reps": 6,
-          "rpe": null,
-          "slot": "Full A"
+          "rpe": 8,
+          "slot": "Full A",
+          "note": "RPE 8 reported by the lifter after the sync"
         }
       ],
       "h_slots": [

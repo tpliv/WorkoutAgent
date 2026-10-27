@@ -59,6 +59,7 @@ The pointer is the next half-session you owe. Write it at the top of your log.
 - **Growing a week** reverses the merges: split B first (3 to 4 days), then A (4 to 5), then C (5 to 6). The templates' "Scaling" sections say exactly what comes back.
 - **Nothing is postponed.** A set dropped in a 3-day week is gone; it returns when a longer week comes round. The rotation, not a make-up session, restores balance.
 - **A short week is not a deload** unless it is the scheduled deload week (week 5-7 of the block), two readiness red flags have persisted for a week, or you are ill. A deload keeps the week's session count, puts top sets at RPE 6-7, cuts back-offs to one, V exposures to 2 sets and accessories to 1-2 sets.
+- **Rack or bench taken:** do the next main lift first and come back; a substitute (leg press, DB row) never replaces a top set unless the station stays busy all session, and then it does not count for the track (`guide/03-flexible-scheduling.md`, section 4.3, "Station taken").
 - **Missed session:** do not reshuffle the week. Do the owed half-session next time you train and let the pointer carry.
 - **Consecutive days are fine**; lower and upper alternate. Never two heavy lower half-sessions in one day; never more than two half-sessions in one day.
 

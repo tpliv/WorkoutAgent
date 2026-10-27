@@ -23,7 +23,7 @@ Pointer: **L2**. Block week 1. Processed history through 2026-10-27. Generated b
 | Lift | Next H load (lb) | Back-offs | V load | Rep target | Misses | Last exposure | e1RM history (last 6 H) |
 |---|---|---|---|---|---|---|---|
 | Back squat | **135** | 125 | 120 | 4 | 0 | 2026-10-17 (other) | 172 |
-| Bench press | **105** | 100 | 95 | 4 | 0 | 2026-10-27 (H) | 121, 133 |
+| Bench press | **110** | 100 | 100 | 4 | 0 | 2026-10-27 (H) | 121, 133 |
 | Deadlift | work up | 93% of the load found | 90% of the load found | 4 | 0 | 2025-04-14 (other) | 185 |
 | Overhead press | **60** | 55 | 55 | 4 | 0 | 2026-10-17 (other) | 79 |
 | Barbell row | **70** | n/a (double progression) | 65 | 6-8 | 0 | 2026-10-18 (other) | 90 |
