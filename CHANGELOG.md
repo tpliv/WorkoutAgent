@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-11-02
+
+- Hevy routine "Race Week 1 - Tue (U2 + L3)" (folder Race Week) rewritten
+  for a gym with only dumbbells and barbells. Lat pulldown 3 x 5-8 at 125 ->
+  one-arm DB row (Hevy "Dumbbell Row") 3 x 5-8 at 70 lb per arm, RPE 8.
+  Reverse pec deck -> bent-over DB rear fly 2 x 15-20 at 15 lb. Overhead
+  press, deadlift and incline DB curl unchanged; notes added for no rack (clean
+  the press from the floor) and no incline bench (standing DB curl). Swaps
+  follow the matrix in `guide/05-exercise-selection.md` §7.3. Per
+  `templates/progression-tracks.md` §9 the DB row does not update the pull-up
+  track or its gap clock. The 70 lb start is a guess from the 27 Oct DB row
+  (60 x 10, 8, 10, two-handed bent-over). Why: the lifter will train at a
+  dumbbell-and-barbell gym. The Race Week routines were created in Hevy on
+  2 Nov outside this repo and are not in `templates/rotation.json`.
+
 ## 2026-10-27
 
 - New rule for a busy rack or bench: reorder, do not substitute
