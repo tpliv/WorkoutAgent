@@ -475,3 +475,14 @@ Each point of top-set RPE moves the rep-out by about one rep. The noise is about
 - **`research/coaching-check-ins.md` KQ2** ("the RPE cap decides on the day"). That rule needs a rating. Without one, the rep rules and rep-outs in KQ5 stand in for it.
 - **Hughes, Peiffer & Scott 2020 is retracted.** No note in the repo cites it. Do not add it.
 - **Russo 2025** is still unread in full (TLS failure and 503 today, as in the earlier addendum).
+
+## Addendum 2026-11-06 (later): the lifter's Hevy pre-fills reps
+
+The lifter believes Hevy pre-fills each set with the routine's reps (asked 6 Nov; not tested). The routines carry 4 reps on every top set and back-off; rows, pull-ups and accessories carry no reps, so this applies to the four top-set lifts only. Routine sets have no RPE field, so a logged RPE is always a deliberate entry.
+
+Implications (inference):
+- An unrated top set of exactly 4 may be a set left as pre-filled. KQ5 already treats it as "no information" (RPE 8 assumed, counted toward the rep-out). That stays.
+- The error that matters is a missed rep left at 4: it would read as a success. Extra reps left at 4 only under-credit, which is the conservative error.
+- A logged count other than 4 was typed, so reps above or below the target are reliable data.
+- A back-off of exactly 4 when a rep-out was due is read as "not done" (KQ5), which fits a pre-filled set.
+- Rule added to the program: change the reps whenever they differ from the plan, above all when a rep is missed (`templates/progression-tracks.md` §3; routine notes).

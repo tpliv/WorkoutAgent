@@ -138,6 +138,7 @@ class RenderRoutines(unittest.TestCase):
         self.assertEqual([(w, s["reps"]) for w, s in zip(lbs(squat["sets"][:2]), squat["sets"][:2])], [(45, 5), (110, 2)])  # bar, 80%
         self.assertIn("RPE 8", squat["notes"])
         self.assertIn("Rate it: 7 easy, 8 on target, 9 hard", squat["notes"])
+        self.assertIn("Change the reps if you did more or fewer", squat["notes"])
         self.assertIn("Regain phase (to e1RM 263 lb", squat["notes"])  # the fixture squat is in the regain phase
         self.assertIn("never more than +10 lb", squat["notes"])
         self.assertNotIn("REP-OUT", squat["notes"])

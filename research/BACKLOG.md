@@ -28,7 +28,7 @@ Ranking basis: the lifter's own data (`data/`), not general interest. The genera
 
 ## Open questions from these notes
 
-- Baseline InBody: model, and what was eaten, drunk and trained before the 21 Oct scan; creatine start date (`research/body-composition-measurement.md` KQ4 gaps).
+- Baseline InBody: model, pre-scan state, creatine start date. **Answered 6 Nov: unknown.** The first standardized scan becomes the reference (`data/body-composition.md` §8).
 - Drinks per occasion (not recorded); race pace for 8 Nov.
-- Whether Hevy pre-fills reps from the routine, so a logged "4" may be an unedited set (`research/effort-ratings-and-progression-without-rpe.md` KQ3 gaps).
-- Sauna access: not recorded.
+- Whether Hevy pre-fills reps. **Answered 6 Nov: the lifter believes so.** Routine notes now say to change the reps when they differ; addendum in `research/effort-ratings-and-progression-without-rpe.md`.
+- Sauna access. **Answered 6 Nov: yes, at the gym** (`data/body-composition.md` §1).

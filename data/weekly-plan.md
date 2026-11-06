@@ -64,7 +64,13 @@ Rule: `guide/03-flexible-scheduling.md` §4.7 (added 2026-11-06; `research/runni
 
 Easy runs only (45 min or less) until about R+7 to R+10, 15-18 Nov; no long or quality run this week (`guide/03-flexible-scheduling.md` §4.7). Mon: walk only. Optional easy 20-30 min from Tue. Thu and Sat easy. On a lifting day, lift first and run at least 3 h later, 6 h where possible (§7).
 
+## Sauna (optional)
+
+The lifter has a gym sauna (`guide/06-recovery-nutrition-cardio.md` §6.1). None until Mon 9 Nov (R+1), and only once fluids and food are back to normal. Then up to 2-3 sessions this week, 10-15 min at 80-90 °C (5-10 min for the first 2-3 if new to it), **after** the session: Tue after U1, Wed after Full B, Fri after Full C. None on Sat (within 24 h of Sunday's L1 squat), none before a lift, none on a drinking night or the morning after. Weigh in before it in the morning; replace the sweat with water and a salted meal.
+
 ## Changes this week
+
+- 2026-11-06 (later): sauna section added (the lifter has gym access); routine notes ask for the reps to be changed when they differ from the pre-filled 4.
 
 - 2026-11-06 (later): race recovery and running rewritten to the new rule in `guide/03-flexible-scheduling.md` §4.7. The Wednesday deadlift cap at RPE 7 is now unconditional (it was "if the legs are still sore"), with 1-2 back-offs and a below-plan top set logged as a hold. Mon walk only; easy runs only all week. Race-day fueling added to `data/body-composition.md` §5.1. No load or routine change.
 

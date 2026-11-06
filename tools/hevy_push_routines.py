@@ -297,7 +297,7 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                         n_bo = max(1, ex.get("backoffs", 3) + bo_delta)
                         notes.append(f"Top set {fmt(load)} lb x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). "
                                      f"If rep {t.get('rep_target', 4)} is clearly easy, keep going, 6 at most; stop at the first slow rep. "
-                                     "Rate it: 7 easy, 8 on target, 9 hard, 10 nothing left.")
+                                     "Rate it: 7 easy, 8 on target, 9 hard, 10 nothing left. Change the reps if you did more or fewer than shown.")
                     bo = round_to(load * t.get("backoff_pct", 0.93), step)
                     notes.append(f"Back-offs {n_bo} x {t.get('rep_target', 4)} at {fmt(bo)} lb (RPE 7-8; stop if a set reaches 9).")
                     if t.get("rep_out_due") and not deload:

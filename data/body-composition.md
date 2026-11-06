@@ -13,6 +13,7 @@ The user's baseline for a body recomposition, the calorie plan that goes with it
 | Goal | Body recomposition: lose fat, regain muscle |
 | Training history | Lifted fairly regularly in 2024 (43 logged sessions), little since; restarted October 2026. Never ran a deliberate bulk or cut |
 | Cardio | Runs as a hobby, under 10 miles a week |
+| Sauna | Has access at the gym (2026-11-06). Use: `guide/06-recovery-nutrition-cardio.md` section 6.1 |
 | Daily activity | On feet, 10,000+ steps a day |
 | Weight trend before baseline | Up 10+ lb over the previous 2-3 months, not lifting |
 | Eating habits | Never tracked food. Was irregular; recently home-cooked, 3 meals a day |
@@ -148,7 +149,7 @@ Protocol updated 2026-11-06 from `research/body-composition-measurement.md` (KQ1
 
 **Absolute numbers.** In men, InBody reads about 3-4 points lower body fat and 1.6-3.3 kg more fat-free mass than DXA (Potter 2022; Nickerson and Snarr 2022), so 16.5% here is probably about 20% on a DXA. Compare an InBody only with the same InBody.
 
-**Baseline unknowns** (ask the lifter, record here): the InBody model; what he ate and drank, and whether he trained or drank alcohol, before the 21 Oct scan; the creatine start date. A mismatch adds unknown error to the first comparison.
+**Baseline unknowns.** Asked 6 Nov: the lifter does not know the InBody model, what he ate, drank or trained before the 21 Oct scan, or the creatine start date. So the 21 Oct scan is a rough starting point only, and the **first scan under the conditions above becomes the reference** for the series. Read the model off that printout and record it. Wed 18 Nov now serves as that reference if Mon 16 and Tue 17 Nov are rest days (48 h after Sunday's lifting; more than 72 h after the race and the weekend); otherwise Wed 16 Dec is the reference and 13 Jan the first comparison. By mid-November creatine is very likely saturated (3 g/day takes about 28 days), so it should not move later scans.
 
 | Date | Model, location | Weight (lb) | SMM (lb) | PBF (%) | FFM (lb) | ECW/TBW | Waist (in) | 7-day avg weight | Pre-scan state (food, fluid, last lift, last run, alcohol 72 h, creatine) | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|

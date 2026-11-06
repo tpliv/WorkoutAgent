@@ -55,6 +55,7 @@ If a session has no logged data, add it to question 1. Ask for its top sets; don
    - If the pointer is not at L1, write the next six half-sessions from the pointer and apply the merges (`templates/README.md`, "The rotation pointer").
    - Place sessions on the days given, following the template's "Placement" line. Don't put two merged sessions with heavy top sets back to back if a gap is possible.
    - 2 days: `guide/03` §4.6. 7 days: train 6.
+   - If an InBody scan date falls in the week (`data/body-composition.md` §8), keep the 48 h before it free of lifting and say so in the plan.
 5. **Loads.**
    - Apply the gap clock (§8) to each main lift for its first exposure this week.
    - Back-offs are the top set x 0.93; V sets are 90% of the track load. Round every barbell load to the nearest 5 lb; the smallest plate is 2.5 lb (§9). Dumbbells: one load, the total of the dumbbells in the hands as the lifter logs it (5 lb steps for two dumbbells, 2.5 lb for one); machines: the nearest pin; never a range. Bench and press advance through the step counter (§5).
