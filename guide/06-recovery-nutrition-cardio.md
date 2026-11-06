@@ -1,6 +1,6 @@
 # 06. Recovery, fatigue management, sleep, nutrition, and cardio
 
-Last updated: 2026-10-21
+Last updated: 2026-11-06 (4.3 measuring progress; 4.4 alcohol; 4.5 energy availability and fueling runs; 5.3 running as your sport; 6.1 sauna; section 8 additions). Earlier: 2026-10-21
 
 **Revision 2026-10-21:** this chapter was corrected against the primary sources. Several authors, study counts and claims were fixed. The caffeine dose was lowered to fit adult safety limits. Most "secondary" flags were removed. Details: `research/recovery-nutrition-cardio.md`, section "Addendum 2026-10-21: primary-source verification".
 
@@ -170,8 +170,57 @@ Added 2026-10-21. Source: `research/body-recomposition.md` (KQ1, KQ2).
 | Recomposition setting | A deficit of about 300-400 kcal/day averaged over the week, protein about 2.2 g/kg | Inference from Longland 2016 (2.4 g/kg protein kept lean mass rising in a deficit) and Murphy & Koehler (about 500 kcal/day held lean mass flat) |
 | Who it suits | Returning lifters and people with recent fat gain respond fastest; lean, continuously trained lifters slowest | Barakat 2020 review (abstract); Halonen 2024 (faster regain in the first 5 weeks of retraining) |
 | How long | Fastest in the first 2-3 months of retraining; after about 6 months switch to a deliberate surplus or deficit | Inference; no month-by-month trial found |
+| Measure it | Judge four signals together: the bodyweight trend over 4+ weeks (weigh daily, at least 4 mornings a week), weekly waist at the top of the hip bone, main-lift e1RM, and a standardized InBody scan every 4-8 weeks. A change between two scans counts only at 3+ points of body fat, 5+ lb of fat or fat-free mass, or 3+ lb of SMM; below that it counts only if the other signals agree | Evidence for the error sizes (InBody 770 between-day TEM 1.18% body fat, 0.75-0.88 kg; Velasquez 2026; McLester 2020; water, food, training, creatine and carbohydrate each move a reading 1-2+ kg; Tinsley 2017, 2022; Buck 2023; Bone 2017). The thresholds and the four-signal rule are inference (`research/body-composition-measurement.md`) |
 
-With the week types: put the larger deficit in 3-day weeks and keep 5-6-day weeks near maintenance, as in 4.2. The user's own numbers live in `data/body-composition.md`.
+With the week types: put the larger deficit in 3-day weeks and keep 5-6-day weeks near maintenance, as in 4.2. Scan at the end of a 3-day week or a deload, 48 h or more after lifting; never mid 5-6-day week, when there is no 48-h gap. The user's own numbers, scan conditions and scan dates live in `data/body-composition.md` (sections 6.1 and 8).
+
+### 4.4 Alcohol
+
+Added 2026-11-06. Source: `research/alcohol-and-training.md`. One US standard drink = 14 g of alcohol; for an 82-kg lifter, 0.5 g/kg is about 3 drinks and 1 g/kg about 6.
+
+| Finding | Numbers | Source |
+|---|---|---|
+| Heavy drinking after training lowers muscle protein synthesis | 1.5 g/kg (about 9 drinks) from 1 h after a lift-and-cardio session: MPS 24% lower with protein, 37% lower with carbohydrate, both against protein alone. The only human study; no data below this dose | Parr 2014, PLoS One (full text) |
+| Moderate drinking after damaging exercise | 1 g/kg (about 6 drinks) enlarged force loss at 36 h (isometric -34% vs -12%); 0.5 g/kg (about 3) had no effect. In trained people doing familiar sessions, about 4-8 drinks showed no effect | Barnes 2010, 2011, 2012; Haugvad 2014; Levitt 2020 |
+| Next morning | About 5 drinks cut severe-intensity endurance 11%; maximal strength and jumps unchanged | Shaw 2022 |
+| Sleep | REM sleep falls even at 0.5 g/kg or less, more with dose | Gardiner 2025 (27 studies) |
+| Energy balance | 7.1 kcal/g. People do not eat less to make room for it, and food intake rose about 82 kcal per drinking occasion. Six weekend drinks plus the extra food are about 760 kcal, a quarter to a third of the weekly deficit | Kwok 2019 |
+| What is not shown | That 2-3 weekend drinks limit muscle or strength gains; any MPS effect when drinking starts hours after training | Gaps in the note |
+
+Rules (inference):
+
+| Situation | Rule |
+|---|---|
+| Any occasion | Default ceiling 3 drinks. Log each drink in the food tracker; it counts toward the calorie totals |
+| After lifting | Protein meal first (25-40 g), and start several hours after the session |
+| Within 48 h after a hard lower-body session, a race, or a new or unusually damaging session | Not 6 or more |
+| Night before a race, long run or key session | None |
+| 3-day weeks | Drink on nights before rest days. After more than 3 drinks, leave 48 h before the next lower session |
+| 5-6-day weeks | Few rest days: hold to 3 per occasion; never heavily on the evening of the hardest lower session. Put drinking nights before a rest day or an upper day |
+
+### 4.5 Energy availability and fueling runs
+
+Added 2026-11-06. Source: `research/energy-availability-and-fueling.md`. Energy availability (EA) = food intake minus exercise energy, per kg of fat-free mass. Steps and daily life do not count as exercise in it.
+
+| Finding | Numbers | Source |
+|---|---|---|
+| Thresholds in men | Concern at roughly 9-25 kcal/kg FFM/day; the male threshold is not validated and the longest study in men lasted 14 days | Mountjoy 2023 IOC REDs consensus (full text); Jurov 2022; Areta 2021 |
+| This lifter's estimate | Rest days about 36-39; lifting days about 29-36; lift-plus-run days about 27-33; weekly average about 34-36. Race day about 32-35 with the extra food, about 18-21 without it | KQ2 arithmetic (68.5 kg FFM; lifting 3.5-6 MET; running about 120-131 kcal/mile gross) |
+| Running cost | About 110-118 kcal/mile net at 82 kg, so the plan's 100 kcal/mile is 10-25% low | KQ2 |
+| Carbohydrate | Under 3 g/kg/day raised bone-resorption markers in male endurance athletes. Fasted lifting after 8 h or more without food, in sessions over 45 min, performed worse than fed | IOC 2023; King 2022; Henselmans 2022 |
+| Race fueling (10 miles) | Normal glycogen stores suffice for 60-90 min; 1-2 g/kg carbohydrate 2-3 h before; 30-60 g/h only beyond about 75 min | AND/DC/ACSM 2016 position stand (full text); Hawley 1997 |
+
+Rules (inference):
+
+| Rule | 3-day week | 5-6-day week |
+|---|---|---|
+| Carbohydrate floor | At least 3 g/kg every day, rest days included | Same |
+| Early-morning lifting | A small carbohydrate snack with some protein before sessions after an overnight fast, from the day's totals | Same |
+| Run add-back | Easy runs: about 100 kcal/mile, mostly carbohydrate. Runs over about 75 min or 8 miles: about 120 kcal/mile. Never skip it on runs of 5 miles or more | Same |
+| Lift plus run on one day | Do not go below base plus the run add-back: these are the lowest-EA days | Same |
+| Race week | Maintenance the day before and the day after the race; race day base plus about 1,000 kcal; no alcohol the night before | Same |
+
+Watch for signs of low energy availability: lower libido, fewer morning erections, unusual fatigue, frequent illness, dizziness on standing, poor sleep, falling performance at the same RPE, and bone pain that worsens with running. Section 8 says when to get checked. The lifter's day-by-day race plan is in `data/body-composition.md` section 5.1.
 
 ---
 
@@ -207,6 +256,20 @@ Program-wide cardio rule (spine rule 8): 2-3 sessions per week toward 150 min mo
 
 Gaps: ACSM-specific figures were not retrieved; WHO figures are used.
 
+### 5.3 If running is your sport
+
+Added 2026-11-06. Source: `research/running-and-lifting.md`. The modality row above is for cardio added to serve the lifting. A lifter who runs by choice keeps running; the question is placement, not substitution.
+
+| Question | Answer | Evidence |
+|---|---|---|
+| Does running at 2-4 runs a week cost lifting gains? | Little, if runs and lifts are separate sessions. In trained lifters, lower-body 1RM: ES -0.66 same session, -0.10 (not significant) separate sessions. Hypertrophy not reduced in the largest analyses. The one running-specific hypertrophy signal is at the type I fibre level (Lundberg 2022) | Petré 2021, Sports Med 51:991 (abstract); Schumann 2022; Held 2026 |
+| Easy vs hard running? | Evidence on intensity conflicts. Practically: easy runs under about 45 min are nearly free; long and hard runs cause muscle damage and next-day deficits | Fyfe 2016; Sabag 2018; Ferraro-Farro 2026; Doma & Deakin 2013 |
+| Does lifting help running? | Yes. Heavy strength training improves running economy by about 4% (g -0.32 at heavy loads, best at 90% 1RM or more) and race performance (ES -0.47 heavy; -1.04 heavy plus plyometrics). The rotation's squat and deadlift top sets (about 84% 1RM) are this kind of work; the program has no plyometrics | Denadai 2017; Eihara 2022; Llanos-Lagos 2024 |
+| Recovery after a race | Half marathon: knee-extensor strength -9 to -13% at the finish, back in 1-2 days in most runners, still down at 72 h in one small study; CK peaks at 24 h. Marathon: -22%, jump power still -12% at day 5 | Boccia 2017, 2018; Wang 2025a, b; Fu 2021; Petersen 2007 |
+| Race week | Cutting lifting volume about 70% for a week kept or slightly raised strength. Unfamiliar muscle damage 48 h before a run slowed a time trial 4% | Pritchard 2018, 2019; Marcora 2007 |
+
+Rules (inference): run placement around the rotation is in `guide/03-flexible-scheduling.md` section 7; race weeks and the week after a race in section 4.7. Calories and carbohydrate on run days: section 4 and `data/body-composition.md`.
+
 ---
 
 ## 6. Recovery modalities, ranked by evidence
@@ -224,6 +287,35 @@ The research note's central finding (KQ6): the lifting itself is the best-suppor
 | 7 | Cold-water immersion after lifting | Resistance training alone produced greater relative hypertrophy than cold-water immersion plus training: cSMD -0.22 (95% CrI -0.47 to 0.04), "likely greater than zero but small and uncertain"; 8 studies, 116 participants aged 20-26, 2 women (Piñero et al. 2024, Eur J Sport Sci, https://pmc.ncbi.nlm.nih.gov/articles/PMC11235606/). Dupuy 2018 ranks it second for soreness | Avoid for several hours after hypertrophy-focused sessions. If used for comfort, reserve it for the lighter 3-day week or after cardio-only days. Effects on strength were not examined |
 
 Gaps: warm-up injury-prevention evidence (Fradkin et al. 2010) and a dedicated active-recovery meta-analysis were not retrieved.
+
+### 6.1 Sauna
+
+Added 2026-11-06 at the user's request. Source: `research/sauna.md`. Optional: nothing in the program depends on it.
+
+| Question | Answer | Evidence |
+|---|---|---|
+| Does heat after lifting add muscle or strength? | Neutral to slightly positive, uncertain: hypertrophy SMD 0.12 (95% CrI -0.09 to 0.31), strength -0.05, from 6 fair-to-poor trials. No trial of a traditional sauna in trained lifters with muscle imaging. No sign of harm, unlike cold-water immersion (rank 7 above) | Hopper/Schoenfeld 2026 meta-analysis (preprint read) |
+| Muscle protein synthesis | Unchanged by hot-water leg immersion after lifting (0.050 vs 0.049 %/h) | Fuchs 2020, n = 12 |
+| Recovery | 20 min of 43 °C infrared after heavy lifting reduced 14-h soreness (ES 0.58) and the jump drop, not maximal strength or sleep. A long hot session is fatiguing itself: 32 min at 70 °C left leg press -4.1% at 24 h | Ahokas 2023, n = 16; Rissanen 2020, n = 27 |
+| Before lifting | 30 min at 65-75 °C cut leg-press reps 29% and bench reps 16% | Hedley 2002, n = 10 (older) |
+| Running | Post-run sauna (about 28 min at 101-108 °C, 3x a week for 3 weeks) acclimated runners to heat (non-randomised). In cool weather the randomised trials found no VO2peak gain | Kirby 2021; Sitkowski 2022; Karolkiewicz 2022 |
+| Hormones | The "16-fold growth hormone" figure is 1 h at 80 °C twice a day for 7 days in 10 men, and it faded after day 3. Acute hormone spikes did not predict growth in lifting trials | Leppäluoto 1986 (older); West 2010, 2012; Morton 2016 |
+| Health | 4-7 vs 1 session a week: all-cause mortality HR 0.60 (0.46-0.80) in Finnish men aged 42-60, observational only. Sauna added to exercise lowered systolic blood pressure 8.0 mmHg over 8 weeks in one RCT | Laukkanen 2015; Lee 2022 |
+| Fertility | Twice a week for 3 months (15 min at 80-90 °C) lowered sperm count and motility; recovery was confirmed only 6 months after stopping | Garolla 2013, n = 10, uncontrolled |
+| Sweat and scans | 20 min at 90 °C costs 0.24-0.82 kg of sweat; 0.76 kg of dehydration read as 0.90 kg less fat on an InBody 770 | Aburto-Corona 2024 |
+
+Protocol (inference):
+
+| Item | 3-day lifting week | 5-6-day lifting week |
+|---|---|---|
+| Dose | Traditional 80-90 °C, 10-15 min, 1-2 rounds, at most 20 min in all; or infrared 45-60 °C for 15-20 min. First 2-3 sessions 5-10 min | Same, kept to 10-15 min |
+| How often | 2-3 a week, after any lifting session | 2, at most 3, after upper-body or easy-run days |
+| When | After lifting or an easy run, never before a lift. Not within about 24 h before the heaviest lower-body day, a race or a top-set test (long or hot sessions) | Same |
+| Hydration | Weigh before and after a few times; replace the loss (typically 0.5-0.8 L) over 1-2 h with a normal salted meal | Same |
+| Weigh-ins and scans | Morning weigh-in before any sauna; no sauna on InBody scan morning or within 20 min of a scan (`data/body-composition.md` section 8) | Same |
+| Race week | Not a regular user: none in race week. Regular user: none from 2 days before the race until the day after. Warm-weather race: 3 weeks of 3 post-run sessions of about 25-30 min, finished 1-2 weeks before | Same |
+
+**Safety.** Never on drinking nights, while hungover, or alone after alcohol: about half of Finnish sauna deaths (under 2 per 100,000 a year) involved alcohol, and sauna plus heavy drinking dropped systolic blood pressure from 136 to 113 mmHg. Avoid regular use when trying to conceive. See a doctor first with heart disease, an arrhythmia, high or low blood pressure, fainting, kidney disease or a recent fever; unstable angina, a recent heart attack and severe aortic stenosis are contraindications, and blood-pressure drugs raise the risk of fainting on standing (section 8).
 
 ---
 
@@ -262,6 +354,10 @@ This guide gives general training guidance only. See a physician, sports-medicin
 - You plan a calorie deficit larger than about 500 kcal/day, have a history of disordered eating, or have a medical condition affected by diet, protein intake, or creatine (kidney disease, for example, or medication interactions).
 - You use or plan to use caffeine and have a heart condition or heart rhythm problem, high blood pressure, or an anxiety or sleep disorder; are pregnant; or take medication. The 200 mg single-dose and 400 mg/day figures in section 4.1 apply to healthy, non-pregnant adults only. Palpitations, chest pain, or feeling faint after caffeine are a reason to stop and get checked.
 - You are starting a program after a long break, an injury, or a cardiovascular event, or you are over 40 and have not had a recent check-up and plan vigorous cardio.
+- Drinking often goes past 5 drinks on one occasion, cutting down is hard, or drinking affects work, sleep or mood. Do not mix alcohol with sleep medication or other sedatives (section 4.4).
+- Two or more signs of low energy availability (section 4.5) persist for more than 2-4 weeks, or bone pain gets worse with running. Bone pain on running should be checked promptly; bone stress injuries are a primary REDs sign, and the diagnosis needs blood tests and a clinician.
+- Low-back pain during or after deadlifting persists past a few days (`templates/progression-tracks.md`, regain section).
+- You plan to use a sauna and have heart disease, an arrhythmia, high or low blood pressure, a history of fainting, kidney disease, a recent fever, or take blood-pressure medication; or you are trying to conceive (section 6.1).
 
 ---
 
@@ -270,6 +366,11 @@ This guide gives general training guidance only. See a physician, sports-medicin
 Research notes:
 
 - `research/body-recomposition.md`: KQ1, KQ2 (section 4.3).
+- `research/body-composition-measurement.md` (2026-11-06): KQ1-KQ4 (section 4.3, measuring progress: Velasquez 2026; McLester 2020; Tinsley 2017, 2022; Buck 2023; Bone 2017; Potter 2022).
+- `research/alcohol-and-training.md` (2026-11-06): KQ1-KQ5 (section 4.4: Parr 2014; Barnes 2010-2012; Haugvad 2014; Levitt 2020; Shaw 2022; Gardiner 2025; Kwok 2019).
+- `research/energy-availability-and-fueling.md` (2026-11-06): KQ1-KQ5 (section 4.5: Mountjoy 2023 IOC REDs consensus; Jurov 2022; Areta 2021; AND/DC/ACSM 2016; King 2022; Henselmans 2022).
+- `research/sauna.md` (2026-11-06): KQ1-KQ7 (section 6.1: Hopper 2026; Fuchs 2020; Ahokas 2023; Rissanen 2020; Hedley 2002; Kirby 2021; Sitkowski 2022; Leppäluoto 1986; Laukkanen 2015; Lee 2022; Garolla 2013; Aburto-Corona 2024).
+- `research/running-and-lifting.md` (2026-11-06): KQ1-KQ5 (section 5.3: Petré 2021; Denadai 2017; Eihara 2022; Llanos-Lagos 2024; Boccia 2017, 2018; Wang 2025; Pritchard 2018, 2019).
 - `research/recovery-nutrition-cardio.md`: KQ1 (section 1), KQ2 (section 2), KQ3 (section 3), KQ4 (section 4), KQ5 (section 5), KQ6 (section 6), KQ7 (section 7), and "Addendum 2026-10-21: primary-source verification" (all sections).
 - `research/exercise-selection-and-session-design.md`: KQ5 (acute stretching data in section 6).
 - Program defaults (RIR, per-session set ranges, volume-cut and deload rules, cardio rule): design spine and `research/frequency-volume-intensity-evidence.md` via chapter 03.

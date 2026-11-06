@@ -137,7 +137,14 @@ class RenderRoutines(unittest.TestCase):
         self.assertEqual(lbs(normal(squat["sets"])), [135, 125, 125, 125])
         self.assertEqual([(w, s["reps"]) for w, s in zip(lbs(squat["sets"][:2]), squat["sets"][:2])], [(45, 5), (110, 2)])  # bar, 80%
         self.assertIn("RPE 8", squat["notes"])
-        self.assertIn("+5 lb next time", squat["notes"])
+        self.assertIn("Rate it: 7 easy, 8 on target, 9 hard", squat["notes"])
+        self.assertIn("Regain phase (to e1RM 263 lb", squat["notes"])  # the fixture squat is in the regain phase
+        self.assertIn("never more than +10 lb", squat["notes"])
+        self.assertNotIn("REP-OUT", squat["notes"])
+        # outside a phase, the normal increment note
+        tr = fresh_tracks(squat={"regain": {"exit_e1rm_lb": 263, "until": "2027-01-09", "ended": "2026-10-20: test"}})
+        payload, _ = push.build_routine("L1", ROTATION, tr, EXMAP, TODAY)
+        self.assertIn("+5 lb next time", payload["exercises"][0]["notes"])
         # superset ids pass through
         self.assertEqual(payload["exercises"][3]["superset_id"], 1)
         self.assertEqual(payload["exercises"][4]["superset_id"], 1)
@@ -232,11 +239,32 @@ class RenderRoutines(unittest.TestCase):
 
     def test_gap_modifiers(self):
         t = fresh_tracks(squat={"top_set_lb": 140, "last_h_load_lb": 135, "last_exposure": {"date": "2026-10-01", "type": "H"}})["tracks"]["squat"]
+        # regain phase (section 5.1): 8-14 days takes the planned load; 15+ days as section 8
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 11))[:2], (140, 0))
+        self.assertIn("regain phase", push.gap_modifier(t, dt.date(2026, 10, 11))[2])
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 19))[:2], (135, -1))
+        t = dict(t, regain=None)
         self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 8)), (140, 0, None))         # 7 days: normal
         self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 11))[:2], (135, 0))          # 10 days: hold
         self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 19))[:2], (135, -1))         # 18 days: hold, one fewer back-off
         self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 26))[:2], (130, 0))          # 25 days: -5% (128.25)
         self.assertEqual(push.gap_modifier(t, dt.date(2026, 11, 5))[:2], (120, 0))           # 35 days: -10% (121.5)
+
+    def test_rep_out_and_caution_notes_and_session_note(self):
+        tr = fresh_tracks(deadlift={"rep_out_due": True, "top_set_lb": 150, "last_h_load_lb": 145,
+                                    "last_exposure": {"date": "2026-10-20", "type": "H"}})
+        payload, _ = push.build_routine("L2", ROTATION, tr, EXMAP, TODAY)
+        dl = payload["exercises"][0]["notes"]
+        self.assertIn("REP-OUT", dl)
+        self.assertIn("back position", dl)
+        self.assertIn("only with a logged RPE 7 or easier", dl)
+        push.add_session_note(payload, "R+3 after the race: deadlift top set capped at RPE 7.")
+        self.assertTrue(payload["notes"].startswith("R+3 after the race"))
+        self.assertTrue(payload["exercises"][0]["notes"].startswith("R+3 after the race"))
+        # row regain note
+        payload, _ = push.build_routine("U1", ROTATION, TRACKS, EXMAP, TODAY)
+        row = next(e for e in payload["exercises"] if "Regain phase: +10 lb" in e["notes"])
+        self.assertIn("first set reaches 11", row["notes"])
 
     def test_gap_hold_changes_backoff_count_in_payload(self):
         tr = fresh_tracks(squat={"top_set_lb": 140, "last_h_load_lb": 135, "last_exposure": {"date": "2026-10-01", "type": "H"}})
@@ -413,6 +441,130 @@ class UpdateRules(unittest.TestCase):
         self.assertIn("| Back squat | **135** | 125 | 120 |", table)
         self.assertIn("| Bench press | **95** | 90 | 85 |", table)
         self.assertIn("work up", table)
+
+
+class EffortAndRegainRules(unittest.TestCase):
+    """progression-tracks.md section 5 (effective RPE, unrated rule, re-anchor) and 5.1-5.3."""
+
+    def test_reps_above_target_are_credited(self):
+        # 6 @ 8 reads 6 at rep 4: the big step (the 27 Oct bench hand amendment), counter cleared
+        tr = fresh_tracks(bench={"step_counter": 1})
+        log, flags = run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 105, 6, 8)])
+        self.assertEqual((tr["tracks"]["bench"]["top_set_lb"], tr["tracks"]["bench"]["step_counter"]), (110, 0))
+        self.assertIn("reads 6", log[0])
+        self.assertEqual(flags, [])
+
+    def test_five_at_rpe_10_is_a_hold_not_a_miss(self):
+        tr = fresh_tracks()
+        run_update(tr, [("2026-10-27", "L2", "Deadlift (Barbell)", 0, "normal", 145, 5, 10)])
+        dl = tr["tracks"]["deadlift"]
+        self.assertEqual((dl["top_set_lb"], dl["miss_counter"]), (145, 0))
+
+    def test_unrated_reps_above_target(self):
+        cases = [(4, 140), (5, 140), (6, 145), (7, 145)]  # squat at 135: unrated 4 and 5 step, 6 and 7 big step
+        for reps, expected in cases:
+            tr = fresh_tracks()
+            _, flags = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 135, reps, "")])
+            self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], expected, reps)
+            self.assertTrue(flags and "no RPE" in flags[0], reps)
+
+    def test_unrated_e1rm_assumes_rir_1_above_the_target(self):
+        tr = fresh_tracks()
+        run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 150, 6, "")])
+        self.assertEqual(tr["tracks"]["squat"]["e1rm_history"][-1]["e1rm"], 185.0)  # 150 x (1 + 7/30)
+
+    def test_re_anchor_caps(self):
+        # 155 x 8 @ 8 reads 4: e1RM 206.7 / 1.2 = 172 -> 170; +10% cap 170. Regain cap on the squat: +10
+        tr = fresh_tracks(squat={"regain": {"exit_e1rm_lb": 999, "until": "2027-01-09"}})
+        log, _ = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 155, 8, 8)])
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 170)
+        self.assertIn("re-anchor", log[0])
+        tr = fresh_tracks()
+        log, _ = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 155, 8, 8)])
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 165)
+        self.assertIn("capped at +10", log[0])
+
+    def test_regain_phase_bench_steps_every_success_and_exits(self):
+        regain = {"exit_e1rm_lb": 130, "until": "2027-01-09"}
+        tr = fresh_tracks(bench={"regain": dict(regain)})
+        run_update(tr, [("2026-10-27", "U1", "Bench Press (Barbell)", 0, "normal", 95, 4, 8)])
+        b = tr["tracks"]["bench"]
+        self.assertEqual((b["top_set_lb"], b["step_counter"]), (100, 0))
+        self.assertNotIn("ended", b["regain"])
+        # 105 x 6 @ 8: e1RM 133 >= 130, phase ends; the next success waits for the counter again
+        run_update(tr, [("2026-11-03", "U1", "Bench Press (Barbell)", 0, "normal", 105, 6, 8)])
+        self.assertIn("ended", b["regain"])
+        run_update(tr, [("2026-11-10", "U1", "Bench Press (Barbell)", 0, "normal", 110, 4, 8)])
+        self.assertEqual((b["top_set_lb"], b["step_counter"]), (110, 1))
+
+    def test_regain_phase_ends_on_a_hard_top_set_or_the_date(self):
+        tr = fresh_tracks()
+        log, _ = run_update(tr, [("2026-10-27", "L1", "Squat (Barbell)", 0, "normal", 135, 4, 9)])
+        self.assertIn("Regain phase ends", log[0])
+        self.assertTrue(tr["tracks"]["squat"]["regain"]["ended"].startswith("2026-10-27"))
+        # after the until date the cap no longer applies: 155 x 8 @ 8 re-anchors to 170
+        tr = fresh_tracks()
+        run_update(tr, [("2027-01-11", "L1", "Squat (Barbell)", 0, "normal", 155, 8, 8)])
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 170)
+
+    def test_regain_row_jumps_10(self):
+        tr = fresh_tracks()
+        log, _ = run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 70, r, "") for i, r in enumerate([11, 9, 8, 8])])
+        self.assertEqual(tr["tracks"]["row"]["top_set_lb"], 80)
+        tr = fresh_tracks()
+        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 70, 8, 7) for i in range(4)])
+        self.assertEqual(tr["tracks"]["row"]["top_set_lb"], 80)
+        tr = fresh_tracks()  # all at 8 but RPE 8: the normal +5
+        run_update(tr, [("2026-10-27", "U1", "Bent Over Row (Barbell)", i, "normal", 70, 8, 8) for i in range(4)])
+        self.assertEqual(tr["tracks"]["row"]["top_set_lb"], 75)
+
+    def test_deadlift_caution(self):
+        # unrated 6 would be a big step; caution needs a logged RPE: +5
+        tr = fresh_tracks()
+        log, _ = run_update(tr, [("2026-10-29", "L2", "Deadlift (Barbell)", 0, "normal", 145, 6, "")])
+        self.assertEqual(tr["tracks"]["deadlift"]["top_set_lb"], 150)
+        self.assertIn("caution (no logged RPE)", log[0])
+        # rated 4 @ 7: +10, then not twice in a row
+        tr = fresh_tracks()
+        run_update(tr, [("2026-10-29", "L2", "Deadlift (Barbell)", 0, "normal", 145, 4, 7)])
+        self.assertEqual(tr["tracks"]["deadlift"]["top_set_lb"], 155)
+        log, _ = run_update(tr, [("2026-11-05", "L2", "Deadlift (Barbell)", 0, "normal", 155, 4, 7)])
+        self.assertEqual(tr["tracks"]["deadlift"]["top_set_lb"], 160)
+        self.assertIn("big step last time", log[0])
+
+    def test_two_unrated_fours_set_a_rep_out_and_the_rep_out_is_read(self):
+        tr = fresh_tracks()
+        run_update(tr, [("2026-10-27", "U2", "Overhead Press (Barbell)", 0, "normal", 60, 4, "")])
+        self.assertFalse(tr["tracks"]["press"]["rep_out_due"])
+        _, flags = run_update(tr, [("2026-11-03", "U2", "Overhead Press (Barbell)", 0, "normal", 65, 4, "")])
+        self.assertTrue(tr["tracks"]["press"]["rep_out_due"])
+        self.assertTrue(any("rep-out" in f for f in flags))
+        # top 65 x 4 unrated, last back-off 60 x 9: reads RPE 7, the big step (+5 for the press), streak cleared
+        log, _ = run_update(tr, [
+            ("2026-11-10", "U2", "Overhead Press (Barbell)", 0, "normal", 65, 4, ""),
+            ("2026-11-10", "U2", "Overhead Press (Barbell)", 1, "normal", 60, 4, ""),
+            ("2026-11-10", "U2", "Overhead Press (Barbell)", 2, "normal", 60, 9, ""),
+        ])
+        p = tr["tracks"]["press"]
+        self.assertEqual((p["top_set_lb"], p["rep_out_due"], p["unrated_streak"]), (70, False, 0))
+        self.assertIn("rep-out 9", log[0])
+
+    def test_rep_out_of_four_when_due_is_not_done(self):
+        tr = fresh_tracks(press={"unrated_streak": 2, "rep_out_due": True})
+        _, flags = run_update(tr, [
+            ("2026-11-10", "U2", "Overhead Press (Barbell)", 0, "normal", 65, 4, ""),
+            ("2026-11-10", "U2", "Overhead Press (Barbell)", 1, "normal", 60, 4, ""),
+        ])
+        self.assertTrue(tr["tracks"]["press"]["rep_out_due"])
+        self.assertTrue(any("read as not done" in f for f in flags))
+
+    def test_live_phases_match_the_rules_file(self):
+        t = LIVE_TRACKS["tracks"]
+        self.assertEqual(t["squat"]["regain"]["exit_e1rm_lb"], 263)
+        self.assertEqual(t["row"]["regain"]["exit_e1rm_lb"], 128)
+        self.assertTrue(t["deadlift"]["caution"]["big_step_needs_rating"])
+        for lift in ("bench", "press", "deadlift", "pullup"):
+            self.assertNotIn("regain", t[lift], lift)
 
 
 class SlotArgs(unittest.TestCase):

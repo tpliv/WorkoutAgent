@@ -1,6 +1,6 @@
 # Runbook: Sunday check-in
 
-Last updated: 2026-10-26 (tracks via `tools/hevy_sync.py`; works on `main`)
+Last updated: 2026-11-06 (drinks and runs in the questions; race weeks; regain, caution and rep-out in the loads). Earlier: 2026-10-26 (tracks via `tools/hevy_sync.py`; works on `main`)
 
 Protocol: `guide/08-weekly-coaching-cadence.md` section 2. General rules: `coach/README.md`. This is a conversation with two turns. Turn 1 asks; turn 2, after the lifter answers, plans and delivers.
 
@@ -31,9 +31,9 @@ Top sets: Squat <load x reps @RPE> (<hit/hold/miss>), Bench ..., Deadlift ..., P
 Five quick ones:
 1. Anything the log won't show (skips, swaps, pain, how the top sets felt)?
 2. Sleep, soreness, stress, joint pain, 1-5 each (5 = best)?
-3. Bodyweight this morning?
+3. Bodyweight this morning, and waist if you measured it? Drinks last week (how many, which nights)?
 4. How many days can you train this week, and which ones?
-5. Anything to plan around (travel, different gym, illness)?
+5. Anything to plan around (travel, different gym, illness, a race or long run)?
 
 Reply tonight and Monday's full workout comes straight back.
 Training Monday before you reply? Do <merged session from the pointer, e.g. Full A>: <main lifts with loads, one line each>; accessories as in the <N>-day template.
@@ -44,7 +44,7 @@ If a session has no logged data, add it to question 1. Ask for its top sets; don
 ## Turn 2: plan and deliver (after the lifter replies)
 
 1. **Fold in last week.** Logged sessions were applied by `python3 tools/hevy_sync.py` in turn 1 (increments, holds, misses, step counters, e1RM history, last-exposure dates, pointer). If `data/track-log.md` flagged a stall and the answers rule out sleep, food and bodyweight as the cause (§6), run `python3 tools/hevy_sync.py --no-pull --reset-on-stall`. Results reported only in the chat go to `data/manual-log.csv` and into `data/tracks.json` by hand (`coach/README.md`, "Getting the week's results", step 3). Accessories use double progression (§11).
-2. **Readiness.** Write the four scores and bodyweight to the check-in record. A score of 1-2 on the same item two Sundays running is one flag (`guide/08` §2.3). Count the performance flags: reps down or RPE up at the same load on two consecutive exposures of a lift.
+2. **Readiness.** Write the four scores, bodyweight, waist and the drinks count to the check-in record (drinks: `guide/06` §4.4). A score of 1-2 on the same item two Sundays running is one flag (`guide/08` §2.3). Count the performance flags: reps down or RPE up at the same load on two consecutive exposures of a lift.
 3. **Deload decision** (`guide/03` §4.5). Deload if any of these holds:
    - it is block week 5-7, and preferably a 3-day week when the calendar allows;
    - there are two flags;
@@ -59,7 +59,8 @@ If a session has no logged data, add it to question 1. Ask for its top sets; don
    - Apply the gap clock (§8) to each main lift for its first exposure this week.
    - Back-offs are the top set x 0.93; V sets are 90% of the track load. Round every barbell load to the nearest 5 lb; the smallest plate is 2.5 lb (§9). Dumbbells: one load, the total of the dumbbells in the hands as the lifter logs it (5 lb steps for two dumbbells, 2.5 lb for one); machines: the nearest pin; never a range. Bench and press advance through the step counter (§5).
    - If deloading: top sets x 0.90-0.92 at RPE 6-7, one back-off, V at 2 sets, accessories 1-2 sets.
-6. **Cardio**: place it per `guide/03` §7.
+   - Phases (`progression-tracks.md` §5.1-5.3, the Phase column in `data/track-state.md`): a lift in the regain phase skips the 8-14-day gap hold; the deadlift caution limits big steps; a lift with `rep_out_due` gets the rep-out on its last back-off this week (not in a deload, a race week, or as a later lift in a merged session).
+6. **Runs and cardio**: place them per `guide/03` §7 (lift first on lower days; long and quality runs 48 h before a heavy lower slot). If a race falls in this week or fell in the last 7 days, apply `guide/03` §4.7 to the lower slots and the runs, and add the fueling days from `data/body-composition.md` (pattern in §5.1).
 7. **Write the files.**
    - `data/weekly-plan.md`: the whole file, in its format.
    - `data/checkins/<today>.md`: answers, flags, decisions, and every rule that fired, with its section.

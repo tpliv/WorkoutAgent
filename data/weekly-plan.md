@@ -1,6 +1,6 @@
 # Weekly plan
 
-Last updated: 2026-11-06 (week of 9 Nov changed from 3 days (Tue, Wed, Fri) to 4 days around the 10-mile race on Sun 8 Nov and work travel on Thu 12 Nov; lifter picked the layout and the times). Units: pounds. Written by the Sunday check-in (`coach/sunday-checkin.md`), amended by the nightly brief (`coach/nightly-brief.md`). Protocol: `guide/08-weekly-coaching-cadence.md`. The previous weeks (26 Oct and race week, 2-6 Nov) are recapped in `data/checkins/2026-11-06.md`.
+Last updated: 2026-11-06 (race-recovery rule from `guide/03` §4.7 applied later the same day; week of 9 Nov changed from 3 days (Tue, Wed, Fri) to 4 days around the 10-mile race on Sun 8 Nov and work travel on Thu 12 Nov; lifter picked the layout and the times). Units: pounds. Written by the Sunday check-in (`coach/sunday-checkin.md`), amended by the nightly brief (`coach/nightly-brief.md`). Protocol: `guide/08-weekly-coaching-cadence.md`. The previous weeks (26 Oct and race week, 2-6 Nov) are recapped in `data/checkins/2026-11-06.md`.
 
 ## Status
 
@@ -44,7 +44,16 @@ Gap clock: every lift was last trained 4-5 Nov, so Tuesday is 5-6 days out: norm
 
 ## Race recovery (10 miles, Sun 8 Nov)
 
-A 10-mile race on a base under 10 miles a week means 2-4 days of quad and calf soreness. Monday: rest or walking. Tuesday is upper only. Wednesday: if the legs are still sore, stop the deadlift top set at RPE 7 and log that load; the press and pulldown run as written.
+Rule: `guide/03-flexible-scheduling.md` §4.7 (added 2026-11-06; `research/running-and-lifting.md`). The race is R = Sun 8 Nov.
+
+| Day | R+ | What changes |
+|---|---|---|
+| Sun 8 Nov | R | No cool-down jog; walk. Fueling: `data/body-composition.md` §5.1 |
+| Mon 9 Nov | R+1 | Rest or walk only |
+| Tue 10 Nov | R+2 | U1 as written (upper only) |
+| Wed 11 Nov | R+3 | Full B: deadlift top set **capped at RPE 7** whether or not the legs feel sore. If 150 x 4 would pass RPE 7, stop at the load that is RPE 7 and log it; 1-2 back-offs at 93% of the load lifted. A top set below plan is a **hold, not a miss**. Press and pulldown as written |
+| Fri 13 Nov | R+5 | Full C as written |
+| Sun 15 Nov | R+7 | L1 as written (first squat H after the race, inside the R+4-or-later rule) |
 
 ## If a day moves
 
@@ -53,9 +62,11 @@ A 10-mile race on a base under 10 miles a week means 2-4 days of quad and calf s
 
 ## Cardio
 
-Easy runs only until the race soreness clears. Runs on Mon (easy, optional), Thu, Sat. No hard run the evening before Wednesday or Sunday. Easy runs on lifting days at least 3 h after the lift (`guide/03-flexible-scheduling.md` §7).
+Easy runs only (45 min or less) until about R+7 to R+10, 15-18 Nov; no long or quality run this week (`guide/03-flexible-scheduling.md` §4.7). Mon: walk only. Optional easy 20-30 min from Tue. Thu and Sat easy. On a lifting day, lift first and run at least 3 h later, 6 h where possible (§7).
 
 ## Changes this week
+
+- 2026-11-06 (later): race recovery and running rewritten to the new rule in `guide/03-flexible-scheduling.md` §4.7. The Wednesday deadlift cap at RPE 7 is now unconditional (it was "if the legs are still sore"), with 1-2 back-offs and a below-plan top set logged as a hold. Mon walk only; easy runs only all week. Race-day fueling added to `data/body-composition.md` §5.1. No load or routine change.
 
 - 2026-11-06: first written as 3 days (Tue U1 + L2, Wed U2 + L3, Fri U3 + L1), then changed the same day to 4 days (Tue U1, Wed Full B, Fri Full C, Sun L1) after the lifter gave the race (10 miles, Sun 8 Nov) and Thursday travel. The cross-block merged routines stay in Hevy for later weeks. Calendar holds on the Workouts calendar for Tue and Wed only, 7:30-9:00 am; Friday and Sunday left flexible at the lifter's request.
 - 2026-11-06 (later): Hevy folder "This Week" created with the four sessions as dated routines (same loads and exercises as the Rotation 2026-10 routines). The three Race Week routines were rewritten into it, since the API cannot delete routines; the empty Race Week folder is deleted in the app.

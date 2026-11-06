@@ -13,20 +13,36 @@ session logged after each track's last processed exposure:
 
   Heavy (H) exposure, top-set lifts (templates/progression-tracks.md, section 5):
     the top set is the heaviest working set of the lift in an H-slot session.
-    4+ reps at RPE <= 7         -> +big increment (10 lb squat and deadlift,
+    The decision reads the effective RPE at the rep target (4):
+      rated:   logged RPE - (reps - target)        (6 @ 8 reads 6; 5 @ 10 reads 9)
+      unrated: reps == target -> 8 (flagged, counted toward a rep-out)
+               reps >  target -> 9 - (reps - target)   (assumes the set ended at RPE 9)
+    effective <= 5              -> re-anchor: e1RM / 1.2 rounded down, at least
+                                   the big step, at most +10% of the load lifted
+    effective <= 7              -> +big increment (10 lb squat and deadlift,
                                    5 lb bench and press), miss counter 0
-    4+ reps at RPE 7.5-8        -> +increment (5 lb), miss counter 0. Bench and
+    effective 7.5-8             -> +increment (5 lb), miss counter 0. Bench and
                                    press (increment_every = 2): +5 lb on every
                                    second such result, counted in step_counter
                                    (no fractional plates)
-    4+ reps at RPE 8.5-9        -> hold
-    4+ reps at RPE 9.5-10       -> hold, miss +1 (merged session, lift not first: hold only)
+    effective 8.5-9             -> hold
+    effective 9.5-10            -> hold, miss +1 (merged session, lift not first: hold only)
     fewer than 4 reps           -> hold, miss +1
-    No RPE logged is treated as RPE 8 and flagged.
+    Regain phase (section 5.1, track["regain"] while active): increment_every
+      is 1, any step is capped at regain.max_step_lb, and the phase ends at the
+      exit e1RM, the first top set reading 8.5+ (or a miss), or regain.until.
+    Caution (section 5.2, track["caution"] while active): the big step needs a
+      logged RPE and is never taken at two H exposures in a row; steps capped.
+    Calibration rep-out (section 5.3): after two unrated top sets of exactly 4
+      in a row, rep_out_due is set. A last back-off above the rep target is read
+      as a rep-out: 8+ reps -> big step for an unrated top set, 5-7 -> normal;
+      when one was due, 3 or fewer -> hold (not a miss), exactly 4 -> not done.
     The new planned load is computed from the load actually lifted, so a
     work-up or a heavier-than-planned set moves the track with it.
   Heavy exposure, row and pull-up (double progression):
     every set reached the top of the range at RPE <= 8 -> +5 lb, counter 0
+    regain phase: every set at the top at a logged RPE <= 7, or the first set
+      at 11+ reps -> +regain.big_increment_lb (10)
     first set below the bottom of the range             -> hold, miss +1
     otherwise                                           -> hold
   Stall (section 6): two consecutive misses at the same load. Flagged; the load
@@ -34,7 +50,8 @@ session logged after each track's last processed exposure:
     (5% for row and pull-up) and counts the stall.
   Volume (V) exposures and sessions without a slot in the title never change a
     track load; they update the last-exposure date for the gap clock (section 8).
-  e1RM from the top set: load x (1 + (reps + (10 - RPE)) / 30); the last 6 kept.
+  e1RM from the top set: load x (1 + (reps + (10 - RPE)) / 30); unrated sets use
+    RIR 2 at the rep target and RIR 1 above it; the last 6 kept.
   Pointer: the half-session owed after the latest slot-titled session
     (split +1, merged +2).
 
@@ -117,9 +134,28 @@ def floor_to(x, step):
     return round(math.floor(x / step + 1e-9) * step, 2)
 
 
-def e1rm(load, reps, rpe):
-    rir = 10 - (rpe if rpe is not None else 8)
+def e1rm(load, reps, rpe, target=None):
+    """Epley-style e1RM. Unrated: RIR 2 at or below the rep target, RIR 1 above
+    it (the set is assumed to have ended at RPE 9; progression-tracks.md §5)."""
+    if rpe is not None:
+        rir = 10 - rpe
+    else:
+        rir = 1 if (target is not None and reps > target) else 2
     return round(load * (1 + (reps + rir) / 30), 1)
+
+
+def effective_rpe(reps, rpe, target):
+    """RPE at the rep target (§5). Returns (effective, how)."""
+    if rpe is not None:
+        return rpe - (reps - target), "rated"
+    if reps <= target:
+        return 8.0, "unrated"
+    return 9.0 - (reps - target), "unrated-over"
+
+
+def active(block, date):
+    """A regain or caution block applies on `date` if it has not ended."""
+    return bool(block) and not block.get("ended") and date <= block.get("until", "9999-12-31")
 
 
 def kg_to_lb(kg):
@@ -177,60 +213,144 @@ def working_sets(rows):
 
 # ----- rules ------------------------------------------------------------------
 
-def apply_top_set_rule(track, top, merged_not_first, flags):
-    """Section 5. `top` = the top set row. Mutates track; returns a decision string."""
+def apply_top_set_rule(track, top, merged_not_first, flags, date="", backoff_reps=None):
+    """Section 5 with 5.1-5.3. `top` = the top set row; `backoff_reps` = reps of
+    the last back-off set after it (None if none). Mutates track; returns a
+    decision string."""
     load, reps, rpe = top["_w"], int(top["_reps"]), top["_rpe"]
     target = track.get("rep_target", 4)
     inc, big = track.get("increment_lb", 5), track.get("big_increment_lb", 10)
     step = track.get("round_step_lb", 5)
     every = track.get("increment_every", 1)
-    if rpe is None:
+    regain = track.get("regain") if active(track.get("regain"), date) else None
+    caution = track.get("caution") if active(track.get("caution"), date) else None
+    if regain:
+        every = 1
+    caps = [b.get("max_step_lb") for b in (regain, caution) if b and b.get("max_step_lb")]
+    cap = min(caps) if caps else None
+
+    eff, how = effective_rpe(reps, rpe, target)
+    notes = []
+    if how == "unrated":
         flags.append(f"no RPE logged on the {track['name']} top set ({fmt(load)} x {reps}); treated as RPE 8")
-        rpe_eff = 8.0
-    else:
-        rpe_eff = rpe
+    elif how == "unrated-over":
+        flags.append(f"no RPE logged on the {track['name']} top set ({fmt(load)} x {reps}); assumed it ended at RPE 9, so {fmt(eff)} at rep {target}")
+    elif reps != target:
+        notes.append(f"{reps} @ {fmt(rpe)} reads {fmt(eff)} at rep {target}")
+
+    # calibration rep-out (5.3): the last back-off above the target, or any back-off when one was due
+    due = track.get("rep_out_due", False)
+    rep_out = None
+    if backoff_reps is not None and reps >= target and (backoff_reps > target or (due and backoff_reps < target)):
+        rep_out = backoff_reps
+    if rep_out is not None:
+        if how == "unrated":
+            if rep_out >= 8:
+                eff = 7.0
+            elif rep_out < target:
+                eff = 9.0
+            notes.append(f"rep-out {rep_out} on the last back-off reads the top set as {fmt(eff)}")
+        else:
+            expected = 5.7 + (8 - eff)
+            if abs(rep_out - expected) >= 2:
+                drift = "harder" if rep_out > expected else "easier"
+                flags.append(f"{track['name']}: rep-out {rep_out} vs about {expected:.0f} expected for the rating; the rating may run {drift} than the set was")
+            notes.append(f"rep-out {rep_out}")
+        track["unrated_streak"] = 0
+        track["rep_out_due"] = False
+    elif "unrated_streak" in track or how == "unrated":
+        if how == "unrated" and reps == target:
+            track["unrated_streak"] = track.get("unrated_streak", 0) + 1
+            if due and backoff_reps == target:
+                flags.append(f"{track['name']}: rep-out was due; last back-off logged at {target}, read as not done")
+        else:
+            track["unrated_streak"] = 0
+        track["rep_out_due"] = track["unrated_streak"] >= 2
+        if track["rep_out_due"] and not due:
+            flags.append(f"{track['name']}: two unrated top sets of {target} in a row; next H gets a rep-out on the last back-off (section 5.3)")
+
+    def capped(new):
+        if cap is not None and new > load + cap:
+            return round_to(load + cap, step), f" (capped at +{fmt(cap)})"
+        return new, ""
+
     prev_load = track.get("last_h_load_lb")
     track["last_h_load_lb"] = load
     if reps < target:
         decision = f"miss ({reps} reps < {target}); hold {fmt(load)}"
         track["top_set_lb"] = load
         track["miss_counter"] = track.get("miss_counter", 0) + 1
-    elif rpe_eff <= 7:
-        track["top_set_lb"] = round_to(load + big, step)
+        step_kind = "miss"
+    elif eff <= 7:
+        if eff <= 5:
+            anchor = floor_to(e1rm(load, reps, rpe, target) / 1.2, step)
+            new, label = max(load + big, min(anchor, floor_to(load * 1.1, step))), "re-anchor"
+        else:
+            new, label = load + big, "big step"
+        blocked = None
+        if caution and caution.get("big_step_needs_rating") and rpe is None:
+            blocked = "no logged RPE"
+        elif caution and caution.get("no_consecutive_big_steps") and track.get("last_step") == "big":
+            blocked = "big step last time"
+        if blocked:
+            new, label, step_kind = load + inc, f"caution ({blocked}), +{fmt(inc)}", "step"
+        else:
+            step_kind = "big"
+        new, capnote = capped(round_to(new, step))
+        track["top_set_lb"] = new
         track["miss_counter"] = 0
-        if every > 1:
+        if every > 1 or "step_counter" in track:
             track["step_counter"] = 0
-        decision = f"4+ @ {rpe_eff:g}: big step to {fmt(track['top_set_lb'])}"
-    elif rpe_eff <= 8:
+        decision = f"{reps} @ {fmt(eff)}: {label} to {fmt(new)}{capnote}"
+    elif eff <= 8:
         track["miss_counter"] = 0
         n = track.get("step_counter", 0) + 1
         if n >= every:
-            track["top_set_lb"] = round_to(load + inc, step)
-            if every > 1:
+            new, _ = capped(round_to(load + inc, step))
+            track["top_set_lb"] = new
+            if every > 1 or "step_counter" in track:
                 track["step_counter"] = 0
-            decision = f"{reps} @ {rpe_eff:g}: +{fmt(inc)} to {fmt(track['top_set_lb'])}"
+            decision = f"{reps} @ {fmt(eff)}: +{fmt(inc)} to {fmt(new)}" + (" (regain: every success)" if regain and track.get("increment_every", 1) > 1 else "")
+            step_kind = "step"
         else:
             track["top_set_lb"] = load
             track["step_counter"] = n
-            decision = f"{reps} @ {rpe_eff:g}: success {n} of {every}; hold {fmt(load)}, +{fmt(inc)} after the next one"
-    elif rpe_eff <= 9:
+            decision = f"{reps} @ {fmt(eff)}: success {n} of {every}; hold {fmt(load)}, +{fmt(inc)} after the next one"
+            step_kind = "hold"
+    elif eff <= 9:
         track["top_set_lb"] = load
-        decision = f"{reps} @ {rpe_eff:g}: hold {fmt(load)}"
+        decision = f"{reps} @ {fmt(eff)}: hold {fmt(load)}"
+        step_kind = "hold"
     else:
         track["top_set_lb"] = load
+        step_kind = "hold"
         if merged_not_first:
-            decision = f"{reps} @ {rpe_eff:g} in a merged session, not first lift: hold {fmt(load)} (no miss)"
+            decision = f"{reps} @ {fmt(eff)} in a merged session, not first lift: hold {fmt(load)} (no miss)"
         else:
             track["miss_counter"] = track.get("miss_counter", 0) + 1
-            decision = f"{reps} @ {rpe_eff:g}: hold {fmt(load)}, miss {track['miss_counter']}"
+            decision = f"{reps} @ {fmt(eff)}: hold {fmt(load)}, miss {track['miss_counter']}"
+            step_kind = "miss"
+    track["last_step"] = step_kind
+    if notes:
+        decision = "; ".join(notes) + "; " + decision
+    # regain exit (5.1)
+    if regain:
+        reason = None
+        if e1rm(load, reps, rpe, target) >= regain.get("exit_e1rm_lb", float("inf")):
+            reason = f"e1RM {fmt(e1rm(load, reps, rpe, target))} reached {fmt(regain['exit_e1rm_lb'])}"
+        elif step_kind == "miss" or (eff >= 8.5 and not merged_not_first):
+            reason = f"top set read {fmt(eff)}" if reps >= target else "miss"
+        if reason:
+            regain["ended"] = f"{date}: {reason}"
+            decision += f". Regain phase ends ({reason})"
     # stall: two consecutive misses at the same load
     if track.get("miss_counter", 0) >= 2 and prev_load == load:
         track["_stall"] = True
     return decision
 
 
-def apply_dp_rule(track, sets, flags):
-    """Double progression for row and pull-up (section 5)."""
+def apply_dp_rule(track, sets, flags, date=""):
+    """Double progression for row and pull-up (section 5; regain phase 5.1)."""
     lo, hi = track.get("rep_range", [6, 8])
     inc, step = track.get("increment_lb", 5), track.get("round_step_lb", 5)
     load = max(r["_w"] or 0 for r in sets)
@@ -241,7 +361,16 @@ def apply_dp_rule(track, sets, flags):
         flags.append(f"no RPE on some {track['name']} sets; assumed RPE 8")
     prev_load = track.get("last_h_load_lb")
     track["last_h_load_lb"] = load
-    if all(n >= hi for n in reps) and all((r or 8) <= 8 for r in rpes):
+    regain = track.get("regain") if active(track.get("regain"), date) else None
+    regain_jump = regain and reps and (
+        (all(n >= hi for n in reps) and all(r is not None and r <= 7 for r in rpes)) or reps[0] >= regain.get("first_set_reps", 11))
+    if regain_jump:
+        jump = regain.get("big_increment_lb", 2 * inc)
+        track["top_set_lb"] = round_to(load + jump, step)
+        track["miss_counter"] = 0
+        why = f"first set {reps[0]}" if reps[0] >= regain.get("first_set_reps", 11) else f"all {len(reps)} sets reached {hi} at RPE 7 or lower"
+        decision = f"regain phase, {why}: +{fmt(jump)} to {fmt(track['top_set_lb'])}"
+    elif all(n >= hi for n in reps) and all((r or 8) <= 8 for r in rpes):
         track["top_set_lb"] = round_to(load + inc, step)
         track["miss_counter"] = 0
         decision = f"all {len(reps)} sets reached {hi}: +{fmt(inc)} to {fmt(track['top_set_lb'])}"
@@ -254,6 +383,16 @@ def apply_dp_rule(track, sets, flags):
     else:
         track["top_set_lb"] = load
         decision = f"reps {reps} at {fmt(load)}: hold, keep adding reps"
+    if regain:
+        best = max(e1rm(load, n, r) for n, r in zip(reps, rpes)) if reps else 0
+        reason = None
+        if best >= regain.get("exit_e1rm_lb", float("inf")):
+            reason = f"e1RM {fmt(best)} reached {fmt(regain['exit_e1rm_lb'])}"
+        elif track.get("miss_counter", 0) > 0 and "miss" in decision:
+            reason = "miss"
+        if reason:
+            regain["ended"] = f"{date}: {reason}"
+            decision += f". Regain phase ends ({reason})"
     return decision
 
 
@@ -317,18 +456,22 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
             if kind != "H":
                 continue
             merged_not_first = is_merged(slot) and main_lift_order and main_lift_order[0] != lift
+            target = t.get("rep_target")
             if t.get("scheme") == "double_progression":
-                decision = apply_dp_rule(t, sets, flags)
+                decision = apply_dp_rule(t, sets, flags, date=date)
                 best = max(sets, key=lambda r: e1rm(r["_w"] or 0, int(r["_reps"]), r["_rpe"]))
             else:
                 loaded = [r for r in sets if r["_w"]]
                 if not loaded:
                     continue
                 best = max(loaded, key=lambda r: (r["_w"], r["_reps"]))
-                decision = apply_top_set_rule(t, best, merged_not_first, flags)
+                after = loaded[loaded.index(best) + 1:]
+                backoffs = [r for r in after if r["_w"] < best["_w"]]
+                backoff_reps = int(backoffs[-1]["_reps"]) if backoffs else None
+                decision = apply_top_set_rule(t, best, merged_not_first, flags, date=date, backoff_reps=backoff_reps)
                 t.pop("work_up", None)
             hist = t.setdefault("e1rm_history", [])
-            hist.append({"date": date, "e1rm": e1rm(best["_w"] or 0, int(best["_reps"]), best["_rpe"]),
+            hist.append({"date": date, "e1rm": e1rm(best["_w"] or 0, int(best["_reps"]), best["_rpe"], target),
                          "load": best["_w"], "reps": int(best["_reps"]), "rpe": best["_rpe"], "slot": slot})
             del hist[:-6]
             line = f"{date} {slot} {t['name']}: top {fmt(best['_w'] or 0)} x {int(best['_reps'])}" + (f" @ {best['_rpe']:g}" if best["_rpe"] is not None else "") + f" -> {decision}"
@@ -348,8 +491,8 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
 
 
 def md_table(tracks):
-    out = ["| Lift | Next H load (lb) | Back-offs | V load | Rep target | Misses | Last exposure | e1RM history (last 6 H) |",
-           "|---|---|---|---|---|---|---|---|"]
+    out = ["| Lift | Next H load (lb) | Back-offs | V load | Rep target | Misses | Last exposure | e1RM history (last 6 H) | Phase |",
+           "|---|---|---|---|---|---|---|---|---|"]
     for lift, t in tracks["tracks"].items():
         step = t.get("round_step_lb", 5)
         top = t.get("top_set_lb")
@@ -362,7 +505,17 @@ def md_table(tracks):
         rep = t.get("rep_target") if t.get("scheme") == "top_set" else "-".join(str(x) for x in t.get("rep_range", []))
         le = t.get("last_exposure") or {}
         hist = ", ".join(f"{h['e1rm']:g}" for h in t.get("e1rm_history", []))
-        out.append(f"| {t['name']} | {topcell} | {bo} | {v} | {rep} | {t.get('miss_counter', 0)} | {le.get('date', '')} ({le.get('type', '')}) | {hist} |")
+        phase = []
+        rg, ca = t.get("regain"), t.get("caution")
+        if rg:
+            phase.append(f"regain ended {rg['ended'].split(':')[0]}" if rg.get("ended") else f"regain to e1RM {rg['exit_e1rm_lb']:g} or {rg['until']}")
+        if ca and not ca.get("ended"):
+            phase.append(f"caution to {ca['until']}")
+        if t.get("rep_out_due"):
+            phase.append("rep-out due")
+        elif t.get("unrated_streak"):
+            phase.append(f"unrated 4s: {t['unrated_streak']}")
+        out.append(f"| {t['name']} | {topcell} | {bo} | {v} | {rep} | {t.get('miss_counter', 0)} | {le.get('date', '')} ({le.get('type', '')}) | {hist} | {'; '.join(phase) or '-'} |")
     return "\n".join(out)
 
 

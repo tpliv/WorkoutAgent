@@ -118,6 +118,9 @@ def gap_modifier(track, as_of):
     step = track.get("round_step_lb", 5)
     if days <= 7:
         return planned, 0, None
+    regain = track.get("regain") or {}
+    if days <= 14 and regain and not regain.get("ended") and as_of.isoformat() <= regain.get("until", "9999-12-31"):
+        return planned, 0, f"gap {days} d: regain phase, take the planned load (section 5.1)"
     if days <= 14:
         return base, 0, f"gap {days} d: holding {fmt(base)} lb (take the increment next time if this comes in at RPE 7.5 or lower)"
     if days <= 21:
@@ -243,9 +246,22 @@ def warmup_sets(kind, work_lb):
     return out
 
 
-def increment_note(t):
+def phase_active(block, as_of):
+    return bool(block) and not block.get("ended") and as_of.isoformat() <= block.get("until", "9999-12-31")
+
+
+def increment_note(t, as_of=None):
     """The track's increment rule, as it should read on the top-set exercise."""
     inc, every = t.get("increment_lb", 5), t.get("increment_every", 1)
+    big = t.get("big_increment_lb", inc)
+    regain, caution = t.get("regain"), t.get("caution")
+    if as_of and phase_active(regain, as_of):
+        cap = regain.get("max_step_lb")
+        return (f"Regain phase (to e1RM {fmt(regain['exit_e1rm_lb'])} lb or {regain['until']}): +{fmt(inc)} lb at 4 @ 8; "
+                f"+{fmt(big)} lb at 5 @ 8, 6 reps or 4 @ 7" + (f"; never more than +{fmt(cap)} lb." if cap else "."))
+    if as_of and phase_active(caution, as_of):
+        return (f"+{fmt(inc)} lb next time at 4 @ 8. +{fmt(big)} lb only with a logged RPE 7 or easier, "
+                f"and not twice in a row (caution until {caution['until']}). Any low-back pain: hold.")
     if every == 1:
         return f"+{fmt(inc)} lb next time if the top set is {t.get('rep_target', 4)} @ RPE 7.5-8."
     nth = {2: "second", 3: "third"}.get(every, f"{every}th")
@@ -279,11 +295,17 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                         notes.append(f"DELOAD: top set {fmt(load)} lb x {t.get('rep_target', 4)} at RPE 6-7, one back-off. Track does not advance.")
                     else:
                         n_bo = max(1, ex.get("backoffs", 3) + bo_delta)
-                        notes.append(f"Top set {fmt(load)} lb x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). Rate it immediately.")
+                        notes.append(f"Top set {fmt(load)} lb x {t.get('rep_target', 4)} @ RPE 8 (2 RIR). "
+                                     f"If rep {t.get('rep_target', 4)} is clearly easy, keep going, 6 at most; stop at the first slow rep. "
+                                     "Rate it: 7 easy, 8 on target, 9 hard, 10 nothing left.")
                     bo = round_to(load * t.get("backoff_pct", 0.93), step)
                     notes.append(f"Back-offs {n_bo} x {t.get('rep_target', 4)} at {fmt(bo)} lb (RPE 7-8; stop if a set reaches 9).")
+                    if t.get("rep_out_due") and not deload:
+                        notes.append("Last back-off: REP-OUT. Keep going to about RPE 9, 10 reps at most, safeties set"
+                                     + (" (stop when your back position changes)" if ex.get("track") == "deadlift" else "")
+                                     + ". Log the reps.")
                     if not deload:
-                        notes.append(increment_note(t))
+                        notes.append(increment_note(t, as_of))
                     if gap_note:
                         notes.append(sentence(gap_note))
                     sets += warmup_sets(ex.get("warmup"), load)
@@ -298,6 +320,10 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                     notes.append(sentence(gap_note))
                 step_note = f" ({t['increment_note']})" if t.get("increment_note") else ""
                 notes.append(f"{n} x {lo}-{hi} at {fmt(load)} lb, RPE 8 on every set. +{fmt(t.get('increment_lb', 5))} lb{step_note} when every set reaches {hi}.")
+                rg = t.get("regain")
+                if phase_active(rg, as_of) and not deload:
+                    notes.append(f"Regain phase: +{fmt(rg.get('big_increment_lb', 10))} lb if every set reaches {hi} at RPE 7 or easier, "
+                                 f"or the first set reaches {rg.get('first_set_reps', 11)}.")
                 if ex["track"] == "pullup":
                     notes.append("Pulldown until a set at about bodyweight reaches 8, then weighted pull-ups.")
                 sets += warmup_sets(ex.get("warmup"), load)
@@ -410,6 +436,17 @@ def resolve_exercises(h, rotation, exmap, custom_lookup=None):
     return changed
 
 
+def add_session_note(payload, note):
+    """A dated session's own note (state['this_week'].sessions[].note, e.g. a race
+    rule) leads the routine note and the first exercise note, which the app shows."""
+    if not note:
+        return payload
+    payload["notes"] = f"{note} {payload['notes']}"
+    if payload["exercises"]:
+        payload["exercises"][0]["notes"] = f"{note} {payload['exercises'][0]['notes']}"
+    return payload
+
+
 def push_this_week(h, state, rotation, tracks, exmap, as_of, deload=False):
     """Refresh the dated copies of the current week's sessions (state['this_week'],
     folder "This Week"). Each keeps its own title and is rendered with its own
@@ -420,6 +457,7 @@ def push_this_week(h, state, rotation, tracks, exmap, as_of, deload=False):
         if day < as_of or s["slot"] not in rotation["sessions"]:
             continue
         payload, _ = build_routine(s["slot"], rotation, tracks, exmap, day, deload=deload, folder_id=week.get("folder_id"))
+        add_session_note(payload, s.get("note"))
         h.update_routine(s["id"], s["title"], payload["exercises"], folder_id=week.get("folder_id"), notes=payload["notes"])
         print(f"Updated this week: {s['title']} ({s['id']})")
 

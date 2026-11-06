@@ -1,6 +1,6 @@
 # Progression tracks for the main lifts
 
-Last updated: 2026-10-21 (units switched to pounds the same day)
+Last updated: 2026-11-06 (effective RPE and reps above the target, unrated top sets, re-anchor, regain phase, deadlift caution, calibration rep-out: sections 3, 5, 5.1-5.3, 8, 10). Earlier: 2026-10-21 (units switched to pounds the same day)
 
 This file holds the exact progression rules for the six main lifts (squat, bench press, deadlift, overhead press, barbell row, pull-up or pulldown) and the accessory rule the templates use. `guide/04-periodization-and-progression.md` explains the options and the evidence; this file states the one scheme this program runs. `guide/03-flexible-scheduling.md` says when each exposure happens.
 
@@ -21,7 +21,7 @@ Units: pounds. The smallest plate is 2.5 lb, so every barbell load is a multiple
 | Barbell row | U1 | U3 | 4 x 6-8 @ RPE 8 (double progression) | 3 x 6-8 | 3 x 8-10 / 3 x 8-10 at 90% of the track load | +5 lb when every set reaches 8 |
 | Pull-up or pulldown | U2 | U3 | 4 x 5-8 @ RPE 8 (double progression) | 3 x 5-8 | 3 x 6-8 / 2 x 6-8 with load reduced to RPE 7 | +5 lb (one pin, or added load) when every set reaches 8 |
 
-RPE scale: RPE 10 = 0 reps in reserve, 9 = 1, 8 = 2, 7 = 3 (Zourdos, Helms et al. 2016; `research/frequency-volume-intensity-evidence.md`, Q4). Estimates are reliable within about one rep when you are 0-3 reps from failure: trained lifters missed by 0.65 reps on average at 1 and 3 RIR on the bench (Refalo et al. 2024), and a meta-analysis found people underpredict reps to failure by about 0.95 reps, more accurately close to failure and in later sets (Halperin et al. 2022). That is why the top set is anchored at RPE 8 and not 6 or 7. The squat is rated less accurately than the bench (Helms et al. 2017; Hermann et al. 2025). Because the typical error is underprediction, a logged "RPE 8" top set is more often a true RPE 7 than a 9, which makes the increment rule conservative, not aggressive.
+RPE scale: RPE 10 = 0 reps in reserve, 9 = 1, 8 = 2, 7 = 3 (Zourdos, Helms et al. 2016; `research/frequency-volume-intensity-evidence.md`, Q4). Estimates are reliable within about one rep when you are 0-3 reps from failure: trained lifters missed by 0.65 reps on average at 1 and 3 RIR on the bench (Refalo et al. 2024), and a meta-analysis found people underpredict reps to failure by about 0.95 reps, more accurately close to failure and in later sets (Halperin et al. 2022). That is why the top set is anchored at RPE 8 and not 6 or 7. The squat is rated less accurately than the bench (Helms et al. 2017; Hermann et al. 2025). Because the typical error is underprediction, a logged "RPE 8" top set is more often a true RPE 7 than a 9, which makes the increment rule conservative, not aggressive. Three further points (`research/effort-ratings-and-progression-without-rpe.md`, KQ1): the direction flips at a true max (a 1RM is rated 9.35-9.86; Ormsbee 2019; Helms 2017); long sets are rated much worse (2.05 reps of error at a called RPE 9 on 16-rep squat sets; Zourdos 2021); and training status did not change accuracy in the meta-analysis (Halperin 2022). Accuracy is best on heavy, low-rep sets near failure, which is why only the top set is rated (section 10). The rating error (about 0.5-1 rep) is larger than the 0.5-RPE bins in section 5, so the half steps carry little real information.
 
 Why 4 reps at RPE 8: the spine's strength window is 3-6 reps at about 75-90% 1RM with 1-2 reps in reserve. A 4-rep set with 2 in reserve is a 6-rep max effort: 83.7% 1RM on Tuchscherer's RPE chart (Reactive Training Manual, as reproduced; the original chart image was not read), which matches the ~83% Epley estimate. Tuchscherer calls the chart a rough guide, "not to attempt to derive a max", and his original RPE 8 meant "2-4 reps left"; the strict 1 RPE = 1 RIR mapping is Zourdos et al. 2016. Convention, not evidence (`research/periodization-and-progression.md`, addendum 2026-10-21).
 
@@ -52,7 +52,7 @@ For comparison, not for copying: 5/3/1 starts from a training max of 85-90% of 1
 
 1. **General warm-up** (3-5 min easy movement, optional in a warm gym) and dynamic mobility for the day's patterns. Static holds, if any, under 30 s per muscle (`research/exercise-selection-and-session-design.md`, KQ5).
 2. **Ramp on the first compound only:** empty bar x 5; 80% of the top set x 2-3; then the top set. Once the top set is 225 lb or more, add 60% x 3 between the bar and the 80% set; that step is coaching convention, not evidence. Round to the plate, never below the bar. Later main lifts in the same session need one feeder set at 60-70% (in 40 trained men, one warm-up set of 6 at 80% of the training load gave faster squat bar speed than one at 40%, and in the bench the two-set 40%/80% warm-up did best; few reps at low loads were not enough. Ribeiro et al. 2020, KQ5 and its 2026-10-21 addenda).
-3. **Top set:** 4 reps at the planned load. Rate it immediately: RPE 8 means you could have done 2 more. Rest 3-4 min (deadlift 3-5 min).
+3. **Top set:** 4 reps at the planned load. If rep 4 was clearly easy, keep going, 6 reps at most, and stop at the first slow rep; log the reps you did. Rate it immediately with one tap: **7** easy (3 left), **8** on target (2 left), **9** hard (1 left), **10** nothing left. Only the top set needs a rating. In Hevy, the RPE field on the set; if it is hidden, turn on RPE tracking in the app's workout settings. Rest 3-4 min (deadlift 3-5 min).
 4. **Back-offs:** load x 0.93, rounded to the plate. 3 x 4 in a split session, 2 x 4 in a merged session (deadlift: 2 x 4 in both). Rest 2-3 min. If a back-off set reaches RPE 9, stop the back-offs there.
 5. **Log** load, reps, RPE for every set (section 10) and write the next planned top-set load from section 5 before you leave the rack.
 
@@ -64,28 +64,89 @@ In a merged session the second and third main lifts are not fresh. Judge their t
 
 - Load = 90% of the lift's **current** top-set load (the load the track says you will attempt at the next H), rounded to the nearest loadable weight. Not 90% of what you did last time if the track has moved since.
 - Squat and bench: 4 x 6 (3 x 6 merged). Deadlift: 3 x 4 (2 x 4 merged). Press: 3 x 5 (2 x 5 merged). Row: 3 x 8-10 at 90% of the row track load. Pull-up: 3 x 6-8 (2 x 6-8 merged) with the added load reduced, or bodyweight, so the sets land at RPE 7.
-- Rest 2-3 min; no set past RPE 9. If the **last** set of a squat or bench V is RPE 6 or lower two exposures running, the track is stale: take the next increment at the H exposure even if the top set was RPE 8.5. Caveat: by Tuchscherer's chart the first V set is expected near RPE 6.5-7 and the last a little higher after fatigue, so this threshold sits only 0.5-1 RPE under the expected value and is a weaker signal than first assumed. Underprediction (section 1) pushes logged RPEs up, so in practice the rule should fire rarely (inference). Check it against your own logged V sets before relying on it; the threshold is unchanged.
+- Rest 2-3 min; no set past RPE 9. If the **last** set of a squat or bench V is RPE 6 or lower two exposures running, the track is stale: take the next increment at the H exposure even if the top set was RPE 8.5. Caveat: by Tuchscherer's chart the first V set is expected near RPE 6.5-7 and the last a little higher after fatigue, so this threshold sits only 0.5-1 RPE under the expected value and is a weaker signal than first assumed. Underprediction (section 1) pushes logged RPEs up, so in practice the rule should fire rarely (inference). Check it against your own logged V sets before relying on it; the threshold is unchanged. When V sets are unrated the rule cannot fire; the calibration rep-out (section 5.3) does its job.
 - The V exposure does not change the track load. It counts as an exposure for the gap clock (section 8), and its sets go in the log.
 
 ---
 
 ## 5. Increment, hold, miss
 
-Decide the next H load from the top set only. Back-off performance never changes the track.
+Decide the next H load from the top set only. Back-off performance never changes the track, except through the calibration rep-out (section 5.3).
 
-| Top set result | Next H top-set load | Miss counter |
+**Effective RPE at the rep target** (added 2026-11-06; `research/effort-ratings-and-progression-without-rpe.md` KQ5, inference). The table below reads the effort at rep 4, not at the last rep done:
+
+- **Rated top set:** effective RPE = logged RPE minus the reps done above the target. 4 @ 8 reads 8; 5 @ 8 reads 7; 6 @ 8 reads 6; 5 @ 10 reads 9 (four reps were made at RPE 9, so a hold, not a miss).
+- **Unrated top set:** assume the set ended at RPE 9, one rep left, because lifters underpredict by about one rep (Halperin 2022: 0.95 reps), so this under-credits on average. Effective RPE = 9 minus the reps above the target: 5 reps reads 8, 6 reads 7, 7 reads 6. An unrated set of exactly 4 carries no information: treat it as 8, flag it, and count it toward the rep-out trigger (section 5.3). Every unrated decision is flagged in `data/track-log.md` with the assumption used.
+
+| Top set result (effective RPE at rep 4) | Next H top-set load | Miss counter |
 |---|---|---|
-| 4 reps at RPE 7 or lower | +10 lb squat and deadlift, +5 lb bench and press at once, clearing the step counter (one-off; if it happens at two consecutive H exposures the start load was too low, keep taking the big step until it stops) | reset to 0 |
-| 4 reps at RPE 7.5-8 | **+5 lb squat and deadlift. Bench and press: +5 lb on every second such result; the first holds the load and counts 1 on the step counter** | reset to 0 |
-| 4 reps at RPE 8.5-9 | **Hold** the load | unchanged |
-| 4 reps at RPE 9.5-10, or 3 reps or fewer | **Hold** the load | +1 |
+| 5 or lower (for example 7 @ 8, 6 @ 7, or 8+ unrated reps) | **Re-anchor:** e1RM / 1.2 (section 10), rounded down to 5 lb; at least the big step, at most +10% of the load lifted. Capped further in the regain phase and for the deadlift (sections 5.1, 5.2) | reset to 0 |
+| 7 or lower | +10 lb squat and deadlift, +5 lb bench and press at once, clearing the step counter (one-off; if it happens at two consecutive H exposures the start load was too low, keep taking the big step until it stops) | reset to 0 |
+| 7.5-8 | **+5 lb squat and deadlift. Bench and press: +5 lb on every second such result; the first holds the load and counts 1 on the step counter** | reset to 0 |
+| 8.5-9 | **Hold** the load | unchanged |
+| 9.5-10, or 3 reps or fewer | **Hold** the load | +1 |
 | Two misses in a row at the same load | **Stall**: section 6 | reset after the reset |
+
+Worked examples from the log: bench 105 x 6 @ 8 on 27 Oct reads 6, the big step to 110, which is what the hand amendment did. Squat 155 x 5 unrated on 5 Nov reads 8, a step, but the 19-day gap (section 8) held it first. Re-anchor: squat 155 x 8 @ 8 gives e1RM 207, / 1.2 = 172, so 170 (+15, inside the +10% cap; the regain-phase cap would make it 165).
+
+The divisor 1.2 is the program's own e1RM value for 4 @ 8 (a 6-rep effort). It and the RPE-9 assumption for unrated sets are conventions, not tested values.
 
 The step counter (`step_counter` in `data/tracks.json`) counts successful bench and press top sets at RPE 7.5-8. Holds and misses leave it as it is; an increment, a big step or a stall reset sets it back to 0.
 
 Expected pace: squat and deadlift about +5 lb per week (the Texas Method's weekly pace, `research/periodization-and-progression.md`, Q2), bench and press about +5 lb per two weeks (the Texas Method's fortnightly 5 lb). A lifter who makes every top set for 12 weeks adds 60 lb to the squat top set; nobody does, which is what the hold and stall rules are for.
 
 Row and pull-up (double progression, `guide/04-periodization-and-progression.md`, section 2.2): fixed load; add reps each H exposure until every set reaches the top of the range (8) at RPE 8 or less; then +5 lb (one pin on the pulldown stack) and back to the bottom of the range (6 for the row, 5 for the pull-up). A merged session runs 3 sets instead of 4; the rule still applies to the sets done. If the first set cannot reach the bottom of the range, hold the load and count a miss; two misses, drop 5% and rebuild.
+
+### 5.1 Regain phase (a lift coming back from a long layoff)
+
+Added 2026-11-06. Source: `research/retraining-after-layoff.md` (KQ1-KQ5; the rule itself is inference). Strength came back to the old peak in about 5-8 weeks in every retraining study found, after breaks of 3-32 weeks (Staron 1991, older; Taaffe 1997, older; Blocquiaux 2020; Seaborne 2018). Size is lost faster than strength and retained skill is the best-supported reason (Räntilä/Halonen 2025). Tendon stiffness lags: it rose only after 2-3 months of training and responds only to loads above about 70% of maximum (Kubo 2010, 2012, older; Bohm 2015). Coaches differ on the climb: +10 lb a week (Renaissance Periodization), ride out +5 (Wendler), novice-style 5-10 lb a week after a year or more off (Stronger By Science).
+
+**Who is in it.** A main lift that came back after more than 8 weeks off with its latest e1RM below 90% of its pre-layoff best. `data/tracks.json` holds the threshold per lift (`regain`). On 6 Nov 2026 that is the **squat** (e1RM 191 of 292 lb, 2024 best 250 x 5; exit at 263, about 220 x 4 @ 8) and the **row** (e1RM 90 of 142 lb, 2024 best 115 x 7; exit at 128, a track load of about 95). Bench (95-100% of 2024), press (about 90%) and deadlift (88%, and its 2024 sets were never pushed) run the normal rules.
+
+| Item | During the regain phase |
+|---|---|
+| Top set | As section 3: 4 reps, up to 6 if rep 4 is clearly easy |
+| Steps | Section 5 as written, with the effective RPE: +10 lb when the top set reads 7 or lower (5 @ 8, 6 @ 8, 4 @ 7, or 6 unrated reps); +5 lb at 4 @ 8 or an unrated 4 or 5 |
+| Cap | **+10 lb per H exposure** on the squat, however easy the set (re-anchor included). At +10 a week the squat reaches the exit line in about 6-7 qualifying exposures, inside the 5-8-week retraining window |
+| Bench and press (if in the phase) | +5 lb on every success, no second-success wait |
+| Row | +10 lb (two pins) when every set reaches 8 at a logged RPE 7 or lower, or the first set reaches 11 or more reps; otherwise section 5 as written |
+| Gaps | A gap of 8-14 days does not block the step (section 8). 15 days or more: section 8 as written |
+| Back-offs and V | Unchanged: -7% and 90% of the new track load. No sets added or removed |
+
+**Exit**, whichever comes first; the lift then runs section 5 unchanged:
+1. The top-set e1RM reaches the threshold in `data/tracks.json` (squat 263, row 128).
+2. The first top set reading 8.5 or higher at the planned load, or the first miss. A later lift in a merged session does not end the phase this way, because it is not fresh.
+3. 9 January 2027, 12 weeks after the restart on 17 October 2026.
+
+**Week types.** Step sizes do not change with the day count: every 3- to 6-day week has one H per lift. In merged sessions (3-day weeks) only the first heavy lift is fresh, so the later lifts are less likely to earn a big step; nothing else changes. After two or more 2-day weeks, H exposures land every 7-14 days, which is why the 8-14-day gap waiver matters. Coaching judgment, not engine rule: in the first week back at 5-6 days after two or more 2-day weeks, take normal steps only.
+
+**Where this differs from the research note.** The note asked for a logged RPE before any regain-phase big step. This program also accepts 6 unrated reps (section 5, unrated rule), because the reps are observed and the RPE-9 assumption under-credits on average; the +10 lb cap limits the cost of a wrong call. The deadlift keeps the stricter form (5.2).
+
+### 5.2 Deadlift caution until 9 January 2027
+
+Source: `research/retraining-after-layoff.md` KQ3-KQ5 (inference). The posterior chain had about 18 months without heavy loading, the deadlift carries the heaviest loads in the program, and its 2024 benchmark is soft (sets of 6-8 that were never pushed), so it behaves more like a novice lift than a regain lift.
+
+- The +10 lb big step needs a **logged** RPE (effective 7 or lower) and is **never taken at two H exposures in a row**. Otherwise the step is +5. A re-anchor is capped at +10.
+- Work-up sets and V sets never count as evidence for a step.
+- Any low-back pain during or after the deadlift: hold the load. If it persists past a few days, see a physical therapist or physician (`guide/06-recovery-nutrition-cardio.md` section 8). This is general training guidance, not medical advice.
+
+### 5.3 Calibration rep-out
+
+Source: `research/effort-ratings-and-progression-without-rpe.md` KQ2, KQ5 (inference; the reading bands rest on Tuchscherer's chart and RTS's 5% fatigue figure, both conventions). Repeated sets close to failure cut rating error by 0.4-2.3 reps over 6 sessions in one study and changed nothing in another (Wiedenmann 2026; Remmert 2023), so this is a check, not a training method.
+
+- **When:** after two unrated H exposures in a row at exactly 4 reps on a lift, the next H exposure of that lift gets a rep-out (`rep_out_due` in `data/tracks.json`; the routine note says so). Once ratings are logged, one rep-out per lift per block is enough (for example the week before the deload). At most 2 per session. In a merged session, only on the first main lift; postpone a later lift's rep-out to the next session where it comes first. Skip in a deload, on the first exposure after a gap of 22 days or more, on any lift with joint pain, and in race weeks.
+- **Which set:** the **last back-off** (top-set load x 0.93), never the top set. Keep going after rep 4 until one more rep would be a grind (about RPE 9), 10 reps at most. Squat and bench inside the rack with the safeties set; deadlift: stop at the first rep where back position or bar path changes. Log the reps.
+- **What to expect:** after a true 4 @ 8 top set, about 5-7 reps (expected about 5.7). Each point of top-set RPE moves it by about one rep. The first two rep-outs on each lift become that lift's own baseline.
+
+| Rep-out reps | Read the top set as | Decision for an unrated top set |
+|---|---|---|
+| 3 or fewer | RPE 9 or harder, or high fatigue | Hold (not a miss) |
+| 5-7 | About RPE 8 | Normal rule |
+| 8 or more | RPE 7 or easier | Big step (subject to the caps in 5.1 and 5.2) |
+
+A back-off of exactly 4 when a rep-out was due is read as "not done" and the rep-out stays due. For a rated top set, both are logged; if the rep-out and the rating disagree by 2 or more reps, the track log says which way the ratings drift.
+
+Row, pull-up and accessories already progress on reps. Unrated sets there are treated as meeting the RPE condition; a grind shows up as missed reps next time.
 
 ---
 
@@ -129,7 +190,7 @@ Each lift's clock counts days since its last exposure of either type. Apply at t
 | 22-28 | **Reduce 5%**; first exposure capped at RPE 7; normal rules from the second exposure | Normal count |
 | > 28 | **Reduce 10%**; first exposure RPE 6-7, second RPE 7-8, then normal | Normal count |
 
-Apply the table at an H exposure. If a V exposure is the first thing a lift does after a gap of 8 or more days, do it as written (it is already at 90% of the track load); it resets the clock and the H that follows runs the normal rule.
+Apply the table at an H exposure. If a V exposure is the first thing a lift does after a gap of 8 or more days, do it as written (it is already at 90% of the track load); it resets the clock and the H that follows runs the normal rule. **Regain phase (5.1):** for a lift in the regain phase, the 8-14-day row does not apply; take the planned load.
 
 This table is an inference from peer-reviewed detraining studies, mostly older, of complete cessation. Two weeks without training gave no significant 1RM loss in trained lifters (Hortobágyi et al. 1993, bench -1.7%, squat -0.9%; Hwang et al. 2017, leg press); strength holds for up to about 3 weeks and decays faster after that (McMaster et al. 2013, elite rugby and football players); 4 weeks of cessation cut maximal strength 6-9% (Izquierdo et al. 2007). A 1-week break can still blunt strength gains relative to continuous training (Coleman et al. 2024). These studies stopped all training; one lift going 8-21 days unexposed while the rest of the program continues is milder, so the 8-21-day hold is a conservative convention (an RPE check on a stale skill), not a response to a measured loss. The > 28-day row adapts Nippard's comeback guidance (compounds at RPE 5 or lower, about 50-60% of the old 1RM, in the first weeks after a multi-week or multi-month layoff); its RPE 6-7 first exposure is less conservative than that source. No source quantifies progression adjustments by days since exposure (`research/flexible-frequency-programming.md`, KQ3, KQ6, gaps and addendum 2026-10-21).
 
@@ -147,7 +208,7 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 
 ## 10. Logging
 
-**Per set:** exercise, load, reps, RPE, a note on technique or pain. Example line: `2026-11-03 L1 squat H 275x4 @8 | 255x4 @7, @7.5, @8`.
+**Per set:** exercise, load, reps, a note on technique or pain. **One rating per main lift: the top set** (7, 8, 9 or 10, section 3). Ratings on other sets are optional; they never change the track. Example line: `2026-11-03 L1 squat H 275x4 @8 | 255x4, 255x4, 255x4`.
 
 **Per lift (the track state), updated at each H exposure:**
 
@@ -159,7 +220,7 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 | Last exposure date (H or V) | 2026-11-07 (V) |
 | e1RM history (last 6 H exposures) | 306, 312, 318, 320, 324, 330 |
 
-**e1RM:** from the top set, `e1RM = load x (1 + (reps + RIR) / 30)`, where RIR = 10 - RPE. Example: 275 x 4 @ 8 gives 275 x (1 + 6/30) = 330. This is an Epley-style convention; any consistent formula serves, because the quantity that matters is the trend. Use heavy, low-rep, RPE 8+ sets only; RIR ratings from long sets are less accurate (Russo et al. 2025). Barbell Medicine recomputes e1RM each workout from the most accurate set and sets back-offs from it (`research/periodization-and-progression.md`, Q2, Q7; convention).
+**e1RM:** from the top set, `e1RM = load x (1 + (reps + RIR) / 30)`, where RIR = 10 - RPE. Unrated: RIR 2 for a set at the rep target, RIR 1 for a set above it (the section 5 assumption). Example: 275 x 4 @ 8 gives 275 x (1 + 6/30) = 330. This is an Epley-style convention; any consistent formula serves, because the quantity that matters is the trend. Use heavy, low-rep, RPE 8+ sets only; RIR ratings from long sets are less accurate (Russo et al. 2025). Barbell Medicine recomputes e1RM each workout from the most accurate set and sets back-offs from it (`research/periodization-and-progression.md`, Q2, Q7; convention).
 
 **Per session:** bodyweight, sleep hours, a 1-5 readiness score. **Per week:** hard sets per muscle group (half credit for indirect work; tallies at the bottom of each template).
 
@@ -200,11 +261,15 @@ These are described so you can see where this program's rules come from. They ar
 - The gap-modifier table is an inference from peer-reviewed detraining studies (mostly older) of complete cessation.
 - Two RCTs found adding reps at a fixed load about as good as adding load at fixed reps, for strength and hypertrophy, over 8-10 weeks (Plotkin et al. 2022, trained; Chaves et al. 2024, untrained), which supports double progression for the row, pull-up and accessories. Double vs triple progression is still untested, and no trial tests RPE-stop volume over a block (Hickmott 2022 found none).
 - No peer-reviewed validation of the e1RM-trend method as a predictor of long-term progress exists (`research/periodization-and-progression.md`, Q7 gaps).
+- The effective-RPE arithmetic, the RPE-9 assumption for unrated sets, the re-anchor divisor and the rep-out bands are untested inferences (`research/effort-ratings-and-progression-without-rpe.md`, KQ5). No trial tests a three-level rating or any method in lifters returning from a layoff. Autoregulated and fixed loading give similar or slightly better strength results (Hickmott 2022, SMD 0.21, not significant; Zhang 2021) and no hypertrophy difference.
+- The regain-phase thresholds rest on 2024 e1RMs from unrated sets; the +10 lb squat cap and the deadlift caution are judgments from tendon data, not injury data in lifters (`research/retraining-after-layoff.md`, KQ5 gaps).
 
 ---
 
 ## Sources
 
+- `research/effort-ratings-and-progression-without-rpe.md` (2026-11-06): KQ1 (rating accuracy: Halperin 2022; Refalo 2024; Hackett 2017; Zourdos 2021; Ormsbee 2019; Helms 2017), KQ2 (calibration: Wiedenmann 2026; Remmert 2023), KQ3-KQ4 (rep-based and autoregulated progression: Mann 2010; Hickmott 2022; Zhang 2021; Nuzzo 2024), KQ5 (effective RPE, unrated rule, re-anchor, rep-out; sections 3, 5, 5.3, 10).
+- `research/retraining-after-layoff.md` (2026-11-06): KQ1-KQ2 (Staron 1991; Taaffe 1997; Blocquiaux 2020; Seaborne 2018; Psilander 2019; Räntilä/Halonen 2025), KQ3 (Kubo 2010, 2012; Bohm 2015; Gabbett 2016; Impellizzeri 2020, 2021), KQ4 (practitioner ramps), KQ5 (sections 5.1, 5.2, 8).
 - `research/periodization-and-progression.md`: Q2 (linear and double progression rules; 5/3/1 training max and reset; GZCLP ladder and restart; Texas Method pace and stall fix; RPE loading, RTS fatigue percents, Barbell Medicine e1RM; Helms 2018; Hickmott 2022), Q3 (deloads: Coleman 2024; Bell 2022; Bell 2023; Pancar 2026; Rogerson 2024; De Marco 2024), Q5 (plateau order; named stall rules), Q6 (reactive loading), Q7 (logging, e1RM, block criteria; Russo 2025); addendum 2026-10-21 (Tuchscherer chart values; RPE accuracy: Halperin 2022, Refalo 2024, Helms 2017, Hermann 2025; load vs rep progression: Plotkin 2022, Chaves 2024; Moesgaard and Williams re-read).
 - `research/flexible-frequency-programming.md`: KQ3 (detraining timelines; addendum 2026-10-21: Hortobágyi 1993, Hwang 2017, Izquierdo 2007, McMaster 2013), KQ4 (RPE-anchored top sets, RPE stops, Barbell Medicine forum reply, Nippard comeback RPE), KQ6 (exposure-indexed progression; days-since-exposure modifier, flagged as inference).
 - `research/frequency-volume-intensity-evidence.md`: Q1 (frequency benefit for strength: Pelland et al. 2026), Q4 (RIR-based RPE: Zourdos et al. 2016; proximity to failure: Robinson et al. 2024), Q6 (minimum effective dose: Androulakis-Korakakis 2020/2021).

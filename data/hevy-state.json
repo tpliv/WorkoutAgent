@@ -16,25 +16,27 @@
     "U3+L1": "d402bb41-37ad-4f5f-9709-d588050330bf",
     "U1+L2": "f5bed829-6ca3-499d-9c7e-d1912e452e6c"
   },
-  "last_push": "2026-11-06T17:18:10Z",
+  "last_push": "2026-11-06T18:04:09Z",
   "last_push_deload": false,
   "this_week": {
     "folder_id": 4036910,
     "folder_title": "This Week",
     "week_of": "2026-11-09",
-    "_comment": "Dated copies of this week's sessions in the Hevy folder 'This Week'. hevy_push_routines.py (full push, no --only) re-renders every session dated today or later. Next week: rewrite date, slot and title in place and push; the API cannot delete routines, so reuse these ids (add or leave spare ones as needed). The Race Week folder (4004133) is empty; delete it in the app.",
+    "_comment": "Dated copies of this week's sessions in the Hevy folder 'This Week'. hevy_push_routines.py (full push, no --only) re-renders every session dated today or later. Next week: rewrite date, slot and title in place and push; the API cannot delete routines, so reuse these ids (add or leave spare ones as needed). The Race Week folder (4004133) is empty; delete it in the app. A session's optional 'note' (e.g. a race rule) leads that routine's note and its first exercise note.",
     "sessions": [
       {
         "date": "2026-11-10",
         "slot": "U1",
         "title": "U1 Upper A (Tue 10 Nov)",
-        "id": "2da8d4c1-fe4b-4092-a7b9-3b4289a830dc"
+        "id": "2da8d4c1-fe4b-4092-a7b9-3b4289a830dc",
+        "note": "R+2 after the 8 Nov race: upper body only, as written."
       },
       {
         "date": "2026-11-11",
         "slot": "Full B",
         "title": "Full B (Wed 11 Nov)",
-        "id": "a1de5676-367b-4e23-9d47-5cd0c15a2049"
+        "id": "a1de5676-367b-4e23-9d47-5cd0c15a2049",
+        "note": "R+3 after the 8 Nov race (guide/03 section 4.7): deadlift top set capped at RPE 7 however the legs feel. If 150 x 4 would pass RPE 7, stop at the load that is RPE 7 and log it; 1-2 back-offs at 93% of that. A top set below plan is a hold, not a miss."
       },
       {
         "date": "2026-11-13",

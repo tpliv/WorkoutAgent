@@ -1,6 +1,6 @@
 # 03. Flexible scheduling: one program for 3-day and 6-day weeks
 
-Last updated: 2026-10-27 (section 4.3: station taken)
+Last updated: 2026-11-06 (section 4.7: race weeks; section 7: runs placed around the rotation). Earlier: 2026-10-27 (section 4.3: station taken)
 
 **Revision 2026-10-21.** Rechecked against the primary-source verification addenda dated 2026-10-21 in `research/flexible-frequency-programming.md`, `research/frequency-volume-intensity-evidence.md`, `research/periodization-and-progression.md`, `research/splits-and-named-programs.md` and `research/exercise-selection-and-session-design.md`. Changes: the gap-modifier rationales (section 4.4) now cite primary detraining trials, and the unsupported "3-7% after one week" figure is gone; the GZCL justification for the priority stack is withdrawn (4.3); the Remmert per-session figures are confirmed (still a preprint) and Helms corroborates the ~11-set cap (2.2); Colquhoun, Saric and Johnsen are described correctly (2.1); Wendler's own variable-schedule posts replace a secondary 5/3/1 source; the superset meta-analysis is Zhang et al. 2025. **No rule number changed.**
 
@@ -138,7 +138,7 @@ Do this once, before the first session of the week. It takes two minutes. The Su
 4. **Check each main lift's days since its last exposure** (any H or V exposure counts). Apply the modifier in 4.4 to its planned top-set load.
 5. **Write the planned loads into the log** from the tracks (`templates/progression-tracks.md`). Planned, not promised: the RPE cap on the top set decides on the day.
 6. **Decide whether this is a deload week** (4.5). If it is, apply the deload version of whichever template you picked. A deload week is a week type, not a day count.
-7. **Place cardio** (section 7).
+7. **Place cardio and runs** (section 7). If a race falls within the next 7 days, or fell in the last 7, apply section 4.7 to the lower-body slots.
 
 If days change mid-week: recount the remaining days and the remaining half-sessions in the pass and re-apply step 3 to what is left. A week that cannot finish its pass just leaves the pointer where it stops.
 
@@ -224,6 +224,40 @@ Timing rule: a deload is planned to land on a 3-day week when the calendar allow
 - **Two sessions in one day:** only as a merge (4.2), never two heavy lower halves, and never as a way to "get ahead" of the pointer.
 - **Consecutive days:** fine. The rotation alternates lower and upper, so a heavy muscle group gets about 48 h before its next hard exposure (`guide/06-recovery-nutrition-cardio.md`, section 1). A 4-day week on Mon/Tue/Thu/Fri puts Full A (squat H) and L2 (deadlift H) on consecutive days; that is acceptable because the patterns differ and the RPE cap sets the load, but Mon/Wed/Thu/Sat is preferred.
 
+### 4.7 Race weeks and the week after a race
+
+Added 2026-11-06 for races of 10 miles to a half marathon (about 60-120 min). Source: `research/running-and-lifting.md` (KQ1, KQ2, proposed rules). The windows are inference from recovery and taper studies; no study measured squat or deadlift strength after a race or tested these cut-offs. Race day = R.
+
+**Why.** Knee-extensor strength drops 9-13% at the finish of a half marathon and is back within 1-2 days in most runners, but one small study still found a deficit at 72 h (Boccia 2017, 2018; Wang 2025a, b; Fu 2021). Creatine kinase peaks at 24 h. Soreness clears by about 48 h, before strength fully returns. Upper-body strength is barely affected by fatigue in other muscles (ES -0.02; Behm 2021). Running damage hits the quads and calves more than the hamstrings. Before a race, unfamiliar muscle damage 48 h out made a 30-min time trial 4% slower (Marcora 2007), while cutting lifting volume about 70% for a week kept strength (Pritchard 2018, 2019).
+
+**Race week.**
+
+| Day | Lower body | Upper body | Running |
+|---|---|---|---|
+| R-7 to R-5 | Normal slots with back-off and accessory sets about halved; top-set loads unchanged | Normal | Last long run at R-7 or earlier; total running cut 40-60%, same number of runs |
+| R-4 | Last heavy lower exposure: top set plus at most 1-2 back-offs. Familiar exercises only; no new eccentric-heavy accessories | Normal | Easy |
+| R-3 to R-1 | None | Normal through R-2; R-1 rest or short and light | Short easy runs; a few strides at R-2 or R-3 |
+
+- Race week is one pass of the rotation at reduced lower volume. It is not a deload (4.5), and dropped lower sets are dropped, not postponed.
+- 3-day race week: merge so the last full-body session with lower work falls on or before R-4. 5-6-day race week: L1 and L2 early in the week; shorten or drop L3; upper slots or rest fill R-3 to R-1.
+- A scheduled deload within a week of the race can move to race week; both cut volume and keep the load.
+
+**After the race.**
+
+| Day | Lower body | Upper body | Running |
+|---|---|---|---|
+| R+0 | None | None | No cool-down jog (a 15-min jog after a half marathon worsened CK and perceived recovery at 24 h; Wiewelhove 2018). Walk |
+| R+1 | None | Optional | Walk only |
+| R+2 | None | Normal upper slot | Optional easy 20-30 min |
+| R+3 | First lower session. Prefer the deadlift (L2, Full B) or a volume slot (L3, Full C) over the squat H. Top set capped at RPE 7, 1-2 back-offs | Normal | Easy only |
+| R+4 to R+7 | Normal rotation; first squat H (L1, Full A) at R+4 or later | Normal | Easy only |
+| R+7 to R+10 | Normal | Normal | First long or quality run (convention: about one easy day per mile raced; no primary source) |
+
+- A post-race top set below plan is a **hold, not a miss**, and does not count toward the stall rule (the same logic as a later lift in a merged session, 4.2). Judge readiness from the warm-up sets and the top-set RPE, not from soreness.
+- If the pointer names a lower slot within 48 h of the race, do the upper half of that block first and the lower half at R+3 or later. This swaps halves within one block; it does not skip ahead.
+- 3-day week after a race: first full-body session at R+2 or later, its lower half capped at RPE 7 with back-offs cut, or run as its upper half only. 5-6-day week: upper slots take R+1 and R+2; the rotation otherwise runs unchanged.
+- Marathon: double the windows (no heavy lower for about 4-5 days, capped lower work through day 7; strength -22% at the finish and jump power still -12% at day 5, Petersen 2007).
+
 ---
 
 ## 5. Progression stays on one track per lift
@@ -280,7 +314,28 @@ What the example shows:
 
 ## 7. Where cardio goes
 
-Spine item 8: 2-3 sessions per week toward 150 min moderate; lift before cardio in the same session or separate by 3 or more hours; prefer cycling or incline walking to running on heavy leg weeks. Evidence and doses: `guide/06-recovery-nutrition-cardio.md`, section 5.
+Spine item 8: 2-3 sessions per week toward 150 min moderate; lift before cardio in the same session or separate by 3 or more hours. Evidence and doses: `guide/06-recovery-nutrition-cardio.md`, section 5.
+
+**If you run** (rewritten 2026-11-06; `research/running-and-lifting.md` KQ4-KQ5, inference from the evidence cited there). The runs are the cardio. At 2-4 runs a week the cost to lifting is mostly fatigue, and it comes mainly from doing both in the same session: in trained lifters, concurrent training cut lower-body 1RM gains by ES -0.66 in the same session and -0.10 (not significant) in separate sessions (Petré 2021). Slot types: heavy lower = L1, L2, Full A, Full B; volume lower = L3, Full C; upper = U1, U2, U3.
+
+1. **Lower day:** lift first, run 6 h later where possible (3 h minimum). Never run before a lower slot the same day: aerobic work cut leg-press reps at 4-8 h, not at 24 h (Sporer 2003, older).
+2. **Upper day:** either order. The deficit after aerobic work was local to the legs.
+3. **Long run (about 60 min or more) and any quality run:** at least 48 h before a heavy lower slot; 24 h before a volume slot is enough. Avoid them the day after a heavy lower slot, unless stacked on the same day after the lift: hard running the day after a lift-then-run day lasted 29% less long to exhaustion (Doma & Deakin 2013, older). Count each as one lower-body fatigue event.
+4. **Easy runs of 45 min or less:** anywhere, 3-6 h after lifting, upper days first. They do not count against leg recovery or leg sets.
+5. **Never trade a top set for a run.** If a week cannot fit the runs under rules 1-3, drop the quality run first, then shorten the long run.
+6. **More lifting days, fewer hard runs.** At most one quality run a week; in a 6-day week, default to two runs (one long, one easy). If running rises above about 15-20 miles a week or includes two quality sessions, trim leg accessories first (no study sets this threshold).
+7. Most runs easy. The squat and deadlift top sets are already the heavy strength work that improves running economy (about 4%; Denadai 2017; Eihara 2022, g -0.32 at heavy loads).
+
+| Week type | Example lifting days | Easy run | Quality run (optional) | Long run |
+|---|---|---|---|---|
+| 3-day: Full A, Full B, Full C | Mon, Wed, Fri | Tue | Wed PM after Full B (stacked) | Sat (after Full C; 48 h before Mon Full A) |
+| 4-day: Full A, L2, U2, Full C | Mon, Wed, Thu, Fri | Tue, or Thu PM after U2 | Wed PM after L2 (stacked) | Sat |
+| 5-day: L1, U1, L2, U2, Full C | Mon-Fri | Tue PM after U1 | Wed PM after L2 (stacked) | Sat (48 h before Mon L1) |
+| 6-day: L1-U3 | Mon-Sat | Tue PM after U1 | Wed PM after L2, or none | Sat AM, then U3 later that day |
+
+The weekdays are examples; the pointer still decides which slot comes next. Race weeks and the week after a race: section 4.7.
+
+**Other cardio** (cycling, incline walking, rowing), if you add it on top of the runs:
 
 | Week type | Placement |
 |---|---|
@@ -301,12 +356,16 @@ Spine item 8: 2-3 sessions per week toward 150 min moderate; lift before cardio 
 - Gap clock per lift: hold the load at 8-21 days; reduce 5-10% beyond 21.
 - A short week is not a deload unless it is the scheduled week, two red flags persist, or you are ill. A deload keeps frequency, halves sets, and runs top sets at RPE 6-7.
 - Block clock counts passes; for 3- to 6-day weeks that is calendar weeks.
+- Race week (4.7): last heavy lower at R-4, no lower lifting R-3 to R-1. After the race: upper from R+2, first lower at R+3 capped at RPE 7, first squat H at R+4 or later; a below-plan top set is a hold.
+- Runs (section 7): lift before running on lower days; long and quality runs 48 h before a heavy lower slot.
 
 ---
 
 ## Sources
 
 Research notes (the only evidence base used):
+
+- `research/running-and-lifting.md` (2026-11-06): KQ1 (race recovery: Boccia 2017, 2018; Wang 2025a, b; Fu 2021; Wiewelhove 2018; Petersen 2007; Behm 2021), KQ2 (race-week taper: Pritchard 2018, 2019; Bosquet 2007; Marcora 2007), KQ3 (lifting and running economy: Denadai 2017; Eihara 2022), KQ4-KQ5 (Petré 2021; Sporer 2003; Doma & Deakin 2013; run placement), proposed rules (sections 4.7 and 7).
 
 - `research/frequency-volume-intensity-evidence.md`: Q1 (frequency with volume equated: Schoenfeld, Grgic & Krieger 2019; Pelland et al. 2026; Hamarsland et al. 2022; Colquhoun et al. 2018; Saric et al. 2019; Johnsen & van den Tillaar 2021; Grgic et al. 2018; Ralston et al. 2018), Q2 (weekly volume and per-session ceiling: Schoenfeld 2017; Baz-Valle 2022; Remmert et al. 2025 preprint; Krieger 2009-2010), Q6 (maintenance: Bickel, Cross & Bamman 2011; Spiering et al. 2021; Androulakis-Korakakis 2020/2021), Q7 (3 vs 6 sessions; Räntilä & Ahtiainen 2026); addendum 2026-10-21.
 - `research/flexible-frequency-programming.md`: KQ1 (rotation pattern: RP floating split, GZCLP, A/B programs, forum consensus on missed days), KQ2 (Wendler's 2-day and variable-schedule posts; GZCL tier priority, now corrected), KQ3 (maintenance and detraining timelines, per-session ceiling conflict), KQ4 (RPE-anchored top sets, RPE stops, readiness gate; Barbell Medicine forum), KQ5 (merge and cut rules, skipped-session rule), KQ6 (exposure-indexed progression and the days-since-exposure modifier, flagged as inference), KQ7 (no published 3-to-6-day program), consolidated rule table; addendum 2026-10-21 (primary detraining trials, Wendler and LeFever primary texts, Johnsen and Bickel corrections).

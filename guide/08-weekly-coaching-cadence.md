@@ -1,6 +1,6 @@
 # 08. Weekly coaching cadence: Sunday check-in and night-before workouts
 
-Last updated: 2026-10-26 (data flow uses `tools/hevy_sync.py`; short warm-up ramp)
+Last updated: 2026-11-06 (check-in asks for waist, drinks and races). Earlier: 2026-10-26 (data flow uses `tools/hevy_sync.py`; short warm-up ramp)
 
 This chapter turns the program into a coach's routine. Every Sunday evening there is a short conversation that plans the week. The evening before each training day, a brief arrives with that session's exact workout. The rules don't change: this chapter only sets *when* the existing rules get applied and *what* you are told. The agent runbooks that carry it out are in `coach/`. The evidence is in `research/coaching-check-ins.md`.
 
@@ -22,9 +22,9 @@ Both runs arrive as push notifications from a Claude session, and you can reply 
 
 1. **Last week:** anything the log won't show? Skipped sessions, substitutions, pain, how the top sets felt.
 2. **Readiness, 1-5 each:** sleep, soreness, stress, joint pain. 5 is best for all four, so 5 on joint pain means none.
-3. **Bodyweight** (morning, lb).
+3. **Bodyweight** (morning, lb), waist if measured, and **drinks last week** (count and which nights). Measurement protocol: `data/body-composition.md` §6.1; alcohol rules: `guide/06` §4.4.
 4. **Days available this week, and which days.** If you're unsure between two numbers, give the lower one (`guide/03` §4.1 step 1).
-5. **Anything to plan around:** travel, a different gym, a late night, illness.
+5. **Anything to plan around:** travel, a different gym, a late night, illness, a race or long run (race weeks: `guide/03` §4.7).
 
 The readiness items are the Hooper set (sleep, stress, fatigue, soreness), with joint pain in place of fatigue. Your logged reps and RPE at a known load already measure fatigue, and they are the stronger signal (`research/coaching-check-ins.md`, KQ1).
 
