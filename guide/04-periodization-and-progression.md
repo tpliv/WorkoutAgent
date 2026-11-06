@@ -1,6 +1,6 @@
 # 04. Periodization and progression
 
-Last updated: 2026-10-21
+Last updated: 2026-11-06 (2.6: how accurate ratings are and progressing when they are missing; 6.1: returning after a long layoff). Earlier: 2026-10-21
 
 **Revision 2026-10-21.** This chapter was revised against the primary-source verification addenda dated 2026-10-21 in `research/periodization-and-progression.md`, `research/splits-and-named-programs.md` and `research/flexible-frequency-programming.md` (each headed "Addendum 2026-10-21: primary-source verification"). The main corrections: Williams 2017's training-status moderator favoured **untrained** lifters; Moesgaard 2022's trained-only finding is for **undulating vs linear**, not periodized vs non-periodized; d = 0.23 is Williams' own outlier-removed estimate; Jukic 2023 found no velocity-loss effect on strength; two RCTs now compare rep progression with load progression; the Bell 2023 Delphi did not split into "two camps"; Westside dynamic-effort loads and the Tuchscherer chart values are corrected; StrongLifts increments and the "5 forward, 3 back" attribution are fixed; and a peer-reviewed RPE-accuracy figure replaces the vendor claim in section 7.
 
@@ -125,6 +125,8 @@ Use linear progression only while it works. Switch to weekly or cycle-based prog
 - **Reactive Training Systems (Tuchscherer)** [Convention]: work up to a top set at RPE 9-10, drop the load by a fatigue percentage, and repeat sets until the reduced load also reaches the target RPE. Example: 300x3 @9, then sets at 285x3 until that is a 9 = 5% fatigue. Tiers: low ~3% or less, medium ~5%, high ~7% or more (the "5% is average" figure was not re-checked). **RPE-to-%1RM chart** (values consistent across reproductions; Tuchscherer's original chart image was not on the source page): **4 reps @ RPE 8 = 83.7% 1RM**; 5 @ 10 = 86.3%; 6 @ 10 = 83.7%; 1 @ 8 = 92.2%; **8 @ 9 = 76.2%**. Tuchscherer's caveat: the chart "roughly correlates an RPE and rep range to a percentage. It should only be used as a guide, not to attempt to derive a max"; it is most accurate at low reps and high RPE. [EliteFTS: Tuchscherer RPE chapter](https://elitefts.com/blogs/training/rate-of-perceived-exertion-rpe)
 - **Barbell Medicine e1RM method** [Convention]: compute an estimated 1RM each workout from the most accurate set available (5 @ RPE 9 or a single @ RPE 8) and set back-off loads as a percentage of today's e1RM instead of a stale tested max. [BBM forum](https://forum.barbellmedicine.com/t/e1rm-calculation-in-the-templates/664). On overshooting: two quotes earlier attributed to BBM coaches ("is not a reason for great concern"; "continuing to blindly add weight to the bar...") were **not found** in the thread the research note cited, and their source is unknown (FFP add.). The confirmed staff advice (Baraki, 2021) is to use an overreaching block as information for the next one: trim "a set or two," subtract 1 point from RPE targets, or rearrange training and rest days. [BBM forum 11314](https://forum.barbellmedicine.com/t/how-to-progress-while-not-exceeding-capacity-or-over-reaching-too-frequently/11314)
 - **RPE stops for volume** [Convention, evidence unverified]: "do back-off sets until a set reaches RPE 9, maximum N sets." A thesis on 12 powerlifters reportedly found volume "can be effectively autoregulated using RPE stops" (FFP KQ4); the repository serves a reCAPTCHA, so this is **(unverified)**, and Hickmott 2022 found no study of the chronic effects of RPE stops. The method makes a session shrink automatically on a compressed or tired day, which is why it suits a variable week.
+
+- **How accurate are ratings, and what if there are none?** Added 2026-11-06 from `research/effort-ratings-and-progression-without-rpe.md`. Lifters underpredict reps to failure by about 0.95 reps (Halperin 2022, 12 studies, n = 414, I² 97.9%), less on heavy, low-rep sets close to failure (0.65 ± 0.78 reps on bench at 75%; Refalo 2024) and much more on long sets (2.05 reps at a called RPE 9 on 16-rep squats; Zourdos 2021). Training status made no difference. Near a true max the error flips (a 1RM is rated 9.35-9.86). Practice with sets close to failure helped in one study and not another (Wiedenmann 2026; Remmert 2023). Phone velocity apps vary (Qwik VBT matched a linear transducer; Metric and MyLift were weaker; Renner 2024), so they are not a low-effort substitute. Rep-based autoregulation (APRE) has the best outcome support among the rating-free methods (Mann 2010). **Program rule** (inference): one rating per main lift, on the top set; reps above the target are credited at 1 RPE per rep; an unrated set above the target is assumed to have ended at RPE 9; and a rep-out on the last back-off calibrates when ratings are missing (`templates/progression-tracks.md` sections 3, 5, 5.3).
 
 ### 2.7 Velocity-based training
 
@@ -251,6 +253,21 @@ Volume reduction on the heaviest day is the fix when top sets stall; adding a se
 
 **Operational agreement:** both camps say add load when performance shows you can, and lengthen the time between planned PR attempts as progress slows. The disagreement is whether to pre-assign cycle length by stage or let the data choose. For a self-coached intermediate, the reactive version is safer: per-session increments until two consecutive misses, then weekly, then 3-6-week cycles. Rule of thumb consistent with both: novice 1 session; early intermediate 1 week; later intermediate 3-6-week mesocycles; advanced 8-16-week blocks with a peak (PP Q6 inference). These intervals count exposures, so on a 3-day week a "1 week" cycle means one heavy and one volume exposure per lift, the same as on a 6-day week. Practical Programming's own text was not accessible; definitions come from reviews (PP Q6 gaps).
 
+### 6.1 Returning after a long layoff
+
+Added 2026-11-06 from `research/retraining-after-layoff.md`.
+
+| Question | Answer | Evidence |
+|---|---|---|
+| What is lost first? | Size faster than strength. After 10 weeks off, untrained adults kept about two thirds of their leg-press gain but lost about three quarters of their quadriceps size gain | Räntilä/Halonen 2025 (full text) |
+| How fast does it come back? | To the old peak in about 5-8 weeks in every retraining study found (breaks of 3-32 weeks). Lean mass rose +12.4% on retraining vs +6.5% the first time in one study | Staron 1991 (older); Taaffe 1997 (older); Blocquiaux 2020; Seaborne 2018 |
+| Why? | Retained skill (neural) is the best-supported reason for strength. Retained myonuclei are clear in mice; human data conflict | Psilander 2019; Cumming 2024; Rahmati 2022 meta-analysis |
+| What lags? | Tendon stiffness rose only after 2-3 months of training and responds only to loads above about 70% of maximum | Kubo 2010, 2012 (older); Bohm 2015 meta-analysis (ES 0.90 vs 0.04) |
+| How fast should loads climb? | Practitioners disagree: +10 lb a week (RP), +5 lb (Wendler), novice-style 5-10 lb a week after a year or more off (Stronger By Science). No trial compares rates. The acute:chronic workload ratio is disputed as a statistical artefact | Practitioner; Gabbett 2016 vs Impellizzeri 2020, 2021 |
+| Is the layoff length a guide? | "Regain takes about half the layoff" does not stretch to 18 months: the bench was back at 95-100% of its 2024 e1RM three weeks after this lifter restarted | Nuckols (MASS 2022, practitioner); the lifter's log |
+
+**Program rule** (inference): a lift that came back after more than 8 weeks off with its e1RM below 90% of its pre-layoff best runs a regain phase: +10 lb steps when the top set reads RPE 7 or easier, capped at +10 a session; bench and press step on every success; gaps of 8-14 days do not block the step; the phase ends at 90% of the old best, the first top set at RPE 8.5 or harder, or 12 weeks after the restart. The deadlift, with a soft 2024 benchmark and 18 months without heavy pulling, takes the big step only with a logged rating and never twice in a row (`templates/progression-tracks.md` sections 5.1, 5.2). Day count does not change the steps: every 3- to 6-day week has one heavy exposure per lift.
+
 ---
 
 ## 7. What to log
@@ -280,6 +297,8 @@ Other trackable signals: 5/3/1's "+" sets are rep PRs at a fixed TM percentage; 
 
 ## Sources
 
+- `research/effort-ratings-and-progression-without-rpe.md` (2026-11-06): KQ1-KQ5 (section 2.6: Halperin 2022; Refalo 2024; Zourdos 2021; Ormsbee 2019; Wiedenmann 2026; Remmert 2023; Renner 2024; Mann 2010).
+- `research/retraining-after-layoff.md` (2026-11-06): KQ1-KQ5 (section 6.1: Räntilä/Halonen 2025; Staron 1991; Taaffe 1997; Blocquiaux 2020; Seaborne 2018; Psilander 2019; Cumming 2024; Rahmati 2022; Kubo 2010, 2012; Bohm 2015; Gabbett 2016; Impellizzeri 2020, 2021).
 - `research/periodization-and-progression.md`: Q1 (periodization models and comparisons), Q2 (progression schemes and RPE/velocity evidence), Q3 (deloads), Q4 (mesocycle structure), Q5 (plateaus), Q6 (training age and the Barbell Medicine critique), Q7 (tracking); Addendum 2026-10-21 (verification table, corrections, new evidence, implications).
 - `research/splits-and-named-programs.md`: Addendum 2026-10-21 (StrongLifts increments, 5/3/1 "Training Max" article and Deweese attribution, GZCLP author rules, nSuns, Texas Method, RP mesocycle example).
 - `research/flexible-frequency-programming.md`: KQ4 (autoregulation on compressed weeks, RPE stops), KQ6 (exposure-indexed progression); Addendum 2026-10-21 (BBM quote sourcing, RPE-stop thesis status).
