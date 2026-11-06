@@ -80,3 +80,7 @@ A 25-year-old man at 5'11" and 181 lb is around the 75th percentile for height a
 ### Gaps
 - Exact %fat and FFMI percentile tables (Kelly 2009 Tables S2/S5; Schutz 2002) were not retrieved.
 - InBody's own reference ranges for skeletal muscle mass and ECW/TBW were not sourced.
+
+## Addendum 2026-11-06: InBody measurement error
+
+The KQ2 gap ("the measurement error of InBody devices was not searched") is filled by `research/body-composition-measurement.md`. Under strict overnight fasting the InBody 770's between-day error is about 1.2 points of body fat (TEM 1.18%; Velasquez 2026), and the 95% threshold for a real change between two scans is about 2-3.3 points of body fat and 1.5-2.4 kg of fat or fat-free mass (Velasquez 2026; McLester 2020). This note's "a few percentage points" holds as the threshold for a real change, not as typical session-to-session scatter. Its conclusion stands: read several scans together with bodyweight trend, waist and strength.

@@ -1,6 +1,6 @@
 # Body composition and nutrition baseline
 
-Last updated: 2026-10-21
+Last updated: 2026-11-06 (measurement protocol, scan conditions and dates: sections 6.1 and 8)
 
 The user's baseline for a body recomposition, the calorie plan that goes with it, and a log of later scans. Evidence and sources: `research/body-recomposition.md` and `research/recovery-nutrition-cardio.md` (KQ4). Units: pounds (lb), with kg in parentheses where useful.
 
@@ -81,6 +81,19 @@ Track all food and drink from day one. Weigh every morning; compare weekly avera
 | Weight flat and waist unchanged after 4 weeks | Cut about 150 kcal |
 | Losing more than 1 lb/week, or lifts stalling | Add 150-200 kcal on 5-6-day weeks |
 
+### 6.1 How to measure (added 2026-11-06)
+
+Source: `research/body-composition-measurement.md` (KQ3, KQ4). The rules above act on the **trend**, never on one day or one scan.
+
+| Signal | How | How often |
+|---|---|---|
+| Bodyweight | On waking, after the bathroom, before food or drink, same scale, in lb | Every morning; at least 4 mornings a week including Tue-Fri. Daily weight scatters about 0.9 lb around its trend and runs high on Sunday and Monday, so two 7-day averages must differ by about 1.3-1.6 lb before the difference counts. A 0.5 lb/week loss shows through the noise after about 4 weeks of daily weigh-ins (4-5 weeks at 3 a week) |
+| Waist | Top of the hip bone (iliac crest), tape level and snug, end of a normal breath out; two readings, log the mean | Weekly, same weekday, after the weigh-in. A change under about 0.75 in is noise until enough readings exist to measure your own error |
+| Strength | e1RM trend in `data/tracks.json` | Already logged |
+| InBody | Conditions in section 8 | Every 4-8 weeks, read as a series |
+
+Reading them together: the scan is the tie-breaker, not the judge. Flat scale weight with the waist down 0.75 in or more and lifts up is a recomposition working; change nothing and recheck in 4 weeks. Flat scale, flat waist and changes below the scan thresholds is "unclear": the 4-week flat rule above (cut about 150 kcal) still applies. Lifts down across two or more sessions is a recovery question before it is a calorie question (`guide/06-recovery-nutrition-cardio.md` section 2.3).
+
 ## 7. Expected timeline
 
 | Period | Expectation |
@@ -95,8 +108,29 @@ These are estimates from `research/body-recomposition.md` KQ2, not trial results
 
 ## 8. Scan log
 
-Rescan every 8-12 weeks under the same conditions as the baseline: same time of day, fasted, same hydration, before training. InBody results vary by a few points of body fat between sessions, so read the trend across scans together with bodyweight, waist and lifts.
+Protocol updated 2026-11-06 from `research/body-composition-measurement.md` (KQ1, KQ2, KQ4). The thresholds are InBody 770 lab figures used as a stand-in for the gym unit; a gym scan is noisier.
 
-| Date | Weight (lb) | SMM (lb) | PBF (%) | ECW/TBW | Waist | Notes |
-|---|---|---|---|---|---|---|
-| 2026-10-21 | 181 | 88 | 16.5 | 0.354 | not measured | Baseline |
+**Scan dates.** Primary rescans **Wed 16 Dec 2026** (8 weeks) and **Wed 13 Jan 2027** (12 weeks). Avoid 23 Dec to 6 Jan (holiday food, drink and water swings). Wed 18 Nov is optional and only useful as one point in a trend. If a date has to move, keep it on a midweek morning that meets conditions 3-6.
+
+**Conditions, identical every time:**
+
+1. Same InBody unit. Record the model (on the printout) and the location. Analyzers are not interchangeable.
+2. Same weekday and time: Wednesday morning, like the baseline. Midweek also avoids the weekend weight bump.
+3. Nothing to eat or drink since the night before: no water, coffee or creatine that morning. Take the day's creatine after the scan. About 0.9 L of water read as +1.3 kg of fat on an InBody 770 (Tinsley 2022). InBody's own page says to drink water an hour before; matching the baseline matters more than which choice is made.
+4. Usual eating for the 2-3 days before, at the plan's carbohydrate for that week type. No carb-load, low-carb day, or unusually salty or large meal the night before. Stored carbohydrate and its water read as lean mass.
+5. No lifting for 48 h or more (72 h after a hard upper session if possible). No run over about 60 min and no race for 72 h. So scan at the end of a 3-day week or a deload, after 2 or more rest days, never in the middle of a 5-6-day week.
+6. No alcohol for 72 h. A Wednesday scan leaves about 80 h after Saturday night.
+7. Bladder emptied, bare feet, same light clothing. No shower, sauna or cold exposure in the last 20 min.
+8. Stand 5-10 min, then scan. Standing for an hour first drifted lean mass down about 0.8 kg.
+9. Same height (71 in) and age entered.
+10. Optional: scan again the next morning under the same conditions and average the two.
+
+**Minimum change between two scans that counts as real** (95% level): **3 points of body fat, 5 lb of fat mass, 5 lb of fat-free mass, or 3 lb of SMM** (the SMM figure is scaled from fat-free mass; no direct data). Smaller changes count only when scale trend, waist and strength point the same way, or when three or more scans form a line. Implication: two scans can partly detect the planned 5-9 lb fat loss and will mostly miss the 2-5 lb lean gain. A rise in fat-free mass alongside an ECW/TBW shift, a weigh-in bump or a creatine start is likely water.
+
+**Absolute numbers.** In men, InBody reads about 3-4 points lower body fat and 1.6-3.3 kg more fat-free mass than DXA (Potter 2022; Nickerson and Snarr 2022), so 16.5% here is probably about 20% on a DXA. Compare an InBody only with the same InBody.
+
+**Baseline unknowns** (ask the lifter, record here): the InBody model; what he ate and drank, and whether he trained or drank alcohol, before the 21 Oct scan; the creatine start date. A mismatch adds unknown error to the first comparison.
+
+| Date | Model, location | Weight (lb) | SMM (lb) | PBF (%) | FFM (lb) | ECW/TBW | Waist (in) | 7-day avg weight | Pre-scan state (food, fluid, last lift, last run, alcohol 72 h, creatine) | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 2026-10-21 | not recorded | 181 | 88 | 16.5 | 151.1 (derived) | 0.354 | not measured | not recorded | not recorded | Baseline |

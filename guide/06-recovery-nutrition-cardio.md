@@ -170,8 +170,9 @@ Added 2026-10-21. Source: `research/body-recomposition.md` (KQ1, KQ2).
 | Recomposition setting | A deficit of about 300-400 kcal/day averaged over the week, protein about 2.2 g/kg | Inference from Longland 2016 (2.4 g/kg protein kept lean mass rising in a deficit) and Murphy & Koehler (about 500 kcal/day held lean mass flat) |
 | Who it suits | Returning lifters and people with recent fat gain respond fastest; lean, continuously trained lifters slowest | Barakat 2020 review (abstract); Halonen 2024 (faster regain in the first 5 weeks of retraining) |
 | How long | Fastest in the first 2-3 months of retraining; after about 6 months switch to a deliberate surplus or deficit | Inference; no month-by-month trial found |
+| Measure it | Judge four signals together: the bodyweight trend over 4+ weeks (weigh daily, at least 4 mornings a week), weekly waist at the top of the hip bone, main-lift e1RM, and a standardized InBody scan every 4-8 weeks. A change between two scans counts only at 3+ points of body fat, 5+ lb of fat or fat-free mass, or 3+ lb of SMM; below that it counts only if the other signals agree | Evidence for the error sizes (InBody 770 between-day TEM 1.18% body fat, 0.75-0.88 kg; Velasquez 2026; McLester 2020; water, food, training, creatine and carbohydrate each move a reading 1-2+ kg; Tinsley 2017, 2022; Buck 2023; Bone 2017). The thresholds and the four-signal rule are inference (`research/body-composition-measurement.md`) |
 
-With the week types: put the larger deficit in 3-day weeks and keep 5-6-day weeks near maintenance, as in 4.2. The user's own numbers live in `data/body-composition.md`.
+With the week types: put the larger deficit in 3-day weeks and keep 5-6-day weeks near maintenance, as in 4.2. Scan at the end of a 3-day week or a deload, 48 h or more after lifting; never mid 5-6-day week, when there is no 48-h gap. The user's own numbers, scan conditions and scan dates live in `data/body-composition.md` (sections 6.1 and 8).
 
 ---
 
