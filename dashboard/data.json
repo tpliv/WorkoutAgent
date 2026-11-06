@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-27",
+ "generated": "2026-11-06",
  "units": "lb",
  "groups": [
   {
@@ -3147,19 +3147,20 @@
   },
   {
    "week": "2026-10-26",
-   "sessions": 1,
-   "days": 1,
-   "sets": 14,
-   "reps": 123,
-   "tonnage": 9190,
+   "sessions": 2,
+   "days": 2,
+   "sets": 26,
+   "reps": 245,
+   "tonnage": 15820,
    "muscles": {
     "chest": 4,
-    "back": 3,
-    "shoulders": 6.0,
+    "back": 5.5,
+    "shoulders": 10.0,
     "biceps": 1.5,
-    "triceps": 2.0,
-    "quads": 3,
-    "hams_glutes": 1.5
+    "triceps": 4.0,
+    "quads": 8.5,
+    "hams_glutes": 8.0,
+    "abs": 2.0
    },
    "target": [
     4,
@@ -3180,6 +3181,150 @@
      "delta_pct": 10.6,
      "prev_week": "2026-10-19",
      "trend": "up"
+    },
+    "deadlift": {
+     "e1rm": 164.3,
+     "load": 145.0,
+     "reps": 4,
+     "rpe": null,
+     "date": "2026-10-29",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 145.0,
+     "top_reps": 4,
+     "sets": 3,
+     "delta": 26.3,
+     "delta_pct": 19.1,
+     "prev_week": "2025-04-14",
+     "trend": "restart"
+    },
+    "press": {
+     "e1rm": 67.8,
+     "load": 55.0,
+     "reps": 7,
+     "rpe": null,
+     "date": "2026-10-29",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 55.0,
+     "top_reps": 7,
+     "sets": 1,
+     "delta": -12.4,
+     "delta_pct": -15.5,
+     "prev_week": "2026-10-12",
+     "trend": "down"
+    }
+   }
+  },
+  {
+   "week": "2026-11-02",
+   "sessions": 2,
+   "days": 2,
+   "sets": 26,
+   "reps": 184,
+   "tonnage": 11830,
+   "muscles": {
+    "chest": 2,
+    "back": 8.0,
+    "shoulders": 9.0,
+    "biceps": 6.5,
+    "triceps": 6.0,
+    "quads": 3.0,
+    "hams_glutes": 3.0,
+    "abs": 3.0
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "deadlift": {
+     "e1rm": 157.5,
+     "load": 135.0,
+     "reps": 5,
+     "rpe": null,
+     "date": "2026-11-04",
+     "exercise": "Deadlift (Barbell)",
+     "top_load": 135.0,
+     "top_reps": 5,
+     "sets": 2,
+     "delta": -6.8,
+     "delta_pct": -4.1,
+     "prev_week": "2026-10-26",
+     "trend": "down"
+    },
+    "pullup": {
+     "e1rm": 132.0,
+     "load": 110.0,
+     "reps": 6,
+     "rpe": null,
+     "date": "2026-11-05",
+     "exercise": "Lat Pulldown (Cable)",
+     "top_load": 110.0,
+     "top_reps": 6,
+     "sets": 1,
+     "delta": -30.0,
+     "delta_pct": -18.5,
+     "prev_week": "2026-10-12",
+     "trend": "down"
+    },
+    "press": {
+     "e1rm": 79.3,
+     "load": 70.0,
+     "reps": 4,
+     "rpe": null,
+     "date": "2026-11-04",
+     "exercise": "Overhead Press (Barbell)",
+     "top_load": 70.0,
+     "top_reps": 4,
+     "sets": 5,
+     "delta": 11.5,
+     "delta_pct": 17.0,
+     "prev_week": "2026-10-26",
+     "trend": "up"
+    },
+    "bench": {
+     "e1rm": 126.0,
+     "load": 105.0,
+     "reps": 6,
+     "rpe": null,
+     "date": "2026-11-05",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 105.0,
+     "top_reps": 6,
+     "sets": 2,
+     "delta": -7.0,
+     "delta_pct": -5.3,
+     "prev_week": "2026-10-26",
+     "trend": "down"
+    },
+    "row": {
+     "e1rm": 82.3,
+     "load": 65.0,
+     "reps": 8,
+     "rpe": null,
+     "date": "2026-11-05",
+     "exercise": "Bent Over Row (Barbell)",
+     "top_load": 65.0,
+     "top_reps": 8,
+     "sets": 2,
+     "delta": -8.7,
+     "delta_pct": -9.6,
+     "prev_week": "2026-10-12",
+     "trend": "down"
+    },
+    "squat": {
+     "e1rm": 180.8,
+     "load": 155.0,
+     "reps": 5,
+     "rpe": null,
+     "date": "2026-11-05",
+     "exercise": "Squat (Barbell)",
+     "top_load": 155.0,
+     "top_reps": 5,
+     "sets": 2,
+     "delta": 9.8,
+     "delta_pct": 5.7,
+     "prev_week": "2026-10-12",
+     "trend": "up"
     }
    }
   }
@@ -3188,209 +3333,209 @@
   {
    "key": "squat",
    "name": "Back squat",
-   "last_date": "2026-10-17",
-   "gap_days": 10,
-   "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
-   },
-   "latest": {
-    "e1rm": 171.0,
-    "load": 135.0,
-    "reps": 8,
-    "rpe": null,
-    "date": "2026-10-17",
-    "exercise": "Squat (Barbell)",
-    "top_load": 135.0,
-    "top_reps": 8,
-    "sets": 3,
-    "delta": 0.0,
-    "delta_pct": 0.0,
-    "prev_week": "2025-05-05",
-    "trend": "restart"
-   },
-   "latest_week": "2026-10-12",
-   "best_e1rm": 291.7,
-   "block_change": -63.6
-  },
-  {
-   "key": "bench",
-   "name": "Bench press",
-   "last_date": "2026-10-27",
-   "gap_days": 0,
+   "last_date": "2026-11-05",
+   "gap_days": 1,
    "gap": {
     "key": "normal",
     "label": "Normal"
    },
    "latest": {
-    "e1rm": 133.0,
+    "e1rm": 180.8,
+    "load": 155.0,
+    "reps": 5,
+    "rpe": null,
+    "date": "2026-11-05",
+    "exercise": "Squat (Barbell)",
+    "top_load": 155.0,
+    "top_reps": 5,
+    "sets": 2,
+    "delta": 9.8,
+    "delta_pct": 5.7,
+    "prev_week": "2026-10-12",
+    "trend": "up"
+   },
+   "latest_week": "2026-11-02",
+   "best_e1rm": 291.7,
+   "block_change": -13.3
+  },
+  {
+   "key": "bench",
+   "name": "Bench press",
+   "last_date": "2026-11-05",
+   "gap_days": 1,
+   "gap": {
+    "key": "normal",
+    "label": "Normal"
+   },
+   "latest": {
+    "e1rm": 126.0,
     "load": 105.0,
     "reps": 6,
-    "rpe": 8.0,
-    "date": "2026-10-27",
+    "rpe": null,
+    "date": "2026-11-05",
     "exercise": "Bench Press (Barbell)",
     "top_load": 105.0,
     "top_reps": 6,
-    "sets": 1,
-    "delta": 12.7,
-    "delta_pct": 10.6,
-    "prev_week": "2026-10-19",
-    "trend": "up"
+    "sets": 2,
+    "delta": -7.0,
+    "delta_pct": -5.3,
+    "prev_week": "2026-10-26",
+    "trend": "down"
    },
-   "latest_week": "2026-10-26",
+   "latest_week": "2026-11-02",
    "best_e1rm": 133.0,
-   "block_change": 5.6
+   "block_change": 13.5
   },
   {
    "key": "deadlift",
    "name": "Deadlift",
-   "last_date": "2025-04-14",
-   "gap_days": 561,
+   "last_date": "2026-11-04",
+   "gap_days": 2,
    "gap": {
-    "key": "reduce10",
-    "label": "Reduce 10%"
+    "key": "normal",
+    "label": "Normal"
    },
    "latest": {
-    "e1rm": 138.0,
-    "load": 115.0,
-    "reps": 6,
+    "e1rm": 157.5,
+    "load": 135.0,
+    "reps": 5,
     "rpe": null,
-    "date": "2025-04-14",
+    "date": "2026-11-04",
     "exercise": "Deadlift (Barbell)",
-    "top_load": 115.0,
-    "top_reps": 6,
+    "top_load": 135.0,
+    "top_reps": 5,
     "sets": 2,
-    "delta": -48.0,
-    "delta_pct": -25.8,
-    "prev_week": "2024-09-02",
-    "trend": "restart"
+    "delta": -6.8,
+    "delta_pct": -4.1,
+    "prev_week": "2026-10-26",
+    "trend": "down"
    },
-   "latest_week": "2025-04-14",
+   "latest_week": "2026-11-02",
    "best_e1rm": 186.0,
-   "block_change": -11.5
+   "block_change": -30.0
   },
   {
    "key": "press",
    "name": "Overhead press",
-   "last_date": "2026-10-17",
-   "gap_days": 10,
+   "last_date": "2026-11-05",
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "latest": {
-    "e1rm": 80.2,
-    "load": 65.0,
-    "reps": 7,
+    "e1rm": 79.3,
+    "load": 70.0,
+    "reps": 4,
     "rpe": null,
-    "date": "2026-10-17",
+    "date": "2026-11-04",
     "exercise": "Overhead Press (Barbell)",
-    "top_load": 65.0,
-    "top_reps": 7,
-    "sets": 4,
-    "delta": 10.5,
-    "delta_pct": 15.1,
-    "prev_week": "2025-04-14",
-    "trend": "restart"
+    "top_load": 70.0,
+    "top_reps": 4,
+    "sets": 5,
+    "delta": 11.5,
+    "delta_pct": 17.0,
+    "prev_week": "2026-10-26",
+    "trend": "up"
    },
-   "latest_week": "2026-10-12",
+   "latest_week": "2026-11-02",
    "best_e1rm": 88.7,
-   "block_change": -4.0
+   "block_change": -0.9
   },
   {
    "key": "row",
    "name": "Barbell row",
-   "last_date": "2026-10-18",
-   "gap_days": 9,
+   "last_date": "2026-11-05",
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "latest": {
-    "e1rm": 91.0,
+    "e1rm": 82.3,
     "load": 65.0,
-    "reps": 12,
+    "reps": 8,
     "rpe": null,
-    "date": "2026-10-18",
+    "date": "2026-11-05",
     "exercise": "Bent Over Row (Barbell)",
     "top_load": 65.0,
-    "top_reps": 12,
-    "sets": 3,
-    "delta": -29.3,
-    "delta_pct": -24.4,
-    "prev_week": "2025-05-05",
-    "trend": "restart"
+    "top_reps": 8,
+    "sets": 2,
+    "delta": -8.7,
+    "delta_pct": -9.6,
+    "prev_week": "2026-10-12",
+    "trend": "down"
    },
-   "latest_week": "2026-10-12",
+   "latest_week": "2026-11-02",
    "best_e1rm": 141.8,
-   "block_change": -18.2
+   "block_change": -18.3
   },
   {
    "key": "pullup",
    "name": "Pull-up or pulldown",
-   "last_date": "2026-10-17",
-   "gap_days": 10,
+   "last_date": "2026-11-05",
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "latest": {
-    "e1rm": 162.0,
-    "load": 135.0,
+    "e1rm": 132.0,
+    "load": 110.0,
     "reps": 6,
     "rpe": null,
-    "date": "2026-10-17",
+    "date": "2026-11-05",
     "exercise": "Lat Pulldown (Cable)",
-    "top_load": 135.0,
+    "top_load": 110.0,
     "top_reps": 6,
-    "sets": 3,
-    "delta": 35.3,
-    "delta_pct": 27.9,
-    "prev_week": "2024-04-15",
-    "trend": "restart"
+    "sets": 1,
+    "delta": -30.0,
+    "delta_pct": -18.5,
+    "prev_week": "2026-10-12",
+    "trend": "down"
    },
-   "latest_week": "2026-10-12",
+   "latest_week": "2026-11-02",
    "best_e1rm": 162.0,
-   "block_change": null
+   "block_change": -3.5
   }
  ],
  "consistency": {
-  "current_streak": 3,
+  "current_streak": 4,
   "longest_streak": 10,
-  "weeks_trained_last12": 3,
-  "sessions_last12": 5,
-  "avg_days_active_week": 1.8,
-  "total_sessions": 53,
+  "weeks_trained_last12": 4,
+  "sessions_last12": 8,
+  "avg_days_active_week": 1.9,
+  "total_sessions": 56,
   "first_date": "2024-03-05",
-  "last_date": "2026-10-27"
+  "last_date": "2026-11-05"
  },
  "program": {
-  "pointer": "L2",
+  "pointer": "U1",
   "block_start": "2026-10-27",
-  "block_week": 1,
+  "block_week": 2,
   "deload": false,
-  "processed_through": "2026-10-27"
+  "processed_through": "2026-11-05"
  },
  "tracks": [
   {
    "key": "squat",
    "name": "Back squat",
    "scheme": "top_set",
-   "next_load": 135,
-   "last_h_load": null,
+   "next_load": 155,
+   "last_h_load": 155.0,
    "rep_target": 4,
    "rep_range": null,
    "miss_counter": 0,
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-10-17",
-    "type": "other"
+    "date": "2026-11-05",
+    "type": "H"
    },
-   "gap_days": 10,
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "e1rm_history": [
     {
@@ -3400,6 +3545,15 @@
      "reps": 8,
      "rpe": null,
      "note": "return-to-training block, estimate from 8s with no RPE"
+    },
+    {
+     "date": "2026-11-05",
+     "e1rm": 191.0,
+     "load": 155.0,
+     "reps": 5,
+     "rpe": null,
+     "slot": "U3 + L1 (Race Week 2)",
+     "note": "no RPE logged; e1RM at assumed RPE 8. Amended by hand: race-week title not parsed by the engine"
     }
    ]
   },
@@ -3415,10 +3569,10 @@
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-10-27",
-    "type": "H"
+    "date": "2026-11-05",
+    "type": "V"
    },
-   "gap_days": 0,
+   "gap_days": 1,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3447,21 +3601,21 @@
    "key": "deadlift",
    "name": "Deadlift",
    "scheme": "top_set",
-   "next_load": null,
-   "last_h_load": null,
+   "next_load": 150,
+   "last_h_load": 145.0,
    "rep_target": 4,
    "rep_range": null,
    "miss_counter": 0,
    "stalls": 0,
-   "work_up": true,
+   "work_up": false,
    "last_exposure": {
-    "date": "2025-04-14",
-    "type": "other"
+    "date": "2026-11-04",
+    "type": "V"
    },
-   "gap_days": 561,
+   "gap_days": 2,
    "gap": {
-    "key": "reduce10",
-    "label": "Reduce 10%"
+    "key": "normal",
+    "label": "Normal"
    },
    "e1rm_history": [
     {
@@ -3471,6 +3625,14 @@
      "reps": 6,
      "rpe": null,
      "note": "2024 peak; untrained since April 2025"
+    },
+    {
+     "date": "2026-10-29",
+     "e1rm": 174.0,
+     "load": 145.0,
+     "reps": 4,
+     "rpe": null,
+     "slot": "L2"
     }
    ]
   },
@@ -3478,21 +3640,21 @@
    "key": "press",
    "name": "Overhead press",
    "scheme": "top_set",
-   "next_load": 60,
-   "last_h_load": null,
+   "next_load": 70,
+   "last_h_load": 70.0,
    "rep_target": 4,
    "rep_range": null,
    "miss_counter": 0,
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-10-17",
-    "type": "other"
+    "date": "2026-11-05",
+    "type": "V"
    },
-   "gap_days": 10,
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "e1rm_history": [
     {
@@ -3502,6 +3664,15 @@
      "reps": 7,
      "rpe": null,
      "note": "return-to-training block"
+    },
+    {
+     "date": "2026-11-04",
+     "e1rm": 84.0,
+     "load": 70.0,
+     "reps": 4,
+     "rpe": null,
+     "slot": "U2 + L3 (Race Week 1)",
+     "note": "no RPE logged; e1RM at assumed RPE 8. Amended by hand: race-week title not parsed by the engine"
     }
    ]
   },
@@ -3520,13 +3691,13 @@
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-10-18",
-    "type": "other"
+    "date": "2026-11-05",
+    "type": "V"
    },
-   "gap_days": 9,
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "e1rm_history": [
     {
@@ -3554,13 +3725,13 @@
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-10-17",
-    "type": "other"
+    "date": "2026-11-05",
+    "type": "V"
    },
-   "gap_days": 10,
+   "gap_days": 1,
    "gap": {
-    "key": "hold",
-    "label": "Hold the top-set load"
+    "key": "normal",
+    "label": "Normal"
    },
    "e1rm_history": [
     {
@@ -3577,16 +3748,6 @@
  "track_log": [
   {
    "date": "2026-10-27",
-   "text": "2026-10-27 Full A Bench press: top 105 x 6 -> 6 @ 8: success 1 of 2; hold 105, +5 after the next one",
-   "kind": "decision"
-  },
-  {
-   "date": "2026-10-27",
-   "text": "Flag: no RPE logged on the Bench press top set (105 x 6); treated as RPE 8",
-   "kind": "flag"
-  },
-  {
-   "date": "2026-10-27",
    "text": "2026-10-27 Full A Bench press, amended by hand: the lifter reported RPE 8 on 105 x 6. Six reps at RPE 8 is at least 4 reps at RPE 6, the \"4 reps at RPE 7 or lower\" row of §5: big step +5 to 110 at once, step counter cleared (was: success 1 of 2, hold 105). The engine does not yet credit reps above the target.",
    "kind": "decision"
   },
@@ -3594,6 +3755,56 @@
    "date": "2026-10-27",
    "text": "2026-10-27 Full A squat and barbell row: rack taken; leg press and DB row substituted and not counted (§9). Squat and row tracks unchanged.",
    "kind": "decision"
+  },
+  {
+   "date": "2026-10-27",
+   "text": "2026-10-27 Accessory: lateral raise 15 -> 20 lb per dumbbell (logged 20 x 12, 14, 12, 12 on 27 Oct, all in range; §11 records the load used).",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-10-29 L2 Deadlift: top 145 x 4 -> 4 @ 8: +5 to 150",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "Flag: no RPE logged on the Deadlift top set (145 x 4); treated as RPE 8",
+   "kind": "flag"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-06 Race week (4-5 Nov), amended by hand. The workout titles (\"Race Week 1 - Tue (U2 + L3)\", \"Race Week 2 - Wed (U3 + L1)\") do not start with a slot, so the engine read them as \"other\". They are the rotation's U2, L3, U3 and L1 at race-week volume, so they count as those half-sessions (`guide/03` §4.4: merged sets dropped, not postponed). Pointer U2 -> U1 (U1, planned Fri 6 Nov, not done).",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-05 L1 (race week) Back squat: top 155 x 5, no RPE (planned 135 x 4). First barbell squat in 19 days, so the 15-21-day row of §8 applies: hold the load lifted, no increment. Track 135 -> 155, back-offs 145, V 140. If 155 x 4 comes in at RPE 7 or lower next time, take the +10 big step (§5).",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-04 U2 (race week) Overhead press: top 70 x 4, no RPE (planned 60 x 4), then 65 x 5 x 3. Treated as RPE 8: success 1 of 2 at 70, step counter 1. Track 60 -> 70, back-offs 65, V 65.",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-04/05 Bench 105 x 6 x 2, deadlift 135 x 5, 4, row 65 x 8 x 2: V exposures, tracks unchanged (bench 110, deadlift 150, row 70).",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-04/05 Pulldown 100 x 5, 6, 6 and 110 x 5, 6 on a different gym's stack: not comparable with the home stack, so the pull-up track stays at 125. Logged as V for the gap clock.",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-06 Accessories: incline DB curl 25 -> 30 lb (standing curl 35 x 12, 10, 8 on 4 Nov; incline runs lighter). Reverse lunge 30 -> 32.5 lb (30 x 12 per leg x 3 on 29 Oct, top of 8-12). Lateral raise holds 20 (16, 18; range 12-20). Overhead triceps extension holds 25 (25 x 8, 27.5 x 8, under the 10-15 range).",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "Flag: no RPE logged on any set from 29 Oct to 5 Nov. Every decision above assumes RPE 8.",
+   "kind": "flag"
   }
  ],
  "unmapped": [

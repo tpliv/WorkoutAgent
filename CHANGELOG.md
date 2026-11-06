@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-11-06
+
+- Synced 29 Oct (L2) and race week (4-5 Nov). Loads going forward: squat
+  135 -> 155 (155 x 5 logged; 19-day gap, so hold the load lifted, no
+  increment), overhead press 60 -> 70 (70 x 4 logged, step counter 1),
+  deadlift work-up done at 145 x 4 -> 150. Bench 110, row 70 and pulldown 125
+  unchanged (race-week pulldowns were on another gym's stack). Incline DB curl
+  25 -> 30, reverse lunge 30 -> 32.5. No RPE logged on any set; all decisions
+  assume RPE 8 (`data/track-log.md`). Pointer U1. Routines pushed.
+- `tools/update_tracks.py` reads a lower-upper pair anywhere in a workout title
+  ("U3 + L1 (merged)", "Race Week 2 - Wed (U3 + L1)") as a merged session of
+  those halves. Before, "U3 + L1 (merged)" read as U3 alone and race-week titles
+  as no slot, which left the pointer at U2 and the squat and press tracks
+  unread. Tests added. Why: shifted merges (`guide/03` §4.4) are how the
+  rotation runs when a week starts mid-pass.
+
 ## 2026-11-02
 
 - Hevy routine "Race Week 1 - Tue (U2 + L3)" (folder Race Week) rewritten

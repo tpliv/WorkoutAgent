@@ -137,7 +137,7 @@ gives the ladder. After that first session the track holds the load you found.
 ## How the rules are applied
 
 `update_tracks.py` reads the slot from the workout title (L1 ... U3, Full A,
-Full B, Full C; the routine titles start with it) and matches lifts through
+Full B, Full C; the routine titles start with it), or a lower-upper pair anywhere in the title ("U3 + L1 (merged)" is a merged U3 and L1; the pointer moves past L1) and matches lifts through
 `lift_aliases.json`. In an H-slot session the top set is the heaviest working
 set of the lift. The decision follows section 5 of
 `templates/progression-tracks.md` exactly, with these implementation choices:

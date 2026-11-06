@@ -107,8 +107,9 @@ class RotationFile(unittest.TestCase):
         # A structural change to data/tracks.json (new track, accessory, or field) needs the fixture refreshed.
         self.assertEqual(set(TRACKS["tracks"]), set(LIVE_TRACKS["tracks"]))
         self.assertEqual(set(TRACKS["accessories"]), set(LIVE_TRACKS["accessories"]))
+        transient = {"work_up"}  # update_tracks.py drops it once the work-up has found a load
         for lift, t in LIVE_TRACKS["tracks"].items():
-            self.assertEqual(set(TRACKS["tracks"][lift]), set(t), lift)
+            self.assertEqual(set(TRACKS["tracks"][lift]) - transient, set(t) - transient, lift)
 
 
 class RenderRoutines(unittest.TestCase):
@@ -237,6 +238,27 @@ class UpdateRules(unittest.TestCase):
         self.assertEqual(upd.parse_slot("FULL C (deload)"), "Full C")
         self.assertIsNone(upd.parse_slot("Evening workout"))
         self.assertIsNone(upd.parse_slot("L10 something"))
+
+    def test_pair_titles_are_merged_sessions(self):
+        self.assertEqual(upd.parse_slot("U3 + L1 (merged)"), "U3+L1")
+        self.assertEqual(upd.parse_slot("Race Week 1 - Tue (U2 + L3)"), "U2+L3")
+        self.assertEqual(upd.parse_slot("Full A (L1 + U1)"), "Full A")
+        self.assertEqual(upd.parse_slot("L1+U1"), "Full A")
+        self.assertEqual(upd.parse_slot("L1 + L2 test"), "L1")  # two lowers is not a merge; prefix wins
+        self.assertTrue(upd.is_merged("U3+L1"))
+        self.assertEqual(upd.advance_pointer("U3+L1", ROTATION), "U1")
+        self.assertEqual(upd.advance_pointer("U2+L3", ROTATION), "U3")
+
+    def test_pair_session_classifies_each_half(self):
+        tr = fresh_tracks()
+        run_update(tr, [
+            ("2026-10-27", "Race Week 2 - Wed (U3 + L1)", "Squat (Barbell)", 0, "normal", 135, 4, 8),
+            ("2026-10-27", "Race Week 2 - Wed (U3 + L1)", "Bench Press (Barbell)", 0, "normal", 90, 6, ""),
+        ])
+        self.assertEqual(tr["tracks"]["squat"]["last_exposure"], {"date": "2026-10-27", "type": "H"})
+        self.assertEqual(tr["tracks"]["squat"]["top_set_lb"], 140)
+        self.assertEqual(tr["tracks"]["bench"]["last_exposure"], {"date": "2026-10-27", "type": "V"})
+        self.assertEqual(tr["pointer"], "U1")
 
     def test_logged_kg_reads_back_as_exact_pounds(self):
         self.assertEqual(upd.kg_to_lb(61.24), 135.0)

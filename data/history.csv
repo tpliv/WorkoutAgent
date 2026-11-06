@@ -699,3 +699,46 @@ date,workout_title,exercise,set_index,set_type,weight_kg,reps,rpe,notes,source,w
 2026-10-27,Full A,Leg Press Horizontal (Machine),0,normal,81.65,7,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
 2026-10-27,Full A,Leg Press Horizontal (Machine),1,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
 2026-10-27,Full A,Leg Press Horizontal (Machine),2,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
+2026-10-29,L2 Lower B,Deadlift (Barbell),0,normal,52.16,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Deadlift (Barbell),1,normal,61.24,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Deadlift (Barbell),2,normal,65.77,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Deadlift (Barbell),3,normal,65.77,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Deadlift (Barbell),4,normal,61.24,5,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Overhead Press (Barbell),1,normal,24.95,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Overhead Press (Barbell),2,normal,24.95,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Overhead Press (Barbell),3,normal,24.95,7,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),0,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),1,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),2,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
+2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),0,normal,15.88,12,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),1,normal,15.88,10,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),2,normal,15.88,8,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),0,warmup,61.24,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),1,normal,61.24,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),2,normal,61.24,4,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),0,normal,45.36,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),1,normal,45.36,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),2,normal,45.36,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),0,warmup,20.41,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),1,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),3,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),4,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),0,warmup,29.48,3,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),1,normal,47.63,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),2,normal,47.63,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bent Over Row (Barbell),0,normal,29.48,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bent Over Row (Barbell),1,normal,29.48,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lat Pulldown (Cable),0,normal,49.9,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lat Pulldown (Cable),1,normal,49.9,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lateral Raise (Dumbbell),0,normal,9.07,16,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lateral Raise (Dumbbell),1,normal,9.07,18,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Overhead Press (Barbell),0,normal,24.95,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Overhead Press (Barbell),1,normal,24.95,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),0,warmup,20.41,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),1,warmup,43.09,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),2,normal,70.31,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),3,normal,61.24,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),0,normal,11.34,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2

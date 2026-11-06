@@ -40,6 +40,9 @@ session logged after each track's last processed exposure:
 
 Slots are read from the workout title: L1, U1, L2, U2, L3, U3, Full A, Full B,
 Full C (case-insensitive prefix, so Hevy routines titled 'L1 Lower A' work).
+A lower-upper pair anywhere in the title ('U3 + L1 (merged)', 'Race Week 2 -
+Wed (U3 + L1)') is a merged session of those two halves: a lift is H or V by
+either half, and the pointer moves past the second.
 Lifts are matched to exercise names through tools/lift_aliases.json.
 
 Units: tracks.json is in pounds. history.csv keeps weight_kg exactly as the
@@ -73,7 +76,20 @@ def norm(s):
     return re.sub(r"\s+", " ", (s or "").strip().lower())
 
 
+PAIR_RE = re.compile(r"\b([LU][123])\s*\+\s*([LU][123])\b", re.I)
+CANONICAL_MERGES = {("L1", "U1"): "Full A", ("L2", "U2"): "Full B", ("L3", "U3"): "Full C"}
+
+
 def parse_slot(title):
+    """Slot from a workout title. A pair anywhere in the title ("U3 + L1
+    (merged)", "Race Week 2 - Wed (U3 + L1)") is a merged session of those two
+    half-sessions; the three canonical pairs read as Full A, B, C. Otherwise the
+    title must start with a slot."""
+    p = PAIR_RE.search(title or "")
+    if p:
+        a, b = p.group(1).upper(), p.group(2).upper()
+        if a[0] != b[0]:
+            return CANONICAL_MERGES.get((a, b)) or f"{a}+{b}"
     m = SLOT_RE.match(title or "")
     if not m:
         return None
@@ -82,7 +98,14 @@ def parse_slot(title):
 
 
 def is_merged(slot):
-    return bool(slot) and slot.startswith("Full")
+    return bool(slot) and (slot.startswith("Full") or "+" in slot)
+
+
+def halves(slot, rotation):
+    """The half-sessions a slot covers, in the order trained."""
+    if slot.startswith("Full"):
+        return rotation["merged"][slot]
+    return slot.split("+")
 
 
 def round_to(x, step):
@@ -258,10 +281,7 @@ def apply_stall(track, reset):
 
 def advance_pointer(slot, rotation):
     order = rotation["slots"]
-    if is_merged(slot):
-        last = rotation["merged"][slot][-1]
-    else:
-        last = slot
+    last = halves(slot, rotation)[-1]
     return order[(order.index(last) + 1) % len(order)]
 
 
@@ -280,16 +300,19 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
         session_exposed = set()
         main_lift_order = []
         if slot:
-            for ex in rotation["sessions"].get(slot, {}).get("exercises", []):
-                if ex.get("role") == "H":
-                    main_lift_order.append(ex["track"])
+            parts = [slot] if slot in rotation["sessions"] else halves(slot, rotation)
+            for part in parts:
+                for ex in rotation["sessions"].get(part, {}).get("exercises", []):
+                    if ex.get("role") == "H":
+                        main_lift_order.append(ex["track"])
         for lift, t in tracks["tracks"].items():
             lift_rows = [r for r in rows if match.get(lift, lambda n: False)(r.get("exercise"))]
             sets = [r for r in working_sets(lift_rows) if r["_w"] is not None or lift == "pullup"]
             if not sets:
                 continue
             session_exposed.add(lift)
-            kind = "H" if slot in t.get("h_slots", []) else "V" if slot in t.get("v_slots", []) else "other"
+            covered = {slot} | (set(halves(slot, rotation)) if slot else set())
+            kind = "H" if covered & set(t.get("h_slots", [])) else "V" if covered & set(t.get("v_slots", [])) else "other"
             t["last_exposure"] = {"date": date, "type": kind}
             if kind != "H":
                 continue

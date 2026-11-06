@@ -1,18 +1,18 @@
 {
   "_comment": "Machine-readable state of the six progression tracks (templates/progression-tracks.md). tools/update_tracks.py rewrites it from data/history.csv; tools/hevy_push_routines.py reads it to fill routine loads. data/track-state.md is the narrative companion; its table is regenerated from this file with `update_tracks.py --write-md`. Units: lb (the Hevy app is set to lb; the API and data/history.csv carry kg, and the tools convert). top_set_lb is the planned load for the NEXT heavy exposure (section 5 rule already applied); last_h_load_lb is what was actually lifted at the last heavy exposure (the gap table in section 8 holds or reduces from that). A null top_set_lb with work_up=true means: work up on the first heavy exposure and log the load found. Bench and press have no fractional plates: increment_every = 2 means +5 lb after every second successful top set; step_counter counts the successes so far.",
-  "updated": "2026-10-27",
+  "updated": "2026-11-06",
   "units": "lb",
-  "pointer": "L2",
+  "pointer": "U1",
   "block_start": "2026-10-27",
-  "block_week": 1,
+  "block_week": 2,
   "deload": false,
   "fractional_plates": false,
   "tracks": {
     "squat": {
       "name": "Back squat",
       "scheme": "top_set",
-      "top_set_lb": 135,
-      "last_h_load_lb": null,
+      "top_set_lb": 155,
+      "last_h_load_lb": 155.0,
       "rep_target": 4,
       "increment_lb": 5,
       "big_increment_lb": 10,
@@ -22,8 +22,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2026-10-17",
-        "type": "other"
+        "date": "2026-11-05",
+        "type": "H"
       },
       "e1rm_history": [
         {
@@ -33,6 +33,15 @@
           "reps": 8,
           "rpe": null,
           "note": "return-to-training block, estimate from 8s with no RPE"
+        },
+        {
+          "date": "2026-11-05",
+          "e1rm": 191.0,
+          "load": 155.0,
+          "reps": 5,
+          "rpe": null,
+          "slot": "U3 + L1 (Race Week 2)",
+          "note": "no RPE logged; e1RM at assumed RPE 8. Amended by hand: race-week title not parsed by the engine"
         }
       ],
       "h_slots": [
@@ -60,8 +69,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2026-10-27",
-        "type": "H"
+        "date": "2026-11-05",
+        "type": "V"
       },
       "e1rm_history": [
         {
@@ -94,10 +103,9 @@
     "deadlift": {
       "name": "Deadlift",
       "scheme": "top_set",
-      "top_set_lb": null,
-      "work_up": true,
+      "top_set_lb": 150,
       "work_up_note": "Warm up, then 95 x 4, 115 x 4, 135 x 4, 145 x 4, +10 lb per set until 4 reps feel like RPE 8. Stop there; that load is the track load.",
-      "last_h_load_lb": null,
+      "last_h_load_lb": 145.0,
       "rep_target": 4,
       "increment_lb": 5,
       "big_increment_lb": 10,
@@ -107,8 +115,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2025-04-14",
-        "type": "other"
+        "date": "2026-11-04",
+        "type": "V"
       },
       "e1rm_history": [
         {
@@ -118,6 +126,14 @@
           "reps": 6,
           "rpe": null,
           "note": "2024 peak; untrained since April 2025"
+        },
+        {
+          "date": "2026-10-29",
+          "e1rm": 174.0,
+          "load": 145.0,
+          "reps": 4,
+          "rpe": null,
+          "slot": "L2"
         }
       ],
       "h_slots": [
@@ -132,12 +148,12 @@
     "press": {
       "name": "Overhead press",
       "scheme": "top_set",
-      "top_set_lb": 60,
-      "last_h_load_lb": null,
+      "top_set_lb": 70,
+      "last_h_load_lb": 70.0,
       "rep_target": 4,
       "increment_lb": 5,
       "increment_every": 2,
-      "step_counter": 0,
+      "step_counter": 1,
       "big_increment_lb": 5,
       "round_step_lb": 5,
       "backoff_pct": 0.93,
@@ -145,8 +161,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2026-10-17",
-        "type": "other"
+        "date": "2026-11-05",
+        "type": "V"
       },
       "e1rm_history": [
         {
@@ -156,6 +172,15 @@
           "reps": 7,
           "rpe": null,
           "note": "return-to-training block"
+        },
+        {
+          "date": "2026-11-04",
+          "e1rm": 84.0,
+          "load": 70.0,
+          "reps": 4,
+          "rpe": null,
+          "slot": "U2 + L3 (Race Week 1)",
+          "note": "no RPE logged; e1RM at assumed RPE 8. Amended by hand: race-week title not parsed by the engine"
         }
       ],
       "h_slots": [
@@ -182,8 +207,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2026-10-18",
-        "type": "other"
+        "date": "2026-11-05",
+        "type": "V"
       },
       "e1rm_history": [
         {
@@ -220,8 +245,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2026-10-17",
-        "type": "other"
+        "date": "2026-11-05",
+        "type": "V"
       },
       "e1rm_history": [
         {
@@ -262,9 +287,9 @@
       "note": "or DB lateral raise at the same load"
     },
     "Incline DB curl": {
-      "weight_lb": 25,
+      "weight_lb": 30,
       "step": "+2.5 lb per dumbbell",
-      "note": "per dumbbell"
+      "note": "per dumbbell; standing DB curl 35 x 12, 10, 8 on 4 Nov 2026 (incline runs lighter)"
     },
     "Preacher or EZ-bar curl": {
       "weight_lb": null,
@@ -307,9 +332,9 @@
       "note": "choose on the day"
     },
     "Reverse lunge or split squat": {
-      "weight_lb": 30,
+      "weight_lb": 32.5,
       "step": "+2.5 lb per dumbbell",
-      "note": "per dumbbell"
+      "note": "per dumbbell; 30 x 12 per leg x 3 on 29 Oct 2026"
     },
     "Standing calf raise": {
       "weight_lb": null,
@@ -342,5 +367,5 @@
       "note": ""
     }
   },
-  "processed_through": "2026-10-27"
+  "processed_through": "2026-11-05"
 }
