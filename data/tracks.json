@@ -51,7 +51,16 @@
       "v_slots": [
         "L3",
         "Full C"
-      ]
+      ],
+      "unrated_streak": 0,
+      "rep_out_due": false,
+      "last_step": "hold",
+      "regain": {
+        "exit_e1rm_lb": 263,
+        "until": "2027-01-09",
+        "max_step_lb": 10,
+        "basis": "90% of the 2024 best e1RM 292 lb (250 x 5, 15 Apr 2024); progression-tracks.md 5.1"
+      }
     },
     "bench": {
       "name": "Bench press",
@@ -98,7 +107,10 @@
       "v_slots": [
         "U3",
         "Full C"
-      ]
+      ],
+      "unrated_streak": 0,
+      "rep_out_due": false,
+      "last_step": "big"
     },
     "deadlift": {
       "name": "Deadlift",
@@ -143,7 +155,17 @@
       "v_slots": [
         "L3",
         "Full C"
-      ]
+      ],
+      "unrated_streak": 1,
+      "rep_out_due": false,
+      "last_step": "step",
+      "caution": {
+        "until": "2027-01-09",
+        "big_step_needs_rating": true,
+        "no_consecutive_big_steps": true,
+        "max_step_lb": 10,
+        "basis": "progression-tracks.md 5.2"
+      }
     },
     "press": {
       "name": "Overhead press",
@@ -190,7 +212,10 @@
       "v_slots": [
         "U3",
         "Full C"
-      ]
+      ],
+      "unrated_streak": 1,
+      "rep_out_due": false,
+      "last_step": "hold"
     },
     "row": {
       "name": "Barbell row",
@@ -227,7 +252,14 @@
       "v_slots": [
         "U3",
         "Full C"
-      ]
+      ],
+      "regain": {
+        "exit_e1rm_lb": 128,
+        "until": "2027-01-09",
+        "big_increment_lb": 10,
+        "first_set_reps": 11,
+        "basis": "90% of the 2024 best e1RM 142 lb (115 x 7, 15 Apr 2024); progression-tracks.md 5.1"
+      }
     },
     "pullup": {
       "name": "Pull-up or pulldown",
