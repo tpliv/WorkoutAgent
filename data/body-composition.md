@@ -63,13 +63,32 @@ Maintenance estimate: about 2,850-3,000 kcal/day. RMR is about 1,830-1,850 kcal 
 | Carbohydrate | about 290 g | about 325 g |
 
 - Average deficit about 300-400 kcal/day, inside the about 500 kcal/day limit in `guide/06-recovery-nutrition-cardio.md` section 4.
-- Run days: add about 100 kcal per mile, mostly carbohydrate.
-- Count alcohol in the totals.
+- 4-day weeks: use the 3-day setting (2,500) until a 4-day figure is set (added 2026-11-06).
+- Run days: add about 100 kcal per mile, mostly carbohydrate. Runs over about 75 min or 8 miles: about 120 kcal per mile, closer to the measured cost at 82 kg. Never skip the add-back on a run of 5 miles or more; lift-plus-run days are the lowest energy-availability days of the week (`research/energy-availability-and-fueling.md` KQ2; estimated 27-33 kcal/kg FFM against a concern range of about 9-25).
+- Carbohydrate at least 3 g/kg (about 250 g) every day, rest days included. Before the 7:30 am sessions, a small carbohydrate snack with some protein, from the day's totals (`guide/06` section 4.5).
+- Count alcohol in the totals. Log each drink in MyFitnessPal as it is drunk (beverage, size, count). Default ceiling 3 drinks per occasion; none the night before a race or long run (`guide/06` section 4.4).
 - Creatine monohydrate 3-5 g/day.
 - Protein in 4 feedings of about 45 g.
 - Fat target and carbohydrate split are rules of thumb, not cited targets.
 
 Tracking app: MyFitnessPal (signed up 2026-10-21). Set the goal manually rather than accepting the app's suggestion: 2,500 kcal as the default (3-day weeks), raised to 2,700 in 5-6-day weeks. Macro goals: protein about 29%, fat about 25%, carbohydrate about 46% of calories (180 g / 70 g / 290 g at 2,500). Do not let the app add back exercise calories from lifting or steps; the plan already counts them. Add back about 100 kcal per mile run.
+
+### 5.1 Race fueling: 10 miles, Sun 8 Nov 2026 (added 2026-11-06)
+
+Source: `research/energy-availability-and-fueling.md` KQ3-KQ5 (inference from the AND/DC/ACSM 2016 position stand and Hawley 1997). Grams for 82 kg. Use only foods and products already tried.
+
+| Day | Calories | Carbohydrate | Other |
+|---|---|---|---|
+| Fri 6 Nov | Plan (2,500) | Plan, not below it | Easy or no running |
+| Sat 7 Nov | Maintenance, about 2,900-3,000 | About 5-6 g/kg (410-490 g): pasta, rice, bread, potatoes, fruit, juice. Fat lower (about 50 g) to fit; protein 180 g | No alcohol. Less fibre at the evening meal |
+| Sun 8 Nov, 2-3 h before | Part of the day | About 1-2 g/kg (80-160 g), familiar foods | Caffeine only within `guide/06` section 4.1 (about 3 mg/kg, at most 200 mg, about 60 min before) |
+| Sun 8 Nov, during | - | Finishing under about 75 min: a mouth rinse or a few sips of sports drink. Over 75 min: 30-60 g/h (for example one gel at 30-40 min) | |
+| Sun 8 Nov, total | Base + about 1,000 (about 3,500), more if hungry | After: a normal meal with 25-40 g protein plus carbohydrate | Walk, no cool-down jog (`guide/03` section 4.7). Fluids and food before any alcohol; at most 3 drinks |
+| Mon 9 Nov | Maintenance, about 2,900-3,000 | 4-5 g/kg (330-410 g) | Rest or walking |
+| Tue 10 Nov | Maintenance | Plan | Upper-body session |
+| Wed 11 Nov | Back to the plan (2,500 + add-backs) | Plan | First lower session since the race (`data/weekly-plan.md`) |
+
+Skipping the race-day extra food would put energy availability at about 18-21 kcal/kg FFM, inside the concern range, for that day.
 
 ## 6. Adjustment rules
 

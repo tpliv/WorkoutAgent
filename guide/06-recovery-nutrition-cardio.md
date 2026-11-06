@@ -1,6 +1,6 @@
 # 06. Recovery, fatigue management, sleep, nutrition, and cardio
 
-Last updated: 2026-10-21
+Last updated: 2026-11-06 (4.3 measuring progress; 4.4 alcohol; 4.5 energy availability and fueling runs; 5.3 running as your sport; section 8 additions). Earlier: 2026-10-21
 
 **Revision 2026-10-21:** this chapter was corrected against the primary sources. Several authors, study counts and claims were fixed. The caffeine dose was lowered to fit adult safety limits. Most "secondary" flags were removed. Details: `research/recovery-nutrition-cardio.md`, section "Addendum 2026-10-21: primary-source verification".
 
@@ -174,6 +174,54 @@ Added 2026-10-21. Source: `research/body-recomposition.md` (KQ1, KQ2).
 
 With the week types: put the larger deficit in 3-day weeks and keep 5-6-day weeks near maintenance, as in 4.2. Scan at the end of a 3-day week or a deload, 48 h or more after lifting; never mid 5-6-day week, when there is no 48-h gap. The user's own numbers, scan conditions and scan dates live in `data/body-composition.md` (sections 6.1 and 8).
 
+### 4.4 Alcohol
+
+Added 2026-11-06. Source: `research/alcohol-and-training.md`. One US standard drink = 14 g of alcohol; for an 82-kg lifter, 0.5 g/kg is about 3 drinks and 1 g/kg about 6.
+
+| Finding | Numbers | Source |
+|---|---|---|
+| Heavy drinking after training lowers muscle protein synthesis | 1.5 g/kg (about 9 drinks) from 1 h after a lift-and-cardio session: MPS 24% lower with protein, 37% lower with carbohydrate, both against protein alone. The only human study; no data below this dose | Parr 2014, PLoS One (full text) |
+| Moderate drinking after damaging exercise | 1 g/kg (about 6 drinks) enlarged force loss at 36 h (isometric -34% vs -12%); 0.5 g/kg (about 3) had no effect. In trained people doing familiar sessions, about 4-8 drinks showed no effect | Barnes 2010, 2011, 2012; Haugvad 2014; Levitt 2020 |
+| Next morning | About 5 drinks cut severe-intensity endurance 11%; maximal strength and jumps unchanged | Shaw 2022 |
+| Sleep | REM sleep falls even at 0.5 g/kg or less, more with dose | Gardiner 2025 (27 studies) |
+| Energy balance | 7.1 kcal/g. People do not eat less to make room for it, and food intake rose about 82 kcal per drinking occasion. Six weekend drinks plus the extra food are about 760 kcal, a quarter to a third of the weekly deficit | Kwok 2019 |
+| What is not shown | That 2-3 weekend drinks limit muscle or strength gains; any MPS effect when drinking starts hours after training | Gaps in the note |
+
+Rules (inference):
+
+| Situation | Rule |
+|---|---|
+| Any occasion | Default ceiling 3 drinks. Log each drink in the food tracker; it counts toward the calorie totals |
+| After lifting | Protein meal first (25-40 g), and start several hours after the session |
+| Within 48 h after a hard lower-body session, a race, or a new or unusually damaging session | Not 6 or more |
+| Night before a race, long run or key session | None |
+| 3-day weeks | Drink on nights before rest days. After more than 3 drinks, leave 48 h before the next lower session |
+| 5-6-day weeks | Few rest days: hold to 3 per occasion; never heavily on the evening of the hardest lower session. Put drinking nights before a rest day or an upper day |
+
+### 4.5 Energy availability and fueling runs
+
+Added 2026-11-06. Source: `research/energy-availability-and-fueling.md`. Energy availability (EA) = food intake minus exercise energy, per kg of fat-free mass. Steps and daily life do not count as exercise in it.
+
+| Finding | Numbers | Source |
+|---|---|---|
+| Thresholds in men | Concern at roughly 9-25 kcal/kg FFM/day; the male threshold is not validated and the longest study in men lasted 14 days | Mountjoy 2023 IOC REDs consensus (full text); Jurov 2022; Areta 2021 |
+| This lifter's estimate | Rest days about 36-39; lifting days about 29-36; lift-plus-run days about 27-33; weekly average about 34-36. Race day about 32-35 with the extra food, about 18-21 without it | KQ2 arithmetic (68.5 kg FFM; lifting 3.5-6 MET; running about 120-131 kcal/mile gross) |
+| Running cost | About 110-118 kcal/mile net at 82 kg, so the plan's 100 kcal/mile is 10-25% low | KQ2 |
+| Carbohydrate | Under 3 g/kg/day raised bone-resorption markers in male endurance athletes. Fasted lifting after 8 h or more without food, in sessions over 45 min, performed worse than fed | IOC 2023; King 2022; Henselmans 2022 |
+| Race fueling (10 miles) | Normal glycogen stores suffice for 60-90 min; 1-2 g/kg carbohydrate 2-3 h before; 30-60 g/h only beyond about 75 min | AND/DC/ACSM 2016 position stand (full text); Hawley 1997 |
+
+Rules (inference):
+
+| Rule | 3-day week | 5-6-day week |
+|---|---|---|
+| Carbohydrate floor | At least 3 g/kg every day, rest days included | Same |
+| Early-morning lifting | A small carbohydrate snack with some protein before sessions after an overnight fast, from the day's totals | Same |
+| Run add-back | Easy runs: about 100 kcal/mile, mostly carbohydrate. Runs over about 75 min or 8 miles: about 120 kcal/mile. Never skip it on runs of 5 miles or more | Same |
+| Lift plus run on one day | Do not go below base plus the run add-back: these are the lowest-EA days | Same |
+| Race week | Maintenance the day before and the day after the race; race day base plus about 1,000 kcal; no alcohol the night before | Same |
+
+Watch for signs of low energy availability: lower libido, fewer morning erections, unusual fatigue, frequent illness, dizziness on standing, poor sleep, falling performance at the same RPE, and bone pain that worsens with running. Section 8 says when to get checked. The lifter's day-by-day race plan is in `data/body-composition.md` section 5.1.
+
 ---
 
 ## 5. Concurrent training: adding cardio without losing lifting gains
@@ -277,6 +325,9 @@ This guide gives general training guidance only. See a physician, sports-medicin
 - You plan a calorie deficit larger than about 500 kcal/day, have a history of disordered eating, or have a medical condition affected by diet, protein intake, or creatine (kidney disease, for example, or medication interactions).
 - You use or plan to use caffeine and have a heart condition or heart rhythm problem, high blood pressure, or an anxiety or sleep disorder; are pregnant; or take medication. The 200 mg single-dose and 400 mg/day figures in section 4.1 apply to healthy, non-pregnant adults only. Palpitations, chest pain, or feeling faint after caffeine are a reason to stop and get checked.
 - You are starting a program after a long break, an injury, or a cardiovascular event, or you are over 40 and have not had a recent check-up and plan vigorous cardio.
+- Drinking often goes past 5 drinks on one occasion, cutting down is hard, or drinking affects work, sleep or mood. Do not mix alcohol with sleep medication or other sedatives (section 4.4).
+- Two or more signs of low energy availability (section 4.5) persist for more than 2-4 weeks, or bone pain gets worse with running. Bone pain on running should be checked promptly; bone stress injuries are a primary REDs sign, and the diagnosis needs blood tests and a clinician.
+- Low-back pain during or after deadlifting persists past a few days (`templates/progression-tracks.md`, regain section).
 
 ---
 
@@ -285,6 +336,10 @@ This guide gives general training guidance only. See a physician, sports-medicin
 Research notes:
 
 - `research/body-recomposition.md`: KQ1, KQ2 (section 4.3).
+- `research/body-composition-measurement.md` (2026-11-06): KQ1-KQ4 (section 4.3, measuring progress: Velasquez 2026; McLester 2020; Tinsley 2017, 2022; Buck 2023; Bone 2017; Potter 2022).
+- `research/alcohol-and-training.md` (2026-11-06): KQ1-KQ5 (section 4.4: Parr 2014; Barnes 2010-2012; Haugvad 2014; Levitt 2020; Shaw 2022; Gardiner 2025; Kwok 2019).
+- `research/energy-availability-and-fueling.md` (2026-11-06): KQ1-KQ5 (section 4.5: Mountjoy 2023 IOC REDs consensus; Jurov 2022; Areta 2021; AND/DC/ACSM 2016; King 2022; Henselmans 2022).
+- `research/running-and-lifting.md` (2026-11-06): KQ1-KQ5 (section 5.3: Petré 2021; Denadai 2017; Eihara 2022; Llanos-Lagos 2024; Boccia 2017, 2018; Wang 2025; Pritchard 2018, 2019).
 - `research/recovery-nutrition-cardio.md`: KQ1 (section 1), KQ2 (section 2), KQ3 (section 3), KQ4 (section 4), KQ5 (section 5), KQ6 (section 6), KQ7 (section 7), and "Addendum 2026-10-21: primary-source verification" (all sections).
 - `research/exercise-selection-and-session-design.md`: KQ5 (acute stretching data in section 6).
 - Program defaults (RIR, per-session set ranges, volume-cut and deload rules, cardio rule): design spine and `research/frequency-volume-intensity-evidence.md` via chapter 03.
