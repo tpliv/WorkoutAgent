@@ -208,6 +208,20 @@ Program-wide cardio rule (spine rule 8): 2-3 sessions per week toward 150 min mo
 
 Gaps: ACSM-specific figures were not retrieved; WHO figures are used.
 
+### 5.3 If running is your sport
+
+Added 2026-11-06. Source: `research/running-and-lifting.md`. The modality row above is for cardio added to serve the lifting. A lifter who runs by choice keeps running; the question is placement, not substitution.
+
+| Question | Answer | Evidence |
+|---|---|---|
+| Does running at 2-4 runs a week cost lifting gains? | Little, if runs and lifts are separate sessions. In trained lifters, lower-body 1RM: ES -0.66 same session, -0.10 (not significant) separate sessions. Hypertrophy not reduced in the largest analyses. The one running-specific hypertrophy signal is at the type I fibre level (Lundberg 2022) | Petré 2021, Sports Med 51:991 (abstract); Schumann 2022; Held 2026 |
+| Easy vs hard running? | Evidence on intensity conflicts. Practically: easy runs under about 45 min are nearly free; long and hard runs cause muscle damage and next-day deficits | Fyfe 2016; Sabag 2018; Ferraro-Farro 2026; Doma & Deakin 2013 |
+| Does lifting help running? | Yes. Heavy strength training improves running economy by about 4% (g -0.32 at heavy loads, best at 90% 1RM or more) and race performance (ES -0.47 heavy; -1.04 heavy plus plyometrics). The rotation's squat and deadlift top sets (about 84% 1RM) are this kind of work; the program has no plyometrics | Denadai 2017; Eihara 2022; Llanos-Lagos 2024 |
+| Recovery after a race | Half marathon: knee-extensor strength -9 to -13% at the finish, back in 1-2 days in most runners, still down at 72 h in one small study; CK peaks at 24 h. Marathon: -22%, jump power still -12% at day 5 | Boccia 2017, 2018; Wang 2025a, b; Fu 2021; Petersen 2007 |
+| Race week | Cutting lifting volume about 70% for a week kept or slightly raised strength. Unfamiliar muscle damage 48 h before a run slowed a time trial 4% | Pritchard 2018, 2019; Marcora 2007 |
+
+Rules (inference): run placement around the rotation is in `guide/03-flexible-scheduling.md` section 7; race weeks and the week after a race in section 4.7. Calories and carbohydrate on run days: section 4 and `data/body-composition.md`.
+
 ---
 
 ## 6. Recovery modalities, ranked by evidence
