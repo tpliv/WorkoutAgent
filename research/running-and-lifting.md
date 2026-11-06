@@ -15,7 +15,7 @@ Tags: **[Evidence]** peer-reviewed; **[Practitioner]** coaches, practitioner sit
 | Question | Best number | Source |
 |---|---|---|
 | Knee-extensor strength loss right after a half marathon | -9% to -13% (MVC or concentric torque); -20% eccentric torque | Boccia 2017, 2018; Wang 2025b |
-| Strength back to baseline after a half marathon | 1-2 days in 74 recreational runners; still down at 72 h in one 8-person crossover | Wang 2025a, 2025b; Fu 2021 |
+| Strength back to baseline after a half marathon | 1-2 days in two samples of 36-38 recreational runners (same group; samples may overlap); still down at 72 h in one 8-person crossover | Wang 2025a, 2025b; Fu 2021 |
 | Creatine kinase after a half marathon | Peaks at 24 h; about 2.5x baseline (254 to 645 U/L) | Lynn 2018; Wiewelhove 2018 |
 | Marathon for comparison | MVC -22%; CMJ power still -12% at day 5; CK normal only at 144 h | Petersen 2007; Bernat-Adell 2021 |
 | Upper-body strength after fatiguing other muscles | Trivial overall (ES -0.02) | Behm 2021 |
@@ -41,17 +41,17 @@ After a half marathon, knee-extensor strength drops about 10-13% at the finish. 
 | Study | Sample and race | Strength or torque | Jump | Damage markers and soreness | Read |
 |---|---|---|---|---|---|
 | **[Evidence] Wang et al. 2025a**, *J Sports Sci* 43(11):1070-1075 ([PubMed 40186759](https://pubmed.ncbi.nlm.nih.gov/40186759/)) | 38 recreational runners, half marathon | Concentric and eccentric quad and hamstring torque down right after. Most back within 1 day. Concentric quad back within 2 days. Some measures above baseline on day 2 | - | - | Abstract |
-| **[Evidence] Wang et al. 2025b**, *Sports Med Open* 11:22 ([PubMed 40025365](https://pubmed.ncbi.nlm.nih.gov/40025365/), [PMC11872820](https://pmc.ncbi.nlm.nih.gov/articles/PMC11872820/)) | 36 recreational runners (17 men), ≥20 km/week; level-treadmill half marathon "as quickly as possible", 2:00:08 ± 0:11:16 | Knee extensors: concentric 2.19 → 2.00 N·m/kg (-9%), eccentric 2.44 → 1.96 N·m/kg (-20%) right after. Back within 1 day; above baseline on day 2 | - | - | Full text (methods, results summary) |
+| **[Evidence] Wang et al. 2025b**, *Sports Med Open* 11:22 ([PubMed 40025365](https://pubmed.ncbi.nlm.nih.gov/40025365/), [PMC11872820](https://pmc.ncbi.nlm.nih.gov/articles/PMC11872820/)) | 36 recreational runners (17 men), ≥20 km/week; treadmill half marathon "as quickly as possible", 2:00:08 ± 0:11:16 | Knee extensors: concentric 2.19 → 2.00 N·m/kg (-9%), eccentric 2.44 → 1.96 N·m/kg (-20%) right after. Back within 1 day; above baseline on day 2 | - | - | Full text (methods, results summary) |
 | **[Evidence] Boccia et al. 2018**, *Eur J Sport Sci* 18(5):695-704 ([PubMed 29490592](https://pubmed.ncbi.nlm.nih.gov/29490592/)) | 10 men, 8 women, amateur, half-marathon race | MVC -11% in both sexes right after; voluntary activation -6% (men); peak RFD -14% | - | - | Abstract |
 | **[Evidence] Boccia et al. 2017**, *Physiol Meas* 38(2):233-240 ([PubMed 28099172](https://pubmed.ncbi.nlm.nih.gov/28099172/)) | 11 amateur runners | MVC -13 ± 9% right after | - | - | Abstract |
 | **[Evidence] Wiewelhove et al. 2018**, *PLoS One* 13(11):e0207313 ([PubMed 30412626](https://pubmed.ncbi.nlm.nih.gov/30412626/), [PMC6226207](https://pmc.ncbi.nlm.nih.gov/articles/PMC6226207/)) | 46 recreational men; race 112 ± 16 min at about 90% of anaerobic threshold speed. Passive-recovery group n = 12, 116 ± 25 min | - | Passive group CMJ 31.5 → 30.6 cm at 24 h (-3%, rated trivial) | Passive group CK 254 ± 183 → 645 ± 404 U/L at 24 h (large); CRP 1.43 → 5.28 mg/L; soreness 0.6 → 4.8 (very large). Active recovery (a jog) worsened CK at 24 h (ES 0.84 vs passive) | Full text, tables |
 | **[Evidence] Costello et al. 2020**, *Int J Sport Nutr Exerc Metab* 30(4):287-294 ([PubMed 32470924](https://pubmed.ncbi.nlm.nih.gov/32470924/)) | 20 recreational runners (8 women), 1:56:33 ± 0:18:08 | - | CMJ variables down right after; most back by 48 h, except concentric and eccentric peak force and eccentric duration | Soreness and fatigue back to baseline by 48 h | Abstract |
 | **[Evidence] Lynn et al. 2018**, *J Int Soc Sports Nutr* 15:22 ([PubMed 29743826](https://pubmed.ncbi.nlm.nih.gov/29743826/), [PMC5930783](https://pmc.ncbi.nlm.nih.gov/articles/PMC5930783/)) | 21 recreational runners, about 1:38-1:41 | - | - | CK rose and peaked at 24 h post-race | Full text |
-| **[Evidence] Fu et al. 2021**, *Nutrients* 13(11):3870 ([PubMed 34836278](https://pubmed.ncbi.nlm.nih.gov/34836278/), [PMC8619570](https://pmc.ncbi.nlm.nih.gov/articles/PMC8619570/)) | 8 recreational runners, crossover, probiotic vs placebo | Placebo arm: knee-extensor isometric torque below pre-race at 0, 3, 24, 48 **and 72 h** | CMJ decreased (placebo) | Placebo CPK 875.8 ± 572.3 IU/L at 24 h | Full text (results text, not figures) |
+| **[Evidence] Fu et al. 2021**, *Nutrients* 13(11):4023 ([PubMed 34836278](https://pubmed.ncbi.nlm.nih.gov/34836278/), [PMC8619570](https://pmc.ncbi.nlm.nih.gov/articles/PMC8619570/)) | 8 recreational runners, crossover, probiotic vs placebo | Placebo arm: knee-extensor isometric torque below pre-race at 0, 3, 24, 48 **and 72 h** | CMJ decreased (placebo) | Placebo CPK 875.8 ± 572.3 IU/L at 24 h | Full text (results text, not figures) |
 | **[Evidence] Dawson et al. 2004** (foundational), *J Sports Sci Med* 3:37-43 ([PubMed 24778552](https://pubmed.ncbi.nlm.nih.gov/24778552/)) | 12 recreational runners, half-marathon race | Quad peak torque down on day 1. All measures at baseline by day 11 (tested days 1, 4, 8, 11) | - | Soreness and thigh girth up on day 1 | Abstract |
 | **[Evidence] Macchi et al. 2021**, *Front Physiol* 12:649396 ([PubMed 33815153](https://pubmed.ncbi.nlm.nih.gov/33815153/)) | 18 recreational runners, 20 km graded race; tested 2 h, 2 and 4 days | Larger acute MVC drop in men; women recovered bilateral MVC sooner | - | "DOMS disappeared prior to the complete functional recovery" | Abstract |
 | **[Evidence] Shu et al. 2024**, *Eur J Sport Sci* 24(10):1508-1515 ([PubMed 39245802](https://pubmed.ncbi.nlm.nih.gov/39245802/)) | 20 recreational marathoners, half marathon, MRI | - | - | MRI T2 (oedema) raised in all thigh muscles at 2-3 h and still raised at 1 day | Abstract |
-| **[Evidence] Del Coso et al. 2017**, *J Sports Med Phys Fitness* 57(11):1399-1406 ([PubMed 28222581](https://pubmed.ncbi.nlm.nih.gov/28222581/)) | 11 half-marathoners vs 11 matched marathoners, same course and day | - | CMJ -11 ± 12% (half) vs -25 ± 19% (marathon) at the finish | Myoglobin 186 vs 564 µg/mL; leg pain 3.0 vs 5.5 | Abstract |
+| **[Evidence] Del Coso et al. 2017**, *J Sports Med Phys Fitness* 57(11):1399-1406 ([PubMed 28222581](https://pubmed.ncbi.nlm.nih.gov/28222581/)) | 11 half-marathoners vs 11 matched marathoners, same course and day | - | CMJ -11 ± 12% (half) vs -25 ± 19% (marathon) at the finish | Myoglobin 186 vs 564 (µg/mL as printed); leg pain 3.0 vs 5.5 | Abstract |
 
 **Marathon, for comparison**
 
@@ -68,7 +68,7 @@ After a half marathon, knee-extensor strength drops about 10-13% at the finish. 
 **Upper body**
 
 - **[Evidence] Behm et al. 2021**, *Sports Med* 51(9):1893-1907 ([PubMed 33818751](https://pubmed.ncbi.nlm.nih.gov/33818751/)). Meta-analysis, 52 studies, 303 participants. Fatiguing one body region and testing another ("non-local fatigue"): overall ES -0.02 (95% CI -0.14 to 0.09). Strength 0.11 (0.01 to 0.21), power -0.01: trivial. Endurance (time to failure) -0.54 (-0.95 to -0.14). Not moderated by upper vs lower body or fatigue severity. Abstract.
-- **[Evidence] Brandenberger et al. 2021**, *J Strength Cond Res* 35(8):2145-2150 ([PubMed 30908371](https://pubmed.ncbi.nlm.nih.gov/30908371/)). 6 runners vs 6 controls; 1 h of downhill running. Knee-extensor strength -53.5% and still down at 48 h. **Elbow-flexor strength -13.2% right after and -17.3% at 24 h**, with no twitch change. The authors blame reduced voluntary activation, although the abstract reports the activation changes as non-significant. Very small sample; downhill running is far more damaging than a road race. Abstract.
+- **[Evidence] Brandenberger et al. 2021**, *J Strength Cond Res* 35(8):2145-2150 ([PubMed 30908371](https://pubmed.ncbi.nlm.nih.gov/30908371/)). 6 runners vs 6 controls; 1 h of downhill running. Knee-extensor strength reduced (reported as 53.5 ± 9.9%) and still down at 48 h. **Elbow-flexor strength -13.2% right after and -17.3% at 24 h**, with no twitch change. The authors blame reduced voluntary activation, although the abstract reports the activation changes as non-significant. Very small sample; downhill running is far more damaging than a road race. Abstract.
 - **[Evidence] Jaén-Carrillo et al. 2025**, *Front Sports Act Living* 7:1506067 ([PubMed 40583932](https://pubmed.ncbi.nlm.nih.gov/40583932/)). 8 elite trail runners after a world-championship trail marathon. Handgrip strength did not fall. Abstract.
 - Ross 2007 and Petersen 2007 (above) both found a central component to strength loss after a marathon. In Ross it had resolved by 24 h.
 
@@ -119,9 +119,9 @@ The endurance taper evidence says cut training volume by 41-60%, keep intensity 
 | **[Evidence] Marcora & Bosio 2007** (foundational), *Scand J Med Sci Sports* 17(6):662-671 ([PubMed 17346288](https://pubmed.ncbi.nlm.nih.gov/17346288/)) | 100 drop jumps from 35 cm (novel); 30 moderately trained runners vs controls | 48 h | 30-min time trial **-4%**. Economy unchanged. Effort felt higher at the same speed | Abstract |
 | **[Evidence] Braun & Dutto 2003** (foundational), *Eur J Appl Physiol* 90:29-34 ([PubMed 12783232](https://pubmed.ncbi.nlm.nih.gov/12783232/)) | 30-min downhill run (-10%); 9 trained runners | 48 h | Energy cost +3.2% at 65-85% VO2peak; shorter stride; lactate +0.61 mmol/L | Abstract |
 | **[Evidence] Burt et al. 2014** (foundational), *Eur J Sport Sci* 14(4):337-344 ([PubMed 23566074](https://pubmed.ncbi.nlm.nih.gov/23566074/)) | 100 Smith-machine squats; 8 men | 24 and 48 h | Higher oxygen cost and effort in submaximal running, higher resting metabolic rate, at both 24 and 48 h | Abstract |
-| **[Evidence] Doma et al. 2015**, *Eur J Appl Physiol* 115(8):1789-1799 ([PubMed 25828143](https://pubmed.ncbi.nlm.nih.gov/25828143/)) | 6RM lower-body session; 14 resistance-untrained men; repeated 1 week later | 24 and 48 h | Submaximal running impaired **until 24 h**. Second bout cut the CK rise by 58% and DOMS by 31%, but not the running impairment | Abstract |
+| **[Evidence] Doma et al. 2015** (foundational), *Eur J Appl Physiol* 115(8):1789-1799 ([PubMed 25828143](https://pubmed.ncbi.nlm.nih.gov/25828143/)) | 6RM lower-body session; 14 resistance-untrained men; repeated 1 week later | 24 and 48 h | Submaximal running impaired **until 24 h**. Second bout cut the CK rise by 58% and DOMS by 31%, but not the running impairment | Abstract |
 | **[Evidence] Doma et al. 2017a**, *Appl Physiol Nutr Metab* 42(9):978-985 ([PubMed 28553994](https://pubmed.ncbi.nlm.nih.gov/28553994/)) | 3 bouts of 6RM lower-body sessions; 12 untrained men | 24 and 48 h | Submaximal running improved only after the third bout. Maximal running still 12-20% below baseline. Authors: avoid submaximal running for ≥48 h after the first two bouts | Abstract |
-| **[Evidence] Doma & Deakin 2014**, *Eur J Sport Sci* 14(2):107-115 ([PubMed 24533516](https://pubmed.ncbi.nlm.nih.gov/24533516/)) | Heavy whole-body, heavy lower-only, or light whole-body; 15 trained runners | 6 h | Economy below threshold unchanged after all three. Time to exhaustion above threshold **reduced after both heavy sessions** | Abstract |
+| **[Evidence] Doma & Deakin 2014** (foundational), *Eur J Sport Sci* 14(2):107-115 ([PubMed 24533516](https://pubmed.ncbi.nlm.nih.gov/24533516/)) | Heavy whole-body, heavy lower-only, or light whole-body; 15 trained runners | 6 h | Economy below threshold unchanged after all three. Time to exhaustion above threshold **reduced after both heavy sessions** | Abstract |
 | **[Evidence] Palmer & Sleivert 2001** (foundational), *J Sci Med Sport* 4(4):447-459 ([PubMed 11905938](https://pubmed.ncbi.nlm.nih.gov/11905938/)) | 50-min whole-body session, low volume, high intensity; 9 well-trained runners with lifting experience | 1, 8, 24 h | Oxygen cost +2.6% at 1 h, +1.6% at 8 h, **no change at 24 h** | Abstract |
 
 - **[Evidence] Doma et al. 2023**, *J Strength Cond Res* 37(12):2504-2515 ([PubMed 38015738](https://pubmed.ncbi.nlm.nih.gov/38015738/)). Meta-analysis, 20 studies, multi-joint exercise. After a repeat bout, DOMS and CK were lower at 24-48 h (SMD 0.51-1.23 in favour of the second bout). Strength and jump were less impaired (SMD -0.27 to -0.40). Oxygen cost and RPE in running were lower (SMD 0.28-0.65). Abstract.
@@ -177,7 +177,7 @@ Yes, modestly, and heavy loads matter most. Meta-analyses agree that adding stre
 - **[Evidence] Li et al. 2021**, *Eur J Sport Sci* 21(9):1243-1253 ([PubMed 32981468](https://pubmed.ncbi.nlm.nih.gov/32981468/)). 38 recreational marathoners (VO2max 57.6). 6 weeks, 2x/week. Heavy strength and complex (heavy plus plyometric) training both improved economy by 5-6.4% and vVO2max by 4.2-5.7%; 1RM +19.7-25.1%. Strength-endurance training (light loads) did not. Abstract.
 - **[Evidence] Zanini et al. 2025**, *Med Sci Sports Exerc* 57(7):1546-1558 ([PubMed 40016936](https://pubmed.ncbi.nlm.nih.gov/40016936/)). 28 well-trained men (10 km in 39:02). 10 weeks, 2x/week maximal strength plus plyometrics. **Economy at minute 90 of a 90-min run: -2.1% vs +0.6% in controls.** Time to exhaustion after the run: +35% vs -8%. Abstract.
 - **[Evidence] Støren et al. 2008** (foundational), *Med Sci Sports Exerc* 40(6):1087-1092 ([PubMed 18460997](https://pubmed.ncbi.nlm.nih.gov/18460997/)). 17 well-trained runners. Half squat, 4 x 4RM, 3x/week for 8 weeks. 1RM +33.2%, RFD +26.0%, economy +5.0%, time to exhaustion at maximal aerobic speed +21.3%. No change in VO2max or bodyweight. Abstract.
-- **[Evidence] Schumann et al. 2015**, *Appl Physiol Nutr Metab* 40(1):28-36 ([PubMed 25494869](https://pubmed.ncbi.nlm.nih.gov/25494869/)). 27 recreational runners, 24 weeks, 4-6 runs/week. Strength twice a week **straight after** a 35-45 min run gave no extra endurance benefit. It kept leg-press 1RM, which fell 5% with running only. Abstract.
+- **[Evidence] Schumann et al. 2015** (foundational), *Appl Physiol Nutr Metab* 40(1):28-36 ([PubMed 25494869](https://pubmed.ncbi.nlm.nih.gov/25494869/)). 27 recreational runners, 24 weeks, 4-6 runs/week. Strength twice a week **straight after** a 35-45 min run gave no extra endurance benefit. It kept leg-press 1RM, which fell 5% with running only. Abstract.
 
 **Practitioner**
 
@@ -221,9 +221,9 @@ At 2-4 runs a week, running costs this lifter little hypertrophy and a small amo
 **Acute carry-over between running and lifting**
 
 - **[Evidence] Sporer & Wenger 2003** (foundational), *J Strength Cond Res* 17(4):638-644 ([PubMed 14636098](https://pubmed.ncbi.nlm.nih.gov/14636098/)). 16 men. Interval or steady aerobic work, then 4 sets at about 75% 1RM. **Leg-press reps fell at 4 h and 8 h; not at 24 h.** Bench press unaffected (local effect). Intensity did not matter. Mode not given in the abstract. Abstract.
-- **[Evidence] Panissa et al. 2015**, *J Strength Cond Res* 29(4):1077-1082 ([PubMed 25259468](https://pubmed.ncbi.nlm.nih.gov/25259468/)). 10 active men. 15 x 1 min intervals on a treadmill or a bike, then half squats at 80% 1RM. Both cut first-set reps; cycling cut them more. Abstract.
+- **[Evidence] Panissa et al. 2015** (foundational), *J Strength Cond Res* 29(4):1077-1082 ([PubMed 25259468](https://pubmed.ncbi.nlm.nih.gov/25259468/)). 10 active men. 15 x 1 min intervals on a treadmill or a bike, then half squats at 80% 1RM. Both cut first-set reps; cycling cut them more. Abstract.
 - **[Evidence] Doma & Deakin 2013** (foundational), *Appl Physiol Nutr Metab* 38(6):651-656 ([PubMed 23724883](https://pubmed.ncbi.nlm.nih.gov/23724883/)). 14 trained runners; lifting and running 6 h apart, then a test the next day. Lift then run: next-day oxygen cost 0.76 and 0.77 vs 0.72 and 0.70 at baseline (+6% and +10%); **time to exhaustion 237.8 s vs 335.4 s (-29%)**. Run then lift: 275.3 s (-18%). Abstract.
-- **[Evidence] Doma & Deakin 2015**, *Res Q Exerc Sport* 86(4):387-396 ([PubMed 26241612](https://pubmed.ncbi.nlm.nih.gov/26241612/)). 24 moderately trained people. Lifting on alternate days plus running on consecutive days for 6 days: small effects on running cost (ES 0.17-0.41), but moderate to large drops in time to exhaustion and MVC (ES 0.65-2.00), and large rises in soreness. Abstract.
+- **[Evidence] Doma & Deakin 2015** (foundational), *Res Q Exerc Sport* 86(4):387-396 ([PubMed 26241612](https://pubmed.ncbi.nlm.nih.gov/26241612/)). 24 moderately trained people. Lifting on alternate days plus running on consecutive days for 6 days: small effects on running cost (ES 0.17-0.41), but moderate to large drops in time to exhaustion and MVC (ES 0.65-2.00), and large rises in soreness. Abstract.
 - KQ2 table: Palmer 2001 (economy normal at 24 h); Doma & Deakin 2014 (hard running down at 6 h); Doma 2015, 2017a (untrained: submaximal running down to 24-48 h).
 
 **Practitioner**
@@ -234,7 +234,7 @@ At 2-4 runs a week, running costs this lifter little hypertrophy and a small amo
 
 ### Inferences
 
-- **At this dose, the main cost is fatigue, not lost adaptation.** Under 10 to about 20 miles a week is 2-4 runs. The trials above tested 2-3 endurance sessions a week, mostly 20-45 min. That is about this lifter's dose. In separate sessions, trained lifters showed no reliable 1RM cost (Petré 2021). Hypertrophy was not reduced in the largest analyses (Schumann 2022; Held 2026). The type I fibre cost of running (Lundberg 2022, repo) is the one running-specific hypertrophy signal.
+- **At this dose, the main cost is fatigue, not lost adaptation.** Under 10 to about 20 miles a week is 2-4 runs. Several trials above used 2-3 endurance sessions a week (Sale 1990: 2; Fyfe 2016: 3). That is about this lifter's dose. In separate sessions, trained lifters showed no reliable 1RM cost (Petré 2021). Hypertrophy was not reduced in the largest analyses (Schumann 2022; Held 2026). The type I fibre cost of running (Lundberg 2022, repo) is the one running-specific hypertrophy signal.
 - **Easy runs are nearly free. Intervals and long runs are not.** The evidence on intensity conflicts (see Conflicts). The practical signal is consistent, though: hard or long running causes muscle damage and next-day deficits, and easy running under about 45 min does not (Palmer 2001; de Carvalho e Silva 2022). So keep most runs easy (Viada; Barbell Medicine) and treat the long run and any quality run as lower-body stress.
 - **How running counts against lower-body recovery.** Count a long run (about 60 min or more) or a quality session as one lower-body fatigue event for scheduling. Keep it 48 h before a heavy lower slot and 24 h after one (KQ5). Easy runs of 45 min or less do not count. Do not count running as leg sets for hypertrophy, and do not cut leg sets for it at this mileage.
 - **When running should cost leg volume.** If running rises above about 15-20 miles a week or includes two quality sessions, trim leg accessories first. Never trim main-lift top sets (the priority stack, `guide/03` §4.3). No study sets this threshold; it is an inference from Jones 2013 (frequency) and Wilson 2012 (duration).
@@ -254,7 +254,7 @@ At 2-4 runs a week, running costs this lifter little hypertrophy and a small amo
 
 ### Takeaway
 
-The timing rules fall out of KQ1-KQ4. Aerobic work hurts leg-press reps for up to 8 h. A heavy lower session hurts hard running for at least 6 h and often the next day. Same-day sessions are where trained lifters lose 1RM. So: lift before running on the same day, 6 h apart where possible. Keep the long run and any quality run at least 48 h before a heavy lower slot (L1, L2, Full A, Full B) and not in the 24 h after one. Easy runs can go almost anywhere 3-6 h after lifting, best on upper days. The volume slot (L3, Full C) is the best lower day to sit next to a run. Practitioners say keep runs easy and either group hard days together or keep heavy legs away from hard running. Neither practice has been tested.
+The timing rules fall out of KQ1-KQ4. Aerobic work hurts leg-press reps for up to 8 h. A heavy lower session hurts hard running for at least 6 h and often the next day. Same-day sessions are where trained lifters lose 1RM. So: on a lower day, lift before running, 6 h apart where possible; on an upper day, order does not matter. Keep the long run and any quality run at least 48 h before a heavy lower slot (L1, L2, Full A, Full B), and off the day after one unless stacked on the same day. Easy runs can go almost anywhere 3-6 h after lifting, best on upper days. The volume slot (L3, Full C) is the best lower day to sit next to a run. Practitioners say keep runs easy and either group hard days together or keep heavy legs away from hard running. Neither practice has been tested.
 
 ### Cited findings
 
@@ -270,23 +270,24 @@ Slot types: heavy lower = L1, L2, Full A, Full B. Volume lower = L3, Full C. Upp
 | Week type (`guide/03` §1.3) | Example lifting days | Easy run | Quality run (optional) | Long run | Rest |
 |---|---|---|---|---|---|
 | 3-day: Full A, Full B, Full C | Mon, Wed, Fri | Tue | Wed PM, after Full B (stacked on a heavy day so Thu stays easy) | Sat (24 h after Full C, a volume day; 48 h before Mon Full A) | Sun; Thu rest or easy |
-| 4-day: Full A, L2, U2, Full C | Mon, Wed, Thu, Fri | Tue; or Thu PM after U2 | Wed PM, after L2 | Sat (after Full C) | Sun |
-| 5-day: L1, U1, L2, U2, Full C | Mon-Fri | Tue PM, after U1 | Thu PM, after U2 (24 h after L2; Full C next day is volume) | Sat | Sun |
-| 6-day: L1, U1, L2, U2, L3, U3 | Mon-Sat | Tue PM, after U1 | Thu PM, after U2; or drop it this week | Sat PM, after U3 (24 h after L3; 48 h before Mon L1) | Sun |
+| 4-day: Full A, L2, U2, Full C | Mon, Wed, Thu, Fri | Tue; or Thu PM after U2 | Wed PM, after L2 (stacked) | Sat (after Full C; 48 h before Mon Full A) | Sun |
+| 5-day: L1, U1, L2, U2, Full C | Mon-Fri | Tue PM, after U1 | Wed PM, after L2 (stacked); or Thu after U2, expecting it to feel harder | Sat (48 h before Mon L1) | Sun |
+| 6-day: L1, U1, L2, U2, L3, U3 | Mon-Sat | Tue PM, after U1 | Wed PM, after L2 (stacked); or drop it this week | Sat AM, then U3 later that day (48 h before Mon L1) | Sun |
 
 Rules behind the table (inference):
 
-1. **Same day: lift, then run, 6 h apart where possible, 3 h at minimum.** Never run before a heavy lower slot on the same day (Sporer 2003: leg-press reps down at 4-8 h).
-2. **Long run and quality run: at least 48 h before a heavy lower slot.** Next to a volume slot, 24 h is enough.
-3. **Long run and quality run: not in the 24 h after a heavy lower slot, unless stacked on the same day.** A quality run the day after L1 or L2 will feel harder (Doma & Deakin 2013: -29% time to exhaustion). Either accept that or move it.
-4. **Easy runs (45 min or less): anywhere, 3-6 h after lifting.** Upper days first.
-5. **Never sacrifice a top set for a run.** If a week cannot fit a run under rules 1-3, drop the quality run first, then shorten the long run. The rotation does not change.
-6. **More lifting days, fewer hard runs.** In a 6-day week, the guide's cardio floor (`guide/03` §7) means two runs (one long, one easy) is the default. A 3-day week has the room for all three or four.
+1. **Same day as a lower slot: lift first, run 6 h later where possible, 3 h at minimum** (Robineau 2016; Murlasits 2018, repo). Never run before a lower slot on the same day (Sporer 2003: leg-press reps down at 4-8 h).
+2. **Same day as an upper slot: either order.** In Sporer 2003 the deficit after aerobic work was local to the legs; bench press was unaffected.
+3. **Long run and quality run: at least 48 h before a heavy lower slot.** Next to a volume slot (L3, Full C), 24 h is enough.
+4. **Avoid the long or quality run on the day after a heavy lower slot**, unless it is stacked on the same day as the lift. A quality run the day after L1 or L2 will feel harder (Doma & Deakin 2013: -29% time to exhaustion). Either accept that or move it. With 5-6 lifting days, stacking after L2 is the only clean slot for a quality run.
+5. **Easy runs (45 min or less): anywhere, 3-6 h after lifting.** Upper days first.
+6. **Never sacrifice a top set for a run.** If a week cannot fit a run under rules 1-4, drop the quality run first, then shorten the long run. The rotation does not change.
+7. **More lifting days, fewer hard runs.** In a 6-day week, the guide's cardio floor (`guide/03` §7) means two runs (one long, one easy) is the default. A 3-day week has room for three or four.
 
 ### Gaps
 
 - No trial compared run placements around a lifting rotation.
-- "Stack hard days" (Viada, second-hand) and "keep hard running away from heavy legs" (Barbell Medicine; Doma) both appear in practice. They agree only on "lift first". The layouts above use stacking for the quality run in 3- and 4-day weeks only.
+- "Stack hard days" (Viada, second-hand) and "keep hard running away from heavy legs" (Barbell Medicine; Doma) both appear in practice. They agree only on "lift first". The layouts above use stacking for the quality run only, never for the long run.
 - Viada's own text was not read; only an interview and a second-hand summary.
 
 ---
@@ -312,8 +313,8 @@ These are proposals for `guide/06-recovery-nutrition-cardio.md` §5 and `guide/0
 
 | Day | Lower body | Upper body | Running |
 |---|---|---|---|
-| R+0 | None | None | - |
-| R+1 | None | Optional; rest is fine | Walk only (Wiewelhove 2018: a jog after the race worsened CK at 24 h) |
+| R+0 | None | None | No cool-down jog (Wiewelhove 2018: a 15-min jog straight after the race worsened CK and perceived recovery at 24 h) |
+| R+1 | None | Optional; rest is fine | Walk only |
 | R+2 | **None** (strength still down at 24-48 h, sometimes 72 h; KQ1) | Normal upper slot | Optional easy 20-30 min |
 | R+3 | **First lower session allowed.** Prefer a deadlift (L2) or volume (L3, Full C) slot over L1. Top set capped at RPE 7; back-offs 1-2 sets | Normal | Easy only |
 | R+4 to R+7 | Normal rotation. First heavy squat (L1) at R+4 or later | Normal | Easy only |
@@ -328,8 +329,8 @@ These are proposals for `guide/06-recovery-nutrition-cardio.md` §5 and `guide/0
 
 ### Steady-state rules
 
-- Lift first; run 6 h later where possible (3 h minimum). Never run before a heavy lower slot the same day.
-- Long and quality runs: at least 48 h before L1, L2, Full A or Full B; not in the 24 h after one, unless stacked the same day.
+- Lower day: lift first, run 6 h later where possible (3 h minimum); never run before a lower slot the same day. Upper day: either order.
+- Long and quality runs: at least 48 h before L1, L2, Full A or Full B; avoid the day after one, unless stacked on the same day.
 - Easy runs (45 min or less): free placement, upper days first.
 - Most runs easy; at most one quality run a week; none in 6-day weeks if recovery markers slip.
 - The rotation's heavy top sets already are the strength work that helps running. Consider adding a small plyometric block outside race weeks.
@@ -341,14 +342,14 @@ These are proposals for `guide/06-recovery-nutrition-cardio.md` §5 and `guide/0
 | Topic | One side | Other side | How this note handles it |
 |---|---|---|---|
 | Strength recovery after a half marathon | Back within 1-2 days (Wang 2025a, n = 38; Wang 2025b, n = 36; isokinetic) | Still down at 72 h (Fu 2021 placebo arm, n = 8; isometric) | Plan on the slower figure for an under-trained runner: no heavy lower before 72 h |
-| Easy running in the week after a marathon | Helps: 40 min at 48, 96, 144 h did not slow marker recovery and improved squat jump at 96 h (Martínez-Navarro 2021, n = 64) | Hurts: 20-45 min a day slowed torque recovery through day 7 (Sherman 1984, n = 10, foundational) | Different outcomes (jump and CK vs isokinetic torque). Short easy runs are allowed after R+2; do not expect them to speed strength recovery |
+| Easy running in the week after a marathon | Helps: 40 min at 48, 96, 144 h did not slow marker recovery and improved squat jump at 96 h (Martínez-Navarro 2021, n = 64) | Hurts: 20-45 min a day (40-45 min by days 5-7) slowed torque recovery through day 7 (Sherman 1984, n = 10, foundational) | Different outcomes (jump and CK vs isokinetic torque). Short easy runs are allowed after R+2; do not expect them to speed strength recovery |
 | Running vs cycling | Running costs more: type I fibre growth (Lundberg 2022, repo); strength and hypertrophy (Wilson 2012, repo) | Cycling costs more: lower-body strength after HIIT (Sabag 2018); next-set squat reps (Panissa 2015). No modality effect (Schumann 2022, repo) | Running is the lifter's hobby, so the rules manage running rather than replace it. The guide's "prefer cycling on heavy leg weeks" stays an option, not a requirement |
 | Interval vs steady endurance work | Intensity does not change the strength cost; intervals cut leg lean-mass gain (Fyfe 2016, cycling) | Sprint intervals cost nothing (Ferraro-Farro 2026); lower-body HIIT cost nothing over 12 weeks (Feuerbacher 2025). Practitioners say intervals "hurt your squatting" (Viada) | Keep most runs easy; at most one quality run a week |
 | Upper body after a long run | Trivial non-local effect (Behm 2021, 52 studies; Jaén-Carrillo 2025) | Elbow-flexor strength -17% at 24 h (Brandenberger 2021, n = 6, downhill) | Upper slots allowed from R+1 or R+2 |
 | Does lifting help recreational runners? | Yes: 10 km +2.5% (Damasceno 2015); economy -5 to -6.4% (Li 2021) | No economy change (Ferrauti 2010; Damasceno 2015); no endurance benefit when lifting after runs (Schumann 2015) | Expect race-time and late-race benefits, not fresh-economy changes |
 | Plyometrics | Trivial for economy (Eihara 2022); performance n.s. (Llanos-Lagos 2024b) | Helps economy at ≤12 km/h (Llanos-Lagos 2024a); 2-5 km time trial ES 0.88 (Ramirez-Campillo 2021) | Optional small add-on, outside race weeks |
 | When to stop heavy lifting before a race | 10-14 days before a half (RunnersConnect, running-coach site) | Powerlifters' last heavy squat and deadlift 7-10 days before a meet, last squat about 4 days out (Travis 2021). The running deficits found came from damage at 24-48 h | Last heavy lower exposure at R-4, at reduced volume. Untested; revisit if race performance suffers |
-| Same-day stacking vs separation | Group same-type fatigue on one day (Viada, second-hand) | Lift then run on one day impaired next-day running (Doma & Deakin 2013); same-day training costs 1RM (Petré 2021; Sale 1990) | Separation by default; stacking only for the quality run in 3- and 4-day weeks, with the lift first |
+| Same-day stacking vs separation | Group same-type fatigue on one day (Viada, second-hand) | Lift then run on one day impaired next-day running (Doma & Deakin 2013); same-day training costs 1RM (Petré 2021; Sale 1990) | Separation by default; stacking only for the quality run, with the lift first |
 
 ---
 
