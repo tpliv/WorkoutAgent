@@ -2,6 +2,12 @@
 
 ## 2026-11-06
 
+- Week of 9 Nov changed to 4 days (Tue U1, Wed Full B, Fri Full C, Sun L1)
+  after the lifter gave the race (10 miles, Sun 8 Nov) and Thursday work
+  travel: Tuesday becomes upper only two days after the race. Holds on the
+  Workouts calendar for Tue and Wed, 7:30-9:00 am; Friday and Sunday left
+  flexible. `PORTABILITY.md` now lists the calendar holds (optional; the repo
+  never reads the calendar) instead of "no connectors", which was out of date.
 - Cross-block merged sessions U1 + L2, U2 + L3 and U3 + L1 added to
   `templates/3-day-week.md` and `templates/rotation.json`, and pushed to Hevy
   (the two hand-made "U2 + L3" and "U3 + L1 (merged)" routines are now

@@ -31,7 +31,7 @@ menu in a session's title bar, then Edit).
 | Network access | Allow `api.hevyapp.com`. Research sessions also need web search and fetch. |
 | Hevy credential | A network secret for `api.hevyapp.com` that sends the key in the `api-key` header. Alternative: an environment variable named `HEVY_API_KEY`. `tools/hevy_pull.py` works with either. |
 | Setup script | None. The tools are Python 3 standard library only. |
-| Connectors | None. The project does not use Gmail, Calendar, Drive, or any other connector. |
+| Connectors | Optional: Google Calendar, only to place workout holds on a calendar named "Workouts" when the lifter asks (90-min holds, shown as free). Nothing in the repo reads the calendar; `data/weekly-plan.md` is the record. The connector in use on 2026-11-06 is the lifter's work Google account; in a new account, create a "Workouts" calendar on a personal Google account or skip holds. No Gmail, Drive, or other connector. |
 
 Never paste the key into a chat, a file in the repo, or a commit.
 
