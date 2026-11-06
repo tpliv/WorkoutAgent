@@ -14,16 +14,21 @@ Ranking basis: the lifter's own data (`data/`), not general interest. The genera
 | 2 | Exiting the recomposition: lean bulk vs cut, gain and loss rates for intermediates | The plan says recomposition becomes inefficient after about 6 months (`data/body-composition.md` §7) | Around Feb-Apr 2027 |
 | 3 | Verification backlog | The "Still unverified" lists in each note's 2026-10-21 addendum (Pelland figures, named-program details). None of them would change a rule | Low; do when nothing else is queued |
 
-## In progress
+## Done
 
-Started 2026-11-06. Move each row to a "Done" section once the note, guide and templates are updated.
+| Date | Topic | Note | Applied to |
+|---|---|---|---|
+| 2026-11-06 | Lifting around running and races | `research/running-and-lifting.md` | `guide/03` §4.7 and §7, `guide/06` §5.3, `guide/00` rule 9, `templates/README.md`, `data/weekly-plan.md` |
+| 2026-11-06 | Regaining strength after a long layoff | `research/retraining-after-layoff.md` | `templates/progression-tracks.md` §5.1-5.2, `guide/04` §6.1, `tools/update_tracks.py` |
+| 2026-11-06 | Effort ratings and progressing without RPE | `research/effort-ratings-and-progression-without-rpe.md` | `templates/progression-tracks.md` §3, §5, §5.3, §10, `guide/04` §2.6, tools, coach runbooks |
+| 2026-11-06 | Alcohol and training | `research/alcohol-and-training.md` | `guide/06` §4.4 and §8, `data/body-composition.md` §5, check-in question 3 |
+| 2026-11-06 | Energy availability and fueling for a runner who lifts | `research/energy-availability-and-fueling.md` | `guide/06` §4.5 and §8, `data/body-composition.md` §5 and §5.1 |
+| 2026-11-06 | Measuring body-composition change | `research/body-composition-measurement.md` | `data/body-composition.md` §6.1 and §8, `guide/06` §4.3 |
+| 2026-11-06 | Sauna (user request) | `research/sauna.md` | `guide/06` §6.1 and §8 |
 
-| Date | Topic | Note |
-|---|---|---|
-| 2026-11-06 | Lifting around running and races | `research/running-and-lifting.md` |
-| 2026-11-06 | Regaining strength after a long layoff | `research/retraining-after-layoff.md` |
-| 2026-11-06 | Effort ratings and progressing without RPE | `research/effort-ratings-and-progression-without-rpe.md` |
-| 2026-11-06 | Alcohol and training | `research/alcohol-and-training.md` |
-| 2026-11-06 | Energy availability and fueling for a runner who lifts | `research/energy-availability-and-fueling.md` |
-| 2026-11-06 | Measuring body-composition change | `research/body-composition-measurement.md` |
-| 2026-11-06 | Sauna: muscle, recovery, heat acclimation for running, health, safety (user request) | `research/sauna.md` |
+## Open questions from these notes
+
+- Baseline InBody: model, and what was eaten, drunk and trained before the 21 Oct scan; creatine start date (`research/body-composition-measurement.md` KQ4 gaps).
+- Drinks per occasion (not recorded); race pace for 8 Nov.
+- Whether Hevy pre-fills reps from the routine, so a logged "4" may be an unedited set (`research/effort-ratings-and-progression-without-rpe.md` KQ3 gaps).
+- Sauna access: not recorded.

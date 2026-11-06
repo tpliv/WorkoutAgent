@@ -49,10 +49,10 @@ days the week had. Shorter weeks drop accessory volume, never intensity.
 | `guide/00-overview.md` | Ten rules and a reading map |
 | `guide/01-training-principles.md` | Volume, frequency, intensity, failure proximity, rest, maintenance dose |
 | `guide/02-program-structures.md` | Splits and named programs by days per week, with a variable-week verdict |
-| `guide/03-flexible-scheduling.md` | Running one program across 3- to 6-day weeks |
-| `guide/04-periodization-and-progression.md` | Periodization evidence, progression schemes, deloads, plateaus |
+| `guide/03-flexible-scheduling.md` | Running one program across 3- to 6-day weeks; race weeks; where runs go |
+| `guide/04-periodization-and-progression.md` | Periodization evidence, progression schemes, rating accuracy, deloads, plateaus, returning after a layoff |
 | `guide/05-exercise-selection.md` | Movement patterns, best exercises, substitutions, warm-up, technique |
-| `guide/06-recovery-nutrition-cardio.md` | Recovery, sleep, protein, concurrent training, age |
+| `guide/06-recovery-nutrition-cardio.md` | Recovery, sleep, protein, measuring body composition, alcohol, energy availability, running alongside lifting, sauna, age |
 | `guide/07-tracking-and-apps.md` | What to log, tracker app comparison, integration workflows |
 | `guide/08-weekly-coaching-cadence.md` | Sunday check-in, night-before workout brief, mid-week changes |
 

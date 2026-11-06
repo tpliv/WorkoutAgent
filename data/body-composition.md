@@ -139,7 +139,7 @@ Protocol updated 2026-11-06 from `research/body-composition-measurement.md` (KQ1
 4. Usual eating for the 2-3 days before, at the plan's carbohydrate for that week type. No carb-load, low-carb day, or unusually salty or large meal the night before. Stored carbohydrate and its water read as lean mass.
 5. No lifting for 48 h or more (72 h after a hard upper session if possible). No run over about 60 min and no race for 72 h. So scan at the end of a 3-day week or a deload, after 2 or more rest days, never in the middle of a 5-6-day week.
 6. No alcohol for 72 h. A Wednesday scan leaves about 80 h after Saturday night.
-7. Bladder emptied, bare feet, same light clothing. No shower, sauna or cold exposure in the last 20 min.
+7. Bladder emptied, bare feet, same light clothing. No sauna that morning (20 min at 90 °C can cost 0.24-0.82 kg of sweat, and 0.76 kg of dehydration read as 0.90 kg less fat; `research/sauna.md` KQ6); no shower or cold exposure in the last 20 min.
 8. Stand 5-10 min, then scan. Standing for an hour first drifted lean mass down about 0.8 kg.
 9. Same height (71 in) and age entered.
 10. Optional: scan again the next morning under the same conditions and average the two.
