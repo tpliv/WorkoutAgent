@@ -26,3 +26,4 @@ Started 2026-11-06. Move each row to a "Done" section once the note, guide and t
 | 2026-11-06 | Alcohol and training | `research/alcohol-and-training.md` |
 | 2026-11-06 | Energy availability and fueling for a runner who lifts | `research/energy-availability-and-fueling.md` |
 | 2026-11-06 | Measuring body-composition change | `research/body-composition-measurement.md` |
+| 2026-11-06 | Sauna: muscle, recovery, heat acclimation for running, health, safety (user request) | `research/sauna.md` |
