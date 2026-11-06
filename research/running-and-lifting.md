@@ -220,7 +220,7 @@ At 2-4 runs a week, running costs this lifter little hypertrophy and a small amo
 
 **Acute carry-over between running and lifting**
 
-- **[Evidence] Sporer & Wenger 2003** (foundational), *J Strength Cond Res* 17(4):638-644 ([PubMed 14636098](https://pubmed.ncbi.nlm.nih.gov/14636098/)). 16 men. Interval or steady aerobic work, then 4 sets at about 75% 1RM. **Leg-press reps fell at 4 h and 8 h; not at 24 h.** Bench press unaffected (local effect). Intensity did not matter. Mode not given in the abstract. Abstract.
+- **[Evidence] Sporer & Wenger 2003** (foundational), *J Strength Cond Res* 17(4):638-644 ([PubMed 14636098](https://pubmed.ncbi.nlm.nih.gov/14636098/)). 16 men. Interval or steady aerobic work, then 4 sets at about 75% 1RM. **Leg-press reps fell at 4 h and 8 h; not at 24 h.** The abstract reports no bench-press deficit; the authors judged the impairment local to the muscles used in the aerobic work. Intensity did not matter. Mode not given in the abstract. Abstract.
 - **[Evidence] Panissa et al. 2015** (foundational), *J Strength Cond Res* 29(4):1077-1082 ([PubMed 25259468](https://pubmed.ncbi.nlm.nih.gov/25259468/)). 10 active men. 15 x 1 min intervals on a treadmill or a bike, then half squats at 80% 1RM. Both cut first-set reps; cycling cut them more. Abstract.
 - **[Evidence] Doma & Deakin 2013** (foundational), *Appl Physiol Nutr Metab* 38(6):651-656 ([PubMed 23724883](https://pubmed.ncbi.nlm.nih.gov/23724883/)). 14 trained runners; lifting and running 6 h apart, then a test the next day. Lift then run: next-day oxygen cost 0.76 and 0.77 vs 0.72 and 0.70 at baseline (+6% and +10%); **time to exhaustion 237.8 s vs 335.4 s (-29%)**. Run then lift: 275.3 s (-18%). Abstract.
 - **[Evidence] Doma & Deakin 2015** (foundational), *Res Q Exerc Sport* 86(4):387-396 ([PubMed 26241612](https://pubmed.ncbi.nlm.nih.gov/26241612/)). 24 moderately trained people. Lifting on alternate days plus running on consecutive days for 6 days: small effects on running cost (ES 0.17-0.41), but moderate to large drops in time to exhaustion and MVC (ES 0.65-2.00), and large rises in soreness. Abstract.
@@ -277,7 +277,7 @@ Slot types: heavy lower = L1, L2, Full A, Full B. Volume lower = L3, Full C. Upp
 Rules behind the table (inference):
 
 1. **Same day as a lower slot: lift first, run 6 h later where possible, 3 h at minimum** (Robineau 2016; Murlasits 2018, repo). Never run before a lower slot on the same day (Sporer 2003: leg-press reps down at 4-8 h).
-2. **Same day as an upper slot: either order.** In Sporer 2003 the deficit after aerobic work was local to the legs; bench press was unaffected.
+2. **Same day as an upper slot: either order.** In Sporer 2003 the deficit after aerobic work was local to the exercised (leg) muscles; the abstract reports no bench-press deficit.
 3. **Long run and quality run: at least 48 h before a heavy lower slot.** Next to a volume slot (L3, Full C), 24 h is enough.
 4. **Avoid the long or quality run on the day after a heavy lower slot**, unless it is stacked on the same day as the lift. A quality run the day after L1 or L2 will feel harder (Doma & Deakin 2013: -29% time to exhaustion). Either accept that or move it. With 5-6 lifting days, stacking after L2 is the only clean slot for a quality run.
 5. **Easy runs (45 min or less): anywhere, 3-6 h after lifting.** Upper days first.
