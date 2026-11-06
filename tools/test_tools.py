@@ -89,8 +89,22 @@ def run_update(tracks, rows, **kw):
 
 
 class RotationFile(unittest.TestCase):
+    def test_cross_block_pairs_carry_the_main_lifts_of_both_halves(self):
+        for pair in ("U1+L2", "U2+L3", "U3+L1"):
+            session = ROTATION["sessions"][pair]
+            self.assertTrue(session.get("merged"), pair)
+            self.assertEqual(upd.parse_slot(session["title"]), pair)
+            want = {}
+            for half in pair.split("+"):
+                for ex in ROTATION["sessions"][half]["exercises"]:
+                    if ex["role"] in ("H", "V"):
+                        want[ex["track"]] = ex["role"]
+            got = {ex["track"]: ex["role"] for ex in session["exercises"] if ex["role"] in ("H", "V")}
+            self.assertEqual(got, want, pair)
+
     def test_nine_sessions_and_all_tracks_have_one_h_and_one_v(self):
-        self.assertEqual(set(ROTATION["sessions"]), {"L1", "U1", "L2", "U2", "L3", "U3", "Full A", "Full B", "Full C"})
+        self.assertEqual(set(ROTATION["sessions"]), {"L1", "U1", "L2", "U2", "L3", "U3", "Full A", "Full B", "Full C",
+                                                     "U1+L2", "U2+L3", "U3+L1"})
         for lift, t in LIVE_TRACKS["tracks"].items():
             for slot_list, role in ((t["h_slots"], "H"), (t["v_slots"], "V")):
                 for slot in slot_list:

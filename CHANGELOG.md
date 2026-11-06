@@ -2,6 +2,14 @@
 
 ## 2026-11-06
 
+- Cross-block merged sessions U1 + L2, U2 + L3 and U3 + L1 added to
+  `templates/3-day-week.md` and `templates/rotation.json`, and pushed to Hevy
+  (the two hand-made "U2 + L3" and "U3 + L1 (merged)" routines are now
+  tool-managed and carry current loads; "U1 + L2 (merged)" is new). About 20
+  hard sets and 60-70 min each. Rule: skip the U2 + L3 deadlift V when U1 + L2
+  was the day before. `hevy_push_routines.py` writes an exercise-level `note`.
+  Why: the pointer is at U1 and the lifter picked Tue, Wed, Fri mornings for the
+  week of 9 Nov (`data/weekly-plan.md`, `data/checkins/2026-11-06.md`).
 - Synced 29 Oct (L2) and race week (4-5 Nov). Loads going forward: squat
   135 -> 155 (155 x 5 logged; 19-day gap, so hold the load lifted, no
   increment), overhead press 60 -> 70 (70 x 4 logged, step counter 1),

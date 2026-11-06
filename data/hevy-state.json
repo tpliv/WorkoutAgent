@@ -11,8 +11,11 @@
     "U3": "6bf801f6-fd3e-471f-9dec-c798ac8e8f5b",
     "Full A": "065ae9bd-875e-4c2b-b8a0-d612d5ea11d6",
     "Full B": "1bfa567a-bbf4-4f9a-99c0-29662795f24f",
-    "Full C": "4d55d8b4-ab89-4022-9aba-a909e333b68c"
+    "Full C": "4d55d8b4-ab89-4022-9aba-a909e333b68c",
+    "U2+L3": "c7e328db-2fe2-45fd-abbd-a178b3f6b376",
+    "U3+L1": "d402bb41-37ad-4f5f-9709-d588050330bf",
+    "U1+L2": "f5bed829-6ca3-499d-9c7e-d1912e452e6c"
   },
-  "last_push": "2026-11-06T16:46:17Z",
+  "last_push": "2026-11-06T16:59:13Z",
   "last_push_deload": false
 }

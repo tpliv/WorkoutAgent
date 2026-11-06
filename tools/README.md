@@ -40,7 +40,7 @@ routines in the app to reflect the latest logged sessions.
    `python3 tools/hevy_api.py templates --search curl` and fix the map (or the
    `hevy` candidate list in `templates/rotation.json`).
 6. `python3 tools/hevy_push_routines.py` to create the folder `Rotation 2026-10`
-   with the nine routines (L1, U1, L2, U2, L3, U3, Full A, Full B, Full C).
+   with the nine routines (L1, U1, L2, U2, L3, U3, Full A, Full B, Full C), plus the three cross-block merges (U1 + L2, U2 + L3, U3 + L1) for weeks that start mid-block.
    Routine ids are saved in `data/hevy-state.json`, so later runs update in
    place.
 

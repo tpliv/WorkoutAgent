@@ -67,6 +67,18 @@ Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter).
 
 ---
 
+## Cross-block merges: when the week starts at U1, U2 or U3
+
+Added 2026-11-06. Same merge rules (`guide/03-flexible-scheduling.md`, section 4.2): two back-offs per H lift, row and pull-up H at 3 sets, V sets one fewer than the split form, about 20 hard sets and 60-70 min each. Hevy routines "U1 + L2 (merged)", "U2 + L3 (merged)", "U3 + L1 (merged)" in the rotation folder (`templates/rotation.json`).
+
+| Session | Main lifts | Accessories |
+|---|---|---|
+| U1 + L2 | Deadlift H (top set + 2 back-offs); bench H (top set + 2 back-offs); row H 3 x 6-8 | Reverse lunge 3 x 8-12 per leg; incline DB press 3 x 8-12; lateral raise 3 x 12-20 and overhead triceps extension 2 x 10-15 as a superset |
+| U2 + L3 | Press H (top set + 2 back-offs); pull-up or pulldown H 3 x 5-8; squat V 3 x 6; deadlift V 2 x 4 | Leg extension 3 x 12-15, reverse pec deck 2 x 15-20 and incline DB curl 3 x 10-12 as a superset |
+| U3 + L1 | Squat H (top set + 2 back-offs); bench V 3 x 6; press V 2 x 5; row V 3 x 8-10; pull-up or pulldown V 2 x 6-8 | Romanian deadlift 2 x 8-10; lateral raise 3 x 12-20 and triceps pushdown 2 x 10-15 as a superset |
+
+**Back-to-back days.** U1 + L2 and U2 + L3 are the pair most likely to land on consecutive days. U2 + L3 is the lighter lower day (squat and deadlift at volume), so that placement is acceptable, but **skip the deadlift V sets if U1 + L2 was the day before**: about 24 h after a heavy deadlift is below the 48 h the rotation otherwise gives a heavy pattern (`guide/06-recovery-nutrition-cardio.md`, section 1). Dropping them is a priority-stack drop (section 4.3), not a missed exposure. Do not put U2 + L3 and U3 + L1 back to back: the squat V then the squat H on consecutive days is the worse pairing.
+
 ## Progression rules in brief
 
 **Main lifts** (full rules: `templates/progression-tracks.md`): top set 4 reps at RPE 8. At RPE 8 or lower, the next H load rises 5 lb (squat, deadlift); bench and press rise 5 lb after every second such top set (step counter, `progression-tracks.md` section 5). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. The second and third main lifts in a merged session are judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss. V sets are 90% of the current top-set load and never move the track. Row and pull-up: double progression, +5 lb when every set reaches 8; the 3-set merged form applies the rule to the sets done. Gaps: hold the load if a lift has gone 8-21 days untrained; reduce 5-10% beyond 21 days.

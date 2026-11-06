@@ -334,6 +334,8 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
         if deload:
             notes.insert(0, "DELOAD: light, 1-2 sets.")
         sets += [{"type": "normal", "weight_lb": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
+    if ex.get("note"):
+        notes.insert(0, sentence(ex["note"]))
     return sets, " ".join(notes)
 
 
