@@ -1,6 +1,6 @@
 # 06. Recovery, fatigue management, sleep, nutrition, and cardio
 
-Last updated: 2026-11-06 (4.3 measuring progress; 4.4 alcohol; 4.5 energy availability and fueling runs; 5.3 running as your sport; section 8 additions). Earlier: 2026-10-21
+Last updated: 2026-11-06 (4.3 measuring progress; 4.4 alcohol; 4.5 energy availability and fueling runs; 5.3 running as your sport; 6.1 sauna; section 8 additions). Earlier: 2026-10-21
 
 **Revision 2026-10-21:** this chapter was corrected against the primary sources. Several authors, study counts and claims were fixed. The caffeine dose was lowered to fit adult safety limits. Most "secondary" flags were removed. Details: `research/recovery-nutrition-cardio.md`, section "Addendum 2026-10-21: primary-source verification".
 
@@ -288,6 +288,35 @@ The research note's central finding (KQ6): the lifting itself is the best-suppor
 
 Gaps: warm-up injury-prevention evidence (Fradkin et al. 2010) and a dedicated active-recovery meta-analysis were not retrieved.
 
+### 6.1 Sauna
+
+Added 2026-11-06 at the user's request. Source: `research/sauna.md`. Optional: nothing in the program depends on it.
+
+| Question | Answer | Evidence |
+|---|---|---|
+| Does heat after lifting add muscle or strength? | Neutral to slightly positive, uncertain: hypertrophy SMD 0.12 (95% CrI -0.09 to 0.31), strength -0.05, from 6 fair-to-poor trials. No trial of a traditional sauna in trained lifters with muscle imaging. No sign of harm, unlike cold-water immersion (rank 7 above) | Hopper/Schoenfeld 2026 meta-analysis (preprint read) |
+| Muscle protein synthesis | Unchanged by hot-water leg immersion after lifting (0.050 vs 0.049 %/h) | Fuchs 2020, n = 12 |
+| Recovery | 20 min of 43 °C infrared after heavy lifting reduced 14-h soreness (ES 0.58) and the jump drop, not maximal strength or sleep. A long hot session is fatiguing itself: 32 min at 70 °C left leg press -4.1% at 24 h | Ahokas 2023, n = 16; Rissanen 2020, n = 27 |
+| Before lifting | 30 min at 65-75 °C cut leg-press reps 29% and bench reps 16% | Hedley 2002, n = 10 (older) |
+| Running | Post-run sauna (about 28 min at 101-108 °C, 3x a week for 3 weeks) acclimated runners to heat (non-randomised). In cool weather the randomised trials found no VO2peak gain | Kirby 2021; Sitkowski 2022; Karolkiewicz 2022 |
+| Hormones | The "16-fold growth hormone" figure is 1 h at 80 °C twice a day for 7 days in 10 men, and it faded after day 3. Acute hormone spikes did not predict growth in lifting trials | Leppäluoto 1986 (older); West 2010, 2012; Morton 2016 |
+| Health | 4-7 vs 1 session a week: all-cause mortality HR 0.60 (0.46-0.80) in Finnish men aged 42-60, observational only. Sauna added to exercise lowered systolic blood pressure 8.0 mmHg over 8 weeks in one RCT | Laukkanen 2015; Lee 2022 |
+| Fertility | Twice a week for 3 months (15 min at 80-90 °C) lowered sperm count and motility; recovery was confirmed only 6 months after stopping | Garolla 2013, n = 10, uncontrolled |
+| Sweat and scans | 20 min at 90 °C costs 0.24-0.82 kg of sweat; 0.76 kg of dehydration read as 0.90 kg less fat on an InBody 770 | Aburto-Corona 2024 |
+
+Protocol (inference):
+
+| Item | 3-day lifting week | 5-6-day lifting week |
+|---|---|---|
+| Dose | Traditional 80-90 °C, 10-15 min, 1-2 rounds, at most 20 min in all; or infrared 45-60 °C for 15-20 min. First 2-3 sessions 5-10 min | Same, kept to 10-15 min |
+| How often | 2-3 a week, after any lifting session | 2, at most 3, after upper-body or easy-run days |
+| When | After lifting or an easy run, never before a lift. Not within about 24 h before the heaviest lower-body day, a race or a top-set test (long or hot sessions) | Same |
+| Hydration | Weigh before and after a few times; replace the loss (typically 0.5-0.8 L) over 1-2 h with a normal salted meal | Same |
+| Weigh-ins and scans | Morning weigh-in before any sauna; no sauna on InBody scan morning or within 20 min of a scan (`data/body-composition.md` section 8) | Same |
+| Race week | Not a regular user: none in race week. Regular user: none from 2 days before the race until the day after. Warm-weather race: 3 weeks of 3 post-run sessions of about 25-30 min, finished 1-2 weeks before | Same |
+
+**Safety.** Never on drinking nights, while hungover, or alone after alcohol: about half of Finnish sauna deaths (under 2 per 100,000 a year) involved alcohol, and sauna plus heavy drinking dropped systolic blood pressure from 136 to 113 mmHg. Avoid regular use when trying to conceive. See a doctor first with heart disease, an arrhythmia, high or low blood pressure, fainting, kidney disease or a recent fever; unstable angina, a recent heart attack and severe aortic stenosis are contraindications, and blood-pressure drugs raise the risk of fainting on standing (section 8).
+
 ---
 
 ## 7. Age 30s-50s
@@ -328,6 +357,7 @@ This guide gives general training guidance only. See a physician, sports-medicin
 - Drinking often goes past 5 drinks on one occasion, cutting down is hard, or drinking affects work, sleep or mood. Do not mix alcohol with sleep medication or other sedatives (section 4.4).
 - Two or more signs of low energy availability (section 4.5) persist for more than 2-4 weeks, or bone pain gets worse with running. Bone pain on running should be checked promptly; bone stress injuries are a primary REDs sign, and the diagnosis needs blood tests and a clinician.
 - Low-back pain during or after deadlifting persists past a few days (`templates/progression-tracks.md`, regain section).
+- You plan to use a sauna and have heart disease, an arrhythmia, high or low blood pressure, a history of fainting, kidney disease, a recent fever, or take blood-pressure medication; or you are trying to conceive (section 6.1).
 
 ---
 
@@ -339,6 +369,7 @@ Research notes:
 - `research/body-composition-measurement.md` (2026-11-06): KQ1-KQ4 (section 4.3, measuring progress: Velasquez 2026; McLester 2020; Tinsley 2017, 2022; Buck 2023; Bone 2017; Potter 2022).
 - `research/alcohol-and-training.md` (2026-11-06): KQ1-KQ5 (section 4.4: Parr 2014; Barnes 2010-2012; Haugvad 2014; Levitt 2020; Shaw 2022; Gardiner 2025; Kwok 2019).
 - `research/energy-availability-and-fueling.md` (2026-11-06): KQ1-KQ5 (section 4.5: Mountjoy 2023 IOC REDs consensus; Jurov 2022; Areta 2021; AND/DC/ACSM 2016; King 2022; Henselmans 2022).
+- `research/sauna.md` (2026-11-06): KQ1-KQ7 (section 6.1: Hopper 2026; Fuchs 2020; Ahokas 2023; Rissanen 2020; Hedley 2002; Kirby 2021; Sitkowski 2022; Leppäluoto 1986; Laukkanen 2015; Lee 2022; Garolla 2013; Aburto-Corona 2024).
 - `research/running-and-lifting.md` (2026-11-06): KQ1-KQ5 (section 5.3: Petré 2021; Denadai 2017; Eihara 2022; Llanos-Lagos 2024; Boccia 2017, 2018; Wang 2025; Pritchard 2018, 2019).
 - `research/recovery-nutrition-cardio.md`: KQ1 (section 1), KQ2 (section 2), KQ3 (section 3), KQ4 (section 4), KQ5 (section 5), KQ6 (section 6), KQ7 (section 7), and "Addendum 2026-10-21: primary-source verification" (all sections).
 - `research/exercise-selection-and-session-design.md`: KQ5 (acute stretching data in section 6).
