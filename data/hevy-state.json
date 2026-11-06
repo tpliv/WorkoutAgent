@@ -17,5 +17,17 @@
     "U1+L2": "f5bed829-6ca3-499d-9c7e-d1912e452e6c"
   },
   "last_push": "2026-11-06T16:59:13Z",
-  "last_push_deload": false
+  "last_push_deload": false,
+  "this_week": {
+    "folder_id": 4036910,
+    "folder_title": "This Week",
+    "week_of": "2026-11-09",
+    "routines": {
+      "U1": "2da8d4c1-fe4b-4092-a7b9-3b4289a830dc",
+      "Full B": "a1de5676-367b-4e23-9d47-5cd0c15a2049",
+      "Full C": "93e8172d-7bb0-42ed-9f9d-96b8df3aead8",
+      "L1": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58"
+    },
+    "_comment": "Dated copies of this week's sessions, rendered from templates/rotation.json and data/tracks.json. Rewrite these ids in place next week (the API cannot delete routines). The Race Week folder (4004133) is empty; delete it in the app."
+  }
 }

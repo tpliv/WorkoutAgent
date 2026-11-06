@@ -2,6 +2,12 @@
 
 ## 2026-11-06
 
+- Hevy folder "This Week" holds the four sessions for the week of 9 Nov as
+  dated routines (titles start with the slot, so syncs read them). The three
+  Race Week routines were rewritten into it: the API has no delete (tested,
+  404), but a routine PUT moves folders (addendum in
+  `research/mobile-workout-trackers.md`). The empty Race Week folder must be
+  deleted in the app. Ids in `data/hevy-state.json` under `this_week`.
 - Week of 9 Nov changed to 4 days (Tue U1, Wed Full B, Fri Full C, Sun L1)
   after the lifter gave the race (10 miles, Sun 8 Nov) and Thursday work
   travel: Tuesday becomes upper only two days after the race. Holds on the

@@ -359,3 +359,8 @@ The OpenAPI 3.0 spec behind `https://api.hevyapp.com/docs/` (served from `/docs/
 - Still unverified: rate limits (the spec does not state them) and webhook payloads (the spec lists no webhook endpoints).
 
 Source: Hevy, Public API docs, https://api.hevyapp.com/docs/ (accessed 2026-10-21).
+
+## Addendum 2026-11-06: delete and folder moves, tested live
+
+- `DELETE /v1/routines/{id}` and `DELETE /v1/routine_folders/{id}` both return HTTP 404 "Cannot DELETE" (Express route not found). Deleting routines and folders stays app-only, as the published spec implied.
+- `PUT /v1/routines/{id}` with a different `folder_id` in the body moves the routine to that folder; the response and a later `GET` both show the new `folder_id`. Source: live calls from this repo's client against the lifter's account.
