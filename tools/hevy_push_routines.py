@@ -410,6 +410,20 @@ def resolve_exercises(h, rotation, exmap, custom_lookup=None):
     return changed
 
 
+def push_this_week(h, state, rotation, tracks, exmap, as_of, deload=False):
+    """Refresh the dated copies of the current week's sessions (state['this_week'],
+    folder "This Week"). Each keeps its own title and is rendered with its own
+    date for the gap modifiers. Sessions dated before as_of are left as they are."""
+    week = state.get("this_week") or {}
+    for s in week.get("sessions", []):
+        day = dt.date.fromisoformat(s["date"])
+        if day < as_of or s["slot"] not in rotation["sessions"]:
+            continue
+        payload, _ = build_routine(s["slot"], rotation, tracks, exmap, day, deload=deload, folder_id=week.get("folder_id"))
+        h.update_routine(s["id"], s["title"], payload["exercises"], folder_id=week.get("folder_id"), notes=payload["notes"])
+        print(f"Updated this week: {s['title']} ({s['id']})")
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Create or update the rotation's routines in Hevy.")
     ap.add_argument("--dry-run", action="store_true", help="print payloads; no network, no file writes")
@@ -477,6 +491,9 @@ def main(argv=None):
                 r = h.create_routine(payload["title"], payload["exercises"], folder_id=folder_id, notes=payload["notes"])
                 routines[slot] = r.get("id")
                 print(f"Created {slot}: {payload['title']} ({r.get('id')})")
+            save_json(args.state, state)
+        if not args.only:
+            push_this_week(h, state, rotation, tracks, exmap, as_of, args.deload)
             save_json(args.state, state)
         state["last_push"] = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         state["last_push_deload"] = bool(args.deload)

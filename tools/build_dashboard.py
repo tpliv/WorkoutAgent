@@ -23,7 +23,7 @@ Metric rules follow guide/07-tracking-and-apps.md section 1.2:
     1-12 reps only (tools/analyze_history.py).
   - Gap clock: templates/progression-tracks.md section 8.
 Tonnage is load x reps over working sets with a load, as logged (dumbbell
-loads are per dumbbell; assisted exercises are left out).
+loads are the total of both dumbbells as logged; assisted exercises are left out).
 """
 import argparse
 import collections

@@ -57,7 +57,7 @@ If a session has no logged data, add it to question 1. Ask for its top sets; don
    - 2 days: `guide/03` §4.6. 7 days: train 6.
 5. **Loads.**
    - Apply the gap clock (§8) to each main lift for its first exposure this week.
-   - Back-offs are the top set x 0.93; V sets are 90% of the track load. Round every barbell load to the nearest 5 lb; the smallest plate is 2.5 lb (§9). Dumbbells: one load in 2.5 lb steps (per dumbbell); machines: the nearest pin; never a range. Bench and press advance through the step counter (§5).
+   - Back-offs are the top set x 0.93; V sets are 90% of the track load. Round every barbell load to the nearest 5 lb; the smallest plate is 2.5 lb (§9). Dumbbells: one load, the total of the dumbbells in the hands as the lifter logs it (5 lb steps for two dumbbells, 2.5 lb for one); machines: the nearest pin; never a range. Bench and press advance through the step counter (§5).
    - If deloading: top sets x 0.90-0.92 at RPE 6-7, one back-off, V at 2 sets, accessories 1-2 sets.
 6. **Cardio**: place it per `guide/03` §7.
 7. **Write the files.**

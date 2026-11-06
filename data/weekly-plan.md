@@ -18,12 +18,14 @@ Last updated: 2026-11-06 (week of 9 Nov changed from 3 days (Tue, Wed, Fri) to 4
 
 | Date | Day and time | Hevy routine (folder This Week) | Main lifts and planned loads | Calendar | State |
 |---|---|---|---|---|---|
-| 2026-11-10 | Tue 7:30-9:00 am | U1 Upper A (Tue 10 Nov) | Bench H 110 x 4, back-offs 3 x 4 at 100; row H 4 x 6-8 at 70. Accessories: incline DB press 35s, lateral raise 20s, DB overhead triceps extension 25, face pull | hold (Workouts) | planned |
-| 2026-11-11 | Wed 7:30-9:00 am | Full B (Wed 11 Nov) | Deadlift H 150 x 4, back-offs 2 x 4 at 140; press H 70 x 4, back-offs 2 x 4 at 65; pulldown H 3 x 5-8 at 125. Accessories: leg press or split squat, reverse pec deck, lateral raise, incline DB curl 30s, calves | hold (Workouts) | planned |
+| 2026-11-10 | Tue 7:30-9:00 am | U1 Upper A (Tue 10 Nov) | Bench H 110 x 4, back-offs 3 x 4 at 100; row H 4 x 6-8 at 70. Accessories: incline DB press 70 total (35s), lateral raise 20 total (10s), overhead triceps extension 25 (one dumbbell), face pull | hold (Workouts) | planned |
+| 2026-11-11 | Wed 7:30-9:00 am | Full B (Wed 11 Nov) | Deadlift H 150 x 4, back-offs 2 x 4 at 140; press H 70 x 4, back-offs 2 x 4 at 65; pulldown H 3 x 5-8 at 125. Accessories: leg press or split squat, reverse pec deck, lateral raise, incline DB curl 30 total (15s), calves | hold (Workouts) | planned |
 | 2026-11-13 | Fri, flexible | Full C (Fri 13 Nov) | All V: squat 3 x 6 at 140; bench 3 x 6 at 100; deadlift 2 x 4 at 135; press 2 x 5 at 65; row 3 x 8-10 at 65; pulldown 2 x 6-8 at 115. Accessories: leg curl, incline DB press, lateral raise (optional) | none (lifter's request) | planned |
 | 2026-11-15 | Sun, flexible | L1 Lower A (Sun 15 Nov) | Squat H 155 x 4, back-offs 3 x 4 at 145. Accessories: RDL 110, leg press or split squat, leg curl, calves, core | none (lifter's request) | planned |
 
 State values: planned, briefed, done, missed, moved.
+
+Dumbbell loads are the total of both dumbbells, as logged in Hevy (`templates/progression-tracks.md` §9).
 
 Session lengths at the timer rests (routine notes): U1 about 63 min, Full B about 66, Full C about 65, L1 about 58.
 
@@ -57,3 +59,4 @@ Easy runs only until the race soreness clears. Runs on Mon (easy, optional), Thu
 
 - 2026-11-06: first written as 3 days (Tue U1 + L2, Wed U2 + L3, Fri U3 + L1), then changed the same day to 4 days (Tue U1, Wed Full B, Fri Full C, Sun L1) after the lifter gave the race (10 miles, Sun 8 Nov) and Thursday travel. The cross-block merged routines stay in Hevy for later weeks. Calendar holds on the Workouts calendar for Tue and Wed only, 7:30-9:00 am; Friday and Sunday left flexible at the lifter's request.
 - 2026-11-06 (later): Hevy folder "This Week" created with the four sessions as dated routines (same loads and exercises as the Rotation 2026-10 routines). The three Race Week routines were rewritten into it, since the API cannot delete routines; the empty Race Week folder is deleted in the app.
+- 2026-11-06 (later): dumbbell convention set to the total of both dumbbells, matching the lifter's logs. Loads corrected: lateral raise 20 total (10s; the plan had read it as 20s), incline DB curl 30 total (15s), reverse lunge 35 total (17.5s), incline DB press 70 total (35s). Routines and both calendar holds updated.

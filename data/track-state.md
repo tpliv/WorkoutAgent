@@ -41,13 +41,15 @@ Notes on each:
 
 ## Accessory starting loads (double progression, first set with 2-3 reps in reserve)
 
-One load each. If the first set is easier than 2-3 reps in reserve, move up 2.5 lb per dumbbell next time (one pin on a machine); if harder, down one step.
+Dumbbell loads are the total of both dumbbells, as logged in Hevy (2026-11-06). Current loads live in `data/tracks.json` (`accessories`); this table is the starting point only.
+
+One load each. If the first set is easier than 2-3 reps in reserve, move up one step next time (5 lb total on two dumbbells, 2.5 lb per dumbbell; one pin on a machine); if harder, down one step.
 
 From the recent log where one exists; otherwise choose on the day and record here.
 
 | Exercise (template slot) | Start | Source |
 |---|---|---|
-| Incline DB press (U1) | 2 x 35 lb dumbbells, 3 x 8-12 | Oct 2026 incline barbell 45 x 12 was an empty bar; 2024 incline DB 75 x 8 |
+| Incline DB press (U1) | 70 lb total (2 x 35 lb dumbbells), 3 x 8-12 | Oct 2026 incline barbell 45 x 12 was an empty bar; 2024 incline DB 75 x 8 |
 | Lateral raise (U1, U2, U3) | 15-20 lb, 3 x 12-15 | 2024 peak 40 x 8; recent 29-lb e1RM estimate |
 | DB curl (U2, U3) | 25 lb, 3 x 8-12 | Recent 42-lb e1RM estimate; 2024 peak 50 x 8 |
 | Overhead triceps extension (U1) | 25 lb DB, 3 x 10-15 | Oct 2026 extensions logged |

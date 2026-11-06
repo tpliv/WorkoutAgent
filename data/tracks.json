@@ -270,26 +270,26 @@
     }
   },
   "accessories": {
-    "_comment": "Keyed by the exercise 'name' in templates/rotation.json. weight_lb is per dumbbell for dumbbell exercises; null means choose on the day and record it here afterwards. step is the load step written into the routine note.",
+    "_comment": "Keyed by the exercise 'name' in templates/rotation.json. weight_lb for a two-dumbbell exercise is the total of both dumbbells, as the lifter logs it in Hevy (two 20-lb dumbbells = 40); for a one-dumbbell exercise it is that dumbbell; null means choose on the day and record it here afterwards. step is the load step written into the routine note.",
     "Incline DB press": {
-      "weight_lb": 35,
-      "step": "+2.5 lb per dumbbell",
-      "note": "per dumbbell; 2024 incline DB 75 x 8"
+      "weight_lb": 70,
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "total of both dumbbells (35 each); 2024 incline DB 75 x 8 total"
     },
     "Lateral raise": {
       "weight_lb": 20,
-      "step": "+2.5 lb per dumbbell",
-      "note": "per dumbbell"
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "total of both dumbbells (10 each); 20 x 16, 18 on 5 Nov 2026"
     },
     "Cable lateral raise": {
       "weight_lb": 15,
       "step": "+5 lb (one pin)",
-      "note": "or DB lateral raise at the same load"
+      "note": "or DB lateral raise at the DB lateral raise load (total of both dumbbells)"
     },
     "Incline DB curl": {
       "weight_lb": 30,
-      "step": "+2.5 lb per dumbbell",
-      "note": "per dumbbell; standing DB curl 35 x 12, 10, 8 on 4 Nov 2026 (incline runs lighter)"
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "total of both dumbbells (15 each); standing DB curl 35 total x 12, 10, 8 on 4 Nov 2026 (incline runs lighter)"
     },
     "Preacher or EZ-bar curl": {
       "weight_lb": null,
@@ -299,7 +299,7 @@
     "Overhead triceps extension": {
       "weight_lb": 25,
       "step": "+5 lb (one pin), or +2.5 lb on a dumbbell",
-      "note": "DB; cable stack if available"
+      "note": "one dumbbell held in both hands; cable stack if available"
     },
     "Triceps pushdown": {
       "weight_lb": null,
@@ -332,9 +332,9 @@
       "note": "choose on the day"
     },
     "Reverse lunge or split squat": {
-      "weight_lb": 32.5,
-      "step": "+2.5 lb per dumbbell",
-      "note": "per dumbbell; 30 x 12 per leg x 3 on 29 Oct 2026"
+      "weight_lb": 35,
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "total of both dumbbells (17.5 each); 30 total x 12 per leg x 3 on 29 Oct 2026"
     },
     "Standing calf raise": {
       "weight_lb": null,
@@ -358,8 +358,8 @@
     },
     "Flat DB press or dips": {
       "weight_lb": null,
-      "step": "+2.5 lb per dumbbell",
-      "note": ""
+      "step": "+5 lb total (2.5 lb per dumbbell), or bodyweight dips",
+      "note": "dumbbell load is the total of both"
     },
     "Back extension or Pallof press": {
       "weight_lb": null,

@@ -139,9 +139,9 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 
 - **Plates.** The smallest plate is 2.5 lb, so every barbell load is a multiple of 5 lb. Squat and deadlift step 5 lb per success; bench and press step 5 lb every second success (section 5).
 - **Every computed load is rounded to the nearest 5 lb before it is written down.** That covers back-offs (x 0.93), V sets (x 0.90), warm-up ramps, deloads (x 0.90-0.92), gap reductions (5-10%) and stall resets (7.5%). An exact half-step (for example 112.5) rounds up; stall resets round down. No load goes below the 45-lb bar. Record the loaded weight, not the computed one. No plan, brief or log shows a load that is not a multiple of 5 lb.
-- **Dumbbells** come in 2.5 lb steps, so every dumbbell load is a multiple of 2.5 lb (per dumbbell). **Machines and cable stacks:** the nearest pin. A plan or brief names one load, never a range.
+- **Dumbbells** come in 2.5 lb steps. Every dumbbell load in this program is the **total of the dumbbells in your hands**, the way the log records it (two 20-lb dumbbells = 40 lb; a one-arm row or a one-dumbbell overhead extension is that dumbbell). A two-dumbbell load is a multiple of 5 lb, a one-dumbbell load a multiple of 2.5 lb (convention set 2026-11-06 to match the lifter's Hevy history). **Machines and cable stacks:** the nearest pin. A plan or brief names one load, never a range.
 - If a session must use a substitute for a main lift (travel, equipment), the substitute does **not** update the track and does not count as an exposure for the gap clock. Strength is modality- and range-specific (Haugen 2023; Pallares 2020; `research/exercise-selection-and-session-design.md`, KQ7); keep the barbell lift itself at least once a week. When the station is only busy, reorder rather than substitute (`guide/03-flexible-scheduling.md`, section 4.3, "Station taken").
-- Dumbbell bench runs at roughly 35-40% of the barbell load per hand; treat any substitute as a new baseline and progress it by double progression.
+- Dumbbell bench runs at roughly 35-40% of the barbell load per hand (70-80% as a total); treat any substitute as a new baseline and progress it by double progression.
 
 ---
 
@@ -169,11 +169,11 @@ This table is an inference from peer-reviewed detraining studies, mostly older, 
 
 ## 11. Accessory progression (every exercise that is not a main-lift exposure)
 
-- **Double progression.** Fix the load. Add reps each exposure until every set hits the top of the rep range at RPE 9 or less. Then add the smallest increment (5 lb on a barbell or stack pin, 2.5 lb per dumbbell where the rack allows, otherwise one dumbbell step) and drop to the bottom of the range. The last set of an isolation exercise may go to failure; compounds stay at 1-3 RIR (`guide/01-training-principles.md`, section 5).
+- **Double progression.** Fix the load. Add reps each exposure until every set hits the top of the rep range at RPE 9 or less. Then add the smallest increment (5 lb on a barbell or stack pin; 5 lb total on a two-dumbbell exercise, which is 2.5 lb per dumbbell where the rack allows, otherwise one dumbbell step each; 2.5 lb on a one-dumbbell exercise) and drop to the bottom of the range. The last set of an isolation exercise may go to failure; compounds stay at 1-3 RIR (`guide/01-training-principles.md`, section 5).
 - **Starting load:** one you can lift for the bottom of the range with 2-3 reps in reserve.
 - **Dynamic variant** for lifters who log set by set: increase load on a specific set only if that set exceeded the range last time (Helms' Muscle and Strength Pyramid description, `research/periodization-and-progression.md`, Q2).
 - **Short weeks** skip some sets of an accessory; they never reset its load.
-- **Stall:** two exposures without a rep gained at a load, drop one step (5 lb on a barbell, one pin on a stack, 2.5 lb per dumbbell) and rebuild, or swap to a same-length alternative (seated curl for lying curl, overhead for neutral triceps) at a block boundary. Rotate accessories every 4-8 weeks or when they stall, not session to session (`guide/05-exercise-selection.md`, section 8).
+- **Stall:** two exposures without a rep gained at a load, drop one step (5 lb on a barbell, one pin on a stack, 5 lb total on two dumbbells or 2.5 lb on one) and rebuild, or swap to a same-length alternative (seated curl for lying curl, overhead for neutral triceps) at a block boundary. Rotate accessories every 4-8 weeks or when they stall, not session to session (`guide/05-exercise-selection.md`, section 8).
 - Triple progression (reps, then sets, then load) is available for accessories you train in every week type, but the extra set is the first thing a short week removes, so it is not the default.
 
 ---

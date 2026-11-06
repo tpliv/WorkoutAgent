@@ -2,6 +2,15 @@
 
 ## 2026-11-06
 
+- Dumbbell loads are now the total of both dumbbells, the way the lifter logs
+  them in Hevy (confirmed 6 Nov). Rule in `templates/progression-tracks.md` §9
+  and §11, `coach/README.md`, `coach/sunday-checkin.md`, `data/tracks.json`
+  accessories, dashboard text. Loads fixed: lateral raise 20 total (10 each),
+  incline DB curl 30 total, reverse lunge 35 total, incline DB press 70 total.
+  Why: the routines said "per dumbbell" while the history and the starting
+  loads read as totals, so lateral raise, curl and lunge prescriptions were
+  about double what was lifted. `hevy_push_routines.py` now also refreshes the
+  "This Week" copies on a full push. Routines and calendar holds updated.
 - Hevy folder "This Week" holds the four sessions for the week of 9 Nov as
   dated routines (titles start with the slot, so syncs read them). The three
   Race Week routines were rewritten into it: the API has no delete (tested,

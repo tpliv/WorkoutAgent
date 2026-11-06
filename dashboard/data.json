@@ -3748,11 +3748,6 @@
  "track_log": [
   {
    "date": "2026-10-27",
-   "text": "2026-10-27 Full A Bench press, amended by hand: the lifter reported RPE 8 on 105 x 6. Six reps at RPE 8 is at least 4 reps at RPE 6, the \"4 reps at RPE 7 or lower\" row of §5: big step +5 to 110 at once, step counter cleared (was: success 1 of 2, hold 105). The engine does not yet credit reps above the target.",
-   "kind": "decision"
-  },
-  {
-   "date": "2026-10-27",
    "text": "2026-10-27 Full A squat and barbell row: rack taken; leg press and DB row substituted and not counted (§9). Squat and row tracks unchanged.",
    "kind": "decision"
   },
@@ -3805,6 +3800,11 @@
    "date": "2026-11-06",
    "text": "Flag: no RPE logged on any set from 29 Oct to 5 Nov. Every decision above assumes RPE 8.",
    "kind": "flag"
+  },
+  {
+   "date": "2026-11-06",
+   "text": "2026-11-06 Dumbbell convention: the lifter logs the total of both dumbbells (confirmed 6 Nov; the 2024 history fits only that reading, e.g. DB bench 90 x 6 against a 105 barbell bench). Program loads are now totals. Accessories: incline DB press 35 per dumbbell -> 70 total (same weight); lateral raise stays 20 total (10 each; the routine had said 20 per dumbbell, double what was lifted); incline DB curl 30 -> 30 total (15 each; the earlier 30 per dumbbell assumed per-dumbbell logs); reverse lunge 32.5 per dumbbell -> 35 total (30 total x 12 per leg, +5 total). Overhead triceps extension unchanged (one dumbbell, 25).",
+   "kind": "decision"
   }
  ],
  "unmapped": [

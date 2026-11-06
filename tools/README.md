@@ -184,7 +184,9 @@ set of the lift. The decision follows section 5 of
   `PUT /routines/{id}` with a new `folder_id` does move a routine between
   folders (verified 2026-11-06), so a retired routine can be rewritten and
   reused instead of deleted. `data/hevy-state.json` key `this_week` holds the
-  dated copies of the current week's sessions in the folder "This Week".
+  dated copies of the current week's sessions in the folder "This Week";
+  a full push (no `--only`) re-renders every one dated today or later, each
+  at its own date.
 - The API is Pro-only and Hevy says it may change without notice.
 - `update_tracks.py` skips sessions dated on or before `processed_through` in
   `tracks.json` when applying rules, so two sessions on the same calendar day

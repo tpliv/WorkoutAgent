@@ -16,18 +16,38 @@
     "U3+L1": "d402bb41-37ad-4f5f-9709-d588050330bf",
     "U1+L2": "f5bed829-6ca3-499d-9c7e-d1912e452e6c"
   },
-  "last_push": "2026-11-06T16:59:13Z",
+  "last_push": "2026-11-06T17:18:10Z",
   "last_push_deload": false,
   "this_week": {
     "folder_id": 4036910,
     "folder_title": "This Week",
     "week_of": "2026-11-09",
-    "routines": {
-      "U1": "2da8d4c1-fe4b-4092-a7b9-3b4289a830dc",
-      "Full B": "a1de5676-367b-4e23-9d47-5cd0c15a2049",
-      "Full C": "93e8172d-7bb0-42ed-9f9d-96b8df3aead8",
-      "L1": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58"
-    },
-    "_comment": "Dated copies of this week's sessions, rendered from templates/rotation.json and data/tracks.json. Rewrite these ids in place next week (the API cannot delete routines). The Race Week folder (4004133) is empty; delete it in the app."
+    "_comment": "Dated copies of this week's sessions in the Hevy folder 'This Week'. hevy_push_routines.py (full push, no --only) re-renders every session dated today or later. Next week: rewrite date, slot and title in place and push; the API cannot delete routines, so reuse these ids (add or leave spare ones as needed). The Race Week folder (4004133) is empty; delete it in the app.",
+    "sessions": [
+      {
+        "date": "2026-11-10",
+        "slot": "U1",
+        "title": "U1 Upper A (Tue 10 Nov)",
+        "id": "2da8d4c1-fe4b-4092-a7b9-3b4289a830dc"
+      },
+      {
+        "date": "2026-11-11",
+        "slot": "Full B",
+        "title": "Full B (Wed 11 Nov)",
+        "id": "a1de5676-367b-4e23-9d47-5cd0c15a2049"
+      },
+      {
+        "date": "2026-11-13",
+        "slot": "Full C",
+        "title": "Full C (Fri 13 Nov)",
+        "id": "93e8172d-7bb0-42ed-9f9d-96b8df3aead8"
+      },
+      {
+        "date": "2026-11-15",
+        "slot": "L1",
+        "title": "L1 Lower A (Sun 15 Nov)",
+        "id": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58"
+      }
+    ]
   }
 }
