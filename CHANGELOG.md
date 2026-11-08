@@ -3,6 +3,7 @@
 ## 2026-11-08
 
 - Race log started (`data/races.md`): the 10-mile race on 8 Nov 2026 (1:27:35, avg HR 175) against the same race in 2025 (1:28:19, avg HR 169), with mile splits. Why: the lifter shared both results; keeping them lets later check-ins compare years. Read: the 44 s gain came from a faster first half, not fitness (about 2.7% more heartbeats per mile); the mile 9 fade came 3 days after a heavy squat that the race-week rule places at R-4 or earlier. No rule or load change.
+- Race log revised with the lifter's answers: race is the EQT Pittsburgh 10 Miler (9 Nov 2025, 8 Nov 2026); race-morning conditions from the PIT and AGC airport observations (40-46 °F both years; 2025 foggy and humid, 2026 sunny and windier); 2025 bodyweight 165 lb vs about 181 now; mile 9 included a shoe-tie stop. Why the read changed: about 10% more bodyweight for 3.6% more heart rate at a slightly faster pace points to equal or better aerobic fitness, not a loss, and the squat-before-race explanation for mile 9 is no longer needed. Soreness and Monday sauna noted in `data/weekly-plan.md`; no plan change.
 
 ## 2026-11-06
 

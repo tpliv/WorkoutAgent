@@ -70,6 +70,7 @@ The lifter has a gym sauna (`guide/06-recovery-nutrition-cardio.md` §6.1). None
 
 ## Changes this week
 
+- 2026-11-08: race done (1:27:35; `data/races.md`). Lifter reports very sore legs on race day and plans the sauna on Mon 9 Nov (R+1), within the sauna rule above. No session or load change: the Wednesday deadlift cap at RPE 7 already covers the soreness.
 - 2026-11-06 (later): sauna section added (the lifter has gym access); routine notes ask for the reps to be changed when they differ from the pre-filled 4.
 
 - 2026-11-06 (later): race recovery and running rewritten to the new rule in `guide/03-flexible-scheduling.md` §4.7. The Wednesday deadlift cap at RPE 7 is now unconditional (it was "if the legs are still sore"), with 1-2 back-offs and a below-plan top set logged as a hold. Mon walk only; easy runs only all week. Race-day fueling added to `data/body-composition.md` §5.1. No load or routine change.
