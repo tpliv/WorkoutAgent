@@ -52,6 +52,20 @@ The user's baseline for a body recomposition, the calorie plan that goes with it
 | Bent-over row (barbell) | 41 | 64 |
 | Lat pulldown (cable) | 73 | 73 |
 
+### 4.1 Strength against population norms (added 2026-11-08)
+
+Current e1RMs in lb (from `data/tracks.json`), 181 lb bodyweight. Source and caveats: `research/population-norms-strength-and-running.md`.
+
+| Lift | Now (x BW) | 2024 best (x BW) | Strength Level, 180-lb men who log lifts | Other |
+|---|---|---|---|---|
+| Squat | 191 (1.06) | 291 (1.61) | About 10th percentile now; about 45th in 2024 | Between untrained study samples now; above them in 2024 |
+| Bench | 133 (0.73) | 132 (0.73) | About 7th | About 5th percentile of Cooper machine norms, men 20-29 |
+| Deadlift | 185 (1.02) | 185 (1.02) | Below Beginner (under 5th) | Never pushed: 10 sessions, best set 155 x 6 |
+| Overhead press | 84 (0.46) | 88 (0.49) | About 10th | - |
+| Lat pulldown | 161 (0.89) | - | About 30th | - |
+
+Read: lean mass is well above average (§3) while strength sits low against people who train. With about 60 sessions logged since 2024, that points to too little practice and volume, not a ceiling.
+
 ## 5. Calorie and macro plan
 
 Maintenance estimate: about 2,850-3,000 kcal/day. RMR is about 1,830-1,850 kcal by Mifflin-St Jeor and Katch-McArdle, times an activity factor for 10k+ steps, light running and lifting. The 10+ lb gain suggests the pre-baseline intake was about 3,300+ kcal/day.

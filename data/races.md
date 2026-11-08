@@ -1,6 +1,6 @@
 # Race log
 
-Last updated: 2026-11-08 (later: race named, conditions, 2025 bodyweight, mile 9 cause, soreness; read revised). First written 2026-11-08 from the lifter's Garmin screenshots.
+Last updated: 2026-11-08 (population comparison added; conditions confirmed. Earlier the same day: race named, conditions, 2025 bodyweight, mile 9 cause, soreness; read revised). First written 2026-11-08 from the lifter's Garmin screenshots.
 
 Races the lifter runs, with splits and heart rate, so later sessions can compare
 years and judge the lifting and running plans around them. Rules for race weeks
@@ -98,8 +98,22 @@ higher heart rate. 2026 was clearly windier.
   fluids are back to normal. Short and mild is the version tied to less soreness
   (`research/sauna.md` KQ2).
 
+## Against the population (added 2026-11-08)
+
+Source: `research/population-norms-strength-and-running.md` KQ3-KQ4.
+
+| Comparison | 2026 (1:27:35) | 2025 (1:28:19) |
+|---|---|---|
+| EQT field, all finishers | Beat 69% (median 1:36:11) | Beat 66% (median 1:35:11) |
+| EQT field, men | Beat 56% (median 1:30:15) | Beat 52% (median 1:28:56) |
+| EQT field, men 25-29 | Beat 49% (median about 1:27:00) | Beat 46% (median 1:26:39) |
+| Cherry Blossom 2017, men 25-29 | At the median (1:27:34) | - |
+| Age grade (2025 tables, standard 43:15) | 49.4% | 49.0% |
+| VDOT | 37.6 (about 20th-25th percentile of lab VO2max, men 20-29; a floor) | 37.2 |
+
+Conditions confirmed by the lifter on 2026-11-08.
+
 ## Open questions for the lifter
 
-- Confirm the conditions above match what it felt like on the course.
 - Start time each year (P3R lists 8:30 am for the 10 Miler; the 2025 results
   page lists 7:30 am). Both windows fall inside the observations above.
