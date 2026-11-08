@@ -11,6 +11,7 @@ The training log and the live state of the program. Everything here except
 | `track-state.md` | Narrative companion to `tracks.json` with the same table (regenerated between the markers) and notes on each lift. |
 | `track-log.md` | Append-only record of every decision `update_tracks.py` made and why. |
 | `body-composition.md` | Body-composition baseline, population comparison, calorie and macro plan, adjustment rules, and the scan log. Updated by hand after each scan. |
+| `races.md` | Race results with mile splits and heart rate, year-on-year comparison, and what each race says about the plan. Updated by hand after each race. |
 | `hevy-exercise-map.json` | Program exercise name to Hevy exercise template id, filled by `hevy_push_routines.py --resolve`. Edit by hand when a match is wrong. |
 | `exercise-muscles.json` | Hevy exercise title to primary and secondary muscle groups and exercise type, from Hevy's exercise templates (`tools/build_dashboard.py --refresh-muscles`). Used for sets per muscle and tonnage on the dashboard. |
 | `hevy-state.json` | Hevy folder id, routine ids per slot, and the timestamp of the last pull. |

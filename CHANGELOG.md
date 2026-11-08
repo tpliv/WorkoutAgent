@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-08
+
+- Race log started (`data/races.md`): the 10-mile race on 8 Nov 2026 (1:27:35, avg HR 175) against the same race in 2025 (1:28:19, avg HR 169), with mile splits. Why: the lifter shared both results; keeping them lets later check-ins compare years. Read: the 44 s gain came from a faster first half, not fitness (about 2.7% more heartbeats per mile); the mile 9 fade came 3 days after a heavy squat that the race-week rule places at R-4 or earlier. No rule or load change.
+
 ## 2026-11-06
 
 - Lifter's answers (6 Nov): InBody model, pre-scan state and creatine start unknown, so the 21 Oct scan is a rough start and the first standardized scan (Wed 18 Nov if Mon-Tue are rest days, else 16 Dec) becomes the reference (`data/body-composition.md` §8; the check-in keeps 48 h before a scan free of lifting). Hevy pre-fills the planned reps, so an unedited 4 reads as a success: the routine notes and `templates/progression-tracks.md` §3 now say to change the reps when they differ, above all on a missed rep (addendum in `research/effort-ratings-and-progression-without-rpe.md`); routines pushed. Gym sauna available: recorded in the profile, and the week of 9 Nov gets an optional sauna plan (after sessions, none Saturday before the Sunday squat, none on drinking nights).
