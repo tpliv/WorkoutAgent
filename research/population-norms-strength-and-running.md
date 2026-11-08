@@ -141,7 +141,7 @@ Lat pulldown from https://strengthlevel.com/strength-standards/lat-pulldown/lb.
 | Squat, now 191 lb (1.06x) | About 10th percentile of Strength Level users; between the untrained samples | KQ1, KQ2 |
 | Squat, 2024 best 291 lb (1.61x) | About 45th percentile of Strength Level users; above all three untrained samples | KQ1, KQ2 |
 | Bench, 133 lb (0.73x), same in 2024 | About 5th percentile of Cooper (machine norms); about 7th of Strength Level users; similar to the weakest untrained sample | KQ1, KQ2 |
-| Deadlift, 185 lb (1.02x), same in 2024 | Below Strength Level's Beginner cutoff | KQ2 |
+| Deadlift, 174 lb now (0.96x); 185 lb (1.02x) in 2024 | Below Strength Level's Beginner cutoff both times | KQ2 |
 | Overhead press, 84 lb (0.46x) | About 10th percentile of Strength Level users | KQ2 |
 | Lat pulldown, 161 lb | About 30th percentile of Strength Level users | KQ2 |
 | 10-mile race | Middle of the men's field (beat 56%); at the median for men 25-29 at two races | KQ3 |
@@ -164,6 +164,21 @@ Lat pulldown from https://strengthlevel.com/strength-standards/lat-pulldown/lb.
 - **Week types.** Nothing here changes the rules. 5-6-day weeks give each main
   lift 2-3 exposures and more weekly sets, which is how lagging lifts catch up.
   3-day weeks keep each lift at 2 exposures and hold the line.
+
+## Addendum 2026-11-08: how much the logged e1RMs understate
+
+The lifter asked whether beating the program's planned loads makes these numbers too low. Every current e1RM comes from a working set, not a test, and the engine credits unrated sets conservatively (`tools/update_tracks.py`: Epley with RIR 2 at the rep target, RIR 1 above it). Sets lifted well above plan (squat 155 x 5 against a planned 135 x 4; press 70 x 4 against 60) were probably further from failure than that.
+
+| Lift, set | Logged e1RM (assumed RIR) | If 2 more reps were left | Strength Level percentile, logged / +2 RIR |
+|---|---|---|---|
+| Squat 155 x 5 | 191 (RIR 2) | 201 | about 10th / about 12th |
+| Bench 105 x 6 (rated RPE 8) | 133 (RIR 2) | 140 | about 7th / about 9th |
+| Deadlift 145 x 4 | 174 (RIR 2) | 184 | under 5th / under 5th |
+| Press 70 x 4 | 84 (RIR 2) | 89 | about 10th / about 12th |
+
+- Two extra reps in reserve add about 5-6% to each e1RM (Epley: about 3.3% of the load per rep). Lifters underpredict reps to failure by about one rep on average (Halperin 2022; `research/effort-ratings-and-progression-without-rpe.md` KQ1), so 1-2 extra reps on unrated sets is plausible.
+- The bias does not run only one way. e1RMs from sets of 8-12 (the return-block estimates, the row at 65 x 12) can overstate a 1RM for someone unpracticed at heavy low-rep work. Inference; not quantified here.
+- Conclusion: under-reporting explains perhaps 5-10% on the current numbers. It moves no lift by more than a few percentile points. The low placings come mainly from little practice and low volume. A calibration rep-out (`templates/progression-tracks.md` §5.3) or a rated top set gives a far better estimate than any formula on an unrated set.
 
 ## Gaps
 
