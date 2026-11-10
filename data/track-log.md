@@ -22,3 +22,9 @@ Append-only record of what `tools/update_tracks.py` changed and why. Newest at t
 - 2026-11-06 Accessories: incline DB curl 25 -> 30 lb (standing curl 35 x 12, 10, 8 on 4 Nov; incline runs lighter). Reverse lunge 30 -> 32.5 lb (30 x 12 per leg x 3 on 29 Oct, top of 8-12). Lateral raise holds 20 (16, 18; range 12-20). Overhead triceps extension holds 25 (25 x 8, 27.5 x 8, under the 10-15 range).
 - Flag: no RPE logged on any set from 29 Oct to 5 Nov. Every decision above assumes RPE 8.
 - 2026-11-06 Dumbbell convention: the lifter logs the total of both dumbbells (confirmed 6 Nov; the 2024 history fits only that reading, e.g. DB bench 90 x 6 against a 105 barbell bench). Program loads are now totals. Accessories: incline DB press 35 per dumbbell -> 70 total (same weight); lateral raise stays 20 total (10 each; the routine had said 20 per dumbbell, double what was lifted); incline DB curl 30 -> 30 total (15 each; the earlier 30 per dumbbell assumed per-dumbbell logs); reverse lunge 32.5 per dumbbell -> 35 total (30 total x 12 per leg, +5 total). Overhead triceps extension unchanged (one dumbbell, 25).
+
+## 2026-11-10
+
+- 2026-11-10 U1 Bench press: top 110 x 6 -> rep-out 6; 6 @ 7: big step to 115
+- Flag: no RPE logged on the Bench press top set (110 x 6); assumed it ended at RPE 9, so 7 at rep 4
+- 2026-11-10 Accessories: incline DB press holds 70 total (6, 8, 8; range 8-12). Lateral raise holds 20 total (15, 20, 20, 20; one set short of 20). Overhead triceps extension back to 25 (27.5 x 8 x 3 against a planned 25; 8s since 20 Oct, under the 10-15 range). Row: dumbbell row 70 total x 8 x 4 replaced the barbell row, so the row track did not update (holds 70). Face pull not logged.

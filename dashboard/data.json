@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06",
+ "generated": "2026-11-10",
  "units": "lb",
  "groups": [
   {
@@ -3327,6 +3327,42 @@
      "trend": "up"
     }
    }
+  },
+  {
+   "week": "2026-11-09",
+   "sessions": 1,
+   "days": 1,
+   "sets": 17,
+   "reps": 168,
+   "tonnage": 7825,
+   "muscles": {
+    "chest": 7,
+    "back": 3,
+    "shoulders": 7.5,
+    "biceps": 1.5,
+    "triceps": 6.5
+   },
+   "target": [
+    4,
+    6
+   ],
+   "lifts": {
+    "bench": {
+     "e1rm": 132.0,
+     "load": 110.0,
+     "reps": 6,
+     "rpe": null,
+     "date": "2026-11-10",
+     "exercise": "Bench Press (Barbell)",
+     "top_load": 110.0,
+     "top_reps": 6,
+     "sets": 4,
+     "delta": 6.0,
+     "delta_pct": 4.8,
+     "prev_week": "2026-11-02",
+     "trend": "up"
+    }
+   }
   }
  ],
  "lifts": [
@@ -3334,7 +3370,7 @@
    "key": "squat",
    "name": "Back squat",
    "last_date": "2026-11-05",
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3361,36 +3397,36 @@
   {
    "key": "bench",
    "name": "Bench press",
-   "last_date": "2026-11-05",
-   "gap_days": 1,
+   "last_date": "2026-11-10",
+   "gap_days": 0,
    "gap": {
     "key": "normal",
     "label": "Normal"
    },
    "latest": {
-    "e1rm": 126.0,
-    "load": 105.0,
+    "e1rm": 132.0,
+    "load": 110.0,
     "reps": 6,
     "rpe": null,
-    "date": "2026-11-05",
+    "date": "2026-11-10",
     "exercise": "Bench Press (Barbell)",
-    "top_load": 105.0,
+    "top_load": 110.0,
     "top_reps": 6,
-    "sets": 2,
-    "delta": -7.0,
-    "delta_pct": -5.3,
-    "prev_week": "2026-10-26",
-    "trend": "down"
+    "sets": 4,
+    "delta": 6.0,
+    "delta_pct": 4.8,
+    "prev_week": "2026-11-02",
+    "trend": "up"
    },
-   "latest_week": "2026-11-02",
+   "latest_week": "2026-11-09",
    "best_e1rm": 133.0,
-   "block_change": 13.5
+   "block_change": 13.2
   },
   {
    "key": "deadlift",
    "name": "Deadlift",
    "last_date": "2026-11-04",
-   "gap_days": 2,
+   "gap_days": 6,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3418,7 +3454,7 @@
    "key": "press",
    "name": "Overhead press",
    "last_date": "2026-11-05",
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3446,7 +3482,7 @@
    "key": "row",
    "name": "Barbell row",
    "last_date": "2026-11-05",
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3474,7 +3510,7 @@
    "key": "pullup",
    "name": "Pull-up or pulldown",
    "last_date": "2026-11-05",
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3500,21 +3536,21 @@
   }
  ],
  "consistency": {
-  "current_streak": 4,
+  "current_streak": 5,
   "longest_streak": 10,
-  "weeks_trained_last12": 4,
-  "sessions_last12": 8,
-  "avg_days_active_week": 1.9,
-  "total_sessions": 56,
+  "weeks_trained_last12": 5,
+  "sessions_last12": 9,
+  "avg_days_active_week": 1.8,
+  "total_sessions": 57,
   "first_date": "2024-03-05",
-  "last_date": "2026-11-05"
+  "last_date": "2026-11-10"
  },
  "program": {
-  "pointer": "U1",
+  "pointer": "L2",
   "block_start": "2026-10-27",
-  "block_week": 2,
+  "block_week": 3,
   "deload": false,
-  "processed_through": "2026-11-05"
+  "processed_through": "2026-11-10"
  },
  "tracks": [
   {
@@ -3532,7 +3568,7 @@
     "date": "2026-11-05",
     "type": "H"
    },
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3561,18 +3597,18 @@
    "key": "bench",
    "name": "Bench press",
    "scheme": "top_set",
-   "next_load": 110,
-   "last_h_load": 105.0,
+   "next_load": 115,
+   "last_h_load": 110.0,
    "rep_target": 4,
    "rep_range": null,
    "miss_counter": 0,
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-11-05",
-    "type": "V"
+    "date": "2026-11-10",
+    "type": "H"
    },
-   "gap_days": 1,
+   "gap_days": 0,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3594,6 +3630,14 @@
      "rpe": 8,
      "slot": "Full A",
      "note": "RPE 8 reported by the lifter after the sync"
+    },
+    {
+     "date": "2026-11-10",
+     "e1rm": 135.7,
+     "load": 110.0,
+     "reps": 6,
+     "rpe": null,
+     "slot": "U1"
     }
    ]
   },
@@ -3612,7 +3656,7 @@
     "date": "2026-11-04",
     "type": "V"
    },
-   "gap_days": 2,
+   "gap_days": 6,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3651,7 +3695,7 @@
     "date": "2026-11-05",
     "type": "V"
    },
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3694,7 +3738,7 @@
     "date": "2026-11-05",
     "type": "V"
    },
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3728,7 +3772,7 @@
     "date": "2026-11-05",
     "type": "V"
    },
-   "gap_days": 1,
+   "gap_days": 5,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3746,16 +3790,6 @@
   }
  ],
  "track_log": [
-  {
-   "date": "2026-10-27",
-   "text": "2026-10-27 Full A squat and barbell row: rack taken; leg press and DB row substituted and not counted (§9). Squat and row tracks unchanged.",
-   "kind": "decision"
-  },
-  {
-   "date": "2026-10-27",
-   "text": "2026-10-27 Accessory: lateral raise 15 -> 20 lb per dumbbell (logged 20 x 12, 14, 12, 12 on 27 Oct, all in range; §11 records the load used).",
-   "kind": "decision"
-  },
   {
    "date": "2026-11-06",
    "text": "2026-10-29 L2 Deadlift: top 145 x 4 -> 4 @ 8: +5 to 150",
@@ -3805,6 +3839,16 @@
    "date": "2026-11-06",
    "text": "2026-11-06 Dumbbell convention: the lifter logs the total of both dumbbells (confirmed 6 Nov; the 2024 history fits only that reading, e.g. DB bench 90 x 6 against a 105 barbell bench). Program loads are now totals. Accessories: incline DB press 35 per dumbbell -> 70 total (same weight); lateral raise stays 20 total (10 each; the routine had said 20 per dumbbell, double what was lifted); incline DB curl 30 -> 30 total (15 each; the earlier 30 per dumbbell assumed per-dumbbell logs); reverse lunge 32.5 per dumbbell -> 35 total (30 total x 12 per leg, +5 total). Overhead triceps extension unchanged (one dumbbell, 25).",
    "kind": "decision"
+  },
+  {
+   "date": "2026-11-10",
+   "text": "2026-11-10 U1 Bench press: top 110 x 6 -> rep-out 6; 6 @ 7: big step to 115",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-10",
+   "text": "Flag: no RPE logged on the Bench press top set (110 x 6); assumed it ended at RPE 9, so 7 at rep 4",
+   "kind": "flag"
   }
  ],
  "unmapped": [

@@ -18,7 +18,7 @@ Last updated: 2026-11-06 (race-recovery rule from `guide/03` §4.7 applied later
 
 | Date | Day and time | Hevy routine (folder This Week) | Main lifts and planned loads | Calendar | State |
 |---|---|---|---|---|---|
-| 2026-11-10 | Tue 7:30-9:00 am | U1 Upper A (Tue 10 Nov) | Bench H 110 x 4, back-offs 3 x 4 at 100; row H 4 x 6-8 at 70. Accessories: incline DB press 70 total (35s), lateral raise 20 total (10s), overhead triceps extension 25 (one dumbbell), face pull | hold (Workouts) | planned |
+| 2026-11-10 | Tue 7:30-9:00 am | U1 Upper A (Tue 10 Nov) | Bench H 110 x 4, back-offs 3 x 4 at 100; row H 4 x 6-8 at 70. Accessories: incline DB press 70 total (35s), lateral raise 20 total (10s), overhead triceps extension 25 (one dumbbell), face pull | hold (Workouts) | done |
 | 2026-11-11 | Wed 7:30-9:00 am | Full B (Wed 11 Nov) | Deadlift H 150 x 4, back-offs 2 x 4 at 140; press H 70 x 4, back-offs 2 x 4 at 65; pulldown H 3 x 5-8 at 125. Accessories: leg press or split squat, reverse pec deck, lateral raise, incline DB curl 30 total (15s), calves | hold (Workouts) | planned |
 | 2026-11-13 | Fri, flexible | Full C (Fri 13 Nov) | All V: squat 3 x 6 at 140; bench 3 x 6 at 100; deadlift 2 x 4 at 135; press 2 x 5 at 65; row 3 x 8-10 at 65; pulldown 2 x 6-8 at 115. Accessories: leg curl, incline DB press, lateral raise (optional) | none (lifter's request) | planned |
 | 2026-11-15 | Sun, flexible | L1 Lower A (Sun 15 Nov) | Squat H 155 x 4, back-offs 3 x 4 at 145. Accessories: RDL 110, leg press or split squat, leg curl, calves, core | none (lifter's request) | planned |
@@ -70,6 +70,7 @@ The lifter has a gym sauna (`guide/06-recovery-nutrition-cardio.md` §6.1). None
 
 ## Changes this week
 
+- 2026-11-10: U1 done, 7:41-8:32 am (51 min). Bench 110 x 6 unrated (the routine's "up to 6 if rep 4 is easy"), back-offs 105 x 5, 6, 6 (plan: 3 x 4 at 100). Engine: effective RPE 7 at rep 4, big step to 115 (`data/track-log.md`). Row done as dumbbell row 70 total x 8 x 4 instead of the barbell: a substitute, so the row track holds at 70. Incline DB press 70 x 6, 8, 8; lateral raise 20 x 15, 20, 20, 20; overhead triceps extension 27.5 x 8 x 3 (plan 25); face pull not logged. Routines re-pushed: Friday's bench V is now 3 x 6 at 105 (90% of 115). No RPE logged.
 - 2026-11-08: race done (1:27:35; `data/races.md`). Lifter reports very sore legs on race day and plans the sauna on Mon 9 Nov (R+1), within the sauna rule above. No session or load change: the Wednesday deadlift cap at RPE 7 already covers the soreness.
 - 2026-11-06 (later): sauna section added (the lifter has gym access); routine notes ask for the reps to be changed when they differ from the pre-filled 4.
 

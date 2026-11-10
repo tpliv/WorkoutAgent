@@ -742,3 +742,23 @@ date,workout_title,exercise,set_index,set_type,weight_kg,reps,rpe,notes,source,w
 2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),3,normal,61.24,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
 2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),0,normal,11.34,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
 2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),0,warmup,20.41,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),1,warmup,43.09,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),2,normal,49.9,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),3,normal,47.63,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),4,normal,47.63,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),5,normal,47.63,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),0,warmup,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),1,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),2,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),3,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),0,normal,31.75,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),2,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),0,normal,9.07,15,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),1,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),2,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),3,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),0,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),2,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
