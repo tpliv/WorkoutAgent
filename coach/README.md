@@ -1,6 +1,6 @@
 # Coach runbooks
 
-Last updated: 2026-10-26 (runs work on `main` of `tpliv/WorkoutAgent`; tracks updated by `tools/hevy_sync.py`)
+Last updated: 2026-11-10 (rule 4: busy-gym exceptions). Earlier: 2026-10-26 (runs work on `main` of `tpliv/WorkoutAgent`; tracks updated by `tools/hevy_sync.py`)
 
 Agent instructions for the weekly coaching cadence in `guide/08-weekly-coaching-cadence.md`. Two scheduled tasks start a fresh Claude session and point it at one of these files.
 
@@ -25,7 +25,7 @@ Agent instructions for the weekly coaching cadence in `guide/08-weekly-coaching-
 1. **Branch.** A scheduled session may start with no repository attached. If `tpliv/WorkoutAgent` isn't checked out, attach it with push access (the session's add-repo tool), then clone it. Work on `main`: `git fetch origin main && git checkout main && git pull origin main` first, then commit and push the files above to `main` at the end of the run. Other files are never touched by these runs.
 2. **Dates.** Get today's date with `TZ=America/New_York date +%F`. "Tomorrow" means tomorrow in that time zone.
 3. **Units and plates.** Pounds everywhere the lifter sees. The smallest plate is 2.5 lb, so every barbell load is a multiple of 5 lb. Dumbbell loads are the total of the dumbbells in the hands, as the lifter logs them (two 20s = 40): multiples of 5 lb for two dumbbells, 2.5 lb for one. Machine loads are the nearest pin. Every load is a single number, never a range. `data/history.csv` stores kilograms (x 0.45359237) as the API returns them; the tools convert, so read loads from `data/tracks.json`, not from the CSV.
-4. **Never** advance a load on a miss, during a deload, from a V exposure, or from a substitute lift (`guide/07-tracking-and-apps.md` §4).
+4. **Never** advance a load on a miss, during a deload, from a V exposure, or from a squat, bench, deadlift or press substitute (`guide/07-tracking-and-apps.md` §4). Two exceptions, both applied by `tools/update_tracks.py` (`templates/progression-tracks.md` §9): a row or pulldown variant updates its own load in `tracks.<lift>.variants` and counts as the exposure; and a lift with `h_owed` takes its top set at its next V exposure.
 5. **Never** invent results. If the log has no data for a session and the lifter hasn't said, ask. Don't assume it went to plan.
 6. **Rules come from the repo, not memory.** Loads: `templates/progression-tracks.md`. Week shape: `templates/README.md` and `guide/03-flexible-scheduling.md` §4. Session content: the matching `templates/N-day-week.md`.
 7. **Medical.** For pain that changes movement, or illness, suggest a physician or physiotherapist. Give only general training guidance.

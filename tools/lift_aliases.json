@@ -1,5 +1,5 @@
 {
-  "_comment": "Maps this program's six main lifts to exercise names as they appear in a Hevy log. Matching is case-insensitive substring on the normalized exercise title. Edit to match your own exercise names; run tools/analyze_history.py --list-exercises to see them. Optional key \"_exclude\": {lift: [substrings]} removes exercises whose name contains any of them (e.g. keep 'romanian deadlift' out of the deadlift track).",
+  "_comment": "Maps this program's six main lifts to exercise names as they appear in a Hevy log. Matching is case-insensitive substring on the normalized exercise title. Edit to match your own exercise names; run tools/analyze_history.py --list-exercises to see them. Optional key \"_exclude\": {lift: [substrings]} removes exercises whose name contains any of them (e.g. keep 'romanian deadlift' out of the deadlift track). Optional \"_variants\": {lift: {variant name: [substrings]}} lists exercises that count as that lift's exposure with their own load (row and pull-up; checked in order, only when the main exercise is absent). Optional \"_substitutes\": {lift: {match, exclude}} lists stand-ins for squat, bench, deadlift and press that are recorded for the gap clock but never change the track (templates/progression-tracks.md section 9).",
   "squat": [
     "squat (barbell)",
     "back squat",
@@ -50,7 +50,8 @@
     ],
     "pullup": [
       "assisted",
-      "negative"
+      "negative",
+      "(machine)"
     ],
     "squat": [
       "front",
@@ -76,5 +77,95 @@
       "dumbbell",
       "pendlay (dumbbell)"
     ]
+  },
+  "_variants": {
+    "row": {
+      "Chest-supported row": [
+        "chest supported",
+        "t bar row",
+        "t-bar row",
+        "seal row"
+      ],
+      "DB row (two-arm)": [
+        "bent over row (dumbbell)",
+        "bent-over row (dumbbell)"
+      ],
+      "One-arm DB row": [
+        "dumbbell row",
+        "single arm row",
+        "one arm row",
+        "row (single arm)"
+      ],
+      "Cable row": [
+        "seated cable row",
+        "row (cable)",
+        "cable row"
+      ],
+      "Machine row": [
+        "row (machine)",
+        "iso-lateral row",
+        "machine row",
+        "hammer strength row"
+      ]
+    },
+    "pullup": {
+      "Machine pulldown": [
+        "pulldown (machine)",
+        "iso-lateral pulldown",
+        "machine pulldown"
+      ]
+    }
+  },
+  "_substitutes": {
+    "squat": {
+      "match": [
+        "hack squat",
+        "pendulum squat",
+        "leg press",
+        "smith machine squat",
+        "squat (smith",
+        "belt squat",
+        "bulgarian split squat",
+        "split squat",
+        "goblet squat"
+      ],
+      "exclude": [
+        "calf"
+      ]
+    },
+    "bench": {
+      "match": [
+        "bench press (dumbbell)",
+        "dumbbell bench press",
+        "chest press",
+        "bench press (smith",
+        "smith machine bench"
+      ],
+      "exclude": [
+        "incline",
+        "decline"
+      ]
+    },
+    "deadlift": {
+      "match": [
+        "trap bar",
+        "hex bar",
+        "romanian deadlift (dumbbell)",
+        "dumbbell romanian deadlift"
+      ],
+      "exclude": []
+    },
+    "press": {
+      "match": [
+        "shoulder press (dumbbell)",
+        "seated overhead press (dumbbell)",
+        "shoulder press (machine)",
+        "overhead press (dumbbell)",
+        "overhead press (smith",
+        "landmine press",
+        "arnold press"
+      ],
+      "exclude": []
+    }
   }
 }

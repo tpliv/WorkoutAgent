@@ -26,7 +26,7 @@ Pointer: **L2**. Block week 3. Processed history through 2026-11-10. Generated b
 | Bench press | **115** | 105 | 105 | 4 | 0 | 2026-11-10 (H) | 121, 133, 135.7 | - |
 | Deadlift | **150** | 140 | 135 | 4 | 0 | 2026-11-04 (V) | 185, 174 | caution to 2027-01-09; unrated 4s: 1 |
 | Overhead press | **70** | 65 | 65 | 4 | 0 | 2026-11-05 (V) | 79, 84 | unrated 4s: 1 |
-| Barbell row | **70** | n/a (double progression) | 65 | 6-8 | 0 | 2026-11-05 (V) | 90 | regain to e1RM 128 or 2027-01-09 |
+| Barbell row | **70** | n/a (double progression) | 65 | 6-8 | 0 | 2026-11-10 (H) | 90 | regain to e1RM 128 or 2027-01-09 |
 | Pull-up or pulldown | **125** | n/a (double progression) | 115 | 5-8 | 0 | 2026-11-05 (V) | 161 | - |
 <!-- tracks:end -->
 

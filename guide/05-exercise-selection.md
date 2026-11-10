@@ -1,6 +1,6 @@
 # 05. Exercise selection and session design
 
-Last updated: 2026-10-21 (section 5 ramp shortened the same day)
+Last updated: 2026-11-10 (section 7.2 rule 4 relaxed for a busy gym; section 7.4 added: ranked fallbacks per main lift). Earlier: 2026-10-21 (section 5 ramp shortened the same day)
 
 > **Revision 2026-10-21.** Brought in line with the primary-source check in `research/exercise-selection-and-session-design.md`, section "Addendum 2026-10-21: primary-source verification" (Corrections, New evidence, Implications for the guide). Main changes: lateral raise cued with neutral rotation; overhead press credited with medial-delt activation; overhead extension made the default for all triceps heads; the long-length rule restated with pooled data; soleus, calf-partial, squat-depth, exercise-order, rest, warm-up, superset and free-weight evidence corrected; a unilateral-substitution rule added (section 7.2); several citations upgraded from secondary to primary or renamed to the correct first author.
 
@@ -220,7 +220,7 @@ How this changes with available days:
 1. Match the pattern: squat for squat, hinge for hinge, horizontal push for horizontal push.
 2. Match the muscle length where the exercise is hardest. Replace a seated leg curl with an RDL, not a prone curl; replace an overhead cable extension with a dumbbell overhead extension, not a pushdown.
 3. Match effort, not load. Keep the same RIR and rep range. Absolute load will change; treat the substitute as a new baseline. The research note did not source any load-conversion ratios between implements (the often-quoted "DB bench is about 35-40% of barbell load per hand" is a practitioner rule, unverified).
-4. For strength goals, keep the actual main lift at least once a week, because strength is modality- and ROM-specific (Haugen 2023; Pallares 2020). Substitute accessories or travel weeks, not the lift that carries a progression track.
+4. For strength goals, keep the actual main lift at least once a week, because strength is modality- and ROM-specific (Haugen 2023; Pallares 2020). One heavy exposure a week holds strength (Bickel 2011, **older**; Spiering 2021), so the barbell lift does not have to run in a fixed slot. An occasional substitute when the station is busy is fine; its sets count for the muscle, not for the barbell track, and the missed top set moves to the lift's next session (section 7.4; `guide/03-flexible-scheduling.md`, section 4.3). **Revised 2026-11-10:** this rule used to read "substitute accessories or travel weeks, not the lift that carries a progression track." The row and the pull-up/pulldown are now an exception (section 7.4): they are kept for back size, so any variant counts for their track.
 5. For hypertrophy goals, substitute freely among barbell, dumbbell, machine and cable (Haugen 2023 found no hypertrophy difference, in 5 studies; moderate confidence).
 6. Unilateral swaps are fine for hypertrophy: split squat for leg press, single-arm row for cable row, single-leg RDL for RDL (Kassiano 2025, no hypertrophy difference). Strength is specific, so do not swap a bilateral main lift that has a progression track for a unilateral one (this is rule 4 again). The same finding supports the unilateral options in the bodyweight/travel column of section 7.3.
 
@@ -248,6 +248,27 @@ Progress bodyweight versions by adding range, tempo, pauses, unilateral loading,
 | Upright row | DB lateral raise | Cable or machine lateral raise | Band lateral raise, side-lying raise with a water bottle |
 | Face pull (cable) | Bent-over DB rear fly | Reverse pec deck | Band pull-apart, prone Y/T raise |
 | Farmer's walk | DB or kettlebell carry | Trap-bar carry | Suitcase carry with a loaded backpack or water jugs |
+
+### 7.4 Busy gym: ranked fallbacks for the main lifts
+
+Added 2026-11-10 (`research/exercise-selection-and-session-design.md`, addendum 2026-11-10). The procedure on the day (reorder once, then swap) is in `guide/03-flexible-scheduling.md`, section 4.3, "Station taken". This table says which swap to take.
+
+| Main lift | Fallbacks, first choice first | Carry-over evidence | Counts for the track? |
+|---|---|---|---|
+| Back squat | Smith machine squat; hack squat; Bulgarian split squat; leg press last | Smith squat training raised free-squat 10RM as much as free squats in trained men (+27.8 vs +23.0 kg; Saeterbakken 2019). Leg press raised squat 1RM +7.9% vs +31.5% for squatting (Rossi 2018). Hack squat: no data | No |
+| Bench press | Smith machine bench; dumbbell bench; machine chest press | Barbell bench 6RM, never trained: Smith group +17.0%, dumbbell group +11.6% (Saeterbakken 2020) | No |
+| Deadlift | Trap-bar deadlift; dumbbell RDL | Acute only: hex-bar 1RM 0-8% higher, more knee, less hip (Swinton 2011, **older**; Camara 2016; Lake 2017). Loads not interchangeable | No |
+| Overhead press | Seated dumbbell press; machine shoulder press | None found | No |
+| Barbell row | Two-arm dumbbell row; chest-supported row; cable row; one-arm dumbbell row; machine row | Lat variants interchangeable by EMG (Lehman 2004); no hypertrophy difference by implement (Haugen 2023). No transfer study | **Yes**, each variant with its own load |
+| Pull-up / pulldown | Pull-up bar or any cable pulldown; machine pulldown | Pull-up and lat-pull 1RM correlate r = 0.78 in men (Johnson 2009, **older**); pulldowns raised pull-up reps (Li 2025) | **Yes**, machine pulldown with its own load |
+
+Rules:
+
+1. Take the first fallback that is free. Do not shop down the list for the easiest one. Planned variation is fine; random, every-session swapping trended toward smaller barbell gains (Baz-Valle 2019; Kassiano 2022).
+2. A substitute keeps its own load (`data/tracks.json`, `accessories`, or `tracks.<lift>.variants` for the row and pulldown) and progresses by double progression. Never convert it to a barbell load.
+3. Squat, bench, deadlift and press substitutes never update the barbell track; the top set moves to the lift's next session instead. Row and pulldown variants update their own load and count as the track's exposure.
+
+How this changes with available days: in a 5-6-day week a substituted heavy slot is made good two to four days later at L3 or U3, so a swap costs almost nothing. In a 3-day week the moved top set lands in Full C; if that station is busy too, the lift goes a pass without a top set and the next heavy slot is a hold at most (`templates/progression-tracks.md`, section 9). That is the one case worth moving the session time for.
 
 ---
 
@@ -301,7 +322,7 @@ Research note: `research/exercise-selection-and-session-design.md`
 - Section 4.2 (rest, tempo): KQ4
 - Section 5 (warm-up): KQ5
 - Section 6 (session design, supersets): KQ6
-- Section 7 (substitutions): KQ7
+- Section 7 (substitutions): KQ7; section 7.4 (busy-gym fallbacks): addendum 2026-11-10 (Saeterbakken 2019 and 2020, Schwanbeck 2020, Rossi 2018, Swinton 2011, Camara 2016, Lake 2017, Johnson 2009, Li 2025, Bickel 2011, Spiering 2021, Baz-Valle 2019, Kassiano 2022)
 - Section 8 (variation): KQ8
 - Section 9 (technique): KQ9
 

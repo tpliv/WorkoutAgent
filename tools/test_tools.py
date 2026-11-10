@@ -444,6 +444,96 @@ class UpdateRules(unittest.TestCase):
         self.assertIn("work up", table)
 
 
+class BusyGym(unittest.TestCase):
+    """guide/03 section 4.3 "Station taken"; progression-tracks.md section 9."""
+
+    def test_row_variant_counts_with_its_own_load(self):
+        tr = fresh_tracks()
+        log, _ = run_update(tr, [("2026-11-10", "U1", "Bent Over Row (Dumbbell)", i, "normal", 70, 8, None) for i in range(4)])
+        row = tr["tracks"]["row"]
+        self.assertEqual(row["variants"]["DB row (two-arm)"]["top_set_lb"], 75)
+        self.assertEqual(row["top_set_lb"], TRACKS["tracks"]["row"]["top_set_lb"])  # barbell load untouched
+        self.assertEqual(row["last_exposure"], {"date": "2026-11-10", "type": "H"})
+        self.assertEqual(len(row["e1rm_history"]), len(TRACKS["tracks"]["row"]["e1rm_history"]))
+        self.assertTrue(any("DB row (two-arm)" in line for line in log))
+
+    def test_one_arm_and_chest_supported_rows_are_separate_variants(self):
+        tr = fresh_tracks()
+        run_update(tr, [("2026-11-10", "U1", "Chest Supported Incline Row (Dumbbell)", i, "normal", 60, 7, 8) for i in range(4)])
+        vs = tr["tracks"]["row"]["variants"]
+        self.assertEqual(vs["Chest-supported row"]["top_set_lb"], 60)
+        self.assertIsNone(vs["DB row (two-arm)"]["top_set_lb"])
+        tr = fresh_tracks()
+        run_update(tr, [("2026-11-10", "U1", "Dumbbell Row", i, "normal", 40, 8, 8) for i in range(4)])
+        self.assertEqual(tr["tracks"]["row"]["variants"]["One-arm DB row"]["top_set_lb"], 45)
+
+    def test_barbell_row_wins_over_a_variant_in_the_same_session(self):
+        tr = fresh_tracks()
+        run_update(tr, [("2026-11-10", "U1", "Bent Over Row (Barbell)", i, "normal", 70, 8, 8) for i in range(4)]
+                   + [("2026-11-10", "U1", "Bent Over Row (Dumbbell)", 4 + i, "normal", 60, 8, 8) for i in range(2)])
+        self.assertEqual(tr["tracks"]["row"]["top_set_lb"], 75)
+        self.assertIsNone(tr["tracks"]["row"]["variants"]["DB row (two-arm)"]["top_set_lb"])
+
+    def test_squat_substitute_moves_the_top_set_to_the_volume_slot(self):
+        tr = fresh_tracks(squat={"top_set_lb": 155, "last_h_load_lb": 155, "regain": None})
+        log, _ = run_update(tr, [("2026-11-12", "L1", "Leg Press (Machine)", i, "normal", 270, 10, 8) for i in range(4)])
+        sq = tr["tracks"]["squat"]
+        self.assertEqual(sq["top_set_lb"], 155)
+        self.assertEqual(sq["h_owed"]["slot"], "L1")
+        self.assertEqual(sq["last_sub_exposure"]["date"], "2026-11-12")
+        self.assertIn("moves to the next", log[0])
+        # L3: the V slot is run as the heavy exposure (top set at the planned load)
+        log, _ = run_update(tr, [("2026-11-14", "L3", "Squat (Barbell)", 0, "normal", 155, 4, 8),
+                                 ("2026-11-14", "L3", "Squat (Barbell)", 1, "normal", 145, 4, 7.5)])
+        self.assertNotIn("h_owed", sq)
+        self.assertEqual(sq["last_exposure"], {"date": "2026-11-14", "type": "H"})
+        self.assertEqual(sq["top_set_lb"], 160)
+        self.assertEqual(sq["e1rm_history"][-1]["slot"], "L3")
+
+    def test_promoted_top_set_at_9_5_is_a_hold_not_a_miss(self):
+        tr = fresh_tracks(squat={"top_set_lb": 155, "last_h_load_lb": 155, "regain": None,
+                                 "h_owed": {"from": "2026-11-12", "slot": "L1"}})
+        run_update(tr, [("2026-11-14", "L3", "Squat (Barbell)", 0, "normal", 155, 4, 9.5)])
+        self.assertEqual(tr["tracks"]["squat"]["miss_counter"], 0)
+
+    def test_volume_sets_do_not_count_as_the_moved_top_set(self):
+        tr = fresh_tracks(squat={"top_set_lb": 155, "last_h_load_lb": 155, "h_owed": {"from": "2026-11-12", "slot": "L1"}})
+        run_update(tr, [("2026-11-14", "L3", "Squat (Barbell)", i, "normal", 140, 6, None) for i in range(4)])
+        sq = tr["tracks"]["squat"]
+        self.assertEqual(sq["top_set_lb"], 155)
+        self.assertEqual(sq["last_exposure"]["type"], "V")
+        self.assertIn("h_owed", sq)  # the next heavy slot clears it
+
+    def test_incline_db_press_is_not_a_bench_substitute(self):
+        tr = fresh_tracks()
+        run_update(tr, [("2026-11-10", "U1", "Incline Bench Press (Dumbbell)", 0, "normal", 70, 8, 8)])
+        self.assertNotIn("last_sub_exposure", tr["tracks"]["bench"])
+        self.assertIn("h_owed", tr["tracks"]["bench"])  # bench missing from its heavy slot
+
+    def test_substitute_caps_the_gap_modifier_at_a_hold(self):
+        base = {"top_set_lb": 140, "last_h_load_lb": 135, "regain": None, "last_exposure": {"date": "2026-10-01", "type": "H"}}
+        t = fresh_tracks(squat=dict(base, last_sub_exposure={"date": "2026-10-20", "type": "H"}))["tracks"]["squat"]
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 26))[:2], (135, 0))   # 25 d barbell, 6 d sub: hold
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 11, 5))[:2], (135, -1))   # 16 d since the sub
+        self.assertEqual(push.gap_modifier(t, dt.date(2026, 10, 8)), (140, 0, None))  # 7 d: normal either way
+
+    def test_routine_renders_the_moved_top_set_and_station_notes(self):
+        tr = fresh_tracks(squat={"top_set_lb": 155, "last_h_load_lb": 155, "h_owed": {"from": "2026-11-12", "slot": "L1"},
+                                 "last_exposure": {"date": "2026-11-12", "type": "V"}})
+        tr["tracks"]["row"]["variants"]["DB row (two-arm)"]["top_set_lb"] = 75
+        payload, _ = push.build_routine("L3", ROTATION, tr, EXMAP, dt.date(2026, 11, 14))
+        squat = payload["exercises"][0]
+        self.assertIn("TOP SET MOVED HERE", squat["notes"])
+        self.assertEqual(lbs(normal(squat["sets"]))[-3:], [155, 145, 145])
+        self.assertIn("Smith machine squat", squat["notes"])
+        payload, _ = push.build_routine("U1", ROTATION, tr, EXMAP, dt.date(2026, 11, 14))
+        row = payload["exercises"][1]
+        self.assertIn("DB row (two-arm) 75 lb", row["notes"])
+        payload, _ = push.build_routine("U3", ROTATION, tr, EXMAP, dt.date(2026, 11, 14))
+        row = next(e for e in payload["exercises"] if "DB row (two-arm)" in e["notes"])
+        self.assertIn("DB row (two-arm) 70 lb", row["notes"])  # V: 90% of 75, nearest 5
+
+
 class EffortAndRegainRules(unittest.TestCase):
     """progression-tracks.md section 5 (effective RPE, unrated rule, re-anchor) and 5.1-5.3."""
 

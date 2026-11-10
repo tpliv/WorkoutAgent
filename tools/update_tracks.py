@@ -50,6 +50,18 @@ session logged after each track's last processed exposure:
     (5% for row and pull-up) and counts the stall.
   Volume (V) exposures and sessions without a slot in the title never change a
     track load; they update the last-exposure date for the gap clock (section 8).
+  Busy gym (section 9; guide/03 section 4.3, "Station taken"):
+    Row and pull-up variants: when the main exercise is absent and a variant
+      from lift_aliases.json "_variants" is logged, the variant is the exposure.
+      It runs its own double progression in track["variants"][name] (no regain
+      phase, no e1RM entry) and sets the track's last exposure.
+    Squat, bench, deadlift, press: a heavy slot logged without the barbell lift
+      sets track["h_owed"]; the next V exposure whose heaviest set is within 3%
+      of the planned top set is read as the heavy exposure (judged by RPE: 9.5
+      is a hold, not a miss) and clears it, as does any barbell H. A substitute
+      from "_substitutes" in an H or V slot is recorded in
+      track["last_sub_exposure"]; it never changes the track load
+      (hevy_push_routines.py uses it to cap the gap modifier at a hold).
   e1RM from the top set: load x (1 + (reps + (10 - RPE)) / 30); unrated sets use
     RIR 2 at the rep target and RIR 1 above it; the last 6 kept.
   Pointer: the half-session owed after the latest slot-titled session
@@ -182,10 +194,29 @@ def matcher(aliases):
     for lift, names in aliases.items():
         if lift.startswith("_"):
             continue
-        subs = [norm(n) for n in names]
-        bad = [norm(b) for b in ex.get(lift, [])]
-        fns[lift] = (lambda subs, bad: lambda name: any(s in norm(name) for s in subs) and not any(b in norm(name) for b in bad))(subs, bad)
+        fns[lift] = name_matcher(names, ex.get(lift, []))
     return fns
+
+
+def name_matcher(names, exclude=()):
+    subs = [norm(n) for n in names]
+    bad = [norm(b) for b in exclude]
+    return lambda name: any(s in norm(name) for s in subs) and not any(b in norm(name) for b in bad)
+
+
+def variant_matchers(aliases):
+    """lift -> [(variant name, matcher)] in the order listed in "_variants"."""
+    return {lift: [(v, name_matcher(names)) for v, names in vs.items()]
+            for lift, vs in (aliases.get("_variants") or {}).items()}
+
+
+def substitute_matchers(aliases):
+    """lift -> matcher for the substitutes listed in "_substitutes"."""
+    return {lift: name_matcher(spec.get("match", []), spec.get("exclude", []))
+            for lift, spec in (aliases.get("_substitutes") or {}).items()}
+
+
+VARIANT_KEYS = ("top_set_lb", "last_h_load_lb", "miss_counter", "stalls")
 
 
 def load_sessions(path, since=None):
@@ -426,6 +457,8 @@ def advance_pointer(slot, rotation):
 
 def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
     match = matcher(aliases)
+    variants = variant_matchers(aliases)
+    subs = substitute_matchers(aliases)
     log = []
     flags = []
     processed_through = tracks.get("processed_through") or ""
@@ -447,16 +480,54 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
         for lift, t in tracks["tracks"].items():
             lift_rows = [r for r in rows if match.get(lift, lambda n: False)(r.get("exercise"))]
             sets = [r for r in working_sets(lift_rows) if r["_w"] is not None or lift == "pullup"]
-            if not sets:
-                continue
-            session_exposed.add(lift)
             covered = {slot} | (set(halves(slot, rotation)) if slot else set())
             kind = "H" if covered & set(t.get("h_slots", [])) else "V" if covered & set(t.get("v_slots", [])) else "other"
+            variant = None
+            if not sets and slot:
+                for vname, fn in variants.get(lift, []):
+                    vsets = [r for r in working_sets([r for r in rows if fn(r.get("exercise"))]) if r["_w"] is not None]
+                    if vsets:
+                        variant, sets = vname, vsets
+                        break
+            if not sets:
+                if slot and kind in ("H", "V") and t.get("scheme") == "top_set":
+                    sub = working_sets([r for r in rows if subs.get(lift, lambda n: False)(r.get("exercise"))])
+                    if sub:
+                        t["last_sub_exposure"] = {"date": date, "type": kind, "exercise": sub[0].get("exercise")}
+                    if kind == "H" and not t.get("h_owed"):
+                        t["h_owed"] = {"from": date, "slot": slot}
+                        instead = f" ({sub[0].get('exercise')} instead, not counted)" if sub else ""
+                        log.append(f"{date} {slot} {t['name']}: heavy slot without the barbell lift{instead} -> "
+                                   f"the top set moves to the next {t['name'].lower()} exposure (guide/03 §4.3)")
+                continue
+            session_exposed.add(lift)
+            promoted = False
+            if kind == "V" and variant is None and t.get("h_owed") and t.get("scheme") == "top_set":
+                refs = [x for x in (t.get("top_set_lb"), t.get("last_h_load_lb")) if x]
+                heaviest = max((r["_w"] or 0) for r in sets)
+                if refs and heaviest >= min(refs) * 0.97 - 1e-6:
+                    kind, promoted = "H", True
             t["last_exposure"] = {"date": date, "type": kind}
             if kind != "H":
                 continue
-            merged_not_first = is_merged(slot) and main_lift_order and main_lift_order[0] != lift
+            t.pop("h_owed", None)
+            merged_not_first = promoted or (is_merged(slot) and main_lift_order and main_lift_order[0] != lift)
             target = t.get("rep_target")
+            if variant:
+                vstate = t.setdefault("variants", {}).setdefault(variant, {"top_set_lb": None, "last_h_load_lb": None, "miss_counter": 0})
+                proxy = {k: v for k, v in t.items() if k not in ("regain", "variants", "e1rm_history", "last_exposure") + VARIANT_KEYS}
+                proxy.update(vstate)
+                proxy["name"] = f"{t['name']} ({variant})"
+                decision = apply_dp_rule(proxy, sets, flags, date=date)
+                load = max(r["_w"] or 0 for r in sets)
+                line = f"{date} {slot} {proxy['name']}: {len(sets)} sets at {fmt(load)} -> {decision} (variant: counts as the {t['name'].lower()} exposure; own load)"
+                if proxy.pop("_stall", False):
+                    line += ". " + apply_stall(proxy, reset_on_stall)
+                for k in VARIANT_KEYS:
+                    if k in proxy:
+                        vstate[k] = proxy[k]
+                log.append(line)
+                continue
             if t.get("scheme") == "double_progression":
                 decision = apply_dp_rule(t, sets, flags, date=date)
                 best = max(sets, key=lambda r: e1rm(r["_w"] or 0, int(r["_reps"]), r["_rpe"]))

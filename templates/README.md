@@ -1,6 +1,6 @@
 # Templates: how to use them
 
-Last updated: 2026-10-21
+Last updated: 2026-11-10 (busy-gym rule: station taken). Earlier: 2026-10-21
 
 The four weekly templates are **views of one rotation**, not four programs. Pick the one that matches the days you have this week, run it, and next week pick again. Loads and progression rules are identical in all four; only accessory volume and back-off sets differ. The reasoning and the full rule set are in `guide/03-flexible-scheduling.md`; the per-lift progression rules are in `templates/progression-tracks.md`.
 
@@ -59,7 +59,7 @@ The pointer is the next half-session you owe. Write it at the top of your log.
 - **Growing a week** reverses the merges: split B first (3 to 4 days), then A (4 to 5), then C (5 to 6). The templates' "Scaling" sections say exactly what comes back.
 - **Nothing is postponed.** A set dropped in a 3-day week is gone; it returns when a longer week comes round. The rotation, not a make-up session, restores balance.
 - **A short week is not a deload** unless it is the scheduled deload week (week 5-7 of the block), two readiness red flags have persisted for a week, or you are ill. A deload keeps the week's session count, puts top sets at RPE 6-7, cuts back-offs to one, V exposures to 2 sets and accessories to 1-2 sets.
-- **Rack or bench taken:** do the next main lift first and come back; a substitute (leg press, DB row) never replaces a top set unless the station stays busy all session, and then it does not count for the track (`guide/03-flexible-scheduling.md`, section 4.3, "Station taken").
+- **Station taken (busy gym):** do the next main lift whose station is free, check once more, then swap. Squat, bench, deadlift and press substitutes (Smith squat, Smith or DB bench, trap bar, seated DB press; ranked in `guide/05-exercise-selection.md`, section 7.4) keep their own loads and do not move the track; the missed top set moves to the lift's next (volume) session. Any row or pulldown variant counts for its track with its own load (`guide/03-flexible-scheduling.md`, section 4.3, "Station taken").
 - **Missed session:** do not reshuffle the week. Do the owed half-session next time you train and let the pointer carry.
 - **Consecutive days are fine**; lower and upper alternate. Never two heavy lower half-sessions in one day; never more than two half-sessions in one day.
 
@@ -68,7 +68,7 @@ The pointer is the next half-session you owe. Write it at the top of your log.
 - RPE 8 = 2 reps in reserve; RPE 9 = 1; RPE 10 = none. Compounds live at RPE 7-8 (back-offs) and 8 (top sets); isolation at 8-9 with the last set allowed to reach failure.
 - Rest: 3-4 min after a top set (3-5 min for deadlift), 2-3 min between compound sets, 60-90 s on isolation. Supersets: 60 s between the two exercises, 2 min after the pair.
 - Warm-up: 3-5 min easy movement and mobility (optional; in a short session cut them before the 80% set), then on the first compound only: empty bar x 5, 80% x 2-3 of the day's top working load (the V load on a volume day). Once the top set is 225 lb (about 102 kg) or more, add 60% x 3 between them; that step is coaching convention, not evidence. Round to the nearest plate step, never below the bar. About 2-3 min. Later main lifts get one feeder set at 60-70%. Static stretches, if any, under 30 s.
-- Substitutions: the right-hand column of every table gives dumbbell and machine alternatives. For hypertrophy, swap freely (free weights and machines grew muscle equally in the 5 studies that measured it; moderate confidence, Haugen 2023). For strength, keep the barbell squat, bench, deadlift and press themselves at least once a week; a substitute does not update the lift's track.
+- Substitutions: the right-hand column of every table gives dumbbell and machine alternatives. For hypertrophy, swap freely (free weights and machines grew muscle equally in the 5 studies that measured it; moderate confidence, Haugen 2023). For strength, keep the barbell squat, bench, deadlift and press themselves at least once a week; a substitute does not update the lift's track. Row and pulldown variants do count (busy-gym rule above). On a busy day, run a superset that needs two stations as straight sets.
 - Cardio: on rest days in 3- and 4-day weeks; after U1, U2 or U3 in 5- and 6-day weeks, 20-30 min, cycling or incline walking, never before a lower session.
 - Runs (if you run): lift first on lower days, run 6 h later (3 h minimum); long and quality runs at least 48 h before L1, L2, Full A or Full B; easy runs anywhere, upper days first. Example layouts per week type: `guide/03-flexible-scheduling.md`, section 7.
 - Race week (any template): back-off and accessory sets on lower slots about halved from R-7; last heavy lower at R-4; no lower lifting R-3 to R-1. After the race: upper from R+2; first lower at R+3, preferably the deadlift or a volume slot, top set capped at RPE 7 with 1-2 back-offs; first squat H at R+4 or later; a below-plan top set is a hold, not a miss. Full rule: `guide/03-flexible-scheduling.md`, section 4.7.

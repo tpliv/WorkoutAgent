@@ -1,6 +1,6 @@
 # Exercise Selection and Single-Session Design for Resistance Training
 
-Last updated: 2026-10-27 (addendum: station taken, reorder vs substitute; earlier 2026-10-21: KQ5 addendum: short warm-up ramp; primary-source verification addendum appended at the end)
+Last updated: 2026-11-10 (addendum: busy gym, how well substitutes carry over; earlier 2026-10-27: addendum: station taken, reorder vs substitute; earlier 2026-10-21: KQ5 addendum: short warm-up ramp; primary-source verification addendum appended at the end)
 
 Research notes compiled 2026-10-21. Scope: which exercises to include, how to cover every major muscle, how to order/structure a session, and how to substitute movements, so a program designer can fill 3- to 6-day templates. Note on evidence quality: many "best exercise" claims rest on single small trials (n = 14-63, often untrained or women-only samples) or on EMG, which repeatedly fails to predict hypertrophy (see Plotkin 2023 and the incline/flat pec data below). Treat exercise-specific effect sizes as low-to-moderate confidence unless stated otherwise. Access note: WebFetch and curl to strongerbyscience.com and pmc.ncbi.nlm.nih.gov were blocked in this environment (DNS/proxy 403), so a few primary texts were read only through abstracts, repository records, or reputable secondary reviews; this is flagged per item.
 
@@ -461,3 +461,57 @@ Question: on the day, the rack (or bench) is busy. Is it better to do the main l
 ### Gaps
 
 - No study tests a one-off reorder against a substitute for a lift on a progression scheme. The rule is a convention built on the order and specificity evidence above.
+
+## Addendum 2026-11-10: busy gym, how well substitutes carry over to the barbell lift
+
+Question: the lifter trains at a crowded gym. The 2026-10-27 rule (reorder, never substitute, substitutes never count) left the barbell row with no heavy exposure in three weeks (`data/checkins/2026-11-06.md`; `data/track-log.md`, 27 Oct and 10 Nov). Which substitutes keep the barbell lift moving, and which only keep the muscle growing?
+
+Method: abstracts via NCBI E-utilities; full text where marked FT. Items marked "summary" were read through a summarizing fetch; spot-check their numbers before quoting them as exact.
+
+### Cited findings
+
+**Carry-over to the barbell lift (strength)**
+
+- **[Evidence] Saeterbakken et al. 2019**, *PLoS One* 14(4):e0214302, [PMC6443166](https://pmc.ncbi.nlm.nih.gov/articles/PMC6443166) (FT, summary). 59 men, about 4.7 years of training, 2 sessions/week, 6-7 weeks (the text says 6 weeks/12 sessions, the abstract 7 weeks). Free-weight squat 10RM gain: Smith-machine group +27.8 kg, free-weight group +23.0 kg (125.9 to 148.9), wobble-board group +23.7 kg. Muscle thickness +6.3%, +3.8%, +4.4%, no group difference. Smith squat training carried over fully to the free squat in trained men.
+- **[Evidence] Schwanbeck et al. 2020**, *JSCR* 34(7):1851-1859, [PubMed 32358310](https://pubmed.ncbi.nlm.nih.gov/32358310/) (abstract; thesis version FT). 46 randomized, about 26 months of training, 8 weeks; machine group trained Smith squat and Smith bench. Free-weight squat and bench and Smith squat rose 11-19% in both groups, no difference. Free-weight squat (6-10RM test, not a true 1RM): free-weight group 122 to 148 kg (about 21%), machine group 122 to 138 kg (about 13%); interaction not significant.
+- **[Evidence] Rossi et al. 2018**, *J Sports Med Phys Fitness* 58(3):263-270, [PubMed 27735888](https://pubmed.ncbi.nlm.nih.gov/27735888/) (FT, accepted manuscript). 26 men untrained for 6 months, 10 weeks, 2/week, 6 x 8-12RM. Squat 1RM: squat only +31.5% (ES 1.35); half squat, half leg press +19.8% (ES 0.95); leg press only +7.9% (ES 0.37); group x time p = 0.0004. Leg press 1RM +31-34% in all groups. **Leg press carries over poorly to the squat.**
+- **[Evidence] Wirth et al. 2016**, *JSCR* 30(5):1205-1212, [PubMed 26439782](https://pubmed.ncbi.nlm.nih.gov/26439782/) (abstract). Squat vs leg press, 8 weeks: squat jump +12.4% vs +3.5%, countermovement jump +12.0% vs +0.5%. No cross-tested 1RM (each group tested on its own lift, per Rossi).
+- **[Evidence] Saeterbakken et al. 2020**, *PLoS One* 15(7):e0235555, [PMC7347144](https://pmc.ncbi.nlm.nih.gov/articles/PMC7347144) (FT, summary). 35 men, about 4.2 years of training, 10 weeks, 2/week, 4 x 6 at about 85%; the barbell bench was not trained. Barbell bench 6RM: Smith group +17.0%, dumbbell group +11.6%, Swiss-ball group +11.5% (their own lifts: +22.7%, +38.6%, +32.5%). A companion trial (Saeterbakken 2016, *Eur J Appl Physiol* 116:2247-2256, abstract only) found task specificity for dumbbells and Swiss ball but not Smith.
+- **[Evidence] Haugen et al. 2023** (KQ7): free-weight-tested strength favours free-weight training, SMD -0.21 (95% CI -0.39 to -0.03); hypertrophy SMD -0.055 (-0.40 to 0.29). Specificity holds; muscle growth does not care about the implement.
+- **Trap bar, acute only.** Swinton et al. 2011 (**older**), *JSCR* 25(7):2000-2009: 19 powerlifters, hex-bar 1RM 265 vs 245 kg, more knee and less hip and lumbar moment. Camara et al. 2016, *JSCR* 30(5):1183-1188: 20 men, 1RM 181.1 vs 181.4 kg. Lake et al. 2017, *Sports* 5(4):82: 11 men, 194 vs 183 kg (+6%). Hex-bar and straight-bar loads are not interchangeable; no training study tests transfer.
+- **Pull-up and pulldown.** Johnson et al. 2009 (**older**), *JSCR* 23(3):1022-1028: pull-up and lat-pull 1RM correlate r = 0.78 in men; correlational only. Li et al. 2025, *Eur J Sport Sci* 25(1):e12243: 34 recreationally active men, 8 weeks of pulldowns raised pull-up reps; no pull-up comparison group. Lehman 2004 (KQ7): lat variants change prime-mover EMG only a little.
+
+**Exercise rotation (hypertrophy and strength)**
+
+- **[Evidence, older] Fonseca et al. 2014**, *JSCR* 28(11):3085-3092, [PubMed 24832974](https://pubmed.ncbi.nlm.nih.gov/24832974/) (FT). 49 completers, active but not strength trained for 6 months, 12 weeks, 2/week, 6-10RM, volume equated. Varied-exercise groups added leg press, deadlift and lunge **but still squatted every session**. Quadriceps CSA: constant exercise 11.6-12.0%, varied exercise 11.6-12.2%; only varied groups grew all four heads. Smith-squat 1RM best in the constant-intensity, varied-exercise group.
+- **[Evidence] Baz-Valle et al. 2019**, *PLoS One* 14(12):e0226989, [PMC6934277](https://pmc.ncbi.nlm.nih.gov/articles/PMC6934277) (FT). 19 men with 2+ years of training, 8 weeks; exercises picked at random by an app each session vs fixed. Squat 1RM about +4.4% (random) vs +6.4% (fixed); bench about +0.8% vs +4.7%; no significant between-group difference. Muscle thickness similar. Motivation rose in the random group only.
+- **[Evidence] Kassiano et al. 2022**, *JSCR* 36(6):1753-1762, [PubMed 35438660](https://pubmed.ncbi.nlm.nih.gov/35438660/) (abstract). Review of 8 studies, 241 young men: "some degree of systematic variation" helps regional hypertrophy and strength; "excessive, random variation may compromise muscular gains."
+
+**How often the barbell lift itself must appear**
+
+- **[Evidence, older] Bickel et al. 2011**, *Med Sci Sports Exerc* 43(7):1177-1187, [PubMed 21131862](https://pubmed.ncbi.nlm.nih.gov/21131862/) (FT). After 16 weeks at 3/week, 1 session/week at 1/3 or 1/9 of the volume kept 1RM (leg press and knee extension) for 32 weeks in young adults. Not tested on the squat.
+- **[Evidence] Spiering et al. 2021**, *JSCR* 35(5):1449-1458, [PubMed 33629972](https://pubmed.ncbi.nlm.nih.gov/33629972/) (abstract): strength and size kept for up to 32 weeks with 1 session/week and 1 set per exercise if relative load is kept; "intensity seems to be the key variable."
+
+**Practitioner**
+
+- **[Practitioner] Milo Wolf, Stronger By Science, 26 Feb 2025:** "For strength, specificity applies – it's worth picking movements that are similar, biomechanically, to your big lifts"; main lifts 2-4 times a week — [How to powerbuild](https://www.strongerbyscience.com/how-to-powerbuild/).
+- **[Practitioner] Jordan Feigenbaum, Barbell Medicine:** "Nearly all of the Barbell Medicine programs allow user-selected exercises for the main lifts" — [Strength training guide](https://www.barbellmedicine.com/blog/strength-training-guide/).
+
+### Inferences
+
+1. **An occasional substitute costs little; a habitual one costs barbell strength.** The trials above replaced the barbell lift for whole programs and still saw 50-100% of the barbell gain for Smith and dumbbell work. One substituted session in a pass is a far smaller dose. So waiting out a station is not worth much time. Reorder once, then swap.
+2. **Rank substitutes by measured carry-over.** Squat: Smith squat first (full carry-over in trained men), leg press last (+7.9% vs +31.5%). Bench: Smith bench, then dumbbells (+17.0% vs +11.6% on the barbell bench). Deadlift and press: no transfer data; pick the closest pattern (trap bar, seated dumbbell press).
+3. **Substitutes still do not move the barbell track.** Loads differ between implements (hex bar +0-8% over the straight bar; dumbbells vs barbell), and strength is specific (Haugen 2023). Each substitute keeps its own load.
+4. **Row and pull-up are a different case.** The program keeps them for back size and pulling work, not for a tested barbell-row or pull-up max. Lat variants are interchangeable by EMG (Lehman 2004), and hypertrophy does not differ by implement (Haugen 2023). So any row or pulldown variant can count as the exposure, with its own load. This is an inference from hypertrophy and EMG data; no study compares row variants for transfer.
+5. **Move the top set rather than lose it.** The maintenance evidence (Bickel 2011, Spiering 2021) says one heavy exposure a week holds strength, so the program needs the barbell lift about once a week, not at a fixed slot. Taking the missed top set at the lift's volume slot later in the same pass keeps the weekly heavy exposure.
+6. **A substitute covers the gap clock up to a hold.** The gap table's reductions (5-10%) come from complete cessation (Izquierdo 2007; McMaster 2013). A lifter who did Smith squats has not ceased. But no study tests a substitute alone against barbell detraining, so the next barbell top set is a hold, never an increment.
+7. **Rotate on purpose, not at random.** Planned variation is fine for hypertrophy (Fonseca 2014; Kassiano 2022). Random, every-session swapping trended toward smaller barbell gains (Baz-Valle 2019). The fallbacks are an ordered list, not a menu.
+
+### Gaps
+
+- No training study tests trap bar to conventional deadlift, dumbbell or machine shoulder press to barbell press, hack squat to squat, or row variant to row transfer.
+- No study tests a substitute alone against detraining of the barbell 1RM.
+- Fonseca 2014 and Rossi 2018 used untrained or detrained participants; Fonseca tested a Smith-machine squat.
+- Wirth 2016 cross-transfer 1RM data and the exact Saeterbakken 2016 numbers are paywalled and unverified.
+- No RP or MASS article on busy gyms or main-lift substitution was found.
+

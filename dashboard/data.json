@@ -3735,10 +3735,10 @@
    "stalls": 0,
    "work_up": false,
    "last_exposure": {
-    "date": "2026-11-05",
-    "type": "V"
+    "date": "2026-11-10",
+    "type": "H"
    },
-   "gap_days": 5,
+   "gap_days": 0,
    "gap": {
     "key": "normal",
     "label": "Normal"
@@ -3792,16 +3792,6 @@
  "track_log": [
   {
    "date": "2026-11-06",
-   "text": "2026-10-29 L2 Deadlift: top 145 x 4 -> 4 @ 8: +5 to 150",
-   "kind": "decision"
-  },
-  {
-   "date": "2026-11-06",
-   "text": "Flag: no RPE logged on the Deadlift top set (145 x 4); treated as RPE 8",
-   "kind": "flag"
-  },
-  {
-   "date": "2026-11-06",
    "text": "2026-11-06 Race week (4-5 Nov), amended by hand. The workout titles (\"Race Week 1 - Tue (U2 + L3)\", \"Race Week 2 - Wed (U3 + L1)\") do not start with a slot, so the engine read them as \"other\". They are the rotation's U2, L3, U3 and L1 at race-week volume, so they count as those half-sessions (`guide/03` §4.4: merged sets dropped, not postponed). Pointer U2 -> U1 (U1, planned Fri 6 Nov, not done).",
    "kind": "decision"
   },
@@ -3849,6 +3839,16 @@
    "date": "2026-11-10",
    "text": "Flag: no RPE logged on the Bench press top set (110 x 6); assumed it ended at RPE 9, so 7 at rep 4",
    "kind": "flag"
+  },
+  {
+   "date": "2026-11-10",
+   "text": "2026-11-10 Accessories: incline DB press holds 70 total (6, 8, 8; range 8-12). Lateral raise holds 20 total (15, 20, 20, 20; one set short of 20). Overhead triceps extension back to 25 (27.5 x 8 x 3 against a planned 25; 8s since 20 Oct, under the 10-15 range). Row: dumbbell row 70 total x 8 x 4 replaced the barbell row, so the row track did not update (holds 70). Face pull not logged.",
+   "kind": "decision"
+  },
+  {
+   "date": "2026-11-10",
+   "text": "2026-11-10 Busy-gym rules (`templates/progression-tracks.md` §9, revised today), applied by hand to the 10 Nov U1: the dumbbell row (Bent Over Row (Dumbbell), 70 total x 8 x 4, unrated) now counts as the row exposure. Variant \"DB row (two-arm)\": all four sets at the top of 6-8, RPE assumed 8: +5 to 75 total. Row last exposure 10 Nov (H). The barbell row load stays 70; its regain phase and e1RM history are unchanged.",
+   "kind": "decision"
   }
  ],
  "unmapped": [

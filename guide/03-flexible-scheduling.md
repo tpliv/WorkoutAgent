@@ -1,6 +1,6 @@
 # 03. Flexible scheduling: one program for 3-day and 6-day weeks
 
-Last updated: 2026-11-06 (section 4.7: race weeks; section 7: runs placed around the rotation). Earlier: 2026-10-27 (section 4.3: station taken)
+Last updated: 2026-11-10 (section 4.3, "Station taken": reorder once, then swap; row and pulldown variants count; a missed top set moves to the lift's next session). Earlier: 2026-11-06 (section 4.7: race weeks; section 7: runs placed around the rotation); 2026-10-27 (section 4.3: station taken)
 
 **Revision 2026-10-21.** Rechecked against the primary-source verification addenda dated 2026-10-21 in `research/flexible-frequency-programming.md`, `research/frequency-volume-intensity-evidence.md`, `research/periodization-and-progression.md`, `research/splits-and-named-programs.md` and `research/exercise-selection-and-session-design.md`. Changes: the gap-modifier rationales (section 4.4) now cite primary detraining trials, and the unsupported "3-7% after one week" figure is gone; the GZCL justification for the priority stack is withdrawn (4.3); the Remmert per-session figures are confirmed (still a preprint) and Helms corroborates the ~11-set cap (2.2); Colquhoun, Saric and Johnsen are described correctly (2.1); Wendler's own variable-schedule posts replace a secondary 5/3/1 source; the superset meta-analysis is Zhang et al. 2025. **No rule number changed.**
 
@@ -172,13 +172,27 @@ Why in this order: intensity on the main lifts is what maintenance studies hold 
 
 **Readiness gate for a single bad day** (`research/flexible-frequency-programming.md`, KQ4): if you slept under 6 hours, are unusually sore, or the work-up sets feel a full RPE heavier than planned, keep the top set (the RPE cap sets the load), cut back-offs and accessories by about one-third **for that session only**, and change nothing else in the block. "What you do in a single session has little impact on your trajectory" (Barbell Medicine coaching reply, forum source).
 
-**Station taken** (the rack or bench a main lift needs is busy; `research/exercise-selection-and-session-design.md`, addendum 2026-10-27). Reorder; do not substitute.
+**Station taken** (crowded gym; `research/exercise-selection-and-session-design.md`, addenda 2026-10-27 and 2026-11-10). **Reorder once, then swap.** Do not wait out a station. This replaces the 2026-10-27 rule ("reorder; do not substitute"), which left the barbell row without a single heavy exposure in its first three weeks at a busy gym.
 
-1. Start with the next main lift that has a free station, then the one after, and come back to the delayed lift as soon as its station frees. Ask to work in if someone is resting between sets. Barbell rows need only a bar and plates on the floor, never a rack.
-2. While you wait, train other muscles. For a delayed squat: bench, row, lateral raise, triceps. Not leg press, lunges or leg curls, which tire the legs before the squat top set.
-3. The delayed lift keeps its top set and is judged by RPE, as a later lift in a merged session is (section 4.2): a planned 4 @ 8 that comes in at 4 @ 9.5 is a hold, not a miss. If time then runs short, cut from this section's priority stack as usual. The delayed top set is still line 1.
-4. Only if the station never frees before you must leave: do a substitute for the muscle (leg press for the squat, dumbbell row for the row). It counts toward weekly sets but not toward the track or the gap clock (`templates/progression-tracks.md` §9). Do not make the lift up later in the week; its next exposure runs as written.
-5. If the same station is busy at the same time two weeks running, move the session time or tell the Sunday check-in.
+1. Ask to work in. If not, start the next main lift whose station is free. Deadlifts and barbell rows need only a bar, plates and floor space; they never wait for a rack.
+2. When that lift is done, check the station once more. Free: do the delayed lift now. Its top set is judged by RPE, as a later lift in a merged session is (section 4.2): a planned 4 @ 8 that comes in at 4 @ 9.5 is a hold, not a miss. Still taken: do the substitute below and move on. Do not fill time with accessories; for a squat, leg work tires the legs before the top set.
+3. Substitute sets: the planned number of working sets (top set plus back-offs, or the V sets), 6-10 reps at RPE 8 in a heavy slot, 8-12 reps at RPE 7-8 in a volume slot. Each substitute has its own load and double progression (`data/tracks.json`, `accessories`). Its sets count toward the muscle's weekly sets. The order in the table follows carry-over to the barbell lift where a study measured it: Smith squat and Smith bench carried over best, leg press worst (research note, addendum 2026-11-10).
+
+| Main lift | Substitute, first choice first | Does it count for the track? |
+|---|---|---|
+| Back squat | Smith machine squat; hack squat; Bulgarian split squat (dumbbells and a bench only); leg press last (weakest carry-over) | No. The top set moves (step 4) |
+| Bench press | Smith machine bench; dumbbell bench press; machine chest press | No. The top set moves |
+| Deadlift | Trap-bar deadlift; dumbbell RDL. Rarely needed: any open floor works | No. The top set moves |
+| Overhead press | Seated dumbbell press; machine shoulder press. A bar cleaned from the floor also works if you can clean it | No. The top set moves |
+| Barbell row | Two-arm dumbbell row; chest-supported row; cable row (also one-arm DB row, machine row) | **Yes.** Each variant keeps its own load and runs the row's double progression (4 x 6-8 in a heavy slot) |
+| Pull-up or pulldown | Pull-up bar or any cable pulldown; machine pulldown | **Yes.** The machine pulldown keeps its own load |
+
+4. **The top set moves; it is not lost.** A heavy slot logged without its barbell squat, bench, deadlift or press moves that lift's top set to the lift's next session, normally the volume slot later in the same pass (L3, U3, Full C, or the cross-block merge that holds it). There it runs as the top set plus 2 back-offs instead of the volume sets, judged by RPE (step 2). The Hevy routine shows this after the next sync, and `tools/update_tracks.py` reads it as the heavy exposure. If the station is taken again, do the volume sets later or the substitute; the next heavy slot then runs as written. Nothing is added to the week.
+5. **Gap clock.** A substitute keeps the muscle trained, so a gap it covers is never worse than a hold: no lost back-off, no 5% or 10% reduction (section 4.4). It never earns an increment.
+6. **Floor.** Squat, bench, deadlift and press each need the barbell lift itself at least once a week to keep progressing (`guide/05-exercise-selection.md`, section 7.2, rule 4). If a lift is substituted at both of its exposures in one pass, it goes first in its next session. If the same station is busy at the same time two weeks running, move the session time or tell the Sunday check-in.
+7. **Supersets and accessories.** A superset that needs two stations runs as straight sets. Swap any accessory for another in the same row of `guide/05-exercise-selection.md`, section 7.3, without asking; each keeps its own load.
+
+How it changes with available days: in a 5- or 6-day week the moved top set lands in L3 or U3, two to four days later. In a 3-day week it lands in Full C, one to three days later. In a 2-day week (section 4.6), or when the volume slot is taken too, a lift can go a whole pass without a top set; the gap clock (step 5) keeps that to a hold.
 
 ### 4.4 A session skipped mid-rotation, and days since a lift was last trained
 
@@ -266,6 +280,7 @@ Each main lift has one track (`templates/progression-tracks.md`): a current top-
 
 - **The track updates at the H exposure.** If the top set hits 4 reps at RPE <= 8, the load rises for the next H exposure (+5 lb squat and deadlift; bench and press +5 lb after every second success, because the smallest plate is 2.5 lb and every barbell load is a multiple of 5 lb; `templates/progression-tracks.md` section 5, step counter). RPE 8.5-9: hold. Missed reps or RPE 10: hold and count a miss. Two misses in a row at one load: stall rule (reset 7.5% and rebuild, with a rep-zone change on a second stall).
 - **The V exposure reads from the track.** Its sets are 90% of the current top-set load. It does not change the load, but it is an exposure for the gap clock and its sets are logged for the e1RM trend.
+- **A moved top set** (section 4.3, "Station taken") turns the next V exposure into the H exposure for that pass. The track updates there, judged by RPE.
 - **Day count never touches the track.** A 3-day week and a 6-day week each contain exactly one H and one V exposure per lift, so loads advance at one step per week in both. The only main-lift variables that change with the day count are the number of back-off sets (3 in a split session, 2 in a merged one) and the number of V sets (4 versus 3).
 - **Exposure count, not calendar, is the unit** (`research/flexible-frequency-programming.md`, KQ6; GZCLP progresses per completed session; Wendler's 2023 variable-schedule post takes the next main lift in sequence whatever the day count; the "5/3/1 cycle stretches to 5+ weeks at 3 days per week" wording comes from a Muscle & Strength guide and is still **unverified** at source). If a pass spills across two calendar weeks because a session was missed, the lift's track simply advances when its H exposure happens.
 - **The block clock is counted in passes.** A block is 4-6 passes plus a deload pass. For any 3- to 6-day week a pass equals a calendar week, so "week 5 of the block" means the same thing on the calendar and in the log. A 2-day week or a missed session stretches a pass, and the block stretches with it. (This is the counting rule `guide/04-periodization-and-progression.md`, section 4, defers to; because every 3- to 6-day week completes a pass, a 3-day week does not take two calendar weeks to finish an exposure wave in this program.)
@@ -353,6 +368,7 @@ The weekdays are examples; the pointer still decides which slot comes next. Race
 - Every 3- to 6-day week is one pass: every main lift twice, one heavy and one volume exposure; tracks advance once per week.
 - Pointer rules: split +1, merged +2, never skip ahead, finish what is owed.
 - Cut from the bottom of the priority stack; never cut a top set.
+- Station taken: next free main lift, check once more, then swap. Row and pulldown variants count; a squat, bench, deadlift or press substitute does not, and that top set moves to the lift's next session.
 - Gap clock per lift: hold the load at 8-21 days; reduce 5-10% beyond 21.
 - A short week is not a deload unless it is the scheduled week, two red flags persist, or you are ill. A deload keeps frequency, halves sets, and runs top sets at RPE 6-7.
 - Block clock counts passes; for 3- to 6-day weeks that is calendar weeks.

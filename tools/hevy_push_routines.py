@@ -118,6 +118,15 @@ def gap_modifier(track, as_of):
     step = track.get("round_step_lb", 5)
     if days <= 7:
         return planned, 0, None
+    sub = (track.get("last_sub_exposure") or {}).get("date")
+    if sub and sub > exp:
+        # Section 9: a pattern-matched substitute keeps the muscle trained, so a
+        # gap it covered is never worse than a hold (no back-off cut, no reduction).
+        try:
+            sub_days = (as_of - dt.date.fromisoformat(sub)).days
+        except ValueError:
+            sub_days = days
+        days = max(8, min(days, sub_days))
     regain = track.get("regain") or {}
     if days <= 14 and regain and not regain.get("ended") and as_of.isoformat() <= regain.get("until", "9999-12-31"):
         return planned, 0, f"gap {days} d: regain phase, take the planned load (section 5.1)"
@@ -269,15 +278,23 @@ def increment_note(t, as_of=None):
             f"+{fmt(t.get('big_increment_lb', inc))} lb at once if RPE 7 or lower.")
 
 
-def render_exercise(ex, tracks, as_of, deload=False, merged=False):
+def render_exercise(ex, tracks, as_of, deload=False, merged=False, rotation_subs=None):
     """Return (sets, notes) for one rotation.json exercise. Set loads are in
-    pounds under 'weight_lb'; build_routine converts them to weight_kg."""
+    pounds under 'weight_lb'; build_routine converts them to weight_kg.
+    rotation_subs: rotation.json "substitutes" (lift -> names, first choice first)."""
+    rotation_subs = rotation_subs or {}
     role = ex["role"]
     sets, notes = [], []
+    promoted = False
     if role in ("H", "V"):
         t = tracks["tracks"][ex["track"]]
         step = t.get("round_step_lb", 5)
         scheme = t.get("scheme", "top_set")
+        if role == "V" and t.get("h_owed") and scheme == "top_set" and t.get("top_set_lb") is not None and not deload:
+            # guide/03 section 4.3: the last heavy slot ran without this lift, so
+            # its top set moves here (update_tracks.py reads it as the H exposure).
+            role, promoted = "H", True
+            ex = dict(ex, backoffs=2, warmup=ex.get("warmup") or "feeder")
         if role == "H":
             load, bo_delta, gap_note = gap_modifier(t, as_of)
             if scheme == "top_set":
@@ -311,7 +328,11 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
                     sets += warmup_sets(ex.get("warmup"), load)
                     sets.append({"type": "normal", "weight_lb": load, "reps": t.get("rep_target", 4)})
                     sets += [{"type": "normal", "weight_lb": bo, "reps": t.get("rep_target", 4)} for _ in range(n_bo)]
-                if merged and ex.get("warmup") != "ramp":
+                if promoted:
+                    notes.insert(0, f"TOP SET MOVED HERE: the last heavy {t['name'].lower()} slot ran without it (station taken). "
+                                    "Top set and 2 back-offs instead of the volume sets; judge by RPE, a 4 @ 9.5 is a hold, not a miss. "
+                                    "If the station is taken again, do the volume sets later or the substitute; the next heavy slot runs as written.")
+                elif merged and ex.get("warmup") != "ramp":
                     notes.append("Merged session: judge by RPE, a 4 @ 9.5 here is a hold, not a miss.")
             else:  # double progression
                 lo, hi = t.get("rep_range", [6, 8])
@@ -360,9 +381,43 @@ def render_exercise(ex, tracks, as_of, deload=False, merged=False):
         if deload:
             notes.insert(0, "DELOAD: light, 1-2 sets.")
         sets += [{"type": "normal", "weight_lb": load, "rep_range": {"start": lo, "end": hi}} for _ in range(n)]
+    if role in ("H", "V"):
+        busy = station_note(ex["track"], role, tracks, rotation_subs)
+        if busy:
+            notes.append(busy)
     if ex.get("note"):
         notes.insert(0, sentence(ex["note"]))
     return sets, " ".join(notes)
+
+
+def station_note(track_key, role, tracks, rotation_subs):
+    """The busy-gym line for a main lift (guide/03 section 4.3)."""
+    t = tracks["tracks"].get(track_key) or {}
+    def at(load):
+        return f" {fmt(load)} lb" if load else ""
+    if t.get("scheme") == "double_progression":
+        vs = t.get("variants") or {}
+        names = rotation_subs.get(track_key) or list(vs)
+        if not names:
+            return None
+        pct = 1 if role == "H" else t.get("volume_pct", 0.9)
+        parts = []
+        for n in names:
+            load = (vs.get(n) or {}).get("top_set_lb")
+            parts.append(n + (at(round_to(load * pct, t.get("round_step_lb", 5))) if load else ""))
+        return ("Station taken: any of these counts for this track, same sets and reps, each with its own load: "
+                + "; ".join(parts) + ".")
+    names = rotation_subs.get(track_key) or []
+    if not names:
+        return None
+    acc = tracks.get("accessories") or {}
+    parts = [n + at((acc.get(n) or {}).get("weight_lb")) for n in names]
+    if role == "H":
+        return ("Station taken: do the next main lift whose station is free and come back. Still taken after that: "
+                + " or ".join(parts) + ", same number of working sets, 6-10 reps at RPE 8. "
+                "It does not change the track; the top set moves to the next session with this lift.")
+    return ("Station taken: do these sets later in the session, or " + " or ".join(parts)
+            + " for the same sets at 8-12 reps, RPE 7-8.")
 
 
 def payload_set(s):
@@ -381,7 +436,8 @@ def build_routine(slot, rotation, tracks, exmap, as_of, deload=False, folder_id=
         tid = (exmap.get(ex["name"]) or {}).get("template_id")
         if not tid:
             unresolved.append(ex["name"])
-        sets, notes = render_exercise(ex, tracks, as_of, deload=deload, merged=merged)
+        sets, notes = render_exercise(ex, tracks, as_of, deload=deload, merged=merged,
+                                     rotation_subs=rotation.get("substitutes"))
         rest = rest_note(ex, session["exercises"], bool(ex.get("warmup")))
         notes = " ".join(n for n in (notes, rest) if n)
         exercises.append({

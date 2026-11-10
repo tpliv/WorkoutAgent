@@ -153,6 +153,15 @@ set of the lift. The decision follows section 5 of
   load and the last lifted load.
 - V exposures, substitutes and untitled sessions never change a load; they do
   update the lift's last-exposure date.
+- Busy gym (`templates/progression-tracks.md` section 9): a row or pulldown
+  variant from `lift_aliases.json` `_variants` counts as the exposure and runs
+  double progression on its own load (`tracks.<lift>.variants`). A heavy slot
+  without the barbell squat, bench, deadlift or press sets `h_owed`; the
+  lift's next V slot is then pushed as top set + 2 back-offs and read as the
+  heavy exposure. A substitute from `_substitutes` is stored as
+  `last_sub_exposure` and caps the gap modifier at a hold. Every main lift's
+  routine note carries a "Station taken" line with the fallbacks from
+  `rotation.json` `substitutes` and their loads.
 - The pointer is the half-session after the latest slot-titled session.
 
 ## Normalized log format

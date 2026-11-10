@@ -225,6 +225,23 @@
         "big_increment_lb": 10,
         "first_set_reps": 11,
         "basis": "90% of the 2024 best e1RM 142 lb (115 x 7, 15 Apr 2024); progression-tracks.md 5.1"
+      },
+      "variants": {
+        "DB row (two-arm)": {
+          "top_set_lb": null,
+          "last_h_load_lb": null,
+          "miss_counter": 0
+        },
+        "Chest-supported row": {
+          "top_set_lb": null,
+          "last_h_load_lb": null,
+          "miss_counter": 0
+        },
+        "Cable row": {
+          "top_set_lb": null,
+          "last_h_load_lb": null,
+          "miss_counter": 0
+        }
       }
     },
     "pullup": {
@@ -264,7 +281,14 @@
         "U3",
         "Full C"
       ],
-      "increment_note": "one pin"
+      "increment_note": "one pin",
+      "variants": {
+        "Machine pulldown": {
+          "top_set_lb": null,
+          "last_h_load_lb": null,
+          "miss_counter": 0
+        }
+      }
     }
   },
   "accessories": {
@@ -363,6 +387,61 @@
       "weight_lb": null,
       "step": "+2.5 lb held (dumbbell or plate)",
       "note": ""
+    },
+    "Hack squat": {
+      "weight_lb": null,
+      "step": "+10 lb (one 5-lb plate a side) or one pin",
+      "note": "squat substitute (station taken); choose on the day and record it"
+    },
+    "Leg press": {
+      "weight_lb": null,
+      "step": "+10 lb (one 5-lb plate a side) or one pin",
+      "note": "squat substitute, last choice (weakest transfer to the squat: Rossi 2018); choose on the day and record it"
+    },
+    "Bulgarian split squat": {
+      "weight_lb": 35,
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "squat substitute, needs only dumbbells and a bench; total of both dumbbells, per leg; starts at the reverse-lunge load"
+    },
+    "DB bench press": {
+      "weight_lb": null,
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "bench substitute; total of both dumbbells. Start near 80 total (about 70-80% of the barbell bench, practitioner rule) and adjust by RPE"
+    },
+    "Machine chest press": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "bench substitute; choose on the day and record it"
+    },
+    "Trap-bar deadlift": {
+      "weight_lb": null,
+      "step": "+10 lb",
+      "note": "deadlift substitute; choose on the day and record it"
+    },
+    "DB Romanian deadlift": {
+      "weight_lb": null,
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "deadlift substitute; total of both dumbbells"
+    },
+    "Seated DB press": {
+      "weight_lb": null,
+      "step": "+5 lb total (2.5 lb per dumbbell)",
+      "note": "press substitute; total of both dumbbells; choose on the day and record it"
+    },
+    "Machine shoulder press": {
+      "weight_lb": null,
+      "step": "+5 lb (one pin)",
+      "note": "press substitute; choose on the day and record it"
+    },
+    "Smith machine squat": {
+      "weight_lb": null,
+      "step": "+5 lb",
+      "note": "squat substitute, first choice (closest transfer to the barbell squat: Saeterbakken 2019); choose on the day and record it"
+    },
+    "Smith machine bench press": {
+      "weight_lb": null,
+      "step": "+5 lb",
+      "note": "bench substitute, first choice (Smith bench carried over best to the barbell bench: Saeterbakken 2020); choose on the day and record it"
     }
   },
   "processed_through": "2026-10-21"

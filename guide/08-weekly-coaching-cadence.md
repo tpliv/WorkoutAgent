@@ -1,6 +1,6 @@
 # 08. Weekly coaching cadence: Sunday check-in and night-before workouts
 
-Last updated: 2026-11-06 (check-in asks for waist, drinks and races). Earlier: 2026-10-26 (data flow uses `tools/hevy_sync.py`; short warm-up ramp)
+Last updated: 2026-11-10 (brief's "rack taken" line names the substitute and its load). Earlier: 2026-11-06 (check-in asks for waist, drinks and races). Earlier: 2026-10-26 (data flow uses `tools/hevy_sync.py`; short warm-up ramp)
 
 This chapter turns the program into a coach's routine. Every Sunday evening there is a short conversation that plans the week. The evening before each training day, a brief arrives with that session's exact workout. The rules don't change: this chapter only sets *when* the existing rules get applied and *what* you are told. The agent runbooks that carry it out are in `coach/`. The evidence is in `research/coaching-check-ins.md`.
 
@@ -69,7 +69,7 @@ Why anything changed: nothing; all tracks normal.
 5a/5b Lateral raise 4 x 12-20 @ 15 / OH triceps ext 3 x 10-15 @ 25
 6. Standing calf raise     3 x 8-12
 Short on time: cut calves to 2, triceps to 2, lateral raise to 3.
-Rack taken: bench and row first, squat when it frees. Leg press does not replace the squat top set.
+Rack taken: bench and row first, then squat. Still taken: Smith squat @ <load>, 4 x 6-10; the squat top set moves to Full C.
 After: log in Hevy as "Full A", or reply with the top sets and RPE.
 ```
 
@@ -80,7 +80,7 @@ Rules for the brief:
 - The warm-up ramp is for the first compound only (bar x 5, 80% x 2-3; add 60% x 3 between them once the top set is 225 lb or more; `guide/05` §5.1). Each later main lift gets one feeder set at 60-70%.
 - One line, "why anything changed", names any rule that fired: gap hold, miss, stall reset, deload, or substitution.
 - One line, "short on time", gives the template's own cut order (`guide/03` §4.3).
-- One line, "rack taken", names the order to fall back to when the first main lift's station is busy (`guide/03` §4.3, "Station taken").
+- One line, "rack taken", names the order to fall back to when the first main lift's station is busy, then the first substitute and its load (`guide/03` §4.3, "Station taken"; `guide/05` §7.4).
 
 ### 3.2 When the week changes
 

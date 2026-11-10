@@ -1,6 +1,6 @@
 # Runbook: night-before brief
 
-Last updated: 2026-11-06 (top-set rating line, rep-out, race-week rules). Earlier: 2026-10-26 (tracks via `tools/hevy_sync.py`; short warm-up ramp)
+Last updated: 2026-11-10 (busy-gym "Rack taken" line and moved top sets). Earlier: 2026-11-06 (top-set rating line, rep-out, race-week rules). Earlier: 2026-10-26 (tracks via `tools/hevy_sync.py`; short warm-up ramp)
 
 Protocol: `guide/08-weekly-coaching-cadence.md` section 3. General rules: `coach/README.md`. Runs Mon-Sat at 7:47 pm America/New_York. Sunday's run delivers Monday's brief, so this run covers Tuesday to Sunday.
 
@@ -38,7 +38,8 @@ Protocol: `guide/08-weekly-coaching-cadence.md` section 3. General rules: `coach
    - the warm-up ramp on the first compound: bar x 5, then 80% x 2-3 of the top set (add 60% x 3 between them once the top set is 225 lb or more), each rounded to the nearest 5 lb (never below the 45 lb bar);
    - one feeder set at 60-70% for each later main lift, rounded to the nearest 5 lb (the empty 45 lb bar if that is lower);
    - the template's cut order as the "Short on time" line;
-   - a "Rack taken" line: the session's other main lifts first, the delayed lift when its station frees, and no substitute for its top set (`guide/03` §4.3, "Station taken");
+   - a "Rack taken" line: the session's other main lifts first, one more check, then the first fallback from `guide/05` §7.4 with its load from `data/tracks.json` (row and pulldown: the variant and its load, which counts); for squat, bench, deadlift or press say the top set moves to the lift's next session (`guide/03` §4.3, "Station taken");
+   - if a lift in tomorrow's slot has `h_owed` in `data/tracks.json`, its V sets become "top set + 2 back-offs at the track load, judged by RPE" (the synced Hevy routine already shows this);
    - a "Rate it" line on each top set: up to 6 reps if rep 4 is clearly easy; one tap, 7 easy, 8 on target, 9 hard, 10 nothing left (`progression-tracks.md` §3);
    - for a lift with `rep_out_due` in `data/tracks.json`: "Last back-off: rep-out to about RPE 9, 10 reps max, safeties set" (§5.3), unless tomorrow is a deload, a race week, or the lift comes second in a merged session;
    - if a race is within 7 days before or after tomorrow, the race-week or after-race line from `guide/03` §4.7 (for example "R+3: deadlift top set capped at RPE 7; below plan is a hold").
