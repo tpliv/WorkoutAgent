@@ -1,6 +1,6 @@
 # Weekly plan
 
-Last updated: 2026-11-06 (race-recovery rule from `guide/03` §4.7 applied later the same day; week of 9 Nov changed from 3 days (Tue, Wed, Fri) to 4 days around the 10-mile race on Sun 8 Nov and work travel on Thu 12 Nov; lifter picked the layout and the times). Units: pounds. Written by the Sunday check-in (`coach/sunday-checkin.md`), amended by the nightly brief (`coach/nightly-brief.md`). Protocol: `guide/08-weekly-coaching-cadence.md`. The previous weeks (26 Oct and race week, 2-6 Nov) are recapped in `data/checkins/2026-11-06.md`.
+Last updated: 2026-11-11 (Full B moved Wed to Thu, Full C Fri to Sat, L1 to next week; see Changes). Earlier: 2026-11-06 (race-recovery rule from `guide/03` §4.7 applied later the same day; week of 9 Nov changed from 3 days (Tue, Wed, Fri) to 4 days around the 10-mile race on Sun 8 Nov and work travel on Thu 12 Nov; lifter picked the layout and the times). Units: pounds. Written by the Sunday check-in (`coach/sunday-checkin.md`), amended by the nightly brief (`coach/nightly-brief.md`). Protocol: `guide/08-weekly-coaching-cadence.md`. The previous weeks (26 Oct and race week, 2-6 Nov) are recapped in `data/checkins/2026-11-06.md`.
 
 ## Status
 
@@ -8,20 +8,20 @@ Last updated: 2026-11-06 (race-recovery rule from `guide/03` §4.7 applied later
 |---|---|
 | Status | **confirmed** (values: awaiting check-in, provisional, confirmed, week over). Days and times picked by the lifter; no readiness scores or bodyweight recorded |
 | Week of | Mon 2026-11-09 |
-| Days | 4 (Tue, Wed, Fri, Sun). Mon: day after the race. Thu: work travel |
+| Days | 3 (Tue, Thu, Sat), was 4 (Tue, Wed, Fri, Sun). Mon: day after the race. Wed: moved (sore, busy before the work trip) |
 | Template | `templates/4-day-week.md`, from the pointer: U1, Full B, Full C, L1 (§4.1 step 3: two merges, L3+U3 then L2+U2) |
 | Block week | 2 of 6 |
 | Deload | No |
-| Pointer at start of week | U1. After Sunday: U1 again (one full pass) |
+| Pointer at start of week | U1. After Saturday: L1 (U1, Full B, Full C done; L1 opens next week) |
 
 ## Sessions
 
 | Date | Day and time | Hevy routine (folder This Week) | Main lifts and planned loads | Calendar | State |
 |---|---|---|---|---|---|
 | 2026-11-10 | Tue 7:30-9:00 am | U1 Upper A (Tue 10 Nov) | Bench H 110 x 4, back-offs 3 x 4 at 100; row H 4 x 6-8 at 70. Accessories: incline DB press 70 total (35s), lateral raise 20 total (10s), overhead triceps extension 25 (one dumbbell), face pull | hold (Workouts) | done |
-| 2026-11-11 | Wed 7:30-9:00 am | Full B (Wed 11 Nov) | Deadlift H 150 x 4, back-offs 2 x 4 at 140; press H 70 x 4, back-offs 2 x 4 at 65; pulldown H 3 x 5-8 at 125. Accessories: leg press or split squat, reverse pec deck, lateral raise, incline DB curl 30 total (15s), calves | hold (Workouts) | planned |
-| 2026-11-13 | Fri, flexible | Full C (Fri 13 Nov) | All V: squat 3 x 6 at 140; bench 3 x 6 at 100; deadlift 2 x 4 at 135; press 2 x 5 at 65; row 3 x 8-10 at 65; pulldown 2 x 6-8 at 115. Accessories: leg curl, incline DB press, lateral raise (optional) | none (lifter's request) | planned |
-| 2026-11-15 | Sun, flexible | L1 Lower A (Sun 15 Nov) | Squat H 155 x 4, back-offs 3 x 4 at 145. Accessories: RDL 110, leg press or split squat, leg curl, calves, core | none (lifter's request) | planned |
+| 2026-11-12 | Thu (moved from Wed 11 Nov) | Full B (Thu 12 Nov) | Deadlift H 150 x 4 (capped at RPE 7), back-offs 1-2 x 4 at 93% of the load lifted; press H 70 x 4, back-offs 2 x 4 at 65; pulldown H 3 x 5-8 at 125. Accessories: leg press or split squat, reverse pec deck, lateral raise, incline DB curl 30 total (15s), calves | hold (Workouts) | planned |
+| 2026-11-14 | Sat, flexible (moved from Fri 13 Nov) | Full C (Sat 14 Nov) | All V: squat 3 x 6 at 140; bench 3 x 6 at 100; deadlift 2 x 4 at 135; press 2 x 5 at 65; row 3 x 8-10 at 65; pulldown 2 x 6-8 at 115. Accessories: leg curl, incline DB press, lateral raise (optional) | none (lifter's request) | planned |
+| next week | moved from Sun 15 Nov | L1 Lower A (next week) | Squat H 155 x 4, back-offs 3 x 4 at 145. Accessories: RDL 110, leg press or split squat, leg curl, calves, core | none (lifter's request) | moved |
 
 State values: planned, briefed, done, missed, moved.
 
@@ -33,12 +33,12 @@ Session lengths at the timer rests (routine notes): U1 about 63 min, Full B abou
 
 | Lift | H | V | Gap |
 |---|---|---|---|
-| Bench, row | Tue | Fri | 72 h |
-| Deadlift | Wed | Fri | 48 h |
-| Press, pulldown | Wed | Fri | 48 h |
-| Squat | Sun | Fri | 48 h (V before H) |
+| Bench, row | Tue | Sat | 96 h |
+| Deadlift | Thu | Sat | 48 h |
+| Press, pulldown | Thu | Sat | 48 h |
+| Squat | next week | Sat | at least 48 h if L1 is Mon or later (V before H) |
 
-Tue and Wed are consecutive days with upper-body H work on both (bench and row, then press and pulldown). Different lifts, and Tuesday has no lower-body work, so this is accepted (`guide/03-flexible-scheduling.md` §4.6; `templates/4-day-week.md`, "Placement").
+After the 11 Nov move no two lifting days are consecutive. (The original Tue-Wed pair had upper H work on both days; that no longer applies.)
 
 Gap clock: every lift was last trained 4-5 Nov, so Tuesday is 5-6 days out: normal rules (`templates/progression-tracks.md` §8). The 155 squat is a hold after last week's off-plan 155 x 5; if 155 x 4 is RPE 7 or lower, the next H takes +10.
 
@@ -51,14 +51,16 @@ Rule: `guide/03-flexible-scheduling.md` §4.7 (added 2026-11-06; `research/runni
 | Sun 8 Nov | R | No cool-down jog; walk. Fueling: `data/body-composition.md` §5.1 |
 | Mon 9 Nov | R+1 | Rest or walk only |
 | Tue 10 Nov | R+2 | U1 as written (upper only) |
-| Wed 11 Nov | R+3 | Full B: deadlift top set **capped at RPE 7** whether or not the legs feel sore. If 150 x 4 would pass RPE 7, stop at the load that is RPE 7 and log it; 1-2 back-offs at 93% of the load lifted. A top set below plan is a **hold, not a miss**. Press and pulldown as written |
-| Fri 13 Nov | R+5 | Full C as written |
-| Sun 15 Nov | R+7 | L1 as written (first squat H after the race, inside the R+4-or-later rule) |
+| Wed 11 Nov | R+3 | Rest (Full B moved to Thursday). |
+| Thu 12 Nov | R+4 | Full B, the first lower session since the race. The cap is kept although R+4 allows normal work, because the legs are still sore: deadlift top set **capped at RPE 7** whether or not the legs feel sore. If 150 x 4 would pass RPE 7, stop at the load that is RPE 7 and log it; 1-2 back-offs at 93% of the load lifted. A top set below plan is a **hold, not a miss**. Press and pulldown as written |
+| Sat 14 Nov | R+6 | Full C as written |
+| next week | R+8 or later | L1 as written (first squat H after the race) |
 
 ## If a day moves
 
-- Friday falls through: do Full C on Saturday and move L1 to next week (the pointer carries it). Do not run Full C and L1 on Saturday and Sunday back to back (squat V, then squat H the next day).
-- Sunday falls through: L1 opens next week.
+- Thursday falls through (travel): Full B is the next session whenever you can train; Full C follows at least a day later.
+- Saturday falls through: Full C on Sunday, and L1 next week no earlier than Tuesday (48 h after the squat V).
+- Do not run Full B and Full C on consecutive days (deadlift and press H, then V the next day).
 
 ## Cardio
 
@@ -66,10 +68,11 @@ Easy runs only (45 min or less) until about R+7 to R+10, 15-18 Nov; no long or q
 
 ## Sauna (optional)
 
-The lifter has a gym sauna (`guide/06-recovery-nutrition-cardio.md` §6.1). None until Mon 9 Nov (R+1), and only once fluids and food are back to normal. Then up to 2-3 sessions this week, 10-15 min at 80-90 °C (5-10 min for the first 2-3 if new to it), **after** the session: Tue after U1, Wed after Full B, Fri after Full C. None on Sat (within 24 h of Sunday's L1 squat), none before a lift, none on a drinking night or the morning after. Weigh in before it in the morning; replace the sweat with water and a salted meal.
+The lifter has a gym sauna (`guide/06-recovery-nutrition-cardio.md` §6.1). None until Mon 9 Nov (R+1), and only once fluids and food are back to normal. Then up to 2-3 sessions this week, 10-15 min at 80-90 °C (5-10 min for the first 2-3 if new to it), **after** the session: Tue after U1, Thu after Full B, Sat after Full C (was Wed and Fri; moved 11 Nov). None within 24 h before L1's squat, none before a lift, none on a drinking night or the morning after. Weigh in before it in the morning; replace the sweat with water and a salted meal.
 
 ## Changes this week
 
+- 2026-11-11: Wednesday's Full B moved to Thu 12 Nov (lifter still sore from the race and busy before the work trip). Full C moved Fri to Sat 14 Nov so it does not follow Full B the next day, and L1 moves from Sun 15 Nov to next week so the squat V (Sat) and squat H are not back to back (`If a day moves`, above). The rotation is unchanged: Full B is still the half-session owed, and the week ends with the pointer at L1. The deadlift RPE 7 cap stays for Thursday. Hevy "This Week" routines re-dated and re-pushed (`data/hevy-state.json`); calendar holds not changed.
 - 2026-11-10 (later): Hevy RPE Tracking switched on (Profile → gear → Workouts → RPE Tracking). From Wednesday, rate the top set of each main lift and the last row and pulldown set (7 = 3 left, 8 = 2 left, 9 = 1 left, 10 = none). The 10 Nov DB row (unrated) stays credited at 75 lb total unless the lifter says the last set was a grind.
 - 2026-11-10 (later): busy-gym substitution rules (`guide/03` §4.3, "Station taken"): next free main lift, one more check, then swap. Row and pulldown variants now count; the 10 Nov dumbbell row set the two-arm DB row at 75 lb total. A missed squat, bench, deadlift or press top set moves to that lift's next session. Fallbacks this week: Full B deadlift (trap bar), press (seated DB), pulldown (machine pulldown); Full C and L1 squat (Smith, then hack squat). Routines pushed with a "Station taken" line on every main lift.
 - 2026-11-10: U1 done, 7:41-8:32 am (51 min). Bench 110 x 6 unrated (the routine's "up to 6 if rep 4 is easy"), back-offs 105 x 5, 6, 6 (plan: 3 x 4 at 100). Engine: effective RPE 7 at rep 4, big step to 115 (`data/track-log.md`). Row done as dumbbell row 70 total x 8 x 4 instead of the barbell: a substitute, so the row track holds at 70. Incline DB press 70 x 6, 8, 8; lateral raise 20 x 15, 20, 20, 20; overhead triceps extension 27.5 x 8 x 3 (plan 25); face pull not logged. Routines re-pushed: Friday's bench V is now 3 x 6 at 105 (90% of 115). No RPE logged.
