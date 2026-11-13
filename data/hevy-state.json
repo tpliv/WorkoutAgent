@@ -16,7 +16,7 @@
     "U3+L1": "d402bb41-37ad-4f5f-9709-d588050330bf",
     "U1+L2": "f5bed829-6ca3-499d-9c7e-d1912e452e6c"
   },
-  "last_push": "2026-11-11T21:22:22Z",
+  "last_push": "2026-11-13T00:18:43Z",
   "last_push_deload": false,
   "this_week": {
     "folder_id": 4036910,
@@ -32,24 +32,24 @@
         "note": "R+2 after the 8 Nov race: upper body only, as written."
       },
       {
-        "date": "2026-11-12",
-        "slot": "Full B",
-        "title": "Full B (Thu 12 Nov)",
+        "date": "2026-11-13",
+        "slot": "L2",
+        "title": "L2 Lower B (Fri 13 Nov)",
         "id": "a1de5676-367b-4e23-9d47-5cd0c15a2049",
-        "note": "Moved from Wed 11 Nov (legs still sore, busy day). R+4 after the 8 Nov race, first lower session since it (guide/03 section 4.7): deadlift top set capped at RPE 7 however the legs feel. If 150 x 4 would pass RPE 7, stop at the load that is RPE 7 and log it; 1-2 back-offs at 93% of that. A top set below plan is a hold, not a miss."
+        "note": "R+5 after the 8 Nov race; legs were still sore on 11 Nov, so the deadlift top set stays capped at RPE 7. If 150 x 4 would pass RPE 7, stop at the load that is RPE 7 and log it; 2 back-offs at 93% of that. A top set below plan is a hold, not a miss. Lunges optional if the legs are still sore."
       },
       {
         "date": "2026-11-14",
-        "slot": "Full C",
-        "title": "Full C (Sat 14 Nov)",
+        "slot": "U2",
+        "title": "U2 Upper B (Sat 14 Nov)",
         "id": "93e8172d-7bb0-42ed-9f9d-96b8df3aead8"
       },
       {
-        "date": "2026-11-16",
-        "slot": "L1",
-        "title": "L1 Lower A (next week)",
+        "date": "2026-11-15",
+        "slot": "L3",
+        "title": "L3 Lower C (Sun 15 Nov)",
         "id": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58",
-        "note": "Moved from Sun 15 Nov: not the day after Full C (squat V then squat H). Opens next week; the Sunday check-in sets the day."
+        "note": "48 h after Friday's deadlift H, so the deadlift V sets stay (crisp, RPE 6-7)."
       }
     ]
   }
