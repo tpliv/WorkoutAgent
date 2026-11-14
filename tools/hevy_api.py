@@ -69,6 +69,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from localtime import local_date  # noqa: E402
+
 BASE = "https://api.hevyapp.com/v1"
 MAX_PAGE_SIZE = {"workouts": 10, "workouts/events": 10, "routines": 10,
                  "routine_folders": 10, "exercise_templates": 100, "body_measurements": 10}
@@ -249,13 +252,16 @@ class Hevy:
 
 HISTORY_COLUMNS = [
     "date", "workout_title", "exercise", "set_index", "set_type",
-    "weight_kg", "reps", "rpe", "notes", "source", "workout_id",
+    "weight_kg", "reps", "rpe", "notes", "source", "workout_id", "start_time",
 ]
 
 
 def workout_rows(w, source="hevy-api"):
     """Flatten one API workout into normalized set rows (tools/README.md)."""
-    date = (w.get("start_time") or "")[:10]
+    # the date is the lifter's calendar day, not the UTC one (tools/localtime.py);
+    # start_time keeps the raw UTC timestamp so the date can always be re-derived
+    start = w.get("start_time") or ""
+    date = local_date(start)
     title = w.get("title") or ""
     for ex in w.get("exercises") or []:
         for s in ex.get("sets") or []:
@@ -271,6 +277,7 @@ def workout_rows(w, source="hevy-api"):
                 "notes": (ex.get("notes") or "").replace("\n", " ").replace(",", ";"),
                 "source": source,
                 "workout_id": w.get("id") or "",
+                "start_time": start,
             }
 
 

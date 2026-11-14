@@ -1,8 +1,8 @@
 {
   "_comment": "Machine-readable state of the six progression tracks (templates/progression-tracks.md). tools/update_tracks.py rewrites it from data/history.csv; tools/hevy_push_routines.py reads it to fill routine loads. data/track-state.md is the narrative companion; its table is regenerated from this file with `update_tracks.py --write-md`. Units: lb (the Hevy app is set to lb; the API and data/history.csv carry kg, and the tools convert). top_set_lb is the planned load for the NEXT heavy exposure (section 5 rule already applied); last_h_load_lb is what was actually lifted at the last heavy exposure (the gap table in section 8 holds or reduces from that). A null top_set_lb with work_up=true means: work up on the first heavy exposure and log the load found. Bench and press have no fractional plates: increment_every = 2 means +5 lb after every second successful top set; step_counter counts the successes so far.",
-  "updated": "2026-11-10",
+  "updated": "2026-11-13",
   "units": "lb",
-  "pointer": "L2",
+  "pointer": "U2",
   "block_start": "2026-10-27",
   "block_week": 3,
   "deload": false,
@@ -123,9 +123,9 @@
     "deadlift": {
       "name": "Deadlift",
       "scheme": "top_set",
-      "top_set_lb": 150,
+      "top_set_lb": 170,
       "work_up_note": "Warm up, then 95 x 4, 115 x 4, 135 x 4, 145 x 4, +10 lb per set until 4 reps feel like RPE 8. Stop there; that load is the track load.",
-      "last_h_load_lb": 145.0,
+      "last_h_load_lb": 160.0,
       "rep_target": 4,
       "increment_lb": 5,
       "big_increment_lb": 10,
@@ -135,8 +135,8 @@
       "miss_counter": 0,
       "stalls": 0,
       "last_exposure": {
-        "date": "2026-11-04",
-        "type": "V"
+        "date": "2026-11-12",
+        "type": "H"
       },
       "e1rm_history": [
         {
@@ -154,6 +154,14 @@
           "reps": 4,
           "rpe": null,
           "slot": "L2"
+        },
+        {
+          "date": "2026-11-12",
+          "e1rm": 197.3,
+          "load": 160.0,
+          "reps": 5,
+          "rpe": 8.0,
+          "slot": "L2"
         }
       ],
       "h_slots": [
@@ -164,9 +172,9 @@
         "L3",
         "Full C"
       ],
-      "unrated_streak": 1,
+      "unrated_streak": 0,
       "rep_out_due": false,
-      "last_step": "step",
+      "last_step": "big",
       "caution": {
         "until": "2027-01-09",
         "big_step_needs_rating": true,
@@ -487,5 +495,8 @@
       "note": "bench substitute, first choice (Smith bench carried over best to the barbell bench: Saeterbakken 2020); choose on the day and record it"
     }
   },
-  "processed_through": "2026-11-10"
+  "processed_through": "2026-11-12",
+  "processed_ids": [
+    "e71760ce-dea6-4a2c-8d0a-94e444bddace"
+  ]
 }

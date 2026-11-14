@@ -62,6 +62,11 @@ The user logs in Hevy (Pro) and the repo talks to it over the Hevy API.
   dashboard page (URL in `tools/README.md`, "Progress dashboard"); never
   create a second page.
 - `python3 tools/build_dashboard.py` rebuilds the dashboard alone (offline).
+- Dates are the lifter's (America/New_York, `tools/localtime.py`), never the
+  server's UTC date. Outside the tools, get today with
+  `TZ=America/New_York date +%F`.
+- The push reads every routine back and exits non-zero on a failure or
+  mismatch; report its summary, including skipped sessions.
 - The program runs in pounds (`data/tracks.json`, the routines, `data/track-state.md`).
   The Hevy API and `data/history.csv` carry kg; the tools convert.
 - Read `data/tracks.json` for the current loads and the pointer (the next

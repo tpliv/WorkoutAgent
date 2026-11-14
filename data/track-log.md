@@ -29,3 +29,7 @@ Append-only record of what `tools/update_tracks.py` changed and why. Newest at t
 - Flag: no RPE logged on the Bench press top set (110 x 6); assumed it ended at RPE 9, so 7 at rep 4
 - 2026-11-10 Accessories: incline DB press holds 70 total (6, 8, 8; range 8-12). Lateral raise holds 20 total (15, 20, 20, 20; one set short of 20). Overhead triceps extension back to 25 (27.5 x 8 x 3 against a planned 25; 8s since 20 Oct, under the 10-15 range). Row: dumbbell row 70 total x 8 x 4 replaced the barbell row, so the row track did not update (holds 70). Face pull not logged.
 - 2026-11-10 Busy-gym rules (`templates/progression-tracks.md` §9, revised today), applied by hand to the 10 Nov U1: the dumbbell row (Bent Over Row (Dumbbell), 70 total x 8 x 4, unrated) now counts as the row exposure. Variant "DB row (two-arm)": all four sets at the top of 6-8, RPE assumed 8: +5 to 75 total. Row last exposure 10 Nov (H). The barbell row load stays 70; its regain phase and e1RM history are unchanged.
+
+## 2026-11-13
+
+- 2026-11-12 L2 Deadlift: top 160 x 5 @ 8 -> 5 @ 8 reads 7 at rep 4; rep-out 5; 5 @ 7: big step to 170

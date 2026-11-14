@@ -1,764 +1,774 @@
-date,workout_title,exercise,set_index,set_type,weight_kg,reps,rpe,notes,source,workout_id
-2024-03-05,Evening workout 🏋️,Bench Press (Dumbbell),0,normal,40.82,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Bench Press (Dumbbell),1,normal,40.82,6,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Incline Bench Press (Dumbbell),0,normal,31.75,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Incline Bench Press (Dumbbell),2,normal,31.75,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Lat Pulldown (Cable),0,normal,49.9,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Lat Pulldown (Cable),1,normal,49.9,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Lat Pulldown (Cable),2,normal,49.9,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Leg Raise Parallel Bars,0,normal,,30,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Leg Raise Parallel Bars,1,normal,,30,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Leg Raise Parallel Bars,2,normal,,30,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Squat (Barbell),0,normal,102.06,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Squat (Barbell),1,normal,102.06,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Squat (Barbell),2,normal,102.06,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Triceps Dip,0,normal,,4,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-05,Evening workout 🏋️,Triceps Dip,1,normal,,4,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049
-2024-03-06,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,20.41,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,20.41,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,20.41,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),0,normal,29.48,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),3,normal,20.41,4,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Romanian Deadlift (Dumbbell),0,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Romanian Deadlift (Dumbbell),1,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Romanian Deadlift (Dumbbell),2,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Russian Twist (Bodyweight),0,normal,,80,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Russian Twist (Bodyweight),1,normal,,75,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Russian Twist (Bodyweight),2,normal,,75,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),0,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),1,normal,49.9,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-06,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),2,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095
-2024-03-25,Afternoon workout 💪,Bench Press (Barbell),0,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Bench Press (Barbell),2,normal,20.41,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Bench Press (Barbell),3,normal,47.63,6,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Incline Bench Press (Dumbbell),0,normal,31.75,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Incline Bench Press (Dumbbell),2,normal,31.75,4,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,54.43,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,49.9,5,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,49.9,5,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Leg Raise Parallel Bars,0,normal,,25,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Leg Raise Parallel Bars,1,normal,,30,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Squat (Barbell),0,normal,83.91,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-03-25,Afternoon workout 💪,Triceps Dip,0,normal,,5,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc
-2024-04-01,Afternoon workout 💪,Bench Press (Dumbbell),0,normal,40.82,5,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Bench Press (Dumbbell),1,normal,36.29,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Bench Press (Dumbbell),2,normal,36.29,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Incline Bench Press (Dumbbell),0,normal,34.02,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Incline Bench Press (Dumbbell),1,normal,34.02,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Incline Bench Press (Dumbbell),2,normal,34.02,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,54.43,5,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,49.9,6,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,45.36,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),3,normal,27.22,6,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lying Leg Raise,0,normal,,20,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lying Leg Raise,1,normal,,20,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Lying Leg Raise,2,normal,,20,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),0,normal,45.36,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),1,normal,49.9,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-01,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),2,normal,49.9,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d
-2024-04-03,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,20.41,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,20.41,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,20.41,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Overhead Press (Dumbbell),0,normal,27.22,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Overhead Press (Dumbbell),1,normal,27.22,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Overhead Press (Dumbbell),2,normal,27.22,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Romanian Deadlift (Dumbbell),0,normal,45.36,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Romanian Deadlift (Dumbbell),1,normal,45.36,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Romanian Deadlift (Dumbbell),2,normal,45.36,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Russian Twist (Bodyweight),0,normal,,40,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Russian Twist (Bodyweight),1,normal,,60,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-03,Afternoon workout 💪,Russian Twist (Bodyweight),2,normal,,60,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630
-2024-04-05,Afternoon workout 💪,Inverted Row,0,normal,,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Inverted Row,1,normal,,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Inverted Row,2,normal,,9,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Lateral Raise (Dumbbell),0,normal,13.61,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Lateral Raise (Dumbbell),1,normal,13.61,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Lateral Raise (Dumbbell),2,normal,13.61,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Plank,0,normal,,,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Push Up,0,normal,,10,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Push Up,1,normal,,10,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Push Up,2,normal,,10,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Squat (Barbell),0,normal,65.77,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Squat (Barbell),1,normal,102.06,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Squat (Barbell),2,normal,102.06,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-05,Afternoon workout 💪,Squat (Barbell),3,normal,102.06,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1
-2024-04-15,Afternoon workout 💪,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Bench Press (Barbell),1,normal,43.09,5,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Bench Press (Barbell),2,normal,52.16,2,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Bench Press (Barbell),3,normal,52.16,2,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,47.63,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,52.16,7,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Leg Raise Parallel Bars,0,normal,,20,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Leg Raise Parallel Bars,1,normal,,20,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Leg Raise Parallel Bars,2,normal,,25,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Squat (Barbell),0,normal,65.77,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Squat (Barbell),1,normal,102.06,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Squat (Barbell),2,normal,102.06,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Squat (Barbell),3,normal,113.4,5,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Triceps Dip,0,normal,,4,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Triceps Dip,1,normal,,4,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-15,Afternoon workout 💪,Triceps Dip,2,normal,,2,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2
-2024-04-17,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,22.68,7,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,22.68,6,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Lunge (Dumbbell),0,normal,31.75,10,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Lunge (Dumbbell),1,normal,31.75,10,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Lunge (Dumbbell),2,normal,31.75,10,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Overhead Press (Barbell),0,normal,29.48,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Pull Up,0,normal,,1,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Romanian Deadlift (Dumbbell),0,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Romanian Deadlift (Dumbbell),1,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Romanian Deadlift (Dumbbell),2,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Russian Twist (Weighted),0,normal,1.81,60,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Russian Twist (Weighted),1,normal,2.72,60,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-17,Afternoon workout 💪,Russian Twist (Weighted),2,normal,1.81,60,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446
-2024-04-19,Afternoon workout 💪,Front Squat,0,normal,43.09,5,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Inverted Row,0,normal,,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Inverted Row,1,normal,,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Inverted Row,2,normal,,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Lateral Raise (Dumbbell),0,normal,15.88,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Lateral Raise (Dumbbell),1,normal,15.88,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Lateral Raise (Dumbbell),2,normal,15.88,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Squat (Barbell),0,normal,83.91,5,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-19,Afternoon workout 💪,Squat (Barbell),1,normal,83.91,5,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0
-2024-04-22,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,47.63,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Overhead Press (Barbell),0,normal,31.75,6,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Plank,0,normal,,,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Plank,1,normal,,,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Squat (Barbell),0,normal,61.24,6,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Squat (Barbell),1,normal,102.06,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Squat (Barbell),2,normal,102.06,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-04-22,Afternoon workout 💪,Squat (Barbell),3,normal,102.06,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec
-2024-05-27,Evening workout 🏋️,Bench Press (Barbell),0,normal,43.09,8,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Bench Press (Barbell),1,normal,45.36,7,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Bench Press (Barbell),2,normal,47.63,5,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,43.09,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Squat (Barbell),0,normal,61.24,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Squat (Barbell),1,normal,92.99,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Squat (Barbell),2,normal,92.99,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Triceps Dip,0,normal,,3,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-27,Evening workout 🏋️,Triceps Dip,1,normal,,3,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd
-2024-05-29,Afternoon workout 💪,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Deadlift (Barbell),2,normal,61.24,5,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Lunge (Barbell),0,normal,31.75,10,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Lunge (Barbell),1,normal,36.29,10,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Lunge (Barbell),2,normal,36.29,10,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Overhead Press (Barbell),0,normal,29.48,8,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,7,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Pull Up,0,normal,,2,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-05-29,Afternoon workout 💪,Pull Up,1,normal,,2,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134
-2024-06-17,Afternoon workout 💪,Bench Press (Barbell),0,normal,38.56,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Bench Press (Barbell),1,normal,38.56,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Squat (Barbell),0,normal,83.91,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Squat (Barbell),1,normal,92.99,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Squat (Barbell),2,normal,92.99,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Triceps Dip,0,normal,,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Triceps Dip,1,normal,,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-17,Afternoon workout 💪,Triceps Dip,2,normal,,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44
-2024-06-19,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,22.68,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Deadlift (Barbell),0,normal,63.5,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Deadlift (Barbell),1,normal,63.5,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Deadlift (Barbell),2,normal,63.5,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Lunge (Barbell),0,normal,34.02,10,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Lunge (Barbell),1,normal,34.02,10,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Lunge (Barbell),2,normal,34.02,10,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),3,normal,29.48,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Pull Up (Assisted),0,normal,9.98,3,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Pull Up (Assisted),1,normal,7.26,3,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-19,Afternoon workout 💪,Pull Up (Assisted),2,normal,7.26,2,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670
-2024-06-21,Friday,Inverted Row,0,normal,,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Inverted Row,1,normal,,9,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Inverted Row,2,normal,,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Lateral Raise (Dumbbell),0,normal,13.61,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Lateral Raise (Dumbbell),1,normal,13.61,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Lateral Raise (Dumbbell),2,normal,13.61,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Plank,0,normal,,,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Plank,1,normal,,,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Plank,2,normal,,,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Push Up,0,normal,,15,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Push Up,1,normal,,12,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Push Up,2,normal,,10,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Squat (Barbell),0,normal,65.77,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Squat (Barbell),1,normal,92.99,6,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Squat (Barbell),2,normal,92.99,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-21,Friday,Squat (Barbell),3,normal,92.99,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd
-2024-06-24,Afternoon workout 💪,Bench Press (Barbell),0,normal,38.56,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Bench Press (Barbell),3,normal,43.09,4,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Squat (Barbell),0,normal,20.41,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Squat (Barbell),2,normal,83.91,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-24,Afternoon workout 💪,Squat (Barbell),3,normal,83.91,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86
-2024-06-25,Tuesday,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Bent Over Row (Barbell),1,normal,47.63,6,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Bicep Curl (Dumbbell),0,normal,22.68,6,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Bicep Curl (Dumbbell),1,normal,18.14,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Deadlift (Barbell),0,normal,61.24,6,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Deadlift (Barbell),2,normal,61.24,7,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Pull Up,0,normal,,8,,Machine 7,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Pull Up,1,normal,,6,,Machine 7,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-25,Tuesday,Pull Up,2,normal,,4,,Machine 7,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a
-2024-06-26,Day 4,Arnold Press (Dumbbell),0,normal,18.14,8,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Arnold Press (Dumbbell),1,normal,22.68,8,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Arnold Press (Dumbbell),2,normal,22.68,8,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Overhead Press (Barbell),0,normal,29.48,6,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Upright Row (Dumbbell),0,normal,18.14,10,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Upright Row (Dumbbell),1,normal,22.68,10,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-26,Day 4,Upright Row (Dumbbell),2,normal,22.68,10,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287
-2024-06-28,Day 3,Bicep Curl (Barbell),0,normal,20.41,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Bicep Curl (Barbell),1,normal,20.41,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Bicep Curl (Barbell),2,normal,20.41,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Lunge (Dumbbell),0,normal,27.22,12,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Overhead Press (Barbell),1,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Overhead Press (Barbell),2,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Romanian Deadlift (Dumbbell),0,normal,31.75,12,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Squat (Barbell),0,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Squat (Barbell),1,normal,61.24,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Squat (Barbell),2,normal,83.91,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-06-28,Day 3,Squat (Barbell),3,normal,83.91,6,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d
-2024-07-07,Day 1,Bench Press (Barbell),0,normal,29.48,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Bench Press (Barbell),1,normal,38.56,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Bench Press (Barbell),3,normal,45.36,5,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Incline Bench Press (Dumbbell),0,normal,27.22,10,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Incline Bench Press (Dumbbell),1,normal,27.22,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Incline Bench Press (Dumbbell),2,normal,27.22,9,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Triceps Dip,0,normal,,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Triceps Dip,1,normal,,7,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Triceps Dip,2,normal,,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Triceps Extension (Dumbbell),0,normal,9.07,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Triceps Extension (Dumbbell),1,normal,11.34,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-07,Day 1,Triceps Extension (Dumbbell),2,normal,9.07,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a
-2024-07-08,Day 2,Bent Over Row (Barbell),0,normal,43.09,7,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Bent Over Row (Barbell),1,normal,43.09,7,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Bicep Curl (Dumbbell),0,normal,18.14,6,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Bicep Curl (Dumbbell),1,normal,18.14,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Deadlift (Barbell),2,normal,61.24,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Deadlift (Barbell),3,normal,61.24,4,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Pull Up,0,normal,,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Pull Up,1,normal,,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Pull Up,2,normal,,6,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-08,Day 2,Pull Up,3,normal,,2,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8
-2024-07-12,Day 4,Arnold Press (Dumbbell),0,normal,22.68,6,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Arnold Press (Dumbbell),1,normal,18.14,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Arnold Press (Dumbbell),2,normal,18.14,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Arnold Press (Dumbbell),3,normal,18.14,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Overhead Press (Barbell),3,normal,31.75,6,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Russian Twist (Weighted),0,normal,11.34,20,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Russian Twist (Weighted),1,normal,11.34,20,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Russian Twist (Weighted),2,normal,11.34,20,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Upright Row (Dumbbell),0,normal,22.68,10,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Upright Row (Dumbbell),1,normal,27.22,10,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-12,Day 4,Upright Row (Dumbbell),2,normal,27.22,10,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302
-2024-07-17,Day 4,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Overhead Press (Barbell),3,normal,31.75,6,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Russian Twist (Weighted),0,normal,6.8,20,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Russian Twist (Weighted),1,normal,6.8,20,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Squat (Barbell),0,normal,20.41,10,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Squat (Barbell),1,normal,61.24,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Squat (Barbell),2,normal,83.91,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-17,Day 4,Squat (Barbell),3,normal,83.91,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f
-2024-07-22,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,45.36,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,45.36,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,45.36,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Lunge (Barbell),0,normal,38.56,15,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Lunge (Barbell),1,normal,38.56,15,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Lunge (Barbell),2,normal,38.56,6,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),1,normal,22.68,5,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,6,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,5,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),4,normal,31.75,3,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29
-2024-07-24,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bench Press (Barbell),1,normal,29.48,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bench Press (Barbell),2,normal,38.56,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,7,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,18.14,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),3,normal,18.14,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Deadlift (Barbell),2,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-24,Evening workout 🏋️,Deadlift (Barbell),3,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321
-2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),0,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),1,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),2,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),3,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),0,normal,13.61,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),1,normal,13.61,14,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),2,normal,18.14,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),3,normal,18.14,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Pull Up (Assisted),0,normal,18.14,5,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Pull Up (Assisted),1,normal,15.42,5,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Pull Up (Assisted),2,normal,12.7,3,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Squat (Barbell),0,normal,20.41,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Squat (Barbell),2,normal,83.91,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-26,Afternoon workout 💪,Squat (Barbell),3,normal,88.45,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2
-2024-07-30,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,47.63,6,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,47.63,7,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Bicep Curl (Dumbbell),3,normal,22.68,5,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Lunge (Barbell),0,normal,38.56,18,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Lunge (Barbell),1,normal,38.56,18,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Lunge (Barbell),2,normal,38.56,12,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-30,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6
-2024-07-31,Evening workout 🏋️,Arnold Press (Dumbbell),0,normal,18.14,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Arnold Press (Dumbbell),1,normal,18.14,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Arnold Press (Dumbbell),2,normal,22.68,6,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Deadlift (Barbell),1,normal,65.77,6,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Deadlift (Barbell),2,normal,65.77,6,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-07-31,Evening workout 🏋️,Deadlift (Barbell),3,normal,65.77,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9
-2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),0,normal,15.88,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),1,normal,11.34,10,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),2,normal,11.34,10,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),3,normal,11.34,10,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Squat (Barbell),1,normal,83.91,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Squat (Barbell),2,normal,92.99,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Squat (Barbell),3,normal,92.99,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Squat (Barbell),4,normal,102.06,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Triceps Dip,0,normal,,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-02,Morning workout ☀️,Triceps Dip,1,normal,,4,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6
-2024-08-06,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,47.63,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,47.63,6,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Lunge (Barbell),0,normal,38.56,18,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Lunge (Barbell),1,normal,43.09,10,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Lunge (Barbell),2,normal,43.09,10,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-06,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15
-2024-08-08,Evening workout 🏋️,Arnold Press (Dumbbell),0,normal,22.68,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Arnold Press (Dumbbell),1,normal,22.68,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Arnold Press (Dumbbell),2,normal,22.68,5,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Bench Press (Barbell),1,normal,45.36,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Bench Press (Barbell),2,normal,45.36,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Bench Press (Barbell),3,normal,45.36,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Deadlift (Barbell),1,normal,65.77,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Deadlift (Barbell),2,normal,65.77,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-08,Evening workout 🏋️,Deadlift (Barbell),3,normal,65.77,6,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd
-2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b
-2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,7,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b
-2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,8,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b
-2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,7,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b
-2024-08-17,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,5,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bulgarian Split Squat,0,normal,22.68,16,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bulgarian Split Squat,1,normal,22.68,16,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Bulgarian Split Squat,2,normal,22.68,16,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Lunge (Barbell),0,normal,43.09,10,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,6,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,6,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e
-2024-08-19,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,10,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Bench Press (Barbell),1,normal,47.63,8,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Bench Press (Barbell),2,normal,47.63,8,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Bench Press (Barbell),3,normal,47.63,7,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Deadlift (Barbell),0,normal,65.77,6,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Deadlift (Barbell),1,normal,68.04,6,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Deadlift (Barbell),2,normal,68.04,5,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Lying Leg Raise,0,normal,,20,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Lying Leg Raise,1,normal,,20,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Lying Leg Raise,2,normal,,20,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Plank,0,normal,,,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Pull Up,0,normal,,2,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Pull Up,1,normal,,1,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-19,Evening workout 🏋️,Pull Up,2,normal,,2,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac
-2024-08-21,Morning workout ☀️,Arnold Press (Dumbbell),0,normal,22.68,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Arnold Press (Dumbbell),1,normal,22.68,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Arnold Press (Dumbbell),2,normal,22.68,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),0,normal,13.61,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),1,normal,13.61,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),2,normal,13.61,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),3,normal,13.61,12,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Russian Twist (Weighted),0,normal,11.34,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Russian Twist (Weighted),1,normal,11.34,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Russian Twist (Weighted),2,normal,11.34,15,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Squat (Barbell),1,normal,83.91,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Squat (Barbell),2,normal,83.91,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Squat (Barbell),3,normal,83.91,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Triceps Dip,0,normal,,3,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Triceps Dip,1,normal,,5,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-08-21,Morning workout ☀️,Triceps Dip,2,normal,,3,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6
-2024-09-02,Evening workout 🏋️,Bent Over Row (Dumbbell),0,normal,22.68,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bent Over Row (Dumbbell),1,normal,27.22,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bent Over Row (Dumbbell),2,normal,27.22,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,6,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bulgarian Split Squat,0,normal,22.68,16,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bulgarian Split Squat,1,normal,22.68,16,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Bulgarian Split Squat,2,normal,22.68,16,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed
-2024-09-04,Evening workout 🏋️,Bench Press (Barbell),0,normal,29.48,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Bench Press (Barbell),1,normal,47.63,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Bench Press (Barbell),2,normal,47.63,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Bench Press (Barbell),3,normal,47.63,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Deadlift (Barbell),0,normal,70.31,6,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Deadlift (Barbell),1,normal,70.31,6,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Deadlift (Barbell),2,normal,70.31,6,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Lying Leg Raise,0,normal,,20,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Lying Leg Raise,1,normal,,20,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Lying Leg Raise,2,normal,,20,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Pull Up,0,normal,,2,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Pull Up,1,normal,,2,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-04,Evening workout 🏋️,Pull Up,2,normal,,2,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f
-2024-09-09,Evening workout 🏋️,Bent Over Row (Dumbbell),0,normal,22.68,8,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bent Over Row (Dumbbell),1,normal,22.68,9,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bent Over Row (Dumbbell),2,normal,27.22,9,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,7,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,7,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,5,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bulgarian Split Squat,0,normal,27.22,16,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bulgarian Split Squat,1,normal,27.22,16,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Bulgarian Split Squat,2,normal,27.22,16,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,8,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,7,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,4,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab
-2024-09-11,Evening workout 🏋️,Arnold Press (Dumbbell),0,normal,27.22,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Arnold Press (Dumbbell),1,normal,27.22,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Arnold Press (Dumbbell),2,normal,27.22,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Bench Press (Barbell),1,normal,49.9,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Bench Press (Barbell),2,normal,49.9,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Bench Press (Barbell),3,normal,49.9,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Goblet Squat,0,normal,13.61,8,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Kettlebell Goblet Squat,0,normal,15.88,10,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Kettlebell Goblet Squat,1,normal,15.88,8,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Pull Up,0,normal,,2,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Pull Up,1,normal,,2,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-11,Evening workout 🏋️,Pull Up,2,normal,,2,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3
-2024-09-25,Evening workout 🏋️,Bent Over Row (Dumbbell),0,normal,27.22,10,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Bent Over Row (Dumbbell),1,normal,27.22,10,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Bent Over Row (Dumbbell),2,normal,27.22,9,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,18.14,8,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,13.61,8,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,8,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Lunge (Dumbbell),0,normal,27.22,12,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Lunge (Dumbbell),1,normal,27.22,12,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Lunge (Dumbbell),2,normal,27.22,12,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),4,normal,31.75,6,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73
-2024-10-15,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,13.61,10,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,13.61,10,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,13.61,10,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Pull Up,0,normal,,2,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Pull Up,1,normal,,1,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Pull Up (Assisted),0,normal,18.14,5,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Pull Up (Assisted),1,normal,18.14,5,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Triceps Dip,0,normal,,4,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Triceps Dip,1,normal,,5,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-10-15,Afternoon workout 💪,Triceps Dip,2,normal,,4,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6
-2024-11-20,Afternoon workout 💪,Dead Hang,0,normal,,,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Dead Hang,1,normal,,,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Dead Hang,2,normal,,,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Low Row (Suspension),0,normal,,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Low Row (Suspension),1,normal,,7,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,6,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Overhead Press (Barbell),3,normal,29.48,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Pull Up (Assisted),0,normal,18.14,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-11-20,Afternoon workout 💪,Pull Up (Assisted),1,normal,18.14,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7
-2024-12-04,Evening workout 🏋️,Low Row (Suspension),0,normal,,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Low Row (Suspension),1,normal,,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Low Row (Suspension),2,normal,,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Low Row (Suspension),3,normal,,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Overhead Press (Barbell),1,normal,29.48,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Squat (Barbell),1,normal,61.24,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2024-12-04,Evening workout 🏋️,Squat (Barbell),2,normal,61.24,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba
-2025-04-06,Afternoon workout 💪,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Bench Press (Barbell),1,normal,38.56,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Bench Press (Barbell),2,normal,38.56,6,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Bench Press (Barbell),3,normal,38.56,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,38.56,6,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,38.56,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,38.56,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Lying Leg Raise,0,normal,,20,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Lying Leg Raise,1,normal,,20,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Squat (Barbell),0,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Squat (Barbell),2,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Squat (Barbell),3,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-06,Afternoon workout 💪,Triceps Dip,0,normal,,3,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff
-2025-04-14,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,13.61,10,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,13.61,10,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,10,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Bulgarian Split Squat,0,normal,18.14,16,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Bulgarian Split Squat,1,normal,18.14,16,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Bulgarian Split Squat,2,normal,18.14,16,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Deadlift (Barbell),0,normal,20.41,8,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Deadlift (Barbell),1,normal,52.16,5,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Deadlift (Barbell),2,normal,52.16,6,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Deadlift (Barbell),3,normal,52.16,6,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),1,normal,24.95,8,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),2,normal,24.95,7,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),3,normal,24.95,5,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97
-2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,38.56,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,38.56,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),3,normal,38.56,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Chin Up,0,normal,,3,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),1,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),2,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),3,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Squat (Dumbbell),0,normal,22.68,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Squat (Dumbbell),1,normal,22.68,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Squat (Dumbbell),2,normal,22.68,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-20,Afternoon workout 💪,Triceps Dip,0,normal,,3,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0
-2025-04-21,Evening workout 🏋️,Bench Press (Barbell),0,normal,29.48,10,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Bench Press (Barbell),1,normal,38.56,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Bench Press (Barbell),2,normal,43.09,6,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,6,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,18.14,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,13.61,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Low Row (Suspension),0,normal,,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Low Row (Suspension),1,normal,,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Low Row (Suspension),2,normal,,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Low Row (Suspension),3,normal,,6,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Lunge (Dumbbell),0,normal,27.22,12,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Lunge (Dumbbell),1,normal,27.22,12,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-04-21,Evening workout 🏋️,Lunge (Dumbbell),2,normal,27.22,12,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9
-2025-05-07,Evening workout 🏋️,Bench Press (Barbell),0,normal,29.48,10,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bench Press (Barbell),1,normal,43.09,7,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bench Press (Barbell),2,normal,43.09,7,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,7,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,20.41,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,13.61,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,18.14,6,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Squat (Barbell),1,normal,61.24,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2025-05-07,Evening workout 🏋️,Squat (Barbell),2,normal,61.24,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65
-2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),0,normal,20.41,12,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),1,normal,20.41,12,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),2,normal,20.41,12,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),3,normal,20.41,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,45.36,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,61.24,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,61.24,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),3,normal,45.36,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,7,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),3,normal,22.68,4,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),4,normal,22.68,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Squat (Barbell),0,normal,61.24,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-17,Afternoon workout 💪,Squat (Barbell),2,normal,61.24,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0
-2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,20.41,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,29.48,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,29.48,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),3,normal,29.48,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,13.61,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,13.61,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,13.61,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Lying Leg Curl (Machine),0,normal,18.14,10,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Lying Leg Curl (Machine),1,normal,18.14,10,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Lying Leg Curl (Machine),2,normal,18.14,10,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),0,normal,43.09,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),1,normal,43.09,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),2,normal,43.09,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),3,normal,43.09,7,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5
-2026-10-20,Morning workout ☀️,Arnold Press (Dumbbell),0,normal,22.68,6,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Arnold Press (Dumbbell),1,normal,22.68,6,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Arnold Press (Dumbbell),2,normal,22.68,5,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Bench Press (Barbell),0,normal,29.48,10,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Bench Press (Barbell),3,normal,43.09,6,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Lateral Raise (Dumbbell),0,normal,9.07,12,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Lateral Raise (Dumbbell),1,normal,9.07,12,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Lateral Raise (Dumbbell),2,normal,9.07,12,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Triceps Extension (Dumbbell),0,normal,11.34,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Triceps Extension (Dumbbell),1,normal,11.34,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-20,Morning workout ☀️,Triceps Extension (Dumbbell),2,normal,11.34,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16
-2026-10-21,Afternoon workout 💪,Lying Leg Curl (Machine),0,normal,18.14,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Lying Leg Curl (Machine),1,normal,18.14,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Lying Leg Curl (Machine),2,normal,18.14,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),0,normal,22.68,8,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),1,normal,22.68,6,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),2,normal,22.68,6,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),3,normal,22.68,4,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Reverse Lunge (Dumbbell),0,normal,13.61,16,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Reverse Lunge (Dumbbell),1,normal,13.61,16,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Reverse Lunge (Dumbbell),2,normal,13.61,16,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Squat (Dumbbell),0,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Squat (Dumbbell),1,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Squat (Dumbbell),2,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-21,Afternoon workout 💪,Squat (Dumbbell),3,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140
-2026-10-27,Full A,Bench Press (Barbell),0,warmup,20.41,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bench Press (Barbell),1,normal,29.48,5,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bench Press (Barbell),2,normal,43.09,6,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bench Press (Barbell),3,normal,47.63,5,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bench Press (Barbell),4,normal,47.63,6,8,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bent Over Row (Dumbbell),0,normal,27.22,10,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bent Over Row (Dumbbell),1,normal,27.22,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Bent Over Row (Dumbbell),2,normal,27.22,10,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Lateral Raise (Dumbbell),0,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Lateral Raise (Dumbbell),1,normal,9.07,14,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Lateral Raise (Dumbbell),2,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Lateral Raise (Dumbbell),3,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Leg Press Horizontal (Machine),0,normal,81.65,7,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Leg Press Horizontal (Machine),1,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-27,Full A,Leg Press Horizontal (Machine),2,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb
-2026-10-29,L2 Lower B,Deadlift (Barbell),0,normal,52.16,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Deadlift (Barbell),1,normal,61.24,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Deadlift (Barbell),2,normal,65.77,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Deadlift (Barbell),3,normal,65.77,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Deadlift (Barbell),4,normal,61.24,5,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Overhead Press (Barbell),1,normal,24.95,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Overhead Press (Barbell),2,normal,24.95,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Overhead Press (Barbell),3,normal,24.95,7,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),0,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),1,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),2,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f
-2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),0,normal,15.88,12,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),1,normal,15.88,10,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),2,normal,15.88,8,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),0,warmup,61.24,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),1,normal,61.24,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),2,normal,61.24,4,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),0,normal,45.36,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),1,normal,45.36,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),2,normal,45.36,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),0,warmup,20.41,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),1,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),3,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),4,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a
-2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),0,warmup,29.48,3,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),1,normal,47.63,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),2,normal,47.63,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Bent Over Row (Barbell),0,normal,29.48,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Bent Over Row (Barbell),1,normal,29.48,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Lat Pulldown (Cable),0,normal,49.9,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Lat Pulldown (Cable),1,normal,49.9,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Lateral Raise (Dumbbell),0,normal,9.07,16,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Lateral Raise (Dumbbell),1,normal,9.07,18,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Overhead Press (Barbell),0,normal,24.95,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Overhead Press (Barbell),1,normal,24.95,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),0,warmup,20.41,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),1,warmup,43.09,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),2,normal,70.31,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),3,normal,61.24,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),0,normal,11.34,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2
-2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),0,warmup,20.41,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),1,warmup,43.09,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),2,normal,49.9,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),3,normal,47.63,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),4,normal,47.63,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),5,normal,47.63,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),0,warmup,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),1,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),2,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),3,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),0,normal,31.75,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),2,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),0,normal,9.07,15,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),1,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),2,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),3,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),0,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
-2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),2,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433
+date,workout_title,exercise,set_index,set_type,weight_kg,reps,rpe,notes,source,workout_id,start_time
+2024-03-04,Evening workout 🏋️,Bench Press (Dumbbell),0,normal,40.82,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Bench Press (Dumbbell),1,normal,40.82,6,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Incline Bench Press (Dumbbell),0,normal,31.75,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Incline Bench Press (Dumbbell),2,normal,31.75,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Lat Pulldown (Cable),0,normal,49.9,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Lat Pulldown (Cable),1,normal,49.9,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Lat Pulldown (Cable),2,normal,49.9,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Leg Raise Parallel Bars,0,normal,,30,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Leg Raise Parallel Bars,1,normal,,30,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Leg Raise Parallel Bars,2,normal,,30,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Squat (Barbell),0,normal,102.06,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Squat (Barbell),1,normal,102.06,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Squat (Barbell),2,normal,102.06,8,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Triceps Dip,0,normal,,4,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-04,Evening workout 🏋️,Triceps Dip,1,normal,,4,,,hevy-api,4042cf42-7b64-4962-bdd9-7137d12b7049,2024-03-05T01:58:11+00:00
+2024-03-06,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,20.41,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,20.41,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,20.41,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),0,normal,29.48,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Overhead Press (Barbell),3,normal,20.41,4,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Romanian Deadlift (Dumbbell),0,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Romanian Deadlift (Dumbbell),1,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Romanian Deadlift (Dumbbell),2,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Russian Twist (Bodyweight),0,normal,,80,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Russian Twist (Bodyweight),1,normal,,75,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Russian Twist (Bodyweight),2,normal,,75,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),0,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),1,normal,49.9,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-06,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),2,normal,45.36,8,,,hevy-api,0ae9035d-5274-4c06-ac41-ad3c5198e095,2024-03-06T23:25:26+00:00
+2024-03-25,Afternoon workout 💪,Bench Press (Barbell),0,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Bench Press (Barbell),2,normal,20.41,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Bench Press (Barbell),3,normal,47.63,6,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Incline Bench Press (Dumbbell),0,normal,31.75,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Incline Bench Press (Dumbbell),2,normal,31.75,4,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,54.43,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,49.9,5,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,49.9,5,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Leg Raise Parallel Bars,0,normal,,25,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Leg Raise Parallel Bars,1,normal,,30,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Squat (Barbell),0,normal,83.91,8,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-03-25,Afternoon workout 💪,Triceps Dip,0,normal,,5,,,hevy-api,717cad0f-5c1b-4355-ab5f-ae89c5b975cc,2024-03-25T20:21:47+00:00
+2024-04-01,Afternoon workout 💪,Bench Press (Dumbbell),0,normal,40.82,5,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Bench Press (Dumbbell),1,normal,36.29,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Bench Press (Dumbbell),2,normal,36.29,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Incline Bench Press (Dumbbell),0,normal,34.02,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Incline Bench Press (Dumbbell),1,normal,34.02,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Incline Bench Press (Dumbbell),2,normal,34.02,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,54.43,5,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,49.9,6,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,45.36,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lat Pulldown (Cable),3,normal,27.22,6,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lying Leg Raise,0,normal,,20,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lying Leg Raise,1,normal,,20,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Lying Leg Raise,2,normal,,20,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),0,normal,45.36,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),1,normal,49.9,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-01,Afternoon workout 💪,Seated Cable Row - V Grip (Cable),2,normal,49.9,8,,,hevy-api,7f5e2252-3bf8-430d-9801-16916c546a2d,2024-04-01T20:25:14+00:00
+2024-04-03,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,20.41,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,20.41,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,20.41,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Overhead Press (Dumbbell),0,normal,27.22,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Overhead Press (Dumbbell),1,normal,27.22,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Overhead Press (Dumbbell),2,normal,27.22,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Romanian Deadlift (Dumbbell),0,normal,45.36,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Romanian Deadlift (Dumbbell),1,normal,45.36,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Romanian Deadlift (Dumbbell),2,normal,45.36,8,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Russian Twist (Bodyweight),0,normal,,40,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Russian Twist (Bodyweight),1,normal,,60,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-03,Afternoon workout 💪,Russian Twist (Bodyweight),2,normal,,60,,,hevy-api,f6621fc1-7494-4326-b7c9-1a7641426630,2024-04-03T20:14:38+00:00
+2024-04-05,Afternoon workout 💪,Inverted Row,0,normal,,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Inverted Row,1,normal,,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Inverted Row,2,normal,,9,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Lateral Raise (Dumbbell),0,normal,13.61,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Lateral Raise (Dumbbell),1,normal,13.61,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Lateral Raise (Dumbbell),2,normal,13.61,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Plank,0,normal,,,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Push Up,0,normal,,10,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Push Up,1,normal,,10,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Push Up,2,normal,,10,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Squat (Barbell),0,normal,65.77,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Squat (Barbell),1,normal,102.06,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Squat (Barbell),2,normal,102.06,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-05,Afternoon workout 💪,Squat (Barbell),3,normal,102.06,8,,,hevy-api,47697304-15d8-4a00-9adb-f336ed676fd1,2024-04-05T20:47:45+00:00
+2024-04-15,Afternoon workout 💪,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Bench Press (Barbell),1,normal,43.09,5,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Bench Press (Barbell),2,normal,52.16,2,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Bench Press (Barbell),3,normal,52.16,2,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,47.63,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,52.16,7,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Leg Raise Parallel Bars,0,normal,,20,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Leg Raise Parallel Bars,1,normal,,20,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Leg Raise Parallel Bars,2,normal,,25,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Squat (Barbell),0,normal,65.77,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Squat (Barbell),1,normal,102.06,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Squat (Barbell),2,normal,102.06,8,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Squat (Barbell),3,normal,113.4,5,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Triceps Dip,0,normal,,4,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Triceps Dip,1,normal,,4,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-15,Afternoon workout 💪,Triceps Dip,2,normal,,2,,,hevy-api,bf6efced-15c8-4872-a5a8-bb459a9f70e2,2024-04-15T20:16:25+00:00
+2024-04-17,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,22.68,7,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,22.68,6,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Lunge (Dumbbell),0,normal,31.75,10,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Lunge (Dumbbell),1,normal,31.75,10,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Lunge (Dumbbell),2,normal,31.75,10,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Overhead Press (Barbell),0,normal,29.48,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Pull Up,0,normal,,1,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Romanian Deadlift (Dumbbell),0,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Romanian Deadlift (Dumbbell),1,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Romanian Deadlift (Dumbbell),2,normal,45.36,8,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Russian Twist (Weighted),0,normal,1.81,60,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Russian Twist (Weighted),1,normal,2.72,60,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-17,Afternoon workout 💪,Russian Twist (Weighted),2,normal,1.81,60,,,hevy-api,a22d7231-e7ec-4e4d-b173-abe3f60ee446,2024-04-17T20:06:52+00:00
+2024-04-19,Afternoon workout 💪,Front Squat,0,normal,43.09,5,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Inverted Row,0,normal,,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Inverted Row,1,normal,,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Inverted Row,2,normal,,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Lateral Raise (Dumbbell),0,normal,15.88,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Lateral Raise (Dumbbell),1,normal,15.88,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Lateral Raise (Dumbbell),2,normal,15.88,8,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Squat (Barbell),0,normal,83.91,5,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-19,Afternoon workout 💪,Squat (Barbell),1,normal,83.91,5,,,hevy-api,49ae2089-a366-451b-a0cd-0557aebfb9c0,2024-04-19T21:00:45+00:00
+2024-04-22,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,47.63,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Overhead Press (Barbell),0,normal,31.75,6,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Plank,0,normal,,,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Plank,1,normal,,,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Squat (Barbell),0,normal,61.24,6,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Squat (Barbell),1,normal,102.06,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Squat (Barbell),2,normal,102.06,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-04-22,Afternoon workout 💪,Squat (Barbell),3,normal,102.06,8,,,hevy-api,e40a96a1-edef-4170-a7f9-97eea141d5ec,2024-04-22T18:46:06+00:00
+2024-05-27,Evening workout 🏋️,Bench Press (Barbell),0,normal,43.09,8,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Bench Press (Barbell),1,normal,45.36,7,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Bench Press (Barbell),2,normal,47.63,5,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,43.09,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Squat (Barbell),0,normal,61.24,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Squat (Barbell),1,normal,92.99,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Squat (Barbell),2,normal,92.99,6,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Triceps Dip,0,normal,,3,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-27,Evening workout 🏋️,Triceps Dip,1,normal,,3,,,hevy-api,3b1ddc77-3baf-4b94-ac81-1e9ca6528bdd,2024-05-27T22:50:47+00:00
+2024-05-29,Afternoon workout 💪,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Deadlift (Barbell),2,normal,61.24,5,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Lunge (Barbell),0,normal,31.75,10,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Lunge (Barbell),1,normal,36.29,10,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Lunge (Barbell),2,normal,36.29,10,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Overhead Press (Barbell),0,normal,29.48,8,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,7,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Pull Up,0,normal,,2,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-05-29,Afternoon workout 💪,Pull Up,1,normal,,2,,,hevy-api,c0e5b6f0-b933-4557-919e-387419f2a134,2024-05-29T20:26:10+00:00
+2024-06-17,Afternoon workout 💪,Bench Press (Barbell),0,normal,38.56,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Bench Press (Barbell),1,normal,38.56,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Squat (Barbell),0,normal,83.91,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Squat (Barbell),1,normal,92.99,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Squat (Barbell),2,normal,92.99,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Triceps Dip,0,normal,,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Triceps Dip,1,normal,,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-17,Afternoon workout 💪,Triceps Dip,2,normal,,8,,,hevy-api,669a25c8-a43b-44bc-a0bb-dc8a5ffefd44,2024-06-17T21:25:17+00:00
+2024-06-19,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,22.68,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Deadlift (Barbell),0,normal,63.5,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Deadlift (Barbell),1,normal,63.5,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Deadlift (Barbell),2,normal,63.5,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Lunge (Barbell),0,normal,34.02,10,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Lunge (Barbell),1,normal,34.02,10,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Lunge (Barbell),2,normal,34.02,10,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Overhead Press (Barbell),3,normal,29.48,6,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Pull Up (Assisted),0,normal,9.98,3,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Pull Up (Assisted),1,normal,7.26,3,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-19,Afternoon workout 💪,Pull Up (Assisted),2,normal,7.26,2,,,hevy-api,26bde319-dd95-41f6-80d1-11c170b56670,2024-06-19T18:12:18+00:00
+2024-06-21,Friday,Inverted Row,0,normal,,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Inverted Row,1,normal,,9,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Inverted Row,2,normal,,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Lateral Raise (Dumbbell),0,normal,13.61,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Lateral Raise (Dumbbell),1,normal,13.61,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Lateral Raise (Dumbbell),2,normal,13.61,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Plank,0,normal,,,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Plank,1,normal,,,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Plank,2,normal,,,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Push Up,0,normal,,15,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Push Up,1,normal,,12,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Push Up,2,normal,,10,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Squat (Barbell),0,normal,65.77,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Squat (Barbell),1,normal,92.99,6,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Squat (Barbell),2,normal,92.99,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-21,Friday,Squat (Barbell),3,normal,92.99,8,,,hevy-api,cf8a02ac-51c9-471e-8257-2037ca81d0bd,2024-06-21T15:12:15+00:00
+2024-06-24,Afternoon workout 💪,Bench Press (Barbell),0,normal,38.56,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Bench Press (Barbell),3,normal,43.09,4,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Squat (Barbell),0,normal,20.41,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Squat (Barbell),2,normal,83.91,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-24,Afternoon workout 💪,Squat (Barbell),3,normal,83.91,8,,,hevy-api,c972e395-7b91-40d3-b7af-6ec45f004f86,2024-06-24T19:46:03+00:00
+2024-06-25,Tuesday,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Bent Over Row (Barbell),1,normal,47.63,6,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Bicep Curl (Dumbbell),0,normal,22.68,6,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Bicep Curl (Dumbbell),1,normal,18.14,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Deadlift (Barbell),0,normal,61.24,6,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Deadlift (Barbell),2,normal,61.24,7,,,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Pull Up,0,normal,,8,,Machine 7,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Pull Up,1,normal,,6,,Machine 7,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-25,Tuesday,Pull Up,2,normal,,4,,Machine 7,hevy-api,cce79951-fba3-4b95-846e-50c7efd2518a,2024-06-25T15:20:39+00:00
+2024-06-26,Day 4,Arnold Press (Dumbbell),0,normal,18.14,8,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Arnold Press (Dumbbell),1,normal,22.68,8,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Arnold Press (Dumbbell),2,normal,22.68,8,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Overhead Press (Barbell),0,normal,29.48,6,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Upright Row (Dumbbell),0,normal,18.14,10,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Upright Row (Dumbbell),1,normal,22.68,10,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-26,Day 4,Upright Row (Dumbbell),2,normal,22.68,10,,,hevy-api,7891f6ce-fb1b-433f-8783-a6b2475fc287,2024-06-26T19:20:52+00:00
+2024-06-28,Day 3,Bicep Curl (Barbell),0,normal,20.41,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Bicep Curl (Barbell),1,normal,20.41,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Bicep Curl (Barbell),2,normal,20.41,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Lunge (Dumbbell),0,normal,27.22,12,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Overhead Press (Barbell),1,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Overhead Press (Barbell),2,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Romanian Deadlift (Dumbbell),0,normal,31.75,12,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Squat (Barbell),0,normal,20.41,10,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Squat (Barbell),1,normal,61.24,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Squat (Barbell),2,normal,83.91,8,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-06-28,Day 3,Squat (Barbell),3,normal,83.91,6,,,hevy-api,c43fffcc-11c7-4452-85e4-865723826a2d,2024-06-28T20:25:17+00:00
+2024-07-07,Day 1,Bench Press (Barbell),0,normal,29.48,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Bench Press (Barbell),1,normal,38.56,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Bench Press (Barbell),3,normal,45.36,5,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Incline Bench Press (Dumbbell),0,normal,27.22,10,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Incline Bench Press (Dumbbell),1,normal,27.22,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Incline Bench Press (Dumbbell),2,normal,27.22,9,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Triceps Dip,0,normal,,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Triceps Dip,1,normal,,7,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Triceps Dip,2,normal,,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Triceps Extension (Dumbbell),0,normal,9.07,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Triceps Extension (Dumbbell),1,normal,11.34,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-07,Day 1,Triceps Extension (Dumbbell),2,normal,9.07,8,,,hevy-api,7c0adf80-1084-47fe-943c-94eac3829a1a,2024-07-07T18:57:05+00:00
+2024-07-08,Day 2,Bent Over Row (Barbell),0,normal,43.09,7,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Bent Over Row (Barbell),1,normal,43.09,7,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Bicep Curl (Dumbbell),0,normal,18.14,6,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Bicep Curl (Dumbbell),1,normal,18.14,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Deadlift (Barbell),2,normal,61.24,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Deadlift (Barbell),3,normal,61.24,4,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Pull Up,0,normal,,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Pull Up,1,normal,,8,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Pull Up,2,normal,,6,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-08,Day 2,Pull Up,3,normal,,2,,,hevy-api,55a3a030-eb6d-4bc5-b750-661e24c1d1e8,2024-07-08T23:28:34+00:00
+2024-07-12,Day 4,Arnold Press (Dumbbell),0,normal,22.68,6,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Arnold Press (Dumbbell),1,normal,18.14,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Arnold Press (Dumbbell),2,normal,18.14,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Arnold Press (Dumbbell),3,normal,18.14,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Overhead Press (Barbell),3,normal,31.75,6,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Russian Twist (Weighted),0,normal,11.34,20,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Russian Twist (Weighted),1,normal,11.34,20,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Russian Twist (Weighted),2,normal,11.34,20,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Upright Row (Dumbbell),0,normal,22.68,10,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Upright Row (Dumbbell),1,normal,27.22,10,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-12,Day 4,Upright Row (Dumbbell),2,normal,27.22,10,,,hevy-api,7a69eabd-6353-4f10-b410-e8c0a1402302,2024-07-12T23:02:43+00:00
+2024-07-16,Day 4,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Overhead Press (Barbell),3,normal,31.75,6,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Russian Twist (Weighted),0,normal,6.8,20,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Russian Twist (Weighted),1,normal,6.8,20,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Squat (Barbell),0,normal,20.41,10,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Squat (Barbell),1,normal,61.24,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Squat (Barbell),2,normal,83.91,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-16,Day 4,Squat (Barbell),3,normal,83.91,8,,,hevy-api,7417a5c1-18ce-481b-b74c-b9ebc4738a5f,2024-07-17T00:18:23+00:00
+2024-07-22,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,45.36,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,45.36,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,45.36,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Lunge (Barbell),0,normal,38.56,15,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Lunge (Barbell),1,normal,38.56,15,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Lunge (Barbell),2,normal,38.56,6,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),1,normal,22.68,5,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,6,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,5,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-22,Evening workout 🏋️,Overhead Press (Barbell),4,normal,31.75,3,,,hevy-api,598d88a9-ea97-4aa4-8f7b-886cbc943e29,2024-07-22T23:46:45+00:00
+2024-07-24,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bench Press (Barbell),1,normal,29.48,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bench Press (Barbell),2,normal,38.56,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,7,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,18.14,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Bicep Curl (Dumbbell),3,normal,18.14,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Deadlift (Barbell),1,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Deadlift (Barbell),2,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-24,Evening workout 🏋️,Deadlift (Barbell),3,normal,61.24,8,,,hevy-api,d3b9e4d7-74f4-49dc-af90-ab5a59f78321,2024-07-24T23:13:44+00:00
+2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),0,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),1,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),2,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Arnold Press (Dumbbell),3,normal,18.14,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),0,normal,13.61,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),1,normal,13.61,14,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),2,normal,18.14,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Lateral Raise (Dumbbell),3,normal,18.14,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Pull Up (Assisted),0,normal,18.14,5,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Pull Up (Assisted),1,normal,15.42,5,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Pull Up (Assisted),2,normal,12.7,3,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Squat (Barbell),0,normal,20.41,10,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Squat (Barbell),2,normal,83.91,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-26,Afternoon workout 💪,Squat (Barbell),3,normal,88.45,8,,,hevy-api,a6c64244-17ee-47c8-bc2f-2c60e6eb1ce2,2024-07-26T21:54:16+00:00
+2024-07-29,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,47.63,6,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,47.63,7,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Bicep Curl (Dumbbell),3,normal,22.68,5,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Lunge (Barbell),0,normal,38.56,18,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Lunge (Barbell),1,normal,38.56,18,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Lunge (Barbell),2,normal,38.56,12,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-29,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,0d836f8e-0902-4e91-9a67-c9ab4655caa6,2024-07-30T00:27:44+00:00
+2024-07-31,Evening workout 🏋️,Arnold Press (Dumbbell),0,normal,18.14,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Arnold Press (Dumbbell),1,normal,18.14,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Arnold Press (Dumbbell),2,normal,22.68,6,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Deadlift (Barbell),1,normal,65.77,6,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Deadlift (Barbell),2,normal,65.77,6,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-07-31,Evening workout 🏋️,Deadlift (Barbell),3,normal,65.77,8,,,hevy-api,fbcc6e50-3637-4122-b4d1-4394365eb2c9,2024-07-31T23:18:29+00:00
+2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),0,normal,15.88,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),1,normal,11.34,10,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),2,normal,11.34,10,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Lateral Raise (Dumbbell),3,normal,11.34,10,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Squat (Barbell),1,normal,83.91,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Squat (Barbell),2,normal,92.99,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Squat (Barbell),3,normal,92.99,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Squat (Barbell),4,normal,102.06,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Triceps Dip,0,normal,,8,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-02,Morning workout ☀️,Triceps Dip,1,normal,,4,,,hevy-api,1f14669f-f8cb-4b16-8f28-a3eb75741ce6,2024-08-02T12:30:44+00:00
+2024-08-05,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,47.63,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,47.63,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,47.63,6,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,18.14,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Lunge (Barbell),0,normal,38.56,18,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Lunge (Barbell),1,normal,43.09,10,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Lunge (Barbell),2,normal,43.09,10,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-05,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,8,,,hevy-api,ffb74a21-bedc-40f9-8137-7f98c54eea15,2024-08-06T00:45:36+00:00
+2024-08-07,Evening workout 🏋️,Arnold Press (Dumbbell),0,normal,22.68,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Arnold Press (Dumbbell),1,normal,22.68,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Arnold Press (Dumbbell),2,normal,22.68,5,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Bench Press (Barbell),1,normal,45.36,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Bench Press (Barbell),2,normal,45.36,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Bench Press (Barbell),3,normal,45.36,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Deadlift (Barbell),0,normal,61.24,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Deadlift (Barbell),1,normal,65.77,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Deadlift (Barbell),2,normal,65.77,8,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-07,Evening workout 🏋️,Deadlift (Barbell),3,normal,65.77,6,,,hevy-api,f06895c0-fc24-44a1-8e47-4ed3552851bd,2024-08-08T00:09:19+00:00
+2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b,2024-08-12T23:47:20+00:00
+2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,7,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b,2024-08-12T23:47:20+00:00
+2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,8,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b,2024-08-12T23:47:20+00:00
+2024-08-12,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,7,,,hevy-api,a37a01ba-6617-4e9d-8daf-a72de68ef08b,2024-08-12T23:47:20+00:00
+2024-08-17,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,43.09,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,47.63,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,5,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bulgarian Split Squat,0,normal,22.68,16,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bulgarian Split Squat,1,normal,22.68,16,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Bulgarian Split Squat,2,normal,22.68,16,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Lunge (Barbell),0,normal,43.09,10,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,6,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-17,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,6,,,hevy-api,43e5281d-cee1-4f3b-82ed-97618cd4c36e,2024-08-17T18:07:02+00:00
+2024-08-19,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,10,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Bench Press (Barbell),1,normal,47.63,8,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Bench Press (Barbell),2,normal,47.63,8,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Bench Press (Barbell),3,normal,47.63,7,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Deadlift (Barbell),0,normal,65.77,6,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Deadlift (Barbell),1,normal,68.04,6,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Deadlift (Barbell),2,normal,68.04,5,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Lying Leg Raise,0,normal,,20,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Lying Leg Raise,1,normal,,20,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Lying Leg Raise,2,normal,,20,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Plank,0,normal,,,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Pull Up,0,normal,,2,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Pull Up,1,normal,,1,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-19,Evening workout 🏋️,Pull Up,2,normal,,2,,,hevy-api,86087636-9869-401f-a832-1a3fc8d0dbac,2024-08-19T23:22:25+00:00
+2024-08-21,Morning workout ☀️,Arnold Press (Dumbbell),0,normal,22.68,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Arnold Press (Dumbbell),1,normal,22.68,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Arnold Press (Dumbbell),2,normal,22.68,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),0,normal,13.61,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),1,normal,13.61,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),2,normal,13.61,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Lateral Raise (Dumbbell),3,normal,13.61,12,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Russian Twist (Weighted),0,normal,11.34,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Russian Twist (Weighted),1,normal,11.34,10,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Russian Twist (Weighted),2,normal,11.34,15,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Squat (Barbell),1,normal,83.91,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Squat (Barbell),2,normal,83.91,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Squat (Barbell),3,normal,83.91,8,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Triceps Dip,0,normal,,3,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Triceps Dip,1,normal,,5,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-08-21,Morning workout ☀️,Triceps Dip,2,normal,,3,,,hevy-api,6c482910-bf6c-40b2-824e-5deda7809bd6,2024-08-21T23:45:41+00:00
+2024-09-02,Evening workout 🏋️,Bent Over Row (Dumbbell),0,normal,22.68,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bent Over Row (Dumbbell),1,normal,27.22,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bent Over Row (Dumbbell),2,normal,27.22,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,6,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bulgarian Split Squat,0,normal,22.68,16,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bulgarian Split Squat,1,normal,22.68,16,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Bulgarian Split Squat,2,normal,22.68,16,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,6,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,5,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-02,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,b2bc2a4b-6ab4-4840-a97f-25c25aa24aed,2024-09-02T20:52:42+00:00
+2024-09-04,Evening workout 🏋️,Bench Press (Barbell),0,normal,29.48,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Bench Press (Barbell),1,normal,47.63,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Bench Press (Barbell),2,normal,47.63,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Bench Press (Barbell),3,normal,47.63,8,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Deadlift (Barbell),0,normal,70.31,6,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Deadlift (Barbell),1,normal,70.31,6,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Deadlift (Barbell),2,normal,70.31,6,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Lying Leg Raise,0,normal,,20,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Lying Leg Raise,1,normal,,20,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Lying Leg Raise,2,normal,,20,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Pull Up,0,normal,,2,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Pull Up,1,normal,,2,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-04,Evening workout 🏋️,Pull Up,2,normal,,2,,,hevy-api,8f6d91f3-6bc0-4917-84c6-0c20333aee5f,2024-09-04T23:41:43+00:00
+2024-09-09,Evening workout 🏋️,Bent Over Row (Dumbbell),0,normal,22.68,8,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bent Over Row (Dumbbell),1,normal,22.68,9,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bent Over Row (Dumbbell),2,normal,27.22,9,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,22.68,7,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,22.68,7,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,22.68,5,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bulgarian Split Squat,0,normal,27.22,16,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bulgarian Split Squat,1,normal,27.22,16,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Bulgarian Split Squat,2,normal,27.22,16,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,8,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,7,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-09,Evening workout 🏋️,Overhead Press (Barbell),3,normal,31.75,4,,,hevy-api,fd70081b-33ff-4f95-98e3-bb5590c0fbab,2024-09-09T23:51:05+00:00
+2024-09-11,Evening workout 🏋️,Arnold Press (Dumbbell),0,normal,27.22,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Arnold Press (Dumbbell),1,normal,27.22,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Arnold Press (Dumbbell),2,normal,27.22,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Bench Press (Barbell),1,normal,49.9,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Bench Press (Barbell),2,normal,49.9,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Bench Press (Barbell),3,normal,49.9,6,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Goblet Squat,0,normal,13.61,8,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Kettlebell Goblet Squat,0,normal,15.88,10,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Kettlebell Goblet Squat,1,normal,15.88,8,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Pull Up,0,normal,,2,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Pull Up,1,normal,,2,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-11,Evening workout 🏋️,Pull Up,2,normal,,2,,,hevy-api,5e98a22e-0ca3-42b3-b86c-d90001e562c3,2024-09-11T23:49:52+00:00
+2024-09-25,Evening workout 🏋️,Bent Over Row (Dumbbell),0,normal,27.22,10,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Bent Over Row (Dumbbell),1,normal,27.22,10,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Bent Over Row (Dumbbell),2,normal,27.22,9,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,18.14,8,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,13.61,8,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,8,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Lunge (Dumbbell),0,normal,27.22,12,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Lunge (Dumbbell),1,normal,27.22,12,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Lunge (Dumbbell),2,normal,27.22,12,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),1,normal,31.75,5,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-09-25,Evening workout 🏋️,Overhead Press (Barbell),4,normal,31.75,6,,,hevy-api,3edc2f6d-6c55-4c5c-a60a-bc3e958edb73,2024-09-25T22:00:42+00:00
+2024-10-15,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,13.61,10,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,13.61,10,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,13.61,10,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,8,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,8,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Overhead Press (Barbell),3,normal,29.48,4,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Pull Up,0,normal,,2,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Pull Up,1,normal,,1,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Pull Up (Assisted),0,normal,18.14,5,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Pull Up (Assisted),1,normal,18.14,5,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Triceps Dip,0,normal,,4,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Triceps Dip,1,normal,,5,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-10-15,Afternoon workout 💪,Triceps Dip,2,normal,,4,,,hevy-api,ef879df6-9752-4616-b4fc-20b2bdabf9a6,2024-10-15T23:45:36+00:00
+2024-11-19,Afternoon workout 💪,Dead Hang,0,normal,,,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Dead Hang,1,normal,,,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Dead Hang,2,normal,,,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Low Row (Suspension),0,normal,,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Low Row (Suspension),1,normal,,7,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,6,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Overhead Press (Barbell),3,normal,29.48,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Pull Up (Assisted),0,normal,18.14,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-11-19,Afternoon workout 💪,Pull Up (Assisted),1,normal,18.14,5,,,hevy-api,56ede28a-b9dd-4a3b-acb3-4ce984b41fc7,2024-11-20T01:10:08+00:00
+2024-12-03,Evening workout 🏋️,Low Row (Suspension),0,normal,,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Low Row (Suspension),1,normal,,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Low Row (Suspension),2,normal,,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Low Row (Suspension),3,normal,,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Overhead Press (Barbell),1,normal,29.48,7,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Overhead Press (Barbell),3,normal,29.48,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Squat (Barbell),1,normal,61.24,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2024-12-03,Evening workout 🏋️,Squat (Barbell),2,normal,61.24,8,,,hevy-api,1f7b27a3-78ef-4d36-a59a-b63a5e6b58ba,2024-12-04T01:17:02+00:00
+2025-04-06,Afternoon workout 💪,Bench Press (Barbell),0,normal,20.41,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Bench Press (Barbell),1,normal,38.56,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Bench Press (Barbell),2,normal,38.56,6,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Bench Press (Barbell),3,normal,38.56,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,38.56,6,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,38.56,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,38.56,8,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Lying Leg Raise,0,normal,,20,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Lying Leg Raise,1,normal,,20,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Squat (Barbell),0,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Squat (Barbell),2,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Squat (Barbell),3,normal,61.24,5,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-06,Afternoon workout 💪,Triceps Dip,0,normal,,3,,,hevy-api,d7a54f8f-b819-4eb9-87ad-3cf7813b66ff,2025-04-06T20:42:22+00:00
+2025-04-14,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,13.61,10,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,13.61,10,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,10,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Bulgarian Split Squat,0,normal,18.14,16,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Bulgarian Split Squat,1,normal,18.14,16,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Bulgarian Split Squat,2,normal,18.14,16,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Deadlift (Barbell),0,normal,20.41,8,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Deadlift (Barbell),1,normal,52.16,5,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Deadlift (Barbell),2,normal,52.16,6,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Deadlift (Barbell),3,normal,52.16,6,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),1,normal,24.95,8,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),2,normal,24.95,7,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-14,Evening workout 🏋️,Overhead Press (Barbell),3,normal,24.95,5,,,hevy-api,bbedba87-77eb-4203-bf61-df1a0bddca97,2025-04-14T23:17:08+00:00
+2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,38.56,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,38.56,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Bent Over Row (Barbell),3,normal,38.56,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Chin Up,0,normal,,3,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),1,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),2,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Overhead Press (Barbell),3,normal,24.95,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Squat (Dumbbell),0,normal,22.68,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Squat (Dumbbell),1,normal,22.68,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Squat (Dumbbell),2,normal,22.68,8,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-20,Afternoon workout 💪,Triceps Dip,0,normal,,3,,,hevy-api,3cace86d-c3ba-4c92-9d6f-720bb2fc37a0,2025-04-20T18:46:57+00:00
+2025-04-21,Evening workout 🏋️,Bench Press (Barbell),0,normal,29.48,10,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Bench Press (Barbell),1,normal,38.56,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Bench Press (Barbell),2,normal,43.09,6,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,6,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,18.14,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,13.61,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Low Row (Suspension),0,normal,,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Low Row (Suspension),1,normal,,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Low Row (Suspension),2,normal,,8,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Low Row (Suspension),3,normal,,6,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Lunge (Dumbbell),0,normal,27.22,12,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Lunge (Dumbbell),1,normal,27.22,12,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-04-21,Evening workout 🏋️,Lunge (Dumbbell),2,normal,27.22,12,,,hevy-api,9c8f4b76-6839-4eb2-a8ee-5f2e16f5f8e9,2025-04-21T23:24:11+00:00
+2025-05-07,Evening workout 🏋️,Bench Press (Barbell),0,normal,29.48,10,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bench Press (Barbell),1,normal,43.09,7,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bench Press (Barbell),2,normal,43.09,7,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bench Press (Barbell),3,normal,43.09,7,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bent Over Row (Barbell),0,normal,20.41,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bent Over Row (Barbell),1,normal,43.09,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bent Over Row (Barbell),2,normal,43.09,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bicep Curl (Dumbbell),0,normal,13.61,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bicep Curl (Dumbbell),1,normal,18.14,6,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Bicep Curl (Dumbbell),2,normal,13.61,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Squat (Barbell),0,normal,61.24,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Squat (Barbell),1,normal,61.24,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2025-05-07,Evening workout 🏋️,Squat (Barbell),2,normal,61.24,8,,,hevy-api,a8b30a13-7455-46e9-8a6c-aa4252f67c65,2025-05-07T23:53:36+00:00
+2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),0,normal,20.41,12,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),1,normal,20.41,12,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),2,normal,20.41,12,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Incline Bench Press (Barbell),3,normal,20.41,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),0,normal,45.36,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),1,normal,61.24,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),2,normal,61.24,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Lat Pulldown (Cable),3,normal,45.36,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),0,normal,20.41,10,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),1,normal,29.48,7,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),2,normal,29.48,5,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),3,normal,22.68,4,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Overhead Press (Barbell),4,normal,22.68,6,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Squat (Barbell),0,normal,61.24,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Squat (Barbell),1,normal,61.24,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-17,Afternoon workout 💪,Squat (Barbell),2,normal,61.24,8,,,hevy-api,8f792603-dfd5-4178-9eb5-210acc7f87a0,2026-10-17T19:09:28+00:00
+2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),0,normal,20.41,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),1,normal,29.48,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),2,normal,29.48,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Bent Over Row (Barbell),3,normal,29.48,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Bicep Curl (Dumbbell),0,normal,13.61,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Bicep Curl (Dumbbell),1,normal,13.61,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Bicep Curl (Dumbbell),2,normal,13.61,12,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Lying Leg Curl (Machine),0,normal,18.14,10,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Lying Leg Curl (Machine),1,normal,18.14,10,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Lying Leg Curl (Machine),2,normal,18.14,10,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),0,normal,43.09,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),1,normal,43.09,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),2,normal,43.09,8,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-18,Afternoon workout 💪,Romanian Deadlift (Barbell),3,normal,43.09,7,,,hevy-api,bb40bec7-b6b5-494c-8656-5eb5e271d4a5,2026-10-18T19:17:46+00:00
+2026-10-20,Morning workout ☀️,Arnold Press (Dumbbell),0,normal,22.68,6,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Arnold Press (Dumbbell),1,normal,22.68,6,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Arnold Press (Dumbbell),2,normal,22.68,5,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Bench Press (Barbell),0,normal,29.48,10,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Bench Press (Barbell),1,normal,43.09,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Bench Press (Barbell),2,normal,43.09,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Bench Press (Barbell),3,normal,43.09,6,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Lateral Raise (Dumbbell),0,normal,9.07,12,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Lateral Raise (Dumbbell),1,normal,9.07,12,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Lateral Raise (Dumbbell),2,normal,9.07,12,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Triceps Extension (Dumbbell),0,normal,11.34,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Triceps Extension (Dumbbell),1,normal,11.34,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-20,Morning workout ☀️,Triceps Extension (Dumbbell),2,normal,11.34,8,,,hevy-api,225dbabd-c90b-47d9-bdc6-786e67c2cc16,2026-10-20T12:34:21+00:00
+2026-10-21,Afternoon workout 💪,Lying Leg Curl (Machine),0,normal,18.14,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Lying Leg Curl (Machine),1,normal,18.14,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Lying Leg Curl (Machine),2,normal,18.14,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),0,normal,22.68,8,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),1,normal,22.68,6,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),2,normal,22.68,6,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Overhead Press (Dumbbell),3,normal,22.68,4,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Reverse Lunge (Dumbbell),0,normal,13.61,16,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Reverse Lunge (Dumbbell),1,normal,13.61,16,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Reverse Lunge (Dumbbell),2,normal,13.61,16,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Squat (Dumbbell),0,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Squat (Dumbbell),1,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Squat (Dumbbell),2,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-21,Afternoon workout 💪,Squat (Dumbbell),3,normal,22.68,10,,,hevy-api,c7995e06-4f30-4df3-8d7e-ef66a38dc140,2026-10-21T13:08:48+00:00
+2026-10-27,Full A,Bench Press (Barbell),0,warmup,20.41,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bench Press (Barbell),1,normal,29.48,5,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bench Press (Barbell),2,normal,43.09,6,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bench Press (Barbell),3,normal,47.63,5,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bench Press (Barbell),4,normal,47.63,6,8,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bent Over Row (Dumbbell),0,normal,27.22,10,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bent Over Row (Dumbbell),1,normal,27.22,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Bent Over Row (Dumbbell),2,normal,27.22,10,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Lateral Raise (Dumbbell),0,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Lateral Raise (Dumbbell),1,normal,9.07,14,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Lateral Raise (Dumbbell),2,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Lateral Raise (Dumbbell),3,normal,9.07,12,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Leg Press Horizontal (Machine),0,normal,81.65,7,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Leg Press Horizontal (Machine),1,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-27,Full A,Leg Press Horizontal (Machine),2,normal,90.72,8,,,hevy-api,dd3e651d-f528-4537-8a9c-1150eb10a5bb,2026-10-27T12:50:37+00:00
+2026-10-29,L2 Lower B,Deadlift (Barbell),0,normal,52.16,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Deadlift (Barbell),1,normal,61.24,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Deadlift (Barbell),2,normal,65.77,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Deadlift (Barbell),3,normal,65.77,4,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Deadlift (Barbell),4,normal,61.24,5,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Overhead Press (Barbell),0,normal,20.41,8,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Overhead Press (Barbell),1,normal,24.95,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Overhead Press (Barbell),2,normal,24.95,6,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Overhead Press (Barbell),3,normal,24.95,7,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),0,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),1,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-10-29,L2 Lower B,Reverse Lunge (Dumbbell),2,normal,13.61,24,,,hevy-api,87b16a2b-da78-469f-a446-8193037fc27f,2026-10-29T15:40:47+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),0,normal,15.88,12,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),1,normal,15.88,10,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Bicep Curl (Dumbbell),2,normal,15.88,8,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),0,warmup,61.24,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),1,normal,61.24,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Deadlift (Barbell),2,normal,61.24,4,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),0,normal,45.36,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),1,normal,45.36,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Lat Pulldown (Cable),2,normal,45.36,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),0,warmup,20.41,6,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),1,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),2,normal,31.75,4,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),3,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-04,Race Week 1 - Tue (U2 + L3),Overhead Press (Barbell),4,normal,29.48,5,,,hevy-api,0490b6f3-fa48-4262-9606-d956e6b7615a,2026-11-04T14:28:00+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),0,warmup,29.48,3,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),1,normal,47.63,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bench Press (Barbell),2,normal,47.63,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bent Over Row (Barbell),0,normal,29.48,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Bent Over Row (Barbell),1,normal,29.48,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lat Pulldown (Cable),0,normal,49.9,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lat Pulldown (Cable),1,normal,49.9,6,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lateral Raise (Dumbbell),0,normal,9.07,16,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Lateral Raise (Dumbbell),1,normal,9.07,18,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Overhead Press (Barbell),0,normal,24.95,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Overhead Press (Barbell),1,normal,24.95,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),0,warmup,20.41,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),1,warmup,43.09,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),2,normal,70.31,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Squat (Barbell),3,normal,61.24,5,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),0,normal,11.34,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-05,Race Week 2 - Wed (U3 + L1),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,64eb7ed4-3a5f-4790-87c4-c45c7f1d00e2,2026-11-05T13:54:44+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),0,warmup,20.41,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),1,warmup,43.09,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),2,normal,49.9,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),3,normal,47.63,5,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),4,normal,47.63,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bench Press (Barbell),5,normal,47.63,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),0,warmup,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),1,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),2,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Bent Over Row (Dumbbell),3,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),0,normal,31.75,6,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),1,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Incline Bench Press (Dumbbell),2,normal,31.75,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),0,normal,9.07,15,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),1,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),2,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Lateral Raise (Dumbbell),3,normal,9.07,20,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),0,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),1,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-10,U1 Upper A (Tue 10 Nov),Triceps Extension (Dumbbell),2,normal,12.47,8,,,hevy-api,c6c86efa-9b09-4294-a9d6-db3938fb6433,2026-11-10T12:41:09+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Deadlift (Barbell),0,warmup,20.41,5,,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Deadlift (Barbell),1,normal,72.57,5,8,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Deadlift (Barbell),2,normal,65.77,5,7,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Deadlift (Barbell),3,normal,65.77,5,7,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Front Squat,0,normal,43.09,6,8,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Front Squat,1,normal,43.09,6,8,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Front Squat,2,normal,43.09,6,8,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Reverse Lunge (Dumbbell),0,normal,15.88,8,,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Reverse Lunge (Dumbbell),1,normal,15.88,10,,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00
+2026-11-12,L2 Lower B (Fri 13 Nov),Reverse Lunge (Dumbbell),2,normal,15.88,8,,,hevy-api,e71760ce-dea6-4a2c-8d0a-94e444bddace,2026-11-13T00:22:14+00:00

@@ -25,7 +25,9 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import build_dashboard as dash  # noqa: E402
+import hevy_pull as pull  # noqa: E402
 import hevy_push_routines as push  # noqa: E402
+import localtime  # noqa: E402
 import update_tracks as upd  # noqa: E402
 from hevy_api import HISTORY_COLUMNS, workout_rows  # noqa: E402
 
@@ -676,6 +678,91 @@ class ApiShapes(unittest.TestCase):
         self.assertEqual(rows[0]["notes"], "felt; good ok")
         self.assertEqual(rows[0]["workout_id"], "abc")
         self.assertEqual(rows[0]["date"], "2026-10-27")
+
+
+class LocalDates(unittest.TestCase):
+    """The lifter's calendar day, not the UTC day (tools/localtime.py)."""
+
+    def workout(self, start, wid="abc", title="L2 Lower B"):
+        return {"id": wid, "title": title, "start_time": start,
+                "exercises": [{"title": "Deadlift (Barbell)", "notes": "",
+                               "sets": [{"index": 0, "type": "normal", "weight_kg": 72.57, "reps": 5, "rpe": 8}]}]}
+
+    def test_evening_workout_keeps_its_local_day(self):
+        # 7:22 pm Eastern on Thu 12 Nov is 00:22 UTC on Fri 13 Nov
+        row = next(workout_rows(self.workout("2026-11-13T00:22:14+00:00")))
+        self.assertEqual(row["date"], "2026-11-12")
+        self.assertEqual(row["start_time"], "2026-11-13T00:22:14+00:00")
+
+    def test_local_date_edges(self):
+        self.assertEqual(localtime.local_date("2026-11-12T23:30:00Z"), "2026-11-12")   # 6:30 pm EST
+        self.assertEqual(localtime.local_date("2026-07-17T00:18:00Z"), "2026-07-16")   # 8:18 pm EDT
+        self.assertEqual(localtime.local_date("2026-07-17T04:30:00Z"), "2026-07-17")   # 12:30 am EDT
+        self.assertEqual(localtime.local_date("2026-11-12"), "2026-11-12")
+        self.assertEqual(localtime.local_date(""), "")
+
+    def test_local_today_after_utc_midnight(self):
+        now = dt.datetime(2026, 11, 13, 0, 19, tzinfo=dt.timezone.utc)
+        self.assertEqual(localtime.local_today(now), dt.date(2026, 11, 12))
+
+    def test_redate_changes_only_date_and_start_time(self):
+        rows = [{"date": "2024-07-17", "workout_id": "a", "rpe": "8", "reps": "5"},
+                {"date": "2026-11-10", "workout_id": "b", "rpe": "", "reps": "4"},
+                {"date": "2024-01-01", "workout_id": "", "rpe": "", "reps": "3"}]
+        moved = pull.redate(rows, {"a": "2024-07-17T00:18:00+00:00", "b": "2026-11-10T12:41:00+00:00"})
+        self.assertEqual(moved, {"a": ("2024-07-17", "2024-07-16")})
+        self.assertEqual([r["date"] for r in rows], ["2024-07-16", "2026-11-10", "2024-01-01"])
+        self.assertEqual(rows[0]["rpe"], "8")
+        self.assertNotIn("start_time", rows[2])
+
+    def test_second_session_on_a_processed_date_is_not_skipped(self):
+        first = [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 145, 4, 8)]
+        tracks = fresh_tracks()
+        path = history_csv(first)
+        upd.process(tracks, upd.load_sessions(path), ALIASES, ROTATION)
+        os.unlink(path)
+        self.assertEqual(tracks["processed_through"], "2026-10-27")
+        self.assertEqual(tracks["processed_ids"], ["w-2026-10-27-L1 Lower A"])
+        both = first + [("2026-10-27", "U1 Upper A", "Bench Press (Barbell)", 0, "normal", 105, 4, 8)]
+        path = history_csv(both)
+        log, _ = upd.process(tracks, upd.load_sessions(path), ALIASES, ROTATION)
+        os.unlink(path)
+        self.assertEqual(len([line for line in log if "Bench" in line]), 1, log)
+        self.assertFalse([line for line in log if "Squat" in line], log)
+        self.assertEqual(tracks["pointer"], "L2")
+        # a third run changes nothing
+        path = history_csv(both)
+        log, _ = upd.process(tracks, upd.load_sessions(path), ALIASES, ROTATION)
+        os.unlink(path)
+        self.assertEqual(log, [])
+
+
+class PushChecks(unittest.TestCase):
+    STATE = {"this_week": {"folder_id": 1, "sessions": [
+        {"date": "2026-11-12", "slot": "L2", "title": "L2 (Thu)", "id": "a"},
+        {"date": "2026-11-14", "slot": "L3", "title": "L3 (Sat)", "id": "b"},
+        {"date": "2026-11-15", "slot": "ZZ", "title": "bad slot", "id": "c"}]}}
+
+    def test_tonights_session_is_pushed_and_skips_carry_a_reason(self):
+        # 7:19 pm Eastern on the 12th: the UTC date is already the 13th
+        today = localtime.local_today(dt.datetime(2026, 11, 13, 0, 19, tzinfo=dt.timezone.utc))
+        todo, skipped = push.week_plan(self.STATE, ROTATION, today)
+        self.assertEqual([s["id"] for s, _ in todo], ["a", "b"])
+        self.assertEqual([s["id"] for s, _ in skipped], ["c"])
+        todo, skipped = push.week_plan(self.STATE, ROTATION, dt.date(2026, 11, 13))
+        self.assertEqual([s["id"] for s, _ in todo], ["b"])
+        self.assertIn("before today", dict((s["id"], why) for s, why in skipped)["a"])
+
+    def test_verify_routine(self):
+        payload, _ = push.build_routine("L2", ROTATION, fresh_tracks(), EXMAP, TODAY)
+        live = copy.deepcopy({"title": payload["title"], "exercises": payload["exercises"]})
+        self.assertEqual(push.verify_routine(payload["title"], payload["exercises"], live), [])
+        live["exercises"][0]["sets"][-1]["weight_kg"] = 999.0
+        live["title"] = "L2 Lower B (Fri 13 Nov)"
+        diffs = push.verify_routine(payload["title"], payload["exercises"], live)
+        self.assertEqual(len(diffs), 2, diffs)
+        live["exercises"].pop()
+        self.assertTrue(any("exercises, sent" in d for d in push.verify_routine(payload["title"], payload["exercises"], live)))
 
 
 class Dashboard(unittest.TestCase):

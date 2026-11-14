@@ -6,6 +6,10 @@ Usage:
     python3 tools/hevy_pull.py --full                      # re-pull everything
     python3 tools/hevy_pull.py --since 2024-01-01          # full pull, keep workouts on or after this date
     python3 tools/hevy_pull.py --inspect                   # print one raw workout and exit
+    python3 tools/hevy_pull.py --redate                    # fill start_time and the local date on existing rows; nothing else changes
+
+Dates are the lifter's calendar day (tools/localtime.py), not the UTC day of
+start_time. The raw UTC start_time is kept in its own column.
 
 Reads the key from the HEVY_API_KEY environment variable, or relies on a network-secret
 proxy that adds it to requests for api.hevyapp.com. Never pass the
@@ -38,6 +42,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from hevy_api import HISTORY_COLUMNS, Hevy, HevyError, now_iso, workout_rows  # noqa: E402
+from localtime import local_date  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HISTORY = os.path.join(ROOT, "data", "history.csv")
@@ -53,12 +58,31 @@ def read_history(path):
 
 
 def write_history(path, rows):
-    rows.sort(key=lambda r: (r.get("date", ""), r.get("workout_title", ""), r.get("workout_id", ""), r.get("exercise", ""), float(r.get("set_index") or 0)))
-    with open(path, "w", newline="") as f:
+    rows.sort(key=lambda r: (r.get("date", ""), r.get("start_time") or "", r.get("workout_title", ""), r.get("workout_id", ""), r.get("exercise", ""), float(r.get("set_index") or 0)))
+    tmp = path + ".tmp"
+    with open(tmp, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=HISTORY_COLUMNS, extrasaction="ignore")
         w.writeheader()
         for r in rows:
             w.writerow({c: r.get(c, "") for c in HISTORY_COLUMNS})
+    os.replace(tmp, path)
+
+
+def redate(rows, workouts):
+    """Set start_time and the local date on rows whose workout_id is in
+    `workouts` ({id: start_time}). Returns the ids whose date changed. Leaves
+    every other field alone, so hand corrections (an added RPE) survive."""
+    moved = {}
+    for r in rows:
+        start = workouts.get(r.get("workout_id"))
+        if not start:
+            continue
+        new = local_date(start)
+        if r.get("date") != new:
+            moved[r["workout_id"]] = (r.get("date"), new)
+            r["date"] = new
+        r["start_time"] = start
+    return moved
 
 
 def load_state(path):
@@ -69,9 +93,11 @@ def load_state(path):
 
 
 def save_state(path, state):
-    with open(path, "w") as f:
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f:
         json.dump(state, f, indent=2)
         f.write("\n")
+    os.replace(tmp, path)
 
 
 def main(argv=None):
@@ -79,6 +105,7 @@ def main(argv=None):
     ap.add_argument("--inspect", action="store_true", help="print one raw workout as JSON and exit")
     ap.add_argument("--full", action="store_true", help="re-pull all workouts instead of events since last_pull")
     ap.add_argument("--since", help="full pull: keep workouts on or after this date (YYYY-MM-DD)")
+    ap.add_argument("--redate", action="store_true", help="fill start_time and the local date on existing rows from the API; no other change")
     ap.add_argument("--out", default=HISTORY)
     ap.add_argument("--raw", default=RAW)
     ap.add_argument("--state", default=STATE)
@@ -90,6 +117,15 @@ def main(argv=None):
             for w in h.iter_workouts(max_pages=1):
                 print(json.dumps(w, indent=2, ensure_ascii=False))
                 break
+            return
+
+        if args.redate:
+            rows = read_history(args.out)
+            moved = redate(rows, {w.get("id"): w.get("start_time") for w in h.iter_workouts()})
+            write_history(args.out, rows)
+            print(f"Re-dated {len(moved)} workouts to the lifter's calendar day -> {args.out}")
+            for wid, (old, new) in sorted(moved.items(), key=lambda kv: kv[1]):
+                print(f"  {old} -> {new}  {wid}")
             return
 
         state = load_state(args.state)
@@ -122,7 +158,7 @@ def main(argv=None):
             n_workouts = n_rows = 0
             with open(args.raw, "w") as raw:
                 for w in h.iter_workouts():
-                    date = (w.get("start_time") or "")[:10]
+                    date = local_date(w.get("start_time"))
                     if args.since and date < args.since:
                         continue
                     raw.write(json.dumps(w) + "\n")

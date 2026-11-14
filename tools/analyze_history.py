@@ -28,7 +28,11 @@ import csv
 import datetime as dt
 import json
 import math
+import os
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from localtime import local_today  # noqa: E402
 
 
 def epley(load, reps, rpe=None):
@@ -79,7 +83,7 @@ def main():
     ap.add_argument("--today", help="override today's date (YYYY-MM-DD) for reproducible output")
     args = ap.parse_args()
 
-    today = dt.date.fromisoformat(args.today) if args.today else dt.date.today()
+    today = dt.date.fromisoformat(args.today) if args.today else local_today()
     rows = load_history(args.history)
     if not rows:
         sys.exit(f"No usable rows in {args.history}.")

@@ -38,6 +38,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 from analyze_history import epley  # noqa: E402
+from localtime import local_today  # noqa: E402
 from update_tracks import load_sessions, matcher  # noqa: E402
 
 HISTORY = os.path.join(ROOT, "data", "history.csv")
@@ -360,7 +361,7 @@ def main(argv=None):
 
     if args.refresh_muscles:
         refresh_muscles(args.muscles, args.history, ROTATION)
-    today = dt.date.fromisoformat(args.today) if args.today else dt.date.today()
+    today = dt.date.fromisoformat(args.today) if args.today else local_today()
     data = build(args.history, load_json(args.tracks, {}), load_json(args.aliases, {}),
                  load_json(args.muscles, {}), today, parse_track_log(args.log))
     os.makedirs(args.out, exist_ok=True)

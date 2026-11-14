@@ -86,6 +86,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from localtime import local_today  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HISTORY = os.path.join(ROOT, "data", "history.csv")
 TRACKS = os.path.join(ROOT, "data", "tracks.json")
@@ -227,13 +230,14 @@ def load_sessions(path, since=None):
             d = (r.get("date") or "")[:10]
             if not d or (since and d < since):
                 continue
-            key = (d, r.get("workout_title") or "", r.get("workout_id") or "")
+            # start_time first, so two sessions on one day replay in the order trained
+            key = (d, r.get("start_time") or "", r.get("workout_title") or "", r.get("workout_id") or "")
             r["_w"] = kg_to_lb(fnum(r.get("weight_kg")))
             r["_reps"] = fnum(r.get("reps"))
             r["_rpe"] = fnum(r.get("rpe"))
             r["_type"] = (r.get("set_type") or "normal").lower()
             sessions.setdefault(key, []).append(r)
-    return [(k, sessions[k]) for k in sorted(sessions)]
+    return [((d, title, wid), sessions[(d, st, title, wid)]) for (d, st, title, wid) in sorted(sessions)]
 
 
 def working_sets(rows):
@@ -462,13 +466,25 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
     log = []
     flags = []
     processed_through = tracks.get("processed_through") or ""
+    # Workout ids already processed on the processed_through date. Without them
+    # a second session on that date (logged after a sync) would be skipped for
+    # good. Absent in older files: everything on that date counts as processed.
+    done_ids = tracks.get("processed_ids")
+    if done_ids is None:
+        done_ids = [wid for (date, _, wid), _ in sessions if date == processed_through and wid]
+    done_ids = list(done_ids)
     latest_slot_session = None
     for (date, title, wid), rows in sessions:
         slot = parse_slot(title)
         if slot:
             latest_slot_session = (date, slot)
-        if date <= processed_through:
+        if date < processed_through or (date == processed_through and (not wid or wid in done_ids)):
             continue
+        if date != processed_through:
+            done_ids = []
+        if wid:
+            done_ids.append(wid)
+        processed_through = date
         session_exposed = set()
         main_lift_order = []
         if slot:
@@ -550,6 +566,7 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
                 line += ". " + apply_stall(t, reset_on_stall)
             log.append(line)
         tracks["processed_through"] = date
+    tracks["processed_ids"] = done_ids
     if latest_slot_session:
         d, slot = latest_slot_session
         tracks["pointer"] = advance_pointer(slot, rotation)
@@ -557,7 +574,7 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
             tracks["block_start"] = d
         start = dt.date.fromisoformat(tracks["block_start"])
         tracks["block_week"] = (dt.date.fromisoformat(d) - start).days // 7 + 1
-    tracks["updated"] = dt.date.today().isoformat()
+    tracks["updated"] = local_today().isoformat()
     return log, flags
 
 
@@ -643,9 +660,10 @@ def main(argv=None):
     if args.dry_run:
         print("\n(dry run: nothing written)")
         return
-    with open(args.tracks, "w") as f:
+    with open(args.tracks + ".tmp", "w") as f:
         json.dump(tracks, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    os.replace(args.tracks + ".tmp", args.tracks)
     if log or flags:
         new = not os.path.exists(args.log)
         with open(args.log, "a") as f:
