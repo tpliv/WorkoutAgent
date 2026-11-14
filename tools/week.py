@@ -9,6 +9,9 @@ and the Status and Sessions tables in data/weekly-plan.md (generated block).
 Usage:
     python3 tools/week.py show
     python3 tools/week.py plan --week-of 2026-11-16 2026-11-17=L1@7:30-9:00am "2026-11-19=Full B" 2026-11-21=U2
+        # Planning ahead is safe: if this week still has sessions to come, the new
+        # week is staged as "next" and takes over on its Monday. Its dated Hevy
+        # routines are created straight away.
     python3 tools/week.py add 2026-11-22 L3 [--time "9:00 am"] [--note "..."]
     python3 tools/week.py set 2026-11-19 --slot U1 [--date 2026-11-20] [--time ..] [--note ..] [--state missed] [--calendar "hold (Workouts)"]
     python3 tools/week.py drop 2026-11-21
@@ -76,6 +79,8 @@ def load_week(path=WEEK):
 def save_week(path, week):
     week["_comment"] = COMMENT
     week["sessions"].sort(key=lambda s: (s["date"], s.get("time") or ""))
+    if week.get("next"):
+        week["next"]["sessions"].sort(key=lambda s: (s["date"], s.get("time") or ""))
     tmp = path + ".tmp"
     with open(tmp, "w") as f:
         json.dump(week, f, indent=2, ensure_ascii=False)
@@ -104,8 +109,48 @@ def week_span(week):
 
 
 def is_deload(week, as_of):
+    week = week_of_day(week, as_of)
     start, end = week_span(week)
     return bool(week.get("deload")) and start is not None and start <= as_of <= end
+
+
+def all_sessions(week):
+    """This week's sessions and, when next week is staged, those too."""
+    return list(week.get("sessions", [])) + list((week.get("next") or {}).get("sessions", []))
+
+
+def week_of_day(week, day):
+    """The week dict (current or staged next) that holds this day, else the current one."""
+    nxt = week.get("next")
+    if nxt and nxt.get("week_of"):
+        start = dt.date.fromisoformat(nxt["week_of"])
+        if start <= day <= start + dt.timedelta(days=6):
+            return nxt
+    return week
+
+
+def roll(week, today):
+    """Next week, planned ahead, becomes the week on its Monday. Returns notes."""
+    nxt = week.get("next")
+    if not nxt or today < dt.date.fromisoformat(nxt["week_of"]):
+        return []
+    notes = [f"{day_label(s['date'])} {s['slot']}: last week's session was never logged or marked; it is dropped from the week"
+             for s in week.get("sessions", []) if s.get("state") in OPEN]
+    old = week.get("week_of")
+    for k in list(week):
+        if k != "_comment":
+            del week[k]
+    week.update(nxt)
+    notes.insert(0, f"the week planned ahead ({week['week_of']}) is now the current week (was {old})")
+    return notes
+
+
+def pointer_after(week, tracks, rotation, today):
+    """Where the pointer will stand once this week's open sessions are trained."""
+    pointer = (tracks or {}).get("pointer")
+    n = sum(len(halves(s["slot"], rotation)) for s in week.get("sessions", [])
+            if s.get("state") in OPEN and s["slot"] in rotation["sessions"] and dt.date.fromisoformat(s["date"]) >= today)
+    return owed(pointer, rotation, n + 1)[-1] if pointer else pointer
 
 
 def canonical_slot(text, rotation):
@@ -176,6 +221,15 @@ def problems(week, tracks, rotation, today):
                            "48 h is preferred (guide/03, \"Consecutive days\")")
             last[lift] = (d, role)
     return out
+
+
+def next_problems(week, tracks, rotation, today):
+    """Checks for the week planned ahead, assuming this week's open sessions are trained first."""
+    nxt = week.get("next")
+    if not nxt:
+        return []
+    ahead = dict(tracks or {}, pointer=pointer_after(week, tracks, rotation, today))
+    return problems(nxt, ahead, rotation, min(today, dt.date.fromisoformat(nxt["week_of"])))
 
 
 def reconcile(week, logged, rotation, today):
@@ -406,6 +460,16 @@ def render_block(week, tracks, rotation, logged, aliases, today):
     if noted:
         lines += ["", "Session notes (they lead the routine note in Hevy):", ""]
         lines += [f"- {day_label(r['date'])}: {r['note']}" for r in noted]
+    nxt = week.get("next")
+    if nxt:
+        nchecks = next_problems(week, tracks, rotation, today)
+        lines += ["", f"**Next week, planned ahead** (week of {nxt['week_of']}; status {nxt.get('status')}; deload {'yes' if nxt.get('deload') else 'no'}). "
+                  "It becomes the week on its Monday. Loads are as of today and will follow this week's results.", "",
+                  "| Date | Day and time | Hevy routine (folder This Week) | Main lifts and loads (lb) | Calendar | State |",
+                  "|---|---|---|---|---|---|"]
+        for r in table_rows(dict(week, sessions=nxt["sessions"]), tracks, rotation, [], aliases):
+            lines.append(f"| {r['date']} | {r['when']} | {r['routine']} | {r['main']} | {r['calendar']} | {r['state']} |")
+        lines += ["", f"Checks, next week: {'; '.join(nchecks) if nchecks else 'none'}."]
     lines += ["", f"State values: {', '.join(STATES)}.", MD_END]
     return "\n".join(lines)
 
@@ -436,12 +500,23 @@ def print_week(week, tracks, rotation, logged, aliases, today):
     print("Checks: " + ("none" if not checks else ""))
     for c in checks:
         print("  - " + c)
+    nxt = week.get("next")
+    if nxt:
+        print(f"Next week, planned ahead (week of {nxt['week_of']}, status: {nxt.get('status')}, deload: {'yes' if nxt.get('deload') else 'no'}; "
+              f"it becomes the week on its Monday):")
+        for r in table_rows(dict(week, sessions=nxt["sessions"]), tracks, rotation, [], aliases):
+            print(f"  {r['date']} {r['when']:<18} {r['state']:<8} {r['routine']}")
+            print(f"      {r['main']}")
+        nchecks = next_problems(week, tracks, rotation, today)
+        print("Checks, next week: " + ("none" if not nchecks else ""))
+        for c in nchecks:
+            print("  - " + c)
 
 
 def find(week, date):
-    hits = [s for s in week["sessions"] if s["date"] == date]
+    hits = [s for s in all_sessions(week) if s["date"] == date]
     if not hits:
-        sys.exit(f"No session on {date}. Sessions: {', '.join(s['date'] + ' ' + s['slot'] for s in week['sessions']) or 'none'}")
+        sys.exit(f"No session on {date}. Sessions: {', '.join(s['date'] + ' ' + s['slot'] for s in all_sessions(week)) or 'none'}")
     if len(hits) > 1:
         sys.exit(f"Two sessions on {date}; edit data/week.json for this one")
     return hits[0]
@@ -450,9 +525,10 @@ def find(week, date):
 def assign_ids(week, pool):
     """Give each open session a dated routine from the pool (Hevy cannot delete
     routines, so the same ones are reused every week)."""
-    used = {s.get("routine_id") for s in week["sessions"] if s.get("routine_id")}
+    keep = [s for s in all_sessions(week) if s.get("state") in OPEN]
+    used = {s.get("routine_id") for s in keep if s.get("routine_id")}
     free = [i for i in pool if i not in used]
-    for s in sorted(week["sessions"], key=lambda s: s["date"]):
+    for s in sorted(all_sessions(week), key=lambda s: s["date"]):
         if s.get("state") in OPEN and not s.get("routine_id") and free:
             s["routine_id"] = free.pop(0)
 
@@ -464,7 +540,7 @@ def main(argv=None):
     ap.add_argument("--rotation", default=ROTATION)
     ap.add_argument("--history", default=HISTORY)
     ap.add_argument("--plan-md", default=PLAN_MD)
-    ap.add_argument("--state", default=os.path.join(ROOT, "data", "hevy-state.json"))
+    ap.add_argument("--hevy-state", default=os.path.join(ROOT, "data", "hevy-state.json"), help="the file holding the pool of dated Hevy routines")
     ap.add_argument("--today", help="override today's date (YYYY-MM-DD)")
     ap.add_argument("--dry-run", action="store_true", help="show the result, write nothing")
     sub = ap.add_subparsers(dest="cmd")
@@ -488,6 +564,7 @@ def main(argv=None):
     p.add_argument("value", choices=STATUSES)
     p = sub.add_parser("deload")
     p.add_argument("value", choices=("on", "off"))
+    p.add_argument("--next", action="store_true", help="the week planned ahead, not the current one")
     sub.add_parser("reconcile")
     sub.add_parser("render")
     p = sub.add_parser("brief", help="print a session's numbers for the night-before brief")
@@ -499,8 +576,9 @@ def main(argv=None):
     rotation = load_json(args.rotation)
     aliases = load_json(ALIASES, {})
     today = dt.date.fromisoformat(args.today) if args.today else local_today()
-    pool = ((load_json(args.state, {}) or {}).get("this_week") or {}).get("routine_ids") or []
+    pool = ((load_json(args.hevy_state, {}) or {}).get("this_week") or {}).get("routine_ids") or []
     cmd = args.cmd or "show"
+    rolled = roll(week, today)
 
     if cmd == "plan":
         monday = dt.date.fromisoformat(args.week_of)
@@ -519,14 +597,21 @@ def main(argv=None):
             if time:
                 s["time"] = time.strip()
             new.append(s)
-        week = {"week_of": args.week_of, "status": args.status, "deload": bool(args.deload), "sessions": kept + new}
+        planned = {"week_of": args.week_of, "status": args.status, "deload": bool(args.deload), "sessions": kept + new}
+        still_open = [s for s in week["sessions"] if s.get("state") in OPEN and dt.date.fromisoformat(s["date"]) >= today]
+        if week.get("week_of") and args.week_of > week["week_of"] and still_open and today < monday:
+            # Planning ahead: this week still has sessions to come, so keep it
+            # and stage the new one. It takes over on its Monday (roll).
+            week["next"] = planned
+        else:
+            week = planned
     elif cmd == "add":
         dt.date.fromisoformat(args.date)
         s = {"date": args.date, "slot": canonical_slot(args.slot, rotation), "state": "planned"}
         for k in ("time", "note", "calendar"):
             if getattr(args, k):
                 s[k] = getattr(args, k)
-        week["sessions"].append(s)
+        week_of_day(week, dt.date.fromisoformat(args.date))["sessions"].append(s)
     elif cmd == "set":
         s = find(week, args.date)
         if args.slot:
@@ -544,14 +629,15 @@ def main(argv=None):
                 else:
                     s[k] = v
     elif cmd == "drop":
-        week["sessions"].remove(find(week, args.date))
+        target = find(week, args.date)
+        (week["sessions"] if target in week["sessions"] else week["next"]["sessions"]).remove(target)
     elif cmd == "status":
         week["status"] = args.value
     elif cmd == "deload":
-        week["deload"] = args.value == "on"
+        (week["next"] if args.next and week.get("next") else week)["deload"] = args.value == "on"
 
     if cmd == "brief":
-        todo = [x for x in sorted(week["sessions"], key=lambda x: x["date"]) if x.get("state") in OPEN]
+        todo = [x for x in sorted(all_sessions(week), key=lambda x: x["date"]) if x.get("state") in OPEN]
         if args.date:
             session = find(week, args.date)
         elif todo:
@@ -566,7 +652,7 @@ def main(argv=None):
     notes = reconcile(week, logged, rotation, today) if cmd != "show" else []
     assign_ids(week, pool)
     print_week(week, tracks, rotation, logged, aliases, today)
-    for n in notes:
+    for n in rolled + notes:
         print("Note: " + n)
     if cmd == "show" or args.dry_run:
         if args.dry_run and cmd != "show":

@@ -985,6 +985,73 @@ class EngineReviewFixes(unittest.TestCase):
         self.assertEqual(t["tracks"]["squat"]["top_set_lb"], 160)       # the normal step, not the big one
 
 
+class WeekAhead(unittest.TestCase):
+    """Planning next week before this one is finished must not lose this one."""
+
+    def setUp(self):
+        self.dir = tempfile.mkdtemp()
+        self.week = os.path.join(self.dir, "week.json")
+        self.tracks = os.path.join(self.dir, "tracks.json")
+        t = fresh_tracks()
+        t["pointer"] = "U2"
+        with open(self.tracks, "w") as f:
+            json.dump(t, f)
+        w = a_week()
+        w["sessions"] = [{"date": "2026-11-12", "slot": "L2", "state": "done"},
+                         {"date": "2026-11-14", "slot": "U2", "state": "planned", "routine_id": "r3"},
+                         {"date": "2026-11-15", "slot": "Full C", "state": "planned", "routine_id": "r4"}]
+        week.save_week(self.week, w)
+
+    def tearDown(self):
+        shutil.rmtree(self.dir, ignore_errors=True)
+
+    def run_week(self, today, *argv):
+        out = io.StringIO()
+        old, sys.stdout = sys.stdout, out
+        try:
+            week.main(["--week", self.week, "--tracks", self.tracks, "--history", os.path.join(self.dir, "none.csv"),
+                       "--plan-md", os.path.join(self.dir, "none.md"), "--hevy-state", os.path.join(self.dir, "none.json"),
+                       "--today", today, *argv])
+        finally:
+            sys.stdout = old
+        return out.getvalue(), week.load_week(self.week)
+
+    def test_planning_ahead_is_staged_and_rolls_on_monday(self):
+        out, w = self.run_week("2026-11-13", "plan", "--week-of", "2026-11-16", "2026-11-17=L1", "2026-11-19=U1")
+        self.assertEqual([s["slot"] for s in w["sessions"]], ["L2", "U2", "Full C"])        # this week untouched
+        self.assertEqual((w["week_of"], w["next"]["week_of"]), ("2026-11-09", "2026-11-16"))
+        self.assertIn("Checks, next week: none", out)                                        # pointer after the weekend is L1
+        todo, _ = push.week_plan(w, ROTATION, dt.date(2026, 11, 13))
+        self.assertEqual([s["date"] for s, _ in todo], ["2026-11-14", "2026-11-15", "2026-11-17", "2026-11-19"])
+        # a staged week that skips ahead is caught against the pointer as it will stand
+        out, _ = self.run_week("2026-11-13", "--dry-run", "plan", "--week-of", "2026-11-16", "2026-11-17=U1")
+        self.assertIn("L1 is owed before U1", out)
+        # sessions can be edited in either week
+        _, w = self.run_week("2026-11-13", "set", "2026-11-19", "--date", "2026-11-20")
+        self.assertEqual(w["next"]["sessions"][1]["date"], "2026-11-20")
+        # on its Monday the staged week becomes the week
+        out, w = self.run_week("2026-11-16", "reconcile")
+        self.assertEqual(w["week_of"], "2026-11-16")
+        self.assertNotIn("next", w)
+        self.assertIn("is now the current week", out)
+
+    def test_planning_on_sunday_night_replaces_a_finished_week(self):
+        _, w = self.run_week("2026-11-15", "set", "2026-11-14", "--state", "done")
+        _, w = self.run_week("2026-11-15", "set", "2026-11-15", "--state", "done")
+        _, w = self.run_week("2026-11-15", "plan", "--week-of", "2026-11-16", "2026-11-17=L1")
+        self.assertEqual(w["week_of"], "2026-11-16")
+        self.assertNotIn("next", w)
+
+    def test_brief_numbers_come_from_the_renderer(self):
+        t = fresh_tracks()
+        text = week.brief({"date": "2026-10-27", "slot": "U1"}, a_week(week_of="2026-10-26"), t, ROTATION, EXMAP)
+        payload, _ = push.build_routine("U1", ROTATION, t, EXMAP, dt.date(2026, 10, 27))
+        top = lbs(normal(payload["exercises"][0]["sets"]))[0]
+        self.assertIn(f"{top:g} x 4 @ RPE 8", text)
+        self.assertIn("U1 Upper A (Tue 27 Oct)", text)
+        self.assertIn("pointer", text.splitlines()[0])
+
+
 class Amendments(unittest.TestCase):
     def test_set_is_logged(self):
         t = fresh_tracks()

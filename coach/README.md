@@ -67,6 +67,8 @@ python3 tools/week.py deload on
 python3 tools/hevy_sync.py --no-pull -m "Move Full B to Fri 20 Nov"
 ```
 
+**Planning ahead is safe.** If this week still has sessions to come when you plan a later week, the new week is staged as "next week": this week stays as it is, the new week's dated routines are created in Hevy at once, and it becomes the week on its Monday. Its order check assumes the open sessions get trained first. Planning on Sunday night after the last session simply replaces the week.
+
 The tool prints the week with rendered loads and the Checks. **Order:** the sessions still to come must cover the next half-sessions from the pointer; the rotation never skips ahead. Fix the plan until that check is clear. **Spacing** checks are advice; keep or change the plan and say why in `data/weekly-plan.md`. Dates are the lifter's (America/New_York). The dated Hevy routines (folder This Week) take their titles, loads and notes from this file; a session's `--note` leads its routine note.
 
 Loads in any message come from `python3 tools/week.py show` or `brief`, never from arithmetic done in the chat: the tool applies the gap clock, regain and caution phases, moved top sets and deload exactly as the Hevy routine shows them.

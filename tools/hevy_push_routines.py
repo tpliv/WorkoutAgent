@@ -66,7 +66,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gitguard  # noqa: E402
 from hevy_api import Hevy, HevyError  # noqa: E402
 from localtime import local_today  # noqa: E402
-from week import WEEK, is_deload, load_week, save_week, title_for  # noqa: E402
+from week import WEEK, all_sessions, is_deload, load_week, save_week, title_for  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROTATION = os.path.join(ROOT, "templates", "rotation.json")
@@ -591,7 +591,7 @@ def week_plan(week, rotation, as_of):
     """Split the week's sessions (data/week.json) into (to_push, skipped).
     Nothing is dropped silently: every skipped session carries its reason."""
     todo, skipped = [], []
-    for s in (week or {}).get("sessions", []):
+    for s in all_sessions(week or {}):
         day = dt.date.fromisoformat(s["date"])
         if s["slot"] not in rotation["sessions"]:
             skipped.append((s, f"slot {s['slot']!r} is not in the rotation"))
@@ -624,7 +624,7 @@ def push_this_week(h, state, week, rotation, tracks, exmap, as_of, deload=False,
     results = [(f"This Week: {title_for(s, rotation) if s['slot'] in rotation['sessions'] else s['slot']}", None, "skipped: " + why)
                for s, why in skipped]
     changed = False
-    used = {s.get("routine_id") for s in week.get("sessions", []) if s.get("routine_id")}
+    used = {s.get("routine_id") for s, _ in todo if s.get("routine_id")}
     for s, day in todo:
         title, payload = week_payload(s, day, week, rotation, tracks, exmap, deload, folder_id)
         label = f"This Week: {title}"
