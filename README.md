@@ -17,11 +17,11 @@ program can scale between 3 and 6 days without losing progress.
 | --- | --- |
 | `research/` | Raw research notes written by agents. Each file covers one topic, cites its sources, and separates evidence from coaching convention. Notes are the record of what was found and are not rewritten after the fact. |
 | `guide/` | The synthesized training guide. Each chapter draws on the research notes and gives rules and numbers a lifter can act on. |
-| `tools/` | The Hevy integration: pull workouts over the API, apply the progression rules, push the nine routines with the new loads back to the app (`python3 tools/hevy_sync.py`). Also the CSV fallback and the history analyzer. |
-| `data/` | The normalized training log, its summary, `tracks.json` and `track-state.md` (the live state of the progression tracks), the track log, `weekly-plan.md` (this week's sessions and loads), `checkins/` (one record per Sunday check-in), and the Hevy ids the tools need. Raw exports are gitignored. |
+| `tools/` | The Hevy integration, in one command (`python3 tools/hevy_sync.py`): pull workouts over the API, apply the progression rules, commit and publish the data to `main`, then bring the Hevy routines in step and read each back. The routines are the 12 rotation routines (six half-sessions, Full A/B/C, and the cross-block merges U1 + L2, U2 + L3, U3 + L1) plus dated copies of the current week's sessions in a Hevy folder called "This Week". `tools/week.py` changes the week. Also the CSV fallback and the history analyzer. |
+| `data/` | The normalized training log, its summary, `tracks.json` and `track-state.md` (the live state of the progression tracks), the track log, `week.json` (this week's sessions) and `weekly-plan.md` (its generated tables and the reasoning), `checkins/` (one record per Sunday check-in), and the Hevy ids the tools need. Raw exports are gitignored. |
 | `coach/` | Agent runbooks for the weekly coaching cadence: the Sunday check-in and the night-before workout brief. |
 | `PORTABILITY.md` | What lives in the repo versus the Claude account, the cloud environment spec, and the checklist for moving to another account. |
-| `templates/` | Weekly session templates for 3, 4, 5, and 6 training days, the per-lift progression rules, the rules for switching between week types, a Liftosaur export of the rotation, and a CSV log template. |
+| `templates/` | Weekly session templates for 3, 4, 5, and 6 training days, the per-lift progression rules (`progression-tracks.md`), the session contents as data (`rotation.json`, which the Hevy routines are rendered from), the rules for switching between week types, a Liftosaur export of the rotation (unmaintained since October 2026), and a CSV log template. |
 
 ## Reading order
 

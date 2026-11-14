@@ -1,8 +1,8 @@
 # 3-day week
 
-Last updated: 2026-10-21
+Last updated: 2026-11-13 (Full C aligned with `templates/rotation.json`: pull-up V load, optional item; progression brief cut to a pointer; volume tally corrected: chest and hamstrings get no direct work in Full B, and 6 chest sets in Full C is over the 3-5 band, not under). Earlier: 2026-11-06 (cross-block merges); 2026-10-21
 
-**Use when** you can train three days this week. All three blocks are merged: Full A, Full B, Full C. Every main lift still gets its heavy and its volume exposure, so the progression tracks advance exactly as they do in a 6-day week; what shrinks is accessory volume (about 65 hard sets, 8-12 per large muscle group, roughly half the 6-day week). Rules: `guide/03-flexible-scheduling.md`. Per-lift progression: `templates/progression-tracks.md`.
+**Use when** you can train three days this week. All three blocks are merged: Full A, Full B, Full C. Every main lift still gets its heavy and its volume exposure, so the progression tracks advance exactly as they do in a 6-day week; what shrinks is accessory volume (about 65 hard sets, 8-12 per large muscle group, roughly half the 6-day week). Rules: `guide/03-flexible-scheduling.md`. Per-lift progression: `templates/progression-tracks.md`. Session contents (exercises, order, sets, reps, rest, supersets) mirror `templates/rotation.json`, which the Hevy routines are rendered from; if the two differ, the JSON is what the app shows.
 
 | Order | Session | Merges | Main-lift exposures | Hard sets | Time |
 |---|---|---|---|---|---|
@@ -58,12 +58,12 @@ Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter).
 | 3 | Deadlift (track: deadlift V) | 2 x 4 at 90% of the current deadlift top-set load | 6-7; crisp, fast reps | 2-3 min | Trap-bar deadlift |
 | 4 | Overhead press (track: press V) | 2 x 5 at 90% of the current press top-set load | 6-7 | 2 min | Seated DB press; machine press |
 | 5 | Barbell row (track: row V)[^lats] | 3 x 8-10 at 90% of the row track load | 7-8 | 2 min | Chest-supported DB row; cable row |
-| 6 | Pull-up or lat pulldown (track: pull-up V)[^lats] | 2 x 6-8 with the added load reduced (or bodyweight) so the sets land at RPE 7 | 7 | 2 min | Lat pulldown |
+| 6 | Pull-up or lat pulldown (track: pull-up V)[^lats] | 2 x 6-8 at 90% of the pull-up track load[^pullv] | 7 | 2 min | Lat pulldown |
 | 7 | Seated leg curl[^curl] | 3 x 10-15 | 8-9 | 60-90 s | Nordic curl; DB RDL |
 | 8 | Incline DB press, 30 degrees[^incline] | 3 x 8-12 | 7-8 | 90 s to 2 min | Incline machine press; low-to-high cable fly |
-| 9 (optional) | Standing calf raise[^calf] 2 x 10-15, **or** DB lateral raise[^lat] 2 x 12-20 | | 8-9 | 60 s | |
+| 9 (optional) | DB lateral raise[^lat] | 2 x 12-20 | 8-9 | 60 s | Standing calf raise[^calf] 2 x 10-15 in its place |
 
-21 sets (+2). The lifts alternate lower and upper so that, when two stations are free, squat and bench (and deadlift and press) can be run as alternating paired sets with 90 s between them; this cuts about 10 minutes and still leaves each lift about 3.5 min between its own sets. Paired sets are for volume sets only; never pair a heavy top set (compound supersets cost some pulldown strength in one trial, Iversen 2024; same-muscle pairs lose volume, Zhang et al. 2025). Dropped from L3 and U3: leg extension, core, pushdown, curl, one set of each V exposure. Full C carries the incline press because Full A has no room for it; it is the week's one direct upper-chest exposure.
+21 sets (+2). The optional item in the Hevy routine is the lateral raise; the calf raise is the alternative. The lifts alternate lower and upper so that, when two stations are free, squat and bench (and deadlift and press) can be run as alternating paired sets with 90 s between them; this cuts about 10 minutes and still leaves each lift about 3.5 min between its own sets. Paired sets are for volume sets only; never pair a heavy top set (compound supersets cost some pulldown strength in one trial, Iversen 2024; same-muscle pairs lose volume, Zhang et al. 2025). Dropped from L3 and U3: leg extension, core, pushdown, curl, one set of each V exposure. Full C carries the incline press because Full A has no room for it; it is the week's one direct upper-chest exposure.
 
 ---
 
@@ -81,11 +81,13 @@ Added 2026-11-06. Same merge rules (`guide/03-flexible-scheduling.md`, section 4
 
 ## Progression rules in brief
 
-**Main lifts** (full rules: `templates/progression-tracks.md`): top set 4 reps at RPE 8. At RPE 8 or lower, the next H load rises 5 lb (squat, deadlift); bench and press rise 5 lb after every second such top set (step counter, `progression-tracks.md` section 5). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. The second and third main lifts in a merged session are judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss. V sets are 90% of the current top-set load and never move the track. Row and pull-up: double progression, +5 lb when every set reaches 8; the 3-set merged form applies the rule to the sets done. Gaps: hold the load if a lift has gone 8-21 days untrained; reduce 5-10% beyond 21 days.
+The rules live in `templates/progression-tracks.md` and are not copied here. This block only says where to look.
 
-**Accessories:** double progression. Fixed load; add reps until every set reaches the top of the range at RPE 9 or less; then the smallest increment and back to the bottom. A 3-day week skips sets, never resets a load.
+**Main lifts:** the top set of 4 is read at its effective RPE (section 5): 7.5-8 steps the load, 8.5-9 holds, 9.5-10 or 3 reps or fewer is a miss. The same section has the big step, the re-anchor, the bench and press step counter, and the row and pull-up double progression (the 3-set merged form applies it to the sets done). The second and third main lifts in a merged session are judged by RPE: a 4 @ 9.5 there is a hold, not a miss (section 3). Regain phase, deadlift caution and rep-out: sections 5.1-5.3. Stall and reset: section 6. Gap table: section 8. Busy-gym substitutes: section 9. V sets are 90% of the current track load and never move the track (section 4).
 
-**Deload** (if this 3-day week is the scheduled deload week, or two readiness flags have persisted; `guide/03-flexible-scheduling.md`, section 4.5): same three sessions; top sets at RPE 6-7 (about 90% of the track load); one back-off; V exposures 2 sets each; accessories 1-2 sets. A 3-day week is **not** a deload otherwise.
+**Accessories:** double progression (section 11). Fixed load; add reps until every set reaches the top of the range at RPE 9 or less; then the smallest increment and back to the bottom. A 3-day week skips sets, never resets a load.
+
+**Deload** (section 7; if this 3-day week is the scheduled deload week, or two readiness flags have persisted; `guide/03-flexible-scheduling.md`, section 4.5): same three sessions; top sets at RPE 6-7 (about 90% of the track load); one back-off; V exposures, row and pull-up 2 sets each; accessories 1-2 sets. A 3-day week is **not** a deload otherwise.
 
 ---
 
@@ -116,7 +118,16 @@ Added 2026-11-06. Same merge rules (`guide/03-flexible-scheduling.md`, section 4
 | Triceps | 3 (overhead extension) | ~10 (presses 14 x 0.5) | 8-12 |
 | Calves | 5 (7 with the optional set) | 5-7 | 8-12 (small muscle at the low end; `guide/01-training-principles.md`, section 1) |
 
-Every large muscle is trained in all three sessions; every small muscle gets at least one direct exposure plus indirect credit in two or three sessions, which satisfies the spine's "every muscle 2x." Per-session maximum for any muscle: 6 sets (chest in Full C), under the spine's 3-5-per-session guideline by at most one set. Total: about 65-67 hard sets, roughly 53% of the 6-day week.
+Counting indirect work, every large muscle is trained in all three sessions. Counting direct work only:
+
+| Muscle | Direct work in | In the other sessions |
+|---|---|---|
+| Quads, back | All three sessions | |
+| Chest | Full A, Full C | Full B: indirect only (overhead press at half credit) |
+| Hamstrings | Full A, Full C | Full B: indirect only (deadlift at half credit) |
+| Glutes | Full B (deadlift H) | Full A, Full C: indirect (squat, deadlift V at half credit) |
+
+Every small muscle gets at least one direct exposure plus indirect credit in two or three sessions. That meets "every muscle 2x" (`guide/00-overview.md`, rule 2). Per-session maximum for any muscle: 6 sets (chest in Full C). That is one set over the 3-5 sets-per-session band for a 3-day week (`guide/01-training-principles.md`, section 1) and under the 8-10 per-session ceiling. Total: about 65-67 hard sets, roughly 53% of the 6-day week.
 
 ---
 
@@ -134,6 +145,7 @@ Confidence ratings follow `research/exercise-selection-and-session-design.md`, K
 [^rear]: Reverse pec deck for the rear delt: EMG only (Barbell Medicine synthesis). Low.
 [^bi]: Incline DB curl: women-only trials (n = 63 untrained, Kassiano 2025; n = 38 recreationally trained, no between-group differences, Zabaleta-Korta 2023). Moderate.
 [^lats]: Pull-up, pulldown and row variants are interchangeable for the lats on EMG (Lehman 2004); no hypertrophy head-to-head yet. Low. Rows are kept for the mid-traps.
+[^pullv]: Pull-up V load. The Hevy routine shows 90% of the track load, rounded to 5 lb (`templates/rotation.json`, `tools/hevy_push_routines.py`); that fits the pulldown. `templates/progression-tracks.md` section 4 words the rule as "added load reduced, or bodyweight, so the sets land at RPE 7". On the bar, where 90% of a small added load rounds to no change, use that wording. The target is RPE 7 either way. Not a confidence rating; the two sources are worded differently (noted 2026-11-13).
 
 ---
 

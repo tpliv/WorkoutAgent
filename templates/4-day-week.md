@@ -1,8 +1,8 @@
 # 4-day week
 
-Last updated: 2026-10-21
+Last updated: 2026-11-13 (session tables aligned with `templates/rotation.json`: reverse lunge, supersets as lettered rows with their rests, pull-up V load, optional item; progression brief cut to a pointer). Earlier: 2026-10-21
 
-**Use when** you can train four days this week. Two blocks are merged (A and C) and one is split (B): Full A, L2, U2, Full C. Every main lift gets its heavy and its volume exposure, so the tracks advance exactly as in any other week; volume sits in the middle (about 82 hard sets, 10-14 per large muscle group). Rules: `guide/03-flexible-scheduling.md`. Per-lift progression: `templates/progression-tracks.md`.
+**Use when** you can train four days this week. Two blocks are merged (A and C) and one is split (B): Full A, L2, U2, Full C. Every main lift gets its heavy and its volume exposure, so the tracks advance exactly as in any other week; volume sits in the middle (about 82 hard sets, 10-14 per large muscle group). Rules: `guide/03-flexible-scheduling.md`. Per-lift progression: `templates/progression-tracks.md`. Session contents (exercises, order, sets, reps, rest, supersets) mirror `templates/rotation.json`, which the Hevy routines are rendered from; if the two differ, the JSON is what the app shows.
 
 | Order | Session | Form | Main-lift exposures | Hard sets | Time |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@ Last updated: 2026-10-21
 
 **Pointer:** Full A advances it L1 to L2; L2 to U2; U2 to L3; Full C back to L1. If the pointer is not at L1, write out the next six half-sessions and merge two consecutive pairs, preferring L3+U3, then L1+U1, then L2+U2 (cross-block pairs allowed if the pointer sits mid-block).
 
-Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). Merged sessions run one back-off fewer and one V set fewer. RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set; 3-5 min for deadlift), 60-90 s on isolation; superset pairs: 60 s between exercises, 2 min after the pair. Warm-up ramp on the first compound (bar x 5, 80% x 2-3, plus 60% x 3 between them once the top set is 225 lb (about 102 kg) or more, a coaching convention rather than evidence); one feeder set at 60-70% for later main lifts.
+Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter). **V** = volume exposure (sets at 90% of the lift's current top-set load, no top set). Merged sessions run one back-off fewer and one V set fewer. RPE 8 = 2 reps in reserve. Rest 2-3 min on compounds (3-4 min after a top set; 3-5 min for deadlift), 60-90 s on isolation. Supersets: rows that share a number (5a, 5b) are one superset; 60 s between its exercises, 2 min after the round. Warm-up ramp on the first compound (bar x 5, 80% x 2-3, plus 60% x 3 between them once the top set is 225 lb (about 102 kg) or more, a coaching convention rather than evidence); one feeder set at 60-70% for later main lifts.
 
 ---
 
@@ -41,12 +41,12 @@ Key: **H** = heavy exposure (1 x 4 top set at RPE 8, then back-offs 7% lighter).
 |---|---|---|---|---|---|
 | 1 | Deadlift (track: deadlift H) | 1 x 4 top set, then 2 x 4 at -7% | Top set 8; back-offs 7-8 | 3-5 min; 3 min | Trap-bar deadlift (hypertrophy; keep the conventional deadlift at least once a week for strength); block pull |
 | 2 | Front squat or hack squat | 3 x 6-10 | 7-8 | 2-3 min | Leg press; goblet squat; safety-bar squat |
-| 3 | Walking lunge or Bulgarian split squat | 3 x 8-12 per leg | 8 | 2 min | Step-up; single-leg leg press; hip thrust for glute emphasis[^ht] |
-| 4 | Seated leg curl[^curl] | 3 x 10-15 | 8-9 | 60-90 s | Nordic curl; lying leg curl |
-| 5 | Standing calf raise[^calf] | 4 x 8-12 | 8-9 | 60-90 s | Leg-press calf raise |
-| 6 | 45-degree back extension or Pallof press | 3 x 10-15 | 8 | 60 s | Reverse hyper; bird dog; suitcase carry |
+| 3 | Reverse lunge or Bulgarian split squat | 3 x 8-12 per leg | 8 | 2 min | Walking lunge; step-up; single-leg leg press; hip thrust for glute emphasis[^ht] |
+| 4a | Seated leg curl[^curl] | 3 x 10-15 | 8-9 | 60 s, then 4b | Nordic curl; lying leg curl |
+| 4b | Standing calf raise[^calf] | 4 x 8-12 | 8-9 | 2 min after the pair | Leg-press calf raise |
+| 5 | 45-degree back extension or Pallof press | 3 x 10-15 | 8 | 60 s | Reverse hyper; bird dog; suitcase carry |
 
-Superset 4 and 5. 19 sets.
+19 sets. 4a and 4b are a superset.
 
 ## U2: Upper B (press heavy, pull-up heavy)
 
@@ -55,11 +55,11 @@ Superset 4 and 5. 19 sets.
 | 1 | Overhead press (track: press H) | 1 x 4 top set, then 3 x 4 at -7% | Top set 8; back-offs 7-8 | 3 min; 2-3 min | Seated DB press; machine shoulder press; landmine press |
 | 2 | Weighted pull-up, or lat pulldown if under 5 clean bodyweight reps (track: pull-up H)[^lats] | 4 x 5-8 | 8 on every set | 2-3 min | Lat pulldown; assisted pull-up machine; neutral-grip pulldown |
 | 3 | Flat DB press or dips | 3 x 8-12 | 7-8 | 2 min | Machine chest press; weighted push-up |
-| 4 | Reverse pec deck[^rear] | 3 x 15-20 | 8-9 | 60-90 s | Bent-over DB rear fly; face pull |
-| 5 | Cable lateral raise[^lat] | 3 x 12-20 | 8-9 | 60-90 s | DB or machine lateral raise |
-| 6 | Incline DB curl[^bi] | 3 x 10-12 | 8-9 | 60-90 s | Cable curl; EZ-bar curl; preacher curl (distal bias) |
+| 4a | Reverse pec deck[^rear] | 3 x 15-20 | 8-9 | 60 s, then 4b | Bent-over DB rear fly; face pull |
+| 4b | Cable lateral raise[^lat] | 3 x 12-20 | 8-9 | 2 min after the pair | DB or machine lateral raise |
+| 5 | Incline DB curl[^bi] | 3 x 10-12 | 8-9 | 60-90 s | Cable curl; EZ-bar curl; preacher curl (distal bias) |
 
-Superset 4 with 5, or 5 with 6. 20 sets.
+20 sets. 4a and 4b are a superset; the curl runs as straight sets.
 
 ## Full C: every main lift at volume
 
@@ -70,22 +70,24 @@ Superset 4 with 5, or 5 with 6. 20 sets.
 | 3 | Deadlift (track: deadlift V) | 2 x 4 at 90% of the current deadlift top-set load | 6-7; crisp, fast reps | 2-3 min | Trap-bar deadlift |
 | 4 | Overhead press (track: press V) | 2 x 5 at 90% of the current press top-set load | 6-7 | 2 min | Seated DB press; machine press |
 | 5 | Barbell row (track: row V)[^lats] | 3 x 8-10 at 90% of the row track load | 7-8 | 2 min | Chest-supported DB row; cable row |
-| 6 | Pull-up or lat pulldown (track: pull-up V)[^lats] | 2 x 6-8 with the added load reduced (or bodyweight) so the sets land at RPE 7 | 7 | 2 min | Lat pulldown |
+| 6 | Pull-up or lat pulldown (track: pull-up V)[^lats] | 2 x 6-8 at 90% of the pull-up track load[^pullv] | 7 | 2 min | Lat pulldown |
 | 7 | Seated leg curl[^curl] | 3 x 10-15 | 8-9 | 60-90 s | Nordic curl; DB RDL |
 | 8 | Incline DB press, 30 degrees[^incline] | 3 x 8-12 | 7-8 | 90 s to 2 min | Incline machine press; low-to-high cable fly |
-| 9 (optional, include in 4- and 5-day weeks when under 70 min) | Standing calf raise[^calf] 2 x 10-15, **or** DB lateral raise[^lat] 2 x 12-20 | | 8-9 | 60 s | |
+| 9 (optional, include in 4- and 5-day weeks when under 70 min) | DB lateral raise[^lat] | 2 x 12-20 | 8-9 | 60 s | Standing calf raise[^calf] 2 x 10-15 in its place |
 
-21 sets (+2). Alternate squat and bench (and deadlift and press) as paired sets with 90 s between when two stations are free. Paired sets are for volume sets only; never pair a heavy top set (compound supersets cost some pulldown strength in one trial, Iversen 2024; same-muscle pairs lose volume, Zhang et al. 2025). Full C carries the incline press because Full A has no room for it.
+21 sets (+2). Alternate squat and bench (and deadlift and press) as paired sets with 90 s between when two stations are free. Paired sets are for volume sets only; never pair a heavy top set (compound supersets cost some pulldown strength in one trial, Iversen 2024; same-muscle pairs lose volume, Zhang et al. 2025). Full C carries the incline press because Full A has no room for it. The optional item in the Hevy routine is the lateral raise; the calf raise is the alternative.
 
 ---
 
 ## Progression rules in brief
 
-**Main lifts** (full rules: `templates/progression-tracks.md`): top set 4 reps at RPE 8. At RPE 8 or lower, the next H load rises 5 lb (squat, deadlift); bench and press rise 5 lb after every second such top set (step counter, `progression-tracks.md` section 5). RPE 8.5-9: hold. RPE 10 or fewer than 4 reps: hold and count a miss; two misses at one load is a stall, reset 7.5% and rebuild. The bench top set in Full A, taken after the squat, is judged by RPE: a planned load that comes in a full RPE heavy is a hold, not a miss. V sets are 90% of the current top-set load and never move the track. Row and pull-up: double progression, +5 lb when every set reaches 8. Gaps: hold the load if a lift has gone 8-21 days untrained; reduce 5-10% beyond 21 days.
+The rules live in `templates/progression-tracks.md` and are not copied here. This block only says where to look.
 
-**Accessories:** double progression. Fixed load; add reps until every set reaches the top of the range at RPE 9 or less; then the smallest increment and back to the bottom. Short weeks skip sets, never reset loads.
+**Main lifts:** the top set of 4 is read at its effective RPE (section 5): 7.5-8 steps the load, 8.5-9 holds, 9.5-10 or 3 reps or fewer is a miss. The same section has the big step, the re-anchor, the bench and press step counter, and the row and pull-up double progression. The bench top set in Full A, taken after the squat, is judged by RPE: a 4 @ 9.5 there is a hold, not a miss (section 3). Regain phase, deadlift caution and rep-out: sections 5.1-5.3. Stall and reset: section 6. Gap table: section 8. Busy-gym substitutes: section 9. V sets are 90% of the current track load and never move the track (section 4).
 
-**Deload** (scheduled week 5-7 of the block, or two readiness flags): same four sessions; top sets at RPE 6-7 (about 90% of the track load); one back-off; V exposures 2 sets; accessories 1-2 sets.
+**Accessories:** double progression (section 11). Fixed load; add reps until every set reaches the top of the range at RPE 9 or less; then the smallest increment and back to the bottom. Short weeks skip sets, never reset loads.
+
+**Deload** (section 7; scheduled week 5-7 of the block, or two readiness flags): same four sessions; top sets at RPE 6-7 (about 90% of the track load); one back-off; V exposures, row and pull-up 2 sets; accessories 1-2 sets.
 
 ---
 
@@ -135,6 +137,7 @@ Confidence ratings follow `research/exercise-selection-and-session-design.md`, K
 [^rear]: Reverse pec deck and face pull for the rear delt: EMG only (Barbell Medicine synthesis; Sweeney thesis). Low.
 [^bi]: Incline DB curl: women-only trials (n = 63 untrained, Kassiano 2025; n = 38 recreationally trained, no between-group differences, Zabaleta-Korta 2023). Moderate.
 [^lats]: Pull-up, pulldown and row variants are interchangeable for the lats on EMG (Lehman 2004); no hypertrophy head-to-head yet. Low. Rows are kept for the mid-traps.
+[^pullv]: Pull-up V load. The Hevy routine shows 90% of the track load, rounded to 5 lb (`templates/rotation.json`, `tools/hevy_push_routines.py`); that fits the pulldown. `templates/progression-tracks.md` section 4 words the rule as "added load reduced, or bodyweight, so the sets land at RPE 7". On the bar, where 90% of a small added load rounds to no change, use that wording. The target is RPE 7 either way. Not a confidence rating; the two sources are worded differently (noted 2026-11-13).
 
 ---
 
