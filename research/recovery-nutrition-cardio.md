@@ -1,5 +1,7 @@
 # Recovery, Fatigue Management, Cardio Integration, and Nutrition Fundamentals for a Resistance-Training Program
 
+Last updated: 2026-10-21 (the dated line also sits lower in the note; see the addenda for corrections to earlier lines). Header line added 2026-11-13; no content changed.
+
 Research notes compiled 2026-10-21. Scope: the factors outside lifting sessions that determine whether a program works, for a lifter alternating between 3-day and 5-6-day training weeks. Method note: full-text fetches of primary papers were blocked in this environment (DNS/proxy failures for PMC, PubMed, Springer, Wiley, JISSN, Stronger By Science), so most figures below come from abstracts, repository records, and reputable secondary summaries (Examine, Stronger By Science, Biolayne REPS, MySportScience) surfaced in search. Where only a secondary source could be found, that is flagged. The web-search budget was exhausted before every sub-question could be run down; unanswered items are listed under Gaps.
 
 ## Key Question 1: Recovery time between sessions for the same muscle group (24-72 h), and training the same muscle on consecutive days in a 6-day week

@@ -1,5 +1,7 @@
 # Mobile Workout-Tracking Apps for Running a Markdown/GitHub-Maintained Custom Strength Program (as of 2026-10-21)
 
+Last updated: 2026-10-21 (dated in the title; see the addenda for later checks). Header line added 2026-11-13; no content changed.
+
 Research-environment note: `WebFetch` returned DNS errors (`getaddrinfo ENOTFOUND`) for liftosaur.com, www.liftosaur.com, api.hevyapp.com, apps.apple.com, setgraph.app and huggingface.co; only github.com fetches succeeded. `WebSearch` refused `allowed_domains: reddit.com` ("not accessible to our user agent"). Consequently most app-site/App Store facts below come from WebSearch result summaries of those pages (cited by URL) rather than full-page reads, and Reddit sentiment could not be sampled directly. Claims that could not be verified are explicitly flagged "(unverified)".
 
 ## Key Question 1: Per-app profile (platforms, price, program builder, import, export, progression automation, any-order/rotation, watch, offline, data ownership)

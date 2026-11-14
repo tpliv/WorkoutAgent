@@ -1,5 +1,7 @@
 # Resistance-Training Frequency, Weekly Volume, and Intensity: Evidence Summary for Strength and Hypertrophy
 
+Last updated: 2026-10-21 (the dated line sits at the end of the note; see the addenda for corrections to earlier lines). Header line added 2026-11-13; no content changed.
+
 Scope note: Research conducted 2026-10-21. Direct fetches of journal/PubMed pages were blocked by the session's egress proxy, so every figure below was obtained through search-engine retrieval of abstracts, open repositories, and citing secondary summaries (Stronger By Science, Biolayne REPS, MASS/Iron Culture, Examine). Where a number came only from a secondary summary and could not be checked against the abstract, it is flagged "(secondary, unverified)". Nothing below is fabricated; items I could not source are listed under Gaps.
 
 Population caveat that applies throughout: most meta-analyses pool mostly untrained or recreationally trained subjects; the trained-lifter subset is thin. The reader (intermediate lifter) should weight trained-subject studies (Schoenfeld 2019 1/3/5-set trial, Brigatto 2022, Aube 2022, Hamarsland 2022, Colquhoun 2018, Enes 2024, Räntilä 2026) more heavily than pooled effect sizes.

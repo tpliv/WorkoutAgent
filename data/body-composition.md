@@ -1,6 +1,8 @@
 # Body composition and nutrition baseline
 
-Last updated: 2026-11-06 (measurement protocol, scan conditions and dates: sections 6.1 and 8)
+Last updated: 2026-11-13 (a floor on the calorie cuts and a professional-advice line in section 6; the strength table in 4.1 marked as a snapshot of 8 Nov). Earlier: 2026-11-06 (measurement protocol, scan conditions and dates: sections 6.1 and 8)
+
+**General guidance, not individual medical or dietary advice.** The calorie, macro and body-fat figures here are planning estimates from formulas and one scan. For a prescribed intake, a faster cut, any medical condition, or signs of under-fuelling (persistent fatigue, illness, poor sleep, lost libido, lifts falling for weeks), see a physician or a registered sports dietitian.
 
 The user's baseline for a body recomposition, the calorie plan that goes with it, and a log of later scans. Evidence and sources: `research/body-recomposition.md` and `research/recovery-nutrition-cardio.md` (KQ4). Units: pounds (lb), with kg in parentheses where useful.
 
@@ -54,7 +56,7 @@ The user's baseline for a body recomposition, the calorie plan that goes with it
 
 ### 4.1 Strength against population norms (added 2026-11-08)
 
-Current e1RMs in lb (from `data/tracks.json`), 181 lb bodyweight. Source and caveats: `research/population-norms-strength-and-running.md`.
+**Snapshot of 8 Nov 2026, not kept current** (for example the deadlift has since logged 160 x 5 @ 8, e1RM 197). Current e1RMs are in the generated table in `data/track-state.md`. E1RMs in lb as of 8 Nov, 181 lb bodyweight (the 21 Oct scan; no weigh-in has been recorded since). Source and caveats: `research/population-norms-strength-and-running.md`.
 
 | Lift | Now (x BW) | 2024 best (x BW) | Strength Level, 180-lb men who log lifts | Other |
 |---|---|---|---|---|
@@ -109,12 +111,12 @@ Skipping the race-day extra food would put energy availability at about 18-21 kc
 
 ## 6. Adjustment rules
 
-Track all food and drink from day one. Weigh every morning; compare weekly averages. Expect a 1-3 lb rise in the first 2 weeks from water and glycogen; do not cut for it. Judge changes over 3-4 weeks.
+Track all food and drink from day one. Weigh every morning; compare weekly averages. **These rules need a weekly average of at least 4 morning weigh-ins; without it, change nothing.** As of 13 Nov 2026 no weigh-in has been recorded since the 21 Oct scan, so no rule below can fire yet. Expect a 1-3 lb rise in the first 2 weeks from water and glycogen; do not cut for it. Judge changes over 3-4 weeks.
 
 | Signal over 3-4 weeks | Change |
 |---|---|
 | Losing 0.25-0.75 lb/week, lifts climbing | None |
-| Weight flat and waist unchanged after 4 weeks | Cut about 150 kcal |
+| Weight flat and waist unchanged after 4 weeks | Cut about 150 kcal, **once**. Floor: the total deficit stays at or under about 500 kcal/day and carbohydrate at or above about 3 g/kg (`research/energy-availability-and-fueling.md`: Murphy & Koehler 2022 for the deficit, and its carbohydrate guidance). If it is still flat four weeks later, do not cut again: check the tracking, and ask a dietitian |
 | Losing more than 1 lb/week, or lifts stalling | Add 150-200 kcal on 5-6-day weeks |
 
 ### 6.1 How to measure (added 2026-11-06)
