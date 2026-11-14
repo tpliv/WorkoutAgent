@@ -1,0 +1,19 @@
+name: tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Offline tests (rule engine, rendering, week file, git guard)
+        run: python3 tools/test_tools.py
+      - name: Generated files are current
+        run: |
+          python3 tools/update_tracks.py --write-md --dry-run > /dev/null
+          python3 tools/week.py --dry-run render > /dev/null
