@@ -893,6 +893,98 @@ class WeekFile(unittest.TestCase):
         self.assertTrue(block.startswith(week.MD_BEGIN) and block.endswith(week.MD_END))
 
 
+class EngineReviewFixes(unittest.TestCase):
+    """Defects found by the engine review of 2026-11-13, each against the written rule."""
+
+    def test_a_deload_session_moves_no_track(self):                     # section 7
+        t = fresh_tracks(squat={"top_set_lb": 155}, bench={"top_set_lb": 115, "step_counter": 1})
+        rows = [("2026-10-27", "Full A (deload) (Tue 27 Oct)", "Squat (Barbell)", 0, "normal", 140, 4, 6.5),
+                ("2026-10-27", "Full A (deload) (Tue 27 Oct)", "Bench Press (Barbell)", 0, "normal", 105, 4, None)]
+        log, _ = run_update(t, rows)
+        self.assertEqual((t["tracks"]["squat"]["top_set_lb"], t["tracks"]["bench"]["top_set_lb"]), (155, 115))
+        self.assertEqual(t["tracks"]["bench"]["step_counter"], 1)
+        self.assertEqual(t["tracks"]["squat"]["last_exposure"], {"date": "2026-10-27", "type": "H"})
+        self.assertEqual(t["last_deload"], "2026-10-27")
+        self.assertEqual(t["pointer"], "L2")                            # the session still counts for the rotation
+        self.assertTrue(any("no track moves" in line for line in log), log)
+        # the same through the week file's deload flag, with an ordinary title
+        t = fresh_tracks(squat={"top_set_lb": 155})
+        run_update(t, [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 140, 4, 6.5)], deload_dates={"2026-10-27"})
+        self.assertEqual(t["tracks"]["squat"]["top_set_lb"], 155)
+
+    def test_first_session_after_a_deload_opens_a_new_block(self):
+        t = fresh_tracks()
+        t["block_start"] = "2026-09-29"
+        rows = [("2026-10-27", "L1 Lower A (deload)", "Squat (Barbell)", 0, "normal", 120, 4, 6),
+                ("2026-11-03", "U1 Upper A", "Bench Press (Barbell)", 0, "normal", 95, 4, 8)]
+        run_update(t, rows)
+        self.assertEqual((t["block_start"], t["block_week"]), ("2026-11-03", 1))
+
+    def test_a_flagged_stall_can_be_reset_on_a_later_run(self):         # section 6
+        t = fresh_tracks(bench={"top_set_lb": 100, "last_h_load_lb": 100, "miss_counter": 1})
+        log, _ = run_update(t, [("2026-10-27", "U1 Upper A", "Bench Press (Barbell)", 0, "normal", 100, 3, 10)])
+        self.assertTrue(any("STALL" in line for line in log), log)
+        self.assertTrue(t["tracks"]["bench"]["stall_pending"])
+        self.assertEqual(t["tracks"]["bench"]["top_set_lb"], 100)
+        self.assertIn("STALL: reset pending", upd.md_table(t))
+        path = history_csv([("2026-10-27", "U1 Upper A", "Bench Press (Barbell)", 0, "normal", 100, 3, 10)])
+        try:
+            log, _ = upd.process(t, upd.load_sessions(path), ALIASES, ROTATION, reset_on_stall=True)   # nothing new logged
+        finally:
+            os.unlink(path)
+        self.assertEqual(t["tracks"]["bench"]["top_set_lb"], 90)        # 100 x 0.925, rounded down to 5
+        self.assertNotIn("stall_pending", t["tracks"]["bench"])
+        self.assertEqual(t["tracks"]["bench"]["stalls"], 1)
+        self.assertTrue(any("reset 100 -> 90" in line for line in log), log)
+
+    def test_gap_hold_never_raises_the_load(self):                      # section 8
+        t = fresh_tracks(bench={"top_set_lb": 90, "last_h_load_lb": 100, "last_exposure": {"date": "2026-10-12", "type": "H"}})
+        load, _, note = push.gap_modifier(t["tracks"]["bench"], dt.date(2026, 10, 22))
+        self.assertEqual(load, 90, note)
+        t = fresh_tracks(bench={"top_set_lb": 105, "last_h_load_lb": 100, "last_exposure": {"date": "2026-10-12", "type": "H"}})
+        self.assertEqual(push.gap_modifier(t["tracks"]["bench"], dt.date(2026, 10, 22))[0], 100)   # the ordinary hold
+
+    def test_bodyweight_pull_ups_do_not_zero_the_pulldown_load(self):
+        t = fresh_tracks()
+        rows = [("2026-10-27", "U2 Upper B", "Pull Up", i, "normal", None, 6, None) for i in range(3)]
+        log, flags = run_update(t, rows)
+        self.assertEqual(t["tracks"]["pullup"]["top_set_lb"], 125)
+        self.assertEqual(t["tracks"]["pullup"]["last_exposure"], {"date": "2026-10-27", "type": "H"})
+        self.assertTrue(any("load is unchanged" in line for line in log), log)
+        payload, _ = push.build_routine("U2", ROTATION, t, EXMAP, dt.date(2026, 10, 28))
+        self.assertEqual(lbs(normal(payload["exercises"][1]["sets"]))[0], 125)
+
+    def test_an_extra_heavier_double_is_not_the_top_set(self):          # section 5
+        t = fresh_tracks(squat={"top_set_lb": 155, "regain": None})
+        rows = [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 155, 4, 8),
+                ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 1, "normal", 165, 2, None)]
+        log, _ = run_update(t, rows)
+        self.assertEqual((t["tracks"]["squat"]["top_set_lb"], t["tracks"]["squat"]["miss_counter"]), (160, 0), log)
+        # trying the planned load and falling short is still the miss it looks like
+        t = fresh_tracks(squat={"top_set_lb": 155, "regain": None})
+        run_update(t, [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 145, 4, 8),
+                       ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 1, "normal", 155, 2, None)])
+        self.assertEqual((t["tracks"]["squat"]["top_set_lb"], t["tracks"]["squat"]["miss_counter"]), (155, 1))
+        # equal loads: the first is the top set, the later ones are back-offs
+        t = fresh_tracks(squat={"top_set_lb": 155, "regain": None})
+        run_update(t, [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 155, 4, 9),
+                       ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 1, "normal", 155, 5, None)])
+        self.assertEqual(t["tracks"]["squat"]["top_set_lb"], 155)       # 4 @ 9 is a hold
+
+    def test_ordinary_back_offs_do_not_clear_the_unrated_count(self):   # section 5.3
+        t = fresh_tracks(squat={"top_set_lb": 155, "regain": None, "unrated_streak": 1})
+        rows = [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 155, 4, None),
+                ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 1, "normal", 145, 5, None),
+                ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 2, "normal", 145, 5, None)]
+        run_update(t, rows)
+        self.assertEqual(t["tracks"]["squat"]["unrated_streak"], 2)
+        # a drop set far below the top set is not a rep-out either
+        t = fresh_tracks(squat={"top_set_lb": 155, "regain": None})
+        run_update(t, [("2026-10-27", "L1 Lower A", "Squat (Barbell)", 0, "normal", 155, 4, None),
+                       ("2026-10-27", "L1 Lower A", "Squat (Barbell)", 1, "normal", 115, 9, None)])
+        self.assertEqual(t["tracks"]["squat"]["top_set_lb"], 160)       # the normal step, not the big one
+
+
 class Amendments(unittest.TestCase):
     def test_set_is_logged(self):
         t = fresh_tracks()

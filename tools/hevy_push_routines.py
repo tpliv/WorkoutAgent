@@ -133,7 +133,9 @@ def gap_modifier(track, as_of):
         days = (as_of - dt.date.fromisoformat(exp)).days
     except ValueError:
         return planned, 0, None
-    base = last if last is not None else planned
+    # "Hold" means the last lifted load, but never above the plan: after a stall
+    # reset or a hand-lowered track the plan is the lower number and it wins.
+    base = min(last, planned) if last is not None else planned
     step = track.get("round_step_lb", 5)
     if days <= 7:
         return planned, 0, None

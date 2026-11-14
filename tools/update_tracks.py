@@ -276,7 +276,10 @@ def apply_top_set_rule(track, top, merged_not_first, flags, date="", backoff_rep
     # calibration rep-out (5.3): the last back-off above the target, or any back-off when one was due
     due = track.get("rep_out_due", False)
     rep_out = None
-    if backoff_reps is not None and reps >= target and (backoff_reps > target or (due and backoff_reps < target)):
+    # Read only when one was due, or when it is unmistakable (8 or more): an
+    # ordinary back-off of 5 or 6 is not a rep-out and must not clear the count
+    # of unrated top sets.
+    if backoff_reps is not None and reps >= target and ((due and backoff_reps != target) or backoff_reps >= 8):
         rep_out = backoff_reps
     if rep_out is not None:
         if how == "unrated":
@@ -431,10 +434,44 @@ def apply_dp_rule(track, sets, flags, date=""):
     return decision
 
 
+def pick_top_set(loaded, planned, target):
+    """The top set of a heavy exposure, from the loaded working sets in the
+    order trained (section 5: "decide from the top set only").
+    - A set counts as made when it reaches the rep target.
+    - With a planned load: the heaviest made set at or above it (within 3%).
+      If the lifter got under it and fell short, that attempt is the top set,
+      and it is the miss it looks like. An extra heavier single or double
+      after a made top set is not the top set.
+    - No set near the planned load (capped by RPE, or working up): the
+      heaviest made set.
+    - Equal loads: the first one. Later sets at the same load are back-offs."""
+    def first_heaviest(cands):
+        w = max(r["_w"] for r in cands)
+        return next(r for r in cands if r["_w"] == w)
+    made = [r for r in loaded if r["_reps"] >= (target or 0)]
+    if planned:
+        near = [r for r in loaded if r["_w"] >= planned * 0.97 - 1e-6]
+        near_made = [r for r in near if r["_reps"] >= (target or 0)]
+        if near_made:
+            return first_heaviest(near_made)
+        if near:
+            return first_heaviest(near)
+    return first_heaviest(made or loaded)
+
+
+def rep_out_set(loaded, best):
+    """The last back-off that can be read as a rep-out (section 5.3): after the
+    top set, at 85-99% of its load, not a drop set."""
+    after = loaded[loaded.index(best) + 1:]
+    backoffs = [r for r in after if best["_w"] * 0.85 - 1e-6 <= r["_w"] < best["_w"] * 0.99 and r["_type"] != "dropset"]
+    return int(backoffs[-1]["_reps"]) if backoffs else None
+
+
 def apply_stall(track, reset):
     """Section 6. Returns a note."""
     track.pop("_stall", None)
     if not reset:
+        track["stall_pending"] = True
         return (f"STALL on {track['name']} (two misses at {fmt(track['last_h_load_lb'])}). Check sleep, calories and bodyweight for the last two weeks first; "
                 f"if one is off, fix it and hold one more exposure. Otherwise re-run with --reset-on-stall.")
     pct = 0.925 if track.get("scheme") == "top_set" else 0.95
@@ -443,6 +480,7 @@ def apply_stall(track, reset):
     note = f"STALL on {track['name']}: reset {fmt(track['top_set_lb'])} -> {fmt(new)} ({'7.5' if pct == 0.925 else '5'}%)"
     track["top_set_lb"] = new
     track["miss_counter"] = 0
+    track.pop("stall_pending", None)
     if "step_counter" in track:
         track["step_counter"] = 0
     track["stalls"] = track.get("stalls", 0) + 1
@@ -459,12 +497,28 @@ def advance_pointer(slot, rotation):
     return order[(order.index(last) + 1) % len(order)]
 
 
-def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
+def process(tracks, sessions, aliases, rotation, reset_on_stall=False, deload_dates=()):
+    """deload_dates: dates of a declared deload week (data/week.json). A
+    session on one of them, or with "(deload)" in its title, moves no track."""
     match = matcher(aliases)
     variants = variant_matchers(aliases)
     subs = substitute_matchers(aliases)
     log = []
     flags = []
+    if reset_on_stall:
+        # A stall flagged on an earlier run is reset here, without a new session
+        # (section 6: the reset follows the check of sleep, food and bodyweight).
+        for t in tracks["tracks"].values():
+            for holder in [t] + [dict(v, name=f"{t['name']} ({n})") for n, v in (t.get("variants") or {}).items()]:
+                if holder.get("stall_pending"):
+                    note = apply_stall(holder, True)
+                    if holder is not t:
+                        vname = holder["name"][len(t["name"]) + 2:-1]
+                        for k in VARIANT_KEYS:
+                            if k in holder:
+                                t["variants"][vname][k] = holder[k]
+                        t["variants"][vname].pop("stall_pending", None)
+                    log.append(f"{local_today().isoformat()} {note}")
     processed_through = tracks.get("processed_through") or ""
     # Workout ids already processed on the processed_through date. Without them
     # a second session on that date (logged after a sync) would be skipped for
@@ -487,6 +541,24 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
         processed_through = date
         session_exposed = set()
         main_lift_order = []
+        deload = "(deload)" in (title or "").lower() or date in deload_dates
+        if deload:
+            # Section 7: the track does not advance in a deload. The session
+            # counts for the gap clock and the pointer, nothing else.
+            touched = []
+            for lift, t in tracks["tracks"].items():
+                fns = [match.get(lift, lambda n: False)] + [fn for _, fn in variants.get(lift, [])]
+                if any(fn(r.get("exercise")) for fn in fns for r in working_sets(rows)):
+                    covered = {slot} | (set(halves(slot, rotation)) if slot else set())
+                    kind = "H" if covered & set(t.get("h_slots", [])) else "V" if covered & set(t.get("v_slots", [])) else "other"
+                    t["last_exposure"] = {"date": date, "type": kind}
+                    touched.append(t["name"])
+            tracks["last_deload"] = date
+            log.append(f"{date} {slot or title} deload: no track moves (section 7)" + (f"; clock updated for {', '.join(touched)}" if touched else ""))
+            tracks["processed_through"] = date
+            continue
+        if slot and tracks.get("last_deload") and (tracks.get("block_start") or "") <= tracks["last_deload"] < date:
+            tracks["block_start"] = date          # the first session after a deload opens a new block
         if slot:
             parts = [slot] if slot in rotation["sessions"] else halves(slot, rotation)
             for part in parts:
@@ -542,19 +614,31 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
                 for k in VARIANT_KEYS:
                     if k in proxy:
                         vstate[k] = proxy[k]
+                if proxy.get("stall_pending"):
+                    vstate["stall_pending"] = True
+                elif proxy.get("miss_counter", 0) == 0:
+                    vstate.pop("stall_pending", None)
                 log.append(line)
                 continue
             if t.get("scheme") == "double_progression":
+                heaviest = max((r["_w"] or 0) for r in sets)
+                if (t.get("top_set_lb") or 0) > 0 and heaviest < t["top_set_lb"] * 0.5:
+                    # Bodyweight or lightly loaded pull-ups against a pulldown load (or the
+                    # reverse): a different implement. It is the exposure; it is not the load.
+                    what = sets[0].get("exercise") or t["name"]
+                    log.append(f"{date} {slot} {t['name']}: {what} at {fmt(heaviest)} lb is far below the track load {fmt(t['top_set_lb'])} "
+                               "-> counted as the exposure; the load is unchanged")
+                    flags.append(f"{t['name']}: {what} was logged in place of the track's exercise. If the track should follow it from now on, "
+                                 f"set the load with `update_tracks.py --set {lift}.top_set_lb=<load> --reason ...`")
+                    continue
                 decision = apply_dp_rule(t, sets, flags, date=date)
                 best = max(sets, key=lambda r: e1rm(r["_w"] or 0, int(r["_reps"]), r["_rpe"]))
             else:
                 loaded = [r for r in sets if r["_w"]]
                 if not loaded:
                     continue
-                best = max(loaded, key=lambda r: (r["_w"], r["_reps"]))
-                after = loaded[loaded.index(best) + 1:]
-                backoffs = [r for r in after if r["_w"] < best["_w"]]
-                backoff_reps = int(backoffs[-1]["_reps"]) if backoffs else None
+                best = pick_top_set(loaded, t.get("top_set_lb"), target)
+                backoff_reps = rep_out_set(loaded, best)
                 decision = apply_top_set_rule(t, best, merged_not_first, flags, date=date, backoff_reps=backoff_reps)
                 t.pop("work_up", None)
             hist = t.setdefault("e1rm_history", [])
@@ -564,6 +648,8 @@ def process(tracks, sessions, aliases, rotation, reset_on_stall=False):
             line = f"{date} {slot} {t['name']}: top {fmt(best['_w'] or 0)} x {int(best['_reps'])}" + (f" @ {best['_rpe']:g}" if best["_rpe"] is not None else "") + f" -> {decision}"
             if t.pop("_stall", False):
                 line += ". " + apply_stall(t, reset_on_stall)
+            elif t.get("miss_counter", 0) == 0:
+                t.pop("stall_pending", None)
             log.append(line)
         tracks["processed_through"] = date
     tracks["processed_ids"] = done_ids
@@ -599,6 +685,8 @@ def md_table(tracks):
             phase.append(f"regain ended {rg['ended'].split(':')[0]}" if rg.get("ended") else f"regain to e1RM {rg['exit_e1rm_lb']:g} or {rg['until']}")
         if ca and not ca.get("ended"):
             phase.append(f"caution to {ca['until']}")
+        if t.get("stall_pending"):
+            phase.append("STALL: reset pending")
         if t.get("rep_out_due"):
             phase.append("rep-out due")
         elif t.get("unrated_streak"):
@@ -691,7 +779,15 @@ def main(argv=None):
     before = json.dumps({k: v for k, v in tracks.items() if k != "updated"}, sort_keys=True)
     was_updated = tracks.get("updated")
     sessions = load_sessions(args.history, since=args.since)
-    log, flags = process(tracks, sessions, aliases, rotation, reset_on_stall=args.reset_on_stall)
+    deload_dates = set()
+    week_path = os.path.join(os.path.dirname(args.tracks), "week.json")
+    if os.path.exists(week_path):
+        with open(week_path) as f:
+            wk = json.load(f)
+        if wk.get("deload") and wk.get("week_of"):
+            d0 = dt.date.fromisoformat(wk["week_of"])
+            deload_dates = {(d0 + dt.timedelta(days=i)).isoformat() for i in range(7)}
+    log, flags = process(tracks, sessions, aliases, rotation, reset_on_stall=args.reset_on_stall, deload_dates=deload_dates)
     for a in args.set:
         log.append(amend(tracks, a, args.reason, tracks["updated"]))
     unchanged = before == json.dumps({k: v for k, v in tracks.items() if k != "updated"}, sort_keys=True)

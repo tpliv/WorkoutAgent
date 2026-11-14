@@ -188,6 +188,25 @@ set of the lift. The decision follows section 5 of
   routine note carries a "Station taken" line with the fallbacks from
   `rotation.json` `substitutes` and their loads.
 - The pointer is the half-session after the latest slot-titled session.
+- How a logged session is read (fixed 2026-11-13 after the engine review):
+  - **Top set:** the heaviest set that reached the rep target at or above the
+    planned load (within 3%). An attempt at the planned load that fell short
+    is the top set, and a miss. A heavier single or double after a made top
+    set is ignored. Equal loads: the first set. With no set near the planned
+    load, the heaviest made set (a capped day, or working up).
+  - **Rep-out:** the last back-off at 85-99% of the top set, read only when
+    one was due or when it reached 8 reps. Ordinary 5- or 6-rep back-offs and
+    drop sets are not rep-outs.
+  - **Deload:** a session whose title carries `(deload)`, or that falls in a
+    week with the deload flag in `data/week.json`, moves no track. It counts
+    for the gap clock and the pointer, and the first session after it opens a
+    new block (block week 1).
+  - **Stall:** flagged and kept as `stall_pending` on the track;
+    `--reset-on-stall` applies the reset on a later run without a new session.
+  - **A different implement:** double-progression sets at under half the track
+    load (bodyweight pull-ups against a pulldown load) count as the exposure
+    and leave the load alone.
+  - **Gap hold:** the last lifted load, never above the planned one.
 
 ## Normalized log format
 
