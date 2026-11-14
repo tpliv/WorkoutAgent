@@ -1,8 +1,10 @@
 # Templates: how to use them
 
-Last updated: 2026-11-10 (busy-gym rule: station taken). Earlier: 2026-10-21
+Last updated: 2026-11-13 (which files are canonical; L2 lunge named as in `rotation.json`; logging line matches `progression-tracks.md` section 10; Liftosaur file marked unmaintained). Earlier: 2026-11-10 (busy-gym rule: station taken); 2026-10-21
 
 The four weekly templates are **views of one rotation**, not four programs. Pick the one that matches the days you have this week, run it, and next week pick again. Loads and progression rules are identical in all four; only accessory volume and back-off sets differ. The reasoning and the full rule set are in `guide/03-flexible-scheduling.md`; the per-lift progression rules are in `templates/progression-tracks.md`.
+
+**Two files are canonical, because the tools use them.** `rotation.json` decides what each session contains in the app. `progression-tracks.md` holds the progression rules that `tools/update_tracks.py` applies. The day templates and this file restate both for reading. A change to a session or a rule goes into the canonical file and its restatements in the same commit. Where they differ, the canonical file is what the tools apply.
 
 ## Files
 
@@ -12,7 +14,10 @@ The four weekly templates are **views of one rotation**, not four programs. Pick
 | `4-day-week.md` | Full A, L2, U2, Full C (blocks A and C merged). About 82 sets. |
 | `5-day-week.md` | L1, U1, L2, U2, Full C (block C merged). About 101 sets. |
 | `6-day-week.md` | L1, U1, L2, U2, L3, U3 (nothing merged). About 122 sets, 55-65 min per session. |
-| `progression-tracks.md` | Starting loads, the heavy and volume exposures, increment, hold, miss, stall, reset, deload and gap rules, logging and e1RM. |
+| `progression-tracks.md` | **Canonical for the rules.** Starting loads, the heavy and volume exposures, effective RPE, increment, big step, re-anchor, hold, miss, the regain and caution phases, the rep-out, stall, reset, deload and gap rules, busy-gym substitutes, logging and e1RM. |
+| `rotation.json` | **Canonical for session contents.** The 12 sessions as data: six half-sessions, Full A/B/C, and the cross-block merges U1 + L2, U2 + L3, U3 + L1. Exercises, order, sets, reps or rep range, rest, supersets. `tools/hevy_push_routines.py` renders the Hevy routines from it. |
+| `liftosaur/` | A Liftoscript rendering from October 2026. Unmaintained; it no longer matches the program (`liftosaur/README.md`). |
+| `log-template.csv` | Manual set log with example rows (`guide/07-tracking-and-apps.md`, section 5). |
 
 ## The rotation in one table
 
@@ -20,7 +25,7 @@ The four weekly templates are **views of one rotation**, not four programs. Pick
 |---|---|---|---|
 | L1 | Lower A | Squat **H** | Romanian deadlift, leg press or split squat, seated leg curl, calves, core |
 | U1 | Upper A | Bench **H**, Row **H** | Incline DB press, lateral raise, overhead triceps extension, face pull |
-| L2 | Lower B | Deadlift **H** | Front or hack squat, lunge, seated leg curl, calves, back extension or Pallof press |
+| L2 | Lower B | Deadlift **H** | Front or hack squat, reverse lunge or split squat, seated leg curl, calves, back extension or Pallof press |
 | U2 | Upper B | Press **H**, Pull-up **H** | Flat DB press or dips, reverse pec deck, lateral raise, incline DB curl |
 | L3 | Lower C | Squat **V**, Deadlift **V** | Seated leg curl, leg extension, calves, core |
 | U3 | Upper C | Bench **V**, Press **V**, Row **V**, Pull-up **V** | Lateral raise, pushdown, curl |
@@ -50,7 +55,7 @@ The pointer is the next half-session you owe. Write it at the top of your log.
 - A split session moves it forward one; a merged session moves it forward two.
 - After any complete 3- to 6-day week it reads L1. It drifts only when you miss a session or run a 2-day week.
 - **Never skip ahead.** The next time you train, do the half-session the pointer names, or merge it with the one after it. If a week ends mid-pass, next week starts from the pointer, not from L1: write out the next six half-sessions and apply this week's merge count to them (consecutive pairs only; prefer L3+U3, then L1+U1, then L2+U2; cross-block pairs such as U1+L2 are allowed when the pointer sits mid-block, since consecutive half-sessions are always one lower and one upper).
-- Each main lift also carries a clock: days since its last H or V exposure. 0-7 days, normal; 8-21 days, hold the top-set load; over 21 days, reduce it 5-10%. Details: `progression-tracks.md`, section 8.
+- Each main lift also carries a clock: days since its last H or V exposure. 0-7 days, normal; 8-21 days, hold the top-set load; over 21 days, reduce it 5-10%. The table, and its exceptions for a regain-phase lift and for a substitute, are in `progression-tracks.md`, section 8.
 
 ## Switching rules in brief
 
@@ -72,7 +77,7 @@ The pointer is the next half-session you owe. Write it at the top of your log.
 - Cardio: on rest days in 3- and 4-day weeks; after U1, U2 or U3 in 5- and 6-day weeks, 20-30 min, cycling or incline walking, never before a lower session.
 - Runs (if you run): lift first on lower days, run 6 h later (3 h minimum); long and quality runs at least 48 h before L1, L2, Full A or Full B; easy runs anywhere, upper days first. Example layouts per week type: `guide/03-flexible-scheduling.md`, section 7.
 - Race week (any template): back-off and accessory sets on lower slots about halved from R-7; last heavy lower at R-4; no lower lifting R-3 to R-1. After the race: upper from R+2; first lower at R+3, preferably the deadlift or a volume slot, top set capped at RPE 7 with 1-2 back-offs; first squat H at R+4 or later; a below-plan top set is a hold, not a miss. Full rule: `guide/03-flexible-scheduling.md`, section 4.7.
-- Logging: load, reps and RPE for every set; the track state for each main lift; bodyweight, sleep and a 1-5 readiness score per session. Format in `progression-tracks.md`, section 10.
+- Logging: load and reps for every set; one RPE rating per main lift, on the top set (ratings on other sets are optional); the track state for each main lift; bodyweight, sleep and a 1-5 readiness score per session. Format in `progression-tracks.md`, section 10.
 
 ## Flags
 

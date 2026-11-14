@@ -1,6 +1,6 @@
 # 05. Exercise selection and session design
 
-Last updated: 2026-11-10 (section 7.2 rule 4 relaxed for a busy gym; section 7.4 added: ranked fallbacks per main lift). Earlier: 2026-10-21 (section 5 ramp shortened the same day)
+Last updated: 2026-11-13 (squat depth note softened, with a pain line; "design spine" references now point at the numbered rules in `guide/00-overview.md` and at `guide/01-training-principles.md`). Earlier: 2026-11-10 (section 7.2 rule 4 relaxed for a busy gym; section 7.4 added: ranked fallbacks per main lift); 2026-10-21 (section 5 ramp shortened the same day)
 
 > **Revision 2026-10-21.** Brought in line with the primary-source check in `research/exercise-selection-and-session-design.md`, section "Addendum 2026-10-21: primary-source verification" (Corrections, New evidence, Implications for the guide). Main changes: lateral raise cued with neutral rotation; overhead press credited with medial-delt activation; overhead extension made the default for all triceps heads; the long-length rule restated with pooled data; soleus, calf-partial, squat-depth, exercise-order, rest, warm-up, superset and free-weight evidence corrected; a unilateral-substitution rule added (section 7.2); several citations upgraded from secondary to primary or renamed to the correct first author.
 
@@ -11,7 +11,7 @@ Evidence base: `research/exercise-selection-and-session-design.md` (KQ1-KQ9). Tw
 - Most "best exercise" claims rest on single small trials (n = 14-63, often untrained or women-only) or on EMG, and EMG has repeatedly failed to predict growth (Plotkin 2023; the incline/flat pec data). Treat exercise-specific effect sizes as low-to-moderate confidence unless a row says otherwise.
 - Several primary texts could not be fetched when the note was compiled. The 2026-10-21 addendum verified most of them against the primary record; items still resting on abstracts, preprints or secondary reviews are flagged "secondary" or "unverified" below.
 
-Program-wide defaults from the design spine that this chapter builds on: rest 2-3 min on compounds and 60-90 s on isolation; 0-3 reps in reserve (RIR) on working sets with 1-2 RIR the default on compounds; main-lift strength work at 3-6 reps and about 75-90% 1RM; hypertrophy work at 6-12 reps (up to 15-20 on isolation) as long as sets are hard.
+Program-wide defaults that this chapter builds on (`guide/00-overview.md`, rules 3, 4 and 5): rest 2-3 min on compounds and 60-90 s on isolation; 0-3 reps in reserve (RIR) on working sets with 1-2 RIR the default on compounds; main-lift strength work at 3-6 reps and about 75-90% 1RM; hypertrophy work at 6-12 reps (up to 15-20 on isolation) as long as sets are hard.
 
 ---
 
@@ -38,7 +38,7 @@ Evidence behind the "missed" column (research note KQ1):
 - Reverse pec deck produced much higher posterior deltoid activity than incline pulldown or seated row (Barbell Medicine EMG synthesis, https://www.barbellmedicine.com/blog/best-rear-delt-exercises/; practitioner source).
 - Standing (knee-extended) calf raise grew lateral gastrocnemius 12.4% vs 1.7% and medial gastrocnemius 9.2% vs 0.6% compared with seated, 12 weeks, 14 untrained adults, within-subject, MRI. Soleus growth was similar: +2.1% standing vs +2.9% seated (p = 0.41) (Kinoshita, Maeo et al. 2023, Frontiers in Physiology, https://www.frontiersin.org/articles/10.3389/fphys.2023.1272106/full).
 
-How this changes with available days: the patterns do not change. In a 3-day week every pattern still appears at least twice (spine rule 3, see chapter 03); what shrinks is the number of isolation additions per session, not the pattern coverage.
+How this changes with available days: the patterns do not change. In a 3-day week every pattern still appears at least twice (`guide/00-overview.md`, rule 2; see chapter 03); what shrinks is the number of isolation additions per session, not the pattern coverage.
 
 ---
 
@@ -108,7 +108,7 @@ Order template for any session (research note KQ3):
 3. Secondary compound (opposite pattern or unilateral).
 4. Isolation work for the undertrained muscles in section 2. These tolerate fatigue and short rest.
 
-Because hypertrophy is order-insensitive, putting an isolation exercise first for a lagging muscle costs no growth and improves strength on that exercise. The trade-off is strength on whatever moves later, so do not put it ahead of a main lift whose track you are pushing. The main lifts keep their progression tracks regardless of slot (spine rule 2), but a main lift placed later in a session will feel heavier at the same load; see chapter 03 for how the progression handles a missed rep target.
+Because hypertrophy is order-insensitive, putting an isolation exercise first for a lagging muscle costs no growth and improves strength on that exercise. The trade-off is strength on whatever moves later, so do not put it ahead of a main lift whose track you are pushing. The main lifts keep their progression tracks regardless of slot (`guide/00-overview.md`, rule 6), but a main lift placed later in a session will feel heavier at the same load; see chapter 03 for how the progression handles a missed rep target.
 
 How this changes with available days: in a 3-day week items 1-3 are usually two main lifts plus one secondary compound, and item 4 is 1-2 paired isolations. In a 5-6-day week a session can be a single main lift plus three or four accessories, and weak-point priority rotates across days.
 
@@ -124,7 +124,7 @@ Evidence (research note KQ4):
 
 | Goal / exercise type | Rest between straight sets | Tempo | Rationale |
 |---|---|---|---|
-| Main-lift strength work (3-6 reps, ~75-90% 1RM) | 2-3 min default (spine rule 6); extend to 3-5 min for a near-maximal top set if the next set would otherwise lose reps | Controlled eccentric, explosive concentric | Schoenfeld 2016 strength advantage for 3 min over 1 min; load maintenance |
+| Main-lift strength work (3-6 reps, ~75-90% 1RM) | 2-3 min default (`guide/00-overview.md`, rule 5); extend to 3-5 min for a near-maximal top set if the next set would otherwise lose reps | Controlled eccentric, explosive concentric | Schoenfeld 2016 strength advantage for 3 min over 1 min; load maintenance |
 | Hypertrophy compound (6-12 reps) | 2-3 min on main lifts and heavy free-weight compounds; about 90 s or more acceptable on other compounds (machine press, leg press, cable row) when reps hold | 2-3 s eccentric, 1 s concentric, brief pause at the stretch | 2-3 min is for keeping load and reps across sets (Schoenfeld 2016 strength and thigh data), not for extra growth: Singer 2024 found no hypertrophy benefit beyond about 90 s. Any 0.5-8 s rep is fine |
 | Hypertrophy isolation (10-20 reps) | 60-90 s; lean toward 90 s if reps drop sharply at 60 s | 2-3 s eccentric with a brief stretch pause | Singer 2024: small benefit above 60 s, none detectable beyond 90 s. Rest matters less when load and volume are easy to maintain |
 | Antagonist paired sets | 60 s between the pair's two exercises, 2 min between pairs | As above | Maia et al. 2014 (acute, reps only, n = 15); paired-set rest study |
@@ -189,12 +189,12 @@ Arithmetic from the research note (KQ6, Inferences; these per-exercise times are
 | 60 min | 2 compounds x 3-4 sets + 2 isolations x 3 sets (about 14 sets), 4 exercises | 2 compounds + 3-4 paired accessories (about 18-20 sets), 5-6 exercises | Typical upper/lower or full-body day |
 | 90 min | 3 compounds x 3-4 sets + 3 isolations x 3 sets (about 20 sets), 6 exercises | 3 compounds + 4-5 paired accessories (about 24-26 sets), 7-8 exercises | Body-part or push/pull/legs day |
 
-Per-muscle ceiling: the spine caps a session at about 8-10 hard sets for one muscle; the per-session plateau of about 11 fractional sets in the Remmert et al. preprint (unpublished; values confirmed by the FAU press release and the authors' data files) agrees. Extra weekly volume goes on another day, which is the whole reason the 5-6-day rotation exists (see chapter 03).
+Per-muscle ceiling: the program caps a session at about 8-10 hard sets for one muscle (`guide/01-training-principles.md`, section 2); the per-session plateau of about 11 fractional sets in the Remmert et al. preprint (unpublished; values confirmed by the FAU press release and the authors' data files) agrees. Extra weekly volume goes on another day, which is the whole reason the 5-6-day rotation exists (see chapter 03).
 
 How this changes with available days:
 
-- 3-day week: every muscle twice, 3-5 sets per muscle per session (spine). That means more exercises per session, so plan on 60-90 min and pair every accessory. A 45-min session in a 3-day week covers the main lifts only and drops accessories first (spine rule 4).
-- 5-6-day week: 5-8 sets per muscle per session (spine), fewer muscles per session, so 45-60 min sessions are normal and straight sets are affordable.
+- 3-day week: every muscle twice, 3-5 sets per muscle per session (`guide/01-training-principles.md`, section 1). That means more exercises per session, so plan on 60-90 min and pair every accessory. A 45-min session in a 3-day week covers the main lifts only and drops accessories first (`guide/00-overview.md`, rule 8).
+- 5-6-day week: 5-8 sets per muscle per session (`guide/01-training-principles.md`, section 1), fewer muscles per session, so 45-60 min sessions are normal and straight sets are affordable.
 
 ### 6.3 Superset and paired-set rules
 
@@ -283,14 +283,14 @@ Evidence (research note KQ8):
 
 | Tier | Examples | Rotation rule | Why |
 |---|---|---|---|
-| Primary strength lifts | Squat, bench press, deadlift, overhead press, the main row, the main pull-up/pulldown | Fixed for a 4-12 week block. Change variants (pause squat, close-grip bench) only at a block boundary, and only one at a time | These carry the progression tracks (spine rule 2); strength is specific to the exercise and ROM |
+| Primary strength lifts | Squat, bench press, deadlift, overhead press, the main row, the main pull-up/pulldown | Fixed for a 4-12 week block. Change variants (pause squat, close-grip bench) only at a block boundary, and only one at a time | These carry the progression tracks (`guide/00-overview.md`, rule 6); strength is specific to the exercise and ROM |
 | Hypertrophy compounds | Flat and incline press; back squat and leg press; RDL and hip thrust | 1-2 variants per pattern per week, constant within a block | Regional growth differs by variant (incline vs flat; deep vs half squat) |
 | Isolation / accessory | Curls, triceps extensions, lateral and rear-delt raises, leg curls, calf raises | Rotate every 4-8 weeks or when double progression stalls. Swap for a variant that changes the region or the muscle length (preacher <-> incline curl; seated curl <-> RDL), not a redundant one | Kassiano 2022; Fonseca 2014 |
 | Session-to-session random choice | Picking a different curl each day | Allowed for motivation; expect no growth advantage and possibly blunted growth in some regions | Baz-Valle 2019 |
 
 No study defines an optimal rotation interval in weeks; the 4-12 week figure follows block-length conventions. The variation studies are mostly in young men.
 
-How this changes with available days: variation policy is per block, not per week. A 3-day week inside a block keeps the same exercises as the 5-6-day weeks and simply drops accessories (spine rule 4); it is not a reason to change exercises. Templates in `templates/` list which accessories are cut first.
+How this changes with available days: variation policy is per block, not per week. A 3-day week inside a block keeps the same exercises as the 5-6-day weeks and simply drops accessories (`guide/00-overview.md`, rule 8); it is not a reason to change exercises. Templates in `templates/` list which accessories are cut first.
 
 ---
 
@@ -308,7 +308,7 @@ Coaching sources converge on a short list of faults per lift and recommend givin
 | Pull-up* | Shoulder-width or slightly wider grip; full hang with scapulae depressed | Start by pulling the shoulder blades down; drive elbows to the ribs; chin over the bar; control the eccentric | Kipping or half ROM -> band assistance to full ROM; shrugging -> depress the scapulae first |
 | Romanian deadlift | Soft knees; bar against the thighs; lats tight | Push hips back until the hamstrings stretch; bar glides down the thighs; spine neutral; return by driving the hips forward | Squatting the RDL -> knees fixed, hips back; rounding -> stop at the hamstring stretch; bar drifts away -> lats, bar on thighs (Acibadem RDL article; secondary) |
 
-Squat depth note: full-depth squats are safe, grew glutes and adductors more than half squats (Kubo 2019), and transferred better to all tested depths, while half squats brought more pain and stiffness (Pallares 2020). Half squats were not shown to be best even for half-squat strength (Kubo 2019, p = 0.132). Depth is limited by mobility and by the per-rep loading, not by a safety rule.
+Squat depth note: in the trials cited, full-depth squatting showed no safety cost. It grew glutes and adductors more than half squats (Kubo 2019) and transferred better to all tested depths, and it was the half-squat group that reported more pain and stiffness (Pallares 2020; 53 trained men, 10 weeks). These were healthy lifters over weeks; neither trial was designed to measure injury, and neither included people with knee, hip or back problems. Half squats were not shown to be best even for half-squat strength (Kubo 2019, p = 0.132). So depth is limited by mobility and by the per-rep loading, not by a blanket rule against deep squats. If squatting deep hurts, or pain changes how you move, work in the pain-free range and see a physiotherapist or physician if it persists. This is general training guidance, not medical advice.
 
 ---
 
@@ -326,7 +326,7 @@ Research note: `research/exercise-selection-and-session-design.md`
 - Section 8 (variation): KQ8
 - Section 9 (technique): KQ9
 
-Program defaults (rest, RIR, rep ranges, per-session set ceilings, volume-cut rule): design spine and `research/frequency-volume-intensity-evidence.md` via chapter 03.
+Program defaults: `guide/00-overview.md`, rules 3-5 (rep ranges, RIR, rest) and 8 (volume-cut rule); `guide/01-training-principles.md`, sections 1-2 (per-session set ranges and ceiling); and `research/frequency-volume-intensity-evidence.md` via chapter 03.
 
 Key primary citations:
 

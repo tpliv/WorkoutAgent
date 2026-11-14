@@ -1,3 +1,21 @@
+/// STATUS, 2026-11-13: UNMAINTAINED ALTERNATIVE. THIS FILE NO LONGER MATCHES THE PROGRAM.
+/// Do not train from it as it stands. The program runs in Hevy (tools/README.md).
+/// Last rendered 2026-10-21, last touched 2026-10-26; nothing re-renders it. What differs:
+///   - Units and loads: kg with the worked-example loads. The program runs in pounds with
+///     the lifter's loads (data/tracks.json).
+///   - Steps: lp(2.5kg) and lp(1kg) on every success. The program: +5 lb squat and deadlift;
+///     bench and press +5 lb on every second success (step counter).
+///   - Missing rules of 2026-11-06 (effective RPE, top set up to 6 reps, big step, re-anchor,
+///     regain phase, deadlift caution, rep-out) and of 2026-11-10 (busy-gym substitutes,
+///     moved top set, row and pulldown variants that count).
+///   - Sessions: the six split days only. No Full A/B/C, no cross-block merges.
+///   - Exercises and rests: plain lunge (program: reverse lunge); pull-up with added load
+///     (program: lat pulldown, V at 90% of the track load); superset rests differ from
+///     templates/rotation.json (60 s, then 120 s on the last member).
+/// To use Liftosaur, re-render from templates/rotation.json and
+/// templates/progression-tracks.md first. Details: README.md in this folder.
+/// Everything below this notice is unchanged since 2026-10-26.
+///
 /// WorkoutTrainer rotation for Liftosaur: L1 -> U1 -> L2 -> U2 -> L3 -> U3 -> L1 ...
 /// Rendered 2026-10-21 from templates/6-day-week.md, templates/rotation.json and
 /// templates/progression-tracks.md. Revised 2026-10-21 against the official Liftoscript

@@ -1,6 +1,27 @@
 # Liftosaur rendering of the rotation
 
-Last updated: 2026-10-21 (revised the same day against the official Liftoscript doc, the grammar file and the built-in exercise list; `research/mobile-workout-trackers.md`, addendum "official-source verification")
+Last updated: 2026-11-13 (status notice: unmaintained, no longer matches the program; nothing else changed). Earlier: 2026-10-21 (revised the same day against the official Liftoscript doc, the grammar file and the built-in exercise list; `research/mobile-workout-trackers.md`, addendum "official-source verification")
+
+## Status: unmaintained alternative (notice added 2026-11-13)
+
+**Do not train from `rotation.liftoscript` as it stands. It no longer matches the program.** The program runs in Hevy (`tools/README.md`; `guide/07-tracking-and-apps.md`, section 3.2). This file was rendered on 2026-10-21, last touched on 2026-10-26, and nothing re-renders it. To use Liftosaur, re-render it first from `templates/rotation.json` (sessions) and `templates/progression-tracks.md` (rules).
+
+| What | In this folder | In the program today |
+|---|---|---|
+| Units and loads | Kilograms; the worked-example loads of `guide/03-flexible-scheduling.md`, section 6 | Pounds; the lifter's loads in `data/tracks.json` |
+| Steps | `lp(2.5kg)` squat and deadlift, `lp(1kg)` bench and press, on every success | +5 lb squat and deadlift; bench and press +5 lb on every second success (step counter) |
+| Rules added 2026-11-06 | None | Effective RPE (top set up to 6 reps, unrated sets), big step, re-anchor, regain phase, deadlift caution, rep-out (`progression-tracks.md`, sections 3, 5, 5.1-5.3) |
+| Rules added 2026-11-10 | None | Busy-gym substitutes, the moved top set, row and pulldown variants that count (`progression-tracks.md`, section 9) |
+| Sessions | The six split sessions | 12 in `rotation.json`: also Full A, Full B, Full C and the cross-block merges U1 + L2, U2 + L3, U3 + L1 |
+| Exercises | Day 3: a plain dumbbell lunge. Days 4 and 6: pull-up with added load. Day 5: hanging leg raise | Reverse lunge. The pull-up track runs on the lat pulldown. Cable crunch first |
+| Superset rests | 60 s or 75 s on every member | 60 s on each member but the last, 120 s on the last |
+| Pull-up V load | Added load cut by hand to reach RPE 7 | 90% of the track load in the routine |
+| Accessory stall | Drop 5% | Drop one load step (`progression-tracks.md`, section 11) |
+| Re-rendering | "At every block boundary" (below) | Not done since October 2026 |
+
+The rest of this README is left as written on 2026-10-21. It is still a sound record of the Liftoscript syntax check. Where it describes the program's rules or says an agent re-renders the file, the table above replaces it.
+
+---
 
 `rotation.liftoscript` is a Liftoscript version of the six half-sessions in `templates/6-day-week.md`, with the main-lift top-set and back-off structure and the accessory double progression from `templates/progression-tracks.md`, and the rest timers, warm-ups and supersets from `templates/rotation.json`. Why Liftosaur, and the alternatives: `guide/07-tracking-and-apps.md`.
 

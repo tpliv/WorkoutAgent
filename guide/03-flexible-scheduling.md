@@ -1,6 +1,6 @@
 # 03. Flexible scheduling: one program for 3-day and 6-day weeks
 
-Last updated: 2026-11-10 (section 4.3, "Station taken": reorder once, then swap; row and pulldown variants count; a missed top set moves to the lift's next session). Earlier: 2026-11-06 (section 4.7: race weeks; section 7: runs placed around the rotation); 2026-10-27 (section 4.3: station taken)
+Last updated: 2026-11-13 (section 5 restates less and points to `templates/progression-tracks.md`: miss is RPE 9.5-10, effective RPE, big step, re-anchor; section 4.4 gap table carries the regain-phase exception; sections 4.4 and 4.5 say when pain or illness needs a professional; "design spine" references now point at `guide/00-overview.md`; L2 lunge named as in `templates/rotation.json`). Earlier: 2026-11-10 (section 4.3, "Station taken": reorder once, then swap; row and pulldown variants count; a missed top set moves to the lift's next session); 2026-11-06 (section 4.7: race weeks; section 7: runs placed around the rotation); 2026-10-27 (section 4.3: station taken)
 
 **Revision 2026-10-21.** Rechecked against the primary-source verification addenda dated 2026-10-21 in `research/flexible-frequency-programming.md`, `research/frequency-volume-intensity-evidence.md`, `research/periodization-and-progression.md`, `research/splits-and-named-programs.md` and `research/exercise-selection-and-session-design.md`. Changes: the gap-modifier rationales (section 4.4) now cite primary detraining trials, and the unsupported "3-7% after one week" figure is gone; the GZCL justification for the priority stack is withdrawn (4.3); the Remmert per-session figures are confirmed (still a preprint) and Helms corroborates the ~11-set cap (2.2); Colquhoun, Saric and Johnsen are described correctly (2.1); Wendler's own variable-schedule posts replace a secondary 5/3/1 source; the superset meta-analysis is Zhang et al. 2025. **No rule number changed.**
 
@@ -8,7 +8,7 @@ Last updated: 2026-11-10 (section 4.3, "Station taken": reorder once, then swap;
 
 **The short answer:** the program is a rotation of six half-sessions. In a 6-day week each half-session is its own workout. In a 3-day week you merge them in pairs into three full-body workouts. In between, you merge some and split some. Every week from 3 to 6 days completes exactly one pass of the rotation, so every main lift gets the same two exposures and its load advances at the same pace. What changes with the day count is accessory volume and back-off sets, never the top-set loads.
 
-This chapter owns the weekly layouts, the rotation pointer, the merge and cut rules, the resume-after-a-gap rules, and how the mesocycle is counted. The per-lift progression rules are in `templates/progression-tracks.md`; the full session tables are in `templates/`. Other chapters refer here and do not prescribe their own layouts (design spine).
+This chapter owns the weekly layouts, the rotation pointer, the merge and cut rules, the resume-after-a-gap rules, and how the mesocycle is counted. The per-lift progression rules are in `templates/progression-tracks.md`; the full session tables are in `templates/`. Other chapters refer here and do not prescribe their own layouts (`guide/00-overview.md`, reading map: chapter 03 owns the weekly layouts).
 
 Units: pounds throughout (5 lb is about 2.3 kg; 2.5 lb is about 1.1 kg).
 
@@ -22,7 +22,7 @@ Units: pounds throughout (5 lb is about 2.3 kg; 2.5 lb is about 1.1 kg).
 |---|---|---|---|
 | L1 | Lower A | **Squat: heavy (H)** | Romanian deadlift, leg press or split squat, seated leg curl, calves, core |
 | U1 | Upper A | **Bench: heavy (H)**, **Row: heavy (H)** | Incline DB press, lateral raise, overhead triceps extension, face pull |
-| L2 | Lower B | **Deadlift: heavy (H)** | Front or hack squat, lunge or split squat, seated leg curl, calves, back extension or anti-rotation core |
+| L2 | Lower B | **Deadlift: heavy (H)** | Front or hack squat, reverse lunge or split squat, seated leg curl, calves, back extension or anti-rotation core |
 | U2 | Upper B | **Overhead press: heavy (H)**, **Pull-up or pulldown: heavy (H)** | Flat DB press or dips, reverse pec deck, lateral raise, incline DB curl |
 | L3 | Lower C | **Squat: volume (V)**, **Deadlift: volume (V)** | Seated leg curl, leg extension, calves, core |
 | U3 | Upper C | **Bench: volume (V)**, **Overhead press: volume (V)**, **Row: volume (V)**, **Pull-up: volume (V)** | Lateral raise, triceps pushdown, curl |
@@ -43,7 +43,7 @@ Units: pounds throughout (5 lb is about 2.3 kg; 2.5 lb is about 1.1 kg).
 | Barbell row | U1 | U3 | 2 |
 | Pull-up / pulldown | U2 | U3 | 2 |
 
-Because every 3- to 6-day week is one pass, **every main lift is trained twice a week in every week type**, and its progression track advances once per week (at the H exposure) whether the week had 3 sessions or 6. That satisfies the "main lifts 2x even in short weeks" rule in `guide/01-training-principles.md`, section 3, and the one-track-per-lift rule in the design spine.
+Because every 3- to 6-day week is one pass, **every main lift is trained twice a week in every week type**, and its progression track advances once per week (at the H exposure) whether the week had 3 sessions or 6. That satisfies the "main lifts 2x even in short weeks" rule in `guide/01-training-principles.md`, section 3, and the one-track-per-lift rule (`guide/00-overview.md`, rule 6).
 
 ### 1.3 How the four week types map onto the rotation
 
@@ -88,7 +88,7 @@ So three full-body sessions that carry the same main-lift exposures as six split
 
 ### 2.2 The per-session ceiling is why more days buy more volume
 
-Per-session hypertrophy returns become undetectable beyond about 11 fractional sets per muscle, and strength returns beyond about 2 direct sets per session (per session, not per exercise) (Remmert et al. 2025, preprint, not peer reviewed; the 11 / 2 figures are confirmed by the FAU press release and the authors' OSF data files). Two practitioner sources land in the same place: Helms' *Muscle and Strength Pyramid* (3rd ed.) caps sessions at ~11 fractional sets per muscle, and RP's current chest guide states an 8-12 set per-session maximum (`research/splits-and-named-programs.md`, addendum). Older per-exercise work does not show a hard plateau: Krieger 2010 (**older**) found hypertrophy still rising from 2-3 to 4-6 sets per exercise (NS), and Krieger 2009 (**older**) found no strength gain beyond 2-3 sets. The spine plans at 8-10 hard sets per muscle per session. A 6-day week can hold 14-20 weekly sets per muscle under that ceiling; a 3-day week cannot, so it runs 8-12. The 3-day week is deliberately lower in volume, not a compressed 6-day week (`research/frequency-volume-intensity-evidence.md`, Q2, Q7).
+Per-session hypertrophy returns become undetectable beyond about 11 fractional sets per muscle, and strength returns beyond about 2 direct sets per session (per session, not per exercise) (Remmert et al. 2025, preprint, not peer reviewed; the 11 / 2 figures are confirmed by the FAU press release and the authors' OSF data files). Two practitioner sources land in the same place: Helms' *Muscle and Strength Pyramid* (3rd ed.) caps sessions at ~11 fractional sets per muscle, and RP's current chest guide states an 8-12 set per-session maximum (`research/splits-and-named-programs.md`, addendum). Older per-exercise work does not show a hard plateau: Krieger 2010 (**older**) found hypertrophy still rising from 2-3 to 4-6 sets per exercise (NS), and Krieger 2009 (**older**) found no strength gain beyond 2-3 sets. The program plans at 8-10 hard sets per muscle per session (`guide/01-training-principles.md`, section 2). A 6-day week can hold 14-20 weekly sets per muscle under that ceiling; a 3-day week cannot, so it runs 8-12. The 3-day week is deliberately lower in volume, not a compressed 6-day week (`research/frequency-volume-intensity-evidence.md`, Q2, Q7).
 
 ### 2.3 Maintenance evidence says the short week is not a lost week
 
@@ -100,7 +100,7 @@ Per-session hypertrophy returns become undetectable beyond about 11 fractional s
 
 A 3-day week in this program runs about 50-55% of the 6-day week's sets at the same top-set loads. That is well above the maintenance floor, so it should still build. **Intensity is the lever to protect; volume is the lever to cut.**
 
-Age flag (spine): the maintenance data come from 20-35-year-olds. A lifter in their late 40s or 50s should keep short weeks at the one-half end (do not drop the optional sets in the 3-day template) and should not run two 3-day weeks in a row without good reason.
+Age flag (`guide/00-overview.md`, below the rules table): the maintenance data come from 20-35-year-olds. A lifter in their late 40s or 50s should keep short weeks at the one-half end (do not drop the optional sets in the 3-day template) and should not run two 3-day weeks in a row without good reason.
 
 ### 2.4 Caveats
 
@@ -122,7 +122,7 @@ Age flag (spine): the maintenance data come from 20-35-year-olds. A lifter in th
 
 Notes. "Hard sets" counts direct sets plus half credit for indirect work (a pressing set counts 0.5 for triceps; a row 0.5 for biceps and rear delts), as in `guide/01-training-principles.md`, section 1. Session lengths use the time budget in `guide/05-exercise-selection.md` (a compound set with 2-3 min rest costs about 3 min; an isolation set about 2 min; paired accessories about 2.25 min per set; plus about 5-6 min warm-up; the ranges below were set with the earlier 8-min warm-up, so sessions may run 2-3 min shorter). Exact per-muscle tallies are at the bottom of each template.
 
-Why frequency reads "3x" everywhere: every block contains every muscle, and every 3- to 6-day week does all three blocks. The spine's minimum (2x in a 3-day week, 2-3x in a 5-6-day week) is met with margin. Small muscles get two direct exposures in a 3-day week plus indirect credit from the compounds.
+Why frequency reads "3x" everywhere: every block contains every muscle, and every 3- to 6-day week does all three blocks. The minimum in `guide/00-overview.md`, rule 2 (2x in a 3-day week, 2-3x in a 5-6-day week) is met with margin. Small muscles get two direct exposures in a 3-day week plus indirect credit from the compounds.
 
 ---
 
@@ -203,14 +203,14 @@ How it changes with available days: in a 5- or 6-day week the moved top set land
 | Days since the lift was last trained | What to do with the top-set load | Back-offs | Why |
 |---|---|---|---|
 | 0-7 | Normal rule: take the planned increment if the last top set earned it | Normal | Inside the normal exposure spacing. Two weeks with no training at all produced no significant 1RM loss in power athletes (Hortobágyi et al. 1993, **older**: bench -1.7%, squat -0.9%) or trained men (Hwang et al. 2017). Caution: a 1-week break mid-program probably slowed lower-body strength *gains* (Coleman et al. 2024) |
-| 8-14 | **Hold.** Repeat the last top-set load; no increment this exposure. If it comes in at RPE <= 7.5, take the increment next exposure | Normal | Detraining is not measurable at this range (Hortobágyi 1993; Hwang 2017), but the skill is slightly stale; hold, let the RPE confirm |
+| 8-14 | **Hold.** Repeat the last top-set load; no increment this exposure. If it comes in at RPE <= 7.5, take the increment next exposure. **Exception:** a lift in the regain phase takes its planned load; this row does not apply to it (`templates/progression-tracks.md`, sections 5.1 and 8) | Normal | Detraining is not measurable at this range (Hortobágyi 1993; Hwang 2017), but the skill is slightly stale; hold, let the RPE confirm |
 | 15-21 | **Hold** the last load; one fewer back-off set | One fewer | Approaching the ~3-week line after which strength decays faster (McMaster et al. 2013, **older**, review of elite rugby and American-football players; the source of Nippard's "3 weeks" line). Three weeks off cost no significant 1RM in Ogasawara et al. 2011 (**older**) |
 | 22-28 | **Reduce 5%.** First exposure capped at RPE 7; resume normal rules from the second exposure | Normal count | Four weeks of complete cessation after a 16-week program cut maximal strength 6-9% (Izquierdo et al. 2007, **older**, peer reviewed) |
 | > 28 | **Reduce 10%.** First exposure at RPE 6-7 (3-4 RIR), second at RPE 7-8, then normal rules | Normal count | Adapted from Nippard's comeback guidance, which is less conservative here than its source: Nippard's intro phase (compounds at RPE <= 5, about 50-60% of the old 1RM for 4-6 reps) is meant for multi-week to multi-month layoffs. Losses after long breaks are regained quickly (Halonen et al. 2024) |
 
-"Hold" versus "reduce": hold the load for gaps of 8-21 days; reduce it for gaps over 21 days. The 8-21-day hold is a **conservative convention**, an RPE check on a stale skill: the short-gap trials above show no measurable strength loss at these gaps, so the hold costs at most one increment. For a whole-program layoff of many weeks, expect the first > 28-day exposure to feel harder than RPE 6-7 and let the RPE cap, not the 10% figure, set the load. The modifier is applied at an H exposure. If a V exposure is the first thing a lift does after a gap of 8 or more days, do it as written (it is already at 90% of the track load) and it resets the clock, so the H exposure that follows runs the normal rule; the V sets are the re-greasing the gap needs. This table is an inference from detraining studies of complete cessation; no source quantifies progression adjustments by days since exposure (`research/flexible-frequency-programming.md`, KQ6 gaps). The RPE cap on the top set makes the table self-correcting: if the held load is easy, the next increment follows; if it is hard, you hold again.
+"Hold" versus "reduce": hold the load for gaps of 8-21 days; reduce it for gaps over 21 days. The 8-21-day hold is a **conservative convention**, an RPE check on a stale skill: the short-gap trials above show no measurable strength loss at these gaps, so the hold costs at most one increment. For a whole-program layoff of many weeks, expect the first > 28-day exposure to feel harder than RPE 6-7 and let the RPE cap, not the 10% figure, set the load. The modifier is applied at an H exposure. If a V exposure is the first thing a lift does after a gap of 8 or more days, do it as written (it is already at 90% of the track load) and it resets the clock, so the H exposure that follows runs the normal rule; the V sets are the re-greasing the gap needs. `templates/progression-tracks.md` section 8 holds the canonical table. It carries two exceptions: the regain-phase one in the 8-14-day row above (sections 5.1 and 8), and a substitute logged during the gap, which caps the modifier at a hold (section 9; 4.3 step 5 above). This table is an inference from detraining studies of complete cessation; no source quantifies progression adjustments by days since exposure (`research/flexible-frequency-programming.md`, KQ6 gaps). The RPE cap on the top set makes the table self-correcting: if the held load is easy, the next increment follows; if it is hard, you hold again.
 
-If the whole program stopped for more than 3 weeks (illness, travel), treat the first week back as a 3-day week with the modifiers above, whatever your day count, and do not count it toward the block (section 5).
+If the whole program stopped for more than 3 weeks (illness, travel), treat the first week back as a 3-day week with the modifiers above, whatever your day count, and do not count it toward the block (section 5). If you are coming back from an illness and still have symptoms, see a physician before you resume; this is general training guidance, not medical advice.
 
 ### 4.5 When a short week is a deload, and when it is not
 
@@ -222,7 +222,9 @@ Treat a week (short or long) as a deload when **any** of these holds:
 2. Two or more readiness red flags have persisted for a week: reps down or RPE up at the same load on two consecutive exposures of a lift; mood or perceived recovery worse on most days; sleep efficiency down; joint pain that does not clear between sessions (`guide/06-recovery-nutrition-cardio.md`, section 2; `guide/04-periodization-and-progression.md`, section 3).
 3. The short week is caused by illness.
 
-A deload week in this program (spine item 5; Bell 2023 Delphi; Rogerson 2024; Coleman 2024):
+A deload manages training fatigue. It does not treat pain or illness. Pain that changes how you move, or that persists between sessions, and any return from illness while symptoms remain: see a physician or physiotherapist (`guide/06-recovery-nutrition-cardio.md`, section 8).
+
+A deload week in this program (`guide/00-overview.md`, rule 7; Bell 2023 Delphi; Rogerson 2024; Coleman 2024):
 
 - **Keep the frequency** of the week you have (3, 4, 5 or 6 sessions). Do not take the week off: a full week of rest mid-block probably cost lower-body strength gains in the only RCT (Coleman 2024; posterior probability 0.85 for squat 1RM, 0.92 for isometric strength), with no hypertrophy difference. Surveyed athletes also keep frequency during deloads (Rogerson et al. 2024: about 6.4 days every 5.6 weeks).
 - **Top sets at RPE 6-7**: about 8-10% below the current track load, same reps. The track does not advance; after the deload resume at the pre-deload load.
@@ -276,9 +278,9 @@ Added 2026-11-06 for races of 10 miles to a half marathon (about 60-120 min). So
 
 ## 5. Progression stays on one track per lift
 
-Each main lift has one track (`templates/progression-tracks.md`): a current top-set load, a rep target, an exposure counter, a miss counter, and an e1RM history.
+Each main lift has one track (`templates/progression-tracks.md`): a current top-set load, a rep target, a miss counter, the date of its last exposure, and an e1RM history. That file holds the rules. This section says how they meet the schedule and does not copy the decision table.
 
-- **The track updates at the H exposure.** If the top set hits 4 reps at RPE <= 8, the load rises for the next H exposure (+5 lb squat and deadlift; bench and press +5 lb after every second success, because the smallest plate is 2.5 lb and every barbell load is a multiple of 5 lb; `templates/progression-tracks.md` section 5, step counter). RPE 8.5-9: hold. Missed reps or RPE 10: hold and count a miss. Two misses in a row at one load: stall rule (reset 7.5% and rebuild, with a rep-zone change on a second stall).
+- **The track updates at the H exposure**, from the top set only (`templates/progression-tracks.md`, section 5). The set is read at its effective RPE at rep 4. In short: 7.5-8 earns the step (+5 lb squat and deadlift; bench and press +5 lb on every second such set, the step counter); 8.5-9 is a hold; 9.5-10, or 3 reps or fewer, is a hold and a miss; two misses in a row at one load is a stall (section 6). The big step, the re-anchor, the regain phase, the deadlift caution and the rep-out are in sections 5 and 5.1-5.3.
 - **The V exposure reads from the track.** Its sets are 90% of the current top-set load. It does not change the load, but it is an exposure for the gap clock and its sets are logged for the e1RM trend.
 - **A moved top set** (section 4.3, "Station taken") turns the next V exposure into the H exposure for that pass. The track updates there, judged by RPE.
 - **Day count never touches the track.** A 3-day week and a 6-day week each contain exactly one H and one V exposure per lift, so loads advance at one step per week in both. The only main-lift variables that change with the day count are the number of back-off sets (3 in a split session, 2 in a merged one) and the number of V sets (4 versus 3).
@@ -286,7 +288,7 @@ Each main lift has one track (`templates/progression-tracks.md`): a current top-
 - **The block clock is counted in passes.** A block is 4-6 passes plus a deload pass. For any 3- to 6-day week a pass equals a calendar week, so "week 5 of the block" means the same thing on the calendar and in the log. A 2-day week or a missed session stretches a pass, and the block stretches with it. (This is the counting rule `guide/04-periodization-and-progression.md`, section 4, defers to; because every 3- to 6-day week completes a pass, a 3-day week does not take two calendar weeks to finish an exposure wave in this program.)
 - **Accessories** progress by double progression within their rep range (reps up to the top of the range on all sets, then load up and reps back down), whatever week type they appear in. A 3-day week does not reset an accessory's load; it only skips some of its sets.
 
-How a missed rep target is handled (the question `guide/05-exercise-selection.md`, section 3, points here): a main lift placed later in a merged session may miss a rep at a load it made last week. That counts as a miss for the stall rule only if the top set was taken fresh in the usual slot. In a merged session, the top set of the second and third main lifts is judged by RPE: if it reaches RPE 9-10 for 4 reps, log it as "hold," not as a miss, and do not count it toward the stall rule.
+How a missed rep target is handled (the question `guide/05-exercise-selection.md`, section 3, points here): a main lift placed later in a merged session may miss a rep at a load it made last week. That counts as a miss for the stall rule only if the top set was taken fresh in the usual slot. In a merged session, the top set of the second and third main lifts is judged by RPE: if it reaches RPE 9.5-10 for 4 reps (a miss in a split session), log it as "hold," not as a miss, and do not count it toward the stall rule (`templates/progression-tracks.md`, section 3).
 
 ---
 
@@ -329,7 +331,7 @@ What the example shows:
 
 ## 7. Where cardio goes
 
-Spine item 8: 2-3 sessions per week toward 150 min moderate; lift before cardio in the same session or separate by 3 or more hours. Evidence and doses: `guide/06-recovery-nutrition-cardio.md`, section 5.
+`guide/00-overview.md`, rule 9: 2-3 sessions per week toward 150 min moderate; lift before cardio in the same session or separate by 3 or more hours. Evidence and doses: `guide/06-recovery-nutrition-cardio.md`, section 5.
 
 **If you run** (rewritten 2026-11-06; `research/running-and-lifting.md` KQ4-KQ5, inference from the evidence cited there). The runs are the cardio. At 2-4 runs a week the cost to lifting is mostly fatigue, and it comes mainly from doing both in the same session: in trained lifters, concurrent training cut lower-body 1RM gains by ES -0.66 in the same session and -0.10 (not significant) in separate sessions (Petré 2021). Slot types: heavy lower = L1, L2, Full A, Full B; volume lower = L3, Full C; upper = U1, U2, U3.
 
