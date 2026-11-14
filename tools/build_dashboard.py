@@ -38,6 +38,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 from analyze_history import epley  # noqa: E402
+from hevy_push_routines import gap_modifier  # noqa: E402
 from localtime import local_today  # noqa: E402
 from update_tracks import load_sessions, matcher  # noqa: E402
 
@@ -86,9 +87,31 @@ TARGETS = {0: None, 1: (4, 6), 2: (4, 6), 3: (8, 12), 4: (10, 14), 5: (14, 17), 
 
 LIFT_ORDER = ["squat", "bench", "deadlift", "press", "row", "pullup"]
 
+# Hevy's exercise type for assisted bodyweight work (the logged number is the
+# assistance, not a load, so it adds no tonnage). Hevy spells it
+# "bodyweight_assisted"; the older spelling is kept in case a map still has it.
+ASSISTED_TYPES = ("bodyweight_assisted", "assisted_bodyweight")
+
 
 def monday(d):
     return d - dt.timedelta(days=d.weekday())
+
+
+def track_gap(t, today):
+    """(days, band, last date) for a program track, from the same function the
+    routine renderer uses, so the page and the routine cannot disagree: section
+    8 with the regain exemption (5.1) and the substitute cap (9)."""
+    last = (t.get("last_exposure") or {}).get("date")
+    if not last:
+        return None, gap_band(None), None
+    days = (today - dt.date.fromisoformat(last)).days
+    _load, _bo, note = gap_modifier(t, today)
+    if not note:
+        return days, {"key": "normal", "label": "Normal"}, last
+    text = note.split(": ", 1)[1] if ": " in note else note
+    key = ("normal" if "regain" in text else "hold-" if "one fewer" in text else "hold" if "holding" in text
+           else "reduce5" if "5%" in text else "reduce10")
+    return days, {"key": key, "label": text[:1].upper() + text[1:]}, last
 
 
 def gap_band(days):
@@ -178,7 +201,7 @@ def build(history, tracks, aliases, muscles, today, track_log=()):
             load, reps = r["_w"], int(r["_reps"] or 0)
             w["sets"] += 1
             w["reps"] += reps
-            if load and load > 0 and reps > 0 and info.get("type") != "assisted_bodyweight":
+            if load and load > 0 and reps > 0 and info.get("type") not in ASSISTED_TYPES:
                 w["tonnage"] += load * reps
             for g, c in set_credit(info).items():
                 w["muscles"][g] += c
@@ -191,8 +214,10 @@ def build(history, tracks, aliases, muscles, today, track_log=()):
                 est = epley(load, reps, r["_rpe"])
                 cur = w["lifts"].get(lift)
                 if cur is None or est > cur["e1rm"]:
+                    # a better set replaces the week's best, but the set count and top load carry over
                     cur = w["lifts"][lift] = {"e1rm": est, "load": load, "reps": reps, "rpe": r["_rpe"], "date": date,
-                                              "exercise": ex, "top_load": load, "top_reps": reps, "sets": 0}
+                                              "exercise": ex, "top_load": cur["top_load"] if cur else load,
+                                              "top_reps": cur["top_reps"] if cur else reps, "sets": cur["sets"] if cur else 0}
                 if load > cur["top_load"] or (load == cur["top_load"] and reps > cur["top_reps"]):
                     cur["top_load"], cur["top_reps"] = load, reps
                 cur["sets"] += 1
@@ -250,6 +275,12 @@ def build(history, tracks, aliases, muscles, today, track_log=()):
         trained = [w for w in out_weeks if lift in w["lifts"]]
         last_date = lift_last.get(lift)
         gap = (today - dt.date.fromisoformat(last_date)).days if last_date else None
+        band = gap_band(gap)
+        if lift in track_map:
+            # the track's own clock counts variants and substitutes; the history match above does not
+            t_gap, t_band, t_last = track_gap(track_map[lift], today)
+            if t_last and (not last_date or t_last >= last_date):
+                last_date, gap, band = t_last, t_gap, t_band
         latest = trained[-1]["lifts"][lift] if trained else None
         best = max((w["lifts"][lift]["e1rm"] for w in trained), default=None)
         recent = [w["lifts"][lift]["e1rm"] for w in trained[-6:]]
@@ -257,7 +288,7 @@ def build(history, tracks, aliases, muscles, today, track_log=()):
         if len(recent) >= 6:
             block = round(sum(recent[-3:]) / 3 - sum(recent[:3]) / 3, 1)
         lift_rows.append({"key": lift, "name": track_map.get(lift, {}).get("name", lift.title()),
-                          "last_date": last_date, "gap_days": gap, "gap": gap_band(gap),
+                          "last_date": last_date, "gap_days": gap, "gap": band,
                           "latest": latest, "latest_week": trained[-1]["week"] if trained else None,
                           "best_e1rm": best, "block_change": block})
 
@@ -292,13 +323,12 @@ def build(history, tracks, aliases, muscles, today, track_log=()):
         t = track_map.get(lift)
         if not t:
             continue
-        last = (t.get("last_exposure") or {}).get("date")
-        gap = (today - dt.date.fromisoformat(last)).days if last else None
+        gap, band, last = track_gap(t, today)
         track_cards.append({
             "key": lift, "name": t.get("name"), "scheme": t.get("scheme"), "next_load": t.get("top_set_lb"),
             "last_h_load": t.get("last_h_load_lb"), "rep_target": t.get("rep_target"), "rep_range": t.get("rep_range"),
             "miss_counter": t.get("miss_counter", 0), "stalls": t.get("stalls", 0), "work_up": bool(t.get("work_up")),
-            "last_exposure": t.get("last_exposure"), "gap_days": gap, "gap": gap_band(gap),
+            "last_exposure": t.get("last_exposure"), "gap_days": gap, "gap": band,
             "e1rm_history": t.get("e1rm_history", []),
         })
 

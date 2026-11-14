@@ -985,7 +985,7 @@ class PullNoNews(unittest.TestCase):
 class Dashboard(unittest.TestCase):
     MUSCLES = {"Squat (Barbell)": {"primary": "quadriceps", "secondary": ["glutes", "hamstrings"], "type": "weight_reps"},
                "Bench Press (Barbell)": {"primary": "chest", "secondary": ["triceps", "shoulders"], "type": "weight_reps"},
-               "Pull Up (Assisted)": {"primary": "lats", "secondary": ["biceps"], "type": "assisted_bodyweight"}}
+               "Pull Up (Assisted)": {"primary": "lats", "secondary": ["biceps"], "type": "bodyweight_assisted"}}
 
     def build(self, rows, today=TODAY):
         path = history_csv(rows)
@@ -1032,8 +1032,28 @@ class Dashboard(unittest.TestCase):
         self.assertEqual(data["weeks"][-1]["sessions"], 0)
         self.assertEqual(data["consistency"]["current_streak"], 2)  # the week in progress does not break it
         self.assertEqual(data["consistency"]["longest_streak"], 2)
+        # one gap clock: the lifts table and the track card read the track's own clock
+        path = history_csv(rows)
+        try:
+            ten_days = {"last_exposure": {"date": "2026-10-12", "type": "H"}}
+            data = dash.build(path, fresh_tracks(squat=ten_days, bench=ten_days), ALIASES, self.MUSCLES, dt.date(2026, 10, 22))
+        finally:
+            os.unlink(path)
         squat = next(l for l in data["lifts"] if l["key"] == "squat")
-        self.assertEqual((squat["gap_days"], squat["gap"]["key"]), (10, "hold"))
+        card = next(c for c in data["tracks"] if c["key"] == "squat")
+        self.assertEqual((card["gap_days"], card["gap"]), (squat["gap_days"], squat["gap"]))
+        # the same rule as the routine: a regain-phase lift is not held at 8-14 days, another lift is
+        self.assertEqual((squat["gap_days"], squat["gap"]["key"]), (10, "normal"))
+        self.assertIn("regain", squat["gap"]["label"].lower())
+        bench = next(c for c in data["tracks"] if c["key"] == "bench")
+        self.assertEqual((bench["gap_days"], bench["gap"]["key"]), (10, "hold"))
+
+    def test_week_set_count_survives_a_better_set(self):
+        rows = [("2026-10-19", "U1", "Bench Press (Barbell)", i, "normal", w, r, None)
+                for i, (w, r) in enumerate([(95, 4), (100, 4), (90, 6), (90, 6)])]
+        week = self.build(rows)["weeks"][-1]["lifts"]["bench"]
+        self.assertEqual(week["sets"], 4)
+        self.assertEqual((week["top_load"], week["top_reps"]), (100, 4))
 
     def test_render_inlines_data(self):
         data = self.build([("2026-10-19", "L1", "Squat (Barbell)", 0, "normal", 60, 4, 8)])

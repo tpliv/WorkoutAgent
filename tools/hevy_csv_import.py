@@ -14,6 +14,7 @@ It prints which column it used for each field so a mismatch is obvious. Pass
 """
 import argparse
 import csv
+import os
 import re
 import sys
 
@@ -65,6 +66,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("export_csv")
     ap.add_argument("--out", default="data/history.csv")
+    ap.add_argument("--force", action="store_true", help="overwrite a history file that holds API rows")
     ap.add_argument("--lb", action="store_true", help="weights in the export are pounds")
     args = ap.parse_args()
 
@@ -98,6 +100,11 @@ def main():
                 "source": "hevy-csv",
             })
     rows.sort(key=lambda r: (r["date"], r["workout_title"], str(r["set_index"])))
+    if os.path.exists(args.out) and not args.force:
+        with open(args.out, newline="") as existing:
+            if any(r.get("source") == "hevy-api" for r in csv.DictReader(existing)):
+                sys.exit(f"{args.out} already holds rows pulled from the Hevy API; this import would replace the whole file "
+                         "and drop their workout ids. Write somewhere else with --out, or pass --force.")
     with open(args.out, "w", newline="") as out:
         wr = csv.DictWriter(out, fieldnames=HISTORY_COLUMNS)
         wr.writeheader()
