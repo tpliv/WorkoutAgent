@@ -17,7 +17,8 @@ research resistance-training topics and turn the findings into a training guide.
 
 - `main` is the source of truth. Start every session from it
   (`git fetch origin main && git checkout main`, or merge `origin/main` into
-  the session branch before changing anything).
+  the session branch before changing anything). A fresh checkout may sit on
+  another branch; do not assume it is `main`.
 - Finish by getting the work onto `main`: merge the session branch into `main`
   and push, unless the user asked for a pull request instead. A branch left
   unmerged is invisible to the next session and to the scheduled coaching runs.
@@ -46,33 +47,51 @@ research resistance-training topics and turn the findings into a training guide.
 ## Hevy integration (`tools/`)
 
 The user logs in Hevy (Pro) and the repo talks to it over the Hevy API.
+`main` on GitHub is the source of truth; Hevy and the dashboard page are
+projections of it.
 
+- **One command:** `python3 tools/hevy_sync.py`. It checks that the checkout
+  is current and can write to `main`, pulls new workouts, applies
+  `templates/progression-tracks.md`, marks logged sessions done in the week,
+  rebuilds the dashboard when data changed, commits the data files, publishes
+  them to `main`, then updates the Hevy routines that differ and reads each
+  back. Run it when the user asks for their loads, their next session, or an
+  update after training, and after any change to the week or the tracks.
+  `--dry-run` writes nothing anywhere; `--check` only compares Hevy with the
+  repo. Do not commit or push the data files yourself, and do not push to
+  Hevy any other way. Read its output: the week's Checks and the push summary.
+  Afterwards republish `dashboard/index.html` to the existing dashboard page
+  (URL in `tools/README.md`, "Progress dashboard") if it was rebuilt; never
+  create a second page.
+- **One home per fact.** Loads, counters, the pointer and block week:
+  `data/tracks.json`. This week's sessions and the deload flag:
+  `data/week.json`. Session content: `templates/rotation.json`. The tables in
+  `data/track-state.md` and `data/weekly-plan.md` are generated. Do not restate
+  loads or the schedule in prose files.
+- **State changes go through a tool, never an editor.** The week:
+  `python3 tools/week.py` (`show`, `plan`, `set`, `add`, `drop`, `deload`,
+  `brief`). A load or the pointer: `python3 tools/update_tracks.py --set
+  PATH=VALUE --reason "..."`, which logs it. Then run the sync.
+- Loads quoted to the user come from `tools/week.py show` or `brief`, or from
+  `data/tracks.json`; never from arithmetic in the chat.
+- Dates are the lifter's (America/New_York, `tools/localtime.py`), never the
+  server's UTC date. Outside the tools, get today with
+  `TZ=America/New_York date +%F`.
 - The key is either a cloud-environment network secret for `api.hevyapp.com`
   (header `api-key`; the proxy adds it, nothing to configure in the session) or
   the `HEVY_API_KEY` environment variable. Never ask for it in chat, never
   print it, never write it to a file or commit. If a call returns 401, neither
   is set up: tell the user how (`tools/README.md`, Setup step 2).
-- `python3 tools/hevy_sync.py --dry-run` shows what a sync would do; without
-  the flag it pulls new workouts, applies `templates/progression-tracks.md` to
-  them, rewrites `data/tracks.json`, `data/track-state.md` and
-  `data/track-log.md`, rebuilds `dashboard/index.html`, and updates the nine
-  routines in the app. Run it when the user asks for their loads, their next
-  session, or an update after training. Commit the changed data and dashboard
-  files afterwards, then republish `dashboard/index.html` to the existing
-  dashboard page (URL in `tools/README.md`, "Progress dashboard"); never
-  create a second page.
+- If the sync says `Sync not started`, the session cannot write to `main` or
+  is behind it. Fix that; do not work around it (`coach/README.md`, "When the
+  repo is read-only").
 - `python3 tools/build_dashboard.py` rebuilds the dashboard alone (offline).
-- Dates are the lifter's (America/New_York, `tools/localtime.py`), never the
-  server's UTC date. Outside the tools, get today with
-  `TZ=America/New_York date +%F`.
-- The push reads every routine back and exits non-zero on a failure or
-  mismatch; report its summary, including skipped sessions.
 - The program runs in pounds (`data/tracks.json`, the routines, `data/track-state.md`).
   The Hevy API and `data/history.csv` carry kg; the tools convert.
-- Read `data/tracks.json` for the current loads and the pointer (the next
-  half-session owed); `data/track-log.md` for what changed and why.
-- `templates/rotation.json` is the machine-readable rotation. When a markdown
-  template changes, change the JSON too and push the routines again.
+- `data/track-log.md` records what changed and why.
+- `templates/rotation.json` is the machine-readable rotation and what the
+  routines are rendered from. When a markdown template changes, change the
+  JSON too and run the sync.
 - A stall is only flagged; apply the reset with `--reset-on-stall` after
   checking the recovery inputs with the user (section 6 of the tracks file).
 - Read-only questions ("what did I lift on Monday", "find the pulldown

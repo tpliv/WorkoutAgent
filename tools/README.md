@@ -5,16 +5,36 @@ tracks current. Python 3, standard library only. The API schema they use was
 verified against the official OpenAPI document on 2026-10-21
 (`research/mobile-workout-trackers.md`, addendum).
 
-## The weekly loop in one command
+## The loop in one command
 
 ```bash
-python3 tools/hevy_sync.py            # pull new workouts, apply the rules, push the new loads
-python3 tools/hevy_sync.py --dry-run  # same, but only show what would change (pulls into a temp copy; no repo file or routine is touched)
+python3 tools/hevy_sync.py            # everything below, in order
+python3 tools/hevy_sync.py --dry-run  # show what would happen; writes nothing here, on GitHub or in Hevy
+python3 tools/hevy_sync.py --check    # is Hevy the same as the repo? read-only
 ```
 
-That runs the steps below in order and rebuilds the progress dashboard. Run it after each pass of the
-rotation (once a week for any 3- to 6-day week), or whenever you want the
-routines in the app to reflect the latest logged sessions.
+| Step | What | Stops the run if it fails |
+|---|---|---|
+| 1. check | this checkout is up to date with `origin/main` and may write to it (`gitguard.py`) | yes, before anything changes |
+| 2. pull | new Hevy workouts into `data/history.csv` | yes |
+| 3. apply | `templates/progression-tracks.md` to the tracks; table and log | yes |
+| 4. week | logged sessions marked done in `data/week.json`; plan tables regenerated | yes |
+| 5. build | the dashboard, only when data changed | no (reported at the end) |
+| 6. commit, publish | the changed data files, to `origin/main` | yes: Hevy is not touched |
+| 7. push | the routines that differ from Hevy, each read back | exit code 1 |
+
+`main` is the source of truth, so the repo is published **before** Hevy is
+touched: Hevy can never hold something the repo does not. Run it after
+training is logged, after any change to the week (`week.py`) or a hand
+amendment (`update_tracks.py --set`), and whenever you want to know the app is
+right. With no news it changes nothing and commits nothing.
+
+Two rules the tools enforce (`gitguard.py`):
+
+- A session that cannot write to `main` cannot sync. It gets
+  `Sync not started; nothing was changed` and Hevy stays as it is.
+- `hevy_push_routines.py` refuses when `tracks.json`, `rotation.json`,
+  `week.json`, `hevy-state.json` or the exercise map differ from `origin/main`.
 
 ## Setup (once)
 
@@ -39,8 +59,8 @@ routines in the app to reflect the latest logged sessions.
    and lists anything it could not match; find the right title with
    `python3 tools/hevy_api.py templates --search curl` and fix the map (or the
    `hevy` candidate list in `templates/rotation.json`).
-6. `python3 tools/hevy_push_routines.py` to create the folder `Rotation 2026-10`
-   with the nine routines (L1, U1, L2, U2, L3, U3, Full A, Full B, Full C), plus the three cross-block merges (U1 + L2, U2 + L3, U3 + L1) for weeks that start mid-block.
+6. `python3 tools/hevy_sync.py` to create the folder `Rotation 2026-10`
+   with the twelve rotation routines: six half-sessions (L1, U1, L2, U2, L3, U3), three merged (Full A, Full B, Full C) and three cross-block merges (U1 + L2, U2 + L3, U3 + L1) for weeks that start mid-block. The dated copies of the current week's sessions go in a second folder, `This Week`.
    Routine ids are saved in `data/hevy-state.json`, so later runs update in
    place.
 
@@ -49,10 +69,12 @@ routines in the app to reflect the latest logged sessions.
 | Script | Purpose |
 |---|---|
 | `hevy_api.py` | API client used by the others, and a read-only inspector: `whoami`, `count`, `workouts`, `events --since`, `routines`, `folders`, `templates --search`, `history <template_id>`, `measurements`. |
-| `hevy_pull.py` | Workouts into `data/history.csv`. Incremental by default (events since `last_pull` in `data/hevy-state.json`); `--full` re-pulls everything; `--inspect` prints one raw workout; `--redate` fills `start_time` and the local date on existing rows without touching anything else. Dates are the lifter's calendar day (`localtime.py`). |
-| `update_tracks.py` | Applies `templates/progression-tracks.md` to the sessions logged since the last run and rewrites `data/tracks.json`: increment, hold, miss, stall, double progression, gap clock, pointer, e1RM history. `--write-md` refreshes the table in `data/track-state.md`; `--reset-on-stall` applies the 7.5% reset instead of flagging it; `--dry-run` shows the decisions. Appends to `data/track-log.md`. |
-| `hevy_push_routines.py` | Renders `templates/rotation.json` with the loads in `data/tracks.json` into Hevy routines and creates or updates them. `--dry-run` prints the payloads without network; `--deload` renders the deload week; `--only L1 U1` limits the slots (and leaves the This Week copies alone); `--as-of` sets the date for the gap modifiers and the This Week filter (default: today in the lifter's zone). Pushes the This Week copies first, reads every routine back and compares title, exercises, loads and reps, prints each skipped session with its reason, carries on past a failed routine and exits non-zero if any failed or mismatched. `last_push` is written only when a full push succeeded; a failure leaves `last_push_failed`. `--no-verify` skips the read-back. |
-| `hevy_sync.py` | Runs pull, update, dashboard build, push. `--no-push`, `--no-pull`, `--deload`, `--reset-on-stall`, `--full` pass through; `--dry-run` pulls into a temp copy and writes nothing in the repo or in Hevy. Exits non-zero if any step failed. If the push fails, re-run `hevy_push_routines.py` alone. |
+| `hevy_pull.py` | Workouts into `data/history.csv`. Incremental by default (events since `last_pull` in `data/hevy-state.json`, which moves only when the pull changed the history); `--full` re-pulls everything; `--inspect` prints one raw workout; `--redate` fills `start_time` and the local date on existing rows without touching anything else. Dates are the lifter's calendar day (`localtime.py`). |
+| `update_tracks.py` | Applies `templates/progression-tracks.md` to the sessions logged since the last run and rewrites `data/tracks.json`: increment, hold, miss, stall, double progression, gap clock, pointer, e1RM history. `--write-md` refreshes the generated block in `data/track-state.md` (tracks and accessory loads); `--reset-on-stall` applies the 7.5% reset instead of flagging it; `--dry-run` shows the decisions. `--set PATH=VALUE --reason "..."` is the only way to amend a value by hand (`squat.top_set_lb=155`, `pointer=U2`, `"accessories.Leg press.weight_lb=180"`): it is written to `data/track-log.md` and to `amendments` in the JSON. Appends to `data/track-log.md`. Writes nothing when nothing changed. |
+| `hevy_push_routines.py` | Brings the Hevy routines in line with the repo: renders `templates/rotation.json` and the sessions in `data/week.json` with the loads in `data/tracks.json`, compares each with what Hevy holds (title, exercises, sets, loads, reps, exercise notes), updates the ones that differ and reads each back. `--check` compares only and exits 1 on any difference; `--all` updates everything; `--week-only` only the dated copies; `--only L1 U1` a subset of rotation slots; `--dry-run` prints payloads without network; `--deload` forces the deload rendering (a planned deload week is `week.py deload on`); `--as-of` sets the date for the gap modifiers and the This Week filter (default: today in the lifter's zone). The dated copies go first; a skipped session is printed with its reason; a failed routine does not stop the others; the exit code is non-zero unless Hevy matches. Refuses when its inputs differ from `origin/main` (`--unpublished` overrides; avoid). |
+| `hevy_sync.py` | The loop above. `--no-pull`, `--no-push`, `--reset-on-stall`, `--full`, `--deload`, `-m "commit message"`; `--dry-run` writes nothing anywhere; `--check` is read-only; `--no-git` skips the checks and the commit (the Hevy push then refuses until the changes are on `main`). |
+| `week.py` | The week's schedule, `data/week.json`: `show`, `plan --week-of <Mon> DATE=SLOT@TIME ...`, `add`, `set DATE --slot/--date/--time/--note/--state/--calendar`, `drop`, `status`, `deload on/off`, `reconcile` (the sync runs it), `render`, `brief [DATE]` (the numbers of the night-before brief, from the routine renderer). Prints the week with rendered loads and its checks: order (the rotation never skips ahead of the pointer), spacing (H the day after any exposure of the same lift), unlogged, unplanned or re-slotted sessions. Regenerates the Status and Sessions tables in `data/weekly-plan.md`. |
+| `gitguard.py` | The two rules above, and the commit and publish the sync does. Skipped outside a git checkout or with `WORKOUT_NO_GIT=1`. |
 | `localtime.py` | The lifter's time zone (`TRAINING_TZ`, default `America/New_York`). `local_today()` and `local_date(timestamp)`; every tool takes its dates from here, never from the server clock or the UTC date of a timestamp. |
 | `build_dashboard.py` | Builds `dashboard/index.html` (one self-contained page) and `dashboard/data.json` from the history, the tracks and the track log: weekly tonnage and working sets, sets per muscle against the guide's targets, week-over-week e1RM per main lift, gap clock, track state, streaks. Offline; `--refresh-muscles` first refreshes `data/exercise-muscles.json` from Hevy's exercise templates; `--today` fixes the date. See "Progress dashboard" below. |
 | `hevy_csv_import.py` | Fallback without Pro or network: converts the app's CSV export into `data/history.csv`. |
@@ -65,12 +87,14 @@ routines in the app to reflect the latest logged sessions.
 | File | Written by | Read by | Committed |
 |---|---|---|---|
 | `templates/rotation.json` | hand (mirror of the markdown templates) | push | yes |
-| `data/tracks.json` | `update_tracks.py` (and hand edits) | push, update | yes |
-| `data/track-state.md` | `update_tracks.py --write-md` (table only) | people and agents | yes |
+| `data/tracks.json` | `update_tracks.py` (amend with `--set`, never by editing) | push, update, week, dashboard | yes |
+| `data/week.json` | `week.py` (never by editing) | push, week | yes |
+| `data/weekly-plan.md` | `week.py` (the block between the `week:` markers); the rest by hand | people and agents | yes |
+| `data/track-state.md` | `update_tracks.py --write-md` (the block between the `tracks:` markers); the notes by hand | people and agents | yes |
 | `data/track-log.md` | `update_tracks.py` (append) | people and agents | yes |
 | `data/history.csv` | `hevy_pull.py`, `hevy_csv_import.py` | update, analyze | yes |
 | `data/hevy-exercise-map.json` | `hevy_push_routines.py --resolve` | push | yes |
-| `data/hevy-state.json` | pull and push (folder id, routine ids, `last_pull`) | pull, push | yes |
+| `data/hevy-state.json` | pull and push (folder ids, routine ids, the pool of dated routines, `last_pull`) | pull, push, week | yes |
 | `data/exercise-muscles.json` | `build_dashboard.py --refresh-muscles` (and hand edits) | dashboard | yes |
 | `dashboard/template.html` | hand | dashboard | yes |
 | `dashboard/index.html`, `dashboard/data.json` | `build_dashboard.py` | people and agents | yes |
@@ -193,10 +217,15 @@ set of the lift. The decision follows section 5 of
   remove its id from `data/hevy-state.json`).
   `PUT /routines/{id}` with a new `folder_id` does move a routine between
   folders (verified 2026-11-06), so a retired routine can be rewritten and
-  reused instead of deleted. `data/hevy-state.json` key `this_week` holds the
-  dated copies of the current week's sessions in the folder "This Week";
-  a full push (no `--only`) re-renders every one dated today (lifter's zone) or later and not marked `"done": true`, each
-  at its own date.
+  reused instead of deleted. The dated copies of the week's sessions (folder
+  "This Week") are a pool of routines listed in `data/hevy-state.json`
+  (`this_week.routine_ids`); `week.py` hands them out again each week and the
+  push creates more when a week needs them. A pool routine not used this week
+  keeps its old title in the app until it is used again.
+- Routine-level notes are accepted by the API but never returned, so they
+  cannot be compared; the first exercise note carries the same text.
+- Saving a workout back to its routine in the app changes the routine. The
+  next sync sees the difference and restores it.
 - The API is Pro-only and Hevy says it may change without notice.
 - `update_tracks.py` skips sessions dated before `processed_through` in
   `data/tracks.json`, and on that date the workout ids in `processed_ids`. A
