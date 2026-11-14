@@ -43,7 +43,7 @@ Ambiguous rule text, where two agents would implement differently: whether "hold
 
 ## 3. Guide and templates
 
-Both guide reviewers spot-checked claims against primary sources (PubMed, PMC). **18 of 20 checked claims were supported.** Two were not: Held 2026 is labelled "not significant" where the abstract prints p < 0.001 (`guide/06`), and "an RPE 8 is more often a true 7" is overstated for 4-rep top sets (Halperin 2022, Refalo 2024). One could not be verified (Hopper 2026, sauna SMD 0.12).
+Both guide reviewers spot-checked claims against primary sources (PubMed, PMC). **16 of 19 checked claims were supported.** Two were not: Held 2026 is labelled "not significant" where the abstract prints p < 0.001 (`guide/06`), and "an RPE 8 is more often a true 7" is overstated for 4-rep top sets (Halperin 2022, Refalo 2024). One could not be verified (Hopper 2026, sauna SMD 0.12).
 
 Contradictions inside the program, ranked by how much they change what the lifter does:
 
