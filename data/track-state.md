@@ -28,6 +28,40 @@ Pointer: **U2**. Block week 3. Processed history through 2026-11-12. Generated b
 | Overhead press | **70** | 65 | 65 | 4 | 0 | 2026-11-05 (V) | 79, 84 | unrated 4s: 1 |
 | Barbell row | **70** | n/a (double progression) | 65 | 6-8 | 0 | 2026-11-10 (H) | 90 | regain to e1RM 128 or 2027-01-09 |
 | Pull-up or pulldown | **125** | n/a (double progression) | 115 | 5-8 | 0 | 2026-11-05 (V) | 161 | - |
+Accessory and substitute loads (`accessories` in `data/tracks.json`; change one with `tools/update_tracks.py --set`):
+
+| Exercise | Load (lb) | Step | Note |
+|---|---|---|---|
+| Incline DB press | 70 | +5 lb total (2.5 lb per dumbbell) | total of both dumbbells (35 each); 70 x 6, 8, 8 on 10 Nov 2026 (range 8-12: hold until every set reaches 12) |
+| Lateral raise | 20 | +5 lb total (2.5 lb per dumbbell) | total of both dumbbells (10 each); 20 x 15, 20, 20, 20 on 10 Nov 2026 (one set short of the top: next time every set at 20, then 25 total) |
+| Cable lateral raise | 15 | +5 lb (one pin) | or DB lateral raise at the DB lateral raise load (total of both dumbbells) |
+| Incline DB curl | 30 | +5 lb total (2.5 lb per dumbbell) | total of both dumbbells (15 each); standing DB curl 35 total x 12, 10, 8 on 4 Nov 2026 (incline runs lighter) |
+| Preacher or EZ-bar curl | not set | +5 lb (one pin) | choose on the day |
+| Overhead triceps extension | 25 | +5 lb (one pin), or +2.5 lb on a dumbbell | one dumbbell held in both hands; cable stack if available. 27.5 x 8 x 3 on 10 Nov 2026, 8s at 25 and 27.5 since 20 Oct, under the 10-15 range: use 25 and log the real reps |
+| Triceps pushdown | not set | +5 lb (one pin) | choose on the day |
+| Seated leg curl | not set | +5 lb (one pin) | choose on the day |
+| Leg extension | not set | +5 lb (one pin) | choose on the day |
+| Romanian deadlift | 110 | +5 lb | one barbell RDL logged 18 Oct 2026 |
+| Leg press or split squat | not set | +5 lb | choose on the day |
+| Front squat or hack squat | not set | +5 lb | choose on the day |
+| Reverse lunge or split squat | 35 | +5 lb total (2.5 lb per dumbbell) | total of both dumbbells (17.5 each); 30 total x 12 per leg x 3 on 29 Oct 2026 |
+| Standing calf raise | not set | +5 lb (one pin) | choose on the day |
+| Core | not set | +5 lb (one pin) |  |
+| Face pull | not set | +5 lb (one pin) |  |
+| Reverse pec deck | not set | +5 lb (one pin) |  |
+| Flat DB press or dips | not set | +5 lb total (2.5 lb per dumbbell), or bodyweight dips | dumbbell load is the total of both |
+| Back extension or Pallof press | not set | +2.5 lb held (dumbbell or plate) |  |
+| Hack squat | not set | +10 lb (one 5-lb plate a side) or one pin | squat substitute (station taken); choose on the day and record it |
+| Leg press | not set | +10 lb (one 5-lb plate a side) or one pin | squat substitute, last choice (weakest transfer to the squat: Rossi 2018); choose on the day and record it |
+| Bulgarian split squat | 35 | +5 lb total (2.5 lb per dumbbell) | squat substitute, needs only dumbbells and a bench; total of both dumbbells, per leg; starts at the reverse-lunge load |
+| DB bench press | not set | +5 lb total (2.5 lb per dumbbell) | bench substitute; total of both dumbbells. Start near 80 total (about 70-80% of the barbell bench, practitioner rule) and adjust by RPE |
+| Machine chest press | not set | +5 lb (one pin) | bench substitute; choose on the day and record it |
+| Trap-bar deadlift | not set | +10 lb | deadlift substitute; choose on the day and record it |
+| DB Romanian deadlift | not set | +5 lb total (2.5 lb per dumbbell) | deadlift substitute; total of both dumbbells |
+| Seated DB press | not set | +5 lb total (2.5 lb per dumbbell) | press substitute; total of both dumbbells; choose on the day and record it |
+| Machine shoulder press | not set | +5 lb (one pin) | press substitute; choose on the day and record it |
+| Smith machine squat | not set | +5 lb | squat substitute, first choice (closest transfer to the barbell squat: Saeterbakken 2019); choose on the day and record it |
+| Smith machine bench press | not set | +5 lb | bench substitute, first choice (Smith bench carried over best to the barbell bench: Saeterbakken 2020); choose on the day and record it |
 <!-- tracks:end -->
 
 ### Phases and ratings (added 2026-11-06)

@@ -19,6 +19,7 @@ Outputs:
     data/history.csv                normalized set-level log (tools/README.md), merged
     data/raw/hevy_workouts.jsonl    raw workout JSON, one per line (gitignored)
     data/hevy-state.json            last_pull timestamp for the next incremental run
+                                    (moved only when the pull changed history.csv)
 
 Merge rules:
     - Full pull: every row whose source is hevy-api or hevy-csv is replaced (both
@@ -55,6 +56,12 @@ def read_history(path):
         return []
     with open(path, newline="") as f:
         return list(csv.DictReader(f))
+
+
+def normalized(rows):
+    """Rows as write_history would store them, for change detection."""
+    key = lambda r: (r.get("date", ""), r.get("start_time") or "", r.get("workout_title", ""), r.get("workout_id", ""), r.get("exercise", ""), float(r.get("set_index") or 0))  # noqa: E731
+    return [[str(r.get(c, "")) for c in HISTORY_COLUMNS] for r in sorted(rows, key=key)]
 
 
 def write_history(path, rows):
@@ -151,6 +158,12 @@ def main(argv=None):
                     for row in workout_rows(w):
                         rows.append(row)
                         n_rows += 1
+            if normalized(rows) == normalized(existing):
+                # Nothing new: leave the file and the cursor alone, so a sync
+                # with no news leaves nothing to commit. The next pull asks
+                # Hevy about the same window again, which costs nothing.
+                print(f"Incremental pull since {state['last_pull']}: no new or changed workouts.")
+                return
             write_history(args.out, rows)
             print(f"Incremental pull since {state['last_pull']}: {len(updated)} updated, {len(deleted)} deleted workouts, {n_rows} sets -> {args.out}")
         else:

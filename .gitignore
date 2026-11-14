@@ -1,7 +1,9 @@
 .DS_Store
 *.swp
-research_notes/
-reports/
-data/raw/
-*.env
+*.tmp
+*.pyc
 __pycache__/
+.venv/
+*.env
+data/raw/
+.claude/worktrees/

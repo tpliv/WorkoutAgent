@@ -1,0 +1,44 @@
+{
+  "week_of": "2026-11-09",
+  "status": "confirmed",
+  "deload": false,
+  "sessions": [
+    {
+      "date": "2026-11-10",
+      "slot": "U1",
+      "time": "7:30-9:00 am",
+      "state": "done",
+      "routine_id": "2da8d4c1-fe4b-4092-a7b9-3b4289a830dc",
+      "calendar": "hold (Workouts)",
+      "note": "R+2 after the 8 Nov race: upper body only, as written.",
+      "workout_id": "c6c86efa-9b09-4294-a9d6-db3938fb6433"
+    },
+    {
+      "date": "2026-11-12",
+      "slot": "L2",
+      "planned_slot": "Full B",
+      "time": "7:22 pm",
+      "state": "done",
+      "routine_id": "a1de5676-367b-4e23-9d47-5cd0c15a2049",
+      "calendar": "hold (Workouts)",
+      "title": "L2 Lower B (Fri 13 Nov)",
+      "note": "Trained Thu 12 Nov, 7:22 pm, as L2 (deadlift 160 x 5 @ 8). The routine was mis-titled 'Fri 13 Nov' by a session running on the UTC date; the title is left as Hevy shows it.",
+      "workout_id": "e71760ce-dea6-4a2c-8d0a-94e444bddace"
+    },
+    {
+      "date": "2026-11-14",
+      "slot": "U2",
+      "state": "planned",
+      "routine_id": "93e8172d-7bb0-42ed-9f9d-96b8df3aead8",
+      "note": "U2 is the half-session owed after Thursday's L2 (Full B was planned; only its lower half was trained). Press and pulldown were last trained 5 Nov: loads held."
+    },
+    {
+      "date": "2026-11-15",
+      "slot": "Full C",
+      "state": "planned",
+      "routine_id": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58",
+      "note": "L3 + U3 merged; finishes the pass. 72 h after Thursday's deadlift H (160 x 5 @ 8). If the back or legs are still sore, drop the deadlift V sets (priority-stack drop, not a miss)."
+    }
+  ],
+  "_comment": "This week's sessions. The only place the schedule is written: tools/week.py edits it, tools/hevy_push_routines.py renders the dated Hevy routines from it, and the tables in data/weekly-plan.md are generated from it. Do not edit by hand; use tools/week.py."
+}

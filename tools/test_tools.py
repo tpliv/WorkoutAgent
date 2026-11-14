@@ -16,6 +16,8 @@ import datetime as dt
 import io
 import json
 import os
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -25,10 +27,12 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import build_dashboard as dash  # noqa: E402
+import gitguard  # noqa: E402
 import hevy_pull as pull  # noqa: E402
 import hevy_push_routines as push  # noqa: E402
 import localtime  # noqa: E402
 import update_tracks as upd  # noqa: E402
+import week  # noqa: E402
 from hevy_api import HISTORY_COLUMNS, workout_rows  # noqa: E402
 
 
@@ -737,32 +741,245 @@ class LocalDates(unittest.TestCase):
         self.assertEqual(log, [])
 
 
-class PushChecks(unittest.TestCase):
-    STATE = {"this_week": {"folder_id": 1, "sessions": [
-        {"date": "2026-11-12", "slot": "L2", "title": "L2 (Thu)", "id": "a"},
-        {"date": "2026-11-14", "slot": "L3", "title": "L3 (Sat)", "id": "b"},
-        {"date": "2026-11-15", "slot": "ZZ", "title": "bad slot", "id": "c"}]}}
+class FakeHevy:
+    """Stands in for the API: routines by id, counts the writes."""
 
+    def __init__(self, routines=None):
+        self.routines = routines or {}
+        self.puts = []
+
+    def routine(self, rid):
+        return {"routine": copy.deepcopy(self.routines[rid])}
+
+    def update_routine(self, rid, title, exercises, folder_id=None, notes=None):
+        self.puts.append(rid)
+        self.routines[rid] = {"title": title, "exercises": copy.deepcopy(exercises)}
+        return self.routines[rid]
+
+
+def a_week(**over):
+    w = {"week_of": "2026-11-09", "status": "confirmed", "deload": False, "sessions": [
+        {"date": "2026-11-10", "slot": "U1", "state": "done", "routine_id": "r1"},
+        {"date": "2026-11-12", "slot": "L2", "state": "planned", "routine_id": "r2"},
+        {"date": "2026-11-14", "slot": "U2", "state": "planned", "routine_id": "r3"}]}
+    w.update(over)
+    return w
+
+
+class PushChecks(unittest.TestCase):
     def test_tonights_session_is_pushed_and_skips_carry_a_reason(self):
         # 7:19 pm Eastern on the 12th: the UTC date is already the 13th
         today = localtime.local_today(dt.datetime(2026, 11, 13, 0, 19, tzinfo=dt.timezone.utc))
-        todo, skipped = push.week_plan(self.STATE, ROTATION, today)
-        self.assertEqual([s["id"] for s, _ in todo], ["a", "b"])
-        self.assertEqual([s["id"] for s, _ in skipped], ["c"])
-        todo, skipped = push.week_plan(self.STATE, ROTATION, dt.date(2026, 11, 13))
-        self.assertEqual([s["id"] for s, _ in todo], ["b"])
-        self.assertIn("before today", dict((s["id"], why) for s, why in skipped)["a"])
+        week = a_week()
+        week["sessions"].append({"date": "2026-11-15", "slot": "ZZ", "state": "planned"})
+        todo, skipped = push.week_plan(week, ROTATION, today)
+        self.assertEqual([s["date"] for s, _ in todo], ["2026-11-12", "2026-11-14"])
+        why = {s["date"]: reason for s, reason in skipped}
+        self.assertEqual(why["2026-11-10"], "done")
+        self.assertIn("not in the rotation", why["2026-11-15"])
+        todo, skipped = push.week_plan(week, ROTATION, dt.date(2026, 11, 13))
+        self.assertEqual([s["date"] for s, _ in todo], ["2026-11-14"])
+        self.assertIn("before today", {s["date"]: r for s, r in skipped}["2026-11-12"])
 
     def test_verify_routine(self):
         payload, _ = push.build_routine("L2", ROTATION, fresh_tracks(), EXMAP, TODAY)
         live = copy.deepcopy({"title": payload["title"], "exercises": payload["exercises"]})
         self.assertEqual(push.verify_routine(payload["title"], payload["exercises"], live), [])
+        live["exercises"][1]["notes"] += " edited in the app"
+        self.assertEqual(len(push.verify_routine(payload["title"], payload["exercises"], live)), 1)
+        self.assertEqual(push.verify_routine(payload["title"], payload["exercises"], live, notes=False), [])
         live["exercises"][0]["sets"][-1]["weight_kg"] = 999.0
         live["title"] = "L2 Lower B (Fri 13 Nov)"
-        diffs = push.verify_routine(payload["title"], payload["exercises"], live)
+        diffs = push.verify_routine(payload["title"], payload["exercises"], live, notes=False)
         self.assertEqual(len(diffs), 2, diffs)
         live["exercises"].pop()
         self.assertTrue(any("exercises, sent" in d for d in push.verify_routine(payload["title"], payload["exercises"], live)))
+
+    def test_only_what_differs_is_written(self):
+        payload, _ = push.build_routine("L2", ROTATION, fresh_tracks(), EXMAP, TODAY)
+        h = FakeHevy({"x": {"title": payload["title"], "exercises": copy.deepcopy(payload["exercises"])}})
+        self.assertEqual(push.sync_routine(h, "x", payload["title"], payload, 1), (True, "in step"))
+        self.assertEqual(h.puts, [])
+        h.routines["x"]["title"] = "renamed in the app"
+        ok, msg = push.sync_routine(h, "x", payload["title"], payload, 1, mode="check")
+        self.assertFalse(ok)
+        self.assertIn("DIFFERS", msg)
+        self.assertEqual(h.puts, [])                       # check never writes
+        self.assertEqual(push.sync_routine(h, "x", payload["title"], payload, 1), (True, "updated and read back"))
+        self.assertEqual(h.puts, ["x"])
+        push.sync_routine(h, "x", payload["title"], payload, 1, mode="all")
+        self.assertEqual(h.puts, ["x", "x"])
+
+    def test_week_push_uses_the_week_file(self):
+        week = a_week(deload=True)
+        h = FakeHevy({"r2": {"title": "old", "exercises": []}, "r3": {"title": "old", "exercises": []}})
+        state = {"this_week": {"folder_id": 9, "routine_ids": ["r1", "r2", "r3"]}}
+        results, changed = push.push_this_week(h, state, week, ROTATION, fresh_tracks(), EXMAP, dt.date(2026, 11, 12))
+        self.assertFalse(changed)
+        self.assertEqual(sorted(h.puts), ["r2", "r3"])
+        self.assertEqual(h.routines["r3"]["title"], "U2 Upper B (deload) (Sat 14 Nov)")   # the week's deload flag reaches the routine
+        self.assertEqual(upd.parse_slot(h.routines["r3"]["title"]), "U2")
+        self.assertIn("DELOAD", h.routines["r3"]["exercises"][0]["notes"])
+        self.assertEqual([r[2] for r in results if r[1] is None], ["skipped: done"])
+
+
+class WeekFile(unittest.TestCase):
+    def test_every_dated_title_reads_back_as_its_slot(self):
+        for slot in ROTATION["sessions"]:
+            title = week.title_for({"date": "2026-11-14", "slot": slot}, ROTATION)
+            self.assertIn("(Sat 14 Nov)", title)
+            self.assertEqual(upd.parse_slot(title), slot, title)
+
+    def test_order_check_catches_skipping_ahead(self):
+        tracks = fresh_tracks()
+        tracks["pointer"] = "U2"
+        w = a_week()
+        w["sessions"] = [{"date": "2026-11-14", "slot": "L3", "state": "planned"},
+                         {"date": "2026-11-15", "slot": "U3", "state": "planned"}]
+        found = week.problems(w, tracks, ROTATION, dt.date(2026, 11, 13))
+        self.assertTrue(any("U2 is owed before L3" in p for p in found), found)
+        w["sessions"] = [{"date": "2026-11-14", "slot": "U2", "state": "planned"},
+                         {"date": "2026-11-15", "slot": "Full C", "state": "planned"}]
+        self.assertEqual(week.problems(w, tracks, ROTATION, dt.date(2026, 11, 13)), [])
+
+    def test_spacing_and_unlogged_checks(self):
+        tracks = fresh_tracks()
+        tracks["pointer"] = "L3"
+        w = a_week()
+        w["sessions"] = [{"date": "2026-11-10", "slot": "L3", "state": "planned"},      # squat V, deadlift V
+                         {"date": "2026-11-11", "slot": "U3", "state": "planned"},
+                         {"date": "2026-11-12", "slot": "L1", "state": "planned"}]      # squat H two days later: fine
+        self.assertEqual(week.problems(w, tracks, ROTATION, dt.date(2026, 11, 10)), [])
+        w["sessions"][2]["date"] = "2026-11-11"
+        w["sessions"][1]["date"] = "2026-11-12"
+        w["sessions"].sort(key=lambda s: s["date"])
+        found = week.problems(w, tracks, ROTATION, dt.date(2026, 11, 10))
+        self.assertTrue(any(p.startswith("spacing: Back squat") for p in found), found)
+        found = week.problems(a_week(), fresh_tracks(), ROTATION, dt.date(2026, 11, 13))
+        self.assertTrue(any("no workout logged" in p and "Thu 12 Nov" in p for p in found), found)
+
+    def logged(self, *items):
+        return [((d, t, f"w-{d}-{t}"), []) for d, t in items]
+
+    def test_reconcile(self):
+        w = a_week()
+        w["sessions"][1].update(slot="Full B")
+        notes = week.reconcile(w, self.logged(("2026-11-12", "L2 Lower B (Fri 13 Nov)")), ROTATION, dt.date(2026, 11, 13))
+        s = w["sessions"][1]
+        self.assertEqual((s["slot"], s["planned_slot"], s["state"]), ("L2", "Full B", "done"))
+        self.assertTrue(any("planned Full B, logged L2" in n for n in notes), notes)
+        # a second run adds nothing
+        before = copy.deepcopy(w)
+        self.assertEqual(week.reconcile(w, self.logged(("2026-11-12", "L2 Lower B (Fri 13 Nov)")), ROTATION, dt.date(2026, 11, 13)), [])
+        self.assertEqual(w, before)
+
+    def test_reconcile_unplanned_and_untitled(self):
+        w = a_week()
+        notes = week.reconcile(w, self.logged(("2026-11-11", "L1 Lower A"), ("2026-11-13", "Evening workout"), ("2026-11-20", "L3 Lower C")),
+                               ROTATION, dt.date(2026, 11, 14))
+        self.assertEqual(len(w["sessions"]), 4)                     # the 20th is outside the week
+        added = next(s for s in w["sessions"] if s["date"] == "2026-11-11")
+        self.assertTrue(added["unplanned"])
+        self.assertTrue(any("names no rotation slot" in n for n in notes), notes)
+
+    def test_plan_block_and_ids(self):
+        w = a_week()
+        for s in w["sessions"]:
+            s.pop("routine_id")
+        week.assign_ids(w, ["a", "b"])
+        self.assertEqual([s.get("routine_id") for s in w["sessions"]], [None, "a", "b"])   # done sessions take none
+        block = week.render_block(w, fresh_tracks(), ROTATION, [], ALIASES, dt.date(2026, 11, 12))
+        self.assertIn("| 2026-11-14 | Sat | U2 Upper B (Sat 14 Nov) | Overhead press H", block)
+        self.assertTrue(block.startswith(week.MD_BEGIN) and block.endswith(week.MD_END))
+
+
+class Amendments(unittest.TestCase):
+    def test_set_is_logged(self):
+        t = fresh_tracks()
+        line = upd.amend(t, "squat.top_set_lb=155", "lifter did 155 x 5 off plan", "2026-11-05")
+        self.assertEqual(t["tracks"]["squat"]["top_set_lb"], 155)
+        self.assertEqual(t["amendments"][-1]["to"], 155)
+        self.assertIn("Amended by hand: squat.top_set_lb", line)
+        upd.amend(t, "pointer=U2", "re-plan", "2026-11-05")
+        self.assertEqual(t["pointer"], "U2")
+        with self.assertRaises(SystemExit):
+            upd.amend(t, "nolift.top_set_lb=1", "x", "2026-11-05")
+
+
+class GitGuard(unittest.TestCase):
+    """The rule that Hevy only gets what is on origin/main, against real git."""
+
+    def setUp(self):
+        self.dir = tempfile.mkdtemp()
+        self.old = os.environ.pop("WORKOUT_NO_GIT", None)
+        g = lambda *a, cwd: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True)  # noqa: E731
+        self.g = g
+        self.remote = os.path.join(self.dir, "remote.git")
+        g("init", "--bare", "-b", "main", self.remote, cwd=self.dir)
+        self.a = os.path.join(self.dir, "a")
+        g("clone", self.remote, self.a, cwd=self.dir)
+        for k, v in (("user.email", "t@example.invalid"), ("user.name", "t"), ("commit.gpgsign", "false")):
+            g("config", k, v, cwd=self.a)
+        os.makedirs(os.path.join(self.a, "data"))
+        with open(os.path.join(self.a, "data", "tracks.json"), "w") as f:
+            f.write("{}\n")
+        g("add", "-A", cwd=self.a)
+        g("commit", "-m", "start", cwd=self.a)
+        g("push", "origin", "HEAD:main", cwd=self.a)
+
+    def tearDown(self):
+        shutil.rmtree(self.dir, ignore_errors=True)
+        if self.old is not None:
+            os.environ["WORKOUT_NO_GIT"] = self.old
+
+    def edit(self, repo, text):
+        with open(os.path.join(repo, "data", "tracks.json"), "w") as f:
+            f.write(text)
+
+    def test_unpublished_inputs_block_the_push(self):
+        self.assertEqual(gitguard.unpublished(["data/tracks.json"], cwd=self.a), [])
+        self.edit(self.a, '{"squat": 160}\n')
+        self.assertEqual(gitguard.unpublished(["data/tracks.json"], cwd=self.a), ["data/tracks.json"])    # edited, not committed
+        self.assertIsNotNone(gitguard.commit(["data/tracks.json"], "sync", cwd=self.a))
+        self.assertEqual(gitguard.unpublished(["data/tracks.json"], cwd=self.a), ["data/tracks.json"])    # committed, not on main
+        self.assertEqual(gitguard.publish(cwd=self.a), (True, ""))
+        self.assertEqual(gitguard.unpublished(["data/tracks.json"], cwd=self.a), [])
+        self.assertIsNone(gitguard.commit(["data/tracks.json"], "nothing new", cwd=self.a))
+        with open(os.path.join(self.a, "data", "week.json"), "w") as f:
+            f.write("{}\n")
+        self.assertEqual(gitguard.unpublished(["data/week.json"], cwd=self.a), ["data/week.json"])        # new file
+
+    def test_a_stale_checkout_cannot_sync(self):
+        b = os.path.join(self.dir, "b")
+        self.g("clone", self.remote, b, cwd=self.dir)
+        for k, v in (("user.email", "t@example.invalid"), ("user.name", "t"), ("commit.gpgsign", "false")):
+            self.g("config", k, v, cwd=b)
+        self.assertEqual(gitguard.preflight(cwd=b), [])
+        self.edit(self.a, '{"squat": 160}\n')
+        gitguard.commit(["data/tracks.json"], "another session", cwd=self.a)
+        gitguard.publish(cwd=self.a)
+        found = gitguard.preflight(cwd=b)
+        self.assertEqual(len(found), 1)
+        self.assertIn("1 commit(s) behind origin/main", found[0])
+
+    def test_a_read_only_session_cannot_sync(self):
+        self.g("remote", "set-url", "--push", "origin", os.path.join(self.dir, "missing.git"), cwd=self.a)
+        found = gitguard.preflight(cwd=self.a)
+        self.assertEqual(len(found), 1, found)
+        self.edit(self.a, '{"squat": 165}\n')
+        gitguard.commit(["data/tracks.json"], "local only", cwd=self.a)
+        ok, _ = gitguard.publish(cwd=self.a, retries=1)
+        self.assertFalse(ok)
+
+
+class PullNoNews(unittest.TestCase):
+    def test_same_rows_compare_equal_whatever_their_order(self):
+        rows = [{"date": "2026-11-10", "workout_id": "a", "exercise": "Squat (Barbell)", "set_index": "1", "reps": "4"},
+                {"date": "2026-11-10", "workout_id": "a", "exercise": "Squat (Barbell)", "set_index": "0", "reps": "5"}]
+        self.assertEqual(pull.normalized(rows), pull.normalized(list(reversed(rows))))
+        changed = copy.deepcopy(rows)
+        changed[0]["reps"] = "5"
+        self.assertNotEqual(pull.normalized(rows), pull.normalized(changed))
 
 
 class Dashboard(unittest.TestCase):

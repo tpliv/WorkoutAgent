@@ -1,19 +1,33 @@
 #!/usr/bin/env python3
-"""Render the rotation into Hevy routines and create or update them over the API.
+"""Bring the Hevy routines in line with the repo.
+
+Renders the rotation (templates/rotation.json) and this week's sessions
+(data/week.json) with the loads in data/tracks.json, compares each routine with
+what Hevy holds, and updates the ones that differ. Every update is read back.
 
 Usage:
+    python3 tools/hevy_push_routines.py                      # update whatever differs (rotation routines + This Week copies)
+    python3 tools/hevy_push_routines.py --check              # compare only; exit 1 if Hevy differs from the repo
+    python3 tools/hevy_push_routines.py --week-only          # only the dated This Week copies
+    python3 tools/hevy_push_routines.py --only L1 U1         # a subset of rotation slots
+    python3 tools/hevy_push_routines.py --all                # update everything, matching or not
     python3 tools/hevy_push_routines.py --dry-run            # print the payloads, no network
     python3 tools/hevy_push_routines.py --resolve            # only fill data/hevy-exercise-map.json
-    python3 tools/hevy_push_routines.py                      # create or update the nine routines
-    python3 tools/hevy_push_routines.py --only L1 U1         # a subset of slots
     python3 tools/hevy_push_routines.py --deload             # deload rendering (section 7)
     python3 tools/hevy_push_routines.py --as-of 2026-11-03   # gap modifiers as of that date
 
+Hevy only gets what is on origin/main: the push refuses when tracks.json,
+rotation.json, week.json, hevy-state.json or the exercise map differ from it
+(tools/gitguard.py). `python3 tools/hevy_sync.py` commits and publishes first.
+A skipped session is always printed with its reason, a failed routine does not
+stop the others, and the exit code is non-zero unless Hevy matches the repo.
+
 Inputs:
-    templates/rotation.json        the nine sessions as data
+    templates/rotation.json        the twelve sessions as data (6 half-sessions, 3 merged, 3 cross-block merges)
+    data/week.json                 this week's dated sessions (tools/week.py)
     data/tracks.json               planned loads per main lift, accessory loads
     data/hevy-exercise-map.json    program exercise -> Hevy template id (filled on first run)
-    data/hevy-state.json           folder id and routine ids (filled on first run)
+    data/hevy-state.json           folder ids, routine ids, the pool of dated routines
 
 Units: tracks.json is in pounds. Every load is rendered in pounds and converted
 to weight_kg (lb x 0.45359237, full precision) only in the payload, because the
@@ -49,8 +63,10 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from hevy_api import Hevy, HevyError, now_iso  # noqa: E402
+import gitguard  # noqa: E402
+from hevy_api import Hevy, HevyError  # noqa: E402
 from localtime import local_today  # noqa: E402
+from week import WEEK, is_deload, load_week, save_week, title_for  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROTATION = os.path.join(ROOT, "templates", "rotation.json")
@@ -506,9 +522,15 @@ def add_session_note(payload, note):
     return payload
 
 
-def verify_routine(sent_title, sent_exercises, got):
-    """Compare what was sent with the routine Hevy now holds. Returns a list of
-    differences (empty when it matches). Loads compare to 0.05 kg."""
+def _norm(text):
+    return " ".join((text or "").split())
+
+
+def verify_routine(sent_title, sent_exercises, got, notes=True):
+    """Compare what the repo renders with the routine Hevy holds. Returns a list
+    of differences (empty when it matches). Loads compare to 0.05 kg. With
+    notes=True the exercise notes must match too (they carry the loads in
+    words); the routine-level note is never returned by the API."""
     diffs = []
     if (got.get("title") or "") != sent_title:
         diffs.append(f"title is {got.get('title')!r}")
@@ -526,9 +548,13 @@ def verify_routine(sent_title, sent_exercises, got):
             continue
         for j, (x, y) in enumerate(zip(a, b), 1):
             wx, wy = x.get("weight_kg"), y.get("weight_kg")
-            if (wx is None) != (wy is None) or (wx is not None and abs(wx - wy) > 0.05) or x.get("reps") != y.get("reps"):
+            if (wx is None) != (wy is None) or (wx is not None and abs(wx - wy) > 0.05) or x.get("reps") != y.get("reps") \
+                    or (x.get("type") or "normal") != (y.get("type") or "normal"):
                 diffs.append(f"exercise {i} ({live.get('title')}) set {j}: {wy} kg x {y.get('reps')}, sent {wx} kg x {x.get('reps')}")
                 break
+        else:
+            if notes and _norm(mine.get("notes")) != _norm(live.get("notes")):
+                diffs.append(f"exercise {i} ({live.get('title')}): note differs")
     return diffs
 
 
@@ -538,100 +564,160 @@ def read_back(h, routine_id):
     return r[0] if isinstance(r, list) else r
 
 
-def put_and_check(h, routine_id, title, payload, folder_id, verify=True):
-    """Update one routine, then read it back. Returns (ok, message)."""
+def sync_routine(h, routine_id, title, payload, folder_id, mode="diff"):
+    """Bring one routine in line with the repo. mode: 'diff' (default) updates
+    only when Hevy differs, 'all' always updates, 'check' never writes.
+    Returns (ok, message): ok is True (in step), False (failed or, in check
+    mode, different)."""
     try:
+        if mode != "all":
+            before = verify_routine(title, payload["exercises"], read_back(h, routine_id))
+            if not before:
+                return True, "in step"
+            if mode == "check":
+                return False, "DIFFERS: " + "; ".join(before[:4])
         h.update_routine(routine_id, title, payload["exercises"], folder_id=folder_id, notes=payload["notes"])
-        if not verify:
-            return True, "sent (not read back)"
-        diffs = verify_routine(title, payload["exercises"], read_back(h, routine_id))
+        after = verify_routine(title, payload["exercises"], read_back(h, routine_id))
     except HevyError as e:
         return False, f"FAILED: {e}"
-    if diffs:
-        return False, "MISMATCH after push: " + "; ".join(diffs[:4])
-    return True, "pushed and read back"
+    if after:
+        return False, "MISMATCH after push: " + "; ".join(after[:4])
+    return True, "updated and read back"
 
 
-def week_plan(state, rotation, as_of):
-    """Split state['this_week'] sessions into (to_push, skipped). Nothing is
-    dropped silently: every skipped session carries its reason."""
+def week_plan(week, rotation, as_of):
+    """Split the week's sessions (data/week.json) into (to_push, skipped).
+    Nothing is dropped silently: every skipped session carries its reason."""
     todo, skipped = [], []
-    for s in (state.get("this_week") or {}).get("sessions", []):
+    for s in (week or {}).get("sessions", []):
         day = dt.date.fromisoformat(s["date"])
         if s["slot"] not in rotation["sessions"]:
             skipped.append((s, f"slot {s['slot']!r} is not in the rotation"))
-        elif s.get("done"):
-            skipped.append((s, "marked done"))
+        elif s.get("state") in ("done", "missed"):
+            skipped.append((s, s["state"]))
         elif day < as_of:
-            skipped.append((s, f"dated {s['date']}, before today ({as_of}); set its date or push with --as-of to change it"))
+            skipped.append((s, f"dated {s['date']}, before today ({as_of}), and not marked done: move it or mark it with tools/week.py"))
         else:
             todo.append((s, day))
     return todo, skipped
 
 
-def push_this_week(h, state, rotation, tracks, exmap, as_of, deload=False, verify=True):
-    """Refresh the dated copies of the current week's sessions (state['this_week'],
-    folder "This Week"). Each keeps its own title and is rendered with its own
-    date for the gap modifiers. Returns [(label, ok, message)], skips included."""
-    week = state.get("this_week") or {}
-    todo, skipped = week_plan(state, rotation, as_of)
-    results = [(f"This Week: {s['title']}", None, "skipped: " + why) for s, why in skipped]
+def week_payload(s, day, week, rotation, tracks, exmap, deload, folder_id):
+    dl = deload or is_deload(week, day)
+    title = title_for(s, rotation, deload=dl)
+    payload, _ = build_routine(s["slot"], rotation, tracks, exmap, day, deload=dl, folder_id=folder_id)
+    payload["title"] = title
+    add_session_note(payload, s.get("note"))
+    return title, payload
+
+
+def push_this_week(h, state, week, rotation, tracks, exmap, as_of, deload=False, mode="diff"):
+    """Bring the dated copies of the week's sessions (Hevy folder "This Week")
+    in line with data/week.json. Each is rendered with its own date for the gap
+    modifiers. Returns ([(label, ok, message)], ids_changed); skips included."""
+    tw = state.setdefault("this_week", {})
+    folder_id = tw.get("folder_id")
+    pool = tw.setdefault("routine_ids", [])
+    todo, skipped = week_plan(week, rotation, as_of)
+    results = [(f"This Week: {title_for(s, rotation) if s['slot'] in rotation['sessions'] else s['slot']}", None, "skipped: " + why)
+               for s, why in skipped]
+    changed = False
+    used = {s.get("routine_id") for s in week.get("sessions", []) if s.get("routine_id")}
     for s, day in todo:
-        payload, _ = build_routine(s["slot"], rotation, tracks, exmap, day, deload=deload, folder_id=week.get("folder_id"))
-        add_session_note(payload, s.get("note"))
-        ok, msg = put_and_check(h, s["id"], s["title"], payload, week.get("folder_id"), verify)
-        results.append((f"This Week: {s['title']}", ok, msg))
-        print(f"  {results[-1][0]}: {msg}")
-    return results
+        title, payload = week_payload(s, day, week, rotation, tracks, exmap, deload, folder_id)
+        label = f"This Week: {title}"
+        if not s.get("routine_id"):
+            free = [i for i in pool if i not in used]
+            if free:
+                s["routine_id"] = free[0]
+                used.add(free[0])
+                changed = True
+            elif mode == "check":
+                results.append((label, False, "DIFFERS: no routine in Hevy yet"))
+                print(f"  {label}: {results[-1][2]}")
+                continue
+            else:
+                try:
+                    if folder_id is None:
+                        f = h.find_folder(tw.get("folder_title") or "This Week") or h.create_folder(tw.get("folder_title") or "This Week")
+                        folder_id = tw["folder_id"] = f.get("id")
+                        tw.setdefault("folder_title", "This Week")
+                    r = h.create_routine(title, payload["exercises"], folder_id=folder_id, notes=payload["notes"])
+                    s["routine_id"] = r.get("id")
+                    pool.append(r.get("id"))
+                    used.add(r.get("id"))
+                    changed = True
+                    results.append((label, True, f"created ({r.get('id')})"))
+                except HevyError as e:
+                    results.append((label, False, f"FAILED: {e}"))
+                print(f"  {label}: {results[-1][2]}")
+                continue
+        ok, msg = sync_routine(h, s["routine_id"], title, payload, folder_id, mode)
+        results.append((label, ok, msg))
+        print(f"  {label}: {msg}")
+    return results, changed
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="Create or update the rotation's routines in Hevy.")
+    ap = argparse.ArgumentParser(description="Bring the Hevy routines in line with the repo: the rotation routines and this week's dated copies.")
     ap.add_argument("--dry-run", action="store_true", help="print payloads; no network, no file writes")
-    ap.add_argument("--no-verify", action="store_true", help="do not read each routine back after the push")
+    ap.add_argument("--check", action="store_true", help="compare Hevy with the repo; write nothing; exit 1 if anything differs")
+    ap.add_argument("--all", action="store_true", help="update every routine even when Hevy already matches")
     ap.add_argument("--resolve", action="store_true", help="only resolve exercise template ids and write the map")
     ap.add_argument("--only", nargs="*", help="rotation slots to push (default: every rotation routine, plus the dated This Week copies)")
-    ap.add_argument("--week-only", action="store_true", help="push only the dated This Week copies, not the rotation routines")
-    ap.add_argument("--deload", action="store_true")
+    ap.add_argument("--week-only", action="store_true", help="only the dated This Week copies, not the rotation routines")
+    ap.add_argument("--deload", action="store_true", help="render everything as a deload (data/week.json 'deload' does this for its week)")
+    ap.add_argument("--unpublished", action="store_true", help="push even though the inputs differ from origin/main (leaves Hevy ahead of the repo; avoid)")
     ap.add_argument("--as-of", help="date for gap modifiers and the This Week filter (YYYY-MM-DD, default today in TRAINING_TZ, America/New_York)")
     ap.add_argument("--rotation", default=ROTATION)
     ap.add_argument("--tracks", default=TRACKS)
     ap.add_argument("--exmap", default=EXMAP)
     ap.add_argument("--state", default=STATE)
+    ap.add_argument("--week", default=WEEK)
     args = ap.parse_args(argv)
 
     rotation = load_json(args.rotation)
     tracks = load_json(args.tracks)
     exmap = load_json(args.exmap, {}) or {}
     state = load_json(args.state, {}) or {}
+    week = load_week(args.week)
     as_of = dt.date.fromisoformat(args.as_of) if args.as_of else local_today()
+    deload = args.deload or is_deload(week, as_of)
     slots = normalize_slots(args.only, rotation) if args.only else list(rotation["sessions"].keys())
     if args.week_only:
         slots = []
+    mode = "check" if args.check else "all" if args.all else "diff"
 
     if args.dry_run:
         for slot in slots:
-            payload, unresolved = build_routine(slot, rotation, tracks, exmap, as_of, deload=args.deload, folder_id=state.get("folder_id"))
+            payload, unresolved = build_routine(slot, rotation, tracks, exmap, as_of, deload=deload, folder_id=state.get("folder_id"))
             print(f"\n=== {slot}: {payload['title']}  (unresolved exercises: {unresolved or 'none'})")
             print(json.dumps({"routine": payload}, indent=1, ensure_ascii=False))
         if not args.only:
-            week = state.get("this_week") or {}
-            todo, skipped = week_plan(state, rotation, as_of)
+            todo, skipped = week_plan(week, rotation, as_of)
             for s, day in todo:
-                payload, _ = build_routine(s["slot"], rotation, tracks, exmap, day, deload=args.deload, folder_id=week.get("folder_id"))
-                add_session_note(payload, s.get("note"))
-                payload["title"] = s["title"]
-                print(f"\n=== This Week: {s['title']}  ({s['id']})")
+                title, payload = week_payload(s, day, week, rotation, tracks, exmap, args.deload, (state.get("this_week") or {}).get("folder_id"))
+                print(f"\n=== This Week: {title}  ({s.get('routine_id') or 'new routine'})")
                 print(json.dumps({"routine": payload}, indent=1, ensure_ascii=False))
             for s, why in skipped:
-                print(f"\n=== This Week: {s['title']}  NOT pushed: {why}")
+                print(f"\n=== This Week: {s['date']} {s['slot']}  NOT pushed: {why}")
         return
+
+    defaults = (args.rotation, args.tracks, args.week, args.state) == (ROTATION, TRACKS, WEEK, STATE)
+    if mode != "check" and not args.resolve and not args.unpublished and defaults:
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        stale = gitguard.unpublished([os.path.relpath(p, root) for p in (ROTATION, TRACKS, WEEK, STATE, EXMAP)])
+        if stale:
+            sys.exit("Not pushed. Hevy only gets what is on origin/main, and these differ from it: " + ", ".join(stale)
+                     + ".\nRun `python3 tools/hevy_sync.py` (it commits, publishes, then pushes), or commit and push them to main first."
+                     "\n`--check` compares without writing.")
 
     try:
         h = Hevy()
         custom = {k: v.get("hevy_exercise") for k, v in tracks["tracks"].items() if v.get("hevy_exercise")}
-        if resolve_exercises(h, rotation, exmap, custom_lookup=custom):
-            save_json(args.exmap, exmap)
+        if mode != "check":
+            if resolve_exercises(h, rotation, exmap, custom_lookup=custom):
+                save_json(args.exmap, exmap)
         missing = sorted(n for n, v in exmap.items() if not v.get("template_id"))
         if missing:
             print("Could not match these program exercises to a Hevy exercise template:")
@@ -646,7 +732,7 @@ def main(argv=None):
 
         folder_id = state.get("folder_id")
         folder_title = rotation.get("folder_title", "Rotation")
-        if folder_id is None:
+        if folder_id is None and mode != "check":
             f = h.find_folder(folder_title)
             if f is None:
                 f = h.create_folder(folder_title)
@@ -657,48 +743,59 @@ def main(argv=None):
             save_json(args.state, state)
 
         routines = state.setdefault("routines", {})
-        verify = not args.no_verify
         results = []
-        print(f"Pushing as of {as_of} ({'deload' if args.deload else 'normal'} rendering).")
+        ids_changed = False
+        verb = {"check": "Checking", "all": "Pushing everything", "diff": "Pushing what differs"}[mode]
+        print(f"{verb} as of {as_of} ({'deload' if deload else 'normal'} rendering).")
         # The dated sessions go first: they are what the lifter opens next, so a
         # rate limit part-way through must not leave them stale.
         if not args.only:
-            results += push_this_week(h, state, rotation, tracks, exmap, as_of, args.deload, verify)
+            wk, ids_changed = push_this_week(h, state, week, rotation, tracks, exmap, as_of, args.deload, mode)
+            results += wk
+            if ids_changed:
+                save_week(args.week, week)
+                save_json(args.state, state)
         else:
-            print("  This Week routines not pushed (--only was given).")
+            print("  This Week routines left alone (--only was given).")
         for slot in slots:
-            payload, _ = build_routine(slot, rotation, tracks, exmap, as_of, deload=args.deload, folder_id=folder_id)
+            payload, _ = build_routine(slot, rotation, tracks, exmap, as_of, deload=deload, folder_id=folder_id)
+            label = f"{slot}: {payload['title']}"
             rid = routines.get(slot)
             if rid:
-                ok, msg = put_and_check(h, rid, payload["title"], payload, folder_id, verify)
+                ok, msg = sync_routine(h, rid, payload["title"], payload, folder_id, mode)
+            elif mode == "check":
+                ok, msg = False, "DIFFERS: no routine in Hevy yet"
             else:
                 try:
                     r = h.create_routine(payload["title"], payload["exercises"], folder_id=folder_id, notes=payload["notes"])
                     routines[slot] = r.get("id")
                     save_json(args.state, state)
+                    ids_changed = True
                     ok, msg = True, f"created ({r.get('id')})"
                 except HevyError as e:
                     ok, msg = False, f"FAILED: {e}"
-            results.append((f"{slot}: {payload['title']}", ok, msg))
-            print(f"  {results[-1][0]}: {msg}")
+            results.append((label, ok, msg))
+            print(f"  {label}: {msg}")
 
         failed = [r for r in results if r[1] is False]
         skipped = [r for r in results if r[1] is None]
-        print(f"\nPush summary: {sum(1 for r in results if r[1])} pushed, {len(skipped)} skipped, {len(failed)} failed.")
+        same = sum(1 for r in results if r[1] and r[2] == "in step")
+        done = sum(1 for r in results if r[1]) - same
+        if mode == "check":
+            print(f"\nCheck: {same} in step, {len(failed)} differ, {len(skipped)} skipped.")
+        else:
+            print(f"\nPush summary: {done} updated, {same} already in step, {len(skipped)} skipped, {len(failed)} failed.")
         for label, _, msg in skipped + failed:
             print(f"  {label}: {msg}")
+        if ids_changed:
+            print("New Hevy routine ids were recorded in data/hevy-state.json or data/week.json: commit and push them (hevy_sync.py does).")
+        if failed and mode == "check":
+            sys.exit("Hevy does not match the repo. `python3 tools/hevy_sync.py` brings it in line.")
         if failed:
-            state["last_push_failed"] = {"at": now_iso(), "routines": [r[0] for r in failed]}
-            save_json(args.state, state)
-            sys.exit("Push incomplete: Hevy does not match the repo for the routines above. Re-run `python3 tools/hevy_push_routines.py` (the tracks are already updated; do not re-apply the rules by hand).")
-        state.pop("last_push_failed", None)
-        if not args.only and not args.week_only:
-            # last_push means: every rotation routine and every current dated
-            # session was pushed and read back at this time.
-            state["last_push"] = now_iso()
-            state["last_push_deload"] = bool(args.deload)
-        save_json(args.state, state)
-        print(f"Done. Open Hevy > Workout > folder {folder_title!r} and start the routine the pointer names ({tracks.get('pointer')}).")
+            sys.exit("Push incomplete: Hevy does not match the repo for the routines above. Re-run `python3 tools/hevy_push_routines.py` "
+                     "(the tracks are already updated; do not re-apply the rules by hand).")
+        if mode != "check":
+            print(f"Done. Hevy matches the repo. Next session owed: {tracks.get('pointer')}.")
     except HevyError as e:
         sys.exit(str(e))
 
