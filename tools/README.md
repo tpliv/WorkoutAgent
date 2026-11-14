@@ -86,7 +86,7 @@ Two rules the tools enforce (`gitguard.py`):
 
 | File | Written by | Read by | Committed |
 |---|---|---|---|
-| `templates/rotation.json` | hand (mirror of the markdown templates) | push | yes |
+| `templates/rotation.json` | hand. The canonical session content: the routines are rendered from it and the day templates restate it | push, week, update | yes |
 | `data/tracks.json` | `update_tracks.py` (amend with `--set`, never by editing) | push, update, week, dashboard | yes |
 | `data/week.json` | `week.py` (never by editing) | push, week | yes |
 | `data/weekly-plan.md` | `week.py` (the block between the `week:` markers); the rest by hand | people and agents | yes |
@@ -167,7 +167,7 @@ Full B, Full C; the routine titles start with it), or a lower-upper pair anywher
 set of the lift. The decision follows section 5 of
 `templates/progression-tracks.md` exactly, with these implementation choices:
 
-- A top set with no RPE logged is treated as RPE 8 and flagged.
+- A top set with no RPE logged is flagged. At exactly the rep target it is treated as RPE 8; above the target it is assumed to have ended at RPE 9, so each extra rep reads one point easier at the target (`templates/progression-tracks.md` section 5).
 - The new planned load is computed from the load actually lifted, so a work-up
   or a deliberately heavier top set moves the track with it.
 - A stall (two misses at one load) is flagged and the load held. The reset is

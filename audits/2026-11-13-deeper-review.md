@@ -99,3 +99,23 @@ What it should lead with instead: the next session and its loads, the week as pl
 - The repository is public. A stranger gets: body composition and calorie plan, two years of race results with times and city (enough to find a name in public results), planned future gym days and times, a work trip, 58 workout start times, and the work GitHub handle in `PORTABILITY.md` and four commits. No secrets, no employer name, no email, no calendar id in any of the 108 commits.
 - Recommendation: make it private. Nothing needs public reads, and deleting files would not remove them from history.
 - `PORTABILITY.md` followed literally used to fail on the old repo URL, the default branch, "Scheduled tasks: None yet", and the dashboard page. Rewritten on 13 Nov.
+
+## 7. Decisions for the owner
+
+Each of these is a choice between two written versions, or a rule that is ambiguous. Nothing here was changed.
+
+| # | Decision | Versions | Recommendation |
+|---|---|---|---|
+| 1 | Are increments and caps measured from the load planned or the load lifted? | Code and one test: lifted. The deadlift caution and the regain cap read as planned. It gave the deadlift 150 planned, 160 lifted, 170 next | From planned for the two capped phases (deadlift caution, regain); lifted elsewhere. That would make the next deadlift 160 |
+| 2 | What is a readiness flag? | Four definitions: `guide/03` section 4.5, `guide/06` section 2.3, `guide/07` section 1.2, `guide/08` section 2.3 | Define it once in `guide/03` and point the others at it |
+| 3 | What do two misses in a row trigger? | Early deload (`guide/04`), deload only with two flags (`guide/03`), stall and 7.5% reset (tracks file, section 6) | The tracks file; make the other two point to it |
+| 4 | Rate every set, or one tap on the top set? | `guide/07` and `templates/README.md` vs the tracks file. With whole-number taps the 7.5, 8.5 and 9.5 thresholds never occur | One tap, and restate the table in whole numbers |
+| 5 | Do volume (V) sets at RPE 6-7 count as hard sets? | `guide/01` says 0-3 reps in reserve; the template tallies count them | Decide, then recount the tallies and restate the weekly targets the templates really hit |
+| 6 | Pull-up volume load | `rotation.json` and the code: 90% of the track load. Tracks file sections 1 and 4: added load reduced to RPE 7 | 90% for the pulldown; the RPE 7 wording for weighted pull-ups |
+| 7 | A missed rep by a later lift in a merged session | `guide/03` section 5: not a miss. Code: fewer than 4 reps is a miss everywhere | The code's reading, with section 3 made explicit |
+| 8 | Feeder sets for a row or pull-up that comes third or later | Tracks file section 3: every later main lift. `rotation.json`: none | Add them to the JSON |
+| 9 | Cross-block 3-day weeks have no leg curl and no calves | `templates/3-day-week.md`, `rotation.json` | Add a curl and calves; print a tally |
+| 10 | Who the guide is written for | `guide/00`: an intermediate in their 30s to 50s. The lifter is 25, returning from 18 months off, in a deficit | Rewrite the audience paragraph and drop the age cautions |
+| 11 | Dashboard convention for e1RM on unrated sets | Engine: assumes reps in reserve. Dashboard: none. The same set reads 191 and 181 | One convention, the engine's, for program-era sets |
+| 12 | Superset rests in `rotation.json` break its own rule in two cross-block sessions | U2+L3 leg extension 120 s as first member; U3+L1 pushdown 60 s as last | Fix the two values |
+
