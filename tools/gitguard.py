@@ -25,6 +25,7 @@ OWNED = [
     "data/history.csv", "data/hevy-state.json", "data/tracks.json", "data/track-state.md",
     "data/track-log.md", "data/week.json", "data/weekly-plan.md", "data/hevy-exercise-map.json",
     "data/exercise-muscles.json", "dashboard/index.html", "dashboard/data.json",
+    "data/checkins", "data/manual-log.csv",
 ]
 
 

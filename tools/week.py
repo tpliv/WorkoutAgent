@@ -16,6 +16,7 @@ Usage:
     python3 tools/week.py deload on|off
     python3 tools/week.py reconcile                 # mark logged sessions done (hevy_sync.py runs this)
     python3 tools/week.py render                    # rewrite the generated block in data/weekly-plan.md
+    python3 tools/week.py brief [DATE]              # the numbers of the night-before brief for one session
 
 Every command prints the week and its checks. A change here reaches Hevy and
 GitHub with `python3 tools/hevy_sync.py`, which commits, publishes and pushes.
@@ -270,6 +271,87 @@ def logged_summary(rows, aliases, tracks):
     return "; ".join(parts) or "no main lift logged"
 
 
+def brief(session, week, tracks, rotation, exmap, pointer_note=True):
+    """The numbers of the night-before brief (guide/08 section 3.1) for one
+    session, from the same renderer as the Hevy routine, so the message and the
+    app cannot disagree. The coach adds the short-on-time line and any context."""
+    import re
+    import hevy_push_routines as push  # late: that module imports this one
+    day = dt.date.fromisoformat(session["date"])
+    deload = is_deload(week, day)
+    slot = session["slot"]
+    sess = rotation["sessions"][slot]
+    payload, _ = push.build_routine(slot, rotation, tracks, exmap, day, deload=deload)
+    minutes = re.search(r"about (\d+) min", payload["notes"])
+    order = rotation["slots"]
+    after = order[(order.index(halves(slot, rotation)[-1]) + 1) % len(order)]
+    lines = [f"{day_label(day)}: {title_for(session, rotation, deload)}   ~{minutes.group(1) if minutes else '?'} min   pointer {tracks.get('pointer')} -> {after}"]
+    why = []
+    if deload:
+        why.append("deload week")
+    letters = {}
+    n = 0
+    for ex, rendered in zip(sess["exercises"], payload["exercises"]):
+        sets, notes = push.render_exercise(ex, tracks, day, deload=deload, merged=bool(sess.get("merged")), rotation_subs=rotation.get("substitutes"))
+        warm = [s for s in sets if s["type"] == "warmup"]
+        work = [s for s in sets if s["type"] == "normal"]
+        if ex.get("superset"):
+            if ex["superset"] not in letters:
+                n += 1
+                letters[ex["superset"]] = [n, 0]
+            letters[ex["superset"]][1] += 1
+            num = f"{letters[ex['superset']][0]}{chr(96 + letters[ex['superset']][1])}."
+        else:
+            n += 1
+            num = f"{n}."
+        role = ex.get("role")
+        track = tracks["tracks"].get(ex.get("track") or "", {})
+        moved = "TOP SET MOVED HERE" in notes
+        tag = f" ({ex['track'].replace('pullup', 'pull-up')} {'H, moved here' if moved else role})" if role in ("H", "V") else ""
+
+        def reps(x):
+            rr = x.get("rep_range")
+            return f"{rr['start']}-{rr['end']}" if rr else str(x.get("reps"))
+
+        def load(x):
+            return "work up" if x.get("weight_lb") is None and role in ("H", "V") else ("your logged load" if x.get("weight_lb") is None else fmt(x["weight_lb"]))
+        groups = []
+        for x in work:
+            key = (load(x), reps(x))
+            if groups and groups[-1][0] == key:
+                groups[-1][1] += 1
+            else:
+                groups.append([key, 1])
+        top_set = role in ("H", "V") and (role == "H" or moved) and track.get("scheme", "top_set") == "top_set" and len(groups) > 1
+        if top_set:
+            (w0, r0), _n0 = groups[0]
+            body = f"{w0} x {r0} @ RPE {'6-7' if deload else '8'}, then " + ", ".join(f"{k} x {r} @ {w}" for (w, r), k in groups[1:])
+        else:
+            body = ", ".join(f"{k} x {r} @ {w}" for (w, r), k in groups)
+        if ex.get("per_leg"):
+            body += " per leg"
+        rest = ex.get("rest")
+        rest_txt = ""
+        if rest:
+            rt = ex.get("rest_top")
+            rest_txt = f"   rest {push.mmss(rt)} after the top set, then {push.mmss(rest)}" if rt and rt != rest else f"   rest {push.mmss(rest)}"
+        head = f"{num} {ex['name']}{tag}"
+        if warm:
+            head += "   " + ("warm-up " if len(warm) > 1 else "feeder ") + ", ".join(f"{fmt(x['weight_lb'])} x {x['reps']}" for x in warm)
+        lines.append(head)
+        lines.append(f"   {body}{rest_txt}" + ("   (optional)" if ex.get("optional") else ""))
+        for sent in re.split(r"(?<=[.!?]) ", notes):
+            if sent.startswith(("Gap ", "TOP SET MOVED", "Last back-off: REP-OUT")):
+                why.append(f"{ex['name']}: {sent.rstrip('.')}")
+            if sent.startswith("Station taken") and role == "H":
+                lines.append(f"   {sent}")
+    if session.get("note"):
+        why.append(session["note"])
+    lines.insert(1, "Why anything changed: " + ("; ".join(why) if why else "nothing; all tracks normal."))
+    lines.append(f"After: log it in Hevy from \"{title_for(session, rotation, deload)}\" (folder This Week) and rate each top set.")
+    return "\n".join(lines)
+
+
 def table_rows(week, tracks, rotation, logged, aliases):
     by_key = {}
     for (date, title, wid), rows in logged or []:
@@ -408,6 +490,8 @@ def main(argv=None):
     p.add_argument("value", choices=("on", "off"))
     sub.add_parser("reconcile")
     sub.add_parser("render")
+    p = sub.add_parser("brief", help="print a session's numbers for the night-before brief")
+    p.add_argument("date", nargs="?", help="default: the next open session")
     args = ap.parse_args(argv)
 
     week = load_week(args.week)
@@ -465,6 +549,18 @@ def main(argv=None):
         week["status"] = args.value
     elif cmd == "deload":
         week["deload"] = args.value == "on"
+
+    if cmd == "brief":
+        todo = [x for x in sorted(week["sessions"], key=lambda x: x["date"]) if x.get("state") in OPEN]
+        if args.date:
+            session = find(week, args.date)
+        elif todo:
+            session = next((x for x in todo if dt.date.fromisoformat(x["date"]) >= today), todo[0])
+        else:
+            sys.exit("No open session in data/week.json.")
+        exmap = load_json(os.path.join(ROOT, "data", "hevy-exercise-map.json"), {}) or {}
+        print(brief(session, week, tracks, rotation, exmap))
+        return
 
     logged = load_sessions(args.history, since=week.get("week_of")) if week.get("week_of") and os.path.exists(args.history) else []
     notes = reconcile(week, logged, rotation, today) if cmd != "show" else []

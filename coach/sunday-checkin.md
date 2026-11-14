@@ -1,18 +1,19 @@
 # Runbook: Sunday check-in
 
-Last updated: 2026-11-06 (drinks and runs in the questions; race weeks; regain, caution and rep-out in the loads). Earlier: 2026-10-26 (tracks via `tools/hevy_sync.py`; works on `main`)
+Last updated: 2026-11-13 (the week is planned with `tools/week.py`; the sync saves everything in both turns; loads come from the tool, not arithmetic). Earlier: 2026-11-06 (drinks and runs in the questions; race weeks; regain, caution and rep-out in the loads), 2026-10-26 (tracks via `tools/hevy_sync.py`; works on `main`)
 
 Protocol: `guide/08-weekly-coaching-cadence.md` section 2. General rules: `coach/README.md`. This is a conversation with two turns. Turn 1 asks; turn 2, after the lifter answers, plans and delivers.
 
 ## Turn 1: prepare and ask
 
-1. Fetch and check out `main` (`coach/README.md`, rule 1). Read the following:
+1. Check out `main` (`coach/README.md`, rule 1). Read the following:
+   - `python3 tools/week.py show` (this week as planned and as trained)
    - `data/tracks.json`, `data/track-state.md` and `data/track-log.md`
    - `data/weekly-plan.md`
    - the newest file in `data/checkins/`
    - `templates/README.md`
    - `templates/progression-tracks.md`
-2. Get the week's results (`coach/README.md`, "Getting the week's results"). Find every session since the last check-in.
+2. Get the week's results: `python3 tools/hevy_sync.py` (`coach/README.md`, "Getting the week's results"). It commits and publishes what it changes, so nothing is left unsaved when this turn ends. If it prints `Sync not started`, follow "When the repo is read-only" there and still ask the five questions. Find every session since the last check-in.
 3. Build the recap:
    - sessions planned vs done, by slot;
    - each main lift's top set as load x reps @ RPE, and whether it counts as a hit, hold or miss (`progression-tracks.md` §5);
@@ -43,7 +44,7 @@ If a session has no logged data, add it to question 1. Ask for its top sets; don
 
 ## Turn 2: plan and deliver (after the lifter replies)
 
-1. **Fold in last week.** Logged sessions were applied by `python3 tools/hevy_sync.py` in turn 1 (increments, holds, misses, step counters, e1RM history, last-exposure dates, pointer). If `data/track-log.md` flagged a stall and the answers rule out sleep, food and bodyweight as the cause (§6), run `python3 tools/hevy_sync.py --no-pull --reset-on-stall`. Results reported only in the chat go to `data/manual-log.csv` and into `data/tracks.json` by hand (`coach/README.md`, "Getting the week's results", step 3). Accessories use double progression (§11).
+1. **Fold in last week.** Logged sessions were applied by the sync in turn 1; run it again first if the lifter trained since. If `data/track-log.md` flagged a stall and the answers rule out sleep, food and bodyweight as the cause (§6), run `python3 tools/hevy_sync.py --no-pull --reset-on-stall`. Results reported only in the chat go to `data/manual-log.csv` and into the tracks with logged amendments (`coach/README.md`, "Getting the week's results", step 4). Accessories use double progression (§11): change an accessory load with `python3 tools/update_tracks.py --set "accessories.<name>.weight_lb=<load>" --reason "..."`.
 2. **Readiness.** Write the four scores, bodyweight, waist and the drinks count to the check-in record (drinks: `guide/06` §4.4). A score of 1-2 on the same item two Sundays running is one flag (`guide/08` §2.3). Count the performance flags: reps down or RPE up at the same load on two consecutive exposures of a lift.
 3. **Deload decision** (`guide/03` §4.5). Deload if any of these holds:
    - it is block week 5-7, and preferably a 3-day week when the calendar allows;
@@ -52,22 +53,24 @@ If a session has no logged data, add it to question 1. Ask for its top sets; don
    Do not schedule two deloads within four weeks.
 4. **Week shape.**
    - Merges = 6 minus days. Pick the template.
-   - If the pointer is not at L1, write the next six half-sessions from the pointer and apply the merges (`templates/README.md`, "The rotation pointer").
+   - Write the next six half-sessions from the pointer and apply the merges (`templates/README.md`, "The rotation pointer"). The pointer is in `python3 tools/week.py show`.
    - Place sessions on the days given, following the template's "Placement" line. Don't put two merged sessions with heavy top sets back to back if a gap is possible.
    - 2 days: `guide/03` §4.6. 7 days: train 6.
    - If an InBody scan date falls in the week (`data/body-composition.md` §8), keep the 48 h before it free of lifting and say so in the plan.
-5. **Loads.**
-   - Apply the gap clock (§8) to each main lift for its first exposure this week.
-   - Back-offs are the top set x 0.93; V sets are 90% of the track load. Round every barbell load to the nearest 5 lb; the smallest plate is 2.5 lb (§9). Dumbbells: one load, the total of the dumbbells in the hands as the lifter logs it (5 lb steps for two dumbbells, 2.5 lb for one); machines: the nearest pin; never a range. Bench and press advance through the step counter (§5).
-   - If deloading: top sets x 0.90-0.92 at RPE 6-7, one back-off, V at 2 sets, accessories 1-2 sets.
-   - Phases (`progression-tracks.md` §5.1-5.3, the Phase column in `data/track-state.md`): a lift in the regain phase skips the 8-14-day gap hold; the deadlift caution limits big steps; a lift with `rep_out_due` gets the rep-out on its last back-off this week (not in a deload, a race week, or as a later lift in a merged session).
-6. **Runs and cardio**: place them per `guide/03` §7 (lift first on lower days; long and quality runs 48 h before a heavy lower slot). If a race falls in this week or fell in the last 7 days, apply `guide/03` §4.7 to the lower slots and the runs, and add the fueling days from `data/body-composition.md` (pattern in §5.1).
-7. **Write the files.**
-   - `data/weekly-plan.md`: the whole file, in its format.
+5. **Write the week.** One command; add `--deload` for a deload week:
+
+   ```
+   python3 tools/week.py plan --week-of <Monday> <date>=<slot>@<time> <date>=<slot> ...
+   ```
+
+   Read what it prints. **Checks** must not show an `order` line: the sessions have to follow the rotation from the pointer. Treat `spacing` lines as advice and decide. Add a note to any session that needs one (race rule, a cap, a moved top set): `python3 tools/week.py set <date> --note "..."`; the note leads that routine in Hevy.
+6. **Loads.** Do not compute them. The table `week.py` printed has each session's main lifts with the gap clock (§8), regain and caution phases (§5.1-5.2), moved top sets and the deload already applied, and the Hevy routines are rendered from the same code. Check them against the rules and the answers, and look for what the tool cannot know: a rep-out that should wait (deload, race week, or a later lift in a merged session), pain, illness. If a load must differ, amend the track with `update_tracks.py --set ... --reason` and say why in the check-in record.
+7. **Runs and cardio**: place them per `guide/03` §7 (lift first on lower days; long and quality runs 48 h before a heavy lower slot). If a race falls in this week or fell in the last 7 days, apply `guide/03` §4.7 to the lower slots and the runs, and add the fueling days from `data/body-composition.md` (pattern in §5.1).
+8. **Write the hand-written files.**
+   - `data/weekly-plan.md`, outside the generated block: update "Last updated", the spacing reasoning, race or deload notes, cardio, and start a fresh "Changes this week" list. Do not restate loads.
    - `data/checkins/<today>.md`: answers, flags, decisions, and every rule that fired, with its section.
-   - `data/track-state.md`: update the "Last updated" line (the table is regenerated by the tools).
-8. Commit with the message `Check-in <date>: <days>-day week, <deload or block week k>`, then push.
-9. **Send the plan, then Monday's brief** if Monday is a training day. Format: `coach/nightly-brief.md`, step 5. Message:
+9. **Save and push everything:** `python3 tools/hevy_sync.py --no-pull -m "Check-in <date>: <days>-day week, <deload or block week k>"`. In the push summary every session of the new week must read `updated` or `in step`. If it stops with an error, say so in the message; do not work around it.
+10. **Send the plan, then Monday's brief** if Monday is a training day (`python3 tools/week.py brief <Monday>`; format: `coach/nightly-brief.md`, step 5). Message:
 
 ```
 This week: <days>-day week, block week <k><, deload>.
@@ -81,7 +84,7 @@ Reply to change anything.
 <Monday's brief>
 ```
 
-If the lifter changes the plan in a later reply, redo steps 4-9 for the change.
+If the lifter changes the plan in a later reply, redo steps 4-10 for the change.
 
 ## If there is no reply
 
