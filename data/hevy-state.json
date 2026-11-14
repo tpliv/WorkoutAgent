@@ -41,16 +41,17 @@
       },
       {
         "date": "2026-11-14",
-        "slot": "L3",
-        "title": "L3 Lower C (Sat 14 Nov)",
+        "slot": "U2",
+        "title": "U2 Upper B (Sat 14 Nov)",
         "id": "93e8172d-7bb0-42ed-9f9d-96b8df3aead8",
-        "note": "48 h after Thursday's deadlift H (160 x 5 @ 8). If Thursday's deadlift felt rough, drop the deadlift V sets (priority-stack drop, not a miss)."
+        "note": "U2 is the half-session owed after Thursday's L2 (Full B was planned; only its lower half was trained). Press and pulldown were last trained 5 Nov: loads held."
       },
       {
         "date": "2026-11-15",
-        "slot": "U3",
-        "title": "U3 Upper C (Sun 15 Nov)",
-        "id": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58"
+        "slot": "Full C",
+        "title": "Full C (Sun 15 Nov)",
+        "id": "d3165c21-1fd7-43df-a2d2-1abbf5f8af58",
+        "note": "L3 + U3 merged; finishes the pass. 72 h after Thursday's deadlift H (160 x 5 @ 8). If the back or legs are still sore, drop the deadlift V sets (priority-stack drop, not a miss)."
       }
     ]
   }

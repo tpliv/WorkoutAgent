@@ -591,6 +591,7 @@ def main(argv=None):
     ap.add_argument("--no-verify", action="store_true", help="do not read each routine back after the push")
     ap.add_argument("--resolve", action="store_true", help="only resolve exercise template ids and write the map")
     ap.add_argument("--only", nargs="*", help="rotation slots to push (default: every rotation routine, plus the dated This Week copies)")
+    ap.add_argument("--week-only", action="store_true", help="push only the dated This Week copies, not the rotation routines")
     ap.add_argument("--deload", action="store_true")
     ap.add_argument("--as-of", help="date for gap modifiers and the This Week filter (YYYY-MM-DD, default today in TRAINING_TZ, America/New_York)")
     ap.add_argument("--rotation", default=ROTATION)
@@ -605,6 +606,8 @@ def main(argv=None):
     state = load_json(args.state, {}) or {}
     as_of = dt.date.fromisoformat(args.as_of) if args.as_of else local_today()
     slots = normalize_slots(args.only, rotation) if args.only else list(rotation["sessions"].keys())
+    if args.week_only:
+        slots = []
 
     if args.dry_run:
         for slot in slots:
@@ -689,7 +692,7 @@ def main(argv=None):
             save_json(args.state, state)
             sys.exit("Push incomplete: Hevy does not match the repo for the routines above. Re-run `python3 tools/hevy_push_routines.py` (the tracks are already updated; do not re-apply the rules by hand).")
         state.pop("last_push_failed", None)
-        if not args.only:
+        if not args.only and not args.week_only:
             # last_push means: every rotation routine and every current dated
             # session was pushed and read back at this time.
             state["last_push"] = now_iso()
